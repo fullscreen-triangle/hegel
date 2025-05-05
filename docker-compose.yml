@@ -1,0 +1,100 @@
+version: '3.8'
+
+services:
+  # Frontend service
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:8080/api
+    depends_on:
+      - api
+
+  # Rust API service
+  api:
+    build:
+      context: ./core
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./core:/app
+      - ./data:/app/data
+    environment:
+      - RUST_LOG=info
+      - DATABASE_URL=bolt://neo4j:7687
+      - NEO4J_USER=neo4j
+      - NEO4J_PASSWORD=password
+      - LLM_SERVICE_URL=http://llm-service:8000
+      - GENOMICS_DATA_PATH=/app/data/genomics
+      - MASS_SPEC_DATA_PATH=/app/data/mass_spec
+    depends_on:
+      - neo4j
+      - llm-service
+
+  # Neo4j database service
+  neo4j:
+    image: neo4j:5.11
+    ports:
+      - "7474:7474"  # HTTP
+      - "7687:7687"  # Bolt
+    volumes:
+      - neo4j_data:/data
+      - neo4j_logs:/logs
+      - neo4j_import:/import
+      - ./scripts/neo4j:/var/lib/neo4j/import/init-scripts
+    environment:
+      - NEO4J_AUTH=neo4j/password
+      - NEO4J_dbms_memory_pagecache_size=1G
+      - NEO4J_dbms.memory.heap.initial_size=1G
+      - NEO4J_dbms_memory_heap_max__size=1G
+      - NEO4J_apoc_import_file_enabled=true
+      - NEO4J_apoc_export_file_enabled=true
+      - NEO4J_dbms_security_procedures_unrestricted=apoc.*
+
+  # LLM service for AI-guided evidence rectification
+  llm-service:
+    build:
+      context: ./llm-service
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./llm-service:/app
+      - ./data/models:/app/models
+    environment:
+      - PORT=8000
+      - MODEL_PATH=/app/models
+      - LOG_LEVEL=info
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+      - USE_LOCAL_MODEL=${USE_LOCAL_MODEL:-true}
+      - MAX_TOKENS=1024
+      - TEMPERATURE=0.7
+
+  # Data initialization service for loading example data
+  data-init:
+    build:
+      context: ./scripts
+      dockerfile: Dockerfile.data-init
+    volumes:
+      - ./data:/data
+      - ./scripts:/scripts
+    environment:
+      - NEO4J_URI=bolt://neo4j:7687
+      - NEO4J_USER=neo4j
+      - NEO4J_PASSWORD=password
+      - GENOMICS_DATA_PATH=/data/genomics
+      - MASS_SPEC_DATA_PATH=/data/mass_spec
+    depends_on:
+      - neo4j
+
+volumes:
+  neo4j_data:
+  neo4j_logs:
+  neo4j_import:

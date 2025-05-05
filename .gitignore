@@ -1,0 +1,146 @@
+# Rust build artifacts
+/target/
+Cargo.lock
+# Keep Cargo.lock for binaries, but since this is a workspace with libraries, ignore it
+# Comment out the above line if you want to track Cargo.lock
+
+# Generated binaries
+*.so
+*.dylib
+*.dll
+*.exe
+*.out
+*.a
+
+# Project-specific directories
+/data/
+/logs/
+/tmp/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Editor-specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.settings/
+.classpath
+*.sublime-workspace
+*.sublime-project
+
+# OS-specific files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Python artifacts (for Python integration)
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Documentation
+/doc/
+/docs/target/
+
+# Node.js modules (for web UI)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnp/
+.pnp.js
+
+# Frontend specific
+/frontend/node_modules/
+/frontend/build/
+/frontend/dist/
+/frontend/.next/
+/frontend/.nuxt/
+/frontend/.cache/
+.vercel
+.netlify
+
+# Generated files by molecular visualization tools
+*.mol2
+*.pdb
+*.sdf
+!examples/**/*.pdb
+!examples/**/*.sdf
+!tests/**/*.pdb
+!tests/**/*.sdf
+
+# Backup files
+*.bak
+*.backup
+*.orig
+*.old
+
+# Coverage reports
+coverage/
+*.lcov
+.nyc_output
+
+# Benchmark results
+benchmark-results/
+
+# Large datasets (add specific patterns as needed)
+*.csv
+*.tsv
+*.json
+!examples/**/*.csv
+!examples/**/*.json
+!tests/**/*.csv
+!tests/**/*.json
+
+# Neo4j database files
+neo4j/data/
+neo4j/logs/
+
+# Credentials
+**/credentials.json
+**/secrets.json
+**/token.json
+
+# Memory system persistence
+data/memory/
+
+# Generated molecule files
+*.mol
+*.inchi
+*.smiles
+!examples/**/*.mol
+!examples/**/*.inchi
+!examples/**/*.smiles
+!tests/**/*.mol
+!tests/**/*.inchi
+!tests/**/*.smiles
+
+public/
