@@ -1,0 +1,232 @@
+/* 
+ * Hegel Spectra Components Styling
+ */
+
+/* Spectrum Viewer Container */
+.spectrum_viewer_container {
+  position: relative;
+  margin-bottom: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+  padding-bottom: 40px;
+}
+
+/* Loading Indicator */
+.spectrum_loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 15px 20px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.spectrum_loading .loading_spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid #3498db;
+  border-radius: 50%;
+  margin-right: 10px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Error Message */
+.spectrum_error {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 15px 20px;
+  border-radius: 5px;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* SVG and Spectrum Visualization */
+.spectrum_svg {
+  display: block;
+  border-radius: 3px;
+  margin: 0 auto;
+}
+
+/* Tooltip Styling */
+.tooltip rect {
+  opacity: 0.9;
+}
+
+.tooltip text {
+  font-size: 12px;
+}
+
+/* Spectrum Controls */
+.spectrum_controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  padding: 8px 15px;
+  background-color: #f5f5f5;
+  border-top: 1px solid #e0e0e0;
+}
+
+.spectrum_control_btn {
+  padding: 4px 10px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 12px;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.spectrum_control_btn:hover {
+  background-color: #e9ecef;
+}
+
+.spectrum_control_btn.active {
+  background-color: #4a90e2;
+  color: white;
+  border-color: #4a90e2;
+}
+
+.spectrum_metadata {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.metadata_item {
+  font-size: 12px;
+  color: #555;
+}
+
+/* Chromatogram Styling */
+.chromatogram_container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.chromatogram_header {
+  padding: 10px 15px;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chromatogram_title {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.chromatogram_controls {
+  display: flex;
+  gap: 10px;
+}
+
+.chromatogram_svg {
+  width: 100%;
+  height: 200px;
+  background-color: white;
+}
+
+/* Grid line styling */
+.grid line {
+  stroke: #e0e0e0;
+  stroke-opacity: 0.7;
+  shape-rendering: crispEdges;
+}
+
+/* Peak highlighting */
+.peak-hitbox:hover {
+  cursor: pointer;
+}
+
+/* Spectrum Comparison View */
+.spectrum_comparison {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.spectrum_comparison_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.spectrum_comparison_header h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.spectrum_comparison_controls {
+  display: flex;
+  gap: 10px;
+}
+
+.spectrum_comparison_viewers {
+  display: flex;
+  gap: 15px;
+}
+
+.spectrum_viewer_column {
+  width: 50%;
+}
+
+.spectrum_viewer_label {
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .spectrum_comparison_viewers {
+    flex-direction: column;
+  }
+  
+  .spectrum_viewer_column {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  .spectrum_controls {
+    flex-wrap: wrap;
+  }
+  
+  .spectrum_metadata {
+    margin-left: 0;
+    margin-top: 8px;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+} 
