@@ -11,6 +11,7 @@ use serde::{Serialize, Deserialize};
 use std::collections::{HashMap, HashSet};
 
 use crate::processing::Molecule;
+use crate::HegelError;
 
 /// Initialize the graph module
 pub fn initialize() -> Result<()> {
@@ -361,5 +362,157 @@ impl NetworkBuilder {
     /// Build the network and return it
     pub fn build(self) -> MoleculeNetwork {
         self.network
+    }
+}
+
+// Graph module for Neo4j database interactions
+// Handles molecular relationship data storage and retrieval
+
+/// Graph database client for Neo4j interactions
+pub struct GraphDbClient {
+    url: String,
+    username: String,
+    password: String,
+    // In a real implementation, this would contain a neo4j driver instance
+}
+
+impl GraphDbClient {
+    /// Create a new GraphDbClient
+    pub fn new(url: &str, username: &str, password: &str) -> Self {
+        GraphDbClient {
+            url: url.to_string(),
+            username: username.to_string(),
+            password: password.to_string(),
+        }
+    }
+    
+    /// Initialize the database connection
+    pub fn connect(&self) -> Result<(), HegelError> {
+        // In a real implementation, this would connect to Neo4j
+        // Simulating successful connection
+        Ok(())
+    }
+    
+    /// Create a molecule node in the graph database
+    pub fn create_molecule(&self, molecule: &Molecule) -> Result<(), HegelError> {
+        // This would create a Cypher query to insert the molecule
+        let _cypher = format!(
+            "CREATE (m:Molecule {{id: '{}', name: '{}', formula: '{}', confidence: {}}}) RETURN m",
+            molecule.id, molecule.name, molecule.formula, molecule.confidence_score
+        );
+        
+        // In a real implementation, this would execute the Cypher query
+        // against the Neo4j database
+        Ok(())
+    }
+    
+    /// Retrieve a molecule by ID
+    pub fn get_molecule(&self, id: &str) -> Result<Option<Molecule>, HegelError> {
+        // This would create a Cypher query to retrieve the molecule
+        let _cypher = format!(
+            "MATCH (m:Molecule {{id: '{}'}}) RETURN m", id
+        );
+        
+        // For demonstration, return a mock molecule
+        if id == "mock-id" {
+            let mut molecule = Molecule::new(
+                id.to_string(), 
+                "Mock Molecule".to_string(),
+                "C6H12O6".to_string()
+            );
+            molecule.confidence_score = 0.85;
+            return Ok(Some(molecule));
+        }
+        
+        // In a real implementation, this would execute the query and parse results
+        Ok(None)
+    }
+    
+    /// Create a relationship between two molecules
+    pub fn create_relationship(
+        &self, 
+        from_id: &str, 
+        to_id: &str, 
+        relationship_type: &str,
+        properties: HashMap<String, String>,
+    ) -> Result<(), HegelError> {
+        // Build property string for Cypher query
+        let props: Vec<String> = properties
+            .iter()
+            .map(|(k, v)| format!("{}: '{}'", k, v))
+            .collect();
+        
+        let props_str = if props.is_empty() {
+            String::new()
+        } else {
+            format!(" {{{}}}", props.join(", "))
+        };
+        
+        // Create Cypher query
+        let _cypher = format!(
+            "MATCH (a:Molecule {{id: '{}'}}), (b:Molecule {{id: '{}'}}) 
+             CREATE (a)-[r:{}{}]->(b) RETURN r",
+            from_id, to_id, relationship_type, props_str
+        );
+        
+        // In a real implementation, this would execute the query
+        Ok(())
+    }
+    
+    /// Find molecules in the same pathway
+    pub fn find_molecules_in_pathway(&self, pathway_id: &str) -> Result<Vec<Molecule>, HegelError> {
+        // This would create a Cypher query to find molecules in a pathway
+        let _cypher = format!(
+            "MATCH (p:Pathway {{id: '{}'}})<-[:PART_OF]-(r:Reaction)<-[:PARTICIPATES_IN]-(m:Molecule) 
+             RETURN DISTINCT m",
+            pathway_id
+        );
+        
+        // For demonstration, return mock molecules
+        if pathway_id == "mock-pathway" {
+            let mut molecules = Vec::new();
+            
+            let mut mol1 = Molecule::new(
+                "mol-1".to_string(),
+                "Glucose".to_string(),
+                "C6H12O6".to_string()
+            );
+            mol1.confidence_score = 0.92;
+            molecules.push(mol1);
+            
+            let mut mol2 = Molecule::new(
+                "mol-2".to_string(),
+                "Pyruvate".to_string(),
+                "C3H4O3".to_string()
+            );
+            mol2.confidence_score = 0.88;
+            molecules.push(mol2);
+            
+            return Ok(molecules);
+        }
+        
+        // In a real implementation, this would execute the query and parse results
+        Ok(Vec::new())
+    }
+    
+    /// Calculate pathway coherence score for a molecule
+    pub fn calculate_pathway_coherence(&self, molecule_id: &str) -> Result<f64, HegelError> {
+        // This would create a Cypher query to calculate pathway coherence
+        let _cypher = format!(
+            "MATCH (m:Molecule {{id: '{}'}})-[:PARTICIPATES_IN]->(r:Reaction)-[:PART_OF]->(p:Pathway)
+             WITH p, count(r) as reaction_count
+             MATCH (p)<-[:PART_OF]-(r:Reaction)
+             WITH p, reaction_count, count(r) as total_reactions
+             RETURN p.id, reaction_count, total_reactions",
+            molecule_id
+        );
+        
+        // For demonstration, return a mock coherence score
+        if molecule_id.starts_with("mol-") {
+            return Ok(0.75);
+        }
+        
+        // In a real implementation, this would execute the query and calculate coherence
+        Ok(0.0)
     }
 }

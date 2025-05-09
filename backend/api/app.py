@@ -8,6 +8,7 @@ from neo4j import AsyncGraphDatabase
 from .routes import molecules
 from .routes import visualization
 from .services.molecule_network import MoleculeNetworkBuilder, molecule_network
+from .routes import experiments, auth
 
 # Load environment variables
 load_dotenv()
@@ -21,8 +22,8 @@ logger = logging.getLogger(__name__)
 
 # Initialize FastAPI app
 app = FastAPI(
-    title="Hegel Molecular Identity Platform API",
-    description="API for accessing and interacting with the Hegel molecular identity validation platform",
+    title="Hegel API",
+    description="API for Hegel - Evidence Rectification Framework for Biological Molecules",
     version="0.1.0",
 )
 
@@ -38,6 +39,8 @@ app.add_middleware(
 # Include routers
 app.include_router(molecules.router)
 app.include_router(visualization.router)
+app.include_router(experiments.router)
+app.include_router(auth.router)
 
 # Initialize Neo4j connection
 @app.on_event("startup")
@@ -81,12 +84,11 @@ async def health_check():
     """Basic health check endpoint."""
     return {"status": "healthy", "db_connected": molecule_network is not None}
 
-@app.get("/")
+@app.get("/", tags=["status"])
 async def root():
-    """Root endpoint with API information."""
+    """Root endpoint to check API status"""
     return {
-        "api": "Hegel Molecular Identity Platform",
-        "version": "0.1.0",
-        "status": "running",
-        "docs": "/docs",
+        "status": "operational",
+        "message": "Welcome to Hegel API - Evidence Rectification Framework for Biological Molecules",
+        "version": "0.1.0"
     } 

@@ -1,0 +1,77 @@
+#!/bin/bash
+set -e
+
+# Pre-commit hook for Hegel
+# Runs linting and formatting checks before allowing a commit
+
+echo "Running pre-commit checks..."
+
+# Get staged Python files
+STAGED_PY_FILES=$(git diff --cached --name-only --diff-filter=ACM | grep -E '\.py$' || true)
+STAGED_JS_FILES=$(git diff --cached --name-only --diff-filter=ACM | grep -E '\.(js|jsx|ts|tsx)$' || true)
+
+# Python code checks
+if [ -n "$STAGED_PY_FILES" ]; then
+    echo "Checking Python files..."
+    
+    # Check for virtual environment
+    if [ -d "backend/venv" ]; then
+        source backend/venv/bin/activate
+    elif [ -d "venv" ]; then
+        source venv/bin/activate
+    fi
+    
+    # Run Black formatter
+    if command -v black &> /dev/null; then
+        echo "Running Black formatter..."
+        black $STAGED_PY_FILES || { echo "Black formatter failed. Please fix the issues and try again."; exit 1; }
+    else
+        echo "Warning: Black formatter not found. Skipping Python formatting checks."
+    fi
+    
+    # Run flake8
+    if command -v flake8 &> /dev/null; then
+        echo "Running flake8 linter..."
+        flake8 $STAGED_PY_FILES || { echo "Flake8 linter failed. Please fix the issues and try again."; exit 1; }
+    else
+        echo "Warning: flake8 not found. Skipping Python linting checks."
+    fi
+    
+    # Deactivate virtual environment if activated
+    if command -v deactivate &> /dev/null; then
+        deactivate
+    fi
+fi
+
+# JavaScript/TypeScript code checks
+if [ -n "$STAGED_JS_FILES" ]; then
+    echo "Checking JavaScript/TypeScript files..."
+    
+    # Check for yarn
+    if command -v yarn &> /dev/null && [ -d "frontend" ]; then
+        cd frontend
+        
+        # Run ESLint
+        if [ -f "node_modules/.bin/eslint" ]; then
+            echo "Running ESLint..."
+            yarn eslint $STAGED_JS_FILES || { echo "ESLint failed. Please fix the issues and try again."; exit 1; }
+        else
+            echo "Warning: ESLint not found. Skipping JavaScript/TypeScript linting checks."
+        fi
+        
+        # Run Prettier
+        if [ -f "node_modules/.bin/prettier" ]; then
+            echo "Running Prettier..."
+            yarn prettier --check $STAGED_JS_FILES || { echo "Prettier check failed. Please fix the issues and try again."; exit 1; }
+        else
+            echo "Warning: Prettier not found. Skipping JavaScript/TypeScript formatting checks."
+        fi
+        
+        cd ..
+    else
+        echo "Warning: yarn or frontend directory not found. Skipping JavaScript/TypeScript checks."
+    fi
+fi
+
+echo "Pre-commit checks passed!"
+exit 0 

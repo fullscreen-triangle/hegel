@@ -13,6 +13,9 @@ pub mod evidence;
 pub mod genomics;
 pub mod mass_spec;
 pub mod rectifier;
+pub mod spectral;
+pub mod sequence;
+pub mod structural;
 
 /// Initialize the processing module
 pub fn initialize() -> Result<()> {
@@ -228,4 +231,80 @@ fn generate_id(smiles: &str) -> String {
     let hash = hasher.finish();
     
     format!("mol-{:016x}", hash)
+}
+
+/// Processes spectral data and generates evidence
+pub fn process_spectral_data(
+    spectral_data: &str,
+    reference_data: &str,
+) -> Result<MolecularEvidence, HegelError> {
+    let similarity = spectral::calculate_spectral_similarity(spectral_data, reference_data)?;
+    
+    Ok(MolecularEvidence {
+        source: "spectral_analysis".to_string(),
+        confidence: similarity,
+        data_type: EvidenceType::Spectral,
+        value: format!("Spectral similarity: {:.4}", similarity),
+    })
+}
+
+/// Processes sequence data and generates evidence through alignment
+pub fn process_sequence_data(
+    sequence: &str,
+    reference_sequence: &str,
+) -> Result<MolecularEvidence, HegelError> {
+    let alignment_score = sequence::align_sequences(sequence, reference_sequence)?;
+    let normalized_score = sequence::normalize_alignment_score(alignment_score, sequence.len());
+    
+    Ok(MolecularEvidence {
+        source: "sequence_alignment".to_string(),
+        confidence: normalized_score,
+        data_type: EvidenceType::Sequence,
+        value: format!("Sequence alignment score: {:.4}", normalized_score),
+    })
+}
+
+/// Processes structural data and generates evidence through structural comparison
+pub fn process_structural_data(
+    structure: &str,
+    reference_structure: &str,
+) -> Result<MolecularEvidence, HegelError> {
+    let similarity = structural::calculate_structural_similarity(structure, reference_structure)?;
+    
+    Ok(MolecularEvidence {
+        source: "structural_comparison".to_string(),
+        confidence: similarity,
+        data_type: EvidenceType::Structural,
+        value: format!("Structural similarity: {:.4}", similarity),
+    })
+}
+
+/// Processes pathway data and generates evidence based on pathway membership
+pub fn process_pathway_data(
+    molecule_id: &str,
+    pathway_data: &str,
+) -> Result<MolecularEvidence, HegelError> {
+    // In a real implementation, this would query the graph database
+    // to determine pathway membership and calculate confidence
+    let confidence = 0.85; // Placeholder for actual calculation
+    
+    Ok(MolecularEvidence {
+        source: "pathway_analysis".to_string(),
+        confidence,
+        data_type: EvidenceType::Pathway,
+        value: format!("Pathway membership confidence: {:.4}", confidence),
+    })
+}
+
+/// Integrates multiple pieces of evidence to produce a final confidence score
+pub fn integrate_evidence(evidences: &[MolecularEvidence]) -> f64 {
+    if evidences.is_empty() {
+        return 0.0;
+    }
+    
+    // Simple weighted average for demonstration
+    let total_weight = evidences.len() as f64;
+    let sum: f64 = evidences.iter().map(|e| e.confidence).sum();
+    
+    sum / total_weight
 }

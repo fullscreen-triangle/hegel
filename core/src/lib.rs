@@ -5,6 +5,8 @@
 
 use anyhow::Result;
 use log::{info, warn, error, debug};
+use std::error::Error;
+use std::fmt;
 
 pub mod processing;
 pub mod graph;
@@ -33,26 +35,126 @@ pub fn initialize() -> Result<()> {
     Ok(())
 }
 
-/// Error types for the Hegel core engine
-#[derive(Debug, thiserror::Error)]
+/// Custom error type for the Hegel core library
+#[derive(Debug)]
 pub enum HegelError {
-    #[error("Invalid molecule: {0}")]
-    InvalidMolecule(String),
+    ComputationError(String),
+    DataError(String),
+    ConfigError(String),
+    IoError(String),
+}
+
+impl fmt::Display for HegelError {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        match self {
+            HegelError::ComputationError(msg) => write!(f, "Computation error: {}", msg),
+            HegelError::DataError(msg) => write!(f, "Data error: {}", msg),
+            HegelError::ConfigError(msg) => write!(f, "Configuration error: {}", msg),
+            HegelError::IoError(msg) => write!(f, "I/O error: {}", msg),
+        }
+    }
+}
+
+impl Error for HegelError {}
+
+impl From<std::io::Error> for HegelError {
+    fn from(error: std::io::Error) -> Self {
+        HegelError::IoError(error.to_string())
+    }
+}
+
+/// Core data structures for molecular evidence
+pub struct MolecularEvidence {
+    pub source: String,
+    pub confidence: f64,
+    pub data_type: EvidenceType,
+    pub value: String,
+}
+
+pub enum EvidenceType {
+    Spectral,
+    Sequence,
+    Structural,
+    Pathway,
+    Literature,
+}
+
+/// Confidence calculator for evidence integration
+pub struct ConfidenceCalculator {
+    prior_probability: f64,
+    evidence_weights: std::collections::HashMap<String, f64>,
+}
+
+impl ConfidenceCalculator {
+    pub fn new(prior: f64) -> Self {
+        ConfidenceCalculator {
+            prior_probability: prior,
+            evidence_weights: std::collections::HashMap::new(),
+        }
+    }
+
+    pub fn add_evidence_weight(&mut self, source: String, weight: f64) {
+        self.evidence_weights.insert(source, weight);
+    }
+
+    pub fn calculate_confidence(&self, evidences: &[MolecularEvidence]) -> f64 {
+        let mut posterior = self.prior_probability;
+        
+        for evidence in evidences {
+            let weight = self.evidence_weights.get(&evidence.source).unwrap_or(&1.0);
+            let evidence_contribution = evidence.confidence * weight;
+            
+            // Simplified Bayesian update (in practice, would use proper Bayesian formula)
+            posterior = (posterior * evidence_contribution) / 
+                       (posterior * evidence_contribution + (1.0 - posterior) * (1.0 - evidence_contribution));
+        }
+        
+        posterior
+    }
+}
+
+/// Molecule representation
+pub struct Molecule {
+    pub id: String,
+    pub name: String,
+    pub formula: String,
+    pub smiles: Option<String>,
+    pub inchi: Option<String>,
+    pub evidences: Vec<MolecularEvidence>,
+    pub confidence_score: f64,
+}
+
+impl Molecule {
+    pub fn new(id: String, name: String, formula: String) -> Self {
+        Molecule {
+            id,
+            name,
+            formula,
+            smiles: None,
+            inchi: None,
+            evidences: Vec::new(),
+            confidence_score: 0.0,
+        }
+    }
     
-    #[error("Processing error: {0}")]
-    ProcessingError(String),
+    pub fn add_evidence(&mut self, evidence: MolecularEvidence) {
+        self.evidences.push(evidence);
+    }
     
-    #[error("Graph error: {0}")]
-    GraphError(String),
+    pub fn update_confidence(&mut self, calculator: &ConfidenceCalculator) {
+        self.confidence_score = calculator.calculate_confidence(&self.evidences);
+    }
+}
+
+/// Public API for the core library
+pub fn rectify_molecule_identity(molecule: &mut Molecule, calculator: &ConfidenceCalculator) -> Result<(), HegelError> {
+    // Update confidence based on current evidence
+    molecule.update_confidence(calculator);
     
-    #[error("IO error: {0}")]
-    IOError(#[from] std::io::Error),
+    // In a real implementation, this would apply more sophisticated algorithms
+    // for evidence rectification based on the confidence score
     
-    #[error("Serialization error: {0}")]
-    SerializationError(#[from] serde_json::Error),
-    
-    #[error("Unknown error: {0}")]
-    Unknown(String),
+    Ok(())
 }
 
 /// Module for Python FFI

@@ -6,6 +6,10 @@
 
 use anyhow::Result;
 use log::{info, debug};
+use crate::HegelError;
+use crate::Molecule;
+use crate::MolecularEvidence;
+use std::collections::HashMap;
 
 pub mod molecule_processor;
 pub mod decision;
@@ -186,4 +190,164 @@ fn calculate_confidence(sources: usize, properties: &serde_json::Value) -> f64 {
     
     // Combine confidence scores, capping at 1.0
     f64::min(source_confidence + property_confidence, 1.0)
+}
+
+// Metacognition module for AI-guided evidence rectification
+// Handles reasoning about conflicting evidence and generating explanations
+
+/// Metacognitive system for evidence rectification
+pub struct MetacognitiveSystem {
+    llm_endpoint: String,
+    confidence_threshold: f64,
+    reasoning_templates: HashMap<String, String>,
+}
+
+impl MetacognitiveSystem {
+    /// Create a new MetacognitiveSystem
+    pub fn new(llm_endpoint: &str, confidence_threshold: f64) -> Self {
+        let mut system = MetacognitiveSystem {
+            llm_endpoint: llm_endpoint.to_string(),
+            confidence_threshold,
+            reasoning_templates: HashMap::new(),
+        };
+        
+        // Initialize reasoning templates
+        system.initialize_templates();
+        
+        system
+    }
+    
+    /// Initialize reasoning templates for different evidence types
+    fn initialize_templates(&mut self) {
+        // Template for spectral evidence conflict
+        self.reasoning_templates.insert(
+            "spectral_conflict".to_string(),
+            "Given the following spectral evidence:\n\n{evidence}\n\nReason about the conflicting identifications:".to_string()
+        );
+        
+        // Template for sequence evidence conflict
+        self.reasoning_templates.insert(
+            "sequence_conflict".to_string(),
+            "Given the following sequence evidence:\n\n{evidence}\n\nReason about the conflicting identifications:".to_string()
+        );
+        
+        // Template for pathway evidence conflict
+        self.reasoning_templates.insert(
+            "pathway_conflict".to_string(),
+            "Given the following pathway evidence:\n\n{evidence}\n\nReason about whether this molecule is part of the pathway:".to_string()
+        );
+        
+        // Template for multi-evidence integration
+        self.reasoning_templates.insert(
+            "evidence_integration".to_string(),
+            "Integrate the following evidence sources:\n\n{evidence}\n\nProvide a justified conclusion about the molecule's identity:".to_string()
+        );
+    }
+    
+    /// Evaluate confidence in molecule identification
+    pub fn evaluate_confidence(&self, molecule: &Molecule) -> bool {
+        molecule.confidence_score >= self.confidence_threshold
+    }
+    
+    /// Detect conflicts in evidence
+    pub fn detect_conflicts(&self, evidences: &[MolecularEvidence]) -> Vec<(usize, usize)> {
+        let mut conflicts = Vec::new();
+        
+        // For each pair of evidences, check if they conflict
+        for i in 0..evidences.len() {
+            for j in (i+1)..evidences.len() {
+                if self.is_conflicting(&evidences[i], &evidences[j]) {
+                    conflicts.push((i, j));
+                }
+            }
+        }
+        
+        conflicts
+    }
+    
+    /// Check if two pieces of evidence conflict
+    fn is_conflicting(&self, evidence1: &MolecularEvidence, evidence2: &MolecularEvidence) -> bool {
+        // In a real implementation, this would have sophisticated logic
+        // For demonstration, we'll use a simple threshold
+        let confidence_diff = (evidence1.confidence - evidence2.confidence).abs();
+        confidence_diff > 0.3
+    }
+    
+    /// Rectify conflicting evidence using LLM
+    pub fn rectify_conflicts(
+        &self,
+        molecule: &mut Molecule,
+        conflicts: &[(usize, usize)],
+    ) -> Result<(), HegelError> {
+        if conflicts.is_empty() {
+            return Ok(());
+        }
+        
+        // For each conflict, apply reasoning
+        for &(i, j) in conflicts {
+            if i < molecule.evidences.len() && j < molecule.evidences.len() {
+                self.resolve_conflict(molecule, i, j)?;
+            }
+        }
+        
+        Ok(())
+    }
+    
+    /// Resolve a specific conflict between two pieces of evidence
+    fn resolve_conflict(
+        &self,
+        molecule: &mut Molecule,
+        evidence1_idx: usize,
+        evidence2_idx: usize,
+    ) -> Result<(), HegelError> {
+        // In a real implementation, this would:
+        // 1. Format evidence for LLM input
+        // 2. Call the LLM with appropriate prompting
+        // 3. Parse the response to update confidence scores
+        
+        // For demonstration, adjust confidence of the lower-confidence evidence
+        if evidence1_idx < molecule.evidences.len() && evidence2_idx < molecule.evidences.len() {
+            if molecule.evidences[evidence1_idx].confidence < molecule.evidences[evidence2_idx].confidence {
+                molecule.evidences[evidence1_idx].confidence *= 0.8;
+            } else {
+                molecule.evidences[evidence2_idx].confidence *= 0.8;
+            }
+        }
+        
+        Ok(())
+    }
+    
+    /// Generate explanation for evidence rectification
+    pub fn generate_explanation(&self, molecule: &Molecule) -> Result<String, HegelError> {
+        // Format evidence for explanation template
+        let evidence_str = molecule.evidences.iter()
+            .map(|e| format!("- {}: {} (confidence: {:.2})", e.source, e.value, e.confidence))
+            .collect::<Vec<String>>()
+            .join("\n");
+        
+        // Create prompt from template
+        let template = self.reasoning_templates.get("evidence_integration")
+            .ok_or_else(|| HegelError::ComputationError("Template not found".to_string()))?;
+        
+        let prompt = template.replace("{evidence}", &evidence_str);
+        
+        // In a real implementation, this would call the LLM
+        // For demonstration, return a mock explanation
+        let explanation = format!(
+            "Based on analysis of the evidence for {}, the molecule is identified with {:.2}% confidence. \
+             The most reliable evidence comes from {}.", 
+            molecule.name, 
+            molecule.confidence_score * 100.0,
+            self.get_strongest_evidence(molecule).unwrap_or("unknown source")
+        );
+        
+        Ok(explanation)
+    }
+    
+    /// Get the strongest evidence source
+    fn get_strongest_evidence(&self, molecule: &Molecule) -> Option<String> {
+        molecule.evidences.iter()
+            .max_by(|a, b| a.confidence.partial_cmp(&b.confidence).unwrap())
+            .map(|e| e.source.clone())
+    }
 }

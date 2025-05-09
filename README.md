@@ -67,6 +67,16 @@ The LLM component doesn't merely generate outputs, but is designed to reason thr
 
 ## Architecture Components
 
+The Hegel framework consists of several key components:
+
+1. **Core Computing Engine**: High-performance computational engine for processing and analyzing molecular data.
+2. **Backend (Python/FastAPI)**: API implementation for data processing and analysis.
+3. **Metacognitive AI System**: AI-guided evidence rectification using LLM integration.
+4. **Graph Database**: Neo4j database for storing molecular relationship data (reactome, interactome).
+5. **Frontend (React)**: Interactive user interface for visualizing and interacting with molecular data.
+6. **Authentication System**: Role-based JWT authentication for secure access control.
+7. **Deployment Pipeline**: Containerized deployment with Docker and Nginx for production environments.
+
 ### 1. Computational Core Engine
 
 The computational engine applies algorithms for:
@@ -124,6 +134,33 @@ The visualization system renders:
 - **Evidence comparison views** for side-by-side evaluation of conflicting data
 - **Rectification workflow interfaces** guiding users through the evidence rectification process
 
+### 6. Authentication System
+
+The authentication system provides secure access control with the following features:
+
+- **JWT Token-based Authentication**: Stateless authentication using JSON Web Tokens
+- **Role-based Access Control**: Three user roles with different permission levels:
+  - Admin: Full system access including user management
+  - Researcher: Can create, manage, and analyze molecular evidence
+  - Viewer: Read-only access to visualization and results
+- **Secure Password Handling**: Passwords are hashed using bcrypt with proper salting
+- **Token Expiration and Refresh**: Security measures to limit token lifetime
+- **Protected API Endpoints**: Middleware-based route protection for sensitive operations
+
+### 7. Deployment Pipeline
+
+The deployment system enables reliable production deployment with:
+
+- **Docker Containerization**: All services (frontend, backend, database, LLM) are containerized
+- **Nginx Reverse Proxy**: Production-grade web server with:
+  - HTTPS support with SSL/TLS certificates
+  - Request routing to appropriate services
+  - Rate limiting for API protection
+  - Caching for improved performance
+- **Environment-specific Configurations**: Development and production environments with appropriate settings
+- **Automated Deployment Scripts**: Streamlined deployment process with setup script
+- **Health Monitoring**: Endpoints for system health checking
+
 ## Technical Implementation Details
 
 ### Computational Framework: RDKit
@@ -161,6 +198,33 @@ WHERE r2 IN reactions
 RETURN m2, count(r2) AS reaction_count
 ORDER BY reaction_count DESC
 ```
+
+### Authentication Framework
+
+Hegel implements a secure authentication system using:
+
+- **FastAPI OAuth2 with Password flow**: Industry-standard authentication flow
+- **PyJWT**: For token generation and validation
+- **Passlib with bcrypt**: For secure password hashing
+- **Role-based middleware**: For fine-grained access control
+
+User management is provided through RESTful endpoints:
+- `/auth/login`: For authenticating users and obtaining tokens
+- `/auth/register`: For adding new users to the system (admin only)
+- `/auth/users/me`: For retrieving current user information
+- `/auth/users`: For managing user accounts (admin only)
+
+### Deployment Architecture
+
+The production deployment architecture features:
+
+- **Docker Compose**: Orchestration of multiple containers
+- **Nginx**: As reverse proxy and SSL termination
+- **Volume mounting**: For persistent data and logs
+- **Environment variables**: For configuration management
+- **Health checks**: For monitoring service status
+
+The deployment system supports both development and production environments with appropriate configurations for each.
 
 ### Visualization Technology
 
@@ -219,6 +283,47 @@ The pathway analysis system:
    - Identifying unlikely molecular identifications based on pathway context
    - Suggesting alternative identifications based on pathway gaps
 
+### Authentication System
+
+The authentication system provides secure access to the platform with:
+
+1. **User management**:
+   - User registration with role assignment
+   - Profile management and password reset
+   - Organization-based grouping
+
+2. **Security features**:
+   - JWT token-based authentication
+   - Password hashing with bcrypt
+   - Token expiration and refresh
+   - Role-based access control
+
+3. **API protection**:
+   - Required authentication for sensitive operations
+   - Role-based endpoint restrictions
+   - Rate limiting to prevent abuse
+
+### Deployment System
+
+The deployment system ensures reliable operation in various environments:
+
+1. **Development mode**:
+   - Hot reloading for rapid development
+   - Debug-friendly configurations
+   - Local environment setup script
+
+2. **Production mode**:
+   - Docker containerization of all services
+   - Nginx reverse proxy with SSL/TLS
+   - Optimized configurations for performance
+   - Resource allocation management
+
+3. **Operations support**:
+   - Health check endpoints
+   - Structured logging
+   - Container orchestration
+   - Automated deployment scripts
+
 ### Confidence Metrics System
 
 The confidence quantification system provides:
@@ -256,15 +361,30 @@ The confidence quantification system provides:
    cd hegel
    ```
 
-2. Start the services:
+2. Run the setup script:
    ```bash
-   docker-compose up -d
+   chmod +x scripts/*.sh
+   ./scripts/setup.sh
    ```
 
-3. Access the application:
+3. Start the development environment:
+   ```bash
+   ./scripts/dev.sh
+   ```
+
+4. Access the application:
    - Frontend: http://localhost:3000
    - Neo4j Browser: http://localhost:7474 (username: neo4j, password: password)
    - API Documentation: http://localhost:8080/docs
+
+### Development Scripts
+
+The project includes several useful scripts in the `scripts` directory:
+
+- `setup.sh` - Prepares the development environment by installing dependencies, setting up virtual environments, and creating necessary configuration files
+- `dev.sh` - Starts all services in development mode with hot reloading
+- `stop.sh` - Properly stops all running services
+- `deploy.sh` - Deploys the application in production mode
 
 ### Manual Setup (Development)
 
@@ -303,6 +423,28 @@ The confidence quantification system provides:
    ```bash
    yarn dev
    ```
+
+### Production Deployment
+
+To deploy the application in production:
+
+1. Configure environment variables:
+   ```bash
+   # Set production values in .env file
+   NEO4J_PASSWORD=your_secure_password
+   JWT_SECRET_KEY=your_secure_jwt_secret
+   DOMAIN=your-domain.com
+   ```
+
+2. Run the deployment script:
+   ```bash
+   ./scripts/deploy.sh
+   ```
+
+3. Access the application:
+   - Frontend: https://your-domain.com
+   - API: https://your-domain.com/api
+   - API Documentation: https://your-domain.com/api/docs
 
 ## Research Applications
 
