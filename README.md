@@ -357,7 +357,7 @@ The confidence quantification system provides:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/hegel.git
+   git clone https://github.com/fullscreen-triangle/hegel.git
    cd hegel
    ```
 
@@ -483,4 +483,4 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## Acknowledgments
 
-This project is supported by [Research Organization Name] and builds upon numerous open-source scientific computing tools that make this research possible.
+This project is supported by Fullscreen Triangle and builds upon numerous open-source scientific computing tools that make this research possible.
