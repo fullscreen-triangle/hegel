@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Documentation - Hegel Fuzzy-Bayesian Framework</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="hegel-logo.svg" alt="Hegel Logo" class="logo">
+                <span class="nav-title">Hegel</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#fuzzy-endpoints">Fuzzy Evidence</a></li>
+                <li><a href="#traditional-endpoints">Traditional API</a></li>
+                <li><a href="#authentication">Authentication</a></li>
+                <li><a href="#examples">Examples</a></li>
+                <li><a href="https://github.com/fullscreen-triangle/hegel" target="_blank">GitHub</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero" style="min-height: 50vh;">
+        <div class="hero-content">
+            <h1 class="hero-title">API Documentation</h1>
+            <p class="hero-subtitle">Comprehensive API Reference for Fuzzy-Bayesian Evidence Processing</p>
+            <p class="hero-description">
+                Complete documentation for all endpoints, including the revolutionary fuzzy evidence integration system
+            </p>
+        </div>
+    </header>
+
+    <main>
+        <section id="overview" class="section">
+            <div class="container">
+                <h2 class="section-title">API Overview</h2>
+                <div class="api-overview">
+                    <div class="api-info">
+                        <h3>Base URL</h3>
+                        <div class="code-block">
+                            <pre><code class="language-text">https://api.hegel-bio.org/v1</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="api-info">
+                        <h3>Authentication</h3>
+                        <p>All API requests require JWT authentication via the Authorization header:</p>
+                        <div class="code-block">
+                            <pre><code class="language-text">Authorization: Bearer &lt;your-jwt-token&gt;</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="api-info">
+                        <h3>Content Type</h3>
+                        <div class="code-block">
+                            <pre><code class="language-text">Content-Type: application/json</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="fuzzy-endpoints" class="section bg-light">
+            <div class="container">
+                <h2 class="section-title">Fuzzy Evidence Endpoints</h2>
+                <p class="section-description">
+                    Revolutionary fuzzy-Bayesian evidence processing endpoints that handle continuous, uncertain biological evidence
+                </p>
+                
+                <div class="endpoints-list">
+                    <div class="endpoint">
+                        <div class="endpoint-header">
+                            <span class="method post">POST</span>
+                            <span class="path">/fuzzy-evidence/integrate</span>
+                        </div>
+                        <div class="endpoint-description">
+                            <h3>Hybrid Fuzzy-Bayesian Evidence Integration</h3>
+                            <p>Integrates multiple evidence sources using fuzzy logic and Bayesian inference for enhanced confidence scoring.</p>
+                        </div>
+                        
+                        <div class="endpoint-details">
+                            <h4>Request Body</h4>
+                            <div class="code-block">
+                                <pre><code class="language-json">{
+  "molecule_id": "MOL_12345",
+  "evidence_list": [
+    {
+      "type": "spectral_match",
+      "value": 0.85,
+      "uncertainty": 0.1,
+      "timestamp": "2024-01-15T10:30:00Z",
+      "source": "NIST_MS_DB",
+      "metadata": {
+        "spectrum_quality": "high",
+        "peak_count": 45
+      }
+    },
+    {
+      "type": "sequence_similarity",
+      "value": 0.72,
+      "uncertainty": 0.15,
+      "timestamp": "2024-01-15T10:25:00Z",
+      "source": "UniProt",
+      "metadata": {
+        "alignment_score": 156.2,
+        "e_value": 1e-12
+      }
+    }
+  ],
+  "fuzzy_config": {
+    "membership_functions": {
+      "spectral_match": "gaussian",
+      "sequence_similarity": "triangular"
+    },
+    "linguistic_variables": ["very_low", "low", "medium", "high", "very_high"],
+    "temporal_decay_enabled": true,
+    "decay_half_life_days": 30
+  },
+  "objective_weights": {
+    "maximize_confidence": 0.4,
+    "minimize_uncertainty": 0.3,
+    "maximize_consistency": 0.2,
+    "minimize_conflicts": 0.1
+  }
+}</code></pre>
+                            </div>
+                            
+                            <h4>Response</h4>
+                            <div class="code-block">
+                                <pre><code class="language-json">{
+  "molecule_id": "MOL_12345",
+  "fuzzy_confidence": {
+    "overall_score": 0.78,
+    "uncertainty_bounds": [0.65, 0.91],
+    "linguistic_assessment": {
+      "very_low": 0.0,
+      "low": 0.1,
+      "medium": 0.2,
+      "high": 0.6,
+      "very_high": 0.1
+    }
+  },
+  "evidence_analysis": {
+    "individual_contributions": [
+      {
+        "type": "spectral_match",
+        "fuzzy_membership": {
+          "high": 0.8,
+          "very_high": 0.2
+        },
+        "temporal_weight": 0.95,
+        "contribution_score": 0.42
+      },
+      {
+        "type": "sequence_similarity",
+        "fuzzy_membership": {
+          "medium": 0.4,
+          "high": 0.6
+        },
+        "temporal_weight": 0.96,
+        "contribution_score": 0.36
+      }
+    ],
+    "evidence_relationships": [
+      {
+        "source": "spectral_match",
+        "target": "sequence_similarity",
+        "relationship_type": "supports",
+        "strength": 0.65
+      }
+    ]
+  },
+  "network_statistics": {
+    "coherence_score": 0.82,
+    "consistency_score": 0.75,
+    "conflict_score": 0.12
+  },
+  "objective_optimization": {
+    "total_score": 0.78,
+    "component_scores": {
+      "maximize_confidence": 0.81,
+      "minimize_uncertainty": 0.73,
+      "maximize_consistency": 0.75,
+      "minimize_conflicts": 0.88
+    }
+  },
+  "processing_metadata": {
+    "processing_time_ms": 245,
+    "algorithm_version": "1.0.0",
+    "timestamp": "2024-01-15T10:35:00Z"
+  }
+}</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="endpoint">
+                        <div class="endpoint-header">
+                            <span class="method get">GET</span>
+                            <span class="path">/fuzzy-evidence/network-stats/{molecule_id}</span>
+                        </div>
+                        <div class="endpoint-description">
+                            <h3>Evidence Network Statistics</h3>
+                            <p>Retrieves comprehensive statistics about the evidence network for a specific molecule.</p>
+                        </div>
+                        
+                        <div class="endpoint-details">
+                            <h4>Path Parameters</h4>
+                            <div class="parameter">
+                                <strong>molecule_id</strong> (string): Unique identifier for the molecule
+                            </div>
+                            
+                            <h4>Query Parameters</h4>
+                            <div class="parameter">
+                                <strong>include_predictions</strong> (boolean, optional): Include missing evidence predictions (default: false)
+                            </div>
+                            <div class="parameter">
+                                <strong>temporal_window_days</strong> (integer, optional): Time window for evidence analysis (default: 90)
+                            </div>
+                            
+                            <h4>Response</h4>
+                            <div class="code-block">
+                                <pre><code class="language-json">{
+  "molecule_id": "MOL_12345",
+  "network_topology": {
+    "node_count": 8,
+    "edge_count": 12,
+    "density": 0.43,
+    "clustering_coefficient": 0.67
+  },
+  "evidence_distribution": {
+    "very_low": 1,
+    "low": 2,
+    "medium": 3,
+    "high": 2,
+    "very_high": 0
+  },
+  "relationship_analysis": {
+    "supports": 7,
+    "contradicts": 1,
+    "corroborates": 3,
+    "implies": 1,
+    "requires": 0
+  },
+  "temporal_analysis": {
+    "evidence_age_distribution": {
+      "0-7_days": 3,
+      "8-30_days": 4,
+      "31-90_days": 1
+    },
+    "decay_impact": 0.15
+  },
+  "coherence_metrics": {
+    "overall_coherence": 0.82,
+    "consistency_score": 0.75,
+    "conflict_resolution_score": 0.88
+  }
+}</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="endpoint">
+                        <div class="endpoint-header">
+                            <span class="method post">POST</span>
+                            <span class="path">/fuzzy-evidence/predict-evidence/{molecule_id}</span>
+                        </div>
+                        <div class="endpoint-description">
+                            <h3>Missing Evidence Prediction</h3>
+                            <p>Predicts likely evidence values based on network structure and partial observations.</p>
+                        </div>
+                        
+                        <div class="endpoint-details">
+                            <h4>Request Body</h4>
+                            <div class="code-block">
+                                <pre><code class="language-json">{
+  "evidence_types_to_predict": [
+    "pathway_membership",
+    "protein_interaction"
+  ],
+  "prediction_config": {
+    "confidence_threshold": 0.6,
+    "max_predictions": 10,
+    "include_uncertainty": true,
+    "network_learning_enabled": true
+  },
+  "context_evidence": [
+    {
+      "type": "spectral_match",
+      "value": 0.85,
+      "uncertainty": 0.1
+    }
+  ]
+}</code></pre>
+                            </div>
+                            
+                            <h4>Response</h4>
+                            <div class="code-block">
+                                <pre><code class="language-json">{
+  "molecule_id": "MOL_12345",
+  "predictions": [
+    {
+      "evidence_type": "pathway_membership",
+      "predicted_value": 0.73,
+      "uncertainty_bounds": [0.58, 0.88],
+      "confidence": 0.82,
+      "supporting_evidence": [
+        {
+          "type": "spectral_match",
+          "influence_weight": 0.65
+        }
+      ],
+      "network_path": [
+        "spectral_match",
+        "sequence_similarity",
+        "pathway_membership"
+      ]
+    }
+  ],
+  "network_learning": {
+    "new_relationships_discovered": 2,
+    "relationship_strength_updates": 5,
+    "network_coherence_improvement": 0.08
+  },
+  "prediction_metadata": {
+    "algorithm": "fuzzy_network_inference",
+    "processing_time_ms": 156,
+    "timestamp": "2024-01-15T10:40:00Z"
+  }
+}</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="endpoint">
+                        <div class="endpoint-header">
+                            <span class="method post">POST</span>
+                            <span class="path">/fuzzy-evidence/optimize-objective/{molecule_id}</span>
+                        </div>
+                        <div class="endpoint-description">
+                            <h3>Multi-Criteria Objective Optimization</h3>
+                            <p>Optimizes evidence assessment using weighted objective functions for different research priorities.</p>
+                        </div>
+                        
+                        <div class="endpoint-details">
+                            <h4>Request Body</h4>
+                            <div class="code-block">
+                                <pre><code class="language-json">{
+  "optimization_config": {
+    "objectives": {
+      "maximize_confidence": 0.3,
+      "minimize_uncertainty": 0.25,
+      "maximize_consistency": 0.2,
+      "minimize_conflicts": 0.15,
+      "maximize_network_coherence": 0.1
+    },
+    "constraints": {
+      "min_evidence_count": 3,
+      "max_uncertainty": 0.3,
+      "temporal_window_days": 60
+    },
+    "optimization_method": "pareto_frontier"
+  },
+  "evidence_weights": {
+    "spectral_match": 1.0,
+    "sequence_similarity": 0.8,
+    "pathway_membership": 0.6
+  }
+}</code></pre>
+                            </div>
+                            
+                            <h4>Response</h4>
+                            <div class="code-block">
+                                <pre><code class="language-json">{
+  "molecule_id": "MOL_12345",
+  "optimization_results": {
+    "optimal_score": 0.84,
+    "pareto_solutions": [
+      {
+        "solution_id": 1,
+        "total_score": 0.84,
+        "objective_scores": {
+          "maximize_confidence": 0.89,
+          "minimize_uncertainty": 0.76,
+          "maximize_consistency": 0.82,
+          "minimize_conflicts": 0.91,
+          "maximize_network_coherence": 0.78
+        },
+        "evidence_configuration": {
+          "active_evidence_types": ["spectral_match", "sequence_similarity"],
+          "fuzzy_parameters": {
+            "membership_function": "gaussian",
+            "linguistic_granularity": 5
+          }
+        }
+      }
+    ]
+  },
+  "sensitivity_analysis": {
+    "objective_sensitivity": {
+      "maximize_confidence": 0.23,
+      "minimize_uncertainty": 0.18
+    },
+    "parameter_sensitivity": {
+      "temporal_decay": 0.12,
+      "membership_function_type": 0.08
+    }
+  },
+  "recommendations": [
+    {
+      "type": "evidence_collection",
+      "description": "Collect additional pathway membership evidence to improve consistency",
+      "priority": "high",
+      "expected_improvement": 0.15
+    }
+  ]
+}</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="endpoint">
+                        <div class="endpoint-header">
+                            <span class="method get">GET</span>
+                            <span class="path">/fuzzy-evidence/linguistic-variables</span>
+                        </div>
+                        <div class="endpoint-description">
+                            <h3>Available Fuzzy Linguistic Variables</h3>
+                            <p>Returns the available fuzzy linguistic variables and their membership function definitions.</p>
+                        </div>
+                        
+                        <div class="endpoint-details">
+                            <h4>Response</h4>
+                            <div class="code-block">
+                                <pre><code class="language-json">{
+  "linguistic_variables": {
+    "confidence_levels": [
+      {
+        "name": "very_low",
+        "range": [0.0, 0.2],
+        "membership_function": {
+          "type": "triangular",
+          "parameters": [0.0, 0.0, 0.2]
+        },
+        "description": "Minimal evidence support"
+      },
+      {
+        "name": "low",
+        "range": [0.1, 0.4],
+        "membership_function": {
+          "type": "triangular",
+          "parameters": [0.1, 0.25, 0.4]
+        },
+        "description": "Weak evidence support"
+      },
+      {
+        "name": "medium",
+        "range": [0.3, 0.7],
+        "membership_function": {
+          "type": "triangular",
+          "parameters": [0.3, 0.5, 0.7]
+        },
+        "description": "Moderate evidence support"
+      },
+      {
+        "name": "high",
+        "range": [0.6, 0.9],
+        "membership_function": {
+          "type": "triangular",
+          "parameters": [0.6, 0.75, 0.9]
+        },
+        "description": "Strong evidence support"
+      },
+      {
+        "name": "very_high",
+        "range": [0.8, 1.0],
+        "membership_function": {
+          "type": "triangular",
+          "parameters": [0.8, 1.0, 1.0]
+        },
+        "description": "Maximal evidence support"
+      }
+    ]
+  },
+  "membership_function_types": [
+    {
+      "name": "triangular",
+      "parameters": ["left", "center", "right"],
+      "description": "Triangular membership function for evidence with clear boundaries"
+    },
+    {
+      "name": "gaussian",
+      "parameters": ["center", "sigma"],
+      "description": "Gaussian membership function for normally distributed evidence"
+    },
+    {
+      "name": "trapezoidal",
+      "parameters": ["left", "left_top", "right_top", "right"],
+      "description": "Trapezoidal membership function for evidence with plateau regions"
+    },
+    {
+      "name": "sigmoid",
+      "parameters": ["center", "slope"],
+      "description": "Sigmoid membership function for evidence with sharp transitions"
+    }
+  ],
+  "fuzzy_operations": {
+    "t_norms": ["minimum", "product", "lukasiewicz"],
+    "s_norms": ["maximum", "probabilistic", "lukasiewicz"],
+    "defuzzification": ["centroid", "weighted_average", "maximum"]
+  }
+}</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="traditional-endpoints" class="section">
+            <div class="container">
+                <h2 class="section-title">Traditional Evidence Endpoints</h2>
+                <p class="section-description">
+                    Standard molecular evidence processing endpoints for compatibility with existing systems
+                </p>
+                
+                <div class="endpoints-list">
+                    <div class="endpoint">
+                        <div class="endpoint-header">
+                            <span class="method post">POST</span>
+                            <span class="path">/molecules/analyze</span>
+                        </div>
+                        <div class="endpoint-description">
+                            <h3>Molecule Analysis</h3>
+                            <p>Analyzes molecular evidence using traditional binary classification methods.</p>
+                        </div>
+                    </div>
+
+                    <div class="endpoint">
+                        <div class="endpoint-header">
+                            <span class="method get">GET</span>
+                            <span class="path">/molecules/{molecule_id}</span>
+                        </div>
+                        <div class="endpoint-description">
+                            <h3>Get Molecule Information</h3>
+                            <p>Retrieves detailed information about a specific molecule.</p>
+                        </div>
+                    </div>
+
+                    <div class="endpoint">
+                        <div class="endpoint-header">
+                            <span class="method post">POST</span>
+                            <span class="path">/evidence/rectify</span>
+                        </div>
+                        <div class="endpoint-description">
+                            <h3>Evidence Rectification</h3>
+                            <p>Rectifies conflicting evidence using traditional algorithmic approaches.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="authentication" class="section bg-light">
+            <div class="container">
+                <h2 class="section-title">Authentication</h2>
+                
+                <div class="auth-endpoints">
+                    <div class="endpoint">
+                        <div class="endpoint-header">
+                            <span class="method post">POST</span>
+                            <span class="path">/auth/login</span>
+                        </div>
+                        <div class="endpoint-description">
+                            <h3>User Login</h3>
+                            <p>Authenticate user and obtain JWT token.</p>
+                        </div>
+                        
+                        <div class="endpoint-details">
+                            <h4>Request Body</h4>
+                            <div class="code-block">
+                                <pre><code class="language-json">{
+  "username": "researcher@university.edu",
+  "password": "secure_password"
+}</code></pre>
+                            </div>
+                            
+                            <h4>Response</h4>
+                            <div class="code-block">
+                                <pre><code class="language-json">{
+  "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+  "token_type": "bearer",
+  "expires_in": 3600,
+  "user": {
+    "id": "user_123",
+    "username": "researcher@university.edu",
+    "role": "researcher",
+    "organization": "University Research Lab"
+  }
+}</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="endpoint">
+                        <div class="endpoint-header">
+                            <span class="method get">GET</span>
+                            <span class="path">/auth/users/me</span>
+                        </div>
+                        <div class="endpoint-description">
+                            <h3>Get Current User</h3>
+                            <p>Retrieve information about the currently authenticated user.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="examples" class="section">
+            <div class="container">
+                <h2 class="section-title">Usage Examples</h2>
+                
+                <div class="examples-grid">
+                    <div class="example">
+                        <h3>Python Example - Fuzzy Evidence Integration</h3>
+                        <div class="code-block">
+                            <pre><code class="language-python">import requests
+import json
+
+# Authentication
+auth_response = requests.post('https://api.hegel-bio.org/v1/auth/login', 
+    json={
+        'username': 'researcher@university.edu',
+        'password': 'secure_password'
+    })
+token = auth_response.json()['access_token']
+
+# Fuzzy evidence integration
+evidence_data = {
+    "molecule_id": "MOL_12345",
+    "evidence_list": [
+        {
+            "type": "spectral_match",
+            "value": 0.85,
+            "uncertainty": 0.1,
+            "timestamp": "2024-01-15T10:30:00Z",
+            "source": "NIST_MS_DB"
+        },
+        {
+            "type": "sequence_similarity", 
+            "value": 0.72,
+            "uncertainty": 0.15,
+            "timestamp": "2024-01-15T10:25:00Z",
+            "source": "UniProt"
+        }
+    ],
+    "fuzzy_config": {
+        "membership_functions": {
+            "spectral_match": "gaussian",
+            "sequence_similarity": "triangular"
+        },
+        "temporal_decay_enabled": True,
+        "decay_half_life_days": 30
+    }
+}
+
+response = requests.post(
+    'https://api.hegel-bio.org/v1/fuzzy-evidence/integrate',
+    headers={'Authorization': f'Bearer {token}'},
+    json=evidence_data
+)
+
+result = response.json()
+print(f"Fuzzy confidence: {result['fuzzy_confidence']['overall_score']}")
+print(f"Uncertainty bounds: {result['fuzzy_confidence']['uncertainty_bounds']}")
+</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="example">
+                        <h3>JavaScript Example - Evidence Network Analysis</h3>
+                        <div class="code-block">
+                            <pre><code class="language-javascript">// Authentication
+const authResponse = await fetch('https://api.hegel-bio.org/v1/auth/login', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+        username: 'researcher@university.edu',
+        password: 'secure_password'
+    })
+});
+const { access_token } = await authResponse.json();
+
+// Get network statistics
+const networkResponse = await fetch(
+    'https://api.hegel-bio.org/v1/fuzzy-evidence/network-stats/MOL_12345?include_predictions=true',
+    {
+        headers: { 'Authorization': `Bearer ${access_token}` }
+    }
+);
+
+const networkStats = await networkResponse.json();
+console.log('Network coherence:', networkStats.coherence_metrics.overall_coherence);
+console.log('Evidence distribution:', networkStats.evidence_distribution);
+
+// Predict missing evidence
+const predictionData = {
+    evidence_types_to_predict: ['pathway_membership'],
+    prediction_config: {
+        confidence_threshold: 0.6,
+        network_learning_enabled: true
+    }
+};
+
+const predictionResponse = await fetch(
+    'https://api.hegel-bio.org/v1/fuzzy-evidence/predict-evidence/MOL_12345',
+    {
+        method: 'POST',
+        headers: {
+            'Authorization': `Bearer ${access_token}`,
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(predictionData)
+    }
+);
+
+const predictions = await predictionResponse.json();
+console.log('Predicted evidence:', predictions.predictions);
+</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="example">
+                        <h3>cURL Example - Objective Optimization</h3>
+                        <div class="code-block">
+                            <pre><code class="language-bash"># Login and get token
+TOKEN=$(curl -s -X POST https://api.hegel-bio.org/v1/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{"username":"researcher@university.edu","password":"secure_password"}' \
+  | jq -r '.access_token')
+
+# Optimize objectives
+curl -X POST https://api.hegel-bio.org/v1/fuzzy-evidence/optimize-objective/MOL_12345 \
+  -H "Authorization: Bearer $TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "optimization_config": {
+      "objectives": {
+        "maximize_confidence": 0.4,
+        "minimize_uncertainty": 0.3,
+        "maximize_consistency": 0.2,
+        "minimize_conflicts": 0.1
+      },
+      "optimization_method": "pareto_frontier"
+    }
+  }' | jq '.optimization_results.optimal_score'
+</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="error-handling" class="section bg-light">
+            <div class="container">
+                <h2 class="section-title">Error Handling</h2>
+                
+                <div class="error-codes">
+                    <div class="error-code">
+                        <h3>HTTP Status Codes</h3>
+                        <div class="status-list">
+                            <div class="status-item">
+                                <span class="status-code success">200</span>
+                                <span class="status-description">OK - Request successful</span>
+                            </div>
+                            <div class="status-item">
+                                <span class="status-code success">201</span>
+                                <span class="status-description">Created - Resource created successfully</span>
+                            </div>
+                            <div class="status-item">
+                                <span class="status-code error">400</span>
+                                <span class="status-description">Bad Request - Invalid request parameters</span>
+                            </div>
+                            <div class="status-item">
+                                <span class="status-code error">401</span>
+                                <span class="status-description">Unauthorized - Authentication required</span>
+                            </div>
+                            <div class="status-item">
+                                <span class="status-code error">403</span>
+                                <span class="status-description">Forbidden - Insufficient permissions</span>
+                            </div>
+                            <div class="status-item">
+                                <span class="status-code error">404</span>
+                                <span class="status-description">Not Found - Resource not found</span>
+                            </div>
+                            <div class="status-item">
+                                <span class="status-code error">422</span>
+                                <span class="status-description">Unprocessable Entity - Validation error</span>
+                            </div>
+                            <div class="status-item">
+                                <span class="status-code error">500</span>
+                                <span class="status-description">Internal Server Error - Server error</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="error-format">
+                        <h3>Error Response Format</h3>
+                        <div class="code-block">
+                            <pre><code class="language-json">{
+  "error": {
+    "code": "FUZZY_EVIDENCE_VALIDATION_ERROR",
+    "message": "Invalid membership function parameters",
+    "details": {
+      "field": "fuzzy_config.membership_functions.spectral_match",
+      "issue": "Gaussian function requires 'center' and 'sigma' parameters",
+      "provided": {"type": "gaussian", "parameters": [0.5]}
+    },
+    "timestamp": "2024-01-15T10:35:00Z",
+    "request_id": "req_abc123"
+  }
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Hegel</h4>
+                    <p>Revolutionary fuzzy-Bayesian evidence framework for biological molecules</p>
+                    <div class="social-links">
+                        <a href="https://github.com/fullscreen-triangle/hegel" target="_blank">GitHub</a>
+                        <a href="mailto:contact@hegel-bio.org">Contact</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Documentation</h4>
+                    <ul>
+                        <li><a href="api-docs.html">API Reference</a></li>
+                        <li><a href="scientific-background.html">Scientific Background</a></li>
+                        <li><a href="architecture.html">Architecture</a></li>
+                        <li><a href="examples.html">Examples</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Research</h4>
+                    <ul>
+                        <li><a href="index.html#research">Applications</a></li>
+                        <li><a href="publications.html">Publications</a></li>
+                        <li><a href="case-studies.html">Case Studies</a></li>
+                        <li><a href="benchmarks.html">Benchmarks</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Community</h4>
+                    <ul>
+                        <li><a href="contributing.html">Contributing</a></li>
+                        <li><a href="https://github.com/fullscreen-triangle/hegel/issues" target="_blank">Issues</a></li>
+                        <li><a href="https://github.com/fullscreen-triangle/hegel/discussions" target="_blank">Discussions</a></li>
+                        <li><a href="changelog.html">Changelog</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Fullscreen Triangle. Licensed under MIT License.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="script.js"></script>
+    
+    <style>
+        .api-overview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .api-info {
+            background: var(--bg-primary);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .api-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .section-description {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .endpoints-list {
+            display: grid;
+            gap: 3rem;
+        }
+        
+        .endpoint {
+            background: var(--bg-primary);
+            border-radius: 16px;
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+        
+        .endpoint-header {
+            background: var(--bg-secondary);
+            padding: 1.5rem 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .method {
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+        
+        .method.get {
+            background: #10b981;
+            color: white;
+        }
+        
+        .method.post {
+            background: #3b82f6;
+            color: white;
+        }
+        
+        .method.put {
+            background: #f59e0b;
+            color: white;
+        }
+        
+        .method.delete {
+            background: #ef4444;
+            color: white;
+        }
+        
+        .path {
+            font-family: 'Courier New', monospace;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        
+        .endpoint-description {
+            padding: 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .endpoint-description h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .endpoint-details {
+            padding: 2rem;
+        }
+        
+        .endpoint-details h4 {
+            color: var(--primary-color);
+            margin: 2rem 0 1rem 0;
+        }
+        
+        .endpoint-details h4:first-child {
+            margin-top: 0;
+        }
+        
+        .parameter {
+            background: var(--bg-secondary);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 0.5rem;
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .examples-grid {
+            display: grid;
+            gap: 3rem;
+        }
+        
+        .example {
+            background: var(--bg-primary);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .example h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .error-codes {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        
+        .error-code, .error-format {
+            background: var(--bg-primary);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .error-code h3, .error-format h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+        
+        .status-list {
+            display: grid;
+            gap: 0.5rem;
+        }
+        
+        .status-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.75rem;
+            background: var(--bg-secondary);
+            border-radius: var(--border-radius);
+        }
+        
+        .status-code {
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-weight: 600;
+            font-family: monospace;
+            min-width: 50px;
+            text-align: center;
+        }
+        
+        .status-code.success {
+            background: #10b981;
+            color: white;
+        }
+        
+        .status-code.error {
+            background: #ef4444;
+            color: white;
+        }
+        
+        .auth-endpoints {
+            display: grid;
+            gap: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .api-overview {
+                grid-template-columns: 1fr;
+            }
+            
+            .endpoint-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+            
+            .error-codes {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</body>
+</html> 

@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hegel - Fuzzy-Bayesian Evidence Framework for Biological Molecules</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="hegel-logo.svg" alt="Hegel Logo" class="logo">
+                <span class="nav-title">Hegel</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#federated-learning">Federated</a></li>
+                <li><a href="#fuzzy-system">Fuzzy-Bayesian</a></li>
+                <li><a href="#architecture">Architecture</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#documentation">Docs</a></li>
+                <li><a href="https://github.com/fullscreen-triangle/hegel" target="_blank">GitHub</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Hegel</h1>
+            <p class="hero-subtitle">Federated Fuzzy-Bayesian Evidence Framework for Biological Molecules</p>
+            <p class="hero-description">
+                Transforming molecular biology research through federated learning that enables collaborative 
+                evidence analysis across institutions without data sharing, treating biological evidence as 
+                the continuous, uncertain phenomenon it truly is—not binary classifications.
+            </p>
+            <div class="hero-buttons">
+                <a href="#fuzzy-system" class="btn btn-primary">Explore Innovation</a>
+                <a href="https://github.com/fullscreen-triangle/hegel" class="btn btn-secondary" target="_blank">View on GitHub</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="fuzzy-network-demo">
+                <div class="evidence-node high-confidence">
+                    <span>Spectral Match</span>
+                    <div class="confidence-bar">
+                        <div class="confidence-fill" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div class="evidence-node medium-confidence">
+                    <span>Sequence Similarity</span>
+                    <div class="confidence-bar">
+                        <div class="confidence-fill" style="width: 65%"></div>
+                    </div>
+                </div>
+                <div class="evidence-node low-confidence">
+                    <span>Pathway Context</span>
+                    <div class="confidence-bar">
+                        <div class="confidence-fill" style="width: 40%"></div>
+                    </div>
+                </div>
+                <div class="network-connections">
+                    <svg width="100%" height="100%">
+                        <line x1="20%" y1="30%" x2="50%" y2="50%" stroke="#4f46e5" stroke-width="2" opacity="0.6"/>
+                        <line x1="50%" y1="50%" x2="80%" y2="70%" stroke="#4f46e5" stroke-width="2" opacity="0.6"/>
+                        <line x1="20%" y1="30%" x2="80%" y2="70%" stroke="#4f46e5" stroke-width="1" opacity="0.3"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="overview" class="section">
+            <div class="container">
+                <h2 class="section-title">The Problem with Binary Evidence</h2>
+                <div class="problem-solution">
+                    <div class="problem-card">
+                        <h3>Traditional Approach</h3>
+                        <div class="binary-demo">
+                            <div class="binary-classification">
+                                <span class="binary-label">Evidence: 0.7</span>
+                                <div class="binary-arrow">→</div>
+                                <span class="binary-result">Classification: TRUE</span>
+                            </div>
+                            <div class="binary-classification">
+                                <span class="binary-label">Evidence: 0.4</span>
+                                <div class="binary-arrow">→</div>
+                                <span class="binary-result">Classification: FALSE</span>
+                            </div>
+                        </div>
+                        <p class="problem-text">
+                            Forces continuous biological evidence into binary classifications, 
+                            losing critical uncertainty information.
+                        </p>
+                    </div>
+                    <div class="solution-card">
+                        <h3>Hegel's Innovation</h3>
+                        <div class="fuzzy-demo">
+                            <div class="fuzzy-classification">
+                                <span class="fuzzy-label">Evidence: 0.7</span>
+                                <div class="fuzzy-memberships">
+                                    <div class="membership">Medium: 0.3</div>
+                                    <div class="membership">High: 0.7</div>
+                                </div>
+                            </div>
+                            <div class="fuzzy-classification">
+                                <span class="fuzzy-label">Evidence: 0.4</span>
+                                <div class="fuzzy-memberships">
+                                    <div class="membership">Low: 0.6</div>
+                                    <div class="membership">Medium: 0.4</div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="solution-text">
+                            Preserves the continuous nature of biological evidence with 
+                            fuzzy membership degrees and uncertainty quantification.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="federated-learning" class="section">
+            <div class="container">
+                <h2 class="section-title">Federated Evidence Collaboration</h2>
+                <div class="federated-overview">
+                    <div class="federated-problem">
+                        <h3>The Data Access Challenge</h3>
+                        <p>Most valuable biological evidence is distributed across institutions and often inaccessible due to:</p>
+                        <ul>
+                            <li>Privacy regulations (HIPAA, GDPR)</li>
+                            <li>Competitive concerns in pharmaceutical research</li>
+                            <li>Institutional data governance policies</li>
+                            <li>Technical barriers to data sharing</li>
+                        </ul>
+                    </div>
+                    <div class="federated-solution">
+                        <h3>Federated Learning Solution</h3>
+                        <p>Inspired by <a href="https://github.com/fullscreen-triangle/bloodhound" target="_blank">Bloodhound</a>, Hegel enables:</p>
+                        <ul>
+                            <li><strong>Local-First Processing</strong>: Data never leaves its source</li>
+                            <li><strong>Pattern-Only Sharing</strong>: Only learned insights are shared</li>
+                            <li><strong>Zero-Configuration</strong>: Automatic peer discovery and setup</li>
+                            <li><strong>Privacy-Preserving</strong>: Differential privacy and secure aggregation</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="federated-architecture">
+                    <h3>Federated Architecture</h3>
+                    <div class="institution-network">
+                        <div class="institution">
+                            <h4>Institution A</h4>
+                            <div class="local-data">Local Evidence (Private)</div>
+                            <div class="local-processing">Fuzzy-Bayesian Engine</div>
+                            <div class="pattern-extraction">Pattern Extraction</div>
+                        </div>
+                        <div class="institution">
+                            <h4>Institution B</h4>
+                            <div class="local-data">Local Evidence (Private)</div>
+                            <div class="local-processing">Fuzzy-Bayesian Engine</div>
+                            <div class="pattern-extraction">Pattern Extraction</div>
+                        </div>
+                        <div class="institution">
+                            <h4>Institution C</h4>
+                            <div class="local-data">Local Evidence (Private)</div>
+                            <div class="local-processing">Fuzzy-Bayesian Engine</div>
+                            <div class="pattern-extraction">Pattern Extraction</div>
+                        </div>
+                        <div class="federated-aggregation">
+                            <h4>Federated Aggregation</h4>
+                            <p>Patterns Only - No Raw Data</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="fuzzy-system" class="section bg-gradient">
+            <div class="container">
+                <h2 class="section-title">Hybrid Fuzzy-Bayesian Evidence System</h2>
+                <div class="system-overview">
+                    <div class="system-component">
+                        <div class="component-icon">🔬</div>
+                        <h3>Fuzzy Logic Framework</h3>
+                        <p>Continuous membership functions replace binary classifications</p>
+                        <ul>
+                            <li>Triangular, Gaussian, Trapezoidal, Sigmoid functions</li>
+                            <li>Linguistic variables: very_low → very_high</li>
+                            <li>T-norms and S-norms for evidence combination</li>
+                        </ul>
+                    </div>
+                    <div class="system-component">
+                        <div class="component-icon">🧠</div>
+                        <h3>Bayesian Networks</h3>
+                        <p>Probabilistic reasoning with fuzzy evidence integration</p>
+                        <ul>
+                            <li>Hybrid fuzzy-Bayesian inference</li>
+                            <li>Evidence relationship modeling</li>
+                            <li>Posterior probability calculation</li>
+                        </ul>
+                    </div>
+                    <div class="system-component">
+                        <div class="component-icon">🌐</div>
+                        <h3>Evidence Networks</h3>
+                        <p>Learn relationships and predict missing evidence</p>
+                        <ul>
+                            <li>Automatic relationship discovery</li>
+                            <li>Missing evidence prediction</li>
+                            <li>Network coherence optimization</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mathematical-foundation">
+                    <h3>Mathematical Foundation</h3>
+                    <div class="equation-container">
+                        <div class="equation">
+                            <span class="equation-label">Hybrid Fuzzy-Bayesian Inference:</span>
+                            <div class="equation-formula">
+                                P(identity|evidence) = ∫ μ(evidence) × P(evidence|identity) × P(identity) dμ
+                            </div>
+                        </div>
+                        <div class="equation-explanation">
+                            <p><strong>μ(evidence)</strong>: Fuzzy membership degree of evidence</p>
+                            <p><strong>P(evidence|identity)</strong>: Likelihood weighted by fuzzy confidence</p>
+                            <p><strong>P(identity)</strong>: Network-based priors from evidence relationships</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="architecture" class="section">
+            <div class="container">
+                <h2 class="section-title">System Architecture</h2>
+                <div class="architecture-diagram">
+                    <div class="arch-layer">
+                        <h3>Frontend Layer</h3>
+                        <div class="arch-components">
+                            <div class="arch-component react">React UI</div>
+                            <div class="arch-component viz">3D Visualization</div>
+                            <div class="arch-component network">Network Graphs</div>
+                        </div>
+                    </div>
+                    <div class="arch-layer">
+                        <h3>API Layer</h3>
+                        <div class="arch-components">
+                            <div class="arch-component api">FastAPI Backend</div>
+                            <div class="arch-component auth">JWT Auth</div>
+                            <div class="arch-component fuzzy">Fuzzy Endpoints</div>
+                        </div>
+                    </div>
+                    <div class="arch-layer">
+                        <h3>Core Engine</h3>
+                        <div class="arch-components">
+                            <div class="arch-component rust">Rust Core</div>
+                            <div class="arch-component fuzzy-logic">Fuzzy Logic</div>
+                            <div class="arch-component bayesian">Bayesian Networks</div>
+                        </div>
+                    </div>
+                    <div class="arch-layer">
+                        <h3>Data Layer</h3>
+                        <div class="arch-components">
+                            <div class="arch-component neo4j">Neo4j Graph DB</div>
+                            <div class="arch-component reactome">Reactome</div>
+                            <div class="arch-component interactome">Interactome</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="performance-metrics">
+                    <h3>Performance Advantages</h3>
+                    <div class="metrics-grid">
+                        <div class="metric">
+                            <div class="metric-value">10-100x</div>
+                            <div class="metric-label">Faster Processing</div>
+                            <div class="metric-description">Rust core vs Python</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">30-day</div>
+                            <div class="metric-label">Temporal Decay</div>
+                            <div class="metric-description">Evidence reliability modeling</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">Multi-threaded</div>
+                            <div class="metric-label">Parallel Processing</div>
+                            <div class="metric-description">SIMD optimizations</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">Zero-copy</div>
+                            <div class="metric-label">Memory Efficiency</div>
+                            <div class="metric-description">Optimized data handling</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="research" class="section bg-light">
+            <div class="container">
+                <h2 class="section-title">Research Applications</h2>
+                <div class="research-grid">
+                    <div class="research-card">
+                        <div class="research-icon">🧬</div>
+                        <h3>Proteomics</h3>
+                        <p>Continuous confidence scoring for protein identifications with temporal decay modeling for aging spectral libraries.</p>
+                        <ul>
+                            <li>Multi-dimensional uncertainty analysis</li>
+                            <li>Complex sample processing</li>
+                            <li>Spectral library management</li>
+                        </ul>
+                    </div>
+                    <div class="research-card">
+                        <div class="research-icon">⚗️</div>
+                        <h3>Metabolomics</h3>
+                        <p>Fuzzy structural similarity assessment with continuous membership in metabolic pathways.</p>
+                        <ul>
+                            <li>Uncertainty-aware biomarker discovery</li>
+                            <li>Pathway membership analysis</li>
+                            <li>Structural similarity scoring</li>
+                        </ul>
+                    </div>
+                    <div class="research-card">
+                        <div class="research-icon">🔬</div>
+                        <h3>Multi-omics Integration</h3>
+                        <p>Fuzzy evidence fusion across genomics, transcriptomics, and proteomics with coherent uncertainty propagation.</p>
+                        <ul>
+                            <li>Cross-platform evidence integration</li>
+                            <li>Missing data prediction</li>
+                            <li>Uncertainty propagation</li>
+                        </ul>
+                    </div>
+                    <div class="research-card">
+                        <div class="research-icon">🌐</div>
+                        <h3>Systems Biology</h3>
+                        <p>Evidence-based pathway reconstruction with network coherence optimization and uncertainty-aware modeling.</p>
+                        <ul>
+                            <li>Pathway reconstruction</li>
+                            <li>Network optimization</li>
+                            <li>Systems-level analysis</li>
+                        </ul>
+                    </div>
+                    <div class="research-card">
+                        <div class="research-icon">💊</div>
+                        <h3>Precision Medicine</h3>
+                        <p>Patient-specific evidence networks with uncertainty-aware biomarker validation and personalized treatment pathways.</p>
+                        <ul>
+                            <li>Personalized medicine</li>
+                            <li>Biomarker validation</li>
+                            <li>Treatment optimization</li>
+                        </ul>
+                    </div>
+                    <div class="research-card">
+                        <div class="research-icon">🧪</div>
+                        <h3>Drug Discovery</h3>
+                        <p>Target identification with confidence bounds and evidence-based drug-target interaction prediction.</p>
+                        <ul>
+                            <li>Target identification</li>
+                            <li>Drug-target interactions</li>
+                            <li>Compound screening</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="getting-started" class="section">
+            <div class="container">
+                <h2 class="section-title">Getting Started</h2>
+                <div class="getting-started-content">
+                    <div class="prerequisites">
+                        <h3>Prerequisites</h3>
+                        <div class="prereq-list">
+                            <div class="prereq-item">
+                                <div class="prereq-icon">🦀</div>
+                                <div class="prereq-details">
+                                    <strong>Rust 1.70+</strong>
+                                    <p>For core engine development</p>
+                                </div>
+                            </div>
+                            <div class="prereq-item">
+                                <div class="prereq-icon">🐍</div>
+                                <div class="prereq-details">
+                                    <strong>Python 3.8+</strong>
+                                    <p>For backend development</p>
+                                </div>
+                            </div>
+                            <div class="prereq-item">
+                                <div class="prereq-icon">📦</div>
+                                <div class="prereq-details">
+                                    <strong>Node.js 18+</strong>
+                                    <p>For frontend development</p>
+                                </div>
+                            </div>
+                            <div class="prereq-item">
+                                <div class="prereq-icon">🐳</div>
+                                <div class="prereq-details">
+                                    <strong>Docker</strong>
+                                    <p>For containerized deployment</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="installation-steps">
+                        <h3>Quick Start</h3>
+                        <div class="code-block">
+                            <pre><code class="language-bash"># Clone the repository
+git clone https://github.com/fullscreen-triangle/hegel.git
+cd hegel
+
+# Run setup script
+chmod +x scripts/*.sh
+./scripts/setup.sh
+
+# Start development environment
+./scripts/dev.sh
+
+# Access the application
+# Frontend: http://localhost:3000
+# API Docs: http://localhost:8080/docs
+# Neo4j Browser: http://localhost:7474</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="manual-setup">
+                        <h3>Manual Development Setup</h3>
+                        <div class="setup-tabs">
+                            <div class="tab-buttons">
+                                <button class="tab-button active" data-tab="rust">Rust Core</button>
+                                <button class="tab-button" data-tab="python">Python Backend</button>
+                                <button class="tab-button" data-tab="react">React Frontend</button>
+                            </div>
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="rust">
+                                    <div class="code-block">
+                                        <pre><code class="language-bash"># Navigate to core directory
+cd core
+
+# Build the Rust core engine
+cargo build --release
+
+# Run fuzzy-Bayesian tests
+cargo test
+
+# Development with hot reloading
+cargo watch -x check -x test</code></pre>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="python">
+                                    <div class="code-block">
+                                        <pre><code class="language-bash"># Navigate to backend directory
+cd backend
+
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run the API
+uvicorn app.main:app --reload</code></pre>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="react">
+                                    <div class="code-block">
+                                        <pre><code class="language-bash"># Navigate to frontend directory
+cd frontend
+
+# Install dependencies
+yarn install
+
+# Start development server
+yarn dev</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="documentation" class="section bg-gradient">
+            <div class="container">
+                <h2 class="section-title">Documentation & Resources</h2>
+                <div class="docs-grid">
+                    <div class="doc-card">
+                        <div class="doc-icon">📚</div>
+                        <h3>API Documentation</h3>
+                        <p>Comprehensive API reference with fuzzy evidence endpoints</p>
+                        <a href="api-docs.html" class="doc-link">View API Docs →</a>
+                    </div>
+                    <div class="doc-card">
+                        <div class="doc-icon">🔬</div>
+                        <h3>Scientific Background</h3>
+                        <p>Mathematical foundations of fuzzy-Bayesian evidence systems</p>
+                        <a href="scientific-background.html" class="doc-link">Learn More →</a>
+                    </div>
+                    <div class="doc-card">
+                        <div class="doc-icon">🏗️</div>
+                        <h3>Architecture Guide</h3>
+                        <p>Detailed system architecture and component interactions</p>
+                        <a href="architecture.html" class="doc-link">Explore Architecture →</a>
+                    </div>
+                    <div class="doc-card">
+                        <div class="doc-icon">🚀</div>
+                        <h3>Deployment Guide</h3>
+                        <p>Production deployment with Docker and Nginx</p>
+                        <a href="deployment.html" class="doc-link">Deploy Now →</a>
+                    </div>
+                    <div class="doc-card">
+                        <div class="doc-icon">🧪</div>
+                        <h3>Research Examples</h3>
+                        <p>Real-world applications and case studies</p>
+                        <a href="examples.html" class="doc-link">View Examples →</a>
+                    </div>
+                    <div class="doc-card">
+                        <div class="doc-icon">🤝</div>
+                        <h3>Contributing</h3>
+                        <p>Guidelines for contributing to the project</p>
+                        <a href="contributing.html" class="doc-link">Contribute →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Hegel</h4>
+                    <p>Revolutionary fuzzy-Bayesian evidence framework for biological molecules</p>
+                    <div class="social-links">
+                        <a href="https://github.com/fullscreen-triangle/hegel" target="_blank">GitHub</a>
+                        <a href="mailto:contact@hegel-bio.org">Contact</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Documentation</h4>
+                    <ul>
+                        <li><a href="api-docs.html">API Reference</a></li>
+                        <li><a href="scientific-background.html">Scientific Background</a></li>
+                        <li><a href="architecture.html">Architecture</a></li>
+                        <li><a href="examples.html">Examples</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Research</h4>
+                    <ul>
+                        <li><a href="#research">Applications</a></li>
+                        <li><a href="publications.html">Publications</a></li>
+                        <li><a href="case-studies.html">Case Studies</a></li>
+                        <li><a href="benchmarks.html">Benchmarks</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Community</h4>
+                    <ul>
+                        <li><a href="contributing.html">Contributing</a></li>
+                        <li><a href="https://github.com/fullscreen-triangle/hegel/issues" target="_blank">Issues</a></li>
+                        <li><a href="https://github.com/fullscreen-triangle/hegel/discussions" target="_blank">Discussions</a></li>
+                        <li><a href="changelog.html">Changelog</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Fullscreen Triangle. Licensed under MIT License.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 

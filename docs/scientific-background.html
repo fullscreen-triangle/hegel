@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Background - Hegel Fuzzy-Bayesian Framework</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="hegel-logo.svg" alt="Hegel Logo" class="logo">
+                <span class="nav-title">Hegel</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#mathematical-foundation">Mathematics</a></li>
+                <li><a href="#fuzzy-logic">Fuzzy Logic</a></li>
+                <li><a href="#bayesian-networks">Bayesian Networks</a></li>
+                <li><a href="#evidence-networks">Evidence Networks</a></li>
+                <li><a href="https://github.com/fullscreen-triangle/hegel" target="_blank">GitHub</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero" style="min-height: 60vh;">
+        <div class="hero-content">
+            <h1 class="hero-title">Scientific Background</h1>
+            <p class="hero-subtitle">Mathematical Foundations of Fuzzy-Bayesian Evidence Systems</p>
+            <p class="hero-description">
+                Understanding the theoretical framework that revolutionizes biological evidence processing
+            </p>
+        </div>
+    </header>
+
+    <main>
+        <section id="introduction" class="section">
+            <div class="container">
+                <h2 class="section-title">The Problem with Binary Evidence Classification</h2>
+                <div class="scientific-content">
+                    <div class="problem-statement">
+                        <h3>Traditional Approach Limitations</h3>
+                        <p>
+                            Traditional biological evidence systems treat inherently continuous phenomena as binary classifications. 
+                            This fundamental flaw leads to:
+                        </p>
+                        <ul class="limitation-list">
+                            <li><strong>Information Loss</strong>: Continuous evidence confidence reduced to binary true/false</li>
+                            <li><strong>Uncertainty Neglect</strong>: No representation of evidence uncertainty or reliability</li>
+                            <li><strong>Temporal Ignorance</strong>: Evidence treated as static, ignoring degradation over time</li>
+                            <li><strong>Relationship Blindness</strong>: Evidence treated independently, missing network effects</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="biological-reality">
+                        <h3>Biological Evidence Reality</h3>
+                        <p>
+                            Biological evidence exists on continuous spectra with inherent uncertainty:
+                        </p>
+                        <div class="evidence-examples">
+                            <div class="evidence-example">
+                                <h4>Spectral Matching</h4>
+                                <p>Mass spectrometry similarity scores range continuously from 0-1, with uncertainty based on spectral quality, noise levels, and database completeness.</p>
+                            </div>
+                            <div class="evidence-example">
+                                <h4>Sequence Similarity</h4>
+                                <p>Protein sequence alignments produce continuous similarity scores with statistical significance measures that reflect uncertainty.</p>
+                            </div>
+                            <div class="evidence-example">
+                                <h4>Pathway Membership</h4>
+                                <p>Molecules participate in pathways with varying degrees of certainty based on experimental validation and computational prediction.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="mathematical-foundation" class="section bg-light">
+            <div class="container">
+                <h2 class="section-title">Mathematical Foundation</h2>
+                <div class="mathematical-content">
+                    <div class="core-equation">
+                        <h3>Hybrid Fuzzy-Bayesian Inference</h3>
+                        <div class="equation-display">
+                            $$P(\text{identity}|\text{evidence}) = \int_{\mu} \mu(\text{evidence}) \times P(\text{evidence}|\text{identity}) \times P(\text{identity}) \, d\mu$$
+                        </div>
+                        <div class="equation-components">
+                            <div class="component">
+                                <strong>$\mu(\text{evidence})$</strong>: Fuzzy membership degree representing continuous confidence
+                            </div>
+                            <div class="component">
+                                <strong>$P(\text{evidence}|\text{identity})$</strong>: Likelihood function weighted by fuzzy confidence
+                            </div>
+                            <div class="component">
+                                <strong>$P(\text{identity})$</strong>: Prior probability incorporating network-based evidence relationships
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mathematical-components">
+                        <div class="math-component">
+                            <h4>Fuzzy Membership Functions</h4>
+                            <p>Evidence confidence represented through continuous membership functions:</p>
+                            
+                            <div class="membership-functions">
+                                <div class="function-type">
+                                    <h5>Triangular Function</h5>
+                                    <div class="equation-small">
+                                        $$\mu_{\text{tri}}(x) = \max\left(0, \min\left(\frac{x-a}{b-a}, \frac{c-x}{c-b}\right)\right)$$
+                                    </div>
+                                    <p>Used for evidence with clear boundaries (e.g., sequence similarity thresholds)</p>
+                                </div>
+                                
+                                <div class="function-type">
+                                    <h5>Gaussian Function</h5>
+                                    <div class="equation-small">
+                                        $$\mu_{\text{gauss}}(x) = e^{-\frac{(x-c)^2}{2\sigma^2}}$$
+                                    </div>
+                                    <p>Used for normally distributed evidence (e.g., spectral matching scores)</p>
+                                </div>
+                                
+                                <div class="function-type">
+                                    <h5>Sigmoid Function</h5>
+                                    <div class="equation-small">
+                                        $$\mu_{\text{sig}}(x) = \frac{1}{1 + e^{-k(x-c)}}$$
+                                    </div>
+                                    <p>Used for evidence with sharp transitions between confidence levels</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="math-component">
+                            <h4>Temporal Decay Modeling</h4>
+                            <p>Evidence reliability decreases over time following exponential decay:</p>
+                            <div class="equation-small">
+                                $$\mu_{\text{temporal}}(t) = \mu_0 \times e^{-\lambda t}$$
+                            </div>
+                            <p>Where $\lambda = \frac{\ln(2)}{30}$ for 30-day half-life decay</p>
+                        </div>
+
+                        <div class="math-component">
+                            <h4>Uncertainty Quantification</h4>
+                            <p>Confidence intervals calculated using fuzzy uncertainty propagation:</p>
+                            <div class="equation-small">
+                                $$\text{CI}(\alpha) = [\mu_{\alpha/2}, \mu_{1-\alpha/2}]$$
+                            </div>
+                            <p>Providing rigorous uncertainty bounds for all evidence assessments</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="fuzzy-logic" class="section">
+            <div class="container">
+                <h2 class="section-title">Fuzzy Logic Framework</h2>
+                <div class="fuzzy-content">
+                    <div class="linguistic-variables">
+                        <h3>Linguistic Variables</h3>
+                        <p>Evidence confidence expressed through linguistic terms with continuous membership degrees:</p>
+                        <div class="linguistic-terms">
+                            <div class="term">
+                                <div class="term-name">Very Low</div>
+                                <div class="term-range">[0.0, 0.2]</div>
+                                <div class="term-description">Minimal evidence support</div>
+                            </div>
+                            <div class="term">
+                                <div class="term-name">Low</div>
+                                <div class="term-range">[0.1, 0.4]</div>
+                                <div class="term-description">Weak evidence support</div>
+                            </div>
+                            <div class="term">
+                                <div class="term-name">Medium</div>
+                                <div class="term-range">[0.3, 0.7]</div>
+                                <div class="term-description">Moderate evidence support</div>
+                            </div>
+                            <div class="term">
+                                <div class="term-name">High</div>
+                                <div class="term-range">[0.6, 0.9]</div>
+                                <div class="term-description">Strong evidence support</div>
+                            </div>
+                            <div class="term">
+                                <div class="term-name">Very High</div>
+                                <div class="term-range">[0.8, 1.0]</div>
+                                <div class="term-description">Maximal evidence support</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="fuzzy-operations">
+                        <h3>Fuzzy Operations</h3>
+                        <div class="operations-grid">
+                            <div class="operation">
+                                <h4>T-norms (AND operations)</h4>
+                                <div class="operation-examples">
+                                    <div class="op-example">
+                                        <strong>Minimum:</strong> $T_{\min}(a,b) = \min(a,b)$
+                                    </div>
+                                    <div class="op-example">
+                                        <strong>Product:</strong> $T_{\text{prod}}(a,b) = a \times b$
+                                    </div>
+                                    <div class="op-example">
+                                        <strong>Łukasiewicz:</strong> $T_{\text{Łuk}}(a,b) = \max(0, a+b-1)$
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="operation">
+                                <h4>S-norms (OR operations)</h4>
+                                <div class="operation-examples">
+                                    <div class="op-example">
+                                        <strong>Maximum:</strong> $S_{\max}(a,b) = \max(a,b)$
+                                    </div>
+                                    <div class="op-example">
+                                        <strong>Probabilistic:</strong> $S_{\text{prob}}(a,b) = a+b-ab$
+                                    </div>
+                                    <div class="op-example">
+                                        <strong>Łukasiewicz:</strong> $S_{\text{Łuk}}(a,b) = \min(1, a+b)$
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="defuzzification">
+                        <h3>Defuzzification Methods</h3>
+                        <p>Converting fuzzy outputs to crisp values for decision making:</p>
+                        <div class="defuzz-methods">
+                            <div class="defuzz-method">
+                                <h4>Centroid Method</h4>
+                                <div class="equation-small">
+                                    $$x^* = \frac{\int x \mu(x) dx}{\int \mu(x) dx}$$
+                                </div>
+                                <p>Center of mass of the membership function</p>
+                            </div>
+                            <div class="defuzz-method">
+                                <h4>Weighted Average</h4>
+                                <div class="equation-small">
+                                    $$x^* = \frac{\sum_i w_i x_i}{\sum_i w_i}$$
+                                </div>
+                                <p>Weighted average of fuzzy set elements</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="bayesian-networks" class="section bg-gradient">
+            <div class="container">
+                <h2 class="section-title">Bayesian Network Integration</h2>
+                <div class="bayesian-content">
+                    <div class="network-structure">
+                        <h3>Fuzzy-Bayesian Network Architecture</h3>
+                        <p>
+                            Traditional Bayesian networks enhanced with fuzzy logic for continuous evidence processing:
+                        </p>
+                        <div class="network-components">
+                            <div class="network-component">
+                                <h4>Evidence Nodes</h4>
+                                <p>Represent individual pieces of evidence with fuzzy membership degrees rather than binary states</p>
+                                <div class="component-formula">
+                                    $$E_i = \{\mu_{\text{very\_low}}, \mu_{\text{low}}, \mu_{\text{medium}}, \mu_{\text{high}}, \mu_{\text{very\_high}}\}$$
+                                </div>
+                            </div>
+                            
+                            <div class="network-component">
+                                <h4>Relationship Edges</h4>
+                                <p>Model dependencies between evidence types using fuzzy conditional probabilities</p>
+                                <div class="component-formula">
+                                    $$P(E_j | E_i) = \int \mu(E_i) \times P_{\text{crisp}}(E_j | E_i) d\mu$$
+                                </div>
+                            </div>
+                            
+                            <div class="network-component">
+                                <h4>Identity Nodes</h4>
+                                <p>Molecular identity hypotheses with fuzzy confidence distributions</p>
+                                <div class="component-formula">
+                                    $$I = \{\mu_{\text{identity}_1}, \mu_{\text{identity}_2}, ..., \mu_{\text{identity}_n}\}$$
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="inference-process">
+                        <h3>Fuzzy-Bayesian Inference Process</h3>
+                        <div class="inference-steps">
+                            <div class="inference-step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4>Evidence Fuzzification</h4>
+                                    <p>Convert crisp evidence values to fuzzy membership degrees across linguistic variables</p>
+                                </div>
+                            </div>
+                            
+                            <div class="inference-step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4>Fuzzy Rule Application</h4>
+                                    <p>Apply fuzzy inference rules to propagate uncertainty through the network</p>
+                                </div>
+                            </div>
+                            
+                            <div class="inference-step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4>Bayesian Update</h4>
+                                    <p>Update posterior probabilities using fuzzy-weighted likelihood functions</p>
+                                </div>
+                            </div>
+                            
+                            <div class="inference-step">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <h4>Confidence Calculation</h4>
+                                    <p>Generate final confidence scores with uncertainty bounds</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="evidence-networks" class="section">
+            <div class="container">
+                <h2 class="section-title">Evidence Network Learning</h2>
+                <div class="network-learning-content">
+                    <div class="relationship-discovery">
+                        <h3>Automatic Relationship Discovery</h3>
+                        <p>
+                            The system automatically learns relationships between different evidence types using:
+                        </p>
+                        <div class="discovery-methods">
+                            <div class="discovery-method">
+                                <h4>Mutual Information Analysis</h4>
+                                <div class="equation-small">
+                                    $$I(E_i; E_j) = \sum_{e_i, e_j} P(e_i, e_j) \log \frac{P(e_i, e_j)}{P(e_i)P(e_j)}$$
+                                </div>
+                                <p>Measures statistical dependence between evidence types</p>
+                            </div>
+                            
+                            <div class="discovery-method">
+                                <h4>Fuzzy Correlation</h4>
+                                <div class="equation-small">
+                                    $$\rho_{\text{fuzzy}}(E_i, E_j) = \frac{\text{Cov}_{\text{fuzzy}}(E_i, E_j)}{\sigma_{\text{fuzzy}}(E_i) \sigma_{\text{fuzzy}}(E_j)}$$
+                                </div>
+                                <p>Correlation analysis adapted for fuzzy evidence values</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="missing-evidence-prediction">
+                        <h3>Missing Evidence Prediction</h3>
+                        <p>
+                            Predict likely evidence values based on network structure and partial observations:
+                        </p>
+                        <div class="prediction-algorithm">
+                            <h4>Network-Based Inference</h4>
+                            <div class="algorithm-steps">
+                                <div class="algo-step">
+                                    <strong>Step 1:</strong> Identify evidence network topology
+                                </div>
+                                <div class="algo-step">
+                                    <strong>Step 2:</strong> Calculate evidence propagation weights
+                                </div>
+                                <div class="algo-step">
+                                    <strong>Step 3:</strong> Apply fuzzy inference rules
+                                </div>
+                                <div class="algo-step">
+                                    <strong>Step 4:</strong> Generate prediction with uncertainty bounds
+                                </div>
+                            </div>
+                            <div class="prediction-formula">
+                                $$\hat{E}_{\text{missing}} = \sum_{i \in \text{neighbors}} w_i \times \mu(E_i) \times R(E_i, E_{\text{missing}})$$
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="network-coherence">
+                        <h3>Network Coherence Optimization</h3>
+                        <p>
+                            Ensure evidence networks maintain biological plausibility through coherence optimization:
+                        </p>
+                        <div class="coherence-metrics">
+                            <div class="coherence-metric">
+                                <h4>Consistency Score</h4>
+                                <div class="equation-small">
+                                    $$C_{\text{consistency}} = 1 - \frac{\sum_{i,j} |\mu(E_i) - \mu(E_j)| \times R(E_i, E_j)}{\sum_{i,j} R(E_i, E_j)}$$
+                                </div>
+                            </div>
+                            
+                            <div class="coherence-metric">
+                                <h4>Network Density</h4>
+                                <div class="equation-small">
+                                    $$D_{\text{network}} = \frac{2 \times |\text{edges}|}{|\text{nodes}| \times (|\text{nodes}| - 1)}$$
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="objective-functions" class="section bg-light">
+            <div class="container">
+                <h2 class="section-title">Granular Objective Functions</h2>
+                <div class="objectives-content">
+                    <p class="objectives-intro">
+                        Multi-criteria optimization using weighted objective functions for different research priorities:
+                    </p>
+                    
+                    <div class="objectives-grid">
+                        <div class="objective">
+                            <h3>Maximize Confidence</h3>
+                            <div class="objective-formula">
+                                $$f_{\text{confidence}} = \sum_{i} w_i \times \max(\mu_{\text{high}}(E_i), \mu_{\text{very\_high}}(E_i))$$
+                            </div>
+                            <p>Optimizes for highest evidence confidence across all evidence types</p>
+                        </div>
+                        
+                        <div class="objective">
+                            <h3>Minimize Uncertainty</h3>
+                            <div class="objective-formula">
+                                $$f_{\text{uncertainty}} = -\sum_{i} H(\mu(E_i)) = -\sum_{i} \sum_{j} \mu_j(E_i) \log \mu_j(E_i)$$
+                            </div>
+                            <p>Reduces uncertainty bounds in evidence assessment using fuzzy entropy</p>
+                        </div>
+                        
+                        <div class="objective">
+                            <h3>Maximize Consistency</h3>
+                            <div class="objective-formula">
+                                $$f_{\text{consistency}} = \sum_{i,j} R(E_i, E_j) \times \text{sim}(\mu(E_i), \mu(E_j))$$
+                            </div>
+                            <p>Ensures coherent evidence across multiple sources</p>
+                        </div>
+                        
+                        <div class="objective">
+                            <h3>Minimize Conflicts</h3>
+                            <div class="objective-formula">
+                                $$f_{\text{conflicts}} = -\sum_{i,j} R_{\text{contradict}}(E_i, E_j) \times |\mu(E_i) - \mu(E_j)|$$
+                            </div>
+                            <p>Resolves contradictory evidence through fuzzy reasoning</p>
+                        </div>
+                        
+                        <div class="objective">
+                            <h3>Maximize Network Coherence</h3>
+                            <div class="objective-formula">
+                                $$f_{\text{coherence}} = \alpha \times C_{\text{consistency}} + \beta \times D_{\text{network}} + \gamma \times I_{\text{avg}}$$
+                            </div>
+                            <p>Optimizes entire evidence network structure for biological plausibility</p>
+                        </div>
+                        
+                        <div class="objective">
+                            <h3>Multi-Objective Optimization</h3>
+                            <div class="objective-formula">
+                                $$F_{\text{total}} = \sum_{k} \lambda_k \times f_k$$
+                            </div>
+                            <p>Weighted combination of all objectives with researcher-defined priorities</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="validation" class="section">
+            <div class="container">
+                <h2 class="section-title">Validation Framework</h2>
+                <div class="validation-content">
+                    <div class="validation-methods">
+                        <h3>Rigorous Validation Methods</h3>
+                        <div class="validation-grid">
+                            <div class="validation-method">
+                                <h4>Cross-Validation</h4>
+                                <p>K-fold cross-validation adapted for fuzzy evidence systems</p>
+                                <div class="validation-formula">
+                                    $$\text{CV}_{\text{fuzzy}} = \frac{1}{k} \sum_{i=1}^{k} \text{RMSE}_{\text{fuzzy}}(\text{test}_i)$$
+                                </div>
+                            </div>
+                            
+                            <div class="validation-method">
+                                <h4>Bootstrap Confidence Intervals</h4>
+                                <p>Non-parametric confidence intervals for fuzzy predictions</p>
+                                <div class="validation-formula">
+                                    $$\text{CI}_{\text{bootstrap}} = [\hat{\mu}_{\alpha/2}, \hat{\mu}_{1-\alpha/2}]$$
+                                </div>
+                            </div>
+                            
+                            <div class="validation-method">
+                                <h4>Fuzzy ROC Analysis</h4>
+                                <p>Receiver Operating Characteristic analysis for fuzzy classifiers</p>
+                                <div class="validation-formula">
+                                    $$\text{AUC}_{\text{fuzzy}} = \int_0^1 \text{TPR}_{\text{fuzzy}}(\text{FPR}) d(\text{FPR})$$
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="performance-metrics">
+                        <h3>Performance Metrics</h3>
+                        <div class="metrics-list">
+                            <div class="metric-item">
+                                <strong>Fuzzy Accuracy:</strong> Measures prediction accuracy accounting for fuzzy uncertainty
+                            </div>
+                            <div class="metric-item">
+                                <strong>Uncertainty Calibration:</strong> Evaluates how well predicted uncertainties match actual errors
+                            </div>
+                            <div class="metric-item">
+                                <strong>Network Coherence Score:</strong> Assesses biological plausibility of evidence networks
+                            </div>
+                            <div class="metric-item">
+                                <strong>Temporal Stability:</strong> Measures prediction consistency over time with evidence decay
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Hegel</h4>
+                    <p>Revolutionary fuzzy-Bayesian evidence framework for biological molecules</p>
+                    <div class="social-links">
+                        <a href="https://github.com/fullscreen-triangle/hegel" target="_blank">GitHub</a>
+                        <a href="mailto:contact@hegel-bio.org">Contact</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Documentation</h4>
+                    <ul>
+                        <li><a href="api-docs.html">API Reference</a></li>
+                        <li><a href="scientific-background.html">Scientific Background</a></li>
+                        <li><a href="architecture.html">Architecture</a></li>
+                        <li><a href="examples.html">Examples</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Research</h4>
+                    <ul>
+                        <li><a href="index.html#research">Applications</a></li>
+                        <li><a href="publications.html">Publications</a></li>
+                        <li><a href="case-studies.html">Case Studies</a></li>
+                        <li><a href="benchmarks.html">Benchmarks</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Community</h4>
+                    <ul>
+                        <li><a href="contributing.html">Contributing</a></li>
+                        <li><a href="https://github.com/fullscreen-triangle/hegel/issues" target="_blank">Issues</a></li>
+                        <li><a href="https://github.com/fullscreen-triangle/hegel/discussions" target="_blank">Discussions</a></li>
+                        <li><a href="changelog.html">Changelog</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Fullscreen Triangle. Licensed under MIT License.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="script.js"></script>
+    
+    <style>
+        .scientific-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+        
+        .limitation-list {
+            list-style: none;
+            margin-top: 1rem;
+        }
+        
+        .limitation-list li {
+            padding: 0.5rem 0;
+            border-left: 3px solid #dc2626;
+            padding-left: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .evidence-examples {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .evidence-example {
+            background: var(--bg-secondary);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .evidence-example h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .mathematical-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .core-equation {
+            background: var(--bg-primary);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-lg);
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        .equation-display {
+            font-size: 1.5rem;
+            margin: 2rem 0;
+            padding: 1rem;
+            background: var(--bg-secondary);
+            border-radius: var(--border-radius);
+        }
+        
+        .equation-components {
+            display: grid;
+            gap: 1rem;
+            margin-top: 2rem;
+            text-align: left;
+        }
+        
+        .component {
+            padding: 1rem;
+            background: var(--bg-secondary);
+            border-radius: var(--border-radius);
+        }
+        
+        .mathematical-components {
+            display: grid;
+            gap: 2rem;
+        }
+        
+        .math-component {
+            background: var(--bg-primary);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .membership-functions {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .function-type {
+            background: var(--bg-secondary);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+        }
+        
+        .equation-small {
+            font-size: 1.1rem;
+            margin: 1rem 0;
+            padding: 0.5rem;
+            background: rgba(79, 70, 229, 0.1);
+            border-radius: 4px;
+            text-align: center;
+        }
+        
+        .linguistic-terms {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .term {
+            background: var(--bg-primary);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+        }
+        
+        .term-name {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .term-range {
+            font-family: monospace;
+            background: var(--bg-secondary);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .term-description {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        
+        .operations-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+        
+        .operation {
+            background: var(--bg-primary);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .operation-examples {
+            margin-top: 1rem;
+        }
+        
+        .op-example {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .op-example:last-child {
+            border-bottom: none;
+        }
+        
+        .defuzz-methods {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+        
+        .defuzz-method {
+            background: var(--bg-primary);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .network-components {
+            display: grid;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .network-component {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .component-formula {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: var(--border-radius);
+            text-align: center;
+        }
+        
+        .inference-steps {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .inference-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            backdrop-filter: blur(10px);
+        }
+        
+        .step-number {
+            background: var(--accent-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+        
+        .step-content h4 {
+            margin-bottom: 0.5rem;
+            color: inherit;
+        }
+        
+        .discovery-methods {
+            display: grid;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+        
+        .discovery-method {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: 16px;
+        }
+        
+        .algorithm-steps {
+            display: grid;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+        
+        .algo-step {
+            padding: 0.75rem;
+            background: var(--bg-secondary);
+            border-radius: var(--border-radius);
+            border-left: 3px solid var(--primary-color);
+        }
+        
+        .prediction-formula {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: var(--primary-color);
+            color: white;
+            border-radius: var(--border-radius);
+            text-align: center;
+        }
+        
+        .coherence-metrics {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+        
+        .coherence-metric {
+            background: var(--bg-secondary);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+        }
+        
+        .objectives-intro {
+            text-align: center;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: var(--text-secondary);
+        }
+        
+        .objectives-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .objective {
+            background: var(--bg-primary);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+            border-top: 4px solid var(--primary-color);
+        }
+        
+        .objective h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .objective-formula {
+            background: var(--bg-secondary);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin: 1rem 0;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+        
+        .validation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+        
+        .validation-method {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: 16px;
+        }
+        
+        .validation-formula {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: var(--primary-color);
+            color: white;
+            border-radius: var(--border-radius);
+            text-align: center;
+        }
+        
+        .metrics-list {
+            display: grid;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .metric-item {
+            padding: 1rem;
+            background: var(--bg-secondary);
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        @media (max-width: 768px) {
+            .scientific-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .operations-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .defuzz-methods {
+                grid-template-columns: 1fr;
+            }
+            
+            .coherence-metrics {
+                grid-template-columns: 1fr;
+            }
+            
+            .objectives-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .validation-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</body>
+</html> 

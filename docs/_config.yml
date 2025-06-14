@@ -1,0 +1,59 @@
+title: Hegel - Fuzzy-Bayesian Evidence Framework
+description: Revolutionary fuzzy-Bayesian evidence framework for biological molecules
+url: "https://fullscreen-triangle.github.io"
+baseurl: "/hegel"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# SEO settings
+author: Fullscreen Triangle
+twitter:
+  username: fullscreen_triangle
+  card: summary_large_image
+
+social:
+  name: Fullscreen Triangle
+  links:
+    - https://github.com/fullscreen-triangle
+
+# Collections
+collections:
+  docs:
+    output: true
+    permalink: /:collection/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "docs"
+    values:
+      layout: "doc"
+
+# Exclude files
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+# Include files
+include:
+  - _pages 
