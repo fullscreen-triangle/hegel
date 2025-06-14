@@ -597,6 +597,10 @@ body {
 .arch-component.neo4j { background: #018bff; color: white; }
 .arch-component.reactome { background: #00d084; color: white; }
 .arch-component.interactome { background: #ff5722; color: white; }
+.arch-component.mzekezeke { background: #2196f3; color: white; }
+.arch-component.diggiden { background: #f44336; color: white; }
+.arch-component.hatata { background: #ff9800; color: white; }
+.arch-component.spectacular { background: #9c27b0; color: white; }
 
 /* Performance Metrics */
 .performance-metrics {

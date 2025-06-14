@@ -27,6 +27,7 @@
             </div>
             <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
+                <li><a href="#federated-learning">Federated Learning</a></li>
                 <li><a href="#mathematical-foundation">Mathematics</a></li>
                 <li><a href="#fuzzy-logic">Fuzzy Logic</a></li>
                 <li><a href="#bayesian-networks">Bayesian Networks</a></li>
@@ -39,9 +40,10 @@
     <header class="hero" style="min-height: 60vh;">
         <div class="hero-content">
             <h1 class="hero-title">Scientific Background</h1>
-            <p class="hero-subtitle">Mathematical Foundations of Fuzzy-Bayesian Evidence Systems</p>
+            <p class="hero-subtitle">Mathematical Foundations of Federated Fuzzy-Bayesian Evidence Systems</p>
             <p class="hero-description">
-                Understanding the theoretical framework that revolutionizes biological evidence processing
+                Understanding the theoretical framework that enables collaborative biological evidence processing 
+                across institutions without data sharing
             </p>
         </div>
     </header>
@@ -82,6 +84,91 @@
                             <div class="evidence-example">
                                 <h4>Pathway Membership</h4>
                                 <p>Molecules participate in pathways with varying degrees of certainty based on experimental validation and computational prediction.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="federated-learning" class="section bg-gradient">
+            <div class="container">
+                <h2 class="section-title">Federated Learning Framework</h2>
+                <div class="federated-content">
+                    <div class="federated-motivation">
+                        <h3>The Data Access Challenge</h3>
+                        <p>
+                            Most valuable biological evidence is distributed across institutions and often inaccessible due to:
+                        </p>
+                        <ul class="challenge-list">
+                            <li><strong>Privacy Regulations</strong>: HIPAA, GDPR, and institutional policies prevent data sharing</li>
+                            <li><strong>Competitive Concerns</strong>: Pharmaceutical companies protect proprietary research data</li>
+                            <li><strong>Technical Barriers</strong>: Complex data formats and integration challenges</li>
+                            <li><strong>Ethical Constraints</strong>: Patient consent and data sovereignty requirements</li>
+                        </ul>
+                    </div>
+
+                    <div class="federated-mathematics">
+                        <h3>Federated Fuzzy-Bayesian Learning</h3>
+                        <p>
+                            Hegel extends traditional federated learning to handle fuzzy evidence through mathematical frameworks 
+                            inspired by <a href="https://github.com/fullscreen-triangle/bloodhound" target="_blank">Bloodhound</a>:
+                        </p>
+                        
+                        <div class="federated-algorithm">
+                            <h4>Local Institution Processing</h4>
+                            <div class="equation-display">
+                                $$\text{For institution } i: \theta_i^{(t+1)} = \theta_i^{(t)} - \eta \nabla_{\theta} \mathcal{L}_i(\theta_i^{(t)}, \mathcal{D}_i)$$
+                            </div>
+                            <p>Where $\mathcal{L}_i$ is the local fuzzy-Bayesian loss function and $\mathcal{D}_i$ is the private local dataset.</p>
+                            
+                            <h4>Global Aggregation</h4>
+                            <div class="equation-display">
+                                $$\theta_{\text{global}}^{(t+1)} = \sum_{i=1}^{N} \frac{n_i}{n} \Delta\theta_i^{(t+1)}$$
+                            </div>
+                            <p>Where $n_i$ is the number of evidence samples at institution $i$, $n = \sum_{i=1}^{N} n_i$, and $\Delta\theta_i = \theta_i^{(t+1)} - \theta_i^{(t)}$.</p>
+                        </div>
+
+                        <div class="privacy-preservation">
+                            <h4>Privacy-Preserving Mechanisms</h4>
+                            <div class="privacy-methods">
+                                <div class="privacy-method">
+                                    <h5>Differential Privacy</h5>
+                                    <div class="equation-small">
+                                        $$\tilde{\theta}_i = \theta_i + \mathcal{N}(0, \sigma^2 I)$$
+                                    </div>
+                                    <p>Noise injection to protect individual evidence contributions</p>
+                                </div>
+                                
+                                <div class="privacy-method">
+                                    <h5>Secure Aggregation</h5>
+                                    <div class="equation-small">
+                                        $$\text{Aggregate}(\{\theta_i\}_{i=1}^N) = \sum_{i=1}^N \theta_i \text{ without revealing individual } \theta_i$$
+                                    </div>
+                                    <p>Cryptographic protocols for safe parameter sharing</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="federated-benefits">
+                        <h3>Scientific Benefits</h3>
+                        <div class="benefit-grid">
+                            <div class="benefit">
+                                <h4>Enhanced Statistical Power</h4>
+                                <p>Collaborative learning from distributed evidence increases sample sizes and statistical significance</p>
+                            </div>
+                            <div class="benefit">
+                                <h4>Cross-Population Validation</h4>
+                                <p>Evidence patterns validated across diverse populations and experimental conditions</p>
+                            </div>
+                            <div class="benefit">
+                                <h4>Rare Event Detection</h4>
+                                <p>Collaborative identification of rare biological phenomena across multiple institutions</p>
+                            </div>
+                            <div class="benefit">
+                                <h4>Bias Reduction</h4>
+                                <p>Institutional biases mitigated through diverse, distributed evidence sources</p>
                             </div>
                         </div>
                     </div>
