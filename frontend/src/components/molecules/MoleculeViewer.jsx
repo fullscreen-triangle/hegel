@@ -1,28 +1,25 @@
-import React, { useEffect, useRef, useState } from 'react';
-import * as THREE from 'three';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-import { TrackballControls } from 'three/examples/jsm/controls/TrackballControls';
-import { ConvexGeometry } from 'three/examples/jsm/geometries/ConvexGeometry';
-import { CSS2DRenderer, CSS2DObject } from 'three/examples/jsm/renderers/CSS2DRenderer';
+import React, { useEffect, useState, useRef, useMemo } from 'react';
+import { Canvas, useFrame, useThree } from '@react-three/fiber';
+import { OrbitControls, Html, useHelper } from '@react-three/drei';
 import axios from 'axios';
 
 const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000/api';
 
 // Atom colors based on standard CPK coloring
 const ATOM_COLORS = {
-  H: 0xFFFFFF, // White
-  C: 0x909090, // Gray
-  N: 0x3050F8, // Blue
-  O: 0xFF0D0D, // Red
-  P: 0xFF8000, // Orange
-  S: 0xFFFF30, // Yellow
-  Cl: 0x1FF01F, // Green
-  Na: 0x0000FF, // Blue
-  K: 0x0000FF,  // Blue
-  Fe: 0xFF5500, // Orange-red
-  Mg: 0x00FF00, // Green
-  Ca: 0x00FF00, // Green
-  DEFAULT: 0xDDDDDD // Default color
+  H: '#FFFFFF', // White
+  C: '#909090', // Gray
+  N: '#3050F8', // Blue
+  O: '#FF0D0D', // Red
+  P: '#FF8000', // Orange
+  S: '#FFFF30', // Yellow
+  Cl: '#1FF01F', // Green
+  Na: '#0000FF', // Blue
+  K: '#0000FF',  // Blue
+  Fe: '#FF5500', // Orange-red
+  Mg: '#00FF00', // Green
+  Ca: '#00FF00', // Green
+  DEFAULT: '#DDDDDD' // Default color
 };
 
 // Relative atomic radii
@@ -42,93 +39,207 @@ const ATOM_RADII = {
   DEFAULT: 0.4
 };
 
-const MoleculeViewer = ({ moleculeId, width = '100%', height = '500px', showLabels = true }) => {
-  const containerRef = useRef(null);
-  const rendererRef = useRef(null);
-  const labelRendererRef = useRef(null);
-  const sceneRef = useRef(null);
-  const cameraRef = useRef(null);
-  const controlsRef = useRef(null);
+// Atom component
+const Atom = ({ position, element, radius, showLabel }) => {
+  const color = ATOM_COLORS[element] || ATOM_COLORS.DEFAULT;
   
+  return (
+    <mesh position={position}>
+      <sphereGeometry args={[radius, 32, 32]} />
+      <meshStandardMaterial color={color} />
+      {showLabel && (
+        <Html distanceFactor={10} position={[0, radius + 0.1, 0]}>
+          <div style={{ 
+            color: '#000000', 
+            fontSize: '0.8em', 
+            backgroundColor: 'rgba(255,255,255,0.7)',
+            padding: '2px 4px',
+            borderRadius: '2px',
+            userSelect: 'none'
+          }}>
+            {element}
+          </div>
+        </Html>
+      )}
+    </mesh>
+  );
+};
+
+// Bond component
+const Bond = ({ start, end }) => {
+  // Calculate bond properties
+  const mid = [(start[0] + end[0]) / 2, (start[1] + end[1]) / 2, (start[2] + end[2]) / 2];
+  const length = Math.sqrt(
+    Math.pow(end[0] - start[0], 2) + 
+    Math.pow(end[1] - start[1], 2) + 
+    Math.pow(end[2] - start[2], 2)
+  );
+  
+  // Calculate rotation to align cylinder with bond
+  const direction = [end[0] - start[0], end[1] - start[1], end[2] - start[2]];
+  const normalizedDirection = [
+    direction[0] / length, 
+    direction[1] / length, 
+    direction[2] / length
+  ];
+  
+  // Calculate the rotation quaternion to align the bond
+  // Default cylinder in Three.js is along the Y axis
+  const yAxis = [0, 1, 0];
+  const rotationAxis = [
+    yAxis[1] * normalizedDirection[2] - yAxis[2] * normalizedDirection[1],
+    yAxis[2] * normalizedDirection[0] - yAxis[0] * normalizedDirection[2],
+    yAxis[0] * normalizedDirection[1] - yAxis[1] * normalizedDirection[0]
+  ];
+  
+  const dot = yAxis[0] * normalizedDirection[0] + 
+              yAxis[1] * normalizedDirection[1] + 
+              yAxis[2] * normalizedDirection[2];
+  
+  // Handle special case when vectors are parallel
+  if (Math.abs(dot - 1) < 0.0001) {
+    // Vectors are parallel, no rotation needed
+    return (
+      <mesh position={mid}>
+        <cylinderGeometry args={[0.1, 0.1, length, 16]} />
+        <meshStandardMaterial color="#999999" />
+      </mesh>
+    );
+  } 
+  else if (Math.abs(dot + 1) < 0.0001) {
+    // Vectors are anti-parallel, rotate 180° around X axis
+    return (
+      <mesh position={mid} rotation={[Math.PI, 0, 0]}>
+        <cylinderGeometry args={[0.1, 0.1, length, 16]} />
+        <meshStandardMaterial color="#999999" />
+      </mesh>
+    );
+  }
+  
+  // Calculate rotation based on cross product and dot product
+  const angle = Math.acos(dot);
+  const rotAxisLength = Math.sqrt(
+    rotationAxis[0] * rotationAxis[0] + 
+    rotationAxis[1] * rotationAxis[1] + 
+    rotationAxis[2] * rotationAxis[2]
+  );
+  
+  if (rotAxisLength > 0.0001) {
+    const normalizedRotAxis = [
+      rotationAxis[0] / rotAxisLength,
+      rotationAxis[1] / rotAxisLength,
+      rotationAxis[2] / rotAxisLength
+    ];
+    
+    return (
+      <group position={mid}>
+        <mesh rotation={[
+          normalizedRotAxis[0] * angle,
+          normalizedRotAxis[1] * angle,
+          normalizedRotAxis[2] * angle
+        ]}>
+          <cylinderGeometry args={[0.1, 0.1, length, 16]} />
+          <meshStandardMaterial color="#999999" />
+        </mesh>
+      </group>
+    );
+  }
+  
+  return null;
+};
+
+// Molecule Scene Component
+const MoleculeScene = ({ data, showLabels }) => {
+  const { camera } = useThree();
+  
+  // Center molecule on first render
+  useEffect(() => {
+    if (data && data.atoms && data.atoms.length > 0) {
+      // Calculate bounding box
+      let minX = Infinity, minY = Infinity, minZ = Infinity;
+      let maxX = -Infinity, maxY = -Infinity, maxZ = -Infinity;
+      
+      data.atoms.forEach(atom => {
+        minX = Math.min(minX, atom.x);
+        minY = Math.min(minY, atom.y);
+        minZ = Math.min(minZ, atom.z);
+        maxX = Math.max(maxX, atom.x);
+        maxY = Math.max(maxY, atom.y);
+        maxZ = Math.max(maxZ, atom.z);
+      });
+      
+      // Calculate center and size
+      const center = [
+        (minX + maxX) / 2,
+        (minY + maxY) / 2,
+        (minZ + maxZ) / 2
+      ];
+      
+      const size = Math.max(
+        maxX - minX,
+        maxY - minY,
+        maxZ - minZ
+      );
+      
+      // Position camera to view entire molecule
+      const fov = camera.fov * (Math.PI / 180);
+      let distance = size / (2 * Math.tan(fov / 2));
+      distance = Math.max(distance * 1.5, 5); // Add some margin
+      
+      camera.position.set(center[0], center[1], center[2] + distance);
+      camera.lookAt(center[0], center[1], center[2]);
+      camera.updateProjectionMatrix();
+    }
+  }, [data, camera]);
+  
+  if (!data || !data.atoms || !data.bonds) {
+    return null;
+  }
+  
+  return (
+    <>
+      <ambientLight intensity={0.5} />
+      <directionalLight position={[10, 10, 10]} intensity={0.5} />
+      
+      {/* Atoms */}
+      {data.atoms.map((atom) => (
+        <Atom
+          key={`atom-${atom.id}`}
+          position={[atom.x, atom.y, atom.z]}
+          element={atom.element}
+          radius={ATOM_RADII[atom.element] || ATOM_RADII.DEFAULT}
+          showLabel={showLabels}
+        />
+      ))}
+      
+      {/* Bonds */}
+      {data.bonds.map((bond, index) => {
+        const atom1 = data.atoms.find(a => a.id === bond.atom1_id);
+        const atom2 = data.atoms.find(a => a.id === bond.atom2_id);
+        
+        if (!atom1 || !atom2) return null;
+        
+        return (
+          <Bond
+            key={`bond-${index}`}
+            start={[atom1.x, atom1.y, atom1.z]}
+            end={[atom2.x, atom2.y, atom2.z]}
+          />
+        );
+      })}
+      
+      <OrbitControls enableDamping dampingFactor={0.25} />
+    </>
+  );
+};
+
+// Main Molecule Viewer Component
+const MoleculeViewer = ({ moleculeId, width = '100%', height = '500px', showLabels = true }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [moleculeData, setMoleculeData] = useState(null);
-
-  // Initialize the 3D scene
-  useEffect(() => {
-    if (!containerRef.current) return;
-
-    // Create scene
-    const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0xffffff);
-    sceneRef.current = scene;
-
-    // Create camera
-    const camera = new THREE.PerspectiveCamera(75, containerRef.current.clientWidth / containerRef.current.clientHeight, 0.1, 1000);
-    camera.position.z = 5;
-    cameraRef.current = camera;
-
-    // Create renderer
-    const renderer = new THREE.WebGLRenderer({ antialias: true });
-    renderer.setSize(containerRef.current.clientWidth, containerRef.current.clientHeight);
-    containerRef.current.appendChild(renderer.domElement);
-    rendererRef.current = renderer;
-
-    // Create label renderer for atom labels
-    const labelRenderer = new CSS2DRenderer();
-    labelRenderer.setSize(containerRef.current.clientWidth, containerRef.current.clientHeight);
-    labelRenderer.domElement.style.position = 'absolute';
-    labelRenderer.domElement.style.top = '0';
-    labelRenderer.domElement.style.pointerEvents = 'none';
-    containerRef.current.appendChild(labelRenderer.domElement);
-    labelRendererRef.current = labelRenderer;
-
-    // Add controls
-    const controls = new OrbitControls(camera, renderer.domElement);
-    controls.enableDamping = true;
-    controls.dampingFactor = 0.25;
-    controlsRef.current = controls;
-
-    // Add lighting
-    const ambientLight = new THREE.AmbientLight(0x404040);
-    scene.add(ambientLight);
-
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
-    directionalLight.position.set(1, 1, 1);
-    scene.add(directionalLight);
-
-    // Animation loop
-    const animate = () => {
-      requestAnimationFrame(animate);
-      controls.update();
-      renderer.render(scene, camera);
-      labelRenderer.render(scene, camera);
-    };
-    animate();
-
-    // Handle window resize
-    const handleResize = () => {
-      if (!containerRef.current) return;
-      
-      camera.aspect = containerRef.current.clientWidth / containerRef.current.clientHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(containerRef.current.clientWidth, containerRef.current.clientHeight);
-      labelRenderer.setSize(containerRef.current.clientWidth, containerRef.current.clientHeight);
-    };
-    window.addEventListener('resize', handleResize);
-
-    // Cleanup on unmount
-    return () => {
-      window.removeEventListener('resize', handleResize);
-      if (containerRef.current) {
-        containerRef.current.removeChild(renderer.domElement);
-        containerRef.current.removeChild(labelRenderer.domElement);
-      }
-      scene.clear();
-    };
-  }, []);
-
-  // Fetch molecule data and render
+  
+  // Fetch molecule data
   useEffect(() => {
     if (!moleculeId) return;
     
@@ -144,11 +255,6 @@ const MoleculeViewer = ({ moleculeId, width = '100%', height = '500px', showLabe
         });
         
         setMoleculeData(response.data.data);
-        
-        // Render the molecule
-        if (response.data.data && sceneRef.current) {
-          renderMolecule(response.data.data);
-        }
       } catch (err) {
         console.error('Error fetching molecule data:', err);
         setError('Failed to load molecule visualization');
@@ -159,123 +265,32 @@ const MoleculeViewer = ({ moleculeId, width = '100%', height = '500px', showLabe
     
     fetchMoleculeData();
   }, [moleculeId]);
-
-  // Render the molecule in the 3D scene
-  const renderMolecule = (data) => {
-    if (!sceneRef.current || !data || !data.atoms || !data.bonds) return;
-    
-    // Clear existing content
-    while (sceneRef.current.children.length > 0) {
-      sceneRef.current.remove(sceneRef.current.children[0]);
-    }
-    
-    // Add lighting
-    const ambientLight = new THREE.AmbientLight(0x404040);
-    sceneRef.current.add(ambientLight);
-
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
-    directionalLight.position.set(1, 1, 1);
-    sceneRef.current.add(directionalLight);
-    
-    // Draw atoms
-    const atomObjects = {};
-    data.atoms.forEach(atom => {
-      const color = ATOM_COLORS[atom.element] || ATOM_COLORS.DEFAULT;
-      const radius = ATOM_RADII[atom.element] || ATOM_RADII.DEFAULT;
-      
-      const geometry = new THREE.SphereGeometry(radius, 32, 32);
-      const material = new THREE.MeshPhongMaterial({ color });
-      
-      const mesh = new THREE.Mesh(geometry, material);
-      mesh.position.set(atom.x, atom.y, atom.z);
-      sceneRef.current.add(mesh);
-      
-      atomObjects[atom.id] = mesh;
-      
-      // Add label if enabled
-      if (showLabels) {
-        const labelDiv = document.createElement('div');
-        labelDiv.className = 'atom-label';
-        labelDiv.textContent = atom.element;
-        labelDiv.style.color = '#000000';
-        labelDiv.style.fontSize = '0.8em';
-        
-        const label = new CSS2DObject(labelDiv);
-        label.position.set(0, radius + 0.1, 0);
-        mesh.add(label);
-      }
-    });
-    
-    // Draw bonds
-    data.bonds.forEach(bond => {
-      const atom1 = data.atoms.find(a => a.id === bond.atom1_id);
-      const atom2 = data.atoms.find(a => a.id === bond.atom2_id);
-      
-      if (!atom1 || !atom2) return;
-      
-      const start = new THREE.Vector3(atom1.x, atom1.y, atom1.z);
-      const end = new THREE.Vector3(atom2.x, atom2.y, atom2.z);
-      
-      // Create a cylinder representing the bond
-      const direction = new THREE.Vector3().subVectors(end, start);
-      const midpoint = new THREE.Vector3().addVectors(start, end).multiplyScalar(0.5);
-      
-      const bondLength = direction.length();
-      direction.normalize();
-      
-      // Create bond cylinder
-      const bondGeometry = new THREE.CylinderGeometry(0.1, 0.1, bondLength, 16);
-      const bondMaterial = new THREE.MeshPhongMaterial({ color: 0x999999 });
-      
-      const bondMesh = new THREE.Mesh(bondGeometry, bondMaterial);
-      
-      // Position and orient the bond
-      bondMesh.position.copy(midpoint);
-      
-      // Orient the cylinder to align with the bond direction
-      const quaternion = new THREE.Quaternion();
-      quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), direction);
-      bondMesh.quaternion.copy(quaternion);
-      
-      sceneRef.current.add(bondMesh);
-    });
-    
-    // Center the molecule in view
-    const boundingBox = new THREE.Box3().setFromObject(sceneRef.current);
-    const center = boundingBox.getCenter(new THREE.Vector3());
-    const size = boundingBox.getSize(new THREE.Vector3());
-    
-    const maxDim = Math.max(size.x, size.y, size.z);
-    const fov = cameraRef.current.fov * (Math.PI / 180);
-    let distance = maxDim / (2 * Math.tan(fov / 2));
-    
-    // Add some margin
-    distance *= 1.5;
-    
-    // Set camera position
-    cameraRef.current.position.copy(center);
-    cameraRef.current.position.z += distance;
-    cameraRef.current.lookAt(center);
-    
-    // Update controls target
-    controlsRef.current.target.copy(center);
-    controlsRef.current.update();
-  };
-
+  
   return (
     <div style={{ width, height, position: 'relative' }}>
-      <div ref={containerRef} style={{ width: '100%', height: '100%' }} />
-      
-      {loading && (
-        <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>
+      {loading ? (
+        <div style={{ 
+          position: 'absolute', 
+          top: '50%', 
+          left: '50%', 
+          transform: 'translate(-50%, -50%)'
+        }}>
           Loading molecule...
         </div>
-      )}
-      
-      {error && (
-        <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', color: 'red' }}>
+      ) : error ? (
+        <div style={{ 
+          position: 'absolute', 
+          top: '50%', 
+          left: '50%', 
+          transform: 'translate(-50%, -50%)', 
+          color: 'red' 
+        }}>
           {error}
         </div>
+      ) : (
+        <Canvas>
+          <MoleculeScene data={moleculeData} showLabels={showLabels} />
+        </Canvas>
       )}
     </div>
   );

@@ -16,6 +16,7 @@ pub mod rectifier;
 pub mod spectral;
 pub mod sequence;
 pub mod structural;
+pub mod fuzzy_integration;
 
 /// Initialize the processing module
 pub fn initialize() -> Result<()> {
