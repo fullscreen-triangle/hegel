@@ -19,10 +19,10 @@ path = "src/bin/api.rs"
 
 [dependencies]
 # Molecular processing
-rdkit = { version = "0.1.0" }
-chemcore = { version = "0.2" }
+# rdkit = { version = "0.1.0" }  # Not available on crates.io
+# chemcore = { version = "0.2" }  # Not available on crates.io
 nalgebra = "0.32.3"
-openff-toolkit = "0.1.0"
+# openff-toolkit = "0.1.0"  # Not available on crates.io
 
 # Graph processing
 petgraph = "0.6.4"
@@ -52,7 +52,7 @@ tokio = { version = "1.33.0", features = ["full"] }
 futures = "0.3.28"
 
 # Database connectivity
-neo4j = "5.1.1"
+# neo4j = "5.1.1"  # Not available on crates.io
 sqlx = { version = "0.7.2", features = ["runtime-tokio-rustls", "sqlite"] }
 
 # FFI for Python integration
@@ -67,6 +67,4 @@ criterion = "0.5.1"
 rstest = "0.18.2"
 mockall = "0.11.4"
 
-[[bench]]
-name = "molecule_benchmarks"
-harness = false
+
