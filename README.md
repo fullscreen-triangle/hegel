@@ -3,11 +3,12 @@
 
 
 <p align="center">
-  <img src="hegel.png" alt="Hegel Logo">
+  <img src="hegel.png" alt="Hegel Logo" width="400" height="400">
 </p>
 
 
 [![Rust](https://img.shields.io/badge/Rust-%23000000.svg?e&logo=rust&logoColor=white)](#)
+[![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=fff)](#)
 [![ChatGPT](https://img.shields.io/badge/ChatGPT-74aa9c?logo=openai&logoColor=white)](#)
 [![Claude](https://img.shields.io/badge/Claude-D97757?logo=claude&logoColor=fff)](#)
 [![Hugging Face](https://img.shields.io/badge/Hugging%20Face-FFD21E?logo=huggingface&logoColor=000)](#)
@@ -18,7 +19,7 @@
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 
 
-# Hegel: Evidence Rectification Framework for Biological Molecules
+# Evidence Rectification Framework for Biological Molecules
 
 ## Scientific Background and Purpose
 
@@ -1164,14 +1165,60 @@ The visualization system combines multiple libraries:
 5. **Conversational Federated Analysis**: Natural language interface for collaborative evidence exploration
 6. **Graceful Degradation**: Full functionality even when operating in isolation
 
+### Diadochi: Intelligent Domain LLM Combination Framework
+
+**NEW**: Hegel now includes the **Diadochi** framework - a comprehensive system for combining domain-expert Large Language Models (LLMs) to create superior, integrated AI systems capable of handling interdisciplinary queries.
+
+#### Complete Pipeline Orchestration
+- **Metacognitive Orchestrator**: Central coordinator implementing metacognitive reasoning
+  - Analyzes query complexity and requirements automatically
+  - Selects optimal processing strategies (Ensemble, MoE, Chain, Hybrid)
+  - Coordinates multiple domain experts intelligently
+  - Provides comprehensive explanations and metadata
+
+- **Intelligent Strategy Selection**: Automatic selection from five proven architectural patterns:
+  1. **Router-Based Ensembles**: Direct queries to most appropriate expert
+  2. **Mixture of Experts**: Parallel processing with intelligent synthesis
+  3. **Sequential Chaining**: Iterative analysis building context
+  4. **Hybrid Approaches**: Multi-strategy combination for expert-level queries
+  5. **Auto-Selection**: System automatically chooses optimal approach
+
+#### One-Line Query Processing
+```python
+from diadochi import DiadochiPipeline, PipelineFactory
+
+# Create sports science pipeline
+orchestrator = PipelineFactory.create_sports_science_orchestrator()
+pipeline = DiadochiPipeline(orchestrator)
+
+# Process complex interdisciplinary query
+result = await pipeline.query(
+    "How can biomechanics, physiology, and nutrition work together to improve marathon performance?",
+    strategy="auto",  # System selects optimal approach
+    include_explanation=True
+)
+
+print(f"Strategy Used: {result['strategy_used']}")  # e.g., "mixture_of_experts"
+print(f"Confidence: {result['confidence']:.2f}")     # e.g., 0.87
+print(f"Response: {result['response']}")             # Synthesized expert response
+```
+
+#### Comprehensive API Integration
+- **RESTful API**: Complete REST API for web application integration
+- **Batch Processing**: Parallel processing of multiple queries
+- **Strategy Analysis**: Explain reasoning without execution
+- **Health Monitoring**: Real-time system health and performance metrics
+- **Strategy Comparison**: Compare results across different approaches
+
 ### Specialized Intelligence Modules
 
-**Four Coordinated AI Systems**: Hegel incorporates specialized intelligence modules that work in concert to create a robust, self-improving evidence processing system:
+**Five Coordinated AI Systems**: Hegel incorporates specialized intelligence modules that work in concert to create a robust, self-improving evidence processing system:
 
 1. **Mzekezeke (ML Workhorse)**: Primary predictive engine with ensemble methods and continuous learning
 2. **Diggiden (Adversarial System)**: Persistent vulnerability detection and robustness testing
 3. **Hatata (Markov Decision System)**: Probabilistic decision-making with utility optimization
 4. **Spectacular (Extraordinary Handler)**: Specialized processing for anomalous and novel findings
+5. **Diadochi (Domain Expert Orchestrator)**: Intelligent combination of domain-expert LLMs for interdisciplinary analysis
 <h1 align="center">Hegel</h1>
 <p align="center"><em> What has been will be again, what has been done will be done again</em></p>
 
@@ -2540,6 +2587,13 @@ Hegel's federated fuzzy-Bayesian evidence system supports advanced biological re
    - Cross-institutional novel pathway discovery
    - Extraordinary finding validation across diverse populations
    - Systematic analysis of biological outliers and exceptions
+
+9. **Nicotine-Enhanced Reliability**:
+   - Long-running multi-omics integration with guaranteed biological context preservation
+   - Extended federated learning sessions with continuous understanding validation
+   - Complex pathway reconstruction projects with context drift prevention
+   - Large-scale collaborative research with maintained scientific rigor across institutions
+   - Critical clinical decision support with validated biological reasoning throughout
 
 ### Advanced Federated Research Scenarios
 

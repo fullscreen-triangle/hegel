@@ -38,6 +38,15 @@ app.include_router(evidence.router, prefix="/api/evidence", tags=["Evidence"])
 app.include_router(rectification.router, prefix="/api/rectification", tags=["Rectification"])
 app.include_router(visualization.router, prefix="/api/visualization", tags=["Visualization"])
 
+# Include Diadochi routers
+try:
+    from .routes import diadochi, pipeline
+    app.include_router(diadochi.router, prefix="/api/diadochi", tags=["Diadochi"])
+    app.include_router(pipeline.router, prefix="/api", tags=["Pipeline"])
+except ImportError as e:
+    import logging
+    logging.warning(f"Diadochi module not available: {e}")
+
 @app.on_event("startup")
 async def startup_event():
     """Initialize the database connection on startup"""
