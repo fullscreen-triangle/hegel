@@ -17,6 +17,7 @@ pub mod spectral;
 pub mod sequence;
 pub mod structural;
 pub mod fuzzy_integration;
+pub mod targeted_annotation;
 
 /// Initialize the processing module
 pub fn initialize() -> Result<()> {
@@ -29,6 +30,9 @@ pub fn initialize() -> Result<()> {
     genomics::initialize()?;
     mass_spec::initialize()?;
     rectifier::initialize()?;
+    sequence::initialize()?;
+    structural::initialize()?;
+    targeted_annotation::initialize()?;
     
     info!("Molecular processing module initialized successfully");
     Ok(())

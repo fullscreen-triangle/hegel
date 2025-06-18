@@ -1214,11 +1214,13 @@ print(f"Response: {result['response']}")             # Synthesized expert respon
 
 **Five Coordinated AI Systems**: Hegel incorporates specialized intelligence modules that work in concert to create a robust, self-improving evidence processing system:
 
-1. **Mzekezeke (ML Workhorse)**: Primary predictive engine with ensemble methods and continuous learning
-2. **Diggiden (Adversarial System)**: Persistent vulnerability detection and robustness testing
-3. **Hatata (Markov Decision System)**: Probabilistic decision-making with utility optimization
-4. **Spectacular (Extraordinary Handler)**: Specialized processing for anomalous and novel findings
-5. **Diadochi (Domain Expert Orchestrator)**: Intelligent combination of domain-expert LLMs for interdisciplinary analysis
+1. **[Mzekezeke](docs/mzekezeke-module.md) (ML Workhorse)**: Primary predictive engine with ensemble methods and continuous learning
+2. **[Diggiden](docs/diggiden-module.md) (Adversarial System)**: Persistent vulnerability detection and robustness testing
+3. **[Hatata](docs/hatata-module.md) (Markov Decision System)**: Probabilistic decision-making with utility optimization
+4. **[Spectacular](docs/spectacular-module.md) (Extraordinary Handler)**: Specialized processing for anomalous and novel findings
+5. **[Nicotine](docs/nicotine-module.md) (Context Preservation System)**: Prevents AI drift through validation puzzles and context monitoring
+
+**Comprehensive Module Documentation**: [View complete module integration guide →](docs/modules-overview.md)
 <h1 align="center">Hegel</h1>
 <p align="center"><em> What has been will be again, what has been done will be done again</em></p>
 
@@ -2261,12 +2263,15 @@ The visualization system combines multiple libraries:
 
 ### Specialized Intelligence Modules
 
-**Four Coordinated AI Systems**: Hegel incorporates specialized intelligence modules that work in concert to create a robust, self-improving evidence processing system:
+**Five Coordinated AI Systems**: Hegel incorporates specialized intelligence modules that work in concert to create a robust, self-improving evidence processing system:
 
-1. **Mzekezeke (ML Workhorse)**: Primary predictive engine with ensemble methods and continuous learning
-2. **Diggiden (Adversarial System)**: Persistent vulnerability detection and robustness testing
-3. **Hatata (Markov Decision System)**: Probabilistic decision-making with utility optimization
-4. **Spectacular (Extraordinary Handler)**: Specialized processing for anomalous and novel findings
+1. **[Mzekezeke](docs/mzekezeke-module.md) (ML Workhorse)**: Primary predictive engine with ensemble methods and continuous learning
+2. **[Diggiden](docs/diggiden-module.md) (Adversarial System)**: Persistent vulnerability detection and robustness testing
+3. **[Hatata](docs/hatata-module.md) (Markov Decision System)**: Probabilistic decision-making with utility optimization
+4. **[Spectacular](docs/spectacular-module.md) (Extraordinary Handler)**: Specialized processing for anomalous and novel findings
+5. **[Nicotine](docs/nicotine-module.md) (Context Preservation System)**: Prevents AI drift through validation puzzles and context monitoring
+
+**Comprehensive Module Documentation**: [View complete module integration guide →](docs/modules-overview.md)
 
 ### Hybrid Fuzzy-Bayesian Evidence System
 
