@@ -18,6 +18,13 @@ pub mod sequence;
 pub mod structural;
 pub mod fuzzy_integration;
 pub mod targeted_annotation;
+pub mod hybrid_protein_inference;
+pub mod hybrid_ms2_annotation;
+pub mod analysis;
+pub mod uv_vis;
+pub mod calibration;
+pub mod database;
+pub mod integration;
 
 /// Initialize the processing module
 pub fn initialize() -> Result<()> {
@@ -33,6 +40,9 @@ pub fn initialize() -> Result<()> {
     sequence::initialize()?;
     structural::initialize()?;
     targeted_annotation::initialize()?;
+    uv_vis::initialize()?;
+    calibration::initialize()?;
+    integration::initialize()?;
     
     info!("Molecular processing module initialized successfully");
     Ok(())

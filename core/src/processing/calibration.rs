@@ -3,6 +3,8 @@
 //! This module provides functionality for calibrating different types of spectrometers.
 
 use std::collections::HashMap;
+use anyhow::Result;
+use log::info;
 
 /// Calibration manager
 #[derive(Debug, Clone)]
@@ -256,6 +258,13 @@ impl StandardReference {
     pub fn get_value(&self, property: &str) -> Option<f64> {
         self.values.get(property).copied()
     }
+}
+
+/// Initialize the calibration processing module
+pub fn initialize() -> Result<()> {
+    info!("Initializing calibration processing module");
+    info!("Calibration processing module initialized successfully");
+    Ok(())
 }
 
 #[cfg(test)]
