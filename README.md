@@ -1153,6 +1153,60 @@ The visualization system combines multiple libraries:
 
 ## Key Features
 
+### Turbulance: Semantic Scientific Method Compiler
+
+**Revolutionary Innovation**: Hegel introduces **Turbulance**, a domain-specific language that allows scientists to express the complete scientific method as executable code. Unlike traditional statistical processing systems, Hegel compiles and executes Turbulance scripts with genuine semantic understanding of scientific methodology.
+
+#### Core Turbulance Capabilities
+1. **Complete Scientific Method Expression**: Write entire experimental methodologies as executable Turbulance scripts
+2. **Semantic Understanding**: Hegel executes with genuine comprehension rather than just statistical processing
+3. **Four-File Project System**: Comprehensive workflow management with `.trb` (main script), `.fs` (consciousness visualization), `.ghd` (dependencies), `.hre` (decision logging)
+4. **V8 Intelligence Integration**: Orchestrates specialized intelligence modules for authentic scientific reasoning
+5. **Dream Processing**: Novel insight generation through semantic processing
+6. **Authenticity Validation**: Prevents self-deception through rigorous semantic verification
+
+#### Example Turbulance Script
+```turbulance
+hypothesis diabetes_biomarker_discovery {
+    funxn identify_biomarkers(patient_data, control_data) -> biomarker_candidates {
+        proposition metabolomics_analysis {
+            motion extract_features from patient_data using mass_spectrometry
+            motion extract_features from control_data using mass_spectrometry
+            dream novel_patterns = discover_patterns(patient_features, control_features)
+            authenticity validate_patterns(novel_patterns) confidence > 0.8
+        }
+        
+        proposition pathway_integration {
+            motion map_features_to_pathways using reactome_database
+            motion identify_disrupted_pathways using fuzzy_bayesian_network
+            dream pathway_insights = semantic_analysis(pathway_disruptions)
+        }
+        
+        return integrate_evidence(metabolomics_results, pathway_insights)
+    }
+}
+```
+
+#### Semantic vs Statistical Processing
+- **Traditional Systems**: Process data statistically without understanding scientific meaning
+- **Turbulance + Hegel**: Executes scientific method with genuine semantic understanding
+- **Intelligence Network**: V8 modules (Mzekezeke, Diggiden, Spectacular, Hatata, Nicotine) provide authentic scientific reasoning
+- **Evidence Integration**: Combines semantic understanding with fuzzy-Bayesian evidence networks
+
+#### Getting Started with Turbulance
+```bash
+# Compile a Turbulance project
+./hegel compile-turbulance --project-dir ./my_experiment
+
+# Execute compiled script with Hegel's semantic engine
+./hegel execute-turbulance --compiled-script ./my_experiment/compiled.json
+
+# Analyze data with fuzzy-Bayesian processing
+./hegel analyze --data-file ./data.csv --method fuzzy-bayesian
+```
+
+**Comprehensive Turbulance Documentation**: [View detailed experiments and examples →](docs/turbulance-experiments.md)
+
 ### Federated Evidence Collaboration
 
 **Inspired by [Bloodhound](https://github.com/fullscreen-triangle/bloodhound)**: Hegel addresses the reality that most valuable biological evidence is distributed across institutions and often inaccessible due to privacy, regulatory, or competitive concerns. Our federated learning system enables collaborative evidence enhancement without requiring sensitive data to leave its source.
