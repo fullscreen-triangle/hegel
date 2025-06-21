@@ -12,6 +12,7 @@ pub mod processing;
 pub mod graph;
 pub mod metacognition;
 pub mod fuzzy_evidence;
+pub mod turbulance;
 
 /// Version of the Hegel core library
 pub const VERSION: &str = env!("CARGO_PKG_VERSION");

@@ -7,6 +7,7 @@ from neo4j import AsyncGraphDatabase
 
 from .routes import molecules
 from .routes import visualization
+from .routes import turbulance
 from .services.molecule_network import MoleculeNetworkBuilder, molecule_network
 from .routes import experiments, auth
 
@@ -39,6 +40,7 @@ app.add_middleware(
 # Include routers
 app.include_router(molecules.router)
 app.include_router(visualization.router)
+app.include_router(turbulance.router)
 app.include_router(experiments.router)
 app.include_router(auth.router)
 
