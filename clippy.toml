@@ -1,0 +1,38 @@
+# Clippy configuration for biological computing code quality
+
+# Strictness level for biological computing
+warn-on-all-wildcard-imports = true
+disallowed-methods = [
+    # Prevent blocking operations in async biological processing
+    "std::thread::sleep",
+    "std::process::Command::output",
+]
+
+# Allow certain patterns common in biological computing
+avoid-breaking-exported-api = false
+missing-docs-in-private-items = false
+
+# Biological computing specific lints
+disallowed-names = ["foo", "bar", "baz", "test"]
+allowed-scripts = ["Latin", "Arabic"]
+
+# Performance optimizations for biological data processing
+trivial-copy-pass-by-ref = false
+large-types-passed-by-value = 1024
+
+# Scientific computing patterns
+too-many-arguments = 10
+type-complexity = 250
+cognitive-complexity = 50
+
+# Allow certain patterns for biological algorithms
+single-char-lifetime-names = true
+module-name-repetitions = false
+
+# Biological data structure optimizations
+vec-init-then-push = false
+redundant-clone = true
+
+# Quantum computing and biological simulation patterns
+float-cmp = false        # Allow float comparisons in quantum calculations
+approx-constant = false  # Allow biological constants that may be approximate

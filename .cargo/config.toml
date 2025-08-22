@@ -1,0 +1,64 @@
+[build]
+# Target for biological computing optimizations
+target-dir = "target"
+
+[target.wasm32-unknown-unknown]
+# WebAssembly configuration for frontend integration
+rustflags = [
+    "-C", "opt-level=s",           # Optimize for size
+    "-C", "lto=fat",               # Enable link-time optimization
+    "-C", "codegen-units=1",       # Single codegen unit for better optimization
+]
+
+[target.x86_64-unknown-linux-gnu]
+# Linux configuration for biological computing servers
+rustflags = [
+    "-C", "target-cpu=native",     # Use all available CPU features
+    "-C", "opt-level=3",           # Maximum optimization for performance
+]
+
+[target.x86_64-pc-windows-msvc]
+# Windows configuration
+rustflags = [
+    "-C", "target-cpu=native",
+]
+
+[target.x86_64-apple-darwin]
+# macOS configuration
+rustflags = [
+    "-C", "target-cpu=native",
+]
+
+[alias]
+# Biological computing specific build commands
+bio-build = "build --profile biological-release"
+bio-test = "test --workspace --all-features"
+bio-bench = "bench --workspace"
+wasm-build = "build --target wasm32-unknown-unknown --profile wasm"
+oxygen-test = "test --package oxygen-substrate --all-features"
+membrane-test = "test --package membrane-quantum --all-features"
+evidence-test = "test --package fuzzy-bayesian --package evidence-rectification"
+
+[env]
+# Environment variables for biological computing
+RUST_LOG = "debug"
+BIOLOGICAL_COMPUTING_MODE = "oxygen_enhanced"
+QUANTUM_COHERENCE_TIMEOUT = "150000"  # microseconds
+ELECTRON_CASCADE_SPEED = "1000"      # nanoseconds
+
+[registries.crates-io]
+protocol = "sparse"
+
+[net]
+retry = 3
+git-fetch-with-cli = true
+
+[profile.dev.package."*"]
+# Optimize dependencies even in debug mode for better biological simulation performance
+opt-level = 3
+
+[source.crates-io]
+replace-with = "vendored-sources"
+
+[source.vendored-sources]
+directory = "vendor"

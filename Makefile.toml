@@ -1,0 +1,243 @@
+# Cargo Make configuration for Hegel Biological Computing
+
+[config]
+default_to_workspace = false
+reduce_output = false
+
+[env]
+CARGO_MAKE_EXTEND_WORKSPACE_MAKEFILE = true
+BIOLOGICAL_COMPUTING_ENV = "development"
+RUST_LOG = "debug"
+
+# Main build tasks
+[tasks.build-all]
+description = "Build all biological computing modules"
+script = [
+    "cargo build --workspace --all-features",
+    "echo 'Built all biological computer modules'"
+]
+
+[tasks.build-oxygen]
+description = "Build oxygen substrate processing module"
+script = [
+    "cargo build --package oxygen-substrate --all-features",
+    "echo 'Oxygen substrate module built successfully'"
+]
+
+[tasks.build-membrane]
+description = "Build membrane quantum computer module"
+script = [
+    "cargo build --package membrane-quantum --all-features",
+    "echo 'Membrane quantum computer module built successfully'"
+]
+
+[tasks.build-evidence]
+description = "Build evidence processing modules"
+script = [
+    "cargo build --package fuzzy-bayesian --package evidence-rectification --all-features",
+    "echo 'Evidence processing modules built successfully'"
+]
+
+[tasks.build-wasm]
+description = "Build WebAssembly bindings for frontend"
+script = [
+    "cargo build --package frontend-bindings --target wasm32-unknown-unknown --profile wasm",
+    "wasm-pack build src/wasm/frontend-bindings --target web --out-dir ../../frontend/pkg",
+    "echo 'WebAssembly bindings built successfully'"
+]
+dependencies = ["install-wasm-pack"]
+
+# Testing tasks
+[tasks.test-all]
+description = "Run all biological computing tests"
+script = [
+    "cargo test --workspace --all-features",
+    "echo 'All biological computing tests passed'"
+]
+
+[tasks.test-oxygen]
+description = "Test oxygen substrate processing"
+script = [
+    "cargo test --package oxygen-substrate --all-features -- --nocapture",
+    "echo 'Oxygen substrate tests completed'"
+]
+
+[tasks.test-membrane]
+description = "Test membrane quantum computers"
+script = [
+    "cargo test --package membrane-quantum --all-features -- --nocapture",
+    "echo 'Membrane quantum computer tests completed'"
+]
+
+[tasks.test-evidence]
+description = "Test evidence network systems"
+script = [
+    "cargo test --package fuzzy-bayesian --package evidence-rectification --all-features",
+    "echo 'Evidence network tests completed'"
+]
+
+[tasks.test-intelligence]
+description = "Test AI intelligence modules"
+script = [
+    "cargo test --package mzekezeke --package diggiden --package hatata --package spectacular --package nicotine --all-features",
+    "echo 'Intelligence module tests completed'"
+]
+
+# Benchmarking tasks
+[tasks.bench-all]
+description = "Run biological computing benchmarks"
+script = [
+    "cargo bench --workspace",
+    "echo 'Biological computing benchmarks completed'"
+]
+
+[tasks.bench-oxygen]
+description = "Benchmark oxygen processing performance"
+script = [
+    "cargo bench --package oxygen-substrate",
+    "echo 'Oxygen processing benchmarks completed'"
+]
+
+# Documentation tasks
+[tasks.docs]
+description = "Generate biological computing documentation"
+script = [
+    "cargo doc --workspace --all-features --no-deps",
+    "echo 'Documentation generated successfully'"
+]
+
+[tasks.docs-open]
+description = "Generate and open documentation"
+script = [
+    "cargo doc --workspace --all-features --no-deps --open",
+]
+dependencies = ["docs"]
+
+# Code quality tasks
+[tasks.fmt]
+description = "Format biological computing code"
+script = [
+    "cargo fmt --all",
+    "echo 'Code formatting completed'"
+]
+
+[tasks.clippy]
+description = "Run clippy lints for biological computing"
+script = [
+    "cargo clippy --workspace --all-features -- -D warnings",
+    "echo 'Clippy linting completed'"
+]
+
+[tasks.check]
+description = "Quick code checks"
+script = [
+    "cargo check --workspace --all-features",
+    "echo 'Code checks completed'"
+]
+
+# Security and audit tasks
+[tasks.audit]
+description = "Security audit of biological computing dependencies"
+script = [
+    "cargo audit",
+    "echo 'Security audit completed'"
+]
+dependencies = ["install-audit"]
+
+[tasks.outdated]
+description = "Check for outdated dependencies"
+script = [
+    "cargo outdated",
+    "echo 'Dependency check completed'"
+]
+dependencies = ["install-outdated"]
+
+# Installation tasks for required tools
+[tasks.install-wasm-pack]
+description = "Install wasm-pack for WebAssembly builds"
+script = [
+    "cargo install wasm-pack"
+]
+
+[tasks.install-audit]
+description = "Install cargo-audit for security auditing"
+script = [
+    "cargo install cargo-audit"
+]
+
+[tasks.install-outdated]
+description = "Install cargo-outdated for dependency checking"
+script = [
+    "cargo install cargo-outdated"
+]
+
+[tasks.install-tools]
+description = "Install all required development tools"
+dependencies = ["install-wasm-pack", "install-audit", "install-outdated"]
+
+# Deployment tasks
+[tasks.build-release]
+description = "Build optimized release for biological computing"
+script = [
+    "cargo build --workspace --profile biological-release",
+    "echo 'Biological computing release build completed'"
+]
+
+[tasks.build-docker]
+description = "Build Docker image for biological computing"
+script = [
+    "docker build -t hegel-biological-computing:latest .",
+    "echo 'Docker image built successfully'"
+]
+
+# Development workflow
+[tasks.dev-setup]
+description = "Set up development environment for biological computing"
+dependencies = ["install-tools", "fmt", "clippy", "test-all"]
+script = [
+    "echo 'Development environment setup completed for biological computing'"
+]
+
+[tasks.ci]
+description = "Run CI pipeline locally"
+dependencies = ["fmt", "clippy", "test-all", "audit"]
+script = [
+    "echo 'CI pipeline completed successfully'"
+]
+
+# Biological computing specific tasks
+[tasks.simulate-oxygen]
+description = "Run oxygen processing simulation"
+script = [
+    "cargo run --package oxygen-substrate --bin simulate_processing",
+    "echo 'Oxygen processing simulation completed'"
+]
+
+[tasks.test-membrane-quantum]
+description = "Test membrane quantum computer coherence"
+script = [
+    "cargo run --package membrane-quantum --bin test_coherence",
+    "echo 'Membrane quantum coherence test completed'"
+]
+
+[tasks.benchmark-evidence-network]
+description = "Benchmark evidence network performance"
+script = [
+    "cargo run --package evidence-rectification --bin benchmark_network",
+    "echo 'Evidence network benchmarking completed'"
+]
+
+# Clean tasks
+[tasks.clean]
+description = "Clean build artifacts"
+script = [
+    "cargo clean",
+    "echo 'Build artifacts cleaned'"
+]
+
+[tasks.clean-docs]
+description = "Clean documentation"
+script = [
+    "rm -rf target/doc",
+    "echo 'Documentation cleaned'"
+]
