@@ -1,0 +1,50 @@
+# Rust build artifacts
+target/
+Cargo.lock
+
+# Development files
+.git/
+.gitignore
+.env*
+*.log
+
+# Documentation
+README.md
+docs/
+*.md
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Frontend files (built separately)
+frontend/node_modules/
+frontend/dist/
+frontend/.next/
+
+# Test files
+tests/
+benches/
+
+# Cache directories
+.cache/
+tmp/
+
+# Docker files
+Dockerfile*
+docker-compose*.yml
+.dockerignore
+
+# CI/CD files
+.github/
+
+# Local development
+scripts/dev/
+configs/local/

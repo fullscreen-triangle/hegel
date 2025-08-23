@@ -1,100 +1,217 @@
-version: '3.8'
+version: "3.8"
 
 services:
-  # Frontend service
-  frontend:
+  # Hegel Biological Computing Platform
+  hegel-platform:
     build:
-      context: ./frontend
+      context: .
       dockerfile: Dockerfile
+      target: runtime
+    container_name: hegel-biological-computing
+    restart: unless-stopped
+    ports:
+      - "8080:8080" # Main API
+      - "8081:8081" # Metrics
+      - "8082:8082" # Admin
+    environment:
+      - BIOLOGICAL_COMPUTING_MODE=docker
+      - RUST_LOG=info
+      - DATABASE_URL=postgresql://hegel:oxygen_enhanced@postgres:5432/hegel_biological
+      - REDIS_URL=redis://redis:6379
+      - OXYGEN_PROCESSING_THREADS=8
+      - MEMBRANE_QUANTUM_COHERENCE_TIME=150000
+      - ELECTRON_CASCADE_TIMEOUT=1000
+      - FEDERATED_NETWORK_ENABLED=true
+    volumes:
+      - ./configs:/app/configs:ro
+      - ./data:/app/data
+      - biological_data:/app/biological_data
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - biological-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+  # PostgreSQL Database for molecular evidence storage
+  postgres:
+    image: postgres:15-alpine
+    container_name: hegel-postgres
+    restart: unless-stopped
+    environment:
+      - POSTGRES_DB=hegel_biological
+      - POSTGRES_USER=hegel
+      - POSTGRES_PASSWORD=oxygen_enhanced
+      - POSTGRES_INITDB_ARGS=--auth-host=scram-sha-256
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./scripts/init-db.sql:/docker-entrypoint-initdb.d/init-db.sql:ro
+    ports:
+      - "5432:5432"
+    networks:
+      - biological-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U hegel -d hegel_biological"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Redis for caching and real-time data
+  redis:
+    image: redis:7-alpine
+    container_name: hegel-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+      - ./configs/redis.conf:/usr/local/etc/redis/redis.conf:ro
+    command: redis-server /usr/local/etc/redis/redis.conf
+    networks:
+      - biological-network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+
+  # Prometheus for monitoring biological computing metrics
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: hegel-prometheus
+    restart: unless-stopped
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./configs/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus_data:/prometheus
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+      - "--storage.tsdb.path=/prometheus"
+      - "--web.console.libraries=/etc/prometheus/console_libraries"
+      - "--web.console.templates=/etc/prometheus/consoles"
+      - "--storage.tsdb.retention.time=200h"
+      - "--web.enable-lifecycle"
+    networks:
+      - biological-network
+
+  # Grafana for biological computing dashboards
+  grafana:
+    image: grafana/grafana:latest
+    container_name: hegel-grafana
+    restart: unless-stopped
     ports:
       - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=biological_computing_2024
+      - GF_USERS_ALLOW_SIGN_UP=false
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./configs/grafana/dashboards:/etc/grafana/provisioning/dashboards:ro
+      - ./configs/grafana/datasources:/etc/grafana/provisioning/datasources:ro
+    networks:
+      - biological-network
+    depends_on:
+      - prometheus
+
+  # Nginx reverse proxy for biological computing services
+  nginx:
+    image: nginx:alpine
+    container_name: hegel-nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./configs/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./configs/nginx/ssl:/etc/nginx/ssl:ro
+      - ./frontend/dist:/usr/share/nginx/html:ro
+    depends_on:
+      - hegel-platform
+    networks:
+      - biological-network
+
+  # Frontend development server (for development only)
+  frontend-dev:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.dev
+    container_name: hegel-frontend-dev
+    restart: unless-stopped
+    ports:
+      - "3001:3000"
     volumes:
       - ./frontend:/app
       - /app/node_modules
     environment:
-      - NEXT_PUBLIC_API_URL=http://localhost:8080/api
-    depends_on:
-      - api
+      - NODE_ENV=development
+      - REACT_APP_API_URL=http://localhost:8080
+      - REACT_APP_BIOLOGICAL_COMPUTING_MODE=development
+    networks:
+      - biological-network
+    profiles:
+      - development
 
-  # Rust API service
-  api:
-    build:
-      context: ./core
-      dockerfile: Dockerfile
+  # Elasticsearch for biological data indexing (optional)
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.11.0
+    container_name: hegel-elasticsearch
+    restart: unless-stopped
+    environment:
+      - discovery.type=single-node
+      - "ES_JAVA_OPTS=-Xms1g -Xmx1g"
+      - xpack.security.enabled=false
+    volumes:
+      - elasticsearch_data:/usr/share/elasticsearch/data
     ports:
-      - "8080:8080"
-    volumes:
-      - ./core:/app
-      - ./data:/app/data
-    environment:
-      - RUST_LOG=info
-      - DATABASE_URL=bolt://neo4j:7687
-      - NEO4J_USER=neo4j
-      - NEO4J_PASSWORD=password
-      - LLM_SERVICE_URL=http://llm-service:8000
-      - GENOMICS_DATA_PATH=/app/data/genomics
-      - MASS_SPEC_DATA_PATH=/app/data/mass_spec
-    depends_on:
-      - neo4j
-      - llm-service
+      - "9200:9200"
+    networks:
+      - biological-network
+    profiles:
+      - full-stack
 
-  # Neo4j database service
-  neo4j:
-    image: neo4j:5.11
+  # Kibana for biological data visualization (optional)
+  kibana:
+    image: docker.elastic.co/kibana/kibana:8.11.0
+    container_name: hegel-kibana
+    restart: unless-stopped
     ports:
-      - "7474:7474"  # HTTP
-      - "7687:7687"  # Bolt
-    volumes:
-      - neo4j_data:/data
-      - neo4j_logs:/logs
-      - neo4j_import:/import
-      - ./scripts/neo4j:/var/lib/neo4j/import/init-scripts
+      - "5601:5601"
     environment:
-      - NEO4J_AUTH=neo4j/password
-      - NEO4J_dbms_memory_pagecache_size=1G
-      - NEO4J_dbms.memory.heap.initial_size=1G
-      - NEO4J_dbms_memory_heap_max__size=1G
-      - NEO4J_apoc_import_file_enabled=true
-      - NEO4J_apoc_export_file_enabled=true
-      - NEO4J_dbms_security_procedures_unrestricted=apoc.*
-
-  # LLM service for AI-guided evidence rectification
-  llm-service:
-    build:
-      context: ./llm-service
-      dockerfile: Dockerfile
-    ports:
-      - "8000:8000"
-    volumes:
-      - ./llm-service:/app
-      - ./data/models:/app/models
-    environment:
-      - PORT=8000
-      - MODEL_PATH=/app/models
-      - LOG_LEVEL=info
-      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
-      - USE_LOCAL_MODEL=${USE_LOCAL_MODEL:-true}
-      - MAX_TOKENS=1024
-      - TEMPERATURE=0.7
-
-  # Data initialization service for loading example data
-  data-init:
-    build:
-      context: ./scripts
-      dockerfile: Dockerfile.data-init
-    volumes:
-      - ./data:/data
-      - ./scripts:/scripts
-    environment:
-      - NEO4J_URI=bolt://neo4j:7687
-      - NEO4J_USER=neo4j
-      - NEO4J_PASSWORD=password
-      - GENOMICS_DATA_PATH=/data/genomics
-      - MASS_SPEC_DATA_PATH=/data/mass_spec
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
     depends_on:
-      - neo4j
+      - elasticsearch
+    networks:
+      - biological-network
+    profiles:
+      - full-stack
 
+# Networks
+networks:
+  biological-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
+
+# Volumes for persistent data
 volumes:
-  neo4j_data:
-  neo4j_logs:
-  neo4j_import:
+  postgres_data:
+    driver: local
+  redis_data:
+    driver: local
+  biological_data:
+    driver: local
+  prometheus_data:
+    driver: local
+  grafana_data:
+    driver: local
+  elasticsearch_data:
+    driver: local
