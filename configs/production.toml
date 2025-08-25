@@ -1,0 +1,168 @@
+# Production Configuration for Hegel Biological Computing Platform
+
+[biological_computing]
+mode = "production"
+debug_mode = false
+hot_reload = false
+simulation_mode = false
+mock_biological_data = false
+
+[oxygen_substrate]
+# Production oxygen processing settings
+processing_threads = 8
+information_density = 3_200_000_000_000_000 # 3.2 × 10^15 bits/molecule/second
+coherence_time_us = 150_000
+debug_processing = false
+log_molecular_interactions = false
+enable_optimization = true
+
+[membrane_quantum]
+# Production membrane quantum computer settings
+coherence_time_us = 150_000
+resolution_target = 0.99
+temperature_range = [310.0, 315.0]  # Kelvin
+debug_coherence = false
+quantum_simulation = false
+enable_hardware_acceleration = true
+
+[electron_cascade]
+# Production electron cascade system
+timeout_ns = 1_000
+hop_limit = 50
+quantum_efficiency = 0.95
+debug_cascade_paths = false
+log_electron_hops = false
+enable_cascade_optimization = true
+
+[genome_consultation]
+# Production genome consultation settings
+confidence_threshold = 0.80
+consultation_frequency = 0.01
+backup_timeout_ms = 5_000
+enable_consultation_logging = false
+cache_consultation_results = true
+
+[evidence_network]
+# Production evidence processing
+decay_rate = 0.023
+confidence_threshold = 0.85
+fuzzy_membership_tolerance = 0.1
+bayesian_prior_weight = 0.3
+debug_evidence_flow = false
+enable_evidence_caching = true
+
+[intelligence_modules]
+# Production AI module settings
+[intelligence_modules.mzekezeke]
+learning_rate = 0.001
+debug_predictions = false
+enable_model_persistence = true
+
+[intelligence_modules.diggiden]
+adversarial_strength = 0.7
+debug_adversarial_tests = false
+enable_threat_detection = true
+
+[intelligence_modules.hatata]
+decision_threshold = 0.75
+debug_decisions = false
+enable_decision_caching = true
+
+[intelligence_modules.spectacular]
+anomaly_sensitivity = 0.95
+debug_anomalies = false
+enable_anomaly_alerting = true
+
+[intelligence_modules.nicotine]
+context_preservation_rate = 0.99
+debug_context = false
+enable_context_compression = true
+
+[federated_learning]
+# Production federated learning settings
+enabled = true
+privacy_epsilon = 1.0
+consensus_threshold = 0.67
+sync_interval_seconds = 3600
+byzantine_fault_tolerance = true
+
+[database]
+# Production database settings
+url = "postgresql://hegel:${DB_PASSWORD}@postgres-cluster:5432/hegel_biological"
+max_connections = 20
+min_connections = 5
+enable_query_logging = false
+migration_on_startup = false
+connection_timeout_seconds = 30
+pool_timeout_seconds = 30
+
+[redis]
+# Production cache settings
+url = "redis://redis-cluster:6379/0"
+max_connections = 50
+enable_command_logging = false
+connection_timeout_seconds = 10
+cluster_mode = true
+
+[api]
+# Production API settings
+host = "0.0.0.0"
+port = 8080
+workers = 8
+timeout_ms = 30_000
+rate_limit = 1_000
+enable_cors = true
+cors_origins = ["https://hegel.biological-computing.org"]
+debug_requests = false
+enable_request_logging = true
+
+[metrics]
+# Production monitoring settings
+enabled = true
+port = 8081
+prometheus_pushgateway = "http://prometheus:9091"
+scrape_interval_seconds = 15
+
+[security]
+# Production security settings
+secret_key = "${SECRET_KEY}"
+jwt_expiration_seconds = 3600
+enable_rate_limiting = true
+enable_request_signing = true
+max_request_size = "10MB"
+
+[logging]
+# Production logging configuration
+level = "info"
+format = "json"
+enable_file_logging = true
+file_path = "/app/logs/hegel.log"
+rotation_size = "100MB"
+retention_days = 30
+enable_biological_event_logging = false
+
+[performance]
+# Production performance settings
+memory_pool_size = "2GB"
+enable_profiling = false
+benchmark_on_startup = false
+optimization_level = "release"
+cpu_affinity = "auto"
+numa_optimization = true
+
+[biological_validation]
+# Production biological constraint validation
+thermodynamic_feasibility = true
+kinetic_feasibility = true
+pathway_coherence = true
+cellular_context_validation = true
+temporal_consistency_check = true
+
+[backup]
+# Production backup settings
+enabled = true
+interval_hours = 6
+retention_days = 30
+compression = true
+encryption = true
+remote_storage = "s3://hegel-backups/"

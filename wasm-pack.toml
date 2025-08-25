@@ -1,0 +1,94 @@
+
+# wasm-pack configuration for Hegel Biological Computing WebAssembly bindings
+
+[package.metadata.wasm-pack]
+
+[package.metadata.wasm-pack.profile.release]
+# Production build optimizations
+opt-level = "s"           # Optimize for size
+lto = true               # Link-time optimization
+debug = false            # No debug info in production
+panic = "abort"          # Smaller code size
+codegen-units = 1        # Better optimization
+
+[package.metadata.wasm-pack.profile.dev] 
+# Development build settings
+opt-level = 0            # No optimization for faster builds
+debug = true            # Include debug info
+panic = "unwind"        # Better debugging experience
+
+[package.metadata.wasm-pack.profile.profiling]
+# Profiling build for performance analysis
+inherits = "release"
+debug = true            # Debug info for profiling
+
+# Build targets
+[[package.metadata.wasm-pack.target]]
+name = "web"
+description = "Web target for browser integration"
+
+[[package.metadata.wasm-pack.target]]  
+name = "nodejs"
+description = "Node.js target for server-side processing"
+
+# Custom build features for biological computing
+[package.metadata.wasm-pack.features]
+oxygen-enhancement = [
+    "oxygen-substrate/wasm",
+    "oscillatory-dynamics/wasm"
+]
+
+membrane-quantum = [
+    "membrane-quantum/wasm",
+    "quantum-coherence"
+]
+
+electron-cascade = [
+    "electron-cascade/wasm", 
+    "cascade-communication"
+]
+
+evidence-processing = [
+    "fuzzy-bayesian/wasm",
+    "evidence-rectification/wasm", 
+    "temporal-decay/wasm"
+]
+
+zero-computation = [
+    "zero-computation/wasm",
+    "masunda-navigation"
+]
+
+biological-validation = [
+    "thermodynamic-constraints",
+    "kinetic-feasibility", 
+    "pathway-coherence"
+]
+
+# Development and debugging features  
+debug-mode = [
+    "console_error_panic_hook",
+    "wasm-logger",
+    "debug-assertions"
+]
+
+# Performance optimization features
+simd = ["simd-support"]
+threads = ["thread-support"] 
+bulk-memory = ["bulk-memory-operations"]
+
+# Default feature set for biological computing
+default = [
+    "oxygen-enhancement",
+    "membrane-quantum", 
+    "electron-cascade",
+    "evidence-processing"
+]
+
+# Research mode with experimental features
+research = [
+    "default",
+    "zero-computation",
+    "biological-validation",
+    "debug-mode"
+]

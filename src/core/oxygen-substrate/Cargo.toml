@@ -1,0 +1,73 @@
+[package]
+name = "oxygen-substrate"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+description = "Paramagnetic oscillatory information processing substrate for biological computing"
+keywords = [
+    "oxygen",
+    "paramagnetic",
+    "biological-computing",
+    "information-processing",
+]
+categories = ["science", "biology", "algorithms"]
+
+[lib]
+name = "oxygen_substrate"
+crate-type = ["lib"]
+
+[dependencies]
+# Async runtime
+tokio = { workspace = true }
+async-trait = { workspace = true }
+futures = { workspace = true }
+
+# Serialization
+serde = { workspace = true }
+serde_json = { workspace = true }
+
+# Mathematical computing
+nalgebra = { workspace = true }
+ndarray = { workspace = true }
+statrs = { workspace = true }
+rand = { workspace = true }
+rand_distr = { workspace = true }
+
+# Time handling
+chrono = { workspace = true }
+uuid = { workspace = true }
+
+# Error handling
+thiserror = { workspace = true }
+anyhow = { workspace = true }
+
+# Logging
+tracing = { workspace = true }
+
+# Parallel processing
+rayon = { workspace = true }
+
+# Memory management
+parking_lot = { workspace = true }
+arc-swap = { workspace = true }
+
+[features]
+default = ["simulation"]
+simulation = []
+wasm = ["wasm-bindgen"]
+validation = []
+debug-processing = []
+
+[dependencies.wasm-bindgen]
+workspace = true
+optional = true
+
+[dev-dependencies]
+tokio-test = "0.4"
+criterion = "0.5"
+proptest = "1.4"
+
+[[bench]]
+name = "oxygen_processing"
+harness = false

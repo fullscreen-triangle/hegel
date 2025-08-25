@@ -1,0 +1,94 @@
+[package]
+name = "fuzzy-bayesian"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+description = "Hybrid fuzzy-Bayesian evidence networks for biological molecular evidence processing"
+keywords = [
+    "fuzzy-logic",
+    "bayesian-networks",
+    "evidence-networks",
+    "biological-computing",
+]
+categories = ["science", "biology", "algorithms"]
+
+[lib]
+name = "fuzzy_bayesian"
+crate-type = ["lib"]
+
+[dependencies]
+# Async runtime
+tokio = { workspace = true }
+async-trait = { workspace = true }
+futures = { workspace = true }
+
+# Serialization
+serde = { workspace = true }
+serde_json = { workspace = true }
+
+# Mathematical computing
+nalgebra = { workspace = true }
+ndarray = { workspace = true }
+statrs = { workspace = true }
+
+# UUID generation
+uuid = { workspace = true }
+
+# Time handling
+chrono = { workspace = true }
+
+# Error handling
+thiserror = { workspace = true }
+anyhow = { workspace = true }
+
+# Logging
+tracing = { workspace = true }
+
+# Collections and data structures
+indexmap = "2.1"
+petgraph = "0.6"
+
+# Parallel processing
+rayon = { workspace = true }
+
+# Memory management
+parking_lot = { workspace = true }
+arc-swap = { workspace = true }
+
+# Random number generation
+rand = { workspace = true }
+rand_distr = { workspace = true }
+
+# Graph algorithms
+pathfinding = "4.9"
+
+[features]
+default = ["network-learning", "uncertainty-propagation"]
+network-learning = []
+wasm = ["wasm-bindgen"]
+uncertainty-propagation = []
+temporal-decay = []
+biological-constraints = []
+debug-evidence = []
+
+[dependencies.wasm-bindgen]
+workspace = true
+optional = true
+
+[dev-dependencies]
+tokio-test = "0.4"
+criterion = "0.5"
+proptest = "1.4"
+
+[[bench]]
+name = "evidence_networks"
+harness = false
+
+[[example]]
+name = "basic_evidence_network"
+required-features = ["network-learning"]
+
+[[example]]
+name = "molecular_evidence_propagation"
+required-features = ["network-learning", "uncertainty-propagation"]

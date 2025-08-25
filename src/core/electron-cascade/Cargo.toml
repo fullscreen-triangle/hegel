@@ -1,0 +1,87 @@
+[package]
+name = "electron-cascade"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+description = "Electron cascade communication system for instant molecular coordination"
+keywords = [
+    "electron-cascade",
+    "quantum-communication",
+    "molecular-coordination",
+    "biological-computing",
+]
+categories = ["science", "biology", "algorithms"]
+
+[lib]
+name = "electron_cascade"
+crate-type = ["lib"]
+
+[dependencies]
+# Async runtime
+tokio = { workspace = true }
+async-trait = { workspace = true }
+futures = { workspace = true }
+
+# Serialization
+serde = { workspace = true }
+serde_json = { workspace = true }
+
+# Mathematical computing
+nalgebra = { workspace = true }
+ndarray = { workspace = true }
+
+# UUID generation
+uuid = { workspace = true }
+
+# Time handling
+chrono = { workspace = true }
+
+# Error handling
+thiserror = { workspace = true }
+anyhow = { workspace = true }
+
+# Logging
+tracing = { workspace = true }
+
+# Collections and data structures
+indexmap = "2.1"
+
+# Parallel processing
+rayon = { workspace = true }
+
+# Memory management
+parking_lot = { workspace = true }
+arc-swap = { workspace = true }
+
+# Random number generation for quantum simulations
+rand = { workspace = true }
+rand_distr = { workspace = true }
+
+[features]
+default = ["simulation"]
+simulation = []
+wasm = ["wasm-bindgen"]
+quantum-simulation = []
+debug-cascade = []
+
+[dependencies.wasm-bindgen]
+workspace = true
+optional = true
+
+[dev-dependencies]
+tokio-test = "0.4"
+criterion = "0.5"
+proptest = "1.4"
+
+[[bench]]
+name = "electron_cascade"
+harness = false
+
+[[example]]
+name = "basic_cascade"
+required-features = ["simulation"]
+
+[[example]]
+name = "molecular_coordination"
+required-features = ["simulation"]

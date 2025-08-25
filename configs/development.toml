@@ -1,0 +1,116 @@
+# Development Configuration for Hegel Biological Computing Platform
+
+[biological_computing]
+mode = "development"
+debug_mode = true
+hot_reload = true
+simulation_mode = true
+mock_biological_data = true
+
+[oxygen_substrate]
+# Development settings for oxygen processing
+processing_threads = 2
+information_density = 3_200_000_000_000_000 # 3.2 × 10^15 bits/molecule/second
+coherence_time_us = 150_000
+debug_processing = true
+log_molecular_interactions = true
+
+[membrane_quantum]
+# Development membrane quantum computer settings
+coherence_time_us = 150_000
+resolution_target = 0.99
+temperature_range = [310.0, 315.0] # Kelvin
+debug_coherence = true
+quantum_simulation = true
+
+[electron_cascade]
+# Development electron cascade system
+timeout_ns = 1_000
+hop_limit = 50
+quantum_efficiency = 0.95
+debug_cascade_paths = true
+log_electron_hops = true
+
+[genome_consultation]
+# Development genome consultation settings
+confidence_threshold = 0.80
+consultation_frequency = 0.01
+backup_timeout_ms = 5_000
+enable_consultation_logging = true
+
+[evidence_network]
+# Development evidence processing
+decay_rate = 0.023
+confidence_threshold = 0.85
+fuzzy_membership_tolerance = 0.1
+bayesian_prior_weight = 0.3
+debug_evidence_flow = true
+
+[intelligence_modules]
+# Development AI module settings
+[intelligence_modules.mzekezeke]
+learning_rate = 0.001
+debug_predictions = true
+
+[intelligence_modules.diggiden]
+adversarial_strength = 0.7
+debug_adversarial_tests = true
+
+[intelligence_modules.hatata]
+decision_threshold = 0.75
+debug_decisions = true
+
+[intelligence_modules.spectacular]
+anomaly_sensitivity = 0.95
+debug_anomalies = true
+
+[intelligence_modules.nicotine]
+context_preservation_rate = 0.99
+debug_context = true
+
+[database]
+# Development database settings
+url = "postgresql://hegel:oxygen_enhanced@localhost:5432/hegel_biological_dev"
+max_connections = 5
+min_connections = 1
+enable_query_logging = true
+migration_on_startup = true
+
+[redis]
+# Development cache settings
+url = "redis://localhost:6379/0"
+max_connections = 10
+enable_command_logging = true
+
+[api]
+# Development API settings
+host = "127.0.0.1"
+port = 8080
+workers = 2
+timeout_ms = 30_000
+rate_limit = 10_000
+enable_cors = true
+cors_origins = ["http://localhost:3000", "http://localhost:3001"]
+debug_requests = true
+
+[logging]
+# Development logging configuration
+level = "debug"
+format = "pretty"
+enable_file_logging = false
+enable_biological_event_logging = true
+
+[testing]
+# Development testing settings
+parallel_threads = 2
+timeout_ms = 300_000
+coverage_threshold = 75
+enable_biological_validation = true
+mock_quantum_operations = true
+
+[performance]
+# Development performance settings
+memory_pool_size = "512MB"
+enable_profiling = true
+benchmark_on_startup = true
+optimization_level = "debug"

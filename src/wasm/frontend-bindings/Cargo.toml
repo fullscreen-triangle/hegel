@@ -1,0 +1,116 @@
+
+[package]
+name = "frontend-bindings"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+description = "WebAssembly bindings for Hegel biological computing frontend"
+keywords = ["wasm", "biological-computing", "frontend", "oxygen-enhancement"]
+categories = ["wasm", "web-programming", "science"]
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+# WebAssembly runtime
+wasm-bindgen = { workspace = true, features = ["serde-serialize"] }
+js-sys = { workspace = true }
+wasm-bindgen-futures = { workspace = true }
+
+# Web APIs
+web-sys = { workspace = true, features = [
+    "console",
+    "Window",
+    "Document",
+    "Element",
+    "HtmlElement",
+    "HtmlInputElement",
+    "HtmlButtonElement",
+    "Event",
+    "EventTarget",
+    "MouseEvent",
+    "KeyboardEvent",
+    "Response",
+    "Request",
+    "Headers",
+    "RequestInit",
+    "RequestMode",
+    "fetch",
+    "WebSocket",
+    "MessageEvent",
+    "CloseEvent",
+    "ErrorEvent",
+    "WebGl2RenderingContext",
+    "WebGlProgram",
+    "WebGlShader",
+    "WebGlBuffer",
+    "WebGlTexture",
+    "WebGlUniformLocation",
+    "Performance",
+    "PerformanceEntry",
+    "Worker",
+] }
+
+# Serialization
+serde = { workspace = true }
+serde_json = { workspace = true }
+
+# Mathematics for biological computing
+nalgebra = { workspace = true, features = ["wasm-bindgen"] }
+ndarray = { workspace = true }
+
+# Biological computing core modules
+oxygen-substrate = { path = "../../core/oxygen-substrate" }
+membrane-quantum = { path = "../../core/membrane-quantum" }
+electron-cascade = { path = "../../core/electron-cascade" }
+fuzzy-bayesian = { path = "../../evidence/fuzzy-bayesian" }
+evidence-rectification = { path = "../../evidence/evidence-rectification" }
+
+# Utilities
+s-distance = { path = "../../utils/s-distance" }
+zero-computation = { path = "../../utils/zero-computation" }
+oscillatory-dynamics = { path = "../../utils/oscillatory-dynamics" }
+
+# Error handling
+thiserror = { workspace = true }
+
+# Async support
+futures = { workspace = true }
+
+# Logging for WASM
+wasm-logger = "0.2"
+log = "0.4"
+
+# Memory optimization for WASM
+wee_alloc = "0.4"
+
+[dependencies.uuid]
+workspace = true
+features = ["v4", "js"]
+
+[features]
+default = ["console_error_panic_hook"]
+console_error_panic_hook = ["dep:console_error_panic_hook"]
+
+# Biological computing features
+oxygen-enhancement = ["oxygen-substrate/wasm"]
+membrane-quantum-computing = ["membrane-quantum/wasm"] 
+electron-cascade-communication = ["electron-cascade/wasm"]
+evidence-processing = ["fuzzy-bayesian/wasm", "evidence-rectification/wasm"]
+zero-computation-engine = ["zero-computation/wasm"]
+
+# Development features
+debug = ["console_error_panic_hook", "wasm-logger"]
+
+[dependencies.console_error_panic_hook]
+version = "0.1"
+optional = true
+
+[package.metadata.wasm-pack.profile.release]
+# Optimize for small code size
+wee-alloc = true
+
+[package.metadata.wasm-pack.profile.dev]
+# Debug information for development
+debug-info = true

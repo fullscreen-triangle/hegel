@@ -1,0 +1,96 @@
+[package]
+name = "membrane-quantum"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+description = "Membrane quantum computer (Bene Gesserit) achieving 99% molecular resolution"
+keywords = [
+    "membrane",
+    "quantum-computing",
+    "biological-membranes",
+    "molecular-resolution",
+]
+categories = ["science", "biology", "algorithms"]
+
+[lib]
+name = "membrane_quantum"
+crate-type = ["lib"]
+
+[dependencies]
+# Async runtime
+tokio = { workspace = true }
+async-trait = { workspace = true }
+futures = { workspace = true }
+
+# Serialization
+serde = { workspace = true }
+serde_json = { workspace = true }
+
+# Mathematical computing for quantum operations
+nalgebra = { workspace = true }
+ndarray = { workspace = true }
+statrs = { workspace = true }
+
+# Complex number support for quantum states
+num-complex = "0.4"
+
+# UUID generation
+uuid = { workspace = true }
+
+# Time handling
+chrono = { workspace = true }
+
+# Error handling
+thiserror = { workspace = true }
+anyhow = { workspace = true }
+
+# Logging
+tracing = { workspace = true }
+
+# Collections and data structures
+indexmap = "2.1"
+
+# Parallel processing
+rayon = { workspace = true }
+
+# Memory management
+parking_lot = { workspace = true }
+arc-swap = { workspace = true }
+
+# Random number generation for quantum simulations
+rand = { workspace = true }
+rand_distr = { workspace = true }
+
+# Linear algebra for quantum operations
+approx = "0.5"
+
+[features]
+default = ["simulation", "quantum-coherence"]
+simulation = []
+wasm = ["wasm-bindgen"]
+quantum-coherence = []
+membrane-optimization = []
+debug-quantum = []
+hardware-acceleration = []
+
+[dependencies.wasm-bindgen]
+workspace = true
+optional = true
+
+[dev-dependencies]
+tokio-test = "0.4"
+criterion = "0.5"
+proptest = "1.4"
+
+[[bench]]
+name = "membrane_quantum"
+harness = false
+
+[[example]]
+name = "basic_quantum_computation"
+required-features = ["simulation"]
+
+[[example]]
+name = "molecular_pathway_testing"
+required-features = ["simulation", "quantum-coherence"]

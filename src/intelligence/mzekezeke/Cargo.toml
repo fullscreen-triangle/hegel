@@ -1,0 +1,102 @@
+[package]
+name = "mzekezeke"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+description = "Mzekezeke - ML workhorse for predictive modeling and pattern recognition in biological systems"
+keywords = [
+    "machine-learning",
+    "pattern-recognition",
+    "biological-modeling",
+    "predictive-analytics",
+]
+categories = ["science", "biology", "algorithms", "machine-learning"]
+
+[lib]
+name = "mzekezeke"
+crate-type = ["lib"]
+
+[dependencies]
+# Async runtime
+tokio = { workspace = true }
+async-trait = { workspace = true }
+futures = { workspace = true }
+
+# Serialization
+serde = { workspace = true }
+serde_json = { workspace = true }
+
+# Mathematical computing for ML
+nalgebra = { workspace = true }
+ndarray = { workspace = true }
+statrs = { workspace = true }
+
+# Machine learning libraries
+candle = { version = "0.3", features = ["candle-core", "candle-nn"] }
+tch = { version = "0.13", optional = true }
+
+# UUID generation
+uuid = { workspace = true }
+
+# Time handling
+chrono = { workspace = true }
+
+# Error handling
+thiserror = { workspace = true }
+anyhow = { workspace = true }
+
+# Logging
+tracing = { workspace = true }
+
+# Collections and data structures
+indexmap = "2.1"
+
+# Parallel processing
+rayon = { workspace = true }
+
+# Memory management
+parking_lot = { workspace = true }
+arc-swap = { workspace = true }
+
+# Random number generation
+rand = { workspace = true }
+rand_distr = { workspace = true }
+
+# Feature engineering
+polars = "0.35"
+
+# Model persistence
+bincode = { workspace = true }
+
+[features]
+default = ["pattern-recognition", "predictive-modeling"]
+pattern-recognition = []
+predictive-modeling = []
+deep-learning = ["tch"]
+wasm = ["wasm-bindgen"]
+gpu-acceleration = []
+biological-constraints = []
+online-learning = []
+debug-ml = []
+
+[dependencies.wasm-bindgen]
+workspace = true
+optional = true
+
+[dev-dependencies]
+tokio-test = "0.4"
+criterion = "0.5"
+proptest = "1.4"
+
+[[bench]]
+name = "mzekezeke_ml"
+harness = false
+
+[[example]]
+name = "basic_pattern_recognition"
+required-features = ["pattern-recognition"]
+
+[[example]]
+name = "molecular_prediction"
+required-features = ["predictive-modeling"]
