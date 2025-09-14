@@ -12,6 +12,8 @@ Key Validations:
 """
 
 import numpy as np
+import matplotlib
+matplotlib.use('Agg')  # Use non-interactive backend to avoid Tkinter issues
 import matplotlib.pyplot as plt
 import seaborn as sns
 from scipy import signal, optimize
@@ -144,7 +146,7 @@ class OxygenSubstrate:
         t = np.linspace(0, 1e-6, time_steps)  # 1 microsecond
         
         # Initialize density field
-        density_evolution = np.zeros((time_steps, grid_size, grid_size))
+        density_evolution = np.zeros((time_steps, grid_size, grid_size), dtype=np.float64)
         
         # Oxygen molecule positions (random)
         n_molecules = 100
@@ -153,8 +155,8 @@ class OxygenSubstrate:
         
         for i, time in enumerate(t):
             # Base cytoplasmic density
-            base_density = 1000  # kg/m³
-            density = np.full((grid_size, grid_size), base_density)
+            base_density = 1000.0  # kg/m³ (float)
+            density = np.full((grid_size, grid_size), base_density, dtype=np.float64)
             
             # Add space generation from each O₂ molecule
             for ox, oy in zip(o2_x, o2_y):
@@ -258,7 +260,7 @@ class OxygenProcessor:
         plt.tight_layout()
         if save_plots:
             plt.savefig('oxygen_oid_supremacy.png', dpi=300, bbox_inches='tight')
-        plt.show()
+        plt.close()  # Close figure to avoid display issues
     
     def demonstrate_space_generation(self, save_plots: bool = True) -> None:
         """Demonstrate paramagnetic cytoplasmic space generation"""
@@ -283,7 +285,7 @@ class OxygenProcessor:
         plt.tight_layout()
         if save_plots:
             plt.savefig('cytoplasmic_space_generation.png', dpi=300, bbox_inches='tight')
-        plt.show()
+        plt.close()  # Close figure to avoid display issues
         
         # Create animation of space generation
         self._create_space_generation_animation(density_evolution, save_plots)
@@ -318,7 +320,7 @@ class OxygenProcessor:
             except Exception as e:
                 print(f"Could not save animation: {e}")
         
-        plt.show()
+        plt.close()  # Close figure to avoid display issues
     
     def demonstrate_information_enhancement(self, save_plots: bool = True) -> None:
         """Demonstrate the 8000× information processing enhancement with oxygen"""
@@ -419,7 +421,7 @@ class OxygenProcessor:
         plt.tight_layout()
         if save_plots:
             plt.savefig('oxygen_information_enhancement.png', dpi=300, bbox_inches='tight')
-        plt.show()
+        plt.close()  # Close figure to avoid display issues
     
     def save_data_summary(self) -> None:
         """Save comprehensive data summary to JSON"""

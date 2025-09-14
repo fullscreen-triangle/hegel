@@ -152,5 +152,33 @@ def summary():
     click.echo("   • membrane_quantum_data.json")
 
 
+@main.command()
+def test_fixes():
+    """Test that all recent fixes are working properly"""
+    click.echo("🔧 Testing validation and network fixes...")
+    
+    import subprocess
+    import sys
+    
+    # Run the test script
+    try:
+        result = subprocess.run([sys.executable, 'test_fixes.py'], 
+                              capture_output=True, text=True, cwd='.')
+        
+        # Display output
+        click.echo(result.stdout)
+        if result.stderr:
+            click.echo("Errors:")
+            click.echo(result.stderr)
+        
+        if result.returncode == 0:
+            click.echo("\n🎉 All fixes validated successfully!")
+        else:
+            click.echo("\n⚠️ Some tests failed - check output above")
+            
+    except Exception as e:
+        click.echo(f"Error running tests: {e}")
+
+
 if __name__ == '__main__':
     main()

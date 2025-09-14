@@ -354,7 +354,7 @@ def main():
     final_report = create_final_report(demo_results, validation_results)
     
     # Save report to file
-    with open('hegel_validation_report.txt', 'w') as f:
+    with open('hegel_validation_report.txt', 'w', encoding='utf-8') as f:
         f.write(final_report)
     
     print(final_report)

@@ -13,6 +13,8 @@ Key Validations:
 """
 
 import numpy as np
+import matplotlib
+matplotlib.use('Agg')  # Use non-interactive backend to avoid Tkinter issues
 import matplotlib.pyplot as plt
 import seaborn as sns
 from scipy import signal, integrate, optimize
@@ -109,7 +111,7 @@ class ElectronCascadeNetwork:
         t = np.linspace(0, duration, time_steps)
         
         # Initialize electron density at each node
-        electron_density = np.zeros((time_steps, self.network_size))
+        electron_density = np.zeros((time_steps, self.network_size), dtype=np.float64)
         electron_density[0, source_node] = 1.0  # Initial pulse
         
         # Cascade propagation simulation
@@ -200,14 +202,14 @@ class ElectronCascadeNetwork:
         t = np.linspace(0, duration, time_steps)
         
         # Initialize synchronization metrics
-        synchronization_level = np.zeros(time_steps)
-        network_activity = np.zeros((time_steps, self.network_size))
+        synchronization_level = np.zeros(time_steps, dtype=np.float64)
+        network_activity = np.zeros((time_steps, self.network_size), dtype=np.float64)
         
         # Trigger cascades from sources at different times
         trigger_times = np.linspace(0, 1e-6, n_sources)  # Staggered triggers
         
         for step, time in enumerate(t):
-            current_activity = network_activity[step-1] if step > 0 else np.zeros(self.network_size)
+            current_activity = network_activity[step-1] if step > 0 else np.zeros(self.network_size, dtype=np.float64)
             
             # Check for triggered sources
             for i, (source, trigger_time) in enumerate(zip(sources, trigger_times)):
@@ -339,7 +341,7 @@ class CascadeSimulator:
         # Diffusion signal (Gaussian spread)
         D = 1e-12
         signal_diffusion = 1 / np.sqrt(4 * np.pi * D * time_diffusion) * np.exp(-distance_fixed**2 / (4 * D * time_diffusion))
-        signal_diffusion[0] = 0  # No signal at t=0
+        signal_diffusion[0] = 0.0  # No signal at t=0
         
         # Plot cascade
         ax3.plot(time_cascade * 1e9, signal_cascade, 'g-', linewidth=3, label='Cascade')
@@ -360,13 +362,18 @@ class CascadeSimulator:
         plt.tight_layout()
         if save_plots:
             plt.savefig('cascade_speed_advantage.png', dpi=300, bbox_inches='tight')
-        plt.show()
+        plt.close()  # Close figure to avoid display issues
     
     def demonstrate_network_propagation(self, save_plots: bool = True) -> None:
         """Demonstrate cascade propagation through cellular network"""
         
         # Simulate cascade from central node
-        central_node = self.network.network_size // 2
+        # Ensure we have a valid central node that exists in the network
+        all_nodes = list(self.network.network.nodes())
+        if all_nodes:
+            central_node = all_nodes[len(all_nodes) // 2]  # Use actual middle node
+        else:
+            central_node = 0  # Fallback
         cascade_data = self.network.simulate_cascade_propagation(central_node, duration=2e-6)
         
         # Create network visualization
@@ -376,19 +383,39 @@ class CascadeSimulator:
         pos = self.network.node_positions
         G = self.network.network
         
-        # Convert positions to arrays for plotting
-        node_x = [pos[node][0] * 1e6 for node in G.nodes()]  # Convert to μm
-        node_y = [pos[node][1] * 1e6 for node in G.nodes()]
+        # Ensure all nodes have positions
+        graph_nodes = set(G.nodes())
+        pos_nodes = set(pos.keys())
         
-        nx.draw_networkx_nodes(G, pos=pos, ax=ax1, node_color='lightblue', 
-                              node_size=100, alpha=0.7)
-        nx.draw_networkx_edges(G, pos=pos, ax=ax1, edge_color='gray', 
-                              alpha=0.5, width=1)
+        # Debug: Check for missing positions
+        if not graph_nodes.issubset(pos_nodes):
+            missing_nodes = graph_nodes - pos_nodes
+            print(f"Warning: Missing positions for nodes: {missing_nodes}")
+            # Assign default positions to missing nodes
+            for node in missing_nodes:
+                pos[node] = (0, 0)  # Default position
         
-        # Highlight source node
-        source_pos = {central_node: pos[central_node]}
-        nx.draw_networkx_nodes(G, pos=source_pos, ax=ax1, node_color='red', 
-                              node_size=200, alpha=1.0)
+        # Filter positions to only include nodes in the graph
+        filtered_pos = {node: pos[node] for node in G.nodes() if node in pos}
+        
+        # Convert positions to arrays for plotting (only for nodes with positions)
+        valid_nodes = [node for node in G.nodes() if node in pos]
+        if valid_nodes:
+            node_x = [pos[node][0] * 1e6 for node in valid_nodes]  # Convert to μm
+            node_y = [pos[node][1] * 1e6 for node in valid_nodes]
+        
+        # Draw network with filtered positions
+        if filtered_pos:
+            nx.draw_networkx_nodes(G, pos=filtered_pos, ax=ax1, node_color='lightblue', 
+                                  node_size=100, alpha=0.7)
+            nx.draw_networkx_edges(G, pos=filtered_pos, ax=ax1, edge_color='gray', 
+                                  alpha=0.5, width=1)
+        
+        # Highlight source node (if it exists in positions)
+        if central_node in filtered_pos:
+            source_pos = {central_node: filtered_pos[central_node]}
+            nx.draw_networkx_nodes(G, pos=source_pos, ax=ax1, node_color='red', 
+                                  node_size=200, alpha=1.0)
         
         ax1.set_title('Cellular Network Topology')
         ax1.set_xlabel('Distance (μm)')
@@ -460,7 +487,7 @@ class CascadeSimulator:
         plt.tight_layout()
         if save_plots:
             plt.savefig('cascade_network_propagation.png', dpi=300, bbox_inches='tight')
-        plt.show()
+        plt.close()  # Close figure to avoid display issues
         
         # Create animation
         self._create_propagation_animation(cascade_data, save_plots)
@@ -472,9 +499,23 @@ class CascadeSimulator:
         G = self.network.network
         pos = self.network.node_positions
         
+        # Ensure all nodes have positions
+        graph_nodes = set(G.nodes())
+        pos_nodes = set(pos.keys())
+        
+        if not graph_nodes.issubset(pos_nodes):
+            missing_nodes = graph_nodes - pos_nodes
+            print(f"Warning: Missing positions in animation for nodes: {missing_nodes}")
+            for node in missing_nodes:
+                pos[node] = (0, 0)
+        
+        # Filter positions to only include nodes in the graph
+        filtered_pos = {node: pos[node] for node in G.nodes() if node in pos}
+        
         # Initial plot
-        nx.draw_networkx_edges(G, pos=pos, ax=ax, edge_color='gray', 
-                              alpha=0.3, width=0.5)
+        if filtered_pos:
+            nx.draw_networkx_edges(G, pos=filtered_pos, ax=ax, edge_color='gray', 
+                                  alpha=0.3, width=0.5)
         
         # Node plot that will be updated
         nodes = nx.draw_networkx_nodes(G, pos=pos, ax=ax, node_color='blue', 
@@ -510,7 +551,7 @@ class CascadeSimulator:
             except Exception as e:
                 print(f"Could not save animation: {e}")
         
-        plt.show()
+        plt.close()  # Close figure to avoid display issues
     
     def demonstrate_synchronization(self, save_plots: bool = True) -> None:
         """Demonstrate network synchronization through cascade communication"""
@@ -575,7 +616,7 @@ class CascadeSimulator:
         plt.tight_layout()
         if save_plots:
             plt.savefig('cascade_synchronization.png', dpi=300, bbox_inches='tight')
-        plt.show()
+        plt.close()  # Close figure to avoid display issues
     
     def demonstrate_energy_efficiency(self, save_plots: bool = True) -> None:
         """Demonstrate energy efficiency of cascade communication"""
@@ -669,7 +710,7 @@ class CascadeSimulator:
         plt.tight_layout()
         if save_plots:
             plt.savefig('cascade_energy_efficiency.png', dpi=300, bbox_inches='tight')
-        plt.show()
+        plt.close()  # Close figure to avoid display issues
     
     def save_data_summary(self) -> None:
         """Save comprehensive data summary to JSON"""

@@ -20,6 +20,8 @@ from hegel_demo.oxygen_substrate import run_oxygen_demonstrations
 from hegel_demo.utils import BiologicalConstants, PerformanceMetrics, VALIDATION_DATASETS
 from hegel_demo.visualizations import BiologicalVisualizer, plot_enhancement_comparison
 import numpy as np
+import matplotlib
+matplotlib.use('Agg')  # Use non-interactive backend to avoid Tkinter issues
 import matplotlib.pyplot as plt
 
 

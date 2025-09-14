@@ -13,6 +13,8 @@ Key Validations:
 """
 
 import numpy as np
+import matplotlib
+matplotlib.use('Agg')  # Use non-interactive backend to avoid Tkinter issues
 import matplotlib.pyplot as plt
 import seaborn as sns
 from scipy import linalg, integrate, optimize
@@ -83,8 +85,16 @@ class QuantumMolecularPathway:
                                    environment_state: np.ndarray) -> None:
         """Apply environment-assisted quantum transport"""
         # Environmental coupling enhances coherence
+        # Expand environment state to match pathway dimensions
+        if len(environment_state) != self.pathway_count:
+            # Create expanded environment state by repeating pattern
+            env_expanded = np.tile(environment_state, 
+                                 (self.pathway_count + len(environment_state) - 1) // len(environment_state))[:self.pathway_count]
+        else:
+            env_expanded = environment_state
+            
         enhancement_matrix = np.eye(self.pathway_count) + \
-                           coupling_strength * np.outer(environment_state, environment_state.conj())
+                           coupling_strength * np.outer(env_expanded, env_expanded.conj())
         
         # Apply enhancement to quantum state
         enhanced_state = enhancement_matrix @ self.quantum_state
@@ -514,7 +524,7 @@ Max: {benchmark_results['accuracy_stats']['max']:.3f}"""
         plt.tight_layout()
         if save_plots:
             plt.savefig('membrane_quantum_accuracy.png', dpi=300, bbox_inches='tight')
-        plt.show()
+        plt.close()  # Close figure to avoid display issues
     
     def demonstrate_quantum_coherence(self, save_plots: bool = True) -> None:
         """Demonstrate quantum coherence maintenance at biological temperature"""
@@ -624,7 +634,7 @@ Max: {benchmark_results['accuracy_stats']['max']:.3f}"""
         plt.tight_layout()
         if save_plots:
             plt.savefig('membrane_quantum_coherence.png', dpi=300, bbox_inches='tight')
-        plt.show()
+        plt.close()  # Close figure to avoid display issues
     
     def demonstrate_pathway_superposition(self, save_plots: bool = True) -> None:
         """Demonstrate quantum superposition of molecular pathways"""
@@ -740,7 +750,7 @@ Max: {benchmark_results['accuracy_stats']['max']:.3f}"""
         plt.tight_layout()
         if save_plots:
             plt.savefig('membrane_quantum_superposition.png', dpi=300, bbox_inches='tight')
-        plt.show()
+        plt.close()  # Close figure to avoid display issues
     
     def save_data_summary(self) -> None:
         """Save comprehensive data summary to JSON"""

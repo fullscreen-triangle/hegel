@@ -3,6 +3,8 @@ Visualization utilities for Hegel biological computer demonstrations
 """
 
 import numpy as np
+import matplotlib
+matplotlib.use('Agg')  # Use non-interactive backend to avoid Tkinter issues
 import matplotlib.pyplot as plt
 import seaborn as sns
 from matplotlib.animation import FuncAnimation
@@ -78,7 +80,7 @@ class BiologicalVisualizer:
         
         plt.tight_layout()
         plt.savefig(save_file, dpi=300, bbox_inches='tight')
-        plt.show()
+        plt.close()  # Close figure to avoid display issues
         
         # Save data to JSON
         json_file = save_file.replace('.png', '_data.json')
@@ -123,7 +125,7 @@ class BiologicalVisualizer:
         
         plt.tight_layout()
         plt.savefig(save_file, dpi=300, bbox_inches='tight')
-        plt.show()
+        plt.close()  # Close figure to avoid display issues
         
         # Save network data to JSON
         json_file = save_file.replace('.png', '_data.json')
@@ -177,7 +179,7 @@ class BiologicalVisualizer:
         
         plt.tight_layout()
         plt.savefig(save_file, dpi=300, bbox_inches='tight')
-        plt.show()
+        plt.close()  # Close figure to avoid display issues
         
         # Save data to JSON
         json_file = save_file.replace('.png', '_data.json')
@@ -219,7 +221,7 @@ class BiologicalVisualizer:
         
         plt.tight_layout()
         plt.savefig(save_file, dpi=300, bbox_inches='tight')
-        plt.show()
+        plt.close()  # Close figure to avoid display issues
         
         # Save data to JSON
         json_file = save_file.replace('.png', '_data.json')
@@ -274,7 +276,7 @@ class BiologicalVisualizer:
         
         plt.tight_layout()
         plt.savefig(save_file, dpi=300, bbox_inches='tight')
-        plt.show()
+        plt.close()  # Close figure to avoid display issues
         
         # Save data to JSON
         json_file = save_file.replace('.png', '_data.json')
@@ -355,7 +357,7 @@ class BiologicalVisualizer:
         plt.suptitle('Hegel Biological Computer Architecture - Validation Summary', fontsize=16)
         plt.tight_layout()
         plt.savefig(save_file, dpi=300, bbox_inches='tight')
-        plt.show()
+        plt.close()  # Close figure to avoid display issues
         
         # Save comprehensive data
         json_file = save_file.replace('.png', '_data.json')
@@ -411,7 +413,7 @@ def plot_enhancement_comparison(baseline: float, enhanced: float,
     
     plt.tight_layout()
     plt.savefig(save_file, dpi=300, bbox_inches='tight')
-    plt.show()
+    plt.close()  # Close figure to avoid display issues
     
     # Save data
     json_file = save_file.replace('.png', '_data.json')
@@ -445,7 +447,7 @@ def plot_temperature_dependence(temperatures: np.ndarray, values: np.ndarray,
     
     plt.tight_layout()
     plt.savefig(save_file, dpi=300, bbox_inches='tight')
-    plt.show()
+    plt.close()  # Close figure to avoid display issues
     
     # Save data
     json_file = save_file.replace('.png', '_data.json')
