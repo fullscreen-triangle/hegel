@@ -180,5 +180,121 @@ def test_fixes():
         click.echo(f"Error running tests: {e}")
 
 
+@main.command()
+def test_cascade():
+    """Test cascade network positioning fixes specifically"""
+    click.echo("⚡ Testing cascade NetworkX positioning fixes...")
+    
+    import subprocess
+    import sys
+    
+    # Run the cascade test script
+    try:
+        result = subprocess.run([sys.executable, 'test_cascade_fix.py'], 
+                              capture_output=True, text=True, cwd='.')
+        
+        # Display output
+        click.echo(result.stdout)
+        if result.stderr:
+            click.echo("Errors:")
+            click.echo(result.stderr)
+        
+        if result.returncode == 0:
+            click.echo("\n🎉 Cascade fixes validated successfully!")
+            click.echo("   Ready to run: hegel-demo cascade")
+        else:
+            click.echo("\n⚠️ Some cascade tests failed - check output above")
+            
+    except Exception as e:
+        click.echo(f"Error running cascade tests: {e}")
+
+
+@main.command()
+def test_simple():
+    """Test simplified cascade approach without NetworkX issues"""
+    click.echo("🧪 Testing simplified cascade approach...")
+    
+    import subprocess
+    import sys
+    
+    # Run the simplified test script
+    try:
+        result = subprocess.run([sys.executable, 'test_cascade_simple.py'], 
+                              capture_output=True, text=True, cwd='.')
+        
+        # Display output
+        click.echo(result.stdout)
+        if result.stderr:
+            click.echo("Errors:")
+            click.echo(result.stderr)
+        
+        if result.returncode == 0:
+            click.echo("\n🎉 Simplified approach validated successfully!")
+            click.echo("   NetworkX issues bypassed - cascade works!")
+        else:
+            click.echo("\n⚠️ Some simplified tests failed - check output above")
+            
+    except Exception as e:
+        click.echo(f"Error running simplified tests: {e}")
+
+
+@main.command()
+def test_quantum():
+    """Test simplified quantum approach without getting stuck"""
+    click.echo("🧪 Testing simplified quantum approach...")
+    
+    import subprocess
+    import sys
+    
+    # Run the simplified quantum test script
+    try:
+        result = subprocess.run([sys.executable, 'test_quantum_simple.py'], 
+                              capture_output=True, text=True, cwd='.')
+        
+        # Display output
+        click.echo(result.stdout)
+        if result.stderr:
+            click.echo("Errors:")
+            click.echo(result.stderr)
+        
+        if result.returncode == 0:
+            click.echo("\n🎉 Simplified quantum approach validated successfully!")
+            click.echo("   No more hour-long hangs - quantum works fast!")
+        else:
+            click.echo("\n⚠️ Some quantum tests failed - check output above")
+            
+    except Exception as e:
+        click.echo(f"Error running quantum tests: {e}")
+
+
+@main.command()
+def test_pipeline():
+    """Test pipeline isolation and resilience"""
+    click.echo("🛡️ Testing pipeline isolation and resilience...")
+    
+    import subprocess
+    import sys
+    
+    # Run the pipeline isolation test script
+    try:
+        result = subprocess.run([sys.executable, 'test_pipeline_isolation.py'], 
+                              capture_output=True, text=True, cwd='.')
+        
+        # Display output
+        click.echo(result.stdout)
+        if result.stderr:
+            click.echo("Errors:")
+            click.echo(result.stderr)
+        
+        if result.returncode == 0:
+            click.echo("\n🎉 Pipeline isolation validated successfully!")
+            click.echo("   Components are isolated - one failure won't break the whole system!")
+        else:
+            click.echo("\n⚠️ Pipeline has some isolation issues - check output above")
+            
+    except Exception as e:
+        click.echo(f"Error running pipeline tests: {e}")
+
+
 if __name__ == '__main__':
     main()
