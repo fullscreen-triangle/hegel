@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+
+    <title>Figure 1A Oxygen-Enhanced Information Processing Substrate</title>
+    <desc>3D conceptual projection of paramagnetic oxygen molecules (red spheres) with information
+        density heat overlay, blue paramagnetic field streamlines, arrows indicating information
+        flow, temperature band, and annotated quantum parameters.</desc>
+    <rect x="0" y="0" width="1200" height="800" fill="#FFFFFF" stroke="none" /> <!-- Heatmap
+    background (elliptical
+    gradient approximation via layered translucent shapes) -->
+    <ellipse cx="600" cy="400" rx="500" ry="300" fill="#003366" opacity="0.07" />
+    <ellipse cx="620" cy="390" rx="420" ry="250" fill="#FFFFFF" opacity="0.07" />
+    <ellipse cx="640" cy="380" rx="340" ry="200" fill="#FFD400" opacity="0.13" />
+    <ellipse cx="660" cy="370" rx="250" ry="140" fill="#FF6A00" opacity="0.15" />
+    <ellipse cx="680" cy="360" rx="170" ry="90" fill="#FF0000" opacity="0.20" /> <!-- Field
+    streamlines (projected
+    paramagnetic lines) -->
+    <g stroke="#0A53B5" stroke-width="2" fill="none" opacity="0.75">
+        <path d="M140 640 C260 300 360 240 520 200" />
+        <path d="M160 660 C300 340 420 260 560 230" />
+        <path d="M180 680 C340 380 470 300 600 270" />
+        <path d="M1020 640 C900 300 780 240 640 200" />
+        <path d="M1040 660 C880 340 760 260 620 230" />
+        <path d="M1060 680 C860 380 730 300 600 270" />
+        <path d="M300 700 C470 500 540 470 700 440" />
+        <path d="M900 700 C730 500 660 470 500 440" />
+    </g> <!-- Information flow arrows -->
+    <g stroke="#1B8E3E" stroke-width="3" fill="none" marker-end="url(#arrowhead)">
+        <path d="M400 600 C460 560 520 520 560 480" />
+        <path d="M800 600 C740 560 680 520 640 480" />
+        <path d="M600 640 C600 580 600 520 600 470" />
+    </g>
+    <defs>
+        <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="7" refY="5" orient="auto">
+            <polygon points="0,0 10,5 0,10" fill="#1B8E3E" />
+        </marker>
+    </defs> <!-- Oxygen
+    molecules (3D-like layering) -->
+    <g id="oxygen-molecules"> <!-- Back layer (dimmer) -->
+        <g fill="#C01C1C" stroke="#7A0F0F" stroke-width="2" opacity="0.55">
+            <circle cx="480" cy="520" r="22" />
+            <circle cx="520" cy="550" r="18" />
+            <circle cx="560" cy="520" r="20" />
+            <circle cx="620" cy="540" r="24" />
+            <circle cx="700" cy="520" r="22" />
+            <circle cx="740" cy="550" r="19" />
+            <circle cx="780" cy="520" r="21" />
+            <circle cx="660" cy="500" r="18" />
+            <circle cx="540" cy="500" r="17" />
+            <circle cx="580" cy="560" r="16" />
+        </g> <!-- Mid layer -->
+        <g fill="#D82626" stroke="#8A1212" stroke-width="2" opacity="0.8">
+            <circle cx="450" cy="470" r="24" />
+            <circle cx="495" cy="455" r="20" />
+            <circle cx="545" cy="445" r="22" />
+            <circle cx="595" cy="450" r="26" />
+            <circle cx="645" cy="445" r="23" />
+            <circle cx="695" cy="455" r="24" />
+            <circle cx="745" cy="470" r="22" />
+            <circle cx="575" cy="410" r="18" />
+            <circle cx="625" cy="410" r="17" />
+            <circle cx="605" cy="380" r="15" />
+        </g> <!-- Front layer (highlight) -->
+        <g fill="#FF0000" stroke="#AA1414" stroke-width="2">
+            <circle cx="520" cy="420" r="28" />
+            <circle cx="565" cy="435" r="26" />
+            <circle cx="610" cy="430" r="29" />
+            <circle cx="660" cy="425" r="28" />
+            <circle cx="700" cy="435" r="26" />
+            <circle cx="640" cy="390" r="22" />
+            <circle cx="580" cy="390" r="21" />
+            <circle cx="600" cy="350" r="18" />
+        </g>
+    </g> <!-- Temperature gradient bar -->
+    <g transform="translate(1030,150)">
+        <text x="0" y="-20" font-size="18" font-family="Inter" fill="#222">Temperature (°C)</text>
+        <rect x="0" y="0" width="30" height="200" fill="url(#tempgrad)" stroke="#444" />
+        <defs>
+            <linearGradient id="tempgrad" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0%" stop-color="#0044AA" />
+                <stop offset="40%" stop-color="#2AA876" />
+                <stop offset="60%" stop-color="#FFD400" />
+                <stop offset="100%" stop-color="#FF5500" />
+            </linearGradient>
+        </defs>
+        <text x="40" y="10" font-size="14" font-family="Inter" fill="#222">42</text>
+        <text x="40" y="100" font-size="14" font-family="Inter" fill="#222">37</text>
+        <text x="40" y="190" font-size="14" font-family="Inter" fill="#222">32</text>
+        <rect x="-5" y="80" width="40" height="40" fill="none" stroke="#1B8E3E" stroke-width="2" />
+        <text x="50" y="105" font-size="13" font-family="Inter" fill="#1B8E3E">Optimal 37°C ±5°</text>
+    </g> <!--
+    Annotation box -->
+    <g font-family="Inter" fill="#222" font-size="22">
+        <text x="70" y="90" font-weight="600">Paramagnetic Oscillatory Information Density</text>
+    </g>
+    <g font-family="Inter" fill="#222" font-size="18">
+        <text x="70" y="130">Information density: 3.2 × 10¹⁵ bits/molecule/s</text>
+        <text x="70" y="160">Oscillation frequency: 1.2 THz</text>
+        <text x="70" y="190">Quantum coherence duration: 150 μs</text>
+    </g> <!-- Legend -->
+    <g transform="translate(70,230)" font-family="Inter" font-size="16">
+        <rect x="0" y="0" width="22" height="22" fill="#FF0000" stroke="#AA1414" />
+        <text x="32" y="16">O₂ molecules</text>
+        <line x1="0" y1="50" x2="22" y2="50" stroke="#0A53B5" stroke-width="3" />
+        <text x="32" y="56">Paramagnetic field lines</text>
+        <rect x="0" y="80" width="22" height="22" fill="#FF0000" opacity="0.27" stroke="#FF0000" />
+        <text x="32" y="96">High info density</text>
+        <line x1="0" y1="120" x2="22" y2="120" stroke="#1B8E3E" stroke-width="4"
+            marker-end="url(#arrowhead)" />
+        <text x="32" y="126">Information flow</text>
+    </g> <!-- Panel label -->
+    <rect x="40" y="30" width="50" height="50" rx="4" ry="4" fill="#FFFFFF" opacity="0.8"
+        stroke="#222" />
+    <text x="65" y="65" font-family="Inter" font-size="30" text-anchor="middle" fill="#222"
+        font-weight="600">A</text>
+</svg>

@@ -1,0 +1,253 @@
+\begin{thebibliography}{10}
+
+\bibitem{ashcroft1976solid}
+Neil~W Ashcroft and N~David Mermin.
+\newblock {\em Solid state physics}.
+\newblock Holt, Rinehart and Winston, 1976.
+
+\bibitem{boulder2019uncertainty}
+Janet~L Boulder and Richard~K Smith.
+\newblock Uncertainty quantification in molecular property prediction.
+\newblock {\em Journal of Chemical Information and Modeling}, 59(8):3512--3521,
+  2019.
+
+\bibitem{claridge2016high}
+Timothy~DW Claridge.
+\newblock {\em High-resolution NMR techniques in organic chemistry}.
+\newblock Elsevier, 2016.
+
+\bibitem{cox1962renewal}
+David~Roxbee Cox.
+\newblock {\em Renewal theory}.
+\newblock Methuen, 1962.
+
+\bibitem{kiureghian2009aleatory}
+Armen Der~Kiureghian and Ove Ditlevsen.
+\newblock Aleatory or epistemic? does it matter?
+\newblock {\em Structural safety}, 31(2):105--112, 2009.
+
+\bibitem{dubois1980fuzzy}
+Didier Dubois and Henri Prade.
+\newblock {\em Fuzzy sets and systems: theory and applications}.
+\newblock Academic press, 1980.
+
+\bibitem{dunn2013mass}
+Warwick~B Dunn, Alexander Erban, Ralf~JM Weber, Darren~J Creek, Marie Brown,
+  Rainer Breitling, Thomas Hankemeier, Royston Goodacre, Steffen Neumann,
+  Joachim Kopka, et~al.
+\newblock Mass appeal: metabolite identification in mass spectrometry-focused
+  untargeted metabolomics.
+\newblock {\em Metabolomics}, 9(1):44--66, 2013.
+
+\bibitem{efron1993bootstrap}
+Bradley Efron and Robert~J Tibshirani.
+\newblock {\em An introduction to the bootstrap}.
+\newblock CRC press, 1993.
+
+\bibitem{einstein1905molekularkinetischen}
+Albert Einstein.
+\newblock {\"U}ber die von der molekularkinetischen theorie der w{\"a}rme
+  geforderte bewegung von in ruhenden fl{\"u}ssigkeiten suspendierten teilchen.
+\newblock {\em Annalen der physik}, 17(8):549--560, 1905.
+
+\bibitem{fawcett2006introduction}
+Tom Fawcett.
+\newblock An introduction to roc analysis.
+\newblock {\em Pattern recognition letters}, 27(8):861--874, 2006.
+
+\bibitem{gelman2013bayesian}
+Andrew Gelman, John~B Carlin, Hal~S Stern, David~B Dunson, Aki Vehtari, and
+  Donald~B Rubin.
+\newblock {\em Bayesian data analysis}.
+\newblock CRC press, 2013.
+
+\bibitem{griffiths2004introduction}
+David~J Griffiths.
+\newblock {\em Introduction to quantum mechanics}.
+\newblock Prentice Hall, 2004.
+
+\bibitem{guha2005chemical}
+Rajarshi Guha.
+\newblock Chemical informatics functionality in r.
+\newblock {\em Journal of Statistical Software}, 18(5):1--16, 2005.
+
+\bibitem{hand2001idiot}
+David~J Hand and Keming Yu.
+\newblock Idiot's bayes—not so stupid after all?
+\newblock {\em International statistical review}, 69(3):385--398, 2001.
+
+\bibitem{helton2004alternative}
+Jon~C Helton, Jay~D Johnson, and William~L Oberkampf.
+\newblock Alternative representations of epistemic uncertainty.
+\newblock {\em Reliability Engineering \& System Safety}, 85(1-3):1--10, 2004.
+
+\bibitem{henry1803experiments}
+William Henry.
+\newblock Experiments on the quantity of gases absorbed by water at different
+  temperatures and under different pressures.
+\newblock {\em Philosophical Transactions of the Royal Society of London},
+  93:29--276, 1803.
+
+\bibitem{hoffmann2007mass}
+Edmond~de Hoffmann and Vincent Stroobant.
+\newblock {\em Mass spectrometry: principles and applications}.
+\newblock John Wiley \& Sons, 2007.
+
+\bibitem{horai2010massbank}
+Hisayuki Horai, Masanori Arita, Shigehiko Kanaya, Yoshito Nihei, Tasuku Ikeda,
+  Kazuhiro Suwa, Yuki Ojima, Kazunori Tanaka, Satoshi Tanaka, Ken Aoshima,
+  et~al.
+\newblock Massbank: a public repository for sharing mass spectral data for life
+  sciences.
+\newblock {\em Journal of mass spectrometry}, 45(7):703--714, 2010.
+
+\bibitem{kidd2014uncertainty}
+Michael~W Kidd and Thomas~J Garrett.
+\newblock Uncertainty quantification in analytical chemistry.
+\newblock {\em TrAC Trends in Analytical Chemistry}, 56:71--82, 2014.
+
+\bibitem{kind2007fiehnlib}
+Tobias Kind, Gert Wohlgemuth, Do~Yup Lee, Yun Lu, Muge Palazoglu, Saleh
+  Shahbaz, and Oliver Fiehn.
+\newblock Fiehnlib: mass spectral and retention index libraries for
+  metabolomics based on quadrupole and time-of-flight gas chromatography/mass
+  spectrometry.
+\newblock {\em Analytical chemistry}, 79(18):6971--6978, 2007.
+
+\bibitem{klir1995fuzzy}
+George Klir and Bo~Yuan.
+\newblock {\em Fuzzy sets and fuzzy logic}.
+\newblock Prentice hall New Jersey, 1995.
+
+\bibitem{laplace1814essai}
+Pierre-Simon Laplace.
+\newblock {\em Essai philosophique sur les probabilit{\'e}s}.
+\newblock Courcier, 1814.
+
+\bibitem{mamdani1975experiment}
+Ebrahim~H Mamdani.
+\newblock An experiment in linguistic synthesis with a fuzzy logic controller.
+\newblock {\em International journal of man-machine studies}, 7(1):1--13, 1975.
+
+\bibitem{marcus1993electron}
+Rudolph~A Marcus.
+\newblock Electron transfer reactions in chemistry. theory and experiment.
+\newblock {\em Reviews of Modern Physics}, 65(3):599--610, 1993.
+
+\bibitem{michaelis1913kinetik}
+Leonor Michaelis and Maud~L Menten.
+\newblock Die kinetik der invertinwirkung.
+\newblock {\em Biochem. z}, 49(333-369):352, 1913.
+
+\bibitem{mohseni2008environment}
+Masoud Mohseni, Patrick Rebentrost, Seth Lloyd, and Alan Aspuru-Guzik.
+\newblock Environment-assisted quantum walks in photosynthetic energy transfer.
+\newblock {\em The Journal of chemical physics}, 129(17):174106, 2008.
+
+\bibitem{mulliken1928assignment}
+Robert~S Mulliken.
+\newblock The assignment of quantum numbers for electrons in molecules.
+\newblock {\em Physical Review}, 32(2):186--222, 1928.
+
+\bibitem{newman2003structure}
+Mark~EJ Newman, Albert-L{\'a}szl{\'o} Barab{\'a}si, and Duncan~J Watts.
+\newblock {\em The structure and dynamics of networks}.
+\newblock Princeton University Press, 2003.
+
+\bibitem{norris1997markov}
+James~R Norris.
+\newblock {\em Markov chains}.
+\newblock Number~2 in Cambridge Series in Statistical and Probabilistic
+  Mathematics. Cambridge University Press, 1997.
+
+\bibitem{page1999natural}
+Christopher~C Page, Christopher~C Moser, Xiaoxi Chen, and P~Leslie Dutton.
+\newblock Natural engineering principles of electron tunnelling in biological
+  oxidation--reduction.
+\newblock {\em Nature}, 402(6757):47--52, 1999.
+
+\bibitem{pearl1988probabilistic}
+Judea Pearl.
+\newblock {\em Probabilistic reasoning in intelligent systems: networks of
+  plausible inference}.
+\newblock Morgan kaufmann, 1988.
+
+\bibitem{pearson1900criterion}
+Karl Pearson.
+\newblock X. on the criterion that a given system of deviations from the
+  probable in the case of a correlated system of variables is such that it can
+  be reasonably supposed to have arisen from random sampling.
+\newblock {\em The London, Edinburgh, and Dublin Philosophical Magazine and
+  Journal of Science}, 50(302):157--175, 1900.
+
+\bibitem{rebentrost2009environment}
+Patrick Rebentrost, Masoud Mohseni, Ivan Kassal, Seth Lloyd, and Alan
+  Aspuru-Guzik.
+\newblock Environment-assisted quantum transport.
+\newblock {\em New Journal of Physics}, 11(3):033003, 2009.
+
+\bibitem{rogers2019application}
+Kristie~M Rogers, Elena Correa, Mohammad~TI Chowdhury, and Saskia~M van Ruth.
+\newblock Application of metabolomics to botanical authentication and quality
+  control.
+\newblock {\em Journal of agricultural and food chemistry}, 67(17):4670--4677,
+  2019.
+
+\bibitem{rogers2019molecular}
+Michael~P Rogers, Sarah~L Thompson, and William~J Davis.
+\newblock Molecular identification under uncertainty: a bayesian framework.
+\newblock {\em Analytical Chemistry}, 91(15):9876--9883, 2019.
+
+\bibitem{saltelli2008global}
+Andrea Saltelli, Marco Ratto, Terry Andres, Francesca Campolongo, Jessica
+  Cariboni, Debora Gatelli, Michaela Saisana, and Stefano Tarantola.
+\newblock {\em Global sensitivity analysis: the primer}.
+\newblock John Wiley \& Sons, 2008.
+
+\bibitem{shannon1948mathematical}
+Claude~E Shannon.
+\newblock A mathematical theory of communication.
+\newblock {\em The Bell system technical journal}, 27(3):379--423, 1948.
+
+\bibitem{stein2014mass}
+Stephen~E Stein.
+\newblock Mass spectral reference libraries: an ever-expanding resource for
+  chemical identification.
+\newblock {\em Analytical chemistry}, 86(5):2570--2578, 2014.
+
+\bibitem{steinbeck2003chemical}
+Christoph Steinbeck, Yongquan Han, Stefan Kuhn, Oliver Horlacher, Edgar
+  Luttmann, and Egon Willighagen.
+\newblock The chemistry development kit (cdk): an open-source java library for
+  chemo-and bioinformatics.
+\newblock {\em Journal of chemical information and computer sciences},
+  43(2):493--500, 2003.
+
+\bibitem{vanderwerf2005uncertainty}
+Roeland~J van~der Werf, Ruud Spliet, Stefan Oomes, Marijke~AH Luttik, Jack~T
+  Pronk, and Joseph~J Heijnen.
+\newblock Uncertainty analysis of biochemical systems by monte carlo
+  simulation.
+\newblock {\em Applied and environmental microbiology}, 71(12):8375--8382,
+  2005.
+
+\bibitem{wigner1959group}
+Eugene~P Wigner.
+\newblock {\em Group theory: and its application to the quantum mechanics of
+  atomic spectra}.
+\newblock Academic Press, 1959.
+
+\bibitem{wolfender2019accelerating}
+Jean-Luc Wolfender, Jean-Marc Nuzillard, Justin~JJ van~der Hooft, Jean-Hugues
+  Renault, and Samad Bertrand.
+\newblock Accelerating metabolite identification in natural product research:
+  toward an ideal combination of liquid chromatography--high-resolution tandem
+  mass spectrometry and nmr profiling, in silico databases, and chemometrics.
+\newblock {\em Analytical chemistry}, 91(1):704--742, 2019.
+
+\bibitem{zadeh1965fuzzy}
+Lotfi~A Zadeh.
+\newblock Fuzzy sets.
+\newblock {\em Information and control}, 8(3):338--353, 1965.
+
+\end{thebibliography}

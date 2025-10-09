@@ -1,0 +1,110 @@
+% Theoretical Foundations
+
+\section{Theoretical Foundations}
+
+\subsection{Fuzzy Set Theory for Molecular Evidence}
+
+Let $U$ denote the universal set of molecular evidence features. A fuzzy set $A$ in $U$ is characterized by membership function $\mu_A: U \rightarrow [0,1]$ where $\mu_A(x)$ represents the degree of membership of element $x$ in set $A$ \cite{zadeh1965fuzzy}.
+
+For molecular evidence vector $\mathbf{e} = (e_1, e_2, \ldots, e_n)^T$ where $e_i$ represents individual evidence components, membership functions are defined as:
+
+\begin{equation}
+\mu_{LOW}(e_i) = \begin{cases}
+1 & \text{if } e_i \leq a \\
+\frac{b - e_i}{b - a} & \text{if } a < e_i < b \\
+0 & \text{if } e_i \geq b
+\end{cases}
+\end{equation}
+
+\begin{equation}
+\mu_{MEDIUM}(e_i) = \begin{cases}
+0 & \text{if } e_i \leq c \text{ or } e_i \geq f \\
+\frac{e_i - c}{d - c} & \text{if } c < e_i < d \\
+1 & \text{if } d \leq e_i \leq e \\
+\frac{f - e_i}{f - e} & \text{if } e < e_i < f
+\end{cases}
+\end{equation}
+
+\begin{equation}
+\mu_{HIGH}(e_i) = \begin{cases}
+0 & \text{if } e_i \leq g \\
+\frac{e_i - g}{h - g} & \text{if } g < e_i < h \\
+1 & \text{if } e_i \geq h
+\end{cases}
+\end{equation}
+
+where parameters $a, b, c, d, e, f, g, h$ define membership function boundaries with constraints $a < b \leq c < d \leq e < f \leq g < h$.
+
+\subsection{Bayesian Network Structure}
+
+Bayesian network $G = (V, E)$ consists of directed acyclic graph with vertex set $V$ representing random variables and edge set $E$ representing conditional dependencies \cite{pearl1988probabilistic}. For molecular identification, variables include:
+
+$M$: molecular identity hypothesis
+$S$: spectral evidence
+$T$: structural evidence  
+$P$: pathway evidence
+$C$: confidence assessment
+
+Joint probability distribution factorizes as:
+\begin{equation}
+P(M, S, T, P, C) = P(M) \cdot P(S|M) \cdot P(T|M) \cdot P(P|M) \cdot P(C|S, T, P)
+\end{equation}
+
+\subsection{Hybrid Fuzzy-Bayesian Inference}
+
+Evidence variables $S, T, P$ are fuzzified using membership functions \cite{mamdani1975experiment}. For spectral evidence $S$ with value $s$, fuzzy representation becomes:
+\begin{equation}
+\tilde{S} = \{\mu_{LOW}(s)/LOW, \mu_{MEDIUM}(s)/MEDIUM, \mu_{HIGH}(s)/HIGH\}
+\end{equation}
+
+Fuzzy-Bayesian posterior calculation:
+\begin{equation}
+P(M = m_j | \tilde{E}) = \frac{\sum_{i} w_i \cdot P(E_i | M = m_j) \cdot P(M = m_j)}{\sum_{k} \sum_{i} w_i \cdot P(E_i | M = m_k) \cdot P(M = m_k)}
+\end{equation}
+
+where $\tilde{E} = \{\mu_i/E_i\}$ is fuzzy evidence set, $w_i = \mu_i$ are membership weights, and summation over $i$ covers all fuzzy evidence categories.
+
+\subsection{Temporal Evidence Decay}
+
+Evidence reliability decreases exponentially with time \cite{norris1997markov}:
+\begin{equation}
+R(t) = R_0 \cdot e^{-\lambda t}
+\end{equation}
+
+where:
+- $R_0$: initial reliability at $t = 0$
+- $\lambda$: decay constant (s$^{-1}$)
+- $t$: time elapsed since evidence collection (s)
+
+For 30-day half-life: $\lambda = \frac{\ln(2)}{30 \times 24 \times 3600} = 2.68 \times 10^{-7}$ s$^{-1}$
+
+Time-adjusted posterior probability:
+\begin{equation}
+P(M = m_j | \tilde{E}, t) = \frac{\sum_{i} R_i(t) \cdot w_i \cdot P(E_i | M = m_j) \cdot P(M = m_j)}{\sum_{k} \sum_{i} R_i(t) \cdot w_i \cdot P(E_i | M = m_k) \cdot P(M = m_k)}
+\end{equation}
+
+\subsection{Uncertainty Propagation}
+
+Total uncertainty $U_{total}$ combines aleatory uncertainty $U_{aleatory}$ and epistemic uncertainty $U_{epistemic}$ \cite{helton2004alternative}:
+\begin{equation}
+U_{total}^2 = U_{aleatory}^2 + U_{epistemic}^2
+\end{equation}
+
+Aleatory uncertainty from measurement noise:
+\begin{equation}
+U_{aleatory} = \sqrt{\sum_{i=1}^n \sigma_i^2}
+\end{equation}
+
+where $\sigma_i$ is measurement standard deviation for evidence component $i$.
+
+Epistemic uncertainty from model limitations:
+\begin{equation}
+U_{epistemic} = \sqrt{\text{Var}[P(M|\tilde{E})]}
+\end{equation}
+
+Confidence interval for molecular identification \cite{efron1993bootstrap}:
+\begin{equation}
+CI = P(M = m_j | \tilde{E}) \pm z_{\alpha/2} \cdot U_{total}
+\end{equation}
+
+where $z_{\alpha/2}$ is critical value for confidence level $1-\alpha$.

@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+
+    <title>Figure 2A Electron Cascade Communication Network Topology</title>
+    <desc>Network of molecular nodes (proteins, lipids, metabolites) with quantum entanglement
+        links, electron cascade arrows, entanglement strength, and coherence radii.</desc>
+    <rect width="1600" height="1000" fill="#FFFFFF" stroke="none" /> <!-- Panel label -->
+    <rect x="50" y="40" width="60" height="60" fill="#FFFFFF" opacity="0.8" stroke="#222" />
+    <text x="80" y="80" font-family="Inter" font-size="40" text-anchor="middle" fill="#222"
+        font-weight="600">A</text> <!-- Node layer (example coordinates) -->
+    <g id="nodes" font-family="Inter" font-size="24" text-anchor="middle"> <!-- Protein (large blue) -->
+        <g fill="#2C75FF" stroke="#133F85" stroke-width="3">
+            <circle cx="400" cy="320" r="56" />
+            <text x="400" y="330" fill="#fff">P1</text>
+            <circle cx="1180" cy="360" r="54" />
+            <text x="1180" y="370" fill="#fff">P2</text>
+            <circle cx="780" cy="250" r="60" />
+            <text x="780" y="260" fill="#fff">P3</text>
+            <circle cx="620" cy="640" r="52" />
+            <text x="620" y="650" fill="#fff">P4</text>
+            <circle cx="980" cy="640" r="55" />
+            <text x="980" y="650" fill="#fff">P5</text>
+        </g> <!-- Lipids (medium green) -->
+        <g fill="#2AA876" stroke="#166043" stroke-width="3">
+            <circle cx="560" cy="420" r="40" />
+            <text x="560" y="428" fill="#fff">L1</text>
+            <circle cx="920" cy="420" r="42" />
+            <text x="920" y="430" fill="#fff">L2</text>
+            <circle cx="520" cy="760" r="38" />
+            <text x="520" y="768" fill="#fff">L3</text>
+            <circle cx="1080" cy="760" r="40" />
+            <text x="1080" y="770" fill="#fff">L4</text>
+            <circle cx="320" cy="580" r="42" />
+            <text x="320" y="590" fill="#fff">L5</text>
+        </g> <!-- Metabolites (small orange) -->
+        <g fill="#F27F1B" stroke="#A94F05" stroke-width="3">
+            <circle cx="250" cy="450" r="28" />
+            <text x="250" y="456" fill="#fff" font-size="18">M1</text>
+            <circle cx="360" cy="720" r="30" />
+            <text x="360" y="728" fill="#fff" font-size="18">M2</text>
+            <circle cx="700" cy="780" r="26" />
+            <text x="700" y="786" fill="#fff" font-size="18">M3</text>
+            <circle cx="860" cy="760" r="28" />
+            <text x="860" y="768" fill="#fff" font-size="18">M4</text>
+            <circle cx="1240" cy="500" r="30" />
+            <text x="1240" y="508" fill="#fff" font-size="18">M5</text>
+            <circle cx="1040" cy="520" r="27" />
+            <text x="1040" y="526" fill="#fff" font-size="18">M6</text>
+            <circle cx="600" cy="520" r="28" />
+            <text x="600" y="526" fill="#fff" font-size="18">M7</text>
+            <circle cx="890" cy="540" r="28" />
+            <text x="890" y="546" fill="#fff" font-size="18">M8</text>
+        </g>
+    </g> <!--
+    Entanglement edges (purple strong vs cyan weak). Using double strokes to mimic gradient -->
+    <g stroke-linecap="round">
+        <line x1="780" y1="250" x2="400" y2="320" stroke="#6E32B5" stroke-width="11" opacity="0.75" />
+        <line x1="780" y1="250" x2="1180" y2="360" stroke="#6E32B5" stroke-width="10" opacity="0.7" />
+        <line x1="780" y1="250" x2="560" y2="420" stroke="#27B4D6" stroke-width="8" opacity="0.8" />
+        <line x1="780" y1="250" x2="920" y2="420" stroke="#6E32B5" stroke-width="9" opacity="0.75" />
+        <line x1="560" y1="420" x2="620" y2="640" stroke="#27B4D6" stroke-width="7"
+            opacity="0.7" />
+        <line x1="920" y1="420" x2="980" y2="640" stroke="#27B4D6" stroke-width="7" opacity="0.7" />
+        <line x1="620" y1="640" x2="980" y2="640" stroke="#6E32B5" stroke-width="12" opacity="0.8" />
+        <line x1="980" y1="640" x2="1080" y2="760" stroke="#27B4D6" stroke-width="7" />
+        <line x1="620" y1="640" x2="520" y2="760" stroke="#27B4D6" stroke-width="7" />
+    </g> <!--
+    Electron cascade arrows (yellow) -->
+    <defs>
+        <marker id="arrowY" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+            <polygon points="0,0 12,6 0,12" fill="#FFD400" />
+        </marker>
+    </defs>
+    <g stroke="#FFD400" stroke-width="6" fill="none" marker-end="url(#arrowY)">
+        <path d="M400 320 C500 300 640 260 780 250" />
+        <path d="M780 250 C900 300 960 340 1180 360" />
+        <path d="M780 250 C700 350 660 500 620 640" />
+        <path d="M620 640 C760 660 860 650 980 640" />
+    </g> <!-- Coherence radius visualization
+    (circles around P3) -->
+    <circle cx="780" cy="250" r="200" fill="none" stroke="#003366" stroke-dasharray="10,12"
+        stroke-width="4" opacity="0.35" />
+    <circle cx="780" cy="250" r="310" fill="none" stroke="#003366" stroke-dasharray="16,20"
+        stroke-width="3" opacity="0.2" /> <!-- Legend -->
+    <g transform="translate(1300,120)" font-family="Inter" font-size="26" fill="#222">
+        <rect x="-40" y="-40" width="300" height="360" fill="#FFFFFF" opacity="0.87" stroke="#333" />
+        <circle cx="0" cy="20" r="24" fill="#2C75FF" stroke="#133F85" />
+        <text x="40" y="30">Protein</text>
+        <circle cx="0" cy="80" r="18" fill="#2AA876" stroke="#166043" />
+        <text x="40" y="90">Lipid</text>
+        <circle cx="0" cy="140" r="14" fill="#F27F1B" stroke="#A94F05" />
+        <text x="40" y="148">Metabolite</text>
+        <line x1="-10" y1="200" x2="30" y2="200" stroke="#6E32B5" stroke-width="10" />
+        <text x="40" y="208">Strong entanglement</text>
+        <line x1="-10" y1="250" x2="30" y2="250" stroke="#27B4D6" stroke-width="8" />
+        <text x="40" y="258">Weak entanglement</text>
+        <line x1="-10" y1="300" x2="30" y2="300" stroke="#FFD400" stroke-width="8"
+            marker-end="url(#arrowY)" />
+        <text x="40" y="308">Electron cascade</text>
+    </g> <!-- Text annotations -->
+    <text x="160" y="950" font-family="Inter" font-size="30" fill="#222">Entanglement strength:
+        0.8–0.99 (line thickness)</text>
+    <text x="160" y="900" font-family="Inter" font-size="30" fill="#222">Cascade 1 ns transfer
+        (yellow arrows)</text>
+</svg>

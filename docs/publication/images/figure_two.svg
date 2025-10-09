@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+
+    <title>Figure 1B Oscillation Pattern Temporal Analysis</title>
+    <desc>Time-series of normalized oscillation amplitude over 0–500 microseconds showing coherent
+        region, decoherence onset at 150 μs, and biological enhancement overlay.</desc>
+    <rect x="0" y="0" width="1200" height="800" fill="#FFFFFF" stroke="none" /> <!-- Axes -->
+    <g transform="translate(140,120)">
+        <rect x="0" y="0" width="900" height="520" fill="#FFFFFF" stroke="#333" stroke-width="2" /> <!--
+        Grid -->
+        <g stroke="#E2E6EA" stroke-width="1">
+            <g id="vticks">
+                <line x1="0" y1="0" x2="0" y2="520" />
+                <line x1="150" y1="0" x2="150" y2="520" />
+                <line x1="300" y1="0" x2="300" y2="520" />
+                <line x1="450" y1="0" x2="450" y2="520" />
+                <line x1="600" y1="0" x2="600" y2="520" />
+                <line x1="750" y1="0" x2="750" y2="520" />
+                <line x1="900" y1="0" x2="900" y2="520" />
+            </g>
+            <g id="hticks">
+                <line x1="0" y1="520" x2="900" y2="520" />
+                <line x1="0" y1="416" x2="900" y2="416" />
+                <line x1="0" y1="312" x2="900" y2="312" />
+                <line x1="0" y1="208" x2="900" y2="208" />
+                <line x1="0" y1="104" x2="900" y2="104" />
+                <line x1="0" y1="0" x2="900" y2="0" />
+            </g>
+        </g> <!-- Decoherence
+        region -->
+        <rect x="270" y="0" width="630" height="520" fill="#CCCCCC" opacity="0.27" /> <!-- Biological
+        enhancement
+        overlay (e.g., 40–120 μs) -->
+        <rect x="72" y="0" width="176" height="520" fill="#1B8E3E" opacity="0.13" /> <!-- Coherence
+        limit line -->
+        <line x1="270" y1="0" x2="270" y2="520" stroke="#666" stroke-dasharray="8,6"
+            stroke-width="3" /> <!-- Oscillation path (synthetic) -->
+        <path
+            d=" M0 260 L15 180 C30 120 60 60 90 140 C120 230 150 100 180 180 C210 260 240 160 270 220 C300 300 330 260 360 290 C390 320 420 300 450 330 C480 360 510 350 540 365 C570 380 600 375 630 390 C660 405 690 410 720 420 C750 430 780 435 810 440 C840 445 870 448 900 450"
+            fill="none" stroke="#003366" stroke-width="4" stroke-linejoin="round" /> <!-- Axis labels -->
+        <text x="450" y="580" font-family="Inter" font-size="28" text-anchor="middle" fill="#222">Time
+            (μs)</text>
+        <text x="-80" y="260" transform="rotate(-90,-80,260)" font-family="Inter" font-size="28"
+            text-anchor="middle" fill="#222">Oscillation Amplitude (normalized)</text> <!-- X ticks -->
+        <g font-family="Inter" font-size="22" fill="#222">
+            <text x="0" y="560">0</text>
+            <text x="150" y="560">100</text>
+            <text x="300" y="560">200</text>
+            <text x="450" y="560">300</text>
+            <text x="600" y="560">400</text>
+            <text x="750" y="560">500</text>
+            <text x="900" y="560">600</text>
+        </g> <!-- Y ticks -->
+        <g font-family="Inter" font-size="22" fill="#222" text-anchor="end">
+            <text x="-10" y="520">0</text>
+            <text x="-10" y="416">0.2</text>
+            <text x="-10" y="312">0.4</text>
+            <text x="-10" y="208">0.6</text>
+            <text x="-10" y="104">0.8</text>
+            <text x="-10" y="0">1.0</text>
+        </g> <!-- Annotations -->
+        <text x="280" y="40" font-family="Inter" font-size="26" fill="#222">Decoherence region</text>
+        <text x="90" y="60" font-family="Inter" font-size="26" fill="#1B8E3E">Biological enhancement</text>
+        <text x="280" y="500" font-family="Inter" font-size="24" fill="#222">Coherence limit 150 μs</text>
+    </g> <!--
+    Legend -->
+    <g transform="translate(1080,200)" font-family="Inter" font-size="22">
+        <rect x="-40" y="-40" width="160" height="200" fill="#FFFFFF" opacity="0.87" stroke="#333" />
+        <line x1="-20" y1="0" x2="20" y2="0" stroke="#003366" stroke-width="4" />
+        <text x="30" y="7" fill="#222">Coherent oscillations</text>
+        <rect x="-20" y="40" width="40" height="30" fill="#CCCCCC" opacity="0.27" stroke="#666" />
+        <text x="30" y="62" fill="#222">Decoherence</text>
+        <rect x="-20" y="90" width="40" height="30" fill="#1B8E3E" opacity="0.13" stroke="#1B8E3E" />
+        <text x="30" y="112" fill="#222">Enhancement zone</text>
+    </g> <!-- Panel label -->
+    <rect x="60" y="40" width="50" height="50" rx="4" ry="4" fill="#FFFFFF" opacity="0.8"
+        stroke="#222" />
+    <text x="85" y="75" font-family="Inter" font-size="30" text-anchor="middle" fill="#222"
+        font-weight="600">B</text>
+</svg>

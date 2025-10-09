@@ -1,0 +1,19 @@
+% Introduction
+
+\section{Introduction}
+
+Binary classification systems impose artificial discrete boundaries on continuous biological evidence \cite{fawcett2006introduction}. Given a molecular evidence vector $\mathbf{e} \in \mathbb{R}^n$, binary systems apply threshold function $T(\mathbf{e}) = \begin{cases} 1 & \text{if } f(\mathbf{e}) > \theta \\ 0 & \text{otherwise} \end{cases}$ where $f: \mathbb{R}^n \rightarrow \mathbb{R}$ is a scoring function and $\theta$ is threshold parameter.
+
+This discretization eliminates uncertainty information inherent in biological measurements \cite{kidd2014uncertainty}. Spectroscopic evidence exhibits continuous confidence distributions rather than discrete classifications \cite{stein2014mass}. Mass spectrometry produces peak intensity values $I(m/z)$ with measurement uncertainty $\sigma_I$ \cite{hoffmann2007mass}. Nuclear magnetic resonance yields chemical shift values $\delta$ with coupling constants $J$ exhibiting natural variation \cite{claridge2016high}.
+
+Current molecular identification systems implement hard decision boundaries \cite{kind2007fiehnlib, horai2010massbank}. Given spectral match score $s \in [0,1]$, identification occurs when $s > 0.7$ (arbitrary threshold). Scores of 0.69 and 0.71 produce identical binary outcomes despite minimal difference in underlying evidence.
+
+Bayesian inference requires prior probability distributions $P(H_i)$ for hypothesis $H_i$ and likelihood functions $P(E|H_i)$ for evidence $E$ \cite{gelman2013bayesian}. Molecular identification involves multiple hypotheses $H_1, H_2, \ldots, H_k$ representing candidate molecular identities \cite{wolfender2019accelerating}. Evidence includes spectral data, structural information, and pathway context \cite{dunn2013mass}.
+
+Standard implementations assume crisp evidence categories: peak present/absent, structural match/mismatch, pathway membership/non-membership \cite{rogers2019application}. Biological evidence exhibits gradual transitions and partial memberships unsuitable for binary representation \cite{zadeh1965fuzzy}.
+
+Uncertainty quantification requires distinction between aleatory uncertainty (inherent randomness) and epistemic uncertainty (lack of knowledge) \cite{kiureghian2009aleatory}. Aleatory uncertainty stems from thermal fluctuations, measurement noise, and biological variability \cite{vanderwerf2005uncertainty}. Epistemic uncertainty arises from incomplete databases, model limitations, and systematic errors \cite{helton2004alternative}.
+
+Temporal evidence reliability decreases over time due to database aging, method obsolescence, and contextual changes \cite{guha2005chemical}. Evidence collected at time $t_0$ exhibits diminished relevance at time $t > t_0$ \cite{steinbeck2003chemical}. Reliability function $R(t) = R_0 \cdot D(t)$ where $R_0$ is initial reliability and $D(t)$ represents decay function.
+
+Current systems lack frameworks for continuous uncertainty representation, temporal evidence modeling, and coherent uncertainty propagation through molecular identification pipelines \cite{boulder2019uncertainty, rogers2019molecular}.

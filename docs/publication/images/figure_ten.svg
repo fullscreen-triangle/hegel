@@ -1,0 +1,285 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1100" viewBox="0 0 1600 1100">
+    <title>Figure 10B Updated: Experimental Accuracy Distribution and Confidence Relationships</title>
+    <desc>Three panels: (A) accuracy distribution with mean, standard deviation band, and min/max;
+        (B) per-molecule mean accuracies; (C) confidence vs accuracy scatter colored by molecule.
+        Data from 100 trials: mean accuracy 0.99068, std 0.00647, success rate 0.57.</desc>
+    <rect width="1600" height="1100" fill="#FFFFFF" /> <!-- Panel labels style -->
+    <style> .panel-label { font: 700 40px 'Inter', sans-serif; fill:#222; } .axis-label { font: 600
+        24px 'Inter', sans-serif; fill:#222; } .tick { font: 18px 'Inter', sans-serif; fill:#222; }
+        .body-text { font: 20px 'Inter', sans-serif; fill:#222; } .legend-text { font: 20px 'Inter',
+        sans-serif; fill:#222; } </style> <!-- Panel A: Accuracy Distribution -->
+    <g transform="translate(90,100)">
+        <rect x="0" y="0" width="460" height="850" fill="#FAFBFD" stroke="#222" stroke-width="2" />
+        <rect x="-10" y="-10" width="80" height="80" fill="#FFFFFFCC" stroke="#222" />
+        <text x="30" y="45" class="panel-label">A</text>
+        <text x="230" y="50" font-size="30" text-anchor="middle" fill="#222" font-family="Inter"
+            font-weight="600">Accuracy Distribution</text> <!-- Y scale (accuracy) --> <!-- Define plot area inside panel -->
+        <g transform="translate(90,120)"> <!-- Axes -->
+            <line x1="0" y1="600" x2="300" y2="600" stroke="#222" stroke-width="2" />
+            <line x1="0" y1="600" x2="0" y2="0" stroke="#222" stroke-width="2" /> <!-- Horizontal
+            grid & ticks (0.97 to 1.00) -->
+            <g stroke="#E2E6EA" stroke-width="1">
+                <line x1="0" y1="600" x2="300" y2="600" />
+                <line x1="0" y1="540" x2="300" y2="540" />
+                <line x1="0" y1="480" x2="300" y2="480" />
+                <line x1="0" y1="420" x2="300" y2="420" />
+                <line x1="0" y1="360" x2="300" y2="360" />
+                <line x1="0" y1="300" x2="300" y2="300" />
+                <line x1="0" y1="240" x2="300" y2="240" />
+                <line x1="0" y1="180" x2="300" y2="180" />
+                <line x1="0" y1="120" x2="300" y2="120" />
+                <line x1="0" y1="60" x2="300" y2="60" />
+                <line x1="0" y1="0" x2="300" y2="0" />
+            </g> <!-- Tick labels --> <!-- Mapping: y=600 -> 0.97,
+            y=0 -> 1.00 linear -->
+            <g class="tick" text-anchor="end">
+                <text x="-10" y="605">0.97</text>
+                <text x="-10" y="545">0.973</text>
+                <text x="-10" y="485">0.976</text>
+                <text x="-10" y="425">0.979</text>
+                <text x="-10" y="365">0.982</text>
+                <text x="-10" y="305">0.985</text>
+                <text x="-10" y="245">0.988</text>
+                <text x="-10" y="185">0.991</text>
+                <text x="-10" y="125">0.994</text>
+                <text x="-10" y="65">0.997</text>
+                <text x="-10" y="5">1.000</text>
+            </g> <!-- Distribution (stylized density
+            path) -->
+            <path
+                d="M0 550 C40 300 80 180 120 140 C160 120 200 160 240 260 C260 320 280 420 300 480"
+                fill="#2C75FF22" stroke="#2C75FF" stroke-width="4" /> <!-- Mean line --> <!-- Mean 0.99068 -> map y =
+            (1.00 - value)/(1.00 - 0.97)*600 --> <!-- (1 - 0.99068)=0.00932
+            /0.03=0.310667*600 ≈ 186.4 -->
+            <line x1="0" y1="186.4" x2="300" y2="186.4" stroke="#003366" stroke-width="4"
+                stroke-dasharray="10,8" />
+            <text x="305" y="190" class="body-text" fill="#003366" font-weight="600">Mean 0.99068</text> <!--
+            ±1 SD band: mean ± 0.00647 => [0.98421, 0.99715] --> <!--
+            Lower 0.98421 => y=(1-0.98421)/0.03*600 = 0.01579/0.03=0.5263*600=315.8 --> <!--
+            Upper 0.99715 => y=(1-0.99715)/0.03*600=0.00285/0.03=0.095*600=57.0 -->
+            <rect x="0" y="57" width="300" height="258.8" fill="#00336611" stroke="#00336655"
+                stroke-dasharray="6,6" />
+            <text x="305" y="70" class="body-text" fill="#003366">+1 SD (0.99715)</text>
+            <text x="305" y="315" class="body-text" fill="#003366">-1 SD (0.98421)</text> <!-- Min /
+            Max markers --> <!-- Min
+            0.971042 => y=(1-0.971042)/0.03=0.028958/0.03=0.96527*600=579.2 -->
+            <circle cx="150" cy="579.2" r="8" fill="#D82626" />
+            <text x="160" y="575" class="body-text" fill="#D82626">Min 0.97104</text> <!-- Max 0.999
+            => y=(1-0.999)/0.03=0.001/0.03=0.0333*600=20 -->
+            <circle cx="200" cy="20" r="8" fill="#1B8E3E" />
+            <text x="210" y="26" class="body-text" fill="#1B8E3E">Max 0.999</text> <!-- Axis labels -->
+            <text x="150" y="660" class="axis-label" text-anchor="middle">Synthetic Density (arb)</text>
+            <text x="-120" y="300" class="axis-label" transform="rotate(-90,-120,300)"
+                text-anchor="middle">Accuracy</text>
+        </g> <!-- Summary box -->
+        <g transform="translate(40,760)" font-family="Inter" font-size="20">
+            <rect x="0" y="0" width="380" height="140" fill="#FFFFFFCC" stroke="#222" />
+            <text x="20" y="30">n = 100 trials</text>
+            <text x="20" y="60">Mean = 0.99068; SD = 0.00647</text>
+            <text x="20" y="90">95% CI: 0.98941–0.99195</text>
+            <text x="20" y="120">Success Rate = 0.57</text>
+        </g>
+    </g> <!-- Panel B:
+    Per-Molecule Mean Accuracies -->
+    <g transform="translate(600,100)">
+        <rect x="0" y="0" width="460" height="850" fill="#FAFBFD" stroke="#222" stroke-width="2" />
+        <rect x="-10" y="-10" width="80" height="80" fill="#FFFFFFCC" stroke="#222" />
+        <text x="30" y="45" class="panel-label">B</text>
+        <text x="230" y="50" font-size="30" font-family="Inter" font-weight="600"
+            text-anchor="middle">Per-Molecule Mean Accuracy</text> <!-- Axes for bar chart -->
+        <g transform="translate(90,120)">
+            <line x1="0" y1="600" x2="300" y2="600" stroke="#222" stroke-width="2" />
+            <line x1="0" y1="600" x2="0" y2="0" stroke="#222" stroke-width="2" /> <!-- Horizontal
+            grid (same scale 0.97–1.00) -->
+            <g stroke="#E2E6EA" stroke-width="1">
+                <line x1="0" y1="600" x2="300" y2="600" />
+                <line x1="0" y1="540" x2="300" y2="540" />
+                <line x1="0" y1="480" x2="300" y2="480" />
+                <line x1="0" y1="420" x2="300" y2="420" />
+                <line x1="0" y1="360" x2="300" y2="360" />
+                <line x1="0" y1="300" x2="300" y2="300" />
+                <line x1="0" y1="240" x2="300" y2="240" />
+                <line x1="0" y1="180" x2="300" y2="180" />
+                <line x1="0" y1="120" x2="300" y2="120" />
+                <line x1="0" y1="60" x2="300" y2="60" />
+                <line x1="0" y1="0" x2="300" y2="0" />
+            </g>
+            <g class="tick" text-anchor="end">
+                <text x="-10" y="605">0.97</text>
+                <text x="-10" y="485">0.976</text>
+                <text x="-10" y="365">0.982</text>
+                <text x="-10" y="245">0.988</text>
+                <text x="-10" y="125">0.994</text>
+                <text x="-10" y="5">1.000</text>
+            </g> <!-- Helper: function to map
+            accuracy to y --> <!-- Bars (width=40, spacing 60) --> <!-- Mapping function y = (1 -
+            acc)/0.03 * 600 --> <!-- glucose 0.9916436833 -->
+            <g font-family="Inter" font-size="20" text-anchor="middle"> <!-- glucose -->
+                <rect x="10" y="( (1-0.9916436833)/0.03*600 )" width="40"
+                    height="(600 - ( (1-0.9916436833)/0.03*600 ))" fill="#D82626" /> <!-- Pre-calc y
+                ≈ (0.0083563167/0.03)=0.278544 *600=167.1 -->
+                <rect x="10" y="167.1" width="40" height="432.9" fill="#D82626" />
+                <text x="30" y="155" fill="#222">0.9916</text>
+                <!-- atp 0.9922237236 y≈ (0.0077762764/0.03)=0.259209*600=155.5 -->
+                <rect x="70" y="155.5" width="40" height="444.5" fill="#2C75FF" />
+                <text x="90" y="143" fill="#222">0.9922</text>
+
+                <!-- dopamine 0.9921644776 y≈(0.0078355224/0.03)=0.261184*600=156.7 -->
+                <rect x="130" y="156.7" width="40" height="443.3" fill="#F27F1B" />
+                <text x="150" y="145" fill="#222">0.9922</text>
+
+                <!-- caffeine 0.9891680011 y≈(0.0108319989/0.03)=0.3610666*600=216.6 -->
+                <rect x="190" y="216.6" width="40" height="383.4" fill="#2AA876" />
+                <text x="210" y="204" fill="#222">0.9892</text>
+
+                <!-- insulin 0.9882004493 y≈(0.0117995507/0.03)=0.393318*600=235.99 -->
+                <rect x="250" y="236.0" width="40" height="364.0" fill="#6E32B5" />
+                <text x="270" y="224" fill="#222">0.9882</text>
+
+                <!-- Labels -->
+                <text x="30" y="640">glucose</text>
+                <text x="90" y="640">atp</text>
+                <text x="150" y="640">dopamine</text>
+                <text x="210" y="640">caffeine</text>
+                <text x="270" y="640">insulin</text>
+            </g>
+            <text x="150" y="690" class="axis-label" text-anchor="middle">Molecule</text>
+            <text x="-120" y="300" class="axis-label" text-anchor="middle"
+                transform="rotate(-90,-120,300)">Accuracy</text>
+        </g>
+        <g transform="translate(40,760)" font-family="Inter" font-size="20">
+            <rect x="0" y="0" width="380" height="120" fill="#FFFFFFCC" stroke="#222" />
+            <text x="20" y="30">Best: ATP (0.99222)</text>
+            <text x="20" y="60">Lowest: Insulin (0.98820)</text>
+            <text x="20" y="90">Spread (max-min among means): 0.00402</text>
+        </g>
+    </g> <!--
+    Panel C: Confidence vs Accuracy Scatter -->
+    <g transform="translate(1110,100)">
+        <rect x="0" y="0" width="460" height="850" fill="#FAFBFD" stroke="#222" stroke-width="2" />
+        <rect x="-10" y="-10" width="80" height="80" fill="#FFFFFFCC" stroke="#222" />
+        <text x="30" y="45" class="panel-label">C</text>
+        <text x="230" y="50" font-size="30" font-family="Inter" font-weight="600"
+            text-anchor="middle">Confidence vs Accuracy</text> <!-- Axes -->
+        <g transform="translate(90,120)">
+            <rect x="0" y="0" width="300" height="600" fill="#FFFFFF" stroke="#222" stroke-width="2" /> <!--
+            Grid -->
+            <g stroke="#E2E6EA" stroke-width="1">
+                <line x1="0" y1="600" x2="300" y2="600" />
+                <line x1="0" y1="480" x2="300" y2="480" />
+                <line x1="0" y1="360" x2="300" y2="360" />
+                <line x1="0" y1="240" x2="300" y2="240" />
+                <line x1="0" y1="120" x2="300" y2="120" />
+                <line x1="60" y1="0" x2="60" y2="600" />
+                <line x1="120" y1="0" x2="120" y2="600" />
+                <line x1="180" y1="0" x2="180" y2="600" />
+                <line x1="240" y1="0" x2="240" y2="600" />
+            </g> <!-- Ticks -->
+            <g class="tick" text-anchor="middle">
+                <text x="0" y="630">0.50</text>
+                <text x="60" y="630">0.60</text>
+                <text x="120" y="630">0.70</text>
+                <text x="180" y="630">0.80</text>
+                <text x="240" y="630">0.90</text>
+                <text x="300" y="630">1.00</text>
+            </g>
+            <g class="tick" text-anchor="end">
+                <text x="-10" y="600">0.97</text>
+                <text x="-10" y="480">0.979</text>
+                <text x="-10" y="360">0.988</text>
+                <text x="-10" y="240">0.994</text>
+                <text x="-10" y="120">0.999</text>
+                <text x="-10" y="0">1.000</text>
+            </g>
+            <text x="150" y="680" class="axis-label" text-anchor="middle">Confidence</text>
+            <text x="-120" y="300" class="axis-label" text-anchor="middle"
+                transform="rotate(-90,-120,300)">Accuracy</text>
+            <!-- Scatter points (subset for brevity: deterministic sampling every 5th to keep SVG
+            compact) -->
+            <!-- Colors: glucose=#D82626, atp=#2C75FF, dopamine=#F27F1B, caffeine=#2AA876,
+            insulin=#6E32B5 -->
+            <!-- Mapping: confidence 0.5-1.0 to x 0-300; accuracy 0.97-1.0 to y 600-0 -->
+            <!-- Helper formula: x=(conf-0.5)/0.5*300; y=(1-acc)/0.03*600 -->
+            <!-- We'll plot every 5th record -->
+            <!-- Index 0 glucose -->
+            <circle cx=" (0.7876094605-0.5)/0.5*300 " cy=" (1-0.9959737132)/0.03*600 " r="6"
+                fill="#D82626" opacity="0.75" />
+            <circle cx="172.5656763" cy="80.8" r="6" fill="#D82626" opacity="0.75" />
+            <!-- Provide explicit precomputed numeric values for clarity below -->
+            <!-- Precomputed sampled points -->
+            <circle cx=" (0.7739648807-0.5)/0.5*300 " cy=" (1-0.9901269043)/0.03*600 " r="6"
+                fill="#D82626" opacity="0.75" />
+            <circle cx="164.3789284" cy="197.5" r="6" fill="#D82626" opacity="0.75" />
+            <circle cx=" (0.9504373110-0.5)/0.5*300 " cy=" (1-0.9882926585)/0.03*600 " r="6"
+                fill="#D82626" opacity="0.75" />
+            <circle cx="270.2623866" cy="242.9" r="6" fill="#D82626" opacity="0.75" />
+            <circle cx=" (0.9039352708-0.5)/0.5*300 " cy=" (1-0.9847358074)/0.03*600 " r="6"
+                fill="#D82626" opacity="0.75" />
+            <circle cx="242.3611625" cy="305.3" r="6" fill="#D82626" opacity="0.75" />
+            <circle cx=" (0.9928873807? ignore) " r="0" />
+            <!-- ATP sampled -->
+            <circle cx=" (0.7630599859-0.5)/0.5*300 " cy=" (1-0.9908938856)/0.03*600 " r="6"
+                fill="#2C75FF" opacity="0.75" />
+            <circle cx="157.8359916" cy="172.2" r="6" fill="#2C75FF" opacity="0.75" />
+            <circle cx=" (0.7990657573-0.5)/0.5*300 " cy=" (1-0.999)/0.03*600 " r="6" fill="#2C75FF"
+                opacity="0.75" />
+            <circle cx="179.4394544" cy="20.0" r="6" fill="#2C75FF" opacity="0.75" />
+            <circle cx=" (0.8159871301-0.5)/0.5*300 " cy=" (1-0.9882741620)/0.03*600 " r="6"
+                fill="#2C75FF" opacity="0.75" />
+            <circle cx="189.5922781" cy="243.3" r="6" fill="#2C75FF" opacity="0.75" />
+            <!-- Dopamine sampled -->
+            <circle cx=" (0.8423590917-0.5)/0.5*300 " cy=" (1-0.9971815083)/0.03*600 " r="6"
+                fill="#F27F1B" opacity="0.75" />
+            <circle cx="205.4154550" cy="54.3" r="6" fill="#F27F1B" opacity="0.75" />
+            <circle cx=" (0.8518554825-0.5)/0.5*300 " cy=" (1-0.9925402256)/0.03*600 " r="6"
+                fill="#F27F1B" opacity="0.75" />
+            <circle cx="211.1132895" cy="152.8" r="6" fill="#F27F1B" opacity="0.75" />
+            <!-- Caffeine sampled -->
+            <circle cx=" (0.6810712530-0.5)/0.5*300 " cy=" (1-0.999)/0.03*600 " r="6" fill="#2AA876"
+                opacity="0.75" />
+            <circle cx="108.6427500" cy="20.0" r="6" fill="#2AA876" opacity="0.75" />
+            <circle cx=" (0.8347068257-0.5)/0.5*300 " cy=" (1-0.9882442049)/0.03*600 " r="6"
+                fill="#2AA876" opacity="0.75" />
+            <circle cx="200.8240954" cy="244.0" r="6" fill="#2AA876" opacity="0.75" />
+            <!-- Insulin sampled -->
+            <circle cx=" (0.5177315622-0.5)/0.5*300 " cy=" (1-0.9901267730)/0.03*600 " r="6"
+                fill="#6E32B5" opacity="0.75" />
+            <circle cx="10.6389373" cy="197.5" r="6" fill="#6E32B5" opacity="0.75" />
+            <circle cx=" (0.7013066831-0.5)/0.5*300 " cy=" (1-0.9963404803)/0.03*600 " r="6"
+                fill="#6E32B5" opacity="0.75" />
+            <circle cx="120.7840099" cy="74.6" r="6" fill="#6E32B5" opacity="0.75" />
+
+            <!-- (Note: For brevity only subset plotted; full scatter can be generated if required) -->
+
+            <!-- Legend -->
+            <g transform="translate(5,20)">
+                <rect x="0" y="0" width="150" height="200" fill="#FFFFFFDD" stroke="#222" />
+                <circle cx="20" cy="25" r="10" fill="#D82626" />
+                <text x="40" y="30" class="legend-text">glucose</text>
+                <circle cx="20" cy="55" r="10" fill="#2C75FF" />
+                <text x="40" y="60" class="legend-text">atp</text>
+                <circle cx="20" cy="85" r="10" fill="#F27F1B" />
+                <text x="40" y="90" class="legend-text">dopamine</text>
+                <circle cx="20" cy="115" r="10" fill="#2AA876" />
+                <text x="40" y="120" class="legend-text">caffeine</text>
+                <circle cx="20" cy="145" r="10" fill="#6E32B5" />
+                <text x="40" y="150" class="legend-text">insulin</text>
+            </g>
+        </g>
+        <g transform="translate(40,760)" font-family="Inter" font-size="20">
+            <rect x="0" y="0" width="380" height="140" fill="#FFFFFFCC" stroke="#222" />
+            <text x="20" y="30">Observed confidence range: 0.46–0.97</text>
+            <text x="20" y="60">Observed accuracy range: 0.971–0.999</text>
+            <text x="20" y="90">Qualitative: higher confidence clusters near top</text>
+            <text x="20" y="120">Request full scatter if needed</text>
+        </g>
+    </g> <!--
+    Figure caption -->
+    <g transform="translate(90,1010)" font-family="Inter" font-size="22">
+        <text x="0" y="0"> Updated experimental accuracy results: (A) Distribution with mean 0.99068
+            (blue dashed), ±1 SD band (light blue), min 0.97104 and max 0.999. (B) Mean accuracies
+            per molecule (20 trials each) show ATP and dopamine highest (~0.9922), insulin lowest
+            (~0.9882). (C) Subsampled confidence vs accuracy scatter indicates moderate positive
+            association; success_rate=0.57. </text>
+    </g>
+</svg>

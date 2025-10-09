@@ -1,0 +1,180 @@
+% Hybrid Fuzzy-Bayesian Engine
+
+\section{Hybrid Fuzzy-Bayesian Engine}
+
+\subsection{Evidence Fuzzification Process}
+
+Input evidence vector $\mathbf{e} = (e_1, e_2, \ldots, e_n)^T$ undergoes fuzzification using triangular membership functions \cite{dubois1980fuzzy}. For evidence component $e_i \in [0, 1]$:
+
+Low confidence membership function:
+\begin{equation}
+\mu_{LOW}(e_i) = \begin{cases}
+1 & \text{if } e_i \leq 0.3 \\
+\frac{0.5 - e_i}{0.5 - 0.3} & \text{if } 0.3 < e_i < 0.5 \\
+0 & \text{if } e_i \geq 0.5
+\end{cases}
+\end{equation}
+
+Medium confidence membership function:
+\begin{equation}
+\mu_{MEDIUM}(e_i) = \begin{cases}
+0 & \text{if } e_i \leq 0.3 \\
+\frac{e_i - 0.3}{0.5 - 0.3} & \text{if } 0.3 < e_i < 0.5 \\
+1 & \text{if } e_i = 0.5 \\
+\frac{0.7 - e_i}{0.7 - 0.5} & \text{if } 0.5 < e_i < 0.7 \\
+0 & \text{if } e_i \geq 0.7
+\end{cases}
+\end{equation}
+
+High confidence membership function:
+\begin{equation}
+\mu_{HIGH}(e_i) = \begin{cases}
+0 & \text{if } e_i \leq 0.5 \\
+\frac{e_i - 0.5}{0.7 - 0.5} & \text{if } 0.5 < e_i < 0.7 \\
+1 & \text{if } e_i \geq 0.7
+\end{cases}
+\end{equation}
+
+\subsection{Fuzzy Rule Base}
+
+Molecular identification rules using Mamdani fuzzy inference \cite{mamdani1975experiment}. Rule structure:
+\begin{equation}
+R_k: \text{IF } e_1 \text{ is } A_{1k} \text{ AND } e_2 \text{ is } A_{2k} \text{ THEN } M \text{ is } B_k
+\end{equation}
+
+where $A_{ik} \in \{LOW, MEDIUM, HIGH\}$ and $B_k$ represents molecular identity confidence.
+
+Rule activation strength using minimum t-norm:
+\begin{equation}
+\alpha_k = \min(\mu_{A_{1k}}(e_1), \mu_{A_{2k}}(e_2), \ldots, \mu_{A_{nk}}(e_n))
+\end{equation}
+
+Output fuzzy set for rule $k$:
+\begin{equation}
+\mu_{B_k}^{output}(y) = \min(\alpha_k, \mu_{B_k}(y))
+\end{equation}
+
+\subsection{Bayesian Network Integration}
+
+Prior probability distribution for molecular identities \cite{laplace1814essai}:
+\begin{equation}
+P(M = m_j) = \frac{N_j}{\sum_{i=1}^K N_i}
+\end{equation}
+
+where $N_j$ is frequency count for molecule $m_j$ in training database and $K$ is total number of molecular identities.
+
+Likelihood calculation incorporating fuzzy evidence:
+\begin{equation}
+P(E = e_i | M = m_j) = \int_0^1 P(E = e_i | M = m_j, \mu = u) \cdot P(\mu = u | M = m_j) \, du
+\end{equation}
+
+where $\mu$ represents membership degree and integration accounts for fuzzy uncertainty.
+
+Simplified likelihood using centroid defuzzification:
+\begin{equation}
+P(E = e_i | M = m_j) = \mathcal{N}(e_i; \mu_{ij}, \sigma_{ij}^2)
+\end{equation}
+
+where $\mathcal{N}$ denotes normal distribution with mean $\mu_{ij}$ and variance $\sigma_{ij}^2$ learned from training data.
+
+\subsection{Posterior Probability Calculation}
+
+Fuzzy-Bayesian posterior using weighted evidence combination:
+\begin{equation}
+P(M = m_j | \mathbf{e}) = \frac{\sum_{l=1}^L w_l \cdot P(\mathbf{e}_l | M = m_j) \cdot P(M = m_j)}{\sum_{k=1}^K \sum_{l=1}^L w_l \cdot P(\mathbf{e}_l | M = m_k) \cdot P(M = m_k)}
+\end{equation}
+
+where:
+- $L$ is number of fuzzy evidence categories
+- $w_l$ are fuzzy membership weights
+- $\mathbf{e}_l$ are evidence vectors corresponding to fuzzy categories
+
+Weight calculation using normalized membership degrees:
+\begin{equation}
+w_l = \frac{\mu_l}{\sum_{i=1}^L \mu_i}
+\end{equation}
+
+\subsection{Temporal Evidence Integration}
+
+Time-dependent evidence reliability using exponential decay \cite{cox1962renewal}:
+\begin{equation}
+R_i(t) = R_{i0} \cdot \exp(-\lambda_i t)
+\end{equation}
+
+where:
+- $R_{i0}$ is initial reliability for evidence source $i$
+- $\lambda_i$ is decay constant for evidence type $i$
+- $t$ is time elapsed since evidence collection
+
+Time-adjusted posterior probability:
+\begin{equation}
+P(M = m_j | \mathbf{e}, \mathbf{t}) = \frac{\sum_{l=1}^L w_l \cdot R_l(t_l) \cdot P(\mathbf{e}_l | M = m_j) \cdot P(M = m_j)}{\sum_{k=1}^K \sum_{l=1}^L w_l \cdot R_l(t_l) \cdot P(\mathbf{e}_l | M = m_k) \cdot P(M = m_k)}
+\end{equation}
+
+\subsection{Network Coherence Optimization}
+
+Evidence network represented as graph $G = (V, E)$ where vertices $V$ represent evidence nodes and edges $E$ represent relationships \cite{newman2003structure}. Coherence measure:
+\begin{equation}
+\mathcal{H} = \frac{1}{|E|} \sum_{(i,j) \in E} \cos(\theta_{ij})
+\end{equation}
+
+where $\theta_{ij}$ is angle between evidence vectors $\mathbf{e}_i$ and $\mathbf{e}_j$:
+\begin{equation}
+\cos(\theta_{ij}) = \frac{\mathbf{e}_i \cdot \mathbf{e}_j}{||\mathbf{e}_i|| \cdot ||\mathbf{e}_j||}
+\end{equation}
+
+Coherence optimization objective function:
+\begin{equation}
+\max_{\mathbf{w}} \mathcal{H}(\mathbf{w}) \text{ subject to } \sum_{i=1}^L w_i = 1, \quad w_i \geq 0
+\end{equation}
+
+Solution using Lagrangian method:
+\begin{equation}
+L = \mathcal{H}(\mathbf{w}) - \lambda \left(\sum_{i=1}^L w_i - 1\right) - \sum_{i=1}^L \mu_i w_i
+\end{equation}
+
+Optimal weights satisfy:
+\begin{equation}
+\frac{\partial \mathcal{H}}{\partial w_i} = \lambda + \mu_i
+\end{equation}
+
+\subsection{Uncertainty Quantification}
+
+Evidence uncertainty propagation through fuzzy-Bayesian network \cite{klir1995fuzzy}. Input uncertainty for evidence component $i$:
+\begin{equation}
+\sigma_{input,i}^2 = \sigma_{measurement,i}^2 + \sigma_{model,i}^2
+\end{equation}
+
+Fuzzy membership uncertainty:
+\begin{equation}
+\sigma_{\mu,i}^2 = \left(\frac{\partial \mu}{\partial e_i}\right)^2 \sigma_{input,i}^2
+\end{equation}
+
+Posterior probability uncertainty using error propagation:
+\begin{equation}
+\sigma_{posterior}^2 = \sum_{i=1}^L \left(\frac{\partial P(M|\mathbf{e})}{\partial w_i}\right)^2 \sigma_{w,i}^2
+\end{equation}
+
+where $\sigma_{w,i}^2$ represents uncertainty in fuzzy weight $w_i$.
+
+Confidence interval for molecular identification:
+\begin{equation}
+CI_{1-\alpha} = P(M = m_j | \mathbf{e}) \pm z_{\alpha/2} \cdot \sigma_{posterior}
+\end{equation}
+
+\subsection{Defuzzification and Decision Making}
+
+Centroid defuzzification for final molecular identification:
+\begin{equation}
+m^* = \frac{\sum_{j=1}^K m_j \cdot P(M = m_j | \mathbf{e})}{\sum_{j=1}^K P(M = m_j | \mathbf{e})}
+\end{equation}
+
+Decision threshold based on maximum posterior probability:
+\begin{equation}
+\text{Decision} = \begin{cases}
+m^* & \text{if } \max_j P(M = m_j | \mathbf{e}) > \theta_{decision} \\
+\text{Unknown} & \text{otherwise}
+\end{cases}
+\end{equation}
+
+where $\theta_{decision} = 0.5$ is minimum confidence threshold for positive identification.

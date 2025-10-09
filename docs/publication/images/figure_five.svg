@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="800" viewBox="0 0 1600 800">
+
+    <title>Figure 2C Cascade Timing Analysis</title>
+    <desc>Multi-trace timing diagram showing quantum state preparation, electron transfer spikes,
+        molecular state steps, and overall cascade completion.</desc>
+    <rect width="1600" height="800" fill="#FCFDFE" />
+    <rect x="80" y="60" width="60" height="60" fill="#FFFFFFCC" stroke="#222" />
+    <text x="110" y="100" font-family="Inter" font-size="40" text-anchor="middle" fill="#222"
+        font-weight="600">C</text> <!-- Plot region -->
+    <g transform="translate(160,140)">
+        <rect x="0" y="0" width="1200" height="560" fill="#FFFFFF" stroke="#222" /> <!-- Grid -->
+        <g stroke="#E2E6EA" stroke-width="1">
+            <line x1="0" y1="560" x2="1200" y2="560" />
+            <line x1="0" y1="420" x2="1200" y2="420" />
+            <line x1="0" y1="280" x2="1200" y2="280" />
+            <line x1="0" y1="140" x2="1200" y2="140" />
+            <line x1="0" y1="0" x2="1200" y2="0" />
+        </g> <!-- Time axis ticks -->
+        <g font-family="Inter" font-size="24" fill="#222">
+            <text x="0" y="600">0 ps</text>
+            <text x="300" y="600">100 ps</text>
+            <text x="600" y="600">200 ps</text>
+            <text x="900" y="600">300 ps</text>
+            <text x="1200" y="600" text-anchor="end">400 ps</text>
+        </g> <!-- Labels -->
+        <text x="-80" y="80" font-family="Inter" font-size="24" text-anchor="end" fill="#222">Quantum
+            Prep</text>
+        <text x="-80" y="220" font-family="Inter" font-size="24" text-anchor="end" fill="#222">Electron
+            Transfer</text>
+        <text x="-80" y="360" font-family="Inter" font-size="24" text-anchor="end" fill="#222">Molecular
+            State</text>
+        <text x="-80" y="500" font-family="Inter" font-size="24" text-anchor="end" fill="#222">Cascade
+            Completion</text> <!-- Quantum preparation (smooth green baseline) -->
+        <path d="M0 60 C150 40 300 40 450 50 C600 60 750 55 900 52 C1050 50 1150 48 1200 46"
+            stroke="#1B8E3E" stroke-width="5" fill="none" /> <!-- Electron transfer spikes (red) -->
+        <g stroke="#D82626" stroke-width="8">
+            <line x1="120" y1="200" x2="120" y2="140" />
+            <line x1="260" y1="200" x2="260" y2="140" />
+            <line x1="400" y1="200" x2="400" y2="140" />
+            <line x1="560" y1="200" x2="560" y2="140" />
+            <line x1="720" y1="200" x2="720" y2="140" />
+            <line x1="880" y1="200" x2="880" y2="140" />
+            <line x1="1040" y1="200" x2="1040" y2="140" />
+        </g> <!-- Molecular state steps
+        (blue) -->
+        <path d="M0 340 H200 V300 H400 V260 H650 V220 H900 V190 H1200" stroke="#2C75FF"
+            stroke-width="6" fill="none" /> <!-- Cascade completion trace (black) -->
+        <path d="M0 480 C250 470 500 450 750 420 C900 400 1050 340 1200 200" stroke="#000"
+            stroke-width="5" fill="none" /> <!-- Duration annotations -->
+        <g font-family="Inter" font-size="22" fill="#222">
+            <text x="560" y="520">Total cascade time ≈ 320 ps</text>
+            <text x="150" y="250">Transfer hops ~20 ps each</text>
+        </g>
+    </g> <!-- Legend -->
+    <g transform="translate(1420,220)" font-family="Inter" font-size="22">
+        <rect x="-80" y="-40" width="230" height="260" fill="#FFFFFFDD" stroke="#333" />
+        <line x1="-60" y1="10" x2="-20" y2="10" stroke="#1B8E3E" stroke-width="6" />
+        <text x="-10" y="16">Quantum prep</text>
+        <line x1="-60" y1="60" x2="-20" y2="60" stroke="#D82626" stroke-width="8" />
+        <text x="-10" y="66">Electron transfer</text>
+        <line x1="-60" y1="110" x2="-20" y2="110" stroke="#2C75FF" stroke-width="6" />
+        <text x="-10" y="116">Molecular state</text>
+        <line x1="-60" y1="160" x2="-20" y2="160" stroke="#000" stroke-width="5" />
+        <text x="-10" y="166">Cascade completion</text>
+    </g>
+</svg>
