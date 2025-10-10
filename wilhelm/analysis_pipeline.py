@@ -19,6 +19,7 @@ from transform.fuzzy_evidence import create_fuzzy_evidence_system
 from transform.circuit_analysis import create_biological_circuit_analysis
 from optimisation.finite_observer import FiniteObserver
 from optimisation.transcendent_observer import TranscendentObserver
+from bridge.hierarchy_circuit_bridge import HierarchyCircuitBridge, HierarchyNode, CircuitElement
 from optimisation.oscillatory_bayesian_network import create_oscillatory_bayesian_network
 from optimisation.pathway_optimisation import optimize_biological_pathways
 from processing.validation import cross_modal_biological_validation
@@ -252,6 +253,93 @@ def run_complete_sbml_analysis(sbml_file_path: str = None,
         print(f"  Circuit elements: {circuit_analysis['summary']['circuit_elements']}")
         print(f"  P-N junctions: {circuit_analysis['summary']['pn_junctions']}")
         print(f"  Therapeutic transistors: {circuit_analysis['summary']['therapeutic_transistors']}")
+        
+        # Step 7.5: Bridge System (Tree → Graph Connection)
+        print("\n" + "="*50)
+        print("STEP 7.5: BRIDGE SYSTEM (TREE → GRAPH CONNECTION)")
+        print("="*50)
+        
+        # Initialize bridge system
+        bridge_system = HierarchyCircuitBridge(frequency_tolerance=0.1)  # 10% frequency tolerance
+        
+        # Convert finite observers to hierarchy nodes
+        hierarchy_node_molecular = HierarchyNode(
+            id="molecular_observer",
+            level=0,
+            oscillation_frequency=sum(molecular_observer.frequency_range) / 2,
+            observer_type="finite",
+            information_capacity=molecular_observer.information_capacity,
+            spatial_scale=1e-9,
+            temporal_scale=molecular_observer.temporal_window
+        )
+        bridge_system.add_hierarchy_node(hierarchy_node_molecular)
+        
+        hierarchy_node_cellular = HierarchyNode(
+            id="cellular_observer", 
+            level=1,
+            oscillation_frequency=sum(cellular_observer.frequency_range) / 2,
+            observer_type="finite",
+            information_capacity=cellular_observer.information_capacity,
+            spatial_scale=1e-6,
+            temporal_scale=cellular_observer.temporal_window
+        )
+        bridge_system.add_hierarchy_node(hierarchy_node_cellular)
+        
+        # Add transcendent observer as top-level node
+        transcendent_node = HierarchyNode(
+            id="transcendent_observer",
+            level=-1,  # Top level
+            oscillation_frequency=1e12,  # 1 THz
+            observer_type="transcendent", 
+            information_capacity=1e6,
+            spatial_scale=1e-3,
+            temporal_scale=1e-12
+        )
+        bridge_system.add_hierarchy_node(transcendent_node)
+        
+        # Extract circuit elements from biological circuit analysis
+        if circuit_analysis and 'components' in circuit_analysis:
+            for circuit_id, circuit_info in circuit_analysis['components'].items():
+                circuit_element = CircuitElement(
+                    id=f"circuit_{circuit_id}",
+                    element_type=circuit_info.get('type', 'oscillator'),
+                    resonance_frequency=circuit_info.get('resonance_frequency', 1e6),
+                    impedance=complex(circuit_info.get('resistance', 1000), circuit_info.get('reactance', 0)),
+                    biological_function=circuit_info.get('biological_function', circuit_id),
+                    molecular_basis=circuit_info.get('molecular_basis', 'protein_complex'),
+                    conductivity=circuit_info.get('conductivity', 1e6),
+                    hole_density=circuit_info.get('hole_density', 1e18)
+                )
+                bridge_system.add_circuit_element(circuit_element)
+        
+        # Build bridges between hierarchy and circuits
+        bridge_results = bridge_system.build_all_bridges()
+        print(f"✓ Created {bridge_results['total_bridges']} bridges between hierarchy and circuits")
+        
+        if bridge_results['total_bridges'] > 0:
+            print(f"✓ Average frequency match score: {bridge_results['average_match_score']:.3f}")
+            
+            # Test cross-structure navigation
+            hierarchy_nodes = list(bridge_system.hierarchy_nodes.keys())
+            circuit_nodes = list(bridge_system.circuit_elements.keys())
+            
+            if hierarchy_nodes and circuit_nodes:
+                test_path = bridge_system.navigate_hybrid_path(hierarchy_nodes[0], circuit_nodes[0])
+                crosses_structures = bridge_system._path_crosses_structures(test_path) if test_path else False
+                print(f"✓ Cross-structure navigation: {len(test_path) if test_path else 0} steps, crosses structures: {crosses_structures}")
+        else:
+            print("⚠️ No bridges created - frequency ranges may not overlap")
+        
+        # Analyze bridge topology
+        topology_analysis = bridge_system.analyze_bridge_topology()
+        print(f"✓ Bridge network connectivity: {topology_analysis['connectivity']['is_connected']}")
+        
+        analysis_results['bridge_system'] = {
+            'bridge_statistics': bridge_results,
+            'topology_analysis': topology_analysis,
+            'navigation_paths': bridge_system.results.get('navigation_paths', []),
+            'cross_structure_connections': bridge_results['total_bridges']
+        }
         
         # Step 8: Pathway optimization
         print("\n" + "="*50)

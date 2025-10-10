@@ -67,3 +67,6 @@ urllib3>=1.26.0
 
 # XML parsing (for SBML)
 lxml>=4.6.0
+
+# NEW: Personal validation dependencies
+json5>=0.9.0
