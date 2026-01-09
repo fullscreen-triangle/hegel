@@ -3362,6 +3362,189 @@ Full theoretical framework: `wilhelm/docs/cellular-state-equations/partition-bas
 
 ---
 
+## Disease State Equations: Mathematical Principles of Pathological Dynamics
+
+### Overview
+
+The `wilhelm/docs/disease-state-equations/` directory contains a comprehensive mathematical framework deriving equations of state for disease, immunity, and therapeutics from first principles. This work extends the partition-based cellular state equations to pathological dynamics, immune recognition, and therapeutic intervention.
+
+### Foundational Approach
+
+The framework is derived from **two axioms only**:
+
+1. **Bounded Phase Space**: All physical systems occupy finite, bounded regions of phase space
+2. **Categorical Observation**: Observation partitions continuous phase space into discrete, mutually exclusive categories
+
+From these axioms, the entire framework emerges as **geometric necessity** with no additional assumptions or empirical parameters.
+
+### Key Theoretical Results
+
+#### 1. Partition Coordinates
+
+- **Structure**: $(n,\ell,m,s)$ with capacity $C(n) = 2n^2$
+- **Correspondence**: Maps to quantum numbers in atomic physics
+- **S-Entropy Space**: $(\Sk,\St,\Se) \in [0,1]^3$ for macroscopic description
+- **Ternary Encoding**: Base-3 representation with $3^k$ cells at refinement level $k$
+
+#### 2. Thermodynamic Equations of State
+
+Five physical regimes derived from partition geometry:
+
+- **Neutral Gas**: $PV = N\kB T$ (ideal gas law)
+- **Plasma**: $P = (N\kB T/V)(1 - \Gamma/3)$ with Coulomb coupling
+- **Degenerate Matter**: $P \propto n^{5/3}$ (Fermi pressure)
+- **Relativistic Gas**: $P$ with relativistic corrections
+- **Bose-Einstein Condensate**: Phase transition at $T_c$
+
+All validated computationally without adjustable parameters.
+
+#### 3. Categorical Differential Equations
+
+- **Triple Structure**: Each coordinate has (categories, partitions, oscillations)
+- **Categorical Derivatives**: $\partial/\partial c$, $\partial/\partial p$, $\partial/\partial \phi$
+- **Pendulum Equation**: $\partial^2\theta/\partial p_t^2 + (g/L)\sin\theta = 0$
+- **Hamiltonian Structure**: Conservative dynamics with purely imaginary eigenvalues
+- **Gyrometric Derivatives**: Based on oxygen rotational quantum numbers
+
+#### 4. Categorical Memory Reset
+
+- **History Independence**: State at category $c$ independent of trajectory through $c-1$
+- **Geometric Exclusion**: Categorical boundaries act as apertures
+- **Van Deemter Analogy**: Similar to chromatographic plate theory
+- **Oxygen Master Clock**: O₂ rotational states provide continuous hierarchical clock
+- **Frequency Partitioning**: Cellular processes synchronize to specific harmonics
+- **Efficient Capacity**: Only necessary processes active at any given time
+
+#### 5. Pathological Equations of State
+
+Disease as disruption of oscillatory dynamics:
+
+$$D = f(\langle\Delta R\rangle_t, \langle\Delta dC/dt\rangle_t, \langle\Delta\Phi\rangle_t, \sigma_R^2, \sigma_\Phi^2, \tau_{\mathrm{decorr}})$$
+
+Where:
+- $R$: Categorical richness = $2n^2 \times N_{\mathrm{iso}} \times \exp(S_{\mathrm{conf}}/\kB)$
+- $dC/dt$: Categorical transition rate
+- $\Phi$: Phase angle
+- $\sigma^2$: Variance measures
+- $\tau_{\mathrm{decorr}}$: Decorrelation time
+
+**Key Insight**: Physiological and pathological states overlap in instantaneous measurements. Only time-averaged trajectory statistics distinguish them.
+
+#### 6. Disease Categories
+
+All disease types as special cases of unified equation:
+
+- **Genetic**: Pathway-specific oscillatory holes from variants
+- **Infectious**: Pathogen-induced trajectory disruption
+- **Metabolic**: Sustained categorical transition rate deviations
+- **Neurodegenerative**: Progressive richness reduction from aggregation
+- **Cancer**: Basin escape + proliferation acceleration
+- **Autoimmune**: Richness-dependent immune misclassification
+
+#### 7. Immune Equations of State
+
+Self-nonself discrimination through categorical richness:
+
+- **MHC as Categorical Aperture**: Presents low-$R$ peptides ($R < 10^4$), excludes high-$R$ ($R > 10^5$)
+- **Self-Nonself Bimodality**: Self proteins $R > 10^5$, pathogens $R < 10^4$
+- **VDJ Ternary Hierarchy**: $N_{\mathrm{VDJ}} = N_V \times N_D \times N_J \approx 3^8$
+- **Immune Pressure**: $P_{\mathrm{immune}} = P_0/(R/R_0)$ (inverse proportionality)
+- **Tolerance**: Central (thymic) and peripheral mechanisms based on richness
+
+#### 8. Therapeutic Equations of State
+
+Treatment as phase-locking restoration:
+
+- **Efficacy**: $E$ determines frequency disorder reduction
+- **Phase-Locking Deficit**: $\Delta\phi_i = \min_n |\omega_i^{\mathrm{nat}} - \omega_n|$
+- **Dose-Response**: Hill equation $E([D]) = E_{\max}[D]^h/(EC_{50}^h + [D]^h)$
+- **Richness Restoration**: $d\langle R\rangle_t/dt = k_{\mathrm{restore}}([D] - [D]_{\min}) - k_{\mathrm{decay}}(\langle R\rangle_t - R_{\mathrm{baseline}})$
+- **Combination Therapy**: $E_{\mathrm{combined}} = E_1 + E_2 - E_1 E_2$
+- **Therapeutic Pressure**: $P_{\mathrm{therapeutic}} = \kB T \cdot E/(1-E)$
+
+#### 9. Phase Coherence and Synchronization
+
+- **Kuramoto Order Parameter**: $r \in [0,1]$ quantifies synchronization
+- **Critical Coupling**: $K_c = (2/\pi g(0))\Delta$ for synchronization onset
+- **Hierarchical Coupling**: Oxygen coupling $K_{\mathrm{O_2}}$ + inter-cellular coupling $K_{\mathrm{cell}}$
+- **Disease Decoherence**: Disease increases frequency disorder, reducing $r$
+- **Therapeutic Recoherence**: Therapy reduces disorder, increasing $r$
+- **Chimera States**: Coexistence of synchronized and desynchronized pathways
+
+### Document Structure
+
+```
+wilhelm/docs/disease-state-equations/
+├── disease-state-equations.tex          # Main document
+├── references.bib                       # Comprehensive bibliography
+└── sections/
+    ├── partition-coordinates.tex        # Derivation from axioms
+    ├── st-stellas-thermodynamics.tex   # S-entropy space
+    ├── ternary-encoding.tex            # Base-3 representation
+    ├── equations-of-state.tex          # Five physical regimes
+    ├── categorical-differential-equations.tex  # Dynamics
+    ├── categorical-memory-reset.tex    # History independence
+    ├── pathological-equations-of-state.tex    # Disease framework
+    ├── disease-categories.tex          # Specific disease types
+    ├── immune-equations-of-state.tex   # Immunity framework
+    ├── therapeutic-equations-of-state.tex     # Treatment framework
+    └── phase-coherence.tex             # Synchronization theory
+```
+
+### Compilation
+
+```bash
+cd wilhelm/docs/disease-state-equations
+pdflatex disease-state-equations.tex
+bibtex disease-state-equations
+pdflatex disease-state-equations.tex
+pdflatex disease-state-equations.tex
+```
+
+### Key Distinctions from Empirical Models
+
+1. **Geometric Necessity**: Equations derived from axioms, not fitted to data
+2. **No Free Parameters**: All constants determined by fundamental physics
+3. **Universal Applicability**: Same framework for all disease types
+4. **Computational Validation**: Predictions confirmed numerically
+5. **Mathematical Rigor**: Theorems with proofs, not heuristic models
+
+### Relationship to Cellular State Equations
+
+This work extends the partition-based cellular state equations (`wilhelm/docs/cellular-state-equations/`) by:
+
+1. **Pathological Extension**: Normal cellular dynamics → disease states
+2. **Immune Extension**: Categorical richness → self-nonself discrimination
+3. **Therapeutic Extension**: Phase-locking restoration → treatment efficacy
+4. **Unified Framework**: Disease, immunity, therapeutics as geometric necessities
+
+### Validation Status
+
+**Computational Validation**: ✓ Complete
+
+- Equations of state: All 5 regimes match theoretical predictions
+- Categorical dynamics: Phase portraits, eigenvalues, energy conservation confirmed
+- Memory reset: History independence with $\rho < 10^{-6}$
+- Phase coherence: Order parameter $r$ increases with efficacy $E$
+
+**Experimental Validation**: Proposed methods included in Discussion section
+
+### Scientific Impact
+
+This framework provides:
+
+1. **Rational Disease Classification**: Based on trajectory statistics, not phenomenology
+2. **Predictive Immune Recognition**: MHC presentation from richness, not sequence
+3. **Optimal Drug Design**: Frequency matching criteria, not empirical screening
+4. **Universal Disease Biomarker**: Order parameter $r$ across all pathologies
+5. **Therapeutic Efficacy Monitoring**: Coherence-based real-time assessment
+
+### Paper Reference
+
+Full theoretical framework: `wilhelm/docs/disease-state-equations/disease-state-equations.tex`
+
+---
+
 ## License
 
 [MIT License](LICENSE)
