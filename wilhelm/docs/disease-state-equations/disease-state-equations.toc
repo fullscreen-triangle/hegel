@@ -1,0 +1,110 @@
+\contentsline {section}{\numberline {1}Introduction}{5}{section.1}%
+\contentsline {subsection}{\numberline {1.1}The Foundational Problem}{5}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Foundational Axioms}{5}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Scope and Structure}{5}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Relationship to Physical Equations of State}{6}{subsection.1.4}%
+\contentsline {section}{\numberline {2}Partition Coordinates}{6}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Derivation from Foundational Axioms}{6}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Partition Coordinate Structure}{6}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Partition Depth and Refinement}{7}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Partition Geometry}{8}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Energy Scaling}{8}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Partition Transitions}{8}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.7}Partition Statistics}{9}{subsection.2.7}%
+\contentsline {subsection}{\numberline {2.8}Partition Entropy}{10}{subsection.2.8}%
+\contentsline {section}{\numberline {3}S-Entropy Coordinates and Thermodynamic Structure}{10}{section.3}%
+\contentsline {subsection}{\numberline {3.1}S-Entropy Coordinate Space}{10}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Mapping from Partition Coordinates}{11}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Thermodynamic Interpretation}{11}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Thermodynamic Potentials}{12}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Trajectory Dynamics in S-Entropy Space}{12}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Geodesics in S-Entropy Space}{12}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.7}Volume Element and Measure}{13}{subsection.3.7}%
+\contentsline {subsection}{\numberline {3.8}Connection to Partition Coordinates}{13}{subsection.3.8}%
+\contentsline {section}{\numberline {4}Ternary Encoding}{14}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Motivation for Ternary Representation}{14}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Ternary-Coordinate Correspondence}{14}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Cell Geometry}{14}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Continuous Emergence}{15}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Trajectory Encoding}{15}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}Complexity Measures}{16}{subsection.4.6}%
+\contentsline {subsection}{\numberline {4.7}Information Content}{16}{subsection.4.7}%
+\contentsline {subsection}{\numberline {4.8}Hierarchical Structure}{16}{subsection.4.8}%
+\contentsline {subsection}{\numberline {4.9}Connection to Partition Coordinates}{17}{subsection.4.9}%
+\contentsline {section}{\numberline {5}Thermodynamic Equations of State}{17}{section.5}%
+\contentsline {subsection}{\numberline {5.1}General Formulation}{17}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Neutral Gas (Ideal Gas)}{18}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Plasma}{18}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Degenerate Matter}{19}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Relativistic Gas}{19}{subsection.5.5}%
+\contentsline {subsection}{\numberline {5.6}Bose-Einstein Condensate}{20}{subsection.5.6}%
+\contentsline {subsection}{\numberline {5.7}Temperature as Universal Scaling Factor}{20}{subsection.5.7}%
+\contentsline {subsection}{\numberline {5.8}Computational Validation}{21}{subsection.5.8}%
+\contentsline {section}{\numberline {6}Categorical Differential Equations}{21}{section.6}%
+\contentsline {subsection}{\numberline {6.1}The Triple Structure}{21}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Categorical Derivatives}{22}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Pendulum Dynamics in Categorical Form}{23}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Gyrometric Derivatives}{23}{subsection.6.4}%
+\contentsline {subsection}{\numberline {6.5}Hamiltonian Structure}{24}{subsection.6.5}%
+\contentsline {subsection}{\numberline {6.6}Liouville's Theorem}{24}{subsection.6.6}%
+\contentsline {subsection}{\numberline {6.7}Computational Validation}{25}{subsection.6.7}%
+\contentsline {section}{\numberline {7}Categorical Memory Reset}{25}{section.7}%
+\contentsline {subsection}{\numberline {7.1}History Independence Principle}{25}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Analogy to Chromatographic Plate Theory}{26}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Geometric Exclusion Mechanism}{26}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}Pendulum Restart Interpretation}{27}{subsection.7.4}%
+\contentsline {subsection}{\numberline {7.5}Oxygen Master Clock and Frequency Partitioning}{27}{subsection.7.5}%
+\contentsline {subsection}{\numberline {7.6}Efficient Capacity}{28}{subsection.7.6}%
+\contentsline {subsection}{\numberline {7.7}Computational Validation}{29}{subsection.7.7}%
+\contentsline {section}{\numberline {8}Pathological Equations of State}{29}{section.8}%
+\contentsline {subsection}{\numberline {8.1}The Fundamental Problem}{29}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Categorical Richness}{29}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Oscillatory Statistics}{30}{subsection.8.3}%
+\contentsline {subsection}{\numberline {8.4}The Disease State Equation}{30}{subsection.8.4}%
+\contentsline {subsection}{\numberline {8.5}The Surveillance Blind Spot}{31}{subsection.8.5}%
+\contentsline {subsection}{\numberline {8.6}Physiological vs Pathological Baselines}{32}{subsection.8.6}%
+\contentsline {subsection}{\numberline {8.7}Energy Landscape Interpretation}{32}{subsection.8.7}%
+\contentsline {section}{\numberline {9}Disease Categories}{33}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Oscillatory Holes}{33}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Genetic Disease Classification}{33}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}Infectious Disease Classification}{34}{subsection.9.3}%
+\contentsline {subsection}{\numberline {9.4}Metabolic Disease Classification}{35}{subsection.9.4}%
+\contentsline {subsection}{\numberline {9.5}Neurodegenerative Disease Classification}{35}{subsection.9.5}%
+\contentsline {subsection}{\numberline {9.6}Cancer Classification}{36}{subsection.9.6}%
+\contentsline {subsection}{\numberline {9.7}Autoimmune Disease Classification}{36}{subsection.9.7}%
+\contentsline {subsection}{\numberline {9.8}Unified Disease Taxonomy}{37}{subsection.9.8}%
+\contentsline {section}{\numberline {10}Immune Equations of State}{38}{section.10}%
+\contentsline {subsection}{\numberline {10.1}The Self-Nonself Discrimination Problem}{38}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}MHC as Categorical Aperture}{38}{subsection.10.2}%
+\contentsline {subsection}{\numberline {10.3}VDJ Recombination as Ternary Hierarchy}{39}{subsection.10.3}%
+\contentsline {subsection}{\numberline {10.4}Immune Response Dynamics}{39}{subsection.10.4}%
+\contentsline {subsection}{\numberline {10.5}Immune Tolerance}{40}{subsection.10.5}%
+\contentsline {subsection}{\numberline {10.6}Immune Equation of State}{41}{subsection.10.6}%
+\contentsline {subsection}{\numberline {10.7}Vaccination Principles}{41}{subsection.10.7}%
+\contentsline {subsection}{\numberline {10.8}Computational Validation}{42}{subsection.10.8}%
+\contentsline {section}{\numberline {11}Therapeutic Equations of State}{42}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Phase-Locking Restoration}{42}{subsection.11.1}%
+\contentsline {subsection}{\numberline {11.2}Dose-Response Relationships}{43}{subsection.11.2}%
+\contentsline {subsection}{\numberline {11.3}Pharmacokinetic Equations}{44}{subsection.11.3}%
+\contentsline {subsection}{\numberline {11.4}Richness-Restoring Therapies}{44}{subsection.11.4}%
+\contentsline {subsection}{\numberline {11.5}Frequency-Modulating Therapies}{45}{subsection.11.5}%
+\contentsline {subsection}{\numberline {11.6}Combination Therapy}{45}{subsection.11.6}%
+\contentsline {subsection}{\numberline {11.7}Resistance Mechanisms}{46}{subsection.11.7}%
+\contentsline {subsection}{\numberline {11.8}Therapeutic Equation of State}{47}{subsection.11.8}%
+\contentsline {subsection}{\numberline {11.9}Computational Validation}{47}{subsection.11.9}%
+\contentsline {section}{\numberline {12}Phase Coherence and Synchronization}{48}{section.12}%
+\contentsline {subsection}{\numberline {12.1}Order Parameter}{48}{subsection.12.1}%
+\contentsline {subsection}{\numberline {12.2}Kuramoto Model}{48}{subsection.12.2}%
+\contentsline {subsection}{\numberline {12.3}Oxygen Master Clock Coupling}{49}{subsection.12.3}%
+\contentsline {subsection}{\numberline {12.4}Phase Coherence in Disease}{49}{subsection.12.4}%
+\contentsline {subsection}{\numberline {12.5}Therapeutic Coherence Restoration}{50}{subsection.12.5}%
+\contentsline {subsection}{\numberline {12.6}Chimera States}{50}{subsection.12.6}%
+\contentsline {subsection}{\numberline {12.7}Synchronization Transitions}{51}{subsection.12.7}%
+\contentsline {subsection}{\numberline {12.8}Computational Validation}{51}{subsection.12.8}%
+\contentsline {section}{\numberline {13}Discussion}{52}{section.13}%
+\contentsline {subsection}{\numberline {13.1}Geometric Necessity}{52}{subsection.13.1}%
+\contentsline {subsection}{\numberline {13.2}Computational Validation}{52}{subsection.13.2}%
+\contentsline {subsection}{\numberline {13.3}Experimental Validation}{53}{subsection.13.3}%
+\contentsline {subsection}{\numberline {13.4}Implications for Disease Classification}{53}{subsection.13.4}%
+\contentsline {subsection}{\numberline {13.5}Implications for Drug Development}{54}{subsection.13.5}%
+\contentsline {section}{\numberline {14}Conclusion}{54}{section.14}%
