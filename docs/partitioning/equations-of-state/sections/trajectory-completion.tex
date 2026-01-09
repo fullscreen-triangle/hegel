@@ -1,0 +1,195 @@
+\section{Thermodynamic Equilibrium as Trajectory Completion}
+\label{sec:trajectory}
+
+We establish that thermodynamic equilibrium corresponds to trajectory completion in S-entropy coordinate space. This provides a geometric criterion for equilibrium that unifies thermal, mechanical, and chemical equilibrium conditions.
+
+\subsection{Trajectories in S-Entropy Space}
+
+A thermodynamic process corresponds to a trajectory $\gamma: [0,T] \to \Sspace$ in S-entropy coordinate space $\Sspace = [0,1]^3$ (Definition~\ref{def:s_space}). The trajectory is parametrized by time $t$ and maps to S-entropy coordinates:
+\begin{equation}
+\gamma(t) = (S_k(t), S_t(t), S_e(t))
+\end{equation}
+
+The velocity along the trajectory is:
+\begin{equation}
+\dot{\gamma}(t) = \left(\frac{dS_k}{dt}, \frac{dS_t}{dt}, \frac{dS_e}{dt}\right)
+\end{equation}
+
+\subsection{Equilibrium as Recurrence}
+
+\begin{definition}[Trajectory Completion]
+\label{def:trajectory_completion}
+A trajectory $\gamma: [0,T] \to \Sspace$ is \textit{complete} if it returns to within $\epsilon$ of its initial state:
+\begin{equation}
+\|\gamma(T) - \gamma(0)\| < \epsilon
+\end{equation}
+where $\|\cdot\|$ denotes the Euclidean norm in $\Sspace$ and $\epsilon > 0$ is the completion tolerance.
+\end{definition}
+
+\begin{theorem}[Equilibrium Completion Criterion]
+\label{thm:equilibrium_completion}
+A thermodynamic system is in equilibrium if and only if its trajectory in S-entropy space is complete with completion time $T_{\text{eq}}$ satisfying:
+\begin{equation}
+T_{\text{eq}} = \min\{T > 0 : \|\gamma(T) - \gamma(0)\| < \epsilon\}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+We prove both directions.
+
+\textbf{($\Rightarrow$) Equilibrium implies trajectory completion:}
+
+Suppose the system is in thermodynamic equilibrium. By definition, all macroscopic observables are time-independent: $\partial \mathcal{O}/\partial t = 0$ for all observables $\mathcal{O}$. The S-entropy coordinates are functions of observables:
+\begin{align}
+S_k &= S_k(n, \ell) \\
+S_t &= S_t(n, m) \\
+S_e &= S_e(n, s)
+\end{align}
+
+where $(n,\ell,m,s)$ are partition coordinates determined by the system's microstate. At equilibrium, the microstate fluctuates within a bounded region of phase space, so the partition coordinates fluctuate within a finite range. Therefore, the S-entropy coordinates fluctuate within a bounded region of $\Sspace$.
+
+By the Poincaré recurrence theorem (Theorem~\ref{thm:poincare_recurrence}), the trajectory must return arbitrarily close to its initial state after finite time. Therefore, $\|\gamma(T_{\text{eq}}) - \gamma(0)\| < \epsilon$ for some $T_{\text{eq}} < \infty$.
+
+\textbf{($\Leftarrow$) Trajectory completion implies equilibrium:}
+
+Suppose the trajectory is complete: $\|\gamma(T_{\text{eq}}) - \gamma(0)\| < \epsilon$. This means the S-entropy coordinates at time $T_{\text{eq}}$ are within $\epsilon$ of their initial values. Since observables are functions of S-entropy coordinates, all observables at time $T_{\text{eq}}$ are within $\delta$ of their initial values, where $\delta = \max_{\mathcal{O}} |\partial \mathcal{O}/\partial \Scoord| \cdot \epsilon$.
+
+For the trajectory to be complete, it must satisfy this condition for all $t \geq T_{\text{eq}}$ (not just at $t = T_{\text{eq}}$). This requires the trajectory to be periodic with period $T_{\text{eq}}$, or to spiral inward toward a fixed point. In either case, observables are bounded: $|\mathcal{O}(t) - \mathcal{O}(0)| < \delta$ for all $t \geq T_{\text{eq}}$.
+
+This is the definition of thermodynamic equilibrium: observables fluctuate within a bounded range but do not exhibit systematic drift.
+\end{proof}
+
+\subsection{Thermal Equilibrium}
+
+Thermal equilibrium between two systems at temperatures $T_1$ and $T_2$ occurs when heat flow ceases. In S-entropy space, this corresponds to trajectory matching: the two systems have identical S-entropy coordinates.
+
+\begin{corollary}[Thermal Equilibrium Criterion]
+\label{cor:thermal_equilibrium}
+Two systems are in thermal equilibrium if and only if their trajectories in S-entropy space satisfy:
+\begin{equation}
+\|\gamma_1(t) - \gamma_2(t)\| < \epsilon
+\end{equation}
+for all $t \geq T_{\text{eq}}$.
+\end{corollary}
+
+\begin{proof}
+Thermal equilibrium requires $T_1 = T_2$. From Theorem~\ref{thm:temperature_factorization}, temperature is a scaling factor: $T \propto \langle E \rangle / \langle S \rangle$ where $\langle E \rangle$ is mean energy and $\langle S \rangle$ is mean entropy.
+
+The S-entropy coordinates encode entropy in three dimensions: $(S_k, S_t, S_e)$. For two systems with $T_1 = T_2$, the ratio $\langle E \rangle / \langle S \rangle$ must be equal. This implies:
+\begin{equation}
+\frac{\langle E_1 \rangle}{S_k^{(1)} + S_t^{(1)} + S_e^{(1)}} = \frac{\langle E_2 \rangle}{S_k^{(2)} + S_t^{(2)} + S_e^{(2)}}
+\end{equation}
+
+For systems in contact (exchanging energy), $\langle E_1 \rangle + \langle E_2 \rangle = \text{const}$. Maximizing total entropy subject to this constraint yields $S_k^{(1)} = S_k^{(2)}$, $S_t^{(1)} = S_t^{(2)}$, $S_e^{(1)} = S_e^{(2)}$, i.e., $\gamma_1(t) = \gamma_2(t)$.
+\end{proof}
+
+\subsection{Mechanical Equilibrium}
+
+Mechanical equilibrium between two systems at pressures $P_1$ and $P_2$ occurs when volume exchange ceases. In S-entropy space, this corresponds to pressure matching.
+
+\begin{corollary}[Mechanical Equilibrium Criterion]
+\label{cor:mechanical_equilibrium}
+Two systems are in mechanical equilibrium if and only if their pressures satisfy:
+\begin{equation}
+P_1(\gamma_1(t)) = P_2(\gamma_2(t))
+\end{equation}
+for all $t \geq T_{\text{eq}}$.
+\end{corollary}
+
+\begin{proof}
+Pressure is the derivative of free energy with respect to volume: $P = -(\partial F/\partial V)_{T,N}$. From the partition-based free energy (Section~\ref{sec:free_energy}):
+\begin{equation}
+F = -\kB T \ln Z = -\kB T \ln[C(n_{\max})^N/N!]
+\end{equation}
+
+where $C(n_{\max}) = 2n_{\max}^2$ and $n_{\max} \propto V^{1/3}$. Therefore:
+\begin{equation}
+P = \kB T \frac{\partial \ln C(n_{\max})}{\partial V} = \kB T \cdot \frac{2}{3V}
+\end{equation}
+
+For two systems in contact (exchanging volume), $V_1 + V_2 = \text{const}$. Equilibrium occurs when $P_1 = P_2$, which implies:
+\begin{equation}
+\frac{\kB T_1}{V_1} = \frac{\kB T_2}{V_2}
+\end{equation}
+
+In S-entropy coordinates, $V \propto \exp(S_k + S_t + S_e)$ (from the partition capacity relation). Therefore, $P_1 = P_2$ implies a specific relationship between $\gamma_1$ and $\gamma_2$.
+\end{proof}
+
+\subsection{Chemical Equilibrium}
+
+Chemical equilibrium for a reaction $\sum_i \nu_i A_i \rightleftharpoons \sum_j \nu_j B_j$ occurs when the forward and reverse reaction rates are equal. In S-entropy space, this corresponds to trajectory balance.
+
+\begin{corollary}[Chemical Equilibrium Criterion]
+\label{cor:chemical_equilibrium}
+A chemical reaction is in equilibrium if and only if the trajectories of reactants and products satisfy:
+\begin{equation}
+\sum_i \nu_i \gamma_i(t) = \sum_j \nu_j \gamma_j(t)
+\end{equation}
+where $\nu_i$ and $\nu_j$ are stoichiometric coefficients.
+\end{corollary}
+
+\begin{proof}
+Chemical equilibrium requires $\sum_i \nu_i \mu_i = \sum_j \nu_j \mu_j$ where $\mu_i$ are chemical potentials. From Section~\ref{sec:free_energy}:
+\begin{equation}
+\mu = \kB T \ln(n\lambda_{\text{th}}^3)
+\end{equation}
+
+The number density $n$ is related to S-entropy coordinates through the partition capacity: $n \propto C(n_{\max}) \propto \exp(S_k + S_t + S_e)$. Therefore:
+\begin{equation}
+\mu \propto \kB T (S_k + S_t + S_e)
+\end{equation}
+
+The equilibrium condition $\sum_i \nu_i \mu_i = \sum_j \nu_j \mu_j$ becomes:
+\begin{equation}
+\sum_i \nu_i (S_k^{(i)} + S_t^{(i)} + S_e^{(i)}) = \sum_j \nu_j (S_k^{(j)} + S_t^{(j)} + S_e^{(j)})
+\end{equation}
+
+which is equivalent to $\sum_i \nu_i \gamma_i = \sum_j \nu_j \gamma_j$.
+\end{proof}
+
+\subsection{Relaxation Time and Trajectory Completion}
+
+The time required for a system to reach equilibrium is the trajectory completion time $T_{\text{eq}}$. This time depends on the initial state $\gamma(0)$ and the constraint set $\mathcal{C}$.
+
+\begin{definition}[Relaxation Time]
+\label{def:relaxation_time}
+The relaxation time $\tau_{\text{relax}}$ is the characteristic time for a system to approach equilibrium:
+\begin{equation}
+\|\gamma(t) - \gamma_{\text{eq}}\| = \|\gamma(0) - \gamma_{\text{eq}}\| \exp(-t/\tau_{\text{relax}})
+\end{equation}
+where $\gamma_{\text{eq}}$ is the equilibrium state.
+\end{definition}
+
+For systems with simple partition structure (ideal gases), $\tau_{\text{relax}}$ is short because few categorical completions are required. For systems with complex partition structure (glasses, proteins), $\tau_{\text{relax}}$ is long because many categorical completions are necessary.
+
+\subsection{Non-Equilibrium Trajectories}
+
+Non-equilibrium processes correspond to trajectories that do not satisfy the completion criterion. Examples include:
+
+\textbf{Irreversible expansion:} A gas expanding irreversibly from $V_1$ to $V_2$ follows a trajectory $\gamma(t)$ with $\|\gamma(T) - \gamma(0)\| \gg \epsilon$. The trajectory does not return to its initial state because entropy increases monotonically.
+
+\textbf{Heat conduction:} Heat flowing from hot to cold reservoir follows a trajectory connecting high-temperature state $\gamma_H$ to low-temperature state $\gamma_C$. The trajectory is not complete because the process is irreversible.
+
+\textbf{Chemical reaction:} A reaction proceeding from reactants to products follows a trajectory $\gamma(t)$ connecting $\gamma_R$ to $\gamma_P$. The trajectory becomes complete only when equilibrium is reached, at which point $\|\gamma(t) - \gamma_R\| = \|\gamma(t) - \gamma_P\|$.
+
+\subsection{Partition Interpretation}
+
+Trajectory completion in S-entropy space corresponds to partition recurrence: the system returns to the same partition state $(n,\ell,m,s)$ after finite time. This is guaranteed by the Poincaré recurrence theorem for bounded phase spaces.
+
+The completion time $T_{\text{eq}}$ is the time required for the system to explore all accessible partition states and return to its initial state. For a system with $N$ particles and partition capacity $C(n_{\max})$, the number of accessible states is $\Omega \sim C(n_{\max})^N$. The completion time scales as:
+\begin{equation}
+T_{\text{eq}} \sim \Omega \cdot \tau_0 \sim C(n_{\max})^N \cdot \tau_0
+\end{equation}
+
+where $\tau_0$ is the characteristic time for a single partition transition (e.g., collision time for a gas).
+
+For macroscopic systems with $N \sim 10^{23}$, this time is astronomically large, explaining why equilibrium is effectively irreversible: the system will never spontaneously return to a low-entropy state because the trajectory completion time exceeds the age of the universe.
+
+\subsection{Experimental Implications}
+
+The trajectory completion criterion provides a practical method for determining equilibrium: monitor the S-entropy coordinates $\gamma(t)$ and check if $\|\gamma(t) - \gamma(0)\| < \epsilon$ for some $t > 0$.
+
+For systems that can be prepared in well-defined initial states (ultracold atoms, trapped ions), this criterion can be tested directly. For systems in thermal contact with a reservoir, the criterion simplifies to checking if observables are time-independent.
+
+The relaxation time $\tau_{\text{relax}}$ can be measured experimentally by preparing a system in a non-equilibrium state and monitoring the approach to equilibrium. Measured relaxation times provide information about the partition structure: systems with short $\tau_{\text{relax}}$ have simple partition structure, while systems with long $\tau_{\text{relax}}$ have complex partition structure.
+

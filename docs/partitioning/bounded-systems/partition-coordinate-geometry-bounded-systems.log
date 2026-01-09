@@ -1,0 +1,2221 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.7.27)  19 DEC 2025 08:24
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**./partition-coordinate-geometry-bounded-systems.tex
+(partition-coordinate-geometry-bounded-systems.tex
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-04>
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
+Document Class: article 2023/05/17 v1.4n Standard LaTeX document class
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/base\size12.clo
+File: size12.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count187
+\c@section=\count188
+\c@subsection=\count189
+\c@subsubsection=\count190
+\c@paragraph=\count191
+\c@subparagraph=\count192
+\c@figure=\count193
+\c@table=\count194
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
+\bibindent=\dimen140
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
+Package: amsmath 2023/05/13 v2.17o AMS math features
+\@mathmargin=\skip50
+
+For additional information on amsmath, use the `?' option.
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks17
+\ex@=\dimen141
+))
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen142
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count195
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count196
+\leftroot@=\count197
+LaTeX Info: Redefining \overline on input line 399.
+LaTeX Info: Redefining \colon on input line 410.
+\classnum@=\count198
+\DOTSCASE@=\count199
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box51
+\strutbox@=\box52
+LaTeX Info: Redefining \big on input line 722.
+LaTeX Info: Redefining \Big on input line 723.
+LaTeX Info: Redefining \bigg on input line 724.
+LaTeX Info: Redefining \Bigg on input line 725.
+\big@size=\dimen143
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count266
+LaTeX Info: Redefining \bmod on input line 905.
+LaTeX Info: Redefining \pmod on input line 910.
+LaTeX Info: Redefining \smash on input line 940.
+LaTeX Info: Redefining \relbar on input line 970.
+LaTeX Info: Redefining \Relbar on input line 971.
+\c@MaxMatrixCols=\count267
+\dotsspace@=\muskip16
+\c@parentequation=\count268
+\dspbrk@lvl=\count269
+\tag@help=\toks18
+\row@=\count270
+\column@=\count271
+\maxfields@=\count272
+\andhelp@=\toks19
+\eqnshift@=\dimen144
+\alignsep@=\dimen145
+\tagshift@=\dimen146
+\tagwidth@=\dimen147
+\totwidth@=\dimen148
+\lineht@=\dimen149
+\@envbody=\toks20
+\multlinegap=\skip51
+\multlinetaggap=\skip52
+\mathdisplay@stack=\toks21
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)) (C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/amscls\amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks22
+\thm@bodyfont=\toks23
+\thm@headfont=\toks24
+\thm@notefont=\toks25
+\thm@headpunct=\toks26
+\thm@preskip=\skip53
+\thm@postskip=\skip54
+\thm@headsep=\skip55
+\dth@everypar=\toks27
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks28
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.
+cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.de
+f
+File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen150
+\Gin@req@width=\dimen151
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
+Package: hyperref 2023-11-26 v7.01g Hypertext links for LaTeX
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.
+sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.st
+y
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefin
+ekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescape.
+sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmd
+s.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+))
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/letltxmacro\letltxmacr
+o.sty
+Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/auxhook\auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
+Package: nameref 2023-11-26 v2.56 Cross-referencing by name of section
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\getti
+tlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.st
+y
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+))
+\c@section@level=\count273
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count274
+)
+\@linkdim=\dimen152
+\Hy@linkcounter=\count275
+\Hy@pagecounter=\count276
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
+File: pd1enc.def 2023-11-26 v7.01g Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+\Hy@SavedSpaceFactor=\count277
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
+File: puenc.def 2023-11-26 v7.01g Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Hyper figures OFF on input line 4181.
+Package hyperref Info: Link nesting OFF on input line 4186.
+Package hyperref Info: Hyper index ON on input line 4189.
+Package hyperref Info: Plain pages OFF on input line 4196.
+Package hyperref Info: Backreferencing OFF on input line 4201.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4448.
+\c@Hy@tempcnt=\count278
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4786.
+\XeTeXLinkMargin=\dimen153
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintcal
+c.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count279
+\Field@Width=\dimen154
+\Fld@charsize=\dimen155
+Package hyperref Info: Hyper figures OFF on input line 6065.
+Package hyperref Info: Link nesting OFF on input line 6070.
+Package hyperref Info: Hyper index ON on input line 6073.
+Package hyperref Info: backreferencing OFF on input line 6080.
+Package hyperref Info: Link coloring OFF on input line 6085.
+Package hyperref Info: Link coloring with OCG OFF on input line 6090.
+Package hyperref Info: PDF/A mode OFF on input line 6095.
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/base\atbegshi-ltx.sty
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
+)
+\Hy@abspage=\count280
+\c@Item=\count281
+\c@Hfootnote=\count282
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+ (C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
+File: hpdftex.def 2023-11-26 v7.01g Hyperref driver for pdfTeX
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/base\atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
+kage
+with kernel methods
+)
+\Fld@listcount=\count283
+\c@bookmark@seq@number=\count284
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfi
+lecheck.sty
+Package: rerunfilecheck 2025-06-21 v1.11 Rerun checks for auxiliary files (HO)
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\unique
+counter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+84.
+)
+\Hy@SectionHShift=\skip56
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+)
+\Gm@cnth=\count285
+\Gm@cntv=\count286
+\c@Gm@tempcnt=\count287
+\Gm@bindingoffset=\dimen156
+\Gm@wd@mp=\dimen157
+\Gm@odd@mp=\dimen158
+\Gm@even@mp=\dimen159
+\Gm@layoutwidth=\dimen160
+\Gm@layoutheight=\dimen161
+\Gm@layouthoffset=\dimen162
+\Gm@layoutvoffset=\dimen163
+\Gm@dimlist=\toks29
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg)
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen164
+\lightrulewidth=\dimen165
+\cmidrulewidth=\dimen166
+\belowrulesep=\dimen167
+\belowbottomsep=\dimen168
+\aboverulesep=\dimen169
+\abovetopsep=\dimen170
+\cmidrulesep=\dimen171
+\cmidrulekern=\dimen172
+\defaultaddspace=\dimen173
+\@cmidla=\count288
+\@cmidlb=\count289
+\@aboverulesep=\dimen174
+\@belowrulesep=\dimen175
+\@thisruleclass=\count290
+\@lastruleclass=\count291
+\@thisrulewidth=\dimen176
+) (C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/enumitem\enumitem.st
+y
+Package: enumitem 2025/02/06 v3.11 Customized lists
+\labelindent=\skip57
+\enit@outerparindent=\dimen177
+\enit@toks=\toks30
+\enit@inbox=\box53
+\enit@count@id=\count292
+\enitdp@description=\count293
+) (C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/physics\physics.sty
+Package: physics 
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xpar
+se.sty
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
+Package: expl3 2024-01-04 L3 programming layer (loader) 
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pd
+ftex.def
+File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count294
+\l__pdf_internal_box=\box54
+))
+Package: xparse 2023-10-10 L3 Experimental document command parser
+))
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/siunitx\siunitx.sty
+Package: siunitx 2025-07-09 v3.4.14 A comprehensive (SI) units package
+\l__siunitx_number_uncert_offset_int=\count295
+\l__siunitx_number_exponent_fixed_int=\count296
+\l__siunitx_number_min_decimal_int=\count297
+\l__siunitx_number_min_integer_int=\count298
+\l__siunitx_number_round_precision_int=\count299
+\l__siunitx_number_lower_threshold_int=\count300
+\l__siunitx_number_upper_threshold_int=\count301
+\l__siunitx_number_group_first_int=\count302
+\l__siunitx_number_group_size_int=\count303
+\l__siunitx_number_group_minimum_int=\count304
+\l__siunitx_angle_tmp_dim=\dimen178
+\l__siunitx_angle_marker_box=\box55
+\l__siunitx_angle_unit_box=\box56
+\l__siunitx_compound_count_int=\count305
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/translations\translati
+ons.sty
+Package: translations 2022/02/05 v1.12 internationalization of LaTeX2e packages
+ (CN)
+)
+\l__siunitx_table_tmp_box=\box57
+\l__siunitx_table_tmp_dim=\dimen179
+\l__siunitx_table_column_width_dim=\dimen180
+\l__siunitx_table_integer_box=\box58
+\l__siunitx_table_decimal_box=\box59
+\l__siunitx_table_uncert_box=\box60
+\l__siunitx_table_before_box=\box61
+\l__siunitx_table_after_box=\box62
+\l__siunitx_table_before_dim=\dimen181
+\l__siunitx_table_carry_dim=\dimen182
+\l__siunitx_unit_tmp_int=\count306
+\l__siunitx_unit_position_int=\count307
+\l__siunitx_unit_total_int=\count308
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
+Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
+\col@sep=\dimen183
+\ar@mcellbox=\box63
+\extrarowheight=\dimen184
+\NC@list=\toks31
+\extratabsurround=\skip58
+\backup@length=\skip59
+\ar@cellbox=\box64
+))
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/algorithms\algorithm.s
+ty
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
+nment
+ (C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count309
+\float@exts=\toks32
+\float@box=\box65
+\@float@everytoks=\toks33
+\@floatcapt=\box66
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
+Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
+)
+\@float@every@algorithm=\toks34
+\c@algorithm=\count310
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/algorithmicx\algpseudo
+code.sty
+Package: algpseudocode 
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/algorithmicx\algorithm
+icx.sty
+Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
+
+Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
+\c@ALG@line=\count311
+\c@ALG@rem=\count312
+\c@ALG@nested=\count313
+\ALG@tlm=\skip60
+\ALG@thistlm=\skip61
+\c@ALG@Lnr=\count314
+\c@ALG@blocknr=\count315
+\c@ALG@storecount=\count316
+\c@ALG@tmpcounter=\count317
+\ALG@tmplength=\skip62
+)
+Document Style - pseudocode environments for use with the `algorithmicx' style
+)
+\c@theorem=\count318
+Package translations Info: No language package found. I am going to use `englis
+h' as default language. on input line 35.
+ (C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/graphics\color.sty
+Package: color 2022/01/06 v1.3d Standard LaTeX Color (DPC)
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 149.
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx
+)) (partition-coordinate-geometry-bounded-systems.aux
+
+LaTeX Warning: Label `cor:capacity_sequence' multiply defined.
+
+
+LaTeX Warning: Label `thm:complexity_selection' multiply defined.
+
+
+LaTeX Warning: Label `thm:orientation_selection' multiply defined.
+
+
+LaTeX Warning: Label `thm:chirality_conservation' multiply defined.
+
+
+LaTeX Warning: Label `cor:forbidden_transitions' multiply defined.
+
+
+LaTeX Warning: Label `def:spectral_series' multiply defined.
+
+
+LaTeX Warning: Label `thm:transition_amplitude' multiply defined.
+
+
+LaTeX Warning: Label `def:block' multiply defined.
+
+
+LaTeX Warning: Label `fig:instrument_equivalence' multiply defined.
+
+
+LaTeX Warning: Label `ex:iron_multimethod' multiply defined.
+
+)
+\openout1 = `partition-coordinate-geometry-bounded-systems.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.m
+kii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count319
+\scratchdimen=\dimen185
+\scratchbox=\box67
+\nofMPsegments=\count320
+\nofMParguments=\count321
+\everyMPshowfont=\toks35
+\MPscratchCnt=\count322
+\MPscratchDim=\dimen186
+\MPnumerator=\count323
+\makeMPintoPDFobject=\count324
+\everyMPtoPDFconversion=\toks36
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-
+base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.
+cfg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
+Package hyperref Info: Link coloring OFF on input line 35.
+ (partition-coordinate-geometry-bounded-systems.out)
+(partition-coordinate-geometry-bounded-systems.out)
+\@outlinefile=\write3
+\openout3 = `partition-coordinate-geometry-bounded-systems.out'.
+
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(71.13188pt, 455.24411pt, 71.13188pt)
+* v-part:(T,H,B)=(71.13188pt, 702.78308pt, 71.13188pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=455.24411pt
+* \textheight=702.78308pt
+* \oddsidemargin=-1.1381pt
+* \evensidemargin=-1.1381pt
+* \topmargin=-38.1381pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=35.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+
+Package siunitx Warning: Detected the "physics" package:
+(siunitx)                omitting definition of \qty.
+(siunitx)                
+(siunitx)                If you want to use \qty with the siunitx definition,
+(siunitx)                add 
+(siunitx)                
+(siunitx)                    \AtBeginDocument{\RenewCommandCopy\qty\SI}
+(siunitx)                
+(siunitx)                to your preamble.
+
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/translations/dicts\tra
+nslations-basic-dictionary-english.trsl
+File: translations-basic-dictionary-english.trsl (english translation file `tra
+nslations-basic-dictionary')
+)
+Package translations Info: loading dictionary `translations-basic-dictionary' f
+or `english'. on input line 35.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 38.
+
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 38.
+
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+(partition-coordinate-geometry-bounded-systems.toc [1
+
+{C:/Users/kundai/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2] [3] [4]
+)
+\tf@toc=\write4
+\openout4 = `partition-coordinate-geometry-bounded-systems.toc'.
+
+ [5]
+Overfull \hbox (2.67058pt too wide) in paragraph at lines 88--89
+\OT1/cmr/m/n/12 We show that cat-e-gor-i-cal par-ti-tion-ing of bounded phase s
+pace gives rise to a four-parameter
+ []
+
+[6]
+Overfull \hbox (81.0461pt too wide) in paragraph at lines 108--109
+[]\OT1/cmr/m/n/12 For a sys-tem with $\OML/cmm/m/it/12 Z$ \OT1/cmr/m/n/12 en-ti
+-ties, the fill-ing pat-tern ex-hibits pe-ri-od-ic-i-ties at $\OML/cmm/m/it/12 
+Z \OT1/cmr/m/n/12 = 2\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 10\OML/cmm/m/it/12 ; \O
+T1/cmr/m/n/12 18\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 36\OML/cmm/m/it/12 ; \OT1/cm
+r/m/n/12 54\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 86$|depths
+ []
+
+[7] [8] (sections/partition-coordinates.tex [9] [10] [11]
+<figures/partition_coordinates_panel.png, id=908, 910.602pt x 674.52pt>
+File: figures/partition_coordinates_panel.png Graphic file (type png)
+<use figures/partition_coordinates_panel.png>
+Package pdftex.def Info: figures/partition_coordinates_panel.png  used on input
+ line 139.
+(pdftex.def)             Requested size: 455.24411pt x 337.218pt.
+
+! Dimension too large.
+\@makecaption ...xa {#1: #2}\ifdim \wd \@tempboxa 
+                                                  >\hsize #1: #2\par \else \...
+l.146 ...ectrons can have identical coordinates).}
+                                                  
+I can't work with sizes bigger than about 19 feet.
+Continue and I'll use the largest value I can.
+
+
+LaTeX Warning: Float too large for page by 285.43492pt on input line 148.
+
+[12] [13
+pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.198 T
+       hus, every state $\sigma$ determines a unique 4-tuple $(n, l, m, s)$ ...
+ <./figures/partition_coordinates_panel.png>]
+Overfull \hbox (12.73784pt too wide) in paragraph at lines 198--199
+[]\OT1/cmr/m/n/12 Thus, ev-ery state $\OML/cmm/m/it/12 ^^[$ \OT1/cmr/m/n/12 de-
+ter-mines a unique 4-tuple $(\OML/cmm/m/it/12 n; l; m; s\OT1/cmr/m/n/12 )$ sat-
+is-fy-ing the con-straints []--
+ []
+
+[14]
+
+LaTeX Warning: Reference `sec:discussion' on page 15 undefined on input line 26
+7.
+
+) (sections/geometric-constraints.tex [15]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[16] [17
+pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has
+ been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.152 \end{equation}
+                    
+pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has
+ been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.152 \end{equation}
+                    ]
+
+LaTeX Warning: Reference `sec:filling' on page 18 undefined on input line 189.
+
+
+Overfull \hbox (15.30586pt too wide) in paragraph at lines 205--206
+[]\OT1/cmr/m/n/12 Consider nested spher-i-cal par-ti-tion bound-aries at depths
+ $\OML/cmm/m/it/12 n \OT1/cmr/m/n/12 = 1\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 2\OM
+L/cmm/m/it/12 ; \OT1/cmr/m/n/12 3\OML/cmm/m/it/12 ; []$
+ []
+
+
+Overfull \hbox (6.93297pt too wide) in paragraph at lines 219--220
+[][]\OT1/cmr/bx/n/12 Remark 3.9 \OT1/cmr/m/n/12 (Di-men-sional Anal-y-sis)\OT1/
+cmr/bx/n/12 . []\OT1/cmr/m/it/12 The $\OML/cmm/m/it/12 n[]$ \OT1/cmr/m/it/12 sc
+al-ing is char-ac-ter-is-tic of $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 d \OMS/cmsy/
+m/n/12 ^^@ \OT1/cmr/m/n/12 1)$\OT1/cmr/m/it/12 -dimensional
+ []
+
+[18
+pdfTeX warning (ext4): destination with the same identifier (name{table.3}) has
+ been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.220 \end{remark}
+                  ]
+<figures/hydrogen_derivation_panel.png, id=1037, 1265.2068pt x 852.3042pt>
+File: figures/hydrogen_derivation_panel.png Graphic file (type png)
+<use figures/hydrogen_derivation_panel.png>
+Package pdftex.def Info: figures/hydrogen_derivation_panel.png  used on input l
+ine 247.
+(pdftex.def)             Requested size: 455.24411pt x 306.67322pt.
+
+Runaway argument?
+{\textbf {Derivation of Hydrogen from Pure Partition Logic: A Single \ETC.
+! Paragraph ended before \NR@gettitle was complete.
+<to be read again> 
+                   \par 
+l.258 ...ws from the logic of a single partition.}
+                                                  
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Runaway argument?
+{\protect \numberline {\csname the\@captype \endcsname }{\ignorespaces \ETC.
+! Paragraph ended before \addcontentsline was complete.
+<to be read again> 
+                   \par 
+l.258 ...ws from the logic of a single partition.}
+                                                  
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+! Extra }, or forgotten \endgroup.
+\@tempf ...ame the#1\endcsname }{\ignorespaces #2}
+                                                  }\begingroup \@parboxresto...
+l.258 ...ws from the logic of a single partition.}
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Extra }, or forgotten \endgroup.
+\@tempf ...me the#1\endcsname }{\ignorespaces #2}}
+                                                  \begingroup \@parboxrestor...
+l.258 ...ws from the logic of a single partition.}
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Dimension too large.
+\@makecaption ...xa {#1: #2}\ifdim \wd \@tempboxa 
+                                                  >\hsize #1: #2\par \else \...
+l.258 ...ws from the logic of a single partition.}
+                                                  
+I can't work with sizes bigger than about 19 feet.
+Continue and I'll use the largest value I can.
+
+! Extra }, or forgotten \endgroup.
+\@endfloatbox ...pagefalse \outer@nobreak \egroup 
+                                                  \color@endbox 
+l.260 \end{figure}
+                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+LaTeX Warning: Float too large for page by 1182.22345pt on input line 260.
+
+
+LaTeX Warning: Reference `sec:discussion' on page 19 undefined on input line 28
+2.
+
+[19] [20
+pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.294     \item T
+                 he capacity at depth $n$ is necessarily $C(n) = 2n^2$ (Theo...
+ <./figures/hydrogen_derivation_panel.png>]) (sections/energy-ordering.tex
+[21]
+Overfull \hbox (5.47423pt too wide) in paragraph at lines 83--84
+[][]\OT1/cmr/bx/n/12 Corollary 4.4 \OT1/cmr/m/n/12 (En-ergy Or-der-ing)\OT1/cmr
+/bx/n/12 . []\OT1/cmr/m/it/12 For fixed $\OML/cmm/m/it/12 n$\OT1/cmr/m/it/12 , 
+en-ergy in-creases with com-plex-ity: $\OML/cmm/m/it/12 E\OT1/cmr/m/n/12 (\OML/
+cmm/m/it/12 n; \OT1/cmr/m/n/12 0) \OML/cmm/m/it/12 <
+ []
+
+[22]
+<figures/vibration_field_mapper_panel.png, id=1091, 1148.6112pt x 713.5458pt>
+File: figures/vibration_field_mapper_panel.png Graphic file (type png)
+<use figures/vibration_field_mapper_panel.png>
+Package pdftex.def Info: figures/vibration_field_mapper_panel.png  used on inpu
+t line 147.
+(pdftex.def)             Requested size: 455.24411pt x 282.81108pt.
+
+
+LaTeX Warning: Float too large for page by 114.36131pt on input line 157.
+
+[23] [24
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.182 \end{center}
+                   <./figures/vibration_field_mapper_panel.png>] [25] [26]
+<figures/periodic_trends_panel.png, id=1134, 951.555pt x 800.2698pt>
+File: figures/periodic_trends_panel.png Graphic file (type png)
+<use figures/periodic_trends_panel.png>
+Package pdftex.def Info: figures/periodic_trends_panel.png  used on input line 
+306.
+(pdftex.def)             Requested size: 455.24411pt x 382.8674pt.
+
+
+LaTeX Warning: Reference `sec:discussion' on page 27 undefined on input line 33
+2.
+
+) (sections/hardware-based-partitioning-coordinates.tex [27] [28
+pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.5 
+     <./figures/periodic_trends_panel.png>] [29]
+<figures/hyperfine_21cm_panel.png, id=1174, 910.602pt x 643.203pt>
+File: figures/hyperfine_21cm_panel.png Graphic file (type png)
+<use figures/hyperfine_21cm_panel.png>
+Package pdftex.def Info: figures/hyperfine_21cm_panel.png  used on input line 8
+9.
+(pdftex.def)             Requested size: 455.24411pt x 321.56145pt.
+
+! Dimension too large.
+\@makecaption ...xa {#1: #2}\ifdim \wd \@tempboxa 
+                                                  >\hsize #1: #2\par \else \...
+l.97 ... merely a quantum mechanical abstraction.}
+                                                  
+I can't work with sizes bigger than about 19 feet.
+Continue and I'll use the largest value I can.
+
+
+LaTeX Warning: Float too large for page by 211.11168pt on input line 99.
+
+[30] [31
+pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.142     \item $
+                 |\Delta m| \geq 2$ (discontinuous orientation change) <./figur
+es/hyperfine_21cm_panel.png>]
+Overfull \hbox (10.97444pt too wide) in paragraph at lines 153--154
+[][]\OT1/cmr/bx/n/12 Definition 5.10 \OT1/cmr/m/n/12 (Tran-si-tion Fre-quency)\
+OT1/cmr/bx/n/12 . []\OT1/cmr/m/it/12 The fre-quency as-so-ci-ated with a tran-s
+i-tion $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 n; l\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/1
+2 !
+ []
+
+[32]
+
+LaTeX Warning: Reference `sec:boundary_functions' on page 33 undefined on input
+ line 228.
+
+
+LaTeX Warning: Reference `sec:discussion' on page 33 undefined on input line 25
+7.
+
+<figures/multi_modal_detector_analysis.png, id=1214, 1323.5046pt x 1457.445pt>
+File: figures/multi_modal_detector_analysis.png Graphic file (type png)
+<use figures/multi_modal_detector_analysis.png>
+Package pdftex.def Info: figures/multi_modal_detector_analysis.png  used on inp
+ut line 262.
+(pdftex.def)             Requested size: 455.24411pt x 501.30684pt.
+Runaway argument?
+{\textbf {Multi-Modal Detector Analysis with Electromagnetic Spectrum\ETC.
+! Paragraph ended before \NR@gettitle was complete.
+<to be read again> 
+                   \par 
+l.271 }
+       
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+
+! LaTeX Error: Unicode character μ (U+03BC)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.271 }
+       
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! LaTeX Error: Unicode character μ (U+03BC)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.271 }
+       
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Runaway argument?
+{\protect \numberline {\csname the\@captype \endcsname }{\ignorespaces \ETC.
+! Paragraph ended before \addcontentsline was complete.
+<to be read again> 
+                   \par 
+l.271 }
+       
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+
+! LaTeX Error: Unicode character μ (U+03BC)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.271 }
+       
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! LaTeX Error: Unicode character μ (U+03BC)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.271 }
+       
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+Overfull \hbox (34.19398pt too wide) in paragraph at lines 271--271
+\OT1/cmr/m/n/12 Ther-mome-ter/Barometer/Hygrometer are mod-er-ate ($\OMS/cmsy/m
+/n/12 ^^X \OT1/cmr/m/n/12 0\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 6$-$0\OML/cmm/m/it
+/12 :\OT1/cmr/m/n/12 8$), and Pho-to-di-ode/Interferometer
+ []
+
+
+Overfull \hbox (29.46347pt too wide) in paragraph at lines 271--271
+\OT1/cmr/m/n/12 and Mass Spec have the low-est noise ($\OMS/cmsy/m/n/12 ^^X \OT
+1/cmr/m/n/12 0\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 1$-$0\OML/cmm/m/it/12 :\OT1/cmr
+/m/n/12 2$), whereas Ther-mome-ter/Barometer/Hygrometer
+ []
+
+! Extra }, or forgotten \endgroup.
+\@tempf ...ame the#1\endcsname }{\ignorespaces #2}
+                                                  }\begingroup \@parboxresto...
+l.271 }
+       
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Extra }, or forgotten \endgroup.
+\@tempf ...me the#1\endcsname }{\ignorespaces #2}}
+                                                  \begingroup \@parboxrestor...
+l.271 }
+       
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+! LaTeX Error: Unicode character μ (U+03BC)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.271 }
+       
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! LaTeX Error: Unicode character μ (U+03BC)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.271 }
+       
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! LaTeX Error: Unicode character μ (U+03BC)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.271 }
+       
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! LaTeX Error: Unicode character μ (U+03BC)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.271 }
+       
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+! Extra }, or forgotten \endgroup.
+\@endfloatbox ...pagefalse \outer@nobreak \egroup 
+                                                  \color@endbox 
+l.273 \end{figure}
+                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+LaTeX Warning: Float too large for page by 957.02376pt on input line 273.
+
+[33] [34
+pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.277 \end{remark}
+                   <./figures/multi_modal_detector_analysis.png>])
+(sections/spectral-transitions.tex [35] [36]
+Overfull \hbox (5.62642pt too wide) in paragraph at lines 93--94
+[]\OT1/cmr/m/n/12 Therefore, the bound-ary ori-en-ta-tion can change by at most
+ one unit: $^^A\OML/cmm/m/it/12 m \OMS/cmsy/m/n/12 2 f^^@\OT1/cmr/m/n/12 1\OML/
+cmm/m/it/12 ; \OT1/cmr/m/n/12 0\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 +1\OMS/cmsy/m
+/n/12 g$\OT1/cmr/m/n/12 .
+ []
+
+
+Overfull \hbox (2.11781pt too wide) in paragraph at lines 93--94
+\OT1/cmr/m/n/12 Larger changes would re-quire si-mul-ta-ne-ous trans-fer of mul
+-ti-ple an-gu-lar mo-men-tum quanta,
+ []
+
+[37]
+<figures/spectral_analysis_panel.png, id=1284, 1147.6476pt x 714.5094pt>
+File: figures/spectral_analysis_panel.png Graphic file (type png)
+<use figures/spectral_analysis_panel.png>
+Package pdftex.def Info: figures/spectral_analysis_panel.png  used on input lin
+e 185.
+(pdftex.def)             Requested size: 455.24411pt x 283.43285pt.
+ [38] [39
+pdfTeX warning (ext4): destination with the same identifier (name{figure.7}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.217 \end{equation}
+                     <./figures/spectral_analysis_panel.png>] [40
+pdfTeX warning (ext4): destination with the same identifier (name{table.4}) has
+ been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.276 \end{equation}
+                    ]
+
+LaTeX Warning: Reference `sec:boundary_functions' on page 41 undefined on input
+ line 291.
+
+[41]) (sections/property-trends.tex [42] [43]
+<figures/partition_coordinates_elements.png, id=1371, 1025.2704pt x 782.4432pt>
+
+File: figures/partition_coordinates_elements.png Graphic file (type png)
+<use figures/partition_coordinates_elements.png>
+Package pdftex.def Info: figures/partition_coordinates_elements.png  used on in
+put line 146.
+(pdftex.def)             Requested size: 455.24411pt x 347.428pt.
+
+Runaway argument?
+{\textbf {Partition Coordinate Space: The Complete Geometry of Elemen\ETC.
+! Paragraph ended before \NR@gettitle was complete.
+<to be read again> 
+                   \par 
+l.154 ...table structure and chemical properties.}
+                                                  
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Runaway argument?
+{\protect \numberline {\csname the\@captype \endcsname }{\ignorespaces \ETC.
+! Paragraph ended before \addcontentsline was complete.
+<to be read again> 
+                   \par 
+l.154 ...table structure and chemical properties.}
+                                                  
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+! Extra }, or forgotten \endgroup.
+\@tempf ...ame the#1\endcsname }{\ignorespaces #2}
+                                                  }\begingroup \@parboxresto...
+l.154 ...table structure and chemical properties.}
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Extra }, or forgotten \endgroup.
+\@tempf ...me the#1\endcsname }{\ignorespaces #2}}
+                                                  \begingroup \@parboxrestor...
+l.154 ...table structure and chemical properties.}
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Extra }, or forgotten \endgroup.
+\@endfloatbox ...pagefalse \outer@nobreak \egroup 
+                                                  \color@endbox 
+l.156 \end{figure}
+                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+LaTeX Warning: Float too large for page by 1135.97823pt on input line 156.
+
+[44] [45
+pdfTeX warning (ext4): destination with the same identifier (name{figure.8}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.174     \item \textbf
+                       {Across a period}: $A$ generally increases (more favo...
+ <./figures/partition_coordinates_elements.png>] [46] [47]
+<figures/periodic_table_panel.png, id=1425, 1022.3796pt x 369.5406pt>
+File: figures/periodic_table_panel.png Graphic file (type png)
+<use figures/periodic_table_panel.png>
+Package pdftex.def Info: figures/periodic_table_panel.png  used on input line 2
+87.
+(pdftex.def)             Requested size: 455.24411pt x 164.54372pt.
+
+Runaway argument?
+{\textbf {Periodic Table from Partition Coordinates: Each Element Def\ETC.
+! Paragraph ended before \NR@gettitle was complete.
+<to be read again> 
+                   \par 
+l.299 ...cessible, adding 10 elements per period.}
+                                                  
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Runaway argument?
+{\protect \numberline {\csname the\@captype \endcsname }{\ignorespaces \ETC.
+! Paragraph ended before \addcontentsline was complete.
+<to be read again> 
+                   \par 
+l.299 ...cessible, adding 10 elements per period.}
+                                                  
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+! Extra }, or forgotten \endgroup.
+\@tempf ...ame the#1\endcsname }{\ignorespaces #2}
+                                                  }\begingroup \@parboxresto...
+l.299 ...cessible, adding 10 elements per period.}
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Extra }, or forgotten \endgroup.
+\@tempf ...me the#1\endcsname }{\ignorespaces #2}}
+                                                  \begingroup \@parboxrestor...
+l.299 ...cessible, adding 10 elements per period.}
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Extra }, or forgotten \endgroup.
+\@endfloatbox ...pagefalse \outer@nobreak \egroup 
+                                                  \color@endbox 
+l.301 \end{figure}
+                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+LaTeX Warning: Float too large for page by 634.09395pt on input line 301.
+
+[48] [49
+pdfTeX warning (ext4): destination with the same identifier (name{figure.9}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.356 \end{itemize}
+                    <./figures/periodic_table_panel.png>]
+Overfull \hbox (3.69946pt too wide) in paragraph at lines 379--380
+[]\OT1/cmr/bx/it/12 Electronegativity\OT1/cmr/m/it/12 : In-creases across pe-ri
+-ods, de-creases down groups|matches Paul-
+ []
+
+[50]) (sections/virtual-instrument-measurements.tex [51]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 21.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 21.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 21.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 21.
+
+[52]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 114.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 114.
+
+
+! LaTeX Error: Unicode character ✓ (U+2713)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.125 ...589.6 nm doublet) — $\Delta l = -1$ ✓
+                                                  
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! LaTeX Error: Unicode character ✗ (U+2717)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.126 ...ved}: $3d \to 3s$ — $\Delta l = -2$ ✗
+                                                   (forbidden)
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! LaTeX Error: Unicode character ✗ (U+2717)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.127 ...rved}: $3s \to 3s$ — $\Delta l = 0$ ✗
+                                                   (zero amplitude)
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 133.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 133.
+
+[53]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 162.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 162.
+
+[54]
+<figures/instrument_equivalence_panel.png, id=1519, 955.8912pt x 800.2698pt>
+File: figures/instrument_equivalence_panel.png Graphic file (type png)
+<use figures/instrument_equivalence_panel.png>
+Package pdftex.def Info: figures/instrument_equivalence_panel.png  used on inpu
+t line 227.
+(pdftex.def)             Requested size: 455.24411pt x 381.13342pt.
+
+! Dimension too large.
+\@makecaption ...xa {#1: #2}\ifdim \wd \@tempboxa 
+                                                  >\hsize #1: #2\par \else \...
+l.234 ...aphic reconstruction in medical imaging.}
+                                                  
+I can't work with sizes bigger than about 19 feet.
+Continue and I'll use the largest value I can.
+
+
+LaTeX Warning: Float too large for page by 415.68365pt on input line 236.
+
+[55
+pdfTeX warning (ext4): destination with the same identifier (name{table.5}) has
+ been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.280     \item
+                Partition depth $n$ ↔ Principal quantum number $n$] [56
+pdfTeX warning (ext4): destination with the same identifier (name{figure.10}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.280     \item
+                Partition depth $n$ ↔ Principal quantum number $n$ <./figures
+/instrument_equivalence_panel.png>]
+
+! LaTeX Error: Unicode character ↔ (U+2194)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.280     \item Partition depth $n$ ↔
+                                        Principal quantum number $n$
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! LaTeX Error: Unicode character ↔ (U+2194)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.281     \item Partition complexity $l$ ↔
+                                             Orbital angular momentum quantu...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! LaTeX Error: Unicode character ↔ (U+2194)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.282     \item Partition orientation $m$ ↔
+                                              Magnetic quantum number $m_l$
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! LaTeX Error: Unicode character ↔ (U+2194)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.283     \item Partition chirality $s$ ↔
+                                            Spin quantum number $m_s$
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+) (sections/coordinate-uniqueness.tex [57]
+Overfull \hbox (11.34082pt too wide) in paragraph at lines 29--31
+[]\OT1/cmr/bx/n/12 Injectivity\OT1/cmr/m/n/12 : Sup-pose two states $\OML/cmm/m
+/it/12 S[]$ \OT1/cmr/m/n/12 and $\OML/cmm/m/it/12 S[]$ \OT1/cmr/m/n/12 have the
+ same par-ti-tion co-or-di-nate $(\OML/cmm/m/it/12 n; l; m; s\OT1/cmr/m/n/12 )$
+.
+ []
+
+<figures/topology_categories_panel.png, id=1572, 916.8654pt x 674.2791pt>
+File: figures/topology_categories_panel.png Graphic file (type png)
+<use figures/topology_categories_panel.png>
+Package pdftex.def Info: figures/topology_categories_panel.png  used on input l
+ine 44.
+(pdftex.def)             Requested size: 455.24411pt x 334.79291pt.
+Runaway argument?
+{\textbf {Topology of Categorical Spaces: Partial Orders, Branching, \ETC.
+! Paragraph ended before \NR@gettitle was complete.
+<to be read again> 
+                   \par 
+l.56 ...thmic completion: $C(t) \propto \log(t)$.}
+                                                  
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Runaway argument?
+{\protect \numberline {\csname the\@captype \endcsname }{\ignorespaces \ETC.
+! Paragraph ended before \addcontentsline was complete.
+<to be read again> 
+                   \par 
+l.56 ...thmic completion: $C(t) \propto \log(t)$.}
+                                                  
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+! Extra }, or forgotten \endgroup.
+\@tempf ...ame the#1\endcsname }{\ignorespaces #2}
+                                                  }\begingroup \@parboxresto...
+l.56 ...thmic completion: $C(t) \propto \log(t)$.}
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Extra }, or forgotten \endgroup.
+\@tempf ...me the#1\endcsname }{\ignorespaces #2}}
+                                                  \begingroup \@parboxrestor...
+l.56 ...thmic completion: $C(t) \propto \log(t)$.}
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Dimension too large.
+\@makecaption ...xa {#1: #2}\ifdim \wd \@tempboxa 
+                                                  >\hsize #1: #2\par \else \...
+l.56 ...thmic completion: $C(t) \propto \log(t)$.}
+                                                  
+I can't work with sizes bigger than about 19 feet.
+Continue and I'll use the largest value I can.
+
+! Extra }, or forgotten \endgroup.
+\@endfloatbox ...pagefalse \outer@nobreak \egroup 
+                                                  \color@endbox 
+l.58 \end{figure}
+                 
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+LaTeX Warning: Float too large for page by 1414.00983pt on input line 58.
+
+[58] [59
+pdfTeX warning (ext4): destination with the same identifier (name{figure.11}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.84 \end{remark}
+                  <./figures/topology_categories_panel.png>] [60]
+<figures/ship_theseus_panel.png, id=1611, 1292.6694pt x 851.3406pt>
+File: figures/ship_theseus_panel.png Graphic file (type png)
+<use figures/ship_theseus_panel.png>
+Package pdftex.def Info: figures/ship_theseus_panel.png  used on input line 163
+.
+(pdftex.def)             Requested size: 455.24411pt x 299.81831pt.
+
+Runaway argument?
+{\textbf {Identity Persistence Under Sequential Component Exchange: T\ETC.
+! Paragraph ended before \NR@gettitle was complete.
+<to be read again> 
+                   \par 
+l.175 ...t{mod}} + I_{\text{reass}} + \Delta S$. }
+                                                  
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Runaway argument?
+{\protect \numberline {\csname the\@captype \endcsname }{\ignorespaces \ETC.
+! Paragraph ended before \addcontentsline was complete.
+<to be read again> 
+                   \par 
+l.175 ...t{mod}} + I_{\text{reass}} + \Delta S$. }
+                                                  
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+! Extra }, or forgotten \endgroup.
+\@tempf ...ame the#1\endcsname }{\ignorespaces #2}
+                                                  }\begingroup \@parboxresto...
+l.175 ...t{mod}} + I_{\text{reass}} + \Delta S$. }
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Extra }, or forgotten \endgroup.
+\@tempf ...me the#1\endcsname }{\ignorespaces #2}}
+                                                  \begingroup \@parboxrestor...
+l.175 ...t{mod}} + I_{\text{reass}} + \Delta S$. }
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Extra }, or forgotten \endgroup.
+\@endfloatbox ...pagefalse \outer@nobreak \egroup 
+                                                  \color@endbox 
+l.177 \end{figure}
+                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+LaTeX Warning: Float too large for page by 1074.53523pt on input line 177.
+
+[61] [62
+pdfTeX warning (ext4): destination with the same identifier (name{figure.12}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.242 \end{proof}
+                  <./figures/ship_theseus_panel.png>] [63]
+Overfull \hbox (7.57053pt too wide) in paragraph at lines 321--322
+[]\OT1/cmr/m/n/12 Coordinate-state bi-jec-tion: one-to-one cor-re-spon-dence be
+-tween co-or-di-nates and states
+ []
+
+) (sections/nuclear-magnetic-resonance.tex [64] [65] [66] [67]
+<figures/nmr_mass_spec_panel.png, id=1718, 1148.6112pt x 713.5458pt>
+File: figures/nmr_mass_spec_panel.png Graphic file (type png)
+<use figures/nmr_mass_spec_panel.png>
+Package pdftex.def Info: figures/nmr_mass_spec_panel.png  used on input line 23
+4.
+(pdftex.def)             Requested size: 455.24411pt x 282.81108pt.
+
+! Dimension too large.
+\@makecaption ...xa {#1: #2}\ifdim \wd \@tempboxa 
+                                                  >\hsize #1: #2\par \else \...
+l.241 ...ion coordinates (bond electron density).}
+                                                  
+I can't work with sizes bigger than about 19 feet.
+Continue and I'll use the largest value I can.
+
+
+LaTeX Warning: Float too large for page by 187.528pt on input line 243.
+
+[68] [69
+pdfTeX warning (ext4): destination with the same identifier (name{figure.13}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.275     \item N
+                 uclear spin: $I = 3/2$ (for $^{23}$Na) <./figures/nmr_mass_spe
+c_panel.png>]
+Overfull \hbox (5.4149pt too wide) in paragraph at lines 287--289
+[][]\OT1/cmr/bx/n/12 Definition 10.15 \OT1/cmr/m/n/12 (NMR Spec-troscopy)\OT1/c
+mr/bx/n/12 . []\OT1/cmr/m/n/12 Nu-clear Mag-netic Res-o-nance (NMR) \OT1/cmr/m/
+it/12 spec-troscopy
+ []
+
+[70]) (sections/mass-spectrometry-ensemble.tex [71] [72] [73] [74]
+<figures/virtual_vs_original_qtof_PL_Neg_Waters_qTOF.png, id=1819, 1401.0744pt 
+x 1175.592pt>
+File: figures/virtual_vs_original_qtof_PL_Neg_Waters_qTOF.png Graphic file (typ
+e png)
+<use figures/virtual_vs_original_qtof_PL_Neg_Waters_qTOF.png>
+Package pdftex.def Info: figures/virtual_vs_original_qtof_PL_Neg_Waters_qTOF.pn
+g  used on input line 222.
+(pdftex.def)             Requested size: 455.24411pt x 381.97318pt.
+
+Runaway argument?
+{\textbf {Virtual Mass Spectrometry: Zero-Backaction Measurement via \ETC.
+! Paragraph ended before \NR@gettitle was complete.
+<to be read again> 
+                   \par 
+l.231 }
+       
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Runaway argument?
+{\protect \numberline {\csname the\@captype \endcsname }{\ignorespaces \ETC.
+! Paragraph ended before \addcontentsline was complete.
+<to be read again> 
+                   \par 
+l.231 }
+       
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+! Extra }, or forgotten \endgroup.
+\@tempf ...ame the#1\endcsname }{\ignorespaces #2}
+                                                  }\begingroup \@parboxresto...
+l.231 }
+       
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Extra }, or forgotten \endgroup.
+\@tempf ...me the#1\endcsname }{\ignorespaces #2}}
+                                                  \begingroup \@parboxrestor...
+l.231 }
+       
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Extra }, or forgotten \endgroup.
+\@endfloatbox ...pagefalse \outer@nobreak \egroup 
+                                                  \color@endbox 
+l.233 \end{figure}
+                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+LaTeX Warning: Float too large for page by 1113.1901pt on input line 233.
+
+[75] [76
+pdfTeX warning (ext4): destination with the same identifier (name{figure.14}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.287     \item $
+                 I_1$ decreases with $n$ (weaker binding at higher shells) <./f
+igures/virtual_vs_original_qtof_PL_Neg_Waters_qTOF.png>] [77])
+(sections/categorical-state-synthesizer.tex [78] [79]
+File: figures/instrument_equivalence_panel.png Graphic file (type png)
+<use figures/instrument_equivalence_panel.png>
+Package pdftex.def Info: figures/instrument_equivalence_panel.png  used on inpu
+t line 63.
+(pdftex.def)             Requested size: 455.24411pt x 381.13342pt.
+
+
+LaTeX Warning: Float too large for page by 184.35034pt on input line 71.
+
+[80] [81
+pdfTeX warning (ext4): destination with the same identifier (name{figure.15}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.134 
+      ] [82]
+<figures/instrument_suite_panel.png, id=1945, 1065.2598pt x 894.2208pt>
+File: figures/instrument_suite_panel.png Graphic file (type png)
+<use figures/instrument_suite_panel.png>
+Package pdftex.def Info: figures/instrument_suite_panel.png  used on input line
+ 237.
+(pdftex.def)             Requested size: 455.24411pt x 382.14691pt.
+
+
+LaTeX Warning: Float too large for page by 199.19714pt on input line 246.
+
+
+Overfull \hbox (43.62155pt too wide) in paragraph at lines 255--256
+[][]\OT1/cmr/bx/n/12 Theorem 12.8 \OT1/cmr/m/n/12 (Quan-ti-ta-tive Prop-erty Pr
+e-dic-tions)\OT1/cmr/bx/n/12 . []\OT1/cmr/m/it/12 Given con-fig-u-ra-tion $\OMS
+/cmsy/m/n/12 E[] \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 f\OT1/cmr/m/n/12 (\OML/cmm/
+m/it/12 n[]; l[]; m[]; s[]\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 g[]$\OT1/cmr/m/it/1
+2 ,
+ []
+
+[83] [84
+pdfTeX warning (ext4): destination with the same identifier (name{figure.16}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.283 \end{equation}
+                     <./figures/instrument_suite_panel.png>] [85] [86])
+(sections/instrument-orchestration.tex [87]
+<figures/instrument_orchestration_panel.png, id=2036, 948.6642pt x 800.2698pt>
+File: figures/instrument_orchestration_panel.png Graphic file (type png)
+<use figures/instrument_orchestration_panel.png>
+Package pdftex.def Info: figures/instrument_orchestration_panel.png  used on in
+put line 97.
+(pdftex.def)             Requested size: 455.24411pt x 384.02745pt.
+
+! Dimension too large.
+\@makecaption ...xa {#1: #2}\ifdim \wd \@tempboxa 
+                                                  >\hsize #1: #2\par \else \...
+l.104 ...quence has failed and must be repeated. }
+                                                  
+I can't work with sizes bigger than about 19 feet.
+Continue and I'll use the largest value I can.
+
+
+LaTeX Warning: Float too large for page by 302.57768pt on input line 106.
+
+[88] [89
+pdfTeX warning (ext4): destination with the same identifier (name{figure.17}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.115     \item \textbf
+                       {Measure partition count}: Use mass spectrometry or i...
+ <./figures/instrument_orchestration_panel.png>]
+
+! LaTeX Error: Unicode character ✓ (U+2713)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.162 ...6$ eV matches XPS $E_B(2p) = 11.3$ eV ✓
+                                                  
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! LaTeX Error: Unicode character ✓ (U+2713)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.163 ...^2 2p^2$ has 2 unpaired (Hund's rule) ✓
+                                                  
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! LaTeX Error: Unicode character ✓ (U+2713)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.164 ...energy matches $2p \to 3s$ prediction ✓
+                                                  
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! LaTeX Error: Unicode character ✓ (U+2713)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.165 ...13}$C signal (nuclear spin $I = 1/2$) ✓
+                                                  
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+[90]
+
+! LaTeX Error: Unicode character ✓ (U+2713)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.195 ...2 < I_3$ matches $4s, 4s, 3d$ removal ✓
+                                                  
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! LaTeX Error: Unicode character ✓ (U+2713)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.196 ...ed: $\sqrt{4(4+2)} = \sqrt{24} = 4.9$ ✓
+                                                  
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! LaTeX Error: Unicode character ✓ (U+2713)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.197 ...XPS shows both $3d$ and $4s$ occupied ✓
+                                                  
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! LaTeX Error: Unicode character ✓ (U+2713)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.198 ... confirms $3d^6$ electronic structure ✓
+                                                  
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+[91]
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.290 \paragraph
+                {XPS} determines:
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.290 \paragraph
+                {XPS} determines:
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.294 \paragraph
+                {Magnetic measurement} determines:
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.294 \paragraph
+                {Magnetic measurement} determines:
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.299 \end{proof}
+                 
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[92] [93]) (sections/universal-instrument-algorithm.tex [94] [95] [96]
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
+put line 160.
+ [97]
+[98]
+Overfull \vbox (214.19548pt too high) has occurred while \output is active []
+
+
+[99]
+<figures/uvif_algorithm_panel.png, id=2187, 1148.1294pt x 712.5822pt>
+File: figures/uvif_algorithm_panel.png Graphic file (type png)
+<use figures/uvif_algorithm_panel.png>
+Package pdftex.def Info: figures/uvif_algorithm_panel.png  used on input line 2
+35.
+(pdftex.def)             Requested size: 455.24411pt x 282.53789pt.
+
+
+LaTeX Warning: Reference `thm:precision_time' on page 100 undefined on input li
+ne 242.
+
+
+LaTeX Warning: Reference `thm:precision_time' on page 100 undefined on input li
+ne 242.
+
+
+LaTeX Warning: Float too large for page by 70.58812pt on input line 244.
+
+[100] [101
+pdfTeX warning (ext4): destination with the same identifier (name{figure.18}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.305 \end{align}
+                  <./figures/uvif_algorithm_panel.png>] [102] [103]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[104] [105
+pdfTeX warning (ext4): destination with the same identifier (name{table.6}) has
+ been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.515 
+      ]) (sections/compound-identification-design.tex [106]
+<figures/compound_design_panel.png, id=2280, 1149.093pt x 713.5458pt>
+File: figures/compound_design_panel.png Graphic file (type png)
+<use figures/compound_design_panel.png>
+Package pdftex.def Info: figures/compound_design_panel.png  used on input line 
+44.
+(pdftex.def)             Requested size: 455.24411pt x 282.69131pt.
+
+
+LaTeX Warning: Command \textdegree invalid in math mode on input line 51.
+
+
+LaTeX Warning: Command \textdegree invalid in math mode on input line 51.
+
+Missing character: There is no � in font cmr12!
+! Dimension too large.
+\@makecaption ...xa {#1: #2}\ifdim \wd \@tempboxa 
+                                                  >\hsize #1: #2\par \else \...
+l.51 ... region indicates tractable search space.}
+                                                  
+I can't work with sizes bigger than about 19 feet.
+Continue and I'll use the largest value I can.
+
+
+LaTeX Warning: Command \textdegree invalid in math mode on input line 51.
+
+
+LaTeX Warning: Command \textdegree invalid in math mode on input line 51.
+
+Missing character: There is no � in font cmr12!
+
+LaTeX Warning: Float too large for page by 215.74155pt on input line 53.
+
+
+! LaTeX Error: Unicode character δ (U+03B4)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.90 - Peak at δ
+                  = 1.2 ppm (triplet, 3H) → CH$_3$
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! LaTeX Error: Unicode character δ (U+03B4)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.91 - Peak at δ
+                  = 3.7 ppm (quartet, 2H) → CH$_2$
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! LaTeX Error: Unicode character δ (U+03B4)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.92 - Peak at δ
+                  = 2.6 ppm (singlet, 1H) → OH
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+[107] [108
+pdfTeX warning (ext4): destination with the same identifier (name{figure.19}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.111 \end{equation}
+                     <./figures/compound_design_panel.png>] [109]
+
+! LaTeX Error: Unicode character ✓ (U+2713)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.211 - Total: 4 C-H bonds possible ✓
+                                       
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! LaTeX Error: Unicode character ✓ (U+2713)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.218 ...{\text{CH}_4} < E_{\text{separated}}$ ✓
+                                                  
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! LaTeX Error: Unicode character ✓ (U+2713)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.221 ...ngth: 1.09 Å (experimental: 1.09 Å) ✓
+                                                  
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! LaTeX Error: Unicode character ✓ (U+2713)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.222 ...ted bond angle: 109.5° (tetrahedral) ✓
+                                                  
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! LaTeX Error: Unicode character ✗ (U+2717)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.234 - No electrons available for bonding ✗
+                                              
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! LaTeX Error: Unicode character ✗ (U+2717)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.241 ...nergy $\ll k_B T$ at room temperature ✗
+                                                  
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+[110] [111]
+
+! LaTeX Error: Unicode character δ (U+03B4)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.338 - Single peak at δ
+                          = 7.3 ppm (6H)
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+[112]) [113]
+
+LaTeX Warning: Reference `thm:signature_uniqueness' on page 114 undefined on in
+put line 246.
+
+
+LaTeX Warning: Reference `alg:mixture_identification' on page 114 undefined on 
+input line 246.
+
+
+LaTeX Warning: Reference `alg:feasibility' on page 114 undefined on input line 
+246.
+
+
+LaTeX Warning: Reference `alg:denovo_design' on page 114 undefined on input lin
+e 246.
+
+[114] [115] (partition-coordinate-geometry-bounded-systems.bbl) [116]
+(partition-coordinate-geometry-bounded-systems.aux)
+ ***********
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-04>
+ ***********
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package rerunfilecheck Info: File `partition-coordinate-geometry-bounded-system
+s.out' has not changed.
+(rerunfilecheck)             Checksum: 610566CFCEA1D592A1F75A51504E56B9;31360.
+ ) 
+Here is how much of TeX's memory you used:
+ 17909 strings out of 474486
+ 343399 string characters out of 5743283
+ 1955542 words of memory out of 5000000
+ 38780 multiletter control sequences out of 15000+600000
+ 574173 words of font info for 95 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 79i,16n,93p,4763b,1298s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\kundai\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tct
+i1200.pk> <C:\Users\kundai\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi
+600\tcrm1200.pk><C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/type1/publ
+ic/amsfonts/cm/cmbx10.pfb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/
+type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/kundai/AppData/Local/Programs/MiK
+TeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/kundai/AppData/Local/
+Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/kundai/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/k
+undai/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><
+C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
+mi6.pfb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfo
+nts/cm/cmmi8.pfb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/type1/pub
+lic/amsfonts/cm/cmr10.pfb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/
+type1/public/amsfonts/cm/cmr12.pfb><C:/Users/kundai/AppData/Local/Programs/MiKT
+eX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/kundai/AppData/Local/Prog
+rams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/kundai/AppData/Lo
+cal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/kundai/Ap
+pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users
+/kundai/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb>
+<C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
+msy8.pfb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
+onts/cm/cmti10.pfb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmti12.pfb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/fon
+ts/type1/public/amsfonts/cm/cmti8.pfb><C:/Users/kundai/AppData/Local/Programs/M
+iKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Users/kundai/AppData/Local/
+Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/kundai
+/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on partition-coordinate-geometry-bounded-systems.pdf (116 pages,
+ 6352634 bytes).
+PDF statistics:
+ 2780 PDF objects out of 2984 (max. 8388607)
+ 1175 named destinations out of 1200 (max. 500000)
+ 1387 words of extra memory for PDF output out of 10000 (max. 10000000)
+

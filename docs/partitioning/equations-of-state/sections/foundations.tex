@@ -1,0 +1,253 @@
+\section{Mathematical Foundations}
+\label{sec:foundations}
+
+\subsection{Axiomatic Framework}
+
+We establish the theoretical framework through two axioms characterizing physical observation. These axioms are empirically grounded: all observable systems satisfy them, and no counterexamples exist in experimental physics.
+
+\begin{axiom}[Bounded Phase Space]
+\label{axiom:bounded}
+Every physical system $\Sigma$ observable for finite time $t_{\text{obs}}$ occupies a bounded region of phase space. Formally, there exist finite constants $L$, $E_{\max}$, and $T$ such that:
+\begin{enumerate}[label=(\roman*)]
+    \item \textbf{Spatial boundedness:} All position coordinates satisfy $|q_i| \leq L$ where $L < \infty$ denotes the characteristic length scale.
+    \item \textbf{Energetic boundedness:} Total energy satisfies $E \leq E_{\max} < \infty$.
+    \item \textbf{Temporal boundedness:} Any distinguishable dynamical process completes within finite time $T < \infty$.
+\end{enumerate}
+\end{axiom}
+
+\begin{remark}
+The three boundedness conditions are logically related through fundamental constraints. Spatial boundedness $\Delta q \leq L$ combined with the Heisenberg uncertainty principle $\Delta q \cdot \Delta p \geq \hbar/2$ implies momentum boundedness $\Delta p \geq \hbar/(2L)$. Momentum boundedness implies energy boundedness through $E_{\text{kin}} = p^2/(2m) \leq p_{\max}^2/(2m) = E_{\max}$. Energy boundedness combined with the energy-time uncertainty $\Delta E \cdot \Delta t \geq \hbar/2$ implies temporal boundedness $\Delta t \geq \hbar/(2\Delta E)$. We state all three explicitly for clarity, though only one is logically independent.
+\end{remark}
+
+\begin{axiom}[Finite Observational Resolution]
+\label{axiom:resolution}
+Any observation of a physical system distinguishes among a finite number of alternatives. Formally, for any observable $Q$ and measurement procedure $\mathcal{M}$, there exists a finite set of distinguishable outcomes $\{q_1, q_2, \ldots, q_n\}$ where $n < \infty$.
+
+Equivalently, any observation partitions phase space $\mathcal{M} \subset \mathbb{R}^{2d}$ into finite cells:
+\begin{equation}
+\mathcal{M} = \bigcup_{k=1}^{n} C_k
+\end{equation}
+where:
+\begin{enumerate}[label=(\roman*)]
+    \item Each $C_k$ is a measurable subset of $\mathcal{M}$
+    \item Cells are mutually exclusive: $C_i \cap C_j = \emptyset$ for $i \neq j$
+    \item Cells are exhaustive: $\bigcup_{k=1}^{n} C_k = \mathcal{M}$
+    \item The number of cells is finite: $n < \infty$
+\end{enumerate}
+\end{axiom}
+
+\begin{remark}
+With finite resolution $(\Delta q > 0, \Delta p > 0)$ and bounded phase space (Axiom~\ref{axiom:bounded}), the number of distinguishable states is $n = \Omega/(\Delta q \cdot \Delta p) < \infty$ where $\Omega$ denotes the phase space volume. This is finite because both numerator and denominator are finite. In quantum mechanics, minimum resolution is set by Planck's constant through $\Delta q \cdot \Delta p \geq \hbar$, yielding maximum state count $n_{\max} = \Omega/\hbar^d$ for $d$ degrees of freedom.
+\end{remark}
+
+\subsection{Partition Coordinates from Geometric Constraints}
+
+We derive a coordinate system for labeling distinguishable states in bounded three-dimensional phase space. The derivation proceeds from geometric constraints on nested spherical partitions without invoking quantum mechanical postulates.
+
+\subsubsection{Radial Partition Depth}
+
+Consider a particle in three-dimensional space with position bounded by $|\mathbf{r}| \leq L$ and momentum bounded by $|\mathbf{p}| \leq p_{\max}$. The phase space volume is:
+\begin{equation}
+\Omega = \frac{4\pi}{3}L^3 \cdot \frac{4\pi}{3}p_{\max}^3 = \frac{16\pi^2}{9}L^3 p_{\max}^3
+\end{equation}
+
+Divide the radial interval $[0, L]$ into shells of width $\Delta r$. The number of shells defines the \textit{principal partition coordinate} or \textit{radial depth}:
+\begin{equation}
+n = \frac{L}{\Delta r}
+\end{equation}
+
+Shell $n$ corresponds to radial interval $r \in [(n-1)\Delta r, n\Delta r]$. The volume of shell $n$ is:
+\begin{equation}
+V_n = \frac{4\pi}{3}\left[(n\Delta r)^3 - ((n-1)\Delta r)^3\right] = 4\pi(\Delta r)^3(3n^2 - 3n + 1)
+\end{equation}
+
+For large $n$, the dominant term yields $V_n \approx 4\pi n^2 (\Delta r)^3$, demonstrating that shell volume scales as $n^2$.
+
+\subsubsection{Angular Partition Structure}
+
+Within shell $n$, states are distinguished by angular position. The surface area of shell $n$ is $A_n = 4\pi(n\Delta r)^2 \propto n^2$. Angular momentum $L$ and angular position $\theta$ are conjugate variables satisfying $\Delta\theta \cdot \Delta L \geq \hbar$.
+
+For shell $n$ with radius $r_n = n\Delta r$, maximum angular momentum is:
+\begin{equation}
+L_{\max} = r_n \cdot p_{\max} = n\Delta r \cdot p_{\max}
+\end{equation}
+
+The number of distinguishable angular momentum states defines the \textit{angular complexity coordinate}:
+\begin{equation}
+\ell_{\max} = \frac{L_{\max}}{\hbar} = \frac{n\Delta r \cdot p_{\max}}{\hbar}
+\end{equation}
+
+For consistency with quantum mechanics, we require $\ell < n$. This constraint arises from the geometric requirement that angular momentum cannot exceed the product of radial extent and maximum momentum.
+
+\subsubsection{Orientation and Chirality}
+
+The angular momentum vector $\mathbf{L}$ has magnitude $\ell$ and orientation characterized by projection $m$ onto a chosen axis, satisfying $|m| \leq \ell$. This defines the \textit{orientation coordinate} $m$.
+
+Particles with intrinsic angular momentum (spin) possess an additional coordinate $s$ representing \textit{chirality}, taking values $s = \pm 1/2$ for fermions or integer values for bosons.
+
+\begin{definition}[Partition Coordinates]
+\label{def:partition_coordinates}
+The partition coordinates $(n, \ell, m, s)$ characterize discrete states in bounded three-dimensional phase space, where:
+\begin{itemize}[noitemsep]
+    \item $n \in \{1, 2, 3, \ldots\}$: radial partition depth
+    \item $\ell \in \{0, 1, \ldots, n-1\}$: angular complexity
+    \item $m \in \{-\ell, -\ell+1, \ldots, \ell-1, \ell\}$: orientation
+    \item $s \in \{-1/2, +1/2\}$ (fermions) or $s \in \{0, \pm 1, \pm 2, \ldots\}$ (bosons): chirality
+\end{itemize}
+\end{definition}
+
+\begin{theorem}[Capacity Relation]
+\label{thm:capacity}
+The number of distinguishable states at partition depth $n$ is:
+\begin{equation}
+C(n) = 2n^2
+\end{equation}
+where the factor of 2 accounts for spin degeneracy.
+\end{theorem}
+
+\begin{proof}
+At partition depth $n$, angular complexity ranges from $\ell = 0$ to $\ell = n-1$. For each $\ell$, orientation ranges from $m = -\ell$ to $m = +\ell$, yielding $2\ell + 1$ states. The total number of states (excluding spin) is:
+\begin{equation}
+\sum_{\ell=0}^{n-1} (2\ell + 1) = 2\sum_{\ell=0}^{n-1} \ell + \sum_{\ell=0}^{n-1} 1 = 2 \cdot \frac{(n-1)n}{2} + n = n^2
+\end{equation}
+
+Including spin degeneracy (factor of 2 for $s = \pm 1/2$), we obtain $C(n) = 2n^2$.
+\end{proof}
+
+\subsection{S-Entropy Coordinate Space}
+
+The partition coordinates $(n,\ell,m,s)$ are discrete. For computational purposes, we introduce continuous coordinates encoding the entropy associated with each partition dimension.
+
+\begin{definition}[S-Entropy Coordinates]
+\label{def:s_entropy}
+The S-entropy coordinates $(S_k, S_t, S_e) \in [0,1]^3$ encode entropy in three dimensions:
+\begin{align}
+S_k &= \text{knowledge entropy (momentum/velocity space)} \nonumber \\
+S_t &= \text{temporal entropy (time/frequency space)} \nonumber \\
+S_e &= \text{evolution entropy (energy/action space)}
+\end{align}
+\end{definition}
+
+The mapping from partition coordinates to S-entropy coordinates is:
+\begin{align}
+S_k(n,\ell) &= \frac{1}{1 + \exp(-\alpha_k(n^2/(\ell+1) - \beta_k))} \label{eq:Sk_map} \\
+S_t(n,m) &= \frac{1}{1 + \exp(-\alpha_t(n^2/(|m|+1) - \beta_t))} \label{eq:St_map} \\
+S_e(n,s) &= \frac{1}{1 + \exp(-\alpha_e(n^2/(2|s|+1) - \beta_e))} \label{eq:Se_map}
+\end{align}
+where $\alpha_k, \alpha_t, \alpha_e$ are scale parameters and $\beta_k, \beta_t, \beta_e$ are offset parameters chosen to map the partition coordinate range onto $[0,1]$.
+
+\begin{definition}[S-Entropy Coordinate Space]
+\label{def:s_space}
+The S-entropy coordinate space is the compact metric space $\Sspace = ([0,1]^3, d_E)$ where $d_E$ denotes the Euclidean metric:
+\begin{equation}
+d_E(\Scoord_1, \Scoord_2) = \sqrt{(S_{k,1} - S_{k,2})^2 + (S_{t,1} - S_{t,2})^2 + (S_{e,1} - S_{e,2})^2}
+\end{equation}
+\end{definition}
+
+\subsection{Triple Equivalence Structure}
+
+We establish that three apparently distinct mathematical descriptions—oscillatory dynamics, categorical structure, and partition operations—are equivalent.
+
+\begin{theorem}[Triple Equivalence]
+\label{thm:triple_equivalence}
+Three descriptions of bounded physical systems are mathematically identical:
+\begin{enumerate}[noitemsep]
+    \item \textbf{Oscillatory dynamics:} System evolves through periodic trajectories with characteristic frequencies $\{\omega_i\}$
+    \item \textbf{Categorical structure:} System occupies discrete states organized by equivalence classes $\{\mathcal{C}_i\}$
+    \item \textbf{Partition operations:} System divides phase space into bounded regions with coordinates $(n,\ell,m,s)$
+\end{enumerate}
+Given complete information in any one representation, the other two are uniquely and algorithmically determined.
+\end{theorem}
+
+\begin{proof}
+We establish bijective mappings between the three representations.
+
+\textbf{Oscillation $\Leftrightarrow$ Categorization:}
+
+An oscillator at frequency $\omega$ couples selectively to states with energy $E = \hbar\omega$. This establishes a categorical relationship: states are partitioned into equivalence classes based on coupling behavior:
+\begin{align}
+\mathcal{C}_{\text{resonant}} &= \{|\psi\rangle : |\omega_\psi - \omega| < \Delta\omega\} \\
+\mathcal{C}_{\text{off-resonant}} &= \{|\psi\rangle : |\omega_\psi - \omega| \geq \Delta\omega\}
+\end{align}
+
+The oscillation frequency $\omega$ uniquely determines the category, and vice versa: $\omega \leftrightarrow \mathcal{C}$.
+
+\textbf{Categorization $\Leftrightarrow$ Partition:}
+
+Each partition coordinate value defines a categorical equivalence class:
+\begin{align}
+\mathcal{C}_n &= \{\text{states with radial depth } n\} \\
+\mathcal{C}_\ell &= \{\text{states with angular complexity } \ell\} \\
+\mathcal{C}_m &= \{\text{states with orientation } m\} \\
+\mathcal{C}_s &= \{\text{states with chirality } s\}
+\end{align}
+
+The partition coordinates uniquely determine the categorical structure: $(n,\ell,m,s) \leftrightarrow \{\mathcal{C}_n, \mathcal{C}_\ell, \mathcal{C}_m, \mathcal{C}_s\}$.
+
+\textbf{Partition $\Leftrightarrow$ Oscillation:}
+
+Each partition coordinate has an associated characteristic frequency. For a particle in a Coulomb potential with energy scale $E_0$:
+\begin{align}
+\omega_n &\sim \frac{E_0}{\hbar n^3} \quad \text{(radial transitions)} \\
+\omega_\ell &\sim \frac{E_0 \ell}{\hbar n^3} \quad \text{(angular transitions)}
+\end{align}
+
+The partition coordinates uniquely determine oscillation frequencies (up to degeneracies): $(n,\ell,m,s) \leftrightarrow \{\omega_n, \omega_\ell, \omega_m, \omega_s\}$.
+
+By transitivity, all three descriptions are equivalent. The mappings are constructive and computable in finite time.
+\end{proof}
+
+\subsection{Temperature as Universal Scaling Factor}
+
+We establish that temperature functions as a multiplicative scale factor rather than a structural parameter in thermodynamic equations.
+
+\begin{theorem}[Temperature Factorization]
+\label{thm:temperature_factorization}
+All thermodynamic observables factor as:
+\begin{equation}
+\mathcal{O} = (\kB T) \times \mathcal{F}(\text{structure})
+\end{equation}
+where $\mathcal{F}$ depends on partition geometry but not on temperature.
+\end{theorem}
+
+\begin{proof}
+Consider the partition coordinates $(n_i, \ell_i, m_i, s_i)$ for particle $i$. These coordinates are determined by geometric constraints (Axioms~\ref{axiom:bounded} and~\ref{axiom:resolution}) and do not depend on temperature. Temperature enters only through the Boltzmann factor determining occupation probabilities:
+\begin{equation}
+P(n,\ell,m,s) = \frac{\exp(-E_{n,\ell}/(\kB T))}{Z}
+\end{equation}
+where $Z = \sum_{n,\ell,m,s} \exp(-E_{n,\ell}/(\kB T))$ is the partition function.
+
+For any observable $\mathcal{O}$ computed as an ensemble average:
+\begin{equation}
+\mathcal{O} = \sum_{n,\ell,m,s} P(n,\ell,m,s) \cdot f(n,\ell,m,s)
+\end{equation}
+where $f(n,\ell,m,s)$ is a temperature-independent function encoding the geometric contribution of state $(n,\ell,m,s)$ to observable $\mathcal{O}$.
+
+Substituting the Boltzmann factor:
+\begin{equation}
+\mathcal{O} = \frac{1}{Z}\sum_{n,\ell,m,s} f(n,\ell,m,s) \exp(-E_{n,\ell}/(\kB T))
+\end{equation}
+
+For observables linear in energy (pressure, internal energy, chemical potential), the sum factors as:
+\begin{equation}
+\mathcal{O} = \kB T \cdot \mathcal{F}(\{n_i,\ell_i,m_i,s_i\})
+\end{equation}
+where $\mathcal{F}$ is a temperature-independent structural factor.
+\end{proof}
+
+\begin{corollary}[Isothermal Processes]
+\label{cor:isothermal}
+For processes at constant temperature, all thermodynamic changes involve purely geometric transformations of partition structure.
+\end{corollary}
+
+\begin{proof}
+At constant $T$, the factorization $\mathcal{O} = (\kB T) \times \mathcal{F}(\text{structure})$ implies:
+\begin{equation}
+\Delta \mathcal{O} = \kB T \cdot \Delta \mathcal{F}(\text{structure})
+\end{equation}
+
+The change $\Delta \mathcal{O}$ is determined entirely by the structural change $\Delta \mathcal{F}$, with temperature serving only as a conversion factor to energy units.
+\end{proof}
+
+This completes the mathematical foundations. Subsequent sections apply these results to derive equations of state for specific thermodynamic regimes.
+

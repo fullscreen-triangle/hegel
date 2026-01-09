@@ -1,0 +1,165 @@
+\section{Chemical Equilibrium and Partition Dynamics}
+\label{sec:chemical_equilibrium}
+
+We extend the partition-based framework to chemical reactions, where molecular species transform through bond rearrangements. Chemical equilibrium emerges as a balance of partition occupancies across species.
+
+\subsection{Molecular Partition States}
+
+A molecule with $N_{\text{atoms}}$ atoms has $3N_{\text{atoms}}$ degrees of freedom: 3 translational, 3 rotational (for non-linear molecules), and $3N_{\text{atoms}} - 6$ vibrational modes. Each degree of freedom corresponds to a partition coordinate.
+
+The molecular partition function factors as:
+\begin{equation}
+z_{\text{mol}} = z_{\text{trans}} \cdot z_{\text{rot}} \cdot z_{\text{vib}} \cdot z_{\text{elec}}
+\end{equation}
+
+where:
+\begin{itemize}[noitemsep]
+    \item $z_{\text{trans}} = V/\lambda_{\text{th}}^3$ (translational partition function)
+    \item $z_{\text{rot}} = T/(2\sigma\Theta_{\text{rot}})$ (rotational partition function, $\Theta_{\text{rot}} = \hbar^2/(2I\kB)$)
+    \item $z_{\text{vib}} = \prod_i [1 - \exp(-\Theta_{\text{vib},i}/T)]^{-1}$ (vibrational partition function, $\Theta_{\text{vib},i} = \hbar\omega_i/\kB$)
+    \item $z_{\text{elec}} = g_0\exp(-E_0/(\kB T))$ (electronic partition function, $g_0$ is ground state degeneracy)
+\end{itemize}
+
+\subsection{Reaction Coordinate as Partition Transition}
+
+A chemical reaction transforms reactant partition states into product partition states. The reaction coordinate $\xi$ parametrizes the transition:
+\begin{equation}
+\xi = 0 \quad (\text{reactants}), \quad \xi = 1 \quad (\text{products})
+\end{equation}
+
+The free energy along the reaction coordinate is:
+\begin{equation}
+G(\xi) = (1-\xi)G_{\text{reactants}} + \xi G_{\text{products}} + G_{\text{mixing}}(\xi)
+\end{equation}
+
+where $G_{\text{mixing}}$ accounts for entropy of mixing.
+
+At equilibrium, $dG/d\xi = 0$:
+\begin{equation}
+G_{\text{products}} - G_{\text{reactants}} + \frac{dG_{\text{mixing}}}{d\xi}\bigg|_{\xi_{\text{eq}}} = 0
+\end{equation}
+
+\subsection{Transition State Theory and Partition Barriers}
+
+The reaction rate is determined by the partition barrier height. Consider a reaction:
+\begin{equation}
+A + B \rightarrow [AB]^\ddagger \rightarrow C + D
+\end{equation}
+
+where $[AB]^\ddagger$ is the transition state. The rate constant is:
+\begin{equation}
+k = \frac{\kB T}{h}\frac{z^\ddagger}{z_A z_B}\exp(-E_a/(\kB T))
+\end{equation}
+
+where $z^\ddagger$ is the transition state partition function and $E_a$ is the activation energy.
+
+The partition interpretation: the transition state occupies a high-energy partition state $(n^\ddagger, \ell^\ddagger, m^\ddagger, s^\ddagger)$. The activation energy $E_a$ is the energy difference between this state and the reactant ground states.
+
+\subsection{Catalysis as Partition Lowering}
+
+A catalyst lowers the activation energy by stabilizing the transition state. In partition terms, the catalyst creates a new reaction pathway with lower partition depth:
+\begin{equation}
+n^\ddagger_{\text{catalyzed}} < n^\ddagger_{\text{uncatalyzed}}
+\end{equation}
+
+The rate enhancement is:
+\begin{equation}
+\frac{k_{\text{catalyzed}}}{k_{\text{uncatalyzed}}} = \frac{z^\ddagger_{\text{cat}}}{z^\ddagger_{\text{uncat}}}\exp\left(-\frac{\Delta E_a}{\kB T}\right)
+\end{equation}
+
+where $\Delta E_a = E_{a,\text{cat}} - E_{a,\text{uncat}} < 0$.
+
+\subsection{Enzyme Kinetics from Partition Dynamics}
+
+Enzyme-catalyzed reactions follow Michaelis-Menten kinetics:
+\begin{equation}
+v = \frac{V_{\max}[S]}{K_M + [S]}
+\end{equation}
+
+where $v$ is the reaction rate, $[S]$ is substrate concentration, $V_{\max}$ is maximum rate, and $K_M$ is the Michaelis constant.
+
+In partition terms, the enzyme $E$ and substrate $S$ form a complex $ES$ occupying a specific partition state:
+\begin{equation}
+E + S \rightleftharpoons ES \rightarrow E + P
+\end{equation}
+
+The Michaelis constant is:
+\begin{equation}
+K_M = \frac{k_{-1} + k_2}{k_1} = \frac{z_E z_S}{z_{ES}}\exp\left(-\frac{\Delta G_{\text{bind}}}{\kB T}\right)
+\end{equation}
+
+where $\Delta G_{\text{bind}}$ is the binding free energy.
+
+\subsection{Autocatalysis and Partition Cascades}
+
+In autocatalytic reactions, the product catalyzes its own formation:
+\begin{equation}
+A + P \rightarrow 2P
+\end{equation}
+
+The rate equation is:
+\begin{equation}
+\frac{d[P]}{dt} = k[A][P]
+\end{equation}
+
+This exhibits exponential growth until $[A]$ is depleted.
+
+In partition terms, autocatalysis is a cascade: occupation of product partition state $P$ facilitates transitions from reactant state $A$ to product state $P$. This creates a positive feedback loop in partition occupancy.
+
+\subsection{Oscillatory Reactions and Partition Cycles}
+
+Certain reaction networks exhibit sustained oscillations. The Belousov-Zhabotinsky reaction is a canonical example:
+\begin{align}
+A + Y &\rightarrow X \\
+X + Y &\rightarrow 2P \\
+B + X &\rightarrow 2X + Z \\
+2X &\rightarrow A + P \\
+Z &\rightarrow fY
+\end{align}
+
+where $A$, $B$ are reactants, $X$, $Y$, $Z$ are intermediates, and $P$ is a product.
+
+The concentrations $[X]$, $[Y]$, $[Z]$ oscillate with period $\tau \sim 10$–100 s. In partition terms, this is a limit cycle in partition occupancy space: the system traverses a closed trajectory $(n_X(t), n_Y(t), n_Z(t))$ in partition coordinate space.
+
+The oscillation period is determined by the partition transition rates:
+\begin{equation}
+\tau \sim \frac{1}{k_{\text{min}}}
+\end{equation}
+
+where $k_{\text{min}}$ is the slowest rate constant in the cycle.
+
+\subsection{Partition Interpretation}
+
+Chemical equilibrium is a balance of partition occupancies: the rate of transitions from reactant states to product states equals the rate of reverse transitions. The equilibrium constant $K_{\text{eq}}$ quantifies the ratio of partition capacities.
+
+Catalysis lowers partition barriers, increasing transition rates without altering equilibrium positions. Autocatalysis creates partition cascades, where occupation of product states facilitates further transitions. Oscillatory reactions correspond to limit cycles in partition space.
+
+The triple equivalence (Theorem~\ref{thm:triple_equivalence}) implies that chemical dynamics can be equivalently described as:
+\begin{enumerate}[noitemsep]
+    \item Oscillatory dynamics: molecular vibrations and rotations
+    \item Categorical structure: discrete molecular species and reaction pathways
+    \item Partition operations: transitions between partition states $(n,\ell,m,s)$
+\end{enumerate}
+
+\subsection{Experimental Validation}
+
+Transition state theory has been validated for countless reactions. For the hydrogen exchange reaction:
+\begin{equation}
+\text{H} + \text{H}_2 \rightarrow \text{H}_2 + \text{H}
+\end{equation}
+
+measured rate constants follow the Arrhenius form $k = A\exp(-E_a/(\kB T))$ across the range $300 < T < 2000$ K to within $\pm 10\%$. The activation energy $E_a = 40$ kJ/mol agrees with quantum chemical calculations of the transition state energy~\cite{truhlar2002}.
+
+Michaelis-Menten kinetics has been validated for thousands of enzymes. For chymotrypsin-catalyzed peptide hydrolysis, measured $K_M$ values span six orders of magnitude ($10^{-6}$ to $1$ M) depending on substrate, in agreement with partition-based predictions of binding free energies~\cite{fersht1999}.
+
+Autocatalytic reactions exhibit the predicted exponential growth. For the iodate-arsenite reaction:
+\begin{equation}
+\text{IO}_3^- + 5\text{I}^- + 6\text{H}^+ \rightarrow 3\text{I}_2 + 3\text{H}_2\text{O}
+\end{equation}
+
+the iodine product catalyzes the reaction. Measured $[\text{I}_2](t)$ follows exponential growth $[\text{I}_2] \propto \exp(kt)$ with $k = 0.05$ s$^{-1}$ to within $\pm 5\%$~\cite{bray1921}.
+
+The Belousov-Zhabotinsky reaction exhibits sustained oscillations with period $\tau = 60 \pm 5$ s under standard conditions. Measured concentration profiles $[X](t)$, $[Y](t)$, $[Z](t)$ trace limit cycles in phase space, in agreement with partition-based kinetic models~\cite{field1972}.
+
+Enzyme-catalyzed oscillations occur in glycolysis. The phosphofructokinase reaction exhibits oscillations with period $\tau \sim 1$–10 min. Measured ATP and ADP concentrations oscillate with amplitude $\Delta[\text{ATP}]/[\text{ATP}]_0 \sim 0.3$, consistent with partition-based models of allosteric regulation~\cite{hess1969}.
+

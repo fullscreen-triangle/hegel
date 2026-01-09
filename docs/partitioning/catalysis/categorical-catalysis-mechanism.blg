@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: categorical-catalysis-mechanism.aux
+Reallocating 'name_of_file' (item size: 1) to 9 items.
+The style file: plainnat.bst
+Reallocating 'name_of_file' (item size: 1) to 11 items.
+Database file #1: references.bib
+You've used 65 entries,
+            2773 wiz_defined-function locations,
+            1054 strings with 15673 characters,
+and the built_in function-call counts, 29091 in all, are:
+= -- 2774
+> -- 1308
+< -- 51
++ -- 460
+- -- 395
+* -- 2360
+:= -- 4527
+add.period$ -- 250
+call.type$ -- 65
+change.case$ -- 320
+chr.to.int$ -- 65
+cite$ -- 130
+duplicate$ -- 1316
+empty$ -- 2531
+format.name$ -- 486
+if$ -- 6045
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 73
+newline$ -- 387
+num.names$ -- 262
+pop$ -- 541
+preamble$ -- 1
+purify$ -- 261
+quote$ -- 0
+skip$ -- 933
+stack$ -- 0
+substring$ -- 1540
+swap$ -- 69
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 670
+warning$ -- 0
+while$ -- 305
+width$ -- 0
+write$ -- 963

@@ -1,8 +1,10 @@
 # Semantic Navigation Step - Transcendent Observer Navigation Example
 import numpy as np
 from typing import Dict
-from .finite_observer import FiniteObserver
-from .transcendent_observer import TranscendentObserver
+
+from optimisation.finite_observer import FiniteObserver
+from optimisation.transcendent_observer import TranscendentObserver
+
 
 def create_hierarchical_observer_system():
     """

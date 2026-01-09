@@ -1,0 +1,290 @@
+\begin{thebibliography}{46}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Loschmidt(1876)]{loschmidt1876}
+J.~Loschmidt.
+\newblock {\"U}ber den zustand des w{\"a}rmegleichgewichtes eines systems von
+  k{\"o}rpern mit r{\"u}cksicht auf die schwerkraft.
+\newblock \emph{Sitzungsberichte der Akademie der Wissenschaften Wien},
+  73:\penalty0 128--142, 1876.
+
+\bibitem[Thomson(1851)]{kelvin1851}
+W.~Thomson.
+\newblock On the dynamical theory of heat.
+\newblock \emph{Transactions of the Royal Society of Edinburgh}, 20:\penalty0
+  261--288, 1851.
+
+\bibitem[Maxwell(1871)]{maxwell1871}
+J.~C. Maxwell.
+\newblock Theory of heat.
+\newblock 1871.
+
+\bibitem[Landauer(1961)]{landauer1961}
+R.~Landauer.
+\newblock Irreversibility and heat generation in the computing process.
+\newblock \emph{IBM Journal of Research and Development}, 5\penalty0
+  (3):\penalty0 183--191, 1961.
+
+\bibitem[Bennett(1982)]{bennett1982}
+C.~H. Bennett.
+\newblock The thermodynamics of computation---a review.
+\newblock \emph{International Journal of Theoretical Physics}, 21\penalty0
+  (12):\penalty0 905--940, 1982.
+
+\bibitem[Moldover et~al.(1988)Moldover, Trusler, Edwards, Mehl, and
+  Davis]{moldover2014}
+M.~R. Moldover, J.~P.~M. Trusler, T.~J. Edwards, J.~B. Mehl, and R.~S. Davis.
+\newblock Measurement of the universal gas constant $r$ using a spherical
+  acoustic resonator.
+\newblock \emph{Physical Review Letters}, 60\penalty0 (4):\penalty0 249--252,
+  1988.
+
+\bibitem[Hansen and McDonald(1981)]{hansen1981}
+J.~P. Hansen and I.~R. McDonald.
+\newblock Theory of simple liquids.
+\newblock 1981.
+
+\bibitem[Griem(1964)]{griem1964}
+H.~R. Griem.
+\newblock Plasma spectroscopy.
+\newblock 1964.
+
+\bibitem[Thomas et~al.(1994)Thomas, Morfill, Demmel, Goree, Feuerbacher, and
+  M{\"o}hlmann]{thomas1994}
+H.~Thomas, G.~E. Morfill, V.~Demmel, J.~Goree, B.~Feuerbacher, and
+  D.~M{\"o}hlmann.
+\newblock Plasma crystal: Coulomb crystallization in a dusty plasma.
+\newblock \emph{Physical Review Letters}, 73\penalty0 (5):\penalty0 652--655,
+  1994.
+
+\bibitem[Hurricane et~al.(2014)Hurricane, Callahan, Casey,
+  et~al.]{hurricane2014}
+O.~A. Hurricane, D.~A. Callahan, D.~T. Casey, et~al.
+\newblock Fuel gain exceeding unity in an inertially confined fusion implosion.
+\newblock \emph{Nature}, 506:\penalty0 343--348, 2014.
+
+\bibitem[Chandrasekhar(1931)]{chandrasekhar1931}
+S.~Chandrasekhar.
+\newblock The maximum mass of ideal white dwarfs.
+\newblock \emph{Astrophysical Journal}, 74:\penalty0 81--82, 1931.
+
+\bibitem[Koester and Kepler(2009)]{koester2009}
+D.~Koester and S.~O. Kepler.
+\newblock White dwarf stars.
+\newblock \emph{Annual Review of Astronomy and Astrophysics}, 47:\penalty0
+  377--410, 2009.
+
+\bibitem[Hillebrandt and Niemeyer(2000)]{hillebrandt2000}
+W.~Hillebrandt and J.~C. Niemeyer.
+\newblock Type ia supernova explosion models.
+\newblock \emph{Annual Review of Astronomy and Astrophysics}, 38:\penalty0
+  191--230, 2000.
+
+\bibitem[Demorest et~al.(2010)Demorest, Pennucci, Ransom, Roberts, and
+  Hessels]{demorest2010}
+P.~B. Demorest, T.~Pennucci, S.~M. Ransom, M.~S.~E. Roberts, and J.~W.~T.
+  Hessels.
+\newblock A two-solar-mass neutron star measured using shapiro delay.
+\newblock \emph{Nature}, 467:\penalty0 1081--1083, 2010.
+
+\bibitem[Ketterle and Zwierlein(2008)]{ketterle2008}
+W.~Ketterle and M.~W. Zwierlein.
+\newblock Making, probing and understanding ultracold fermi gases.
+\newblock \emph{Rivista del Nuovo Cimento}, 31:\penalty0 247--422, 2008.
+
+\bibitem[Steigman(2007)]{steigman2007}
+G.~Steigman.
+\newblock Primordial nucleosynthesis in the precision cosmology era.
+\newblock \emph{Annual Review of Nuclear and Particle Science}, 57:\penalty0
+  463--491, 2007.
+
+\bibitem[Heinz and Snellings(2013)]{heinz2013}
+U.~Heinz and R.~Snellings.
+\newblock Collective flow and viscosity in relativistic heavy-ion collisions.
+\newblock \emph{Annual Review of Nuclear and Particle Science}, 63:\penalty0
+  123--151, 2013.
+
+\bibitem[Woosley et~al.(2002)Woosley, Heger, and Weaver]{woosley2002}
+S.~E. Woosley, A.~Heger, and T.~A. Weaver.
+\newblock The evolution and explosion of massive stars.
+\newblock \emph{Reviews of Modern Physics}, 74\penalty0 (4):\penalty0
+  1015--1071, 2002.
+
+\bibitem[Anderson et~al.(1995)Anderson, Ensher, Matthews, Wieman, and
+  Cornell]{anderson1995}
+M.~H. Anderson, J.~R. Ensher, M.~R. Matthews, C.~E. Wieman, and E.~A. Cornell.
+\newblock Observation of bose-einstein condensation in a dilute atomic vapor.
+\newblock \emph{Science}, 269:\penalty0 198--201, 1995.
+
+\bibitem[Bradley et~al.(1995)Bradley, Sackett, Tollett, and Hulet]{bradley1995}
+C.~C. Bradley, C.~A. Sackett, J.~J. Tollett, and R.~G. Hulet.
+\newblock Evidence of bose-einstein condensation in an atomic gas with
+  attractive interactions.
+\newblock \emph{Physical Review Letters}, 75\penalty0 (9):\penalty0 1687--1690,
+  1995.
+
+\bibitem[Ensher et~al.(1996)Ensher, Jin, Matthews, Wieman, and
+  Cornell]{ensher1996}
+J.~R. Ensher, D.~S. Jin, M.~R. Matthews, C.~E. Wieman, and E.~A. Cornell.
+\newblock Bose-einstein condensation in a dilute gas: Measurement of energy and
+  ground-state occupation.
+\newblock \emph{Physical Review Letters}, 77\penalty0 (25):\penalty0
+  4984--4987, 1996.
+
+\bibitem[Ho and Zhou(2010)]{ho2004}
+T.-L. Ho and Q.~Zhou.
+\newblock Obtaining the phase diagram and thermodynamic quantities of bulk
+  systems from the densities of trapped gases.
+\newblock \emph{Nature Physics}, 6:\penalty0 131--134, 2010.
+
+\bibitem[Cornish et~al.(2000)Cornish, Claussen, Roberts, Cornell, and
+  Wieman]{cornish2000}
+S.~L. Cornish, N.~R. Claussen, J.~L. Roberts, E.~A. Cornell, and C.~E. Wieman.
+\newblock Stable $^{85}$rb bose-einstein condensates with widely tunable
+  interactions.
+\newblock \emph{Physical Review Letters}, 85\penalty0 (9):\penalty0 1795--1798,
+  2000.
+
+\bibitem[Glyde(1994)]{glyde1994}
+H.~R. Glyde.
+\newblock Excitations in liquid and solid helium.
+\newblock 1994.
+
+\bibitem[Haber and van Oordt(1905)]{haber1909}
+F.~Haber and G.~van Oordt.
+\newblock {\"U}ber die bildung von ammoniak aus den elementen.
+\newblock \emph{Zeitschrift f{\"u}r Anorganische Chemie}, 44:\penalty0
+  341--378, 1905.
+
+\bibitem[Bodenstein(1899)]{bodenstein1899}
+M.~Bodenstein.
+\newblock Gasreaktionen in der chemischen kinetik.
+\newblock \emph{Zeitschrift f{\"u}r Physikalische Chemie}, 29:\penalty0
+  295--314, 1899.
+
+\bibitem[Daniell(1836)]{daniell1836}
+J.~F. Daniell.
+\newblock On voltaic combinations.
+\newblock \emph{Philosophical Transactions of the Royal Society}, 126:\penalty0
+  107--124, 1836.
+
+\bibitem[Murphy and Koop(2005)]{murphy2005}
+D.~M. Murphy and T.~Koop.
+\newblock Review of the vapour pressures of ice and supercooled water for
+  atmospheric applications.
+\newblock \emph{Quarterly Journal of the Royal Meteorological Society},
+  131:\penalty0 1539--1565, 2005.
+
+\bibitem[Scully et~al.(1991)Scully, Englert, and Walther]{scully2000}
+M.~O. Scully, B.-G. Englert, and H.~Walther.
+\newblock Quantum optical tests of complementarity.
+\newblock \emph{Nature}, 351:\penalty0 111--116, 1991.
+
+\bibitem[B{\'e}rut et~al.(2012)B{\'e}rut, Arakelyan, Petrosyan, Ciliberto,
+  Dillenschneider, and Lutz]{berut2012}
+A.~B{\'e}rut, A.~Arakelyan, A.~Petrosyan, S.~Ciliberto, R.~Dillenschneider, and
+  E.~Lutz.
+\newblock Experimental verification of landauer's principle linking information
+  and thermodynamics.
+\newblock \emph{Nature}, 483:\penalty0 187--189, 2012.
+
+\bibitem[Bockel et~al.(2020)Bockel, Agrawal, Liao, Haber, and
+  Caspary]{bockel2020}
+S.~Bockel, A.~Agrawal, K.-C. Liao, J.~Haber, and D.~Caspary.
+\newblock Temporal super-resolution via spectral multiplexing.
+\newblock \emph{Optics Express}, 28:\penalty0 14618--14630, 2020.
+
+\bibitem[Szilard(1929)]{szilard1929}
+L.~Szilard.
+\newblock On the decrease of entropy in a thermodynamic system by the
+  intervention of intelligent beings.
+\newblock \emph{Zeitschrift f{\"u}r Physik}, 53:\penalty0 840--856, 1929.
+
+\bibitem[Blickle and Bechinger(2012)]{blickle2012}
+V.~Blickle and C.~Bechinger.
+\newblock Realization of a micrometre-sized stochastic heat engine.
+\newblock \emph{Nature Physics}, 8:\penalty0 143--146, 2012.
+
+\bibitem[Toyabe et~al.(2010)Toyabe, Sagawa, Ueda, Muneyuki, and
+  Sano]{toyabe2010}
+S.~Toyabe, T.~Sagawa, M.~Ueda, E.~Muneyuki, and M.~Sano.
+\newblock Experimental demonstration of information-to-energy conversion and
+  validation of the generalized jarzynski equality.
+\newblock \emph{Nature Physics}, 6:\penalty0 988--992, 2010.
+
+\bibitem[Koski et~al.(2014)Koski, Maisi, Pekola, and Averin]{koski2014}
+J.~V. Koski, V.~F. Maisi, J.~P. Pekola, and D.~V. Averin.
+\newblock Experimental realization of a szilard engine with a single electron.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 111:\penalty0
+  13786--13789, 2014.
+
+\bibitem[Ro{\ss}nagel et~al.(2016)Ro{\ss}nagel, Dawkins, Tolazzi, Abah, Lutz,
+  Schmidt-Kaler, and Singer]{rossnagel2016}
+J.~Ro{\ss}nagel, S.~T. Dawkins, K.~N. Tolazzi, O.~Abah, E.~Lutz,
+  F.~Schmidt-Kaler, and K.~Singer.
+\newblock A single-atom heat engine.
+\newblock \emph{Science}, 352:\penalty0 325--329, 2016.
+
+\bibitem[Brillouin(1951)]{brillouin1951}
+L.~Brillouin.
+\newblock Maxwell's demon cannot operate: Information and entropy. i.
+\newblock \emph{Journal of Applied Physics}, 22\penalty0 (3):\penalty0
+  334--337, 1951.
+
+\bibitem[Gadsby(2009)]{gadsby2009}
+D.~C. Gadsby.
+\newblock Ion channels versus ion pumps: The principal difference, in
+  principle.
+\newblock \emph{Nature Reviews Molecular Cell Biology}, 10:\penalty0 344--352,
+  2009.
+
+\bibitem[Svoboda et~al.(1993)Svoboda, Schmidt, Schnapp, and Block]{svoboda1993}
+K.~Svoboda, C.~F. Schmidt, B.~J. Schnapp, and S.~M. Block.
+\newblock Direct observation of kinesin stepping by optical trapping
+  interferometry.
+\newblock \emph{Nature}, 365:\penalty0 721--727, 1993.
+
+\bibitem[Horwich et~al.(2007)Horwich, Fenton, Chapman, and Farr]{horwich2007}
+A.~L. Horwich, W.~A. Fenton, E.~Chapman, and G.~W. Farr.
+\newblock Two families of chaperonin: Physiology and mechanism.
+\newblock \emph{Annual Review of Cell and Developmental Biology}, 23:\penalty0
+  115--145, 2007.
+
+\bibitem[Nicholls and Ferguson(2013)]{nicholls2013}
+D.~G. Nicholls and S.~J. Ferguson.
+\newblock Bioenergetics 4.
+\newblock 2013.
+
+\bibitem[Poincar{\'e}(1890)]{poincare1890}
+H.~Poincar{\'e}.
+\newblock Sur le probl{\`e}me des trois corps et les {\'e}quations de la
+  dynamique.
+\newblock \emph{Acta Mathematica}, 13:\penalty0 1--270, 1890.
+
+\bibitem[Fermi et~al.(1955)Fermi, Pasta, and Ulam]{fermi1955}
+E.~Fermi, J.~Pasta, and S.~Ulam.
+\newblock Studies of nonlinear problems.
+\newblock \emph{Los Alamos Report LA-1940}, 1955.
+
+\bibitem[Hahn(1950)]{hahn1950}
+E.~L. Hahn.
+\newblock Spin echoes.
+\newblock \emph{Physical Review}, 80:\penalty0 580--594, 1950.
+
+\bibitem[Robinett(2004)]{robinett2004}
+R.~W. Robinett.
+\newblock Quantum wave packet revivals.
+\newblock \emph{Physics Reports}, 392:\penalty0 1--119, 2004.
+
+\bibitem[Greiner et~al.(2002)Greiner, Mandel, H{\"a}nsch, and
+  Bloch]{greiner2002}
+M.~Greiner, O.~Mandel, T.~W. H{\"a}nsch, and I.~Bloch.
+\newblock Collapse and revival of the matter wave field of a bose-einstein
+  condensate.
+\newblock \emph{Nature}, 419:\penalty0 51--54, 2002.
+
+\end{thebibliography}

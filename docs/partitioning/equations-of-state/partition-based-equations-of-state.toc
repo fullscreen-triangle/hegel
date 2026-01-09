@@ -1,0 +1,166 @@
+\contentsline {section}{\numberline {1}Introduction}{6}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Historical Context}{6}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Theoretical Framework}{6}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Principal Results}{7}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Experimental Validation}{8}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Organization}{8}{subsection.1.5}%
+\contentsline {section}{\numberline {2}Mathematical Foundations}{8}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Axiomatic Framework}{8}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Partition Coordinates from Geometric Constraints}{9}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Radial Partition Depth}{10}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Angular Partition Structure}{10}{subsubsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.3}Orientation and Chirality}{10}{subsubsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.3}S-Entropy Coordinate Space}{11}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Triple Equivalence Structure}{12}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Temperature as Universal Scaling Factor}{13}{subsection.2.5}%
+\contentsline {section}{\numberline {3}Neutral Gas Equation of State}{13}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Partition Function from Geometric Capacity}{14}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Pressure from Partition Geometry}{14}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Internal Energy and Heat Capacity}{14}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Entropy and Free Energy}{15}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Chemical Potential}{15}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Partition Interpretation}{16}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.7}Experimental Validation}{16}{subsection.3.7}%
+\contentsline {section}{\numberline {4}Plasma Equation of State}{16}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Partition Coupling in Charged Systems}{16}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Debye Screening and Partition Cutoff}{17}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Partition Function with Coulomb Coupling}{17}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Plasma Parameter and Coupling Strength}{17}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Weakly Coupled Plasma: Debye-Hückel Limit}{17}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}Internal Energy and Heat Capacity}{18}{subsection.4.6}%
+\contentsline {subsection}{\numberline {4.7}Strongly Coupled Plasma: One-Component Plasma Model}{18}{subsection.4.7}%
+\contentsline {subsection}{\numberline {4.8}Partition Interpretation}{19}{subsection.4.8}%
+\contentsline {subsection}{\numberline {4.9}Experimental Validation}{19}{subsection.4.9}%
+\contentsline {section}{\numberline {5}Degenerate Matter Equation of State}{19}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Partition Exclusion and the Pauli Principle}{19}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Fermi Energy from Partition Capacity}{19}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Non-Relativistic Degenerate Electron Gas}{20}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Relativistic Degenerate Electron Gas}{20}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Chandrasekhar Limit}{21}{subsection.5.5}%
+\contentsline {subsection}{\numberline {5.6}Finite Temperature Corrections}{21}{subsection.5.6}%
+\contentsline {subsection}{\numberline {5.7}Partition Interpretation}{22}{subsection.5.7}%
+\contentsline {subsection}{\numberline {5.8}Experimental Validation}{22}{subsection.5.8}%
+\contentsline {section}{\numberline {6}Relativistic Gas Equation of State}{22}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Relativistic Partition Cutoff}{22}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Partition Function with Relativistic Cutoff}{23}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Ultra-Relativistic Limit}{23}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Thermodynamic Consistency and Volume Dependence}{24}{subsection.6.4}%
+\contentsline {subsection}{\numberline {6.5}Heat Capacity and Adiabatic Index}{24}{subsection.6.5}%
+\contentsline {subsection}{\numberline {6.6}Partition Interpretation}{24}{subsection.6.6}%
+\contentsline {subsection}{\numberline {6.7}Experimental Validation}{25}{subsection.6.7}%
+\contentsline {section}{\numberline {7}Bose-Einstein Condensate Equation of State}{25}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Partition Occupancy for Bosons}{25}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Critical Temperature and Condensation}{25}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Equation of State Below $T_c$}{26}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}Equation of State Above $T_c$}{26}{subsection.7.4}%
+\contentsline {subsection}{\numberline {7.5}Interacting Bose Gas: Gross-Pitaevskii Regime}{27}{subsection.7.5}%
+\contentsline {subsection}{\numberline {7.6}Partition Interpretation}{27}{subsection.7.6}%
+\contentsline {subsection}{\numberline {7.7}Experimental Validation}{27}{subsection.7.7}%
+\contentsline {section}{\numberline {8}Free Energy and Thermodynamic Potentials}{28}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Partition Entropy}{28}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Helmholtz Free Energy}{28}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Gibbs Free Energy}{29}{subsection.8.3}%
+\contentsline {subsection}{\numberline {8.4}Comparison with S-Entropy Formulation}{29}{subsection.8.4}%
+\contentsline {subsection}{\numberline {8.5}Chemical Equilibrium from Partition Balance}{29}{subsection.8.5}%
+\contentsline {subsection}{\numberline {8.6}Partition Interpretation}{30}{subsection.8.6}%
+\contentsline {subsection}{\numberline {8.7}Experimental Validation}{30}{subsection.8.7}%
+\contentsline {section}{\numberline {9}Thermodynamic Equilibrium as Trajectory Completion}{31}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Trajectories in S-Entropy Space}{31}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Equilibrium as Recurrence}{31}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}Thermal Equilibrium}{32}{subsection.9.3}%
+\contentsline {subsection}{\numberline {9.4}Mechanical Equilibrium}{33}{subsection.9.4}%
+\contentsline {subsection}{\numberline {9.5}Chemical Equilibrium}{33}{subsection.9.5}%
+\contentsline {subsection}{\numberline {9.6}Relaxation Time and Trajectory Completion}{34}{subsection.9.6}%
+\contentsline {subsection}{\numberline {9.7}Non-Equilibrium Trajectories}{34}{subsection.9.7}%
+\contentsline {subsection}{\numberline {9.8}Partition Interpretation}{34}{subsection.9.8}%
+\contentsline {subsection}{\numberline {9.9}Experimental Implications}{34}{subsection.9.9}%
+\contentsline {section}{\numberline {10}Resolution of Loschmidt's Paradox}{35}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Statement of the Paradox}{35}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}Resolution I: Relativistic Impossibility}{35}{subsection.10.2}%
+\contentsline {subsubsection}{\numberline {10.2.1}Velocity Distribution After Expansion}{35}{subsubsection.10.2.1}%
+\contentsline {subsubsection}{\numberline {10.2.2}Relativistic Constraint on Velocity Reversal}{36}{subsubsection.10.2.2}%
+\contentsline {subsubsection}{\numberline {10.2.3}Superluminal Velocity Requirement}{36}{subsubsection.10.2.3}%
+\contentsline {subsection}{\numberline {10.3}Resolution II: Categorical Temporal Irreversibility}{37}{subsection.10.3}%
+\contentsline {subsubsection}{\numberline {10.3.1}Time Reversal vs. Trajectory Reversal}{37}{subsubsection.10.3.1}%
+\contentsline {subsubsection}{\numberline {10.3.2}Categorical Clock and Temporal Direction}{37}{subsubsection.10.3.2}%
+\contentsline {subsubsection}{\numberline {10.3.3}Spectral Multiplexing and Temporal Resolution}{37}{subsubsection.10.3.3}%
+\contentsline {subsubsection}{\numberline {10.3.4}Molecular Image Encoding and Structural Irreversibility}{38}{subsubsection.10.3.4}%
+\contentsline {subsection}{\numberline {10.4}Partition Interpretation}{38}{subsection.10.4}%
+\contentsline {subsection}{\numberline {10.5}Experimental Implications}{38}{subsection.10.5}%
+\contentsline {section}{\numberline {11}Resolution of Kelvin's Heat Engine Paradox}{39}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Statement of Kelvin's Principle}{39}{subsection.11.1}%
+\contentsline {subsection}{\numberline {11.2}Partition Capacity and Work Extraction}{39}{subsection.11.2}%
+\contentsline {subsection}{\numberline {11.3}Entropy and Partition Multiplicity}{40}{subsection.11.3}%
+\contentsline {subsection}{\numberline {11.4}Carnot Cycle in Partition Space}{40}{subsection.11.4}%
+\contentsline {subsection}{\numberline {11.5}Impossibility of $\eta = 1$}{41}{subsection.11.5}%
+\contentsline {subsection}{\numberline {11.6}Maxwell's Demon and Information Erasure}{41}{subsection.11.6}%
+\contentsline {subsection}{\numberline {11.7}Szilard Engine and Single-Particle Work Extraction}{42}{subsection.11.7}%
+\contentsline {subsection}{\numberline {11.8}Partition Interpretation}{42}{subsection.11.8}%
+\contentsline {subsection}{\numberline {11.9}Experimental Validation}{42}{subsection.11.9}%
+\contentsline {section}{\numberline {12}Resolution of Maxwell's Demon Paradox}{43}{section.12}%
+\contentsline {subsection}{\numberline {12.1}Classical Formulation of the Paradox}{43}{subsection.12.1}%
+\contentsline {subsection}{\numberline {12.2}Information-Theoretic Resolution}{43}{subsection.12.2}%
+\contentsline {subsubsection}{\numberline {12.2.1}Measurement Cost}{43}{subsubsection.12.2.1}%
+\contentsline {subsubsection}{\numberline {12.2.2}Memory and Erasure Cost}{44}{subsubsection.12.2.2}%
+\contentsline {subsection}{\numberline {12.3}Partition-Based Resolution}{44}{subsection.12.3}%
+\contentsline {subsubsection}{\numberline {12.3.1}Partition States of Demon and Gas}{44}{subsubsection.12.3.1}%
+\contentsline {subsubsection}{\numberline {12.3.2}Categorical Irreversibility of Measurement}{45}{subsubsection.12.3.2}%
+\contentsline {subsubsection}{\numberline {12.3.3}Biological Maxwell Demons}{45}{subsubsection.12.3.3}%
+\contentsline {subsection}{\numberline {12.4}Oscillatory Apertures as Partition Filters}{46}{subsection.12.4}%
+\contentsline {subsection}{\numberline {12.5}H$^+$-O$_2$-PCET System as Categorical Clock}{46}{subsection.12.5}%
+\contentsline {subsection}{\numberline {12.6}Partition Interpretation}{46}{subsection.12.6}%
+\contentsline {subsection}{\numberline {12.7}Experimental Validation}{47}{subsection.12.7}%
+\contentsline {section}{\numberline {13}Poincaré Computing Framework}{47}{section.13}%
+\contentsline {subsection}{\numberline {13.1}Poincaré Recurrence in Bounded Phase Space}{48}{subsection.13.1}%
+\contentsline {subsection}{\numberline {13.2}S-Entropy Space as Computational Substrate}{48}{subsection.13.2}%
+\contentsline {subsection}{\numberline {13.3}Equations of State as Trajectory Constraints}{48}{subsection.13.3}%
+\contentsline {subsubsection}{\numberline {13.3.1}Ideal Gas Constraint}{48}{subsubsection.13.3.1}%
+\contentsline {subsubsection}{\numberline {13.3.2}Plasma Constraint}{48}{subsubsection.13.3.2}%
+\contentsline {subsubsection}{\numberline {13.3.3}Degenerate Matter Constraint}{49}{subsubsection.13.3.3}%
+\contentsline {subsection}{\numberline {13.4}Paradox Resolutions as Trajectory Impossibilities}{49}{subsection.13.4}%
+\contentsline {subsubsection}{\numberline {13.4.1}Loschmidt Paradox}{49}{subsubsection.13.4.1}%
+\contentsline {subsubsection}{\numberline {13.4.2}Kelvin Paradox}{49}{subsubsection.13.4.2}%
+\contentsline {subsubsection}{\numberline {13.4.3}Maxwell Demon Paradox}{49}{subsubsection.13.4.3}%
+\contentsline {subsection}{\numberline {13.5}Computational Algorithm}{50}{subsection.13.5}%
+\contentsline {subsubsection}{\numberline {13.5.1}Trajectory Integration}{50}{subsubsection.13.5.1}%
+\contentsline {subsubsection}{\numberline {13.5.2}Recurrence Detection}{50}{subsubsection.13.5.2}%
+\contentsline {subsubsection}{\numberline {13.5.3}Equilibrium Computation}{50}{subsubsection.13.5.3}%
+\contentsline {subsection}{\numberline {13.6}Processor-Memory Unification}{50}{subsection.13.6}%
+\contentsline {subsection}{\numberline {13.7}Ternary Representation and Triple Equivalence}{51}{subsection.13.7}%
+\contentsline {subsection}{\numberline {13.8}Miraculous Solutions and Attractor Basins}{51}{subsection.13.8}%
+\contentsline {subsection}{\numberline {13.9}Experimental Validation via Virtual Gas Ensembles}{51}{subsection.13.9}%
+\contentsline {subsection}{\numberline {13.10}Categorical Virtual Instruments}{51}{subsection.13.10}%
+\contentsline {subsection}{\numberline {13.11}Computational Complexity}{52}{subsection.13.11}%
+\contentsline {subsection}{\numberline {13.12}Partition Interpretation}{52}{subsection.13.12}%
+\contentsline {subsection}{\numberline {13.13}Experimental Validation}{52}{subsection.13.13}%
+\contentsline {section}{\numberline {14}Experimental Validation and Predictions}{53}{section.14}%
+\contentsline {subsection}{\numberline {14.1}Summary of Experimental Validations}{53}{subsection.14.1}%
+\contentsline {subsubsection}{\numberline {14.1.1}Neutral Gas Equation of State}{53}{subsubsection.14.1.1}%
+\contentsline {subsubsection}{\numberline {14.1.2}Plasma Equation of State}{53}{subsubsection.14.1.2}%
+\contentsline {subsubsection}{\numberline {14.1.3}Degenerate Matter Equation of State}{53}{subsubsection.14.1.3}%
+\contentsline {subsubsection}{\numberline {14.1.4}Relativistic Gas Equation of State}{53}{subsubsection.14.1.4}%
+\contentsline {subsubsection}{\numberline {14.1.5}Bose-Einstein Condensate Equation of State}{54}{subsubsection.14.1.5}%
+\contentsline {subsubsection}{\numberline {14.1.6}Loschmidt Paradox Resolution}{54}{subsubsection.14.1.6}%
+\contentsline {subsubsection}{\numberline {14.1.7}Kelvin Paradox Resolution}{54}{subsubsection.14.1.7}%
+\contentsline {subsubsection}{\numberline {14.1.8}Maxwell Demon Paradox Resolution}{54}{subsubsection.14.1.8}%
+\contentsline {subsection}{\numberline {14.2}Novel Experimental Predictions}{54}{subsection.14.2}%
+\contentsline {subsubsection}{\numberline {14.2.1}Prediction 1: Partition Extinction in Superconductors}{54}{subsubsection.14.2.1}%
+\contentsline {subsubsection}{\numberline {14.2.2}Prediction 2: Temperature as Scaling Factor}{55}{subsubsection.14.2.2}%
+\contentsline {subsubsection}{\numberline {14.2.3}Prediction 3: S-Entropy Coordinate Universality}{55}{subsubsection.14.2.3}%
+\contentsline {subsubsection}{\numberline {14.2.4}Prediction 4: Poincaré Recurrence in Virtual Gas Ensembles}{55}{subsubsection.14.2.4}%
+\contentsline {subsubsection}{\numberline {14.2.5}Prediction 5: Categorical Virtual Instrument Equivalence}{56}{subsubsection.14.2.5}%
+\contentsline {subsubsection}{\numberline {14.2.6}Prediction 6: Relativistic Cutoff in Gas Expansion}{56}{subsubsection.14.2.6}%
+\contentsline {subsection}{\numberline {14.3}Proposed Experimental Protocols}{56}{subsection.14.3}%
+\contentsline {subsubsection}{\numberline {14.3.1}Protocol 1: S-Entropy Coordinate Mapping}{56}{subsubsection.14.3.1}%
+\contentsline {subsubsection}{\numberline {14.3.2}Protocol 2: Partition Extinction Measurement}{57}{subsubsection.14.3.2}%
+\contentsline {subsubsection}{\numberline {14.3.3}Protocol 3: Virtual Gas Ensemble Simulation}{57}{subsubsection.14.3.3}%
+\contentsline {subsubsection}{\numberline {14.3.4}Protocol 4: Categorical Virtual Instrument Calibration}{57}{subsubsection.14.3.4}%
+\contentsline {subsection}{\numberline {14.4}Comparison with Statistical Mechanics}{58}{subsection.14.4}%
+\contentsline {subsection}{\numberline {14.5}Experimental Feasibility Assessment}{58}{subsection.14.5}%
+\contentsline {section}{\numberline {15}Discussion}{59}{section.15}%
+\contentsline {subsection}{\numberline {15.1}Resolution of Historical Paradoxes}{59}{subsection.15.1}%
+\contentsline {subsection}{\numberline {15.2}Relationship to Statistical Mechanics}{59}{subsection.15.2}%
+\contentsline {subsection}{\numberline {15.3}Temperature as Scaling Factor}{60}{subsection.15.3}%
+\contentsline {subsection}{\numberline {15.4}Poincaré Computing Framework}{61}{subsection.15.4}%
+\contentsline {subsection}{\numberline {15.5}Experimental Predictions}{62}{subsection.15.5}%
+\contentsline {section}{\numberline {16}Conclusion}{62}{section.16}%

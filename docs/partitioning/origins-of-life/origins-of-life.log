@@ -1,0 +1,1844 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.7.27)  15 DEC 2025 07:29
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**./origins-of-life.tex
+(origins-of-life.tex
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-04>
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
+Document Class: article 2023/05/17 v1.4n Standard LaTeX document class
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/base\size12.clo
+File: size12.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count187
+\c@section=\count188
+\c@subsection=\count189
+\c@subsubsection=\count190
+\c@paragraph=\count191
+\c@subparagraph=\count192
+\c@figure=\count193
+\c@table=\count194
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
+\bibindent=\dimen140
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
+Package: inputenc 2021/02/14 v1.3d Input encoding file
+\inpenc@prehook=\toks17
+\inpenc@posthook=\toks18
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
+Package: amsmath 2023/05/13 v2.17o AMS math features
+\@mathmargin=\skip50
+
+For additional information on amsmath, use the `?' option.
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks19
+\ex@=\dimen141
+))
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen142
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count195
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count196
+\leftroot@=\count197
+LaTeX Info: Redefining \overline on input line 399.
+LaTeX Info: Redefining \colon on input line 410.
+\classnum@=\count198
+\DOTSCASE@=\count199
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box51
+\strutbox@=\box52
+LaTeX Info: Redefining \big on input line 722.
+LaTeX Info: Redefining \Big on input line 723.
+LaTeX Info: Redefining \bigg on input line 724.
+LaTeX Info: Redefining \Bigg on input line 725.
+\big@size=\dimen143
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count266
+LaTeX Info: Redefining \bmod on input line 905.
+LaTeX Info: Redefining \pmod on input line 910.
+LaTeX Info: Redefining \smash on input line 940.
+LaTeX Info: Redefining \relbar on input line 970.
+LaTeX Info: Redefining \Relbar on input line 971.
+\c@MaxMatrixCols=\count267
+\dotsspace@=\muskip16
+\c@parentequation=\count268
+\dspbrk@lvl=\count269
+\tag@help=\toks20
+\row@=\count270
+\column@=\count271
+\maxfields@=\count272
+\andhelp@=\toks21
+\eqnshift@=\dimen144
+\alignsep@=\dimen145
+\tagshift@=\dimen146
+\tagwidth@=\dimen147
+\totwidth@=\dimen148
+\lineht@=\dimen149
+\@envbody=\toks22
+\multlinegap=\skip51
+\multlinetaggap=\skip52
+\mathdisplay@stack=\toks23
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)) (C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/amscls\amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks24
+\thm@bodyfont=\toks25
+\thm@headfont=\toks26
+\thm@notefont=\toks27
+\thm@headpunct=\toks28
+\thm@preskip=\skip53
+\thm@postskip=\skip54
+\thm@headsep=\skip55
+\dth@everypar=\toks29
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/mathtools\mathtools.st
+y
+Package: mathtools 2024/10/04 v1.31 mathematical typesetting tools
+ (C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks30
+) (C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/tools\calc.sty
+Package: calc 2023/07/08 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count273
+\calc@Bcount=\count274
+\calc@Adimen=\dimen150
+\calc@Bdimen=\dimen151
+\calc@Askip=\skip56
+\calc@Bskip=\skip57
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count275
+\calc@Cskip=\skip58
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/mathtools\mhsetup.sty
+Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
+)
+\g_MT_multlinerow_int=\count276
+\l_MT_multwidth_dim=\dimen152
+\origjot=\skip59
+\l_MT_shortvdotswithinadjustabove_dim=\dimen153
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen154
+\l_MT_above_intertext_sep=\dimen155
+\l_MT_below_intertext_sep=\dimen156
+\l_MT_above_shortintertext_sep=\dimen157
+\l_MT_below_shortintertext_sep=\dimen158
+\xmathstrut@box=\box53
+\xmathstrut@dim=\dimen159
+) (C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/physics\physics.sty
+Package: physics 
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xpar
+se.sty
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
+Package: expl3 2024-01-04 L3 programming layer (loader) 
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pd
+ftex.def
+File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count277
+\l__pdf_internal_box=\box54
+))
+Package: xparse 2023-10-10 L3 Experimental document command parser
+))
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.
+cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.de
+f
+File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen160
+\Gin@req@width=\dimen161
+) (C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count278
+\float@exts=\toks31
+\float@box=\box55
+\@float@everytoks=\toks32
+\@floatcapt=\box56
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen162
+\lightrulewidth=\dimen163
+\cmidrulewidth=\dimen164
+\belowrulesep=\dimen165
+\belowbottomsep=\dimen166
+\aboverulesep=\dimen167
+\abovetopsep=\dimen168
+\cmidrulesep=\dimen169
+\cmidrulekern=\dimen170
+\defaultaddspace=\dimen171
+\@cmidla=\count279
+\@cmidlb=\count280
+\@aboverulesep=\dimen172
+\@belowrulesep=\dimen173
+\@thisruleclass=\count281
+\@lastruleclass=\count282
+\@thisrulewidth=\dimen174
+) (C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
+Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
+\col@sep=\dimen175
+\ar@mcellbox=\box57
+\extrarowheight=\dimen176
+\NC@list=\toks33
+\extratabsurround=\skip60
+\backup@length=\skip61
+\ar@cellbox=\box58
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/multirow\multirow.sty
+Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
+\multirow@colwidth=\skip62
+\multirow@cntb=\count283
+\multirow@dima=\skip63
+\bigstrutjot=\dimen177
+) (C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/siunitx\siunitx.sty
+Package: siunitx 2025-07-09 v3.4.14 A comprehensive (SI) units package
+\l__siunitx_number_uncert_offset_int=\count284
+\l__siunitx_number_exponent_fixed_int=\count285
+\l__siunitx_number_min_decimal_int=\count286
+\l__siunitx_number_min_integer_int=\count287
+\l__siunitx_number_round_precision_int=\count288
+\l__siunitx_number_lower_threshold_int=\count289
+\l__siunitx_number_upper_threshold_int=\count290
+\l__siunitx_number_group_first_int=\count291
+\l__siunitx_number_group_size_int=\count292
+\l__siunitx_number_group_minimum_int=\count293
+\l__siunitx_angle_tmp_dim=\dimen178
+\l__siunitx_angle_marker_box=\box59
+\l__siunitx_angle_unit_box=\box60
+\l__siunitx_compound_count_int=\count294
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/translations\translati
+ons.sty
+Package: translations 2022/02/05 v1.12 internationalization of LaTeX2e packages
+ (CN)
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count295
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmd
+s.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.
+sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+) (C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+))
+\l__siunitx_table_tmp_box=\box61
+\l__siunitx_table_tmp_dim=\dimen179
+\l__siunitx_table_column_width_dim=\dimen180
+\l__siunitx_table_integer_box=\box62
+\l__siunitx_table_decimal_box=\box63
+\l__siunitx_table_uncert_box=\box64
+\l__siunitx_table_before_box=\box65
+\l__siunitx_table_after_box=\box66
+\l__siunitx_table_before_dim=\dimen181
+\l__siunitx_table_carry_dim=\dimen182
+\l__siunitx_unit_tmp_int=\count296
+\l__siunitx_unit_position_int=\count297
+\l__siunitx_unit_total_int=\count298
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
+Package: hyperref 2023-11-26 v7.01g Hypertext links for LaTeX
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.st
+y
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefin
+ekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescape.
+sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/letltxmacro\letltxmacr
+o.sty
+Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/auxhook\auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
+Package: nameref 2023-11-26 v2.56 Cross-referencing by name of section
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\getti
+tlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.st
+y
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+))
+\c@section@level=\count299
+)
+\@linkdim=\dimen183
+\Hy@linkcounter=\count300
+\Hy@pagecounter=\count301
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
+File: pd1enc.def 2023-11-26 v7.01g Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+\Hy@SavedSpaceFactor=\count302
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
+File: puenc.def 2023-11-26 v7.01g Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Hyper figures OFF on input line 4181.
+Package hyperref Info: Link nesting OFF on input line 4186.
+Package hyperref Info: Hyper index ON on input line 4189.
+Package hyperref Info: Plain pages OFF on input line 4196.
+Package hyperref Info: Backreferencing OFF on input line 4201.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4448.
+\c@Hy@tempcnt=\count303
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4786.
+\XeTeXLinkMargin=\dimen184
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintcal
+c.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count304
+\Field@Width=\dimen185
+\Fld@charsize=\dimen186
+Package hyperref Info: Hyper figures OFF on input line 6065.
+Package hyperref Info: Link nesting OFF on input line 6070.
+Package hyperref Info: Hyper index ON on input line 6073.
+Package hyperref Info: backreferencing OFF on input line 6080.
+Package hyperref Info: Link coloring OFF on input line 6085.
+Package hyperref Info: Link coloring with OCG OFF on input line 6090.
+Package hyperref Info: PDF/A mode OFF on input line 6095.
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/base\atbegshi-ltx.sty
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
+)
+\Hy@abspage=\count305
+\c@Item=\count306
+\c@Hfootnote=\count307
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+ (C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
+File: hpdftex.def 2023-11-26 v7.01g Hyperref driver for pdfTeX
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/base\atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
+kage
+with kernel methods
+)
+\Fld@listcount=\count308
+\c@bookmark@seq@number=\count309
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfi
+lecheck.sty
+Package: rerunfilecheck 2025-06-21 v1.11 Rerun checks for auxiliary files (HO)
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\unique
+counter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+84.
+)
+\Hy@SectionHShift=\skip64
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/cleveref\cleveref.sty
+Package: cleveref 2018/03/27 v0.21.4 Intelligent cross-referencing
+Package cleveref Info: `hyperref' support loaded on input line 2370.
+LaTeX Info: Redefining \cref on input line 2370.
+LaTeX Info: Redefining \Cref on input line 2370.
+LaTeX Info: Redefining \crefrange on input line 2370.
+LaTeX Info: Redefining \Crefrange on input line 2370.
+LaTeX Info: Redefining \cpageref on input line 2370.
+LaTeX Info: Redefining \Cpageref on input line 2370.
+LaTeX Info: Redefining \cpagerefrange on input line 2370.
+LaTeX Info: Redefining \Cpagerefrange on input line 2370.
+LaTeX Info: Redefining \labelcref on input line 2370.
+LaTeX Info: Redefining \labelcpageref on input line 2370.
+Package cleveref Info: `amsthm' support loaded on input line 3026.
+) (C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/natbib\natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip65
+\bibsep=\skip66
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count310
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+)
+\Gm@cnth=\count311
+\Gm@cntv=\count312
+\c@Gm@tempcnt=\count313
+\Gm@bindingoffset=\dimen187
+\Gm@wd@mp=\dimen188
+\Gm@odd@mp=\dimen189
+\Gm@even@mp=\dimen190
+\Gm@layoutwidth=\dimen191
+\Gm@layoutheight=\dimen192
+\Gm@layouthoffset=\dimen193
+\Gm@layoutvoffset=\dimen194
+\Gm@dimlist=\toks34
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg)
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty
+Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
+
+\f@nch@headwidth=\skip67
+\f@nch@offset@elh=\skip68
+\f@nch@offset@erh=\skip69
+\f@nch@offset@olh=\skip70
+\f@nch@offset@orh=\skip71
+\f@nch@offset@elf=\skip72
+\f@nch@offset@erf=\skip73
+\f@nch@offset@olf=\skip74
+\f@nch@offset@orf=\skip75
+\f@nch@height=\skip76
+\f@nch@footalignment=\skip77
+\f@nch@widthL=\skip78
+\f@nch@widthC=\skip79
+\f@nch@widthR=\skip80
+\@temptokenb=\toks35
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/pgf/frontendlayer\tikz
+.sty
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgf.sty
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfrcs.s
+ty
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfuti
+l-common.tex
+\pgfutil@everybye=\toks36
+\pgfutil@tempdima=\dimen195
+\pgfutil@tempdimb=\dimen196
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfuti
+l-latex.def
+\pgfutil@abb=\box67
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfrcs
+.code.tex
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf\pgf.revision.tex
+)
+Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
+))
+Package: pgf 2023-01-15 v3.1.10 (3.1.10)
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgfcore
+.sty
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/pgf/systemlayer\pgfsys
+.sty
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfs
+ys.code.tex
+Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkey
+s.code.tex
+\pgfkeys@pathtoks=\toks37
+\pgfkeys@temptoks=\toks38
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkey
+slibraryfiltered.code.tex
+\pgfkeys@tmptoks=\toks39
+))
+\pgf@x=\dimen197
+\pgf@y=\dimen198
+\pgf@xa=\dimen199
+\pgf@ya=\dimen256
+\pgf@xb=\dimen257
+\pgf@yb=\dimen258
+\pgf@xc=\dimen259
+\pgf@yc=\dimen260
+\pgf@xd=\dimen261
+\pgf@yd=\dimen262
+\w@pgf@writea=\write3
+\r@pgf@reada=\read2
+\c@pgf@counta=\count314
+\c@pgf@countb=\count315
+\c@pgf@countc=\count316
+\c@pgf@countd=\count317
+\t@pgf@toka=\toks40
+\t@pgf@tokb=\toks41
+\t@pgf@tokc=\toks42
+\pgf@sys@id@count=\count318
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf.
+cfg
+File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
+)
+Driver file for pgf: pgfsys-pdftex.def
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfs
+ys-pdftex.def
+File: pgfsys-pdftex.def 2023-01-15 v3.1.10 (3.1.10)
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfs
+ys-common-pdf.def
+File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
+)))
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfs
+yssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfsyssoftpath@smallbuffer@items=\count319
+\pgfsyssoftpath@bigbuffer@items=\count320
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfs
+ysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
+Package: xcolor 2023/11/15 v3.01 LaTeX color extensions (UK)
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 274.
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx
+)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1350.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1354.
+Package xcolor Info: Model `RGB' extended on input line 1366.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1368.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1372.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
+re.code.tex
+Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.cod
+e.tex
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathutil
+.code.tex)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathpars
+er.code.tex
+\pgfmath@dimen=\dimen263
+\pgfmath@count=\count321
+\pgfmath@box=\box68
+\pgfmath@toks=\toks43
+\pgfmath@stack@operand=\toks44
+\pgfmath@stack@operation=\toks45
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunc
+tions.code.tex)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunc
+tions.basic.code.tex)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunc
+tions.trigonometric.code.tex)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunc
+tions.random.code.tex)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunc
+tions.comparison.code.tex)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunc
+tions.base.code.tex)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunc
+tions.round.code.tex)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunc
+tions.misc.code.tex)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunc
+tions.integerarithmetics.code.tex)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathcalc
+.code.tex)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfloa
+t.code.tex
+\c@pgfmathroundto@lastzeros=\count322
+))
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfint.code
+.tex)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
+repoints.code.tex
+File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@picminx=\dimen264
+\pgf@picmaxx=\dimen265
+\pgf@picminy=\dimen266
+\pgf@picmaxy=\dimen267
+\pgf@pathminx=\dimen268
+\pgf@pathmaxx=\dimen269
+\pgf@pathminy=\dimen270
+\pgf@pathmaxy=\dimen271
+\pgf@xx=\dimen272
+\pgf@xy=\dimen273
+\pgf@yx=\dimen274
+\pgf@yy=\dimen275
+\pgf@zx=\dimen276
+\pgf@zy=\dimen277
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
+repathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@path@lastx=\dimen278
+\pgf@path@lasty=\dimen279
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
+repathusage.code.tex
+File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@shorten@end@additional=\dimen280
+\pgf@shorten@start@additional=\dimen281
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
+rescopes.code.tex
+File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfpic=\box69
+\pgf@hbox=\box70
+\pgf@layerbox@main=\box71
+\pgf@picture@serial@count=\count323
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
+regraphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgflinewidth=\dimen282
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
+retransformations.code.tex
+File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@pt@x=\dimen283
+\pgf@pt@y=\dimen284
+\pgf@pt@temp=\dimen285
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
+requick.code.tex
+File: pgfcorequick.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
+reobjects.code.tex
+File: pgfcoreobjects.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
+repathprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
+rearrows.code.tex
+File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfarrowsep=\dimen286
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
+reshade.code.tex
+File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@max=\dimen287
+\pgf@sys@shading@range@num=\count324
+\pgf@shadingcount=\count325
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
+reimage.code.tex
+File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
+reexternal.code.tex
+File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfexternal@startupbox=\box72
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
+relayers.code.tex
+File: pgfcorelayers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
+retransparency.code.tex
+File: pgfcoretransparency.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
+repatterns.code.tex
+File: pgfcorepatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
+rerdf.code.tex
+File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)))
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodul
+eshapes.code.tex
+File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfnodeparttextbox=\box73
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodul
+eplot.code.tex
+File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfc
+omp-version-0-65.sty
+Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
+\pgf@nodesepstart=\dimen288
+\pgf@nodesepend=\dimen289
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfc
+omp-version-1-18.sty
+Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
+))
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgffor.s
+ty
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfkeys.
+sty
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkey
+s.code.tex))
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/pgf/math\pgfmath.sty
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.cod
+e.tex))
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgffor
+.code.tex
+Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
+\pgffor@iter=\dimen290
+\pgffor@skip=\dimen291
+\pgffor@stack=\toks46
+\pgffor@toks=\toks47
+))
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/ti
+kz\tikz.code.tex
+Package: tikz 2023-01-15 v3.1.10 (3.1.10)
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflib
+raryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@plot@mark@count=\count326
+\pgfplotmarksize=\dimen292
+)
+\tikz@lastx=\dimen293
+\tikz@lasty=\dimen294
+\tikz@lastxsaved=\dimen295
+\tikz@lastysaved=\dimen296
+\tikz@lastmovetox=\dimen297
+\tikz@lastmovetoy=\dimen298
+\tikzleveldistance=\dimen299
+\tikzsiblingdistance=\dimen300
+\tikz@figbox=\box74
+\tikz@figbox@bg=\box75
+\tikz@tempbox=\box76
+\tikz@tempbox@bg=\box77
+\tikztreelevel=\count327
+\tikznumberofchildren=\count328
+\tikznumberofcurrentchild=\count329
+\tikz@fig@count=\count330
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodul
+ematrix.code.tex
+File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfmatrixcurrentrow=\count331
+\pgfmatrixcurrentcolumn=\count332
+\pgf@matrix@numberofcolumns=\count333
+)
+\tikz@expandcount=\count334
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/ti
+kz/libraries\tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)))
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/pgfplots\pgfplots.sty
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.re
+vision.tex)
+Package: pgfplots 2021/05/15 v1.18.1 Data Visualization (1.18.1)
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.co
+de.tex
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotscor
+e.code.tex
+\t@pgfplots@toka=\toks48
+\t@pgfplots@tokb=\toks49
+\t@pgfplots@tokc=\toks50
+\pgfplots@tmpa=\dimen301
+\c@pgfplots@coordindex=\count335
+\c@pgfplots@scanlineindex=\count336
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/sys\pgfplot
+ssysgeneric.code.tex))
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\pgfplo
+tslibrary.code.tex)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/oldpgfcompa
+tib\pgfplotsoldpgfsupp_loader.code.tex
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflib
+raryfpu.code.tex)
+Package pgfplots: loading complementary utilities for your pgf version...
+\t@pgf@toka=\toks51
+\t@pgf@tokb=\toks52
+\t@pgf@tokc=\toks53
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/oldpgfcompa
+tib\pgfplotsoldpgfsupp_pgfutil-common-lists.tex))
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplo
+tsutil.code.tex
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructu
+re\pgfplotsliststructure.code.tex)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructu
+re\pgfplotsliststructureext.code.tex)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructu
+re\pgfplotsarray.code.tex
+\c@pgfplotsarray@tmp=\count337
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructu
+re\pgfplotsmatrix.code.tex)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/numtable\pg
+fplotstableshared.code.tex
+\c@pgfplotstable@counta=\count338
+\t@pgfplotstable@a=\toks54
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructu
+re\pgfplotsdeque.code.tex)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplo
+tsbinary.code.tex
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplo
+tsbinary.data.code.tex))
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplo
+tsutil.verb.code.tex)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\pgflib
+rarypgfplots.surfshading.code.tex
+\c@pgfplotslibrarysurf@no=\count339
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/sys\pgflibr
+arypgfplots.surfshading.pgfsys-pdftex.def)))
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplo
+tscolormap.code.tex
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplo
+tscolor.code.tex))
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotssta
+ckedplots.code.tex)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotsplo
+thandlers.code.tex
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotsmes
+hplothandler.code.tex
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotsmes
+hplotimage.code.tex)))
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.sc
+aling.code.tex)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotscoo
+rdprocessing.code.tex)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.er
+rorbars.code.tex)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.ma
+rkers.code.tex)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotstic
+ks.code.tex)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.pa
+ths.code.tex)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/ti
+kz/libraries\tikzlibrarydecorations.code.tex
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodul
+edecorations.code.tex
+\pgfdecoratedcompleteddistance=\dimen302
+\pgfdecoratedremainingdistance=\dimen303
+\pgfdecoratedinputsegmentcompleteddistance=\dimen304
+\pgfdecoratedinputsegmentremainingdistance=\dimen305
+\pgf@decorate@distancetomove=\dimen306
+\pgf@decorate@repeatstate=\count340
+\pgfdecorationsegmentamplitude=\dimen307
+\pgfdecorationsegmentlength=\dimen308
+)
+\tikz@lib@dec@box=\box78
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/ti
+kz/libraries\tikzlibrarydecorations.pathmorphing.code.tex
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/decora
+tions\pgflibrarydecorations.pathmorphing.code.tex))
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/ti
+kz/libraries\tikzlibrarydecorations.pathreplacing.code.tex
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/decora
+tions\pgflibrarydecorations.pathreplacing.code.tex))
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\tikzli
+brarypgfplots.contourlua.code.tex)
+\pgfplots@numplots=\count341
+\pgfplots@xmin@reg=\dimen309
+\pgfplots@xmax@reg=\dimen310
+\pgfplots@ymin@reg=\dimen311
+\pgfplots@ymax@reg=\dimen312
+\pgfplots@zmin@reg=\dimen313
+\pgfplots@zmax@reg=\dimen314
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/ti
+kz/libraries\tikzlibraryplotmarks.code.tex
+File: tikzlibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflib
+raryplotmarks.code.tex
+File: pgflibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)))
+\c@theorem=\count342
+\c@example=\count343
+Package translations Info: No language package found. I am going to use `englis
+h' as default language. on input line 47.
+ (origins-of-life.aux
+
+LaTeX Warning: Label `sec:categorical_oscillation' multiply defined.
+
+
+LaTeX Warning: Label `sec:categorical_oscillation@cref' multiply defined.
+
+
+LaTeX Warning: Label `eq:electric_field' multiply defined.
+
+
+LaTeX Warning: Label `eq:electric_field@cref' multiply defined.
+
+
+LaTeX Warning: Label `eq:energy_estimate' multiply defined.
+
+
+LaTeX Warning: Label `eq:energy_estimate@cref' multiply defined.
+
+
+LaTeX Warning: Label `eq:ee_final' multiply defined.
+
+
+LaTeX Warning: Label `eq:ee_final@cref' multiply defined.
+
+
+LaTeX Warning: Label `thm:cvalue_resolution' multiply defined.
+
+
+LaTeX Warning: Label `thm:cvalue_resolution@cref' multiply defined.
+
+)
+\openout1 = `origins-of-life.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.m
+kii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count344
+\scratchdimen=\dimen315
+\scratchbox=\box79
+\nofMPsegments=\count345
+\nofMParguments=\count346
+\everyMPshowfont=\toks55
+\MPscratchCnt=\count347
+\MPscratchDim=\dimen316
+\MPnumerator=\count348
+\makeMPintoPDFobject=\count349
+\everyMPtoPDFconversion=\toks56
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-
+base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.
+cfg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
+
+Package siunitx Warning: Detected the "physics" package:
+(siunitx)                omitting definition of \qty.
+(siunitx)                
+(siunitx)                If you want to use \qty with the siunitx definition,
+(siunitx)                add 
+(siunitx)                
+(siunitx)                    \AtBeginDocument{\RenewCommandCopy\qty\SI}
+(siunitx)                
+(siunitx)                to your preamble.
+
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/translations/dicts\tra
+nslations-basic-dictionary-english.trsl
+File: translations-basic-dictionary-english.trsl (english translation file `tra
+nslations-basic-dictionary')
+)
+Package translations Info: loading dictionary `translations-basic-dictionary' f
+or `english'. on input line 47.
+Package hyperref Info: Link coloring OFF on input line 47.
+ (origins-of-life.out)
+(origins-of-life.out)
+\@outlinefile=\write4
+\openout4 = `origins-of-life.out'.
+
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(72.26999pt, 452.9679pt, 72.26999pt)
+* v-part:(T,H,B)=(72.26999pt, 700.50687pt, 72.26999pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=452.9679pt
+* \textheight=700.50687pt
+* \oddsidemargin=0.0pt
+* \evensidemargin=0.0pt
+* \topmargin=-37.0pt
+* \headheight=14.5pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=35.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+Package pgfplots notification 'compat/show suggested version=true': document ha
+s been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
+
+LaTeX Font Info:    Trying to load font information for U+msa on input line 50.
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 50.
+
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 5
+0.
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/base\t1cmtt.fd
+File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+)
+[1
+
+{C:/Users/kundai/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2]
+[3] (sections/categorical-oscillation-foundation.tex
+<figures/categorical_oscillation_panel.png, id=563, 1149.093pt x 711.8595pt>
+File: figures/categorical_oscillation_panel.png Graphic file (type png)
+<use figures/categorical_oscillation_panel.png>
+Package pdftex.def Info: figures/categorical_oscillation_panel.png  used on inp
+ut line 45.
+(pdftex.def)             Requested size: 407.66833pt x 252.55438pt.
+
+
+! LaTeX Error: Unicode character ↔ (U+2194)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.46 ...rn but categorical evolution with memory.}
+                                                  
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! LaTeX Error: Unicode character ↔ (U+2194)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.46 ...rn but categorical evolution with memory.}
+                                                  
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! LaTeX Error: Unicode character ↔ (U+2194)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.46 ...rn but categorical evolution with memory.}
+                                                  
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! LaTeX Error: Unicode character ↔ (U+2194)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.46 ...rn but categorical evolution with memory.}
+                                                  
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! LaTeX Error: Unicode character ↔ (U+2194)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.46 ...rn but categorical evolution with memory.}
+                                                  
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! LaTeX Error: Unicode character ↔ (U+2194)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.46 ...rn but categorical evolution with memory.}
+                                                  
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! LaTeX Error: Unicode character ↔ (U+2194)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.46 ...rn but categorical evolution with memory.}
+                                                  
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! LaTeX Error: Unicode character ↔ (U+2194)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.46 ...rn but categorical evolution with memory.}
+                                                  
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+[4] [5 <./figures/categorical_oscillation_panel.png>] [6] [7] [8])
+(sections/orgels-paradox.tex [9]
+Overfull \hbox (9.83566pt too wide) in paragraph at lines 75--76
+[]\T1/cmr/m/n/12 Amphipathic molecules spon-ta-neously self-assemble into mem-b
+rane struc-tures when: 
+ []
+
+[10]
+<figures/orgels_paradox_panel.png, id=677, 1149.093pt x 711.8595pt>
+File: figures/orgels_paradox_panel.png Graphic file (type png)
+<use figures/orgels_paradox_panel.png>
+Package pdftex.def Info: figures/orgels_paradox_panel.png  used on input line 9
+5.
+(pdftex.def)             Requested size: 407.66833pt x 252.55438pt.
+) (sections/electron-transport-charge-partitioning.tex [11] [12 <./figures/orge
+ls_paradox_panel.png>]
+<figures/aperture_as_field_panel.png, id=697, 1148.6112pt x 857.604pt>
+File: figures/aperture_as_field_panel.png Graphic file (type png)
+<use figures/aperture_as_field_panel.png>
+Package pdftex.def Info: figures/aperture_as_field_panel.png  used on input lin
+e 52.
+(pdftex.def)             Requested size: 407.66833pt x 304.37958pt.
+ [13] [14 <./figures/aperture_as_field_panel.png>])
+(sections/autocatalytic-electron-transport.tex
+
+LaTeX Warning: Reference `sec:orgel' on page 15 undefined on input line 6.
+
+
+LaTeX Warning: Reference `sec:electron_transport' on page 15 undefined on input
+ line 6.
+
+
+Overfull \hbox (4.37508pt too wide) in paragraph at lines 6--7
+\T1/cmr/m/n/12 struc-ture it-self), es-tab-lishes the math-e-mat-i-cal con-di-t
+ions for au-to-cat-alytic be-hav-ior, proves
+ []
+
+[15] [16] [17]
+
+Package natbib Warning: Citation `marcus1956theory' on page 18 undefined on inp
+ut line 131.
+
+[18] [19] [20] [21] [22] [23]
+<figures/autocatalytic_panel.png, id=849, 1129.821pt x 711.8595pt>
+File: figures/autocatalytic_panel.png Graphic file (type png)
+<use figures/autocatalytic_panel.png>
+Package pdftex.def Info: figures/autocatalytic_panel.png  used on input line 49
+1.
+(pdftex.def)             Requested size: 407.66833pt x 256.85577pt.
+ [24] [25 <./figures/autocatalytic_panel.png>]
+
+Package natbib Warning: Citation `holm1996synthetic' on page 26 undefined on in
+put line 548.
+
+
+Package natbib Warning: Citation `martin2008hydrothermal' on page 26 undefined 
+on input line 571.
+
+
+LaTeX Warning: Command \textdegree invalid in math mode on input line 578.
+
+
+LaTeX Warning: Command \textdegree invalid in math mode on input line 578.
+
+Missing character: There is no � in font cmr12!
+
+LaTeX Warning: Command \textdegree invalid in math mode on input line 578.
+
+
+LaTeX Warning: Command \textdegree invalid in math mode on input line 578.
+
+Missing character: There is no � in font cmr12!
+[26]
+
+Package natbib Warning: Citation `martin2008hydrothermal' on page 27 undefined 
+on input line 601.
+
+
+Overfull \hbox (12.94876pt too wide) in paragraph at lines 618--619
+[]\T1/cmr/bx/n/12 Self-knowing: \T1/cmr/m/n/12 Senses en-vi-ron-ment through ac
+-ces-si-ble state struc-ture (Corol-lary []5.14[]) 
+ []
+
+) (sections/geometric-partitioning.tex [27]
+Overfull \hbox (16.00366pt too wide) in paragraph at lines 6--7
+\T1/cmr/m/n/12 The pre-ced-ing sec-tion es-tab-lished that au-to-cat-alytic ele
+c-tron trans-port cre-ates self-referential
+ []
+
+
+LaTeX Warning: Reference `sec:electron_transport' on page 28 undefined on input
+ line 11.
+
+<figures/geometric_partitioning_panel.png, id=916, 1149.093pt x 714.5094pt>
+File: figures/geometric_partitioning_panel.png Graphic file (type png)
+<use figures/geometric_partitioning_panel.png>
+Package pdftex.def Info: figures/geometric_partitioning_panel.png  used on inpu
+t line 25.
+(pdftex.def)             Requested size: 407.66833pt x 253.49452pt.
+[28] [29 <./figures/geometric_partitioning_panel.png>] [30]
+Overfull \hbox (6.99219pt too wide) in paragraph at lines 148--149
+\T1/cmr/m/n/12 A pro-found con-se-quence of cat-e-gor-i-cal aper-ture se-lec-ti
+on is tem-per-a-ture in-de-pen-dence^^Vthe
+ []
+
+[31]
+
+Package natbib Warning: Citation `kuan2003interstellar' on page 32 undefined on
+ input line 251.
+
+
+Package natbib Warning: Citation `elsila2009cometary' on page 32 undefined on i
+nput line 251.
+
+[32]
+Overfull \hbox (38.17328pt too wide) in paragraph at lines 283--284
+\T1/cmr/m/it/12 pre-bi-otic molecules formed in in-ter-stel-lar space and were 
+de-liv-ered to Earth via comets/meteorites.
+ []
+
+
+Overfull \hbox (0.92871pt too wide) in paragraph at lines 308--309
+\T1/cmr/m/it/12 am-plify se-lec-tiv-ity. For $\OML/cmm/m/it/12 n$ \T1/cmr/m/it/
+12 aper-tures each with in-di-vid-ual se-lec-tiv-ity $\OML/cmm/m/it/12 s[]$ \T1
+/cmr/m/it/12 (frac-tion of molecules
+ []
+
+[33]
+Overfull \hbox (2.7609pt too wide) in paragraph at lines 361--362
+[]\T1/cmr/m/n/12 This is com-pa-ra-ble to en-zy-matic speci-ficity ($\OML/cmm/m
+/it/12 K[]=K[] \OMS/cmsy/m/n/12 ^^Y \OT1/cmr/m/n/12 10[]$ \T1/cmr/m/n/12 to $\O
+T1/cmr/m/n/12 10[]$\T1/cmr/m/n/12 ), achieved
+ []
+
+[34]
+Overfull \hbox (97.29953pt too wide) detected at line 405
+[][][][] [] [] [] []\OMS/cmsy/m/n/12 A [] \OML/cmm/m/it/12 M[] [] []
+ []
+
+[35]
+
+Package natbib Warning: Citation `holm1996synthetic' on page 36 undefined on in
+put line 467.
+
+[36]
+
+Package natbib Warning: Citation `shannon1948mathematical' on page 37 undefined
+ on input line 498.
+
+
+Package natbib Warning: Citation `maxwell1871' on page 37 undefined on input li
+ne 526.
+
+[37]
+
+LaTeX Warning: Reference `sec:orgel' on page 38 undefined on input line 569.
+
+[38]
+Overfull \hbox (0.27644pt too wide) in paragraph at lines 656--657
+[]\T1/cmr/bx/n/12 Corollary 6.16 \T1/cmr/m/n/12 (Evo-lu-tion-ary Con-ti-nu-ity)
+\T1/cmr/bx/n/12 . []\T1/cmr/m/it/12 The evo-lu-tion from pri-mor-dial elec-tron
+ trans-
+ []
+
+[39]
+Overfull \hbox (18.047pt too wide) in paragraph at lines 659--659
+[]\T1/cmr/bx/n/14.4 Summary: Ge-o-met-ric Par-ti-tion-ing as Uni-ver-sal Se-lec
+-tion Mech-
+ []
+
+) (sections/homochirality.tex
+Overfull \hbox (3.39272pt too wide) in paragraph at lines 2--2
+[]\T1/cmr/bx/n/17.28 Homochirality as Proof of Par-ti-tion-ing Pri-macy: Chi-
+ []
+
+[40] [41] [42]
+
+Package natbib Warning: Citation `griffiths2018introduction' on page 43 undefin
+ed on input line 127.
+
+[43]
+<figures/homochirality_panel.png, id=1113, 1149.093pt x 711.8595pt>
+File: figures/homochirality_panel.png Graphic file (type png)
+<use figures/homochirality_panel.png>
+Package pdftex.def Info: figures/homochirality_panel.png  used on input line 17
+9.
+(pdftex.def)             Requested size: 407.66833pt x 252.55438pt.
+ [44] [45 <./figures/homochirality_panel.png>]
+
+Package natbib Warning: Citation `mishra2013spin' on page 46 undefined on input
+ line 209.
+
+
+Package natbib Warning: Citation `kettner2015spin' on page 46 undefined on inpu
+t line 213.
+
+
+Package natbib Warning: Citation `naaman2019chiral' on page 46 undefined on inp
+ut line 215.
+
+[46] [47] [48] [49] [50]
+
+Package natbib Warning: Citation `dedkova2006enhanced' on page 51 undefined on 
+input line 476.
+
+[51]
+Overfull \hbox (16.51529pt too wide) in paragraph at lines 496--497
+[]\T1/cmr/bx/n/12 Observation: \T1/cmr/m/n/12 Uni-ver-sal ho-mochi-ral-ity ex-i
+sts. All known life uses D-ribose in RNA/DNA
+ []
+
+
+Overfull \hbox (13.1974pt too wide) in paragraph at lines 535--536
+\T1/cmr/m/n/12 The fi-nal piece of the ho-mochi-ral-ity ar-gu-ment is un-der-st
+and-ing why racemic mix-tures^^Vequal
+ []
+
+[52]
+Overfull \hbox (12.60991pt too wide) in paragraph at lines 575--576
+\T1/cmr/m/n/12 mix-tures have not spon-ta-neously gen-er-ated life-like com-ple
+x-ity (self-replication, metabolism,
+ []
+
+[53]) (sections/electron-transport-scaffolding.tex
+Overfull \hbox (3.68245pt too wide) in paragraph at lines 2--2
+\T1/cmr/bx/n/17.28 ter-pret-ing the Ori-gin and Func-tion of Bi-o-log-i-cal Com
+-
+ []
+
+[54]
+Overfull \hbox (6.14336pt too wide) in paragraph at lines 21--22
+[]\T1/cmr/bx/it/12 Integral elec-tron trans-port pro-teins: \T1/cmr/m/it/12 Mem
+brane-spanning pro-teins (cy-tochromes,
+ []
+
+[55]
+
+Package natbib Warning: Citation `mitchell1961coupling' on page 56 undefined on
+ input line 44.
+
+
+Overfull \hbox (17.46979pt too wide) in paragraph at lines 44--45
+[]\T1/cmr/m/n/12 Electron trans-port in mem-branes is uni-ver-sally cou-pled to
+ pro-ton translo-ca-tion (Mitchell's
+ []
+
+[56] [57] [58] [59] [60]
+Overfull \hbox (0.9934pt too wide) in paragraph at lines 285--286
+[]\T1/cmr/m/n/12 Membrane for-ma-tion re-duces the con-for-ma-tional en-tropy o
+f hy-dro-car-bon chains, which
+ []
+
+[61]
+
+Package natbib Warning: Citation `deamer1985boundary' on page 62 undefined on i
+nput line 349.
+
+[62] [63]
+<figures/membrane_scaffolding_panel.png, id=1348, 1149.093pt x 711.8595pt>
+File: figures/membrane_scaffolding_panel.png Graphic file (type png)
+<use figures/membrane_scaffolding_panel.png>
+Package pdftex.def Info: figures/membrane_scaffolding_panel.png  used on input 
+line 431.
+(pdftex.def)             Requested size: 407.66833pt x 252.55438pt.
+ [64] [65 <./figures/membrane_scaffolding_panel.png>]
+Overfull \hbox (43.82275pt too wide) in paragraph at lines 467--478
+ [][] 
+ []
+
+[66]
+
+Package natbib Warning: Citation `gennis1989biomembranes' on page 67 undefined 
+on input line 511.
+
+[67]) (sections/charge-capacitor-evolution.tex [68]
+<figures/em_temporal_dynamics_panel.png, id=1393, 1076.3412pt x 717.4002pt>
+File: figures/em_temporal_dynamics_panel.png Graphic file (type png)
+<use figures/em_temporal_dynamics_panel.png>
+Package pdftex.def Info: figures/em_temporal_dynamics_panel.png  used on input 
+line 59.
+(pdftex.def)             Requested size: 407.66833pt x 271.71729pt.
+ [69] [70 <./figures/em_temporal_dynamics_panel.png>] [71] [72]
+Overfull \hbox (24.35591pt too wide) in paragraph at lines 215--215
+[]\T1/cmr/bx/n/14.4 Charge Os-cil-la-tions at Metabolic Fre-quen-cies: DNA-Meta
+bolism
+ []
+
+
+Overfull \hbox (2.18735pt too wide) in paragraph at lines 234--235
+[]\T1/cmr/bx/n/12 (1) Pro-ton os-cil-la-tions: \T1/cmr/m/n/12 Gly-col-y-sis and
+ ox-ida-tive phos-pho-ry-la-tion pro-duce/consume
+ []
+
+
+Package natbib Warning: Citation `berridge2003calcium' on page 73 undefined on 
+input line 236.
+
+[73]
+Overfull \hbox (6.27957pt too wide) in paragraph at lines 319--320
+[]\T1/cmr/m/it/12 Transcriptional burst-ing fre-quency cor-re-lates with cel-lu
+-lar metabolic state (ATP/ADP
+ []
+
+[74] [75]
+<figures/em_cellular_dynamics_panel.png, id=1489, 1126.9302pt x 857.604pt>
+File: figures/em_cellular_dynamics_panel.png Graphic file (type png)
+<use figures/em_cellular_dynamics_panel.png>
+Package pdftex.def Info: figures/em_cellular_dynamics_panel.png  used on input 
+line 410.
+(pdftex.def)             Requested size: 407.66833pt x 310.2421pt.
+ [76] [77 <./figures/em_cellular_dynamics_panel.png>]
+Overfull \hbox (0.13626pt too wide) in paragraph at lines 428--428
+[]\T1/cmr/bx/n/14.4 Histone-DNA Charge Com-ple-men-tar-ity: Nu-cle-o-some Ca-pa
+c-
+ []
+
+[78] [79]
+Overfull \hbox (11.46016pt too wide) in paragraph at lines 597--598
+[]\T1/cmr/m/n/12 Transcriptional burst-ing fre-quency cor-re-lates with cel-lu-
+lar metabolic state (ATP/ADP
+ []
+
+[80]
+Overfull \hbox (1.12994pt too wide) in paragraph at lines 646--647
+[]\T1/cmr/m/n/12 Chromatin or-ga-ni-za-tion re-quires at-tach-ment points; non-
+coding DNA pro-vides these 
+ []
+
+[81] [82]) (sections/semiconductor-origins.tex
+Overfull \hbox (7.1289pt too wide) in paragraph at lines 2--2
+[]\T1/cmr/bx/n/17.28 Semiconductor Ori-gins: In-ter-stel-lar Pre-bi-otic Chem-
+ []
+
+[83]
+Overfull \hbox (33.53575pt too wide) in paragraph at lines 15--26
+ [][] 
+ []
+
+
+Package natbib Warning: Citation `kuan2003interstellar' on page 84 undefined on
+ input line 26.
+
+
+Package natbib Warning: Citation `elsila2009cometary' on page 84 undefined on i
+nput line 26.
+
+
+Package natbib Warning: Citation `kuan2003interstellar' on page 84 undefined on
+ input line 26.
+
+
+Package natbib Warning: Citation `elsila2009cometary' on page 84 undefined on i
+nput line 26.
+
+
+Overfull \hbox (3.16148pt too wide) detected at line 44
+[][][]\OML/cmm/m/it/12 k\OT1/cmr/m/n/12 (10[]) = 10[] [] [] = 10[] [][][] \OMS/
+cmsy/m/n/12 ^^Y \OT1/cmr/m/n/12 10[] \OMS/cmsy/m/n/12 ^^B \OT1/cmr/m/n/12 10[] 
+\OMS/cmsy/m/n/12 ^^Y \OT1/cmr/m/n/12 10[][][]
+ []
+
+[84]
+Overfull \hbox (3.27544pt too wide) in paragraph at lines 67--67
+[]\T1/cmr/bx/n/14.4 Resolution Through Semi-con-duc-tor Physics: Min-eral Grain
+s
+ []
+
+[85]
+
+LaTeX Warning: Reference `sec:electron_transport' on page 86 undefined on input
+ line 124.
+
+[86]
+
+Package natbib Warning: Citation `prasad1983uv' on page 87 undefined on input l
+ine 174.
+
+[87] [88] [89]
+
+Package natbib Warning: Citation `munoz2002new' on page 90 undefined on input l
+ine 324.
+
+
+Package natbib Warning: Citation `nuevo2008deoxyribose' on page 90 undefined on
+ input line 324.
+
+<figures/semiconductor_origins_panel.png, id=1651, 1149.093pt x 711.8595pt>
+File: figures/semiconductor_origins_panel.png Graphic file (type png)
+<use figures/semiconductor_origins_panel.png>
+Package pdftex.def Info: figures/semiconductor_origins_panel.png  used on input
+ line 329.
+(pdftex.def)             Requested size: 407.66833pt x 252.55438pt.
+[90] [91 <./figures/semiconductor_origins_panel.png>] [92]
+Overfull \hbox (3.70784pt too wide) in paragraph at lines 385--386
+\T1/cmr/m/n/12 con-den-sa-tion with an-other formalde-hyde molecule, form-ing g
+ly-co-lalde-hyde (HOCH$[]$CHO),
+ []
+
+
+Overfull \hbox (7.86761pt too wide) in paragraph at lines 385--386
+\T1/cmr/m/n/12 the sim-plest sugar. This re-ac-tion re-quires pre-cise po-si-ti
+on-ing of two formalde-hyde molecules
+ []
+
+
+Package natbib Warning: Citation `munoz2002new' on page 93 undefined on input l
+ine 414.
+
+
+Package natbib Warning: Citation `nuevo2008deoxyribose' on page 93 undefined on
+ input line 414.
+
+[93] [94]
+
+Package natbib Warning: Citation `cronin1997enantiomeric' on page 95 undefined 
+on input line 486.
+
+[95]
+
+Package natbib Warning: Citation `kring2000impact' on page 96 undefined on inpu
+t line 522.
+
+
+Package natbib Warning: Citation `love1993gravitational' on page 96 undefined o
+n input line 548.
+
+[96]
+Overfull \hbox (85.46494pt too wide) detected at line 597
+[][][][] [] [] [] [] [] [] [] []
+ []
+
+[97]
+Overfull \hbox (8.03438pt too wide) in paragraph at lines 648--648
+[]\T1/cmr/bx/n/14.4 Testable Pre-dic-tions: Dis-tin-guish-ing Elec-tron Trans-p
+ort Par-
+ []
+
+[98] [99]) (sections/electron-transport-to-genome.tex
+Overfull \hbox (34.48625pt too wide) in paragraph at lines 6--6
+[]\T1/cmr/bx/n/14.4 The Fun-da-men-tal Dis-tinc-tion: Au-to-catal-y-sis vs. Sel
+f-Replication 
+ []
+
+
+Overfull \hbox (0.98735pt too wide) in paragraph at lines 13--14
+[]\T1/cmr/bx/n/12 Definition 11.1 \T1/cmr/m/n/12 (Au-to-catal-y-sis)\T1/cmr/bx/
+n/12 . []\T1/cmr/m/it/12 Au-to-catal-y-sis is a self-referential clo-sure where
+ a species
+ []
+
+
+Overfull \hbox (14.49016pt too wide) in paragraph at lines 31--32
+\T1/cmr/m/it/12 self-replication sec-ond. Au-to-catal-y-sis es-tab-lishes the f
+unc-tional in-fras-truc-ture; self-replication
+ []
+
+
+Overfull \hbox (0.24948pt too wide) in paragraph at lines 35--36
+\T1/cmr/m/n/12 molec-u-lar ma-chin-ery. There-fore, au-to-catal-y-sis must pre-
+cede self-replication. Information-
+ []
+
+<figures/electron_transport_genome_panel.png, id=1776, 1149.093pt x 711.1368pt>
+
+File: figures/electron_transport_genome_panel.png Graphic file (type png)
+<use figures/electron_transport_genome_panel.png>
+Package pdftex.def Info: figures/electron_transport_genome_panel.png  used on i
+nput line 40.
+(pdftex.def)             Requested size: 407.66833pt x 252.29799pt.
+[100] [101 <./figures/electron_transport_genome_panel.png>]
+Overfull \hbox (6.31583pt too wide) in paragraph at lines 73--74
+[]\T1/cmr/m/n/12 The elec-tro-static po-ten-tial cre-ated by charge sep-a-ra-ti
+on de-fines re-gions of favourable
+ []
+
+[102]
+Overfull \hbox (12.89055pt too wide) in paragraph at lines 139--140
+\T1/cmr/m/it/12 metabolism) con-tain 1000--2000 mi-to-chon-dria. Adipocytes (lo
+w metabolism) con-tain 100^^U200
+ []
+
+
+Overfull \hbox (3.10829pt too wide) in paragraph at lines 157--158
+[]\T1/cmr/m/n/12 As re-ac-tions con-sume and pro-duce charged species, $\OML/cm
+m/m/it/12 ^^[[]$ \T1/cmr/m/n/12 fluc-tu-ates. If $\OML/cmm/m/it/12 ^^[[]$
+ []
+
+[103] [104] [105]
+<figures/em_cross_domain_panel.png, id=1839, 1004.0712pt x 712.1004pt>
+File: figures/em_cross_domain_panel.png Graphic file (type png)
+<use figures/em_cross_domain_panel.png>
+Package pdftex.def Info: figures/em_cross_domain_panel.png  used on input line 
+274.
+(pdftex.def)             Requested size: 407.66833pt x 289.11623pt.
+ [106] [107 <./figures/em_cross_domain_panel.png>] [108])
+(sections/genome-structural-element.tex [109]
+<figures/genome_structural_panel.png, id=1867, 1148.6112pt x 708.4869pt>
+File: figures/genome_structural_panel.png Graphic file (type png)
+<use figures/genome_structural_panel.png>
+Package pdftex.def Info: figures/genome_structural_panel.png  used on input lin
+e 89.
+(pdftex.def)             Requested size: 407.66833pt x 251.45514pt.
+
+
+! LaTeX Error: Unicode character ≈ (U+2248)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.97 ...rge scaffolding, not information storage.}
+                                                  
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! LaTeX Error: Unicode character ≈ (U+2248)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.97 ...rge scaffolding, not information storage.}
+                                                  
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+[110] [111 <./figures/genome_structural_panel.png>] [112] [113] [114])
+(sections/spare-tire-principle.tex [115]
+Overfull \hbox (1.5973pt too wide) in paragraph at lines 27--28
+\T1/cmr/m/n/12 The sec-ondary func-tion of in-for-ma-tion stor-age op-er-ates o
+nly dur-ing ex-pres-sion: $\OML/cmm/m/it/12 t[] \OT1/cmr/m/n/12 =
+ []
+
+[116]
+<figures/spare_tire_panel.png, id=1934, 1149.093pt x 711.8595pt>
+File: figures/spare_tire_panel.png Graphic file (type png)
+<use figures/spare_tire_panel.png>
+Package pdftex.def Info: figures/spare_tire_panel.png  used on input line 69.
+(pdftex.def)             Requested size: 407.66833pt x 252.55438pt.
+ [117] [118 <./figures/spare_tire_panel.png>] [119] [120]
+Overfull \hbox (13.39313pt too wide) in paragraph at lines 224--225
+\T1/cmr/m/n/12 The spare tire prin-ci-ple re-solves mul-ti-ple long-standing pu
+z-zles in ge-nomics that information-
+ []
+
+[121]
+Overfull \hbox (9.15115pt too wide) in paragraph at lines 278--279
+\T1/cmr/m/n/12 The spare tire prin-ci-ple gen-er-ates fal-si-fi-able pre-dic-ti
+ons that dis-tin-guish it from information-
+ []
+
+[122] [123]
+File: figures/spare_tire_panel.png Graphic file (type png)
+<use figures/spare_tire_panel.png>
+Package pdftex.def Info: figures/spare_tire_panel.png  used on input line 370.
+(pdftex.def)             Requested size: 452.9679pt x 280.61116pt.
+ [124]) [125] [126] [127]
+Overfull \hbox (3.62149pt too wide) in paragraph at lines 135--136
+\T1/cmr/m/n/12 tify the source of this en-ergy. In the elec-tron trans-port par
+-ti-tion-ing frame-work, metabolism
+ []
+
+[128] [129] (origins-of-life.bbl [130] [131])
+
+Package natbib Warning: There were undefined citations.
+
+[132] (origins-of-life.aux)
+ ***********
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-04>
+ ***********
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package rerunfilecheck Info: File `origins-of-life.out' has not changed.
+(rerunfilecheck)             Checksum: 027B827854EC8A4EE7C082A0F097DF3F;41862.
+ ) 
+Here is how much of TeX's memory you used:
+ 41079 strings out of 474486
+ 973787 string characters out of 5743283
+ 1942542 words of memory out of 5000000
+ 61770 multiletter control sequences out of 15000+600000
+ 584907 words of font info for 103 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 84i,18n,93p,2589b,1279s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\kundai\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tct
+i1200.pk> <C:\Users\kundai\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi
+600\ecbx0800.pk> <C:\Users\kundai\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen
+/ec/dpi600\ecrm0600.pk> <C:\Users\kundai\AppData\Local\MiKTeX\fonts/pk/ljfour/j
+knappen/ec/dpi600\ecti0800.pk> <C:\Users\kundai\AppData\Local\MiKTeX\fonts/pk/l
+jfour/jknappen/ec/dpi600\ecrm0800.pk> <C:\Users\kundai\AppData\Local\MiKTeX\fon
+ts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk> <C:\Users\kundai\AppData\Local\MiK
+TeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbi1200.pk> <C:\Users\kundai\AppData\Lo
+cal\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\kundai\App
+Data\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\kun
+dai\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1200.pk> <C:\Us
+ers\kundai\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk>
+ <C:\Users\kundai\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1
+200.pk> <C:\Users\kundai\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
+0\ecrm1095.pk> <C:\Users\kundai\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/e
+c/dpi600\ecbx1095.pk> <C:\Users\kundai\AppData\Local\MiKTeX\fonts/pk/ljfour/jkn
+appen/ec/dpi600\ectt1440.pk> <C:\Users\kundai\AppData\Local\MiKTeX\fonts/pk/ljf
+our/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\kundai\AppData\Local\MiKTeX\fonts
+/pk/ljfour/jknappen/ec/dpi600\ecbx2074.pk><C:/Users/kundai/AppData/Local/Progra
+ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/kundai/AppData/Lo
+cal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/kundai/
+AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Use
+rs/kundai/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.p
+fb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
+m/cmmi6.pfb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/type1/public/a
+msfonts/cm/cmmi8.pfb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/type1
+/public/amsfonts/cm/cmmib10.pfb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/
+fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/kundai/AppData/Local/Program
+s/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/kundai/AppData/Loca
+l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/kundai/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/kun
+dai/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:
+/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy
+6.pfb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfont
+s/cm/cmsy8.pfb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/type1/publi
+c/amsfonts/symbols/msbm10.pfb>
+Output written on origins-of-life.pdf (132 pages, 8636816 bytes).
+PDF statistics:
+ 3032 PDF objects out of 3580 (max. 8388607)
+ 990 named destinations out of 1000 (max. 500000)
+ 1115 words of extra memory for PDF output out of 10000 (max. 10000000)
+

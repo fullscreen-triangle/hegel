@@ -1,0 +1,54 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: partition-based-equations-of-state.aux
+Reallocating 'name_of_file' (item size: 1) to 9 items.
+The style file: unsrtnat.bst
+Reallocating 'name_of_file' (item size: 1) to 11 items.
+Database file #1: references.bib
+Warning--empty journal in maxwell1871
+Warning--empty journal in hansen1981
+Warning--empty journal in griem1964
+Warning--empty journal in glyde1994
+Warning--empty journal in nicholls2013
+You've used 46 entries,
+            2481 wiz_defined-function locations,
+            836 strings with 10944 characters,
+and the built_in function-call counts, 17917 in all, are:
+= -- 1567
+> -- 848
+< -- 27
++ -- 340
+- -- 248
+* -- 1393
+:= -- 2864
+add.period$ -- 138
+call.type$ -- 46
+change.case$ -- 92
+chr.to.int$ -- 46
+cite$ -- 51
+duplicate$ -- 868
+empty$ -- 1670
+format.name$ -- 314
+if$ -- 3738
+int.to.chr$ -- 1
+int.to.str$ -- 47
+missing$ -- 46
+newline$ -- 238
+num.names$ -- 138
+pop$ -- 344
+preamble$ -- 1
+purify$ -- 46
+quote$ -- 0
+skip$ -- 498
+stack$ -- 0
+substring$ -- 1128
+swap$ -- 87
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 322
+warning$ -- 5
+while$ -- 172
+width$ -- 0
+write$ -- 594
+(There were 5 warnings)
