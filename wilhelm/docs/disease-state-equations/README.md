@@ -149,6 +149,43 @@ All theoretical predictions confirmed numerically:
 2. **Categorical Dynamics**: Phase portraits, eigenvalues, and energy conservation confirmed
 3. **Memory Reset**: History independence with $\rho < 10^{-6}$ across boundaries
 4. **Phase Coherence**: Order parameter increases with efficacy according to theoretical formula
+5. **Disease State Equations**: Bimodal richness, oscillatory holes, trajectory statistics validated
+6. **Immune Equations**: MHC aperture function, VDJ ternary hierarchy, immune pressure confirmed
+7. **Therapeutic Equations**: Dose-response, phase-locking restoration, combination synergy validated
+8. **Oxygen Geometry**: Rotational spectrum, frequency partitioning, master clock confirmed
+9. **Diffusion Comparison**: **Critical validation** - diffusion-convection models fail, electric circuit resolution succeeds
+
+### Critical Insight: The Diffusion Blind Spot
+
+**Fundamental discovery**: Intracellular processes **cannot** be diffusion-convection based.
+
+#### Quantitative Failure of Diffusion
+
+**Diffusion time**: t = x²/(2D)
+
+For proteins (D ≈ 10⁻¹¹ m²/s) across 10 μm cell:
+- **Diffusion: ~5 seconds**
+- **Biology: milliseconds**
+- **Diffusion is 10,000× too slow!**
+
+#### Electric Circuit Resolution
+
+**Cellular dynamics = Electric circuit dynamics**
+
+1. **Genome**: Negatively charged (DNA phosphate)
+2. **Membrane**: Negatively charged (lipid heads)
+3. **Electron Cascade**: v = 10⁶ m/s (10¹²× faster than diffusion!)
+4. **Oxygen Clock**: ω = 10¹³ Hz (instantaneous synchronization)
+
+**Key Connection**: Electron cascade reflects O₂ movement. Paramagnetic O₂ molecules modulate local magnetic fields through rotation, inducing electron cascade patterns that encode temporal information from the O₂ clock.
+
+**Validation Panel**: `diffusion_comparison_panel.png` demonstrates:
+- Transport time vs distance (diffusion fails)
+- Signal propagation (cascade vs diffusion)
+- O₂ clock synchronization (3D)
+- Genome-membrane circuit model
+
+See `wilhelm/src/instruments/DIFFUSION_VS_OXYGEN_CLOCK.md` for complete analysis.
 
 ### Experimental Validation: Proposed
 

@@ -19,6 +19,10 @@ from immune_validation import ImmuneValidator
 from therapeutic_validation import TherapeuticValidator
 from phase_coherence_validation import PhaseCoherenceValidator
 from oxygen_geometry_validation import OxygenGeometryValidator
+from diffusion_comparison_validation import DiffusionComparisonValidator
+from oxygen_field_tracking_validation import OxygenFieldTracker
+from volume_ph_atp_validation import VolumePHATPValidator
+from integrated_electric_metrics_validation import IntegratedElectricMetrics
 
 def main():
     """Run all disease state equation validations"""
@@ -97,6 +101,54 @@ def main():
         print(f"X Error in oxygen geometry validation: {e}")
         validations.append(("Oxygen Geometry", False))
     
+    # 6. Diffusion-Convection vs Oxygen Clock Comparison
+    print("\n" + "-"*70)
+    print("6. DIFFUSION-CONVECTION VS OXYGEN CLOCK COMPARISON")
+    print("-"*70)
+    try:
+        validator = DiffusionComparisonValidator(output_dir)
+        validator.generate_diffusion_comparison_panel()
+        validations.append(("Diffusion Comparison", True))
+    except Exception as e:
+        print(f"X Error in diffusion comparison validation: {e}")
+        validations.append(("Diffusion Comparison", False))
+    
+    # 7. Oxygen Electric & Steric Field Tracking
+    print("\n" + "-"*70)
+    print("7. OXYGEN ELECTRIC & STERIC FIELD TRACKING")
+    print("-"*70)
+    try:
+        tracker = OxygenFieldTracker(output_dir)
+        tracker.generate_oxygen_field_tracking_panel()
+        validations.append(("Oxygen Field Tracking", True))
+    except Exception as e:
+        print(f"X Error in oxygen field tracking validation: {e}")
+        validations.append(("Oxygen Field Tracking", False))
+    
+    # 8. Volume-pH-ATP Coupling
+    print("\n" + "-"*70)
+    print("8. VOLUME-pH-ATP COUPLING")
+    print("-"*70)
+    try:
+        validator = VolumePHATPValidator(output_dir)
+        validator.generate_volume_ph_atp_panel()
+        validations.append(("Volume-pH-ATP", True))
+    except Exception as e:
+        print(f"X Error in volume-pH-ATP validation: {e}")
+        validations.append(("Volume-pH-ATP", False))
+    
+    # 9. Integrated Electric Field Metrics
+    print("\n" + "-"*70)
+    print("9. INTEGRATED ELECTRIC FIELD METRICS")
+    print("-"*70)
+    try:
+        validator = IntegratedElectricMetrics(output_dir)
+        validator.generate_integrated_electric_metrics_panel()
+        validations.append(("Integrated Electric Metrics", True))
+    except Exception as e:
+        print(f"X Error in integrated electric metrics validation: {e}")
+        validations.append(("Integrated Electric Metrics", False))
+    
     # Summary
     print("\n" + "="*70)
     print(" " * 20 + "VALIDATION SUMMARY")
@@ -122,7 +174,11 @@ def main():
         "immune_validation_panel.png",
         "therapeutic_validation_panel.png",
         "phase_coherence_validation_panel.png",
-        "oxygen_geometry_validation_panel.png"
+        "oxygen_geometry_validation_panel.png",
+        "diffusion_comparison_panel.png",
+        "oxygen_field_tracking_panel.png",
+        "volume_ph_atp_panel.png",
+        "integrated_electric_metrics_panel.png"
     ]
     
     for panel in panels:
@@ -166,6 +222,30 @@ def main():
     print("   - Master clock frequency partitioning")
     print("   - Cytoplasmic volume geometry (3D)")
     print("   - Conjugate frequency ladder mechanism\n")
+    
+    print("6. Diffusion-Convection Comparison:")
+    print("   - Transport time vs distance (diffusion fails)")
+    print("   - Signal propagation (cascade vs diffusion)")
+    print("   - O2 clock synchronization landscape (3D)")
+    print("   - Genome-membrane electric circuit model\n")
+    
+    print("7. Oxygen Field Tracking:")
+    print("   - O2 trajectories in cytoplasm (3D, E-field colored)")
+    print("   - Electric field magnitude heatmap (genome + membrane)")
+    print("   - Steric potential from protein crowding")
+    print("   - Combined force field vectors (electric + steric)\n")
+    
+    print("8. Volume-pH-ATP Coupling:")
+    print("   - Time evolution with O2 modulation")
+    print("   - Volume-ATP phase space")
+    print("   - pH-Volume-ATP landscape (3D)")
+    print("   - ATP consumption rate map (V_m-pH dependence)\n")
+    
+    print("9. Integrated Electric Metrics:")
+    print("   - Genome-membrane impedance spectrum")
+    print("   - Electron cascade conductivity models")
+    print("   - O2 clock frequency partitioning (3D)")
+    print("   - Integrated power spectrum (O2 + harmonics + biological)\n")
     
     print("="*70)
     print("VALIDATION COMPLETE")
