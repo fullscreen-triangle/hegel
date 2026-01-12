@@ -1,0 +1,261 @@
+\begin{thebibliography}{42}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Beeuwkes~III and Bonventre(1975)]{beeuwkes1975renal}
+R.~Beeuwkes~III and J.~V. Bonventre.
+\newblock Tubular organization and vascular-tubular relations in the dog
+  kidney.
+\newblock \emph{American Journal of Physiology}, 229:\penalty0 695--713, 1975.
+
+\bibitem[Bohr et~al.(1904)Bohr, Hasselbalch, and Krogh]{bohr1904haemoglobin}
+C.~Bohr, K.~Hasselbalch, and A.~Krogh.
+\newblock Concerning a biologically important relationship - the influence of
+  the carbon dioxide content of blood on its oxygen binding.
+\newblock \emph{Skandinavisches Archiv Für Physiologie}, 16:\penalty0
+  402--412, 1904.
+
+\bibitem[Chapman et~al.(1996)Chapman, Witt, Gao, Bharath, Stanton, Thom, and
+  Hughes]{chapman1996blood}
+N.~Chapman, N.~Witt, X.~Gao, A.~A. Bharath, A.~V. Stanton, S.~A. Thom, and
+  A.~D. Hughes.
+\newblock Computer algorithms for the automated measurement of retinal
+  arteriolar diameters.
+\newblock \emph{British Journal of Ophthalmology}, 80:\penalty0 554--559, 1996.
+
+\bibitem[Chien et~al.(1970)Chien, Usami, Dellenback, and
+  Gregersen]{chien1970blood}
+S.~Chien, S.~Usami, R.~J. Dellenback, and M.~I. Gregersen.
+\newblock Blood viscosity: Influence of erythrocyte deformation.
+\newblock \emph{Science}, 157:\penalty0 827--829, 1970.
+
+\bibitem[Crandall et~al.(1997)Crandall, Hausman, and
+  Kral]{crandall1997microvascular}
+D.~L. Crandall, G.~J. Hausman, and J.~G. Kral.
+\newblock A review of the microcirculation of adipose tissue: Anatomic,
+  metabolic, and angiogenic perspectives.
+\newblock \emph{Microcirculation}, 4:\penalty0 211--232, 1997.
+
+\bibitem[Einstein(1906)]{einstein1906new}
+A.~Einstein.
+\newblock A new determination of molecular dimensions.
+\newblock \emph{Annalen der Physik}, 19:\penalty0 289--306, 1906.
+
+\bibitem[Fick(1870)]{fick1870diffusion}
+A.~Fick.
+\newblock Über diffusion.
+\newblock \emph{Annalen der Physik}, 170:\penalty0 59--86, 1870.
+
+\bibitem[Fåhraeus and Lindqvist(1931)]{fahraeus1931viscosity}
+R.~Fåhraeus and T.~Lindqvist.
+\newblock The viscosity of the blood in narrow capillary tubes.
+\newblock \emph{American Journal of Physiology}, 96:\penalty0 562--568, 1931.
+
+\bibitem[Ganz et~al.(1971)Ganz, Donoso, Marcus, Forrester, and
+  Swan]{ganz1971new}
+W.~Ganz, R.~Donoso, H.~S. Marcus, J.~S. Forrester, and H.~J. Swan.
+\newblock A new technique for measurement of cardiac output by thermodilution
+  in man.
+\newblock \emph{American Journal of Cardiology}, 27:\penalty0 392--396, 1971.
+
+\bibitem[Hansen and Ampaya(1975)]{hansen1975surface}
+J.~E. Hansen and E.~P. Ampaya.
+\newblock Human air space shapes, sizes, areas, and volumes.
+\newblock \emph{Journal of Applied Physiology}, 38\penalty0 (6):\penalty0
+  990--995, 1975.
+
+\bibitem[Holt(1968)]{holt1968hemodynamic}
+J.~P. Holt.
+\newblock The normal pericardium.
+\newblock \emph{American Journal of Cardiology}, 26:\penalty0 455--465, 1968.
+
+\bibitem[Hudlická et~al.(1992)Hudlická, Brown, and
+  Egginton]{hudlicka1992muscle}
+O.~Hudlická, M.~Brown, and S.~Egginton.
+\newblock Angiogenesis in skeletal and cardiac muscle.
+\newblock \emph{Physiological Reviews}, 72:\penalty0 369--417, 1992.
+
+\bibitem[Huo and Kassab(2008)]{huo2008intraspecific}
+Y.~Huo and G.~S. Kassab.
+\newblock Intraspecific scaling laws of vascular trees.
+\newblock \emph{Journal of the Royal Society Interface}, 9:\penalty0 190--200,
+  2008.
+
+\bibitem[Imai(1982)]{imai1982oxygen}
+K.~Imai.
+\newblock Oxygen-binding properties of human adult hemoglobin.
+\newblock \emph{Methods in Enzymology}, 76:\penalty0 438--449, 1982.
+
+\bibitem[Kassab et~al.(1997)Kassab, Rider, Tang, and Fung]{kassab1997scaling}
+G.~S. Kassab, C.~A. Rider, N.~J. Tang, and Y.~C. Fung.
+\newblock Morphometry of pig coronary arterial trees.
+\newblock \emph{American Journal of Physiology}, 273\penalty0 (6):\penalty0
+  H2919--H2933, 1997.
+
+\bibitem[Krieger and Dougherty(1959)]{krieger1959mechanism}
+I.~M. Krieger and T.~J. Dougherty.
+\newblock A mechanism for non-newtonian flow in suspensions of rigid spheres.
+\newblock \emph{Transactions of the Society of Rheology}, 3:\penalty0 137--152,
+  1959.
+
+\bibitem[Krogh(1919)]{krogh1919number}
+A.~Krogh.
+\newblock The number and distribution of capillaries in muscles with
+  calculations of the oxygen pressure head necessary for supplying the tissue.
+\newblock \emph{The Journal of Physiology}, 52:\penalty0 409--415, 1919.
+
+\bibitem[Lafarge and Miettinen(1970)]{lafarge1970pulmonary}
+C.~G. Lafarge and O.~S. Miettinen.
+\newblock The estimation of oxygen consumption.
+\newblock \emph{Cardiovascular Research}, 4:\penalty0 23--30, 1970.
+
+\bibitem[Lewis et~al.(1984)Lewis, Kuo, Nelson, Limacher, and
+  Quinones]{lewis1984pulsed}
+J.~F. Lewis, L.~C. Kuo, J.~G. Nelson, M.~C. Limacher, and M.~A. Quinones.
+\newblock Pulsed doppler echocardiographic determination of stroke volume and
+  cardiac output.
+\newblock \emph{Circulation}, 70:\penalty0 425--431, 1984.
+
+\bibitem[Murray(1926)]{murray1926physiological}
+C.~D. Murray.
+\newblock The physiological principle of minimum work: I. the vascular system
+  and the cost of blood volume.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 12\penalty0
+  (3):\penalty0 207--214, 1926.
+
+\bibitem[Pawlik et~al.(1981)Pawlik, Rackl, and Bing]{pawlik1981quantitative}
+G.~Pawlik, A.~Rackl, and R.~J. Bing.
+\newblock Quantitative capillary topography and blood flow in the cerebral
+  cortex of cats.
+\newblock \emph{Brain Research}, 208:\penalty0 35--58, 1981.
+
+\bibitem[Perutz(1970)]{perutz1970stereochemistry}
+M.~F. Perutz.
+\newblock Stereochemistry of cooperative effects in haemoglobin.
+\newblock \emph{Nature}, 228:\penalty0 726--734, 1970.
+\newblock \doi{10.1038/228726a0}.
+
+\bibitem[Pries et~al.(1994)Pries, Secomb, Gaehtgens, and
+  Gross]{pries1994resistance}
+A.~R. Pries, T.~W. Secomb, P.~Gaehtgens, and J.~F. Gross.
+\newblock Blood flow in microvascular networks: Experiments and simulation.
+\newblock \emph{Circulation Research}, 67:\penalty0 826--834, 1994.
+
+\bibitem[Rakusan and Turek(1971)]{rakusan1971quantitative}
+K.~Rakusan and Z.~Turek.
+\newblock Protamine inhibition of capillary formation in growing rat hearts.
+\newblock \emph{Circulation Research}, 28:\penalty0 389--394, 1971.
+
+\bibitem[Rappaport(1973)]{rappaport1973hepatic}
+A.~M. Rappaport.
+\newblock The microcirculatory hepatic unit.
+\newblock \emph{Microvascular Research}, 6:\penalty0 212--228, 1973.
+
+\bibitem[Rossitti and Löfgren(1995)]{rossitti1995optimal}
+S.~Rossitti and J.~Löfgren.
+\newblock Optimality principles and flow orderliness at the branching points of
+  cerebral arteries.
+\newblock \emph{Stroke}, 26:\penalty0 1029--1032, 1995.
+
+\bibitem[Sachikonye(2024{\natexlab{a}})]{sachikonye2024fluid}
+K.~F. Sachikonye.
+\newblock Categorical fluid dynamics: Deriving classical hydrodynamics from
+  discrete state transformations via geometric s-entropy coordinates.
+\newblock \emph{arXiv preprint}, 2024{\natexlab{a}}.
+\newblock In preparation.
+
+\bibitem[Sachikonye(2024{\natexlab{b}})]{sachikonye2024gas}
+K.~F. Sachikonye.
+\newblock Reformulation of ideal gas laws from categorical mechanics: Resolving
+  gibbs' paradox through partition-oscillation-category equivalence.
+\newblock \emph{arXiv preprint}, 2024{\natexlab{b}}.
+\newblock In preparation.
+
+\bibitem[Sachikonye(2024{\natexlab{c}})]{sachikonye2024transport}
+K.~F. Sachikonye.
+\newblock Transport dynamics and the partition extinction theorem: Universal
+  derivation of transport coefficients from bounded oscillatory systems.
+\newblock \emph{arXiv preprint}, 2024{\natexlab{c}}.
+\newblock In preparation.
+
+\bibitem[Severinghaus(1979)]{severinghaus1979simple}
+J.~W. Severinghaus.
+\newblock Simple, accurate equations for human blood o$_2$ dissociation
+  computations.
+\newblock \emph{Journal of Applied Physiology}, 46\penalty0 (3):\penalty0
+  599--602, 1979.
+
+\bibitem[Sherman(1981)]{sherman1981meaning}
+T.~F. Sherman.
+\newblock On connecting large vessels to small: The meaning of murray's law.
+\newblock \emph{Journal of General Physiology}, 78:\penalty0 431--453, 1981.
+
+\bibitem[Suwa et~al.(1963)Suwa, Niwa, Fukasawa, and Sasaki]{suwa1963estimation}
+N.~Suwa, T.~Niwa, H.~Fukasawa, and Y.~Sasaki.
+\newblock Estimation of intravascular blood pressure gradient by mathematical
+  analysis of arterial casts.
+\newblock \emph{The Tohoku Journal of Experimental Medicine}, 79:\penalty0
+  168--198, 1963.
+
+\bibitem[Tenney and Remmers(1970)]{tenney1970comparative}
+S.~M. Tenney and J.~E. Remmers.
+\newblock Comparative quantitative morphology of the mammalian lung: Diffusing
+  area.
+\newblock \emph{Nature}, 197:\penalty0 54--56, 1970.
+
+\bibitem[Wagner(1996)]{wagner1996ventilation}
+P.~D. Wagner.
+\newblock Ventilation-perfusion relationships.
+\newblock \emph{Annual Review of Physiology}, 58:\penalty0 221--248, 1996.
+
+\bibitem[Weibel(1991)]{weibel1991design}
+E.~R. Weibel.
+\newblock Design of airways and blood vessels considered as branching trees.
+\newblock \emph{The Lung: Scientific Foundations}, pages 711--720, 1991.
+
+\bibitem[Weibel and Gomez(1963)]{weibel1963morphometry}
+E.~R. Weibel and D.~M. Gomez.
+\newblock Architecture of the human lung.
+\newblock \emph{Science}, 137\penalty0 (3530):\penalty0 577--585, 1963.
+\newblock \doi{10.1126/science.137.3530.577}.
+
+\bibitem[Weir(1949)]{weir1949new}
+J.~B. Weir.
+\newblock New methods for calculating metabolic rate with special reference to
+  protein metabolism.
+\newblock \emph{The Journal of Physiology}, 109:\penalty0 1--9, 1949.
+
+\bibitem[Wells et~al.(1962)Wells, Gawronski, Cox, and
+  Perera]{wells1962viscosity}
+R.~E. Wells, T.~H. Gawronski, P.~J. Cox, and R.~D. Perera.
+\newblock Influence of fibrinogen on flow properties of erythrocyte
+  suspensions.
+\newblock \emph{American Journal of Physiology}, 207:\penalty0 1035--1040,
+  1962.
+
+\bibitem[West et~al.(1997)West, Brown, and Enquist]{west1997general}
+G.~B. West, J.~H. Brown, and B.~J. Enquist.
+\newblock A general model for the origin of allometric scaling laws in biology.
+\newblock \emph{Science}, 276:\penalty0 122--126, 1997.
+\newblock \doi{10.1126/science.276.5309.122}.
+
+\bibitem[West(2012)]{west2012respiratory}
+J.~B. West.
+\newblock \emph{Respiratory Physiology: The Essentials}.
+\newblock Lippincott Williams \& Wilkins, 9th edition, 2012.
+
+\bibitem[Zamir(1976)]{zamir1976optimality}
+M.~Zamir.
+\newblock Optimality principles in arterial branching.
+\newblock \emph{Journal of Theoretical Biology}, 62:\penalty0 227--251, 1976.
+
+\bibitem[Zweifach and Lipowsky(1973)]{zweifach1973morphometric}
+B.~W. Zweifach and H.~H. Lipowsky.
+\newblock Quantitative studies of microcirculatory structure and function. iii.
+  microvascular hemodynamics of cat mesentery and rabbit omentum.
+\newblock \emph{Circulation Research}, 41:\penalty0 380--390, 1973.
+
+\end{thebibliography}

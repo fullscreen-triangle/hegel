@@ -23,6 +23,20 @@ from diffusion_comparison_validation import DiffusionComparisonValidator
 from oxygen_field_tracking_validation import OxygenFieldTracker
 from volume_ph_atp_validation import VolumePHATPValidator
 from integrated_electric_metrics_validation import IntegratedElectricMetrics
+from lipid_physical_chemistry_validation import LipidPhysicalChemistryValidator
+from lipid_biochemical_dynamics_validation import LipidBiochemicalDynamicsValidator
+from sentropy_circuit_validation import SEntropyCircuitValidator
+from electron_cascade_validation import ElectronCascadeValidator
+from proton_electron_coupling_validation import ProtonElectronCouplingValidator
+import dynamic_compartmentalization_validation
+import sufficient_inclusions_validation
+import isoform_paradox_validation
+import unified_function_validation
+import acoustic_modality_validation
+import thermal_modality_validation
+import electromagnetic_modality_validation
+import mechanical_modality_validation
+import chemical_modality_validation
 
 def main():
     """Run all disease state equation validations"""
@@ -149,6 +163,185 @@ def main():
         print(f"X Error in integrated electric metrics validation: {e}")
         validations.append(("Integrated Electric Metrics", False))
     
+    # 10. Lipid Physical Chemistry
+    print("\n" + "-"*70)
+    print("10. LIPID PHYSICAL CHEMISTRY")
+    print("-"*70)
+    try:
+        print("Running lipid physical chemistry validation...")
+        os.system(f'{sys.executable} lipid_physical_chemistry_validation.py')
+        print("Lipid physical chemistry validation completed")
+        validations.append(("Lipid Physical Chemistry", True))
+    except Exception as e:
+        print(f"X Error in lipid physical chemistry validation: {e}")
+        validations.append(("Lipid Physical Chemistry", False))
+    
+    # 11. Lipid Biochemical Dynamics
+    print("\n" + "-"*70)
+    print("11. LIPID BIOCHEMICAL DYNAMICS")
+    print("-"*70)
+    try:
+        print("Running lipid biochemical dynamics validation...")
+        os.system(f'{sys.executable} lipid_biochemical_dynamics_validation.py')
+        print("Lipid biochemical dynamics validation completed")
+        validations.append(("Lipid Biochemical Dynamics", True))
+    except Exception as e:
+        print(f"X Error in lipid biochemical dynamics validation: {e}")
+        validations.append(("Lipid Biochemical Dynamics", False))
+    
+    # 12. S-Entropy Circuit Representation
+    print("\n" + "-"*70)
+    print("12. S-ENTROPY CIRCUIT REPRESENTATION")
+    print("-"*70)
+    try:
+        validator = SEntropyCircuitValidator(output_dir)
+        validator.generate_sentropy_circuit_panel()
+        validations.append(("S-Entropy Circuit", True))
+    except Exception as e:
+        print(f"X Error in S-entropy circuit validation: {e}")
+        validations.append(("S-Entropy Circuit", False))
+    
+    # 13. Electron Cascade Velocity Profiles
+    print("\n" + "-"*70)
+    print("13. ELECTRON CASCADE VELOCITY PROFILES")
+    print("-"*70)
+    try:
+        validator = ElectronCascadeValidator(output_dir)
+        validator.generate_electron_cascade_panel()
+        validations.append(("Electron Cascade", True))
+    except Exception as e:
+        print(f"X Error in electron cascade validation: {e}")
+        validations.append(("Electron Cascade", False))
+    
+    # 14. Proton-Electron Charge Balance Coupling
+    print("\n" + "-"*70)
+    print("14. PROTON-ELECTRON CHARGE BALANCE COUPLING")
+    print("-"*70)
+    try:
+        validator = ProtonElectronCouplingValidator(output_dir)
+        validator.generate_proton_electron_coupling_panel()
+        validations.append(("Proton-Electron Coupling", True))
+    except Exception as e:
+        print(f"X Error in proton-electron coupling validation: {e}")
+        validations.append(("Proton-Electron Coupling", False))
+    
+    # 15. Dynamic Compartmentalization
+    print("\n" + "-"*70)
+    print("15. DYNAMIC COMPARTMENTALIZATION VALIDATION")
+    print("-"*70)
+    try:
+        print("Running dynamic compartmentalization validation...")
+        os.system(f'{sys.executable} dynamic_compartmentalization_validation.py')
+        print("Dynamic compartmentalization validation completed")
+        validations.append(("Dynamic Compartmentalization", True))
+    except Exception as e:
+        print(f"X Error in dynamic compartmentalization validation: {e}")
+        validations.append(("Dynamic Compartmentalization", False))
+    
+    # 16. Sufficient Inclusions
+    print("\n" + "-"*70)
+    print("16. SUFFICIENT INCLUSIONS VALIDATION")
+    print("-"*70)
+    try:
+        print("Running sufficient inclusions validation...")
+        os.system(f'{sys.executable} sufficient_inclusions_validation.py')
+        print("Sufficient inclusions validation completed")
+        validations.append(("Sufficient Inclusions", True))
+    except Exception as e:
+        print(f"X Error in sufficient inclusions validation: {e}")
+        validations.append(("Sufficient Inclusions", False))
+    
+    # 17. Isoform Paradox
+    print("\n" + "-"*70)
+    print("17. ISOFORM PARADOX VALIDATION")
+    print("-"*70)
+    try:
+        print("Running isoform paradox validation...")
+        os.system(f'{sys.executable} isoform_paradox_validation.py')
+        print("Isoform paradox validation completed")
+        validations.append(("Isoform Paradox", True))
+    except Exception as e:
+        print(f"X Error in isoform paradox validation: {e}")
+        validations.append(("Isoform Paradox", False))
+    
+    # 18. Unified Function
+    print("\n" + "-"*70)
+    print("18. UNIFIED FUNCTION VALIDATION")
+    print("-"*70)
+    try:
+        print("Running unified function validation...")
+        os.system(f'{sys.executable} unified_function_validation.py')
+        print("Unified function validation completed")
+        validations.append(("Unified Function", True))
+    except Exception as e:
+        print(f"X Error in unified function validation: {e}")
+        validations.append(("Unified Function", False))
+    
+    # 19. Acoustic Modality
+    print("\n" + "-"*70)
+    print("19. ACOUSTIC MODALITY VALIDATION")
+    print("-"*70)
+    try:
+        print("Running acoustic modality validation...")
+        os.system(f'{sys.executable} acoustic_modality_validation.py')
+        print("Acoustic modality validation completed")
+        validations.append(("Acoustic Modality", True))
+    except Exception as e:
+        print(f"X Error in acoustic modality validation: {e}")
+        validations.append(("Acoustic Modality", False))
+    
+    # 20. Thermal Modality
+    print("\n" + "-"*70)
+    print("20. THERMAL MODALITY VALIDATION")
+    print("-"*70)
+    try:
+        print("Running thermal modality validation...")
+        os.system(f'{sys.executable} thermal_modality_validation.py')
+        print("Thermal modality validation completed")
+        validations.append(("Thermal Modality", True))
+    except Exception as e:
+        print(f"X Error in thermal modality validation: {e}")
+        validations.append(("Thermal Modality", False))
+    
+    # 21. Electromagnetic Modality
+    print("\n" + "-"*70)
+    print("21. ELECTROMAGNETIC MODALITY VALIDATION")
+    print("-"*70)
+    try:
+        print("Running electromagnetic modality validation...")
+        os.system(f'{sys.executable} electromagnetic_modality_validation.py')
+        print("Electromagnetic modality validation completed")
+        validations.append(("Electromagnetic Modality", True))
+    except Exception as e:
+        print(f"X Error in electromagnetic modality validation: {e}")
+        validations.append(("Electromagnetic Modality", False))
+    
+    # 22. Mechanical Modality
+    print("\n" + "-"*70)
+    print("22. MECHANICAL MODALITY VALIDATION")
+    print("-"*70)
+    try:
+        print("Running mechanical modality validation...")
+        os.system(f'{sys.executable} mechanical_modality_validation.py')
+        print("Mechanical modality validation completed")
+        validations.append(("Mechanical Modality", True))
+    except Exception as e:
+        print(f"X Error in mechanical modality validation: {e}")
+        validations.append(("Mechanical Modality", False))
+    
+    # 23. Chemical Modality
+    print("\n" + "-"*70)
+    print("23. CHEMICAL MODALITY VALIDATION")
+    print("-"*70)
+    try:
+        print("Running chemical modality validation...")
+        os.system(f'{sys.executable} chemical_modality_validation.py')
+        print("Chemical modality validation completed")
+        validations.append(("Chemical Modality", True))
+    except Exception as e:
+        print(f"X Error in chemical modality validation: {e}")
+        validations.append(("Chemical Modality", False))
+    
     # Summary
     print("\n" + "="*70)
     print(" " * 20 + "VALIDATION SUMMARY")
@@ -178,7 +371,21 @@ def main():
         "diffusion_comparison_panel.png",
         "oxygen_field_tracking_panel.png",
         "volume_ph_atp_panel.png",
-        "integrated_electric_metrics_panel.png"
+        "integrated_electric_metrics_panel.png",
+        "lipid_physical_chemistry_panel.png",
+        "lipid_biochemical_dynamics_panel.png",
+        "sentropy_circuit_panel.png",
+        "electron_cascade_panel.png",
+        "proton_electron_coupling_panel.png",
+        "dynamic_compartmentalization_panel.png",
+        "sufficient_inclusions_panel.png",
+        "isoform_paradox_panel.png",
+        "unified_function_panel.png",
+        "acoustic_modality_panel.png",
+        "thermal_modality_panel.png",
+        "electromagnetic_modality_panel.png",
+        "mechanical_modality_panel.png",
+        "chemical_modality_panel.png"
     ]
     
     for panel in panels:
@@ -246,6 +453,108 @@ def main():
     print("   - Electron cascade conductivity models")
     print("   - O2 clock frequency partitioning (3D)")
     print("   - Integrated power spectrum (O2 + harmonics + biological)\n")
+    
+    print("10. Lipid Composition Effects:")
+    print("   - Membrane charge density by lipid type")
+    print("   - Circuit resistance vs charge (inverse relationship)")
+    print("   - Cascade velocity vs charge & temperature (3D)")
+    print("   - RC time constant optimization for biology\n")
+    
+    print("11. S-Entropy Circuit Representation:")
+    print("   - Genome-membrane circuit in S-coordinates")
+    print("   - Transfer function matrix (cross-dimensional coupling)")
+    print("   - Phase space trajectory in [0,1]^3 (3D)")
+    print("   - Computational complexity comparison (exponential speedup)\n")
+    
+    print("12. Electron Cascade Velocity Profiles:")
+    print("   - Velocity profiles under different conditions")
+    print("   - Electric vs steric field decomposition")
+    print("   - Velocity surface (position & O2 dependence, 3D)")
+    print("   - Temporal oscillations from O2 clock synchronization\n")
+    
+    print("10. Lipid Physical Chemistry:")
+    print("   - Membrane curvature vs lipid composition")
+    print("   - Inverse micelle formation (packing parameter)")
+    print("   - Transporter assembly probability (3D)")
+    print("   - Metabolic cost vs surfactant phase\n")
+    
+    print("11. Lipid Biochemical Dynamics:")
+    print("   - Volume oscillations (charge-driven)")
+    print("   - Shape deformation (geometry change)")
+    print("   - Flux concentration (spatial focusing)")
+    print("   - Charge-to-geometry coupling (work done)\n")
+    
+    print("12. S-Entropy Circuit Representation:")
+    print("   - Tri-dimensional circuit operation")
+    print("   - Transfer function matrix")
+    print("   - Bounded phase space trajectories")
+    print("   - Exponential complexity reduction\n")
+    
+    print("13. Electron Cascade Velocity Profiles:")
+    print("   - Condition-dependent velocity profiles")
+    print("   - Electric vs steric field decomposition")
+    print("   - Velocity surface (position & O2 dependence, 3D)")
+    print("   - Temporal oscillations from O2 clock synchronization\n")
+    
+    print("14. Proton-Electron Charge Balance Coupling:")
+    print("   - Genome capacitor discharge-recharge cycle")
+    print("   - Charge balance vs coupling strength")
+    print("   - Geometric aperture selectivity (3D, NOT Maxwell demon)")
+    print("   - Ensemble transporter coupling dynamics\n")
+    
+    print("15. Dynamic Compartmentalization:")
+    print("   - Bioreactor array dynamics (compartment formation/dissolution)")
+    print("   - O2 as steric mixer (K_La calculation)")
+    print("   - O2 as electric field coordinator (charge distribution)")
+    print("   - Unified coordination (mixing + charge + temporal)\n")
+    
+    print("16. Sufficient Inclusions:")
+    print("   - Charge + volume exclusion selection")
+    print("   - Compartment size distribution (continuous, not bimodal)")
+    print("   - No hysteresis (reversible dynamics)")
+    print("   - No critical slowing down (constant tau_comp)\n")
+    
+    print("17. Isoform Paradox:")
+    print("   - Isoform selection based on charge/geometry matching")
+    print("   - HSP70 family as example (13 isoforms, different pI)")
+    print("   - Context-dependent isoform expression")
+    print("   - Functional identity despite charge differences\n")
+    
+    print("18. Unified Function:")
+    print("   - Function as flux divergence: F = div(J_q + J_V + J_phi)")
+    print("   - HSP example: All three components")
+    print("   - Kinase example: Charge injection")
+    print("   - Enzyme example: Charge positioning\n")
+    
+    print("19. Acoustic Modality:")
+    print("   - Pressure wave propagation (damped, c = 1540 m/s)")
+    print("   - Mechanical oscillations (O2 clock harmonics)")
+    print("   - Acoustic impedance at compartment boundaries")
+    print("   - Resonance frequencies coupled to O2 clock\n")
+    
+    print("20. Thermal Modality:")
+    print("   - Temperature gradients from metabolic sources")
+    print("   - Heat flow vectors (radial from sources)")
+    print("   - Thermal diffusion vs compartment timescale")
+    print("   - Temperature oscillations (μK scale, O2 clock)\n")
+    
+    print("21. Electromagnetic Modality:")
+    print("   - Electric field distribution (genome-membrane dipole)")
+    print("   - Charge density (genome negative, membrane positive)")
+    print("   - Debye screening (λ_D ~ 1 nm)")
+    print("   - Electromagnetic oscillations (O2 clock frequency)\n")
+    
+    print("22. Mechanical Modality:")
+    print("   - Stress distribution from membrane deformation")
+    print("   - Strain waves (10% amplitude)")
+    print("   - Shear wave propagation (c ~ 1 m/s)")
+    print("   - Viscoelastic response (Maxwell model)\n")
+    
+    print("23. Chemical Modality:")
+    print("   - Concentration gradients (reaction-diffusion)")
+    print("   - Reaction-diffusion dynamics")
+    print("   - Chemical wave propagation (Turing patterns)")
+    print("   - Michaelis-Menten kinetics (O2 clock modulation)\n")
     
     print("="*70)
     print("VALIDATION COMPLETE")

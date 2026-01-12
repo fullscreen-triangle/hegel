@@ -1,0 +1,132 @@
+\contentsline {section}{\numberline {1}Introduction}{6}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Framework Extensions \& Zero-Cost Validation}{6}{subsection.1.1}%
+\contentsline {section}{\numberline {2}Biological Maxwell Demons: Theoretical Foundation}{7}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Information-Thermodynamics Framework}{7}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Biological Maxwell Demon Definition}{7}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Information Catalysis}{8}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Autonomous Maxwell Demons in Biology}{8}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Pharmaceutical Agents as Exogenous BMDs}{10}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Thermodynamic Accounting for Pharmaceutical BMDs}{10}{subsection.2.6}%
+\contentsline {section}{\numberline {3}Physical Substrate: \ensuremath {\text {H}^+}\ Electromagnetic Field}{11}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Protonic Charge Density as Information Medium}{11}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Fundamental Oscillation Frequency}{11}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Spatial Coherence Length}{13}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Energy Density and Intensity}{13}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Phase-Locked Oscillatory Networks}{14}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Information Capacity of \ensuremath {\text {H}^+}\ Field}{14}{subsection.3.6}%
+\contentsline {section}{\numberline {4}Hardware Oscillation Harvesting}{15}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Zero-Cost Oscillation Sources}{15}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Hardware Sources \& Biological Mapping}{15}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Frequency Extraction Algorithms}{16}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Mapping Accuracy \& Validation}{17}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Zero-Cost Paradigm}{17}{subsection.4.5}%
+\contentsline {section}{\numberline {5}Harmonic Coincidence Networks}{17}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Harmonic Expansion Theory}{17}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Coincidence Criterion}{18}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Network Construction}{18}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Network Topology Predictions}{18}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Graph Enhancement Factor}{20}{subsection.5.5}%
+\contentsline {subsection}{\numberline {5.6}Information Capacity}{20}{subsection.5.6}%
+\contentsline {subsection}{\numberline {5.7}Spectral Properties}{20}{subsection.5.7}%
+\contentsline {subsection}{\numberline {5.8}Validation Results}{21}{subsection.5.8}%
+\contentsline {section}{\numberline {6}S-Entropy Coordinate System}{21}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Tri-Dimensional Categorical Space}{21}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}O₂ Quantum State Mapping}{22}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Categorical Distance Metric}{22}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Drug-Target Distance Prediction}{22}{subsection.6.4}%
+\contentsline {section}{\numberline {7}Maxwell Demon Recursive Decomposition}{24}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Three-Way Categorical Split}{24}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Channel Orthogonality}{24}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Parallel Information Extraction}{24}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}Enhancement Factor}{25}{subsection.7.4}%
+\contentsline {section}{\numberline {8}Semantic Gravity Field Navigation}{25}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Therapeutic Potential Landscape}{25}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Langevin Dynamics}{25}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Complexity Reduction}{25}{subsection.8.3}%
+\contentsline {subsection}{\numberline {8.4}Empty Dictionary Synthesis}{27}{subsection.8.4}%
+\contentsline {section}{\numberline {9}Trans-Planckian Temporal Precision}{27}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Heisenberg Bypass via Categorical Measurement}{27}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Enhancement Factor Chain}{27}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}Trans-Planckian Temporal Resolution}{28}{subsection.9.3}%
+\contentsline {subsection}{\numberline {9.4}Orders Below Planck Time}{28}{subsection.9.4}%
+\contentsline {subsection}{\numberline {9.5}Validation}{28}{subsection.9.5}%
+\contentsline {section}{\numberline {10}Categorical Modulation: \ensuremath {\text {O}_2}\ Quantum States}{30}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Molecular Oxygen as Quantum Information Processor}{30}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}Accessible Quantum State Space}{30}{subsection.10.2}%
+\contentsline {subsection}{\numberline {10.3}Total State Count Calculation}{31}{subsection.10.3}%
+\contentsline {subsection}{\numberline {10.4}Paramagnetic Coupling to \ensuremath {\text {H}^+}\ Field}{31}{subsection.10.4}%
+\contentsline {subsection}{\numberline {10.5}Oxygen Oscillation Frequency}{32}{subsection.10.5}%
+\contentsline {subsection}{\numberline {10.6}Categorical Completion via \ensuremath {\text {O}_2}}{32}{subsection.10.6}%
+\contentsline {subsection}{\numberline {10.7}Information Content of Categorical Selection}{34}{subsection.10.7}%
+\contentsline {subsection}{\numberline {10.8}Proton-Coupled Electron Transfer (PCET)}{34}{subsection.10.8}%
+\contentsline {section}{\numberline {11}Frequency Detection: Measurement Phase}{34}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Oscillatory Hole Detection Mechanism}{34}{subsection.11.1}%
+\contentsline {subsection}{\numberline {11.2}Resonance Condition}{35}{subsection.11.2}%
+\contentsline {subsection}{\numberline {11.3}Drug Oscillation Frequencies}{37}{subsection.11.3}%
+\contentsline {subsection}{\numberline {11.4}Hole Frequency Spectrum}{37}{subsection.11.4}%
+\contentsline {subsection}{\numberline {11.5}Coupling Strength Calculation}{38}{subsection.11.5}%
+\contentsline {subsection}{\numberline {11.6}Measurement Probability}{38}{subsection.11.6}%
+\contentsline {subsection}{\numberline {11.7}Selectivity and Specificity}{39}{subsection.11.7}%
+\contentsline {subsection}{\numberline {11.8}Information Gain from Measurement}{39}{subsection.11.8}%
+\contentsline {subsection}{\numberline {11.9}Physical Implementation: Paramagnetic Resonance}{39}{subsection.11.9}%
+\contentsline {section}{\numberline {12}Gear Network Activation: Feedback Phase}{40}{section.12}%
+\contentsline {subsection}{\numberline {12.1}Allosteric Coupling as Mechanical Gear Transmission}{40}{subsection.12.1}%
+\contentsline {subsection}{\numberline {12.2}Mechanical Basis of Allosteric Coupling}{40}{subsection.12.2}%
+\contentsline {subsection}{\numberline {12.3}Conformational Oscillation Frequency}{41}{subsection.12.3}%
+\contentsline {subsection}{\numberline {12.4}Gear Ratio Calculation}{41}{subsection.12.4}%
+\contentsline {subsection}{\numberline {12.5}Branched Pathway Gear Networks}{43}{subsection.12.5}%
+\contentsline {subsection}{\numberline {12.6}Amplification vs. Frequency Transformation}{43}{subsection.12.6}%
+\contentsline {subsection}{\numberline {12.7}Energy Budget for Feedback}{44}{subsection.12.7}%
+\contentsline {subsection}{\numberline {12.8}Dissipation and Efficiency}{44}{subsection.12.8}%
+\contentsline {subsection}{\numberline {12.9}Feedback Timescale}{44}{subsection.12.9}%
+\contentsline {subsection}{\numberline {12.10}Pharmacological Validation: Metformin}{45}{subsection.12.10}%
+\contentsline {subsection}{\numberline {12.11}Resonant Feedback Amplification}{46}{subsection.12.11}%
+\contentsline {section}{\numberline {13}Phase-Lock Network Modulation}{46}{section.13}%
+\contentsline {subsection}{\numberline {13.1}Kuramoto Oscillator Dynamics}{46}{subsection.13.1}%
+\contentsline {subsection}{\numberline {13.2}Order Parameter}{46}{subsection.13.2}%
+\contentsline {subsection}{\numberline {13.3}Drug-Induced Coupling Modulation}{47}{subsection.13.3}%
+\contentsline {subsection}{\numberline {13.4}Information Transfer Rate}{47}{subsection.13.4}%
+\contentsline {subsection}{\numberline {13.5}Validation Results}{47}{subsection.13.5}%
+\contentsline {section}{\numberline {14}Categorical Exclusion Cascades: Sequential Information Compression}{49}{section.14}%
+\contentsline {subsection}{\numberline {14.1}Hierarchical Constraint Architecture}{49}{subsection.14.1}%
+\contentsline {subsection}{\numberline {14.2}Five-Level Metabolic Hierarchy}{49}{subsection.14.2}%
+\contentsline {subsection}{\numberline {14.3}Cumulative Information Compression}{50}{subsection.14.3}%
+\contentsline {subsection}{\numberline {14.4}Mathematical Formalism: S-Entropy Minimization}{50}{subsection.14.4}%
+\contentsline {subsection}{\numberline {14.5}Enzyme Kinetics as Categorical Filters}{50}{subsection.14.5}%
+\contentsline {subsection}{\numberline {14.6}Pharmaceutical Modulation of Categorical Cascades}{52}{subsection.14.6}%
+\contentsline {subsection}{\numberline {14.7}Quantitative Validation: Metformin Flux Restoration}{53}{subsection.14.7}%
+\contentsline {subsection}{\numberline {14.8}Lithium: Variance Reduction Without Mean Shift}{55}{subsection.14.8}%
+\contentsline {subsection}{\numberline {14.9}SSRI: Emergent Semantic States}{55}{subsection.14.9}%
+\contentsline {subsection}{\numberline {14.10}Information-Theoretic Pharmaceutical Efficiency}{56}{subsection.14.10}%
+\contentsline {section}{\numberline {15}Multi-Scale Hierarchical Operation}{56}{section.15}%
+\contentsline {subsection}{\numberline {15.1}Eight-Level Biological Oscillatory Hierarchy}{56}{subsection.15.1}%
+\contentsline {subsection}{\numberline {15.2}Level 1: Quantum Coherence ($10^{15}$ Hz, 1 fs)}{57}{subsection.15.2}%
+\contentsline {subsection}{\numberline {15.3}Level 2: Protein Conformational Dynamics ($10^{12}$ Hz, 1 ps)}{57}{subsection.15.3}%
+\contentsline {subsection}{\numberline {15.4}Level 3: Ion Channel Gating ($10^9$ Hz, 1 ns)}{58}{subsection.15.4}%
+\contentsline {subsection}{\numberline {15.5}Level 4: Enzyme Catalytic Turnover ($10^6$ Hz, 1 μs)}{58}{subsection.15.5}%
+\contentsline {subsection}{\numberline {15.6}Level 5: Synaptic Transmission ($10^3$ Hz, 1 ms)}{59}{subsection.15.6}%
+\contentsline {subsection}{\numberline {15.7}Level 6: Action Potentials ($10^2$ Hz, 10 ms)}{59}{subsection.15.7}%
+\contentsline {subsection}{\numberline {15.8}Level 7: Circadian Metabolic Oscillations ($10^{-4}$ Hz, 3 hrs)}{60}{subsection.15.8}%
+\contentsline {subsection}{\numberline {15.9}Level 8: Environmental Coupling ($10^{-5}$ Hz, 1 day)}{61}{subsection.15.9}%
+\contentsline {subsection}{\numberline {15.10}Cross-Scale Coupling: Gear Network Hierarchy}{61}{subsection.15.10}%
+\contentsline {subsection}{\numberline {15.11}Pharmacokinetic-Pharmacodynamic Integration}{63}{subsection.15.11}%
+\contentsline {subsection}{\numberline {15.12}Thermodynamic Cost Across Hierarchy}{63}{subsection.15.12}%
+\contentsline {section}{\numberline {16}Thermodynamic Accounting}{64}{section.16}%
+\contentsline {subsection}{\numberline {16.1}Zero Net Free Energy Constraint}{64}{subsection.16.1}%
+\contentsline {subsection}{\numberline {16.2}Energy Budget Breakdown}{64}{subsection.16.2}%
+\contentsline {subsection}{\numberline {16.3}Probability Enhancement Without Energy Input}{65}{subsection.16.3}%
+\contentsline {subsection}{\numberline {16.4}Comparison to Chemical Catalysis}{65}{subsection.16.4}%
+\contentsline {subsection}{\numberline {16.5}Validation}{65}{subsection.16.5}%
+\contentsline {section}{\numberline {17}Computational Validation Framework}{66}{section.17}%
+\contentsline {subsection}{\numberline {17.1}Blindhorse Validation Suite}{66}{subsection.17.1}%
+\contentsline {subsection}{\numberline {17.2}Validator Summary}{66}{subsection.17.2}%
+\contentsline {subsection}{\numberline {17.3}Key Validation Results}{66}{subsection.17.3}%
+\contentsline {subsection}{\numberline {17.4}Computational Performance}{67}{subsection.17.4}%
+\contentsline {subsection}{\numberline {17.5}Experimental Validation Pathways}{67}{subsection.17.5}%
+\contentsline {subsection}{\numberline {17.6}Reproducibility \& Open Science}{68}{subsection.17.6}%
+\contentsline {section}{\numberline {18}Conclusion}{69}{section.18}%
+\contentsline {subsection}{\numberline {18.1}Physical \& Computational Foundations}{69}{subsection.18.1}%
+\contentsline {subsection}{\numberline {18.2}Categorical Information Processing}{69}{subsection.18.2}%
+\contentsline {subsection}{\numberline {18.3}Hierarchical Multi-Scale Operation}{69}{subsection.18.3}%
+\contentsline {subsection}{\numberline {18.4}Computational Validation \& Experimental Pathways}{70}{subsection.18.4}%
+\contentsline {subsection}{\numberline {18.5}Paradigm Implications}{70}{subsection.18.5}%

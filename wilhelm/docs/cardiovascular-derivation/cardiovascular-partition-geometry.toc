@@ -1,0 +1,85 @@
+\contentsline {section}{\numberline {1}Introduction}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}The Inverse Problem in Physiological Design}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Theoretical Framework}{3}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Scope and Organization}{4}{subsection.1.3}%
+\contentsline {section}{\numberline {2}Alveolar Architecture from Partition Optimization}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}The Gas-Liquid Partition Problem}{4}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Optimizing Surface Area-to-Volume Ratio}{5}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Deriving Optimal Alveolar Radius}{5}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Young-Laplace Constraint on Minimum Radius}{6}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Experimental Validation}{7}{subsection.2.5}%
+\contentsline {section}{\numberline {3}Alveolar Gas Equation from Categorical Pressure Balance}{8}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Categorical Pressure as State Density}{8}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Steady-State Balance in Alveolar Space}{8}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Deriving the Alveolar Gas Equation}{9}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Respiratory Exchange Ratio from Partition Selectivity}{9}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Implications for Partition Efficiency}{10}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Experimental Validation}{10}{subsection.3.6}%
+\contentsline {section}{\numberline {4}Hemoglobin Cooperative Binding from Partition Lag Cascade}{11}{section.4}%
+\contentsline {subsection}{\numberline {4.1}The Oxygen Delivery Optimization Problem}{11}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Partition Lag in Oxygen Binding}{11}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Why Four Binding Sites?}{11}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Deriving Cooperative Binding from Partition Lag Cascade}{12}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Bohr Effect as Partition Lag Modulation}{13}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}Optimization of Binding Site Number}{14}{subsection.4.6}%
+\contentsline {subsection}{\numberline {4.7}Experimental Validation}{14}{subsection.4.7}%
+\contentsline {section}{\numberline {5}Vascular Branching from Minimum Partition Entropy}{15}{section.5}%
+\contentsline {subsection}{\numberline {5.1}The Vascular Tree as a Transport Network}{15}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Metabolic Cost of Blood Volume}{15}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Deriving Optimal Vessel Radius}{15}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Murray's Law at Bifurcations}{16}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Physical Interpretation through Partition Theory}{16}{subsection.5.5}%
+\contentsline {subsection}{\numberline {5.6}Extensions to Branching Angles}{16}{subsection.5.6}%
+\contentsline {subsection}{\numberline {5.7}Deviations from Murray's Law}{17}{subsection.5.7}%
+\contentsline {subsection}{\numberline {5.8}Experimental Validation}{17}{subsection.5.8}%
+\contentsline {subsection}{\numberline {5.9}Computational Fluid Dynamics Verification}{18}{subsection.5.9}%
+\contentsline {section}{\numberline {6}Blood Viscosity from Red Blood Cell Partition Lag}{18}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Blood as a Suspension}{18}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Einstein's Relation for Dilute Suspensions}{18}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Concentrated Suspensions and the Krieger-Dougherty Relation}{19}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Red Blood Cell Deformability and Partition Lag}{19}{subsection.6.4}%
+\contentsline {subsection}{\numberline {6.5}Fahraeus-Lindqvist Effect in Small Vessels}{20}{subsection.6.5}%
+\contentsline {subsection}{\numberline {6.6}Plasma Composition and Baseline Viscosity}{20}{subsection.6.6}%
+\contentsline {subsection}{\numberline {6.7}Temperature Dependence}{21}{subsection.6.7}%
+\contentsline {subsection}{\numberline {6.8}Shear Rate Dependence and Non-Newtonian Behavior}{21}{subsection.6.8}%
+\contentsline {subsection}{\numberline {6.9}Experimental Validation}{21}{subsection.6.9}%
+\contentsline {section}{\numberline {7}Cardiac Output from Metabolic Requirements}{22}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Fick's Principle}{22}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Resting Metabolic Oxygen Consumption}{22}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Arterial and Venous Oxygen Content}{23}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}Deriving Resting Cardiac Output}{23}{subsection.7.4}%
+\contentsline {subsection}{\numberline {7.5}Heart Rate and Stroke Volume}{23}{subsection.7.5}%
+\contentsline {subsection}{\numberline {7.6}Exercise Responses}{24}{subsection.7.6}%
+\contentsline {subsection}{\numberline {7.7}Allometric Scaling}{24}{subsection.7.7}%
+\contentsline {subsection}{\numberline {7.8}Pathological States}{25}{subsection.7.8}%
+\contentsline {subsection}{\numberline {7.9}Experimental Validation}{25}{subsection.7.9}%
+\contentsline {section}{\numberline {8}Capillary Architecture from Diffusion Constraints}{26}{section.8}%
+\contentsline {subsection}{\numberline {8.1}The Krogh Tissue Cylinder Model}{26}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Critical Capillary Spacing}{26}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Capillary Diameter from Red Blood Cell Geometry}{27}{subsection.8.3}%
+\contentsline {subsection}{\numberline {8.4}Capillary Density and Metabolic Heterogeneity}{27}{subsection.8.4}%
+\contentsline {subsection}{\numberline {8.5}Capillary Recruitment During Exercise}{28}{subsection.8.5}%
+\contentsline {subsection}{\numberline {8.6}Longitudinal Oxygen Gradient}{28}{subsection.8.6}%
+\contentsline {subsection}{\numberline {8.7}Angiogenic Adaptation}{29}{subsection.8.7}%
+\contentsline {subsection}{\numberline {8.8}Pathological Microvascular Rarefaction}{29}{subsection.8.8}%
+\contentsline {subsection}{\numberline {8.9}Experimental Validation}{29}{subsection.8.9}%
+\contentsline {section}{\numberline {9}Integrated System Derivation}{30}{section.9}%
+\contentsline {subsection}{\numberline {9.1}The Complete Oxygen Transport Chain}{30}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Cascade of Partition Operations}{30}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}System-Level Optimization Principles}{31}{subsection.9.3}%
+\contentsline {subsubsection}{\numberline {9.3.1}Minimize Total Partition Entropy}{31}{subsubsection.9.3.1}%
+\contentsline {subsubsection}{\numberline {9.3.2}Match Transport Capacity to Metabolic Demand}{31}{subsubsection.9.3.2}%
+\contentsline {subsubsection}{\numberline {9.3.3}Provide Reserve Capacity for Perturbations}{32}{subsubsection.9.3.3}%
+\contentsline {subsection}{\numberline {9.4}Quantitative System Integration}{32}{subsection.9.4}%
+\contentsline {subsection}{\numberline {9.5}Scaling and Comparative Physiology}{33}{subsection.9.5}%
+\contentsline {subsection}{\numberline {9.6}Failure Modes and Pathophysiology}{34}{subsection.9.6}%
+\contentsline {subsection}{\numberline {9.7}Evolutionary Implications}{34}{subsection.9.7}%
+\contentsline {subsection}{\numberline {9.8}Experimental Synthesis}{34}{subsection.9.8}%
+\contentsline {subsection}{\numberline {9.9}Conclusion of Integrated Analysis}{35}{subsection.9.9}%
+\contentsline {section}{\numberline {10}Discussion}{36}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Physical Necessity vs Biological Contingency}{36}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}Relationship to Classical Physiological Models}{36}{subsection.10.2}%
+\contentsline {subsection}{\numberline {10.3}Scaling Laws and Allometric Relationships}{37}{subsection.10.3}%
+\contentsline {subsection}{\numberline {10.4}Implications for Pathophysiology}{37}{subsection.10.4}%
+\contentsline {subsection}{\numberline {10.5}Limitations and Extensions}{37}{subsection.10.5}%
+\contentsline {section}{\numberline {11}Conclusion}{38}{section.11}%

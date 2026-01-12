@@ -1,0 +1,108 @@
+\begin{thebibliography}{10}
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\providecommand{\bibinfo}[2]{#2}
+\providecommand{\eprint}[2][]{\url{#2}}
+
+\bibitem{Haldane1930}
+\bibinfo{author}{Haldane, J. B.~S.}
+\newblock \bibinfo{title}{Enzymes}.
+\newblock \emph{\bibinfo{journal}{Longmans, Green and Co.}}
+  (\bibinfo{year}{1930}).
+
+\bibitem{Monod1970}
+\bibinfo{author}{Monod, J.}, \bibinfo{author}{Wyman, J.} \&
+  \bibinfo{author}{Changeux, J.-P.}
+\newblock \bibinfo{title}{On the nature of allosteric transitions: A plausible
+  model}.
+\newblock \emph{\bibinfo{journal}{Journal of Molecular Biology}}
+  \textbf{\bibinfo{volume}{12}}, \bibinfo{pages}{88--118}
+  (\bibinfo{year}{1965}).
+
+\bibitem{Flatt2023}
+\bibinfo{author}{Flatt, B.} \emph{et~al.}
+\newblock \bibinfo{title}{{ABC} transporters as autonomous {M}axwell demons}.
+\newblock \emph{\bibinfo{journal}{Communications Physics}}
+  \textbf{\bibinfo{volume}{6}}, \bibinfo{pages}{227} (\bibinfo{year}{2023}).
+
+\bibitem{Mizraji2021}
+\bibinfo{author}{Mizraji, E.} \& \bibinfo{author}{Lin, J.}
+\newblock \bibinfo{title}{Biological {M}axwell's demons and information
+  catalysis}.
+\newblock \emph{\bibinfo{journal}{Theory in Biosciences}}
+  \textbf{\bibinfo{volume}{140}}, \bibinfo{pages}{383--391}
+  (\bibinfo{year}{2021}).
+
+\bibitem{Sagawa2010}
+\bibinfo{author}{Sagawa, T.} \& \bibinfo{author}{Ueda, M.}
+\newblock \bibinfo{title}{Generalized {J}arzynski equality under nonequilibrium
+  feedback control}.
+\newblock \emph{\bibinfo{journal}{Physical Review Letters}}
+  \textbf{\bibinfo{volume}{104}}, \bibinfo{pages}{090602}
+  (\bibinfo{year}{2010}).
+
+\bibitem{Landauer1961}
+\bibinfo{author}{Landauer, R.}
+\newblock \bibinfo{title}{Irreversibility and heat generation in the computing
+  process}.
+\newblock \emph{\bibinfo{journal}{IBM Journal of Research and Development}}
+  \textbf{\bibinfo{volume}{5}}, \bibinfo{pages}{183--191}
+  (\bibinfo{year}{1961}).
+
+\bibitem{Maxwell1871}
+\bibinfo{author}{Maxwell, J.~C.}
+\newblock \bibinfo{title}{Theory of heat}.
+\newblock \emph{\bibinfo{journal}{Longmans, Green, and Co.}}
+  (\bibinfo{year}{1871}).
+
+\bibitem{Bennett1982}
+\bibinfo{author}{Bennett, C.~H.}
+\newblock \bibinfo{title}{The thermodynamics of computation—a review}.
+\newblock \emph{\bibinfo{journal}{International Journal of Theoretical
+  Physics}} \textbf{\bibinfo{volume}{21}}, \bibinfo{pages}{905--940}
+  (\bibinfo{year}{1982}).
+
+\bibitem{Wikstrom2012}
+\bibinfo{author}{Wikström, M.}, \bibinfo{author}{Sharma, V.},
+  \bibinfo{author}{Kaila, V. R.~I.}, \bibinfo{author}{Hosler, J.~P.} \&
+  \bibinfo{author}{Hummer, G.}
+\newblock \bibinfo{title}{New perspectives on proton pumping in cellular
+  respiration}.
+\newblock \emph{\bibinfo{journal}{Chemical Reviews}}
+  \textbf{\bibinfo{volume}{115}}, \bibinfo{pages}{2196--2221}
+  (\bibinfo{year}{2015}).
+
+\bibitem{Popp1984}
+\bibinfo{author}{Popp, F.-A.}, \bibinfo{author}{Warnke, U.},
+  \bibinfo{author}{König, H.~L.} \& \bibinfo{author}{Peschka, W.}
+\newblock \bibinfo{title}{Electromagnetic bio-information}.
+\newblock \emph{\bibinfo{journal}{Urban \& Schwarzenberg}}
+  (\bibinfo{year}{1984}).
+
+\bibitem{Cifra2011}
+\bibinfo{author}{Cifra, M.}, \bibinfo{author}{Fields, J.~Z.} \&
+  \bibinfo{author}{Farhadi, A.}
+\newblock \bibinfo{title}{Electromagnetic cellular interactions}.
+\newblock \emph{\bibinfo{journal}{Progress in Biophysics and Molecular
+  Biology}} \textbf{\bibinfo{volume}{105}}, \bibinfo{pages}{223--246}
+  (\bibinfo{year}{2011}).
+
+\bibitem{McFadden2020}
+\bibinfo{author}{McFadden, J.} \& \bibinfo{author}{Al-Khalili, J.}
+\newblock \bibinfo{title}{Life on the edge: The coming of age of quantum
+  biology}.
+\newblock \emph{\bibinfo{journal}{Crown Publishing Group}}
+  (\bibinfo{year}{2014}).
+
+\bibitem{Owen2000}
+\bibinfo{author}{Owen, M.~R.}, \bibinfo{author}{Doran, E.} \&
+  \bibinfo{author}{Halestrap, A.~P.}
+\newblock \bibinfo{title}{Evidence that metformin exerts its anti-diabetic
+  effects through inhibition of complex 1 of the mitochondrial respiratory
+  chain}.
+\newblock \emph{\bibinfo{journal}{Biochemical Journal}}
+  \textbf{\bibinfo{volume}{348}}, \bibinfo{pages}{607--614}
+  (\bibinfo{year}{2000}).
+
+\end{thebibliography}

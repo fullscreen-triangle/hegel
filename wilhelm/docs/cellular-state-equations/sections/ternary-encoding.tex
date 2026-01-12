@@ -24,6 +24,70 @@ Each operation partitions one dimension into three equal intervals. A $k$-trit s
 The volume of the cell corresponding to $k$-trit string $(t_1,\ldots,t_k)$ is $3^{-k}$.
 \end{corollary}
 
+\subsection{Molecular Coordinate Transformation}
+
+The ternary encoding extends naturally to molecular data through S-entropy coordinate transformation~\cite{weininger1988smiles,cover2006elements}.
+
+\begin{definition}[Genomic Coordinate Mapping]
+\label{def:genomic_mapping}
+For nucleotide bases $\{A, T, G, C\}$, the base coordinate mapping function $\psi: \{A,T,G,C\} \rightarrow \mathbb{R}^2$ is:
+\begin{align}
+\psi(A) &= (0, 1) \quad \text{(North direction)} \\
+\psi(T) &= (0, -1) \quad \text{(South direction)} \\
+\psi(G) &= (1, 0) \quad \text{(East direction)} \\
+\psi(C) &= (-1, 0) \quad \text{(West direction)}
+\end{align}
+\end{definition}
+
+\begin{remark}
+The cardinal direction assignment preserves Watson-Crick base pairing: $A$-$T$ pairs map to opposing vertical directions, while $G$-$C$ pairs map to opposing horizontal directions.
+\end{remark}
+
+\begin{definition}[S-Entropy Weighted Coordinate Transformation]
+\label{def:sentropy_weighted}
+For nucleotide base $b \in \{A,T,G,C\}$ at sequence position $i$ within context window $W_i$, the S-entropy coordinate transformation is:
+\begin{equation}
+\Phi(b,i,W_i) = (w_k(b,i,W_i) \cdot \psi_x(b), w_t(b,i,W_i) \cdot \psi_y(b), w_e(b,i,W_i) \cdot |\psi(b)|)
+\end{equation}
+where $w_k$, $w_t$, $w_e$ are knowledge, time, and entropy weighting functions respectively.
+\end{definition}
+
+\begin{definition}[Weighting Functions]
+\label{def:weighting_functions}
+The weighting functions quantify S-entropy components:
+
+\textbf{Knowledge weighting} (information content):
+\begin{equation}
+w_k(b,i,W_i) = -\sum_{j \in W_i} p_{b_j} \log_2(p_{b_j})
+\end{equation}
+
+\textbf{Time weighting} (sequential dynamics):
+\begin{equation}
+w_t(b,i,W_i) = \frac{\sum_{j=1}^{i} \delta_{b_j,b}}{i}
+\end{equation}
+
+\textbf{Entropy weighting} (local disorder):
+\begin{equation}
+w_e(b,i,W_i) = \sqrt{\sum_{j \in W_i} (\psi(b_j) - \bar{\psi}_{W_i})^2}
+\end{equation}
+where $p_{b_j}$ is the probability of base $b_j$ in window $W_i$, $\delta_{b_j,b}$ is the Kronecker delta, and $\bar{\psi}_{W_i}$ is the mean coordinate vector in window $W_i$.
+\end{definition}
+
+\begin{theorem}[Genomic Path Information Preservation]
+\label{thm:genomic_preservation}
+The coordinate path $\mathbf{P}(S) = \sum_{i=1}^n \Phi(s_i, i, W_i)$ for genomic sequence $S = s_1s_2...s_n$ preserves all sequence information.
+\end{theorem}
+
+\begin{proof}
+The coordinate transformation $\Phi$ is injective when considering position and context information. For any two distinct sequences $S_1 \neq S_2$, their coordinate paths satisfy $\mathbf{P}(S_1) \neq \mathbf{P}(S_2)$ because:
+\begin{enumerate}
+\item Different bases at any position $i$ yield different $\psi(s_i)$ values
+\item Context windows $W_i$ incorporate local sequence environment
+\item Weighting functions depend on complete local context
+\end{enumerate}
+Therefore, the mapping is bijective within sequences of identical length and context specifications, ensuring information preservation.
+\end{proof}
+
 \subsection{Continuous Emergence}
 
 The discrete ternary structure converges to continuous space in the limit.

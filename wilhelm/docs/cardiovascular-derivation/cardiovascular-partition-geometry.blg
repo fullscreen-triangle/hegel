@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: cardiovascular-partition-geometry.aux
+Reallocating 'name_of_file' (item size: 1) to 9 items.
+The style file: plainnat.bst
+Reallocating 'name_of_file' (item size: 1) to 11 items.
+Database file #1: references.bib
+You've used 42 entries,
+            2773 wiz_defined-function locations,
+            851 strings with 11247 characters,
+and the built_in function-call counts, 18915 in all, are:
+= -- 1778
+> -- 918
+< -- 30
++ -- 320
+- -- 276
+* -- 1488
+:= -- 2914
+add.period$ -- 132
+call.type$ -- 42
+change.case$ -- 218
+chr.to.int$ -- 40
+cite$ -- 84
+duplicate$ -- 859
+empty$ -- 1625
+format.name$ -- 340
+if$ -- 3927
+int.to.chr$ -- 3
+int.to.str$ -- 1
+missing$ -- 43
+newline$ -- 224
+num.names$ -- 168
+pop$ -- 376
+preamble$ -- 1
+purify$ -- 176
+quote$ -- 0
+skip$ -- 626
+stack$ -- 0
+substring$ -- 1029
+swap$ -- 54
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 457
+warning$ -- 0
+while$ -- 203
+width$ -- 0
+write$ -- 562

@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: pharmaceutical-maxwell-demon.aux
+Reallocating 'name_of_file' (item size: 1) to 10 items.
+The style file: naturemag.bst
+Reallocating 'name_of_file' (item size: 1) to 11 items.
+Database file #1: references.bib
+You've used 13 entries,
+            2348 wiz_defined-function locations,
+            1075 strings with 10749 characters,
+and the built_in function-call counts, 4764 in all, are:
+= -- 331
+> -- 120
+< -- 0
++ -- 60
+- -- 30
+* -- 582
+:= -- 546
+add.period$ -- 39
+call.type$ -- 13
+change.case$ -- 13
+chr.to.int$ -- 0
+cite$ -- 13
+duplicate$ -- 440
+empty$ -- 439
+format.name$ -- 39
+if$ -- 933
+int.to.chr$ -- 0
+int.to.str$ -- 13
+missing$ -- 100
+newline$ -- 73
+num.names$ -- 13
+pop$ -- 80
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 68
+stack$ -- 0
+substring$ -- 205
+swap$ -- 423
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 29
+width$ -- 15
+write$ -- 146

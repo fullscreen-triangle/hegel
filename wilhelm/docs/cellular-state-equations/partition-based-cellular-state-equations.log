@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.7.27)  9 JAN 2026 08:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.7.27)  10 JAN 2026 22:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -457,7 +457,7 @@ LaTeX Info: Redefining \cite on input line 694.
 )
 \c@theorem=\count314
 Package translations Info: No language package found. I am going to use `englis
-h' as default language. on input line 54.
+h' as default language. on input line 53.
 
 (C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/graphics\color.sty
 Package: color 2022/01/06 v1.3d Standard LaTeX Color (DPC)
@@ -471,24 +471,24 @@ Package color Info: Driver file: pdftex.def on input line 149.
 )) (partition-based-cellular-state-equations.aux)
 \openout1 = `partition-based-cellular-state-equations.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
 
 (C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.m
 kii
@@ -515,7 +515,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring OFF on input line 54.
+Package hyperref Info: Link coloring OFF on input line 53.
  (partition-based-cellular-state-equations.out)
 (partition-based-cellular-state-equations.out)
 \@outlinefile=\write3
@@ -574,47 +574,53 @@ File: translations-basic-dictionary-english.trsl (english translation file `tra
 nslations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' f
-or `english'. on input line 54.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 57.
+or `english'. on input line 53.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 56.
 
 
 (C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 57.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 56.
 
 
 (C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 5
+6.
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/base\t1cmtt.fd
+File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+)
 ! Double subscript.
-l.59 ...$\xi = \mathcal{N}^{-1} \sum_{ij} \taulag_
+l.58 ...$\xi = \mathcal{N}^{-1} \sum_{ij} \taulag_
                                                   {ij} g_{ij}$, categorical ...
 I treat `x_1_2' essentially like `x_1{}_2'.
 
-(partition-based-cellular-state-equations.toc [1
+[1
 
-{C:/Users/kundai/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2] [3] [4]
-)
+{C:/Users/kundai/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
+(partition-based-cellular-state-equations.toc [2] [3] [4] [5] [6])
 \tf@toc=\write4
 \openout4 = `partition-based-cellular-state-equations.toc'.
 
- [5]
-Overfull \hbox (4.7361pt too wide) in paragraph at lines 92--93
+ [7]
+Overfull \hbox (4.7361pt too wide) in paragraph at lines 91--92
 []\T1/cmr/bx/n/12 Theorem 1.3 \T1/cmr/m/n/12 (Par-ti-tion Co-or-di-nate Ex-is-t
 ence)\T1/cmr/bx/n/12 . []\T1/cmr/m/it/12 Cat-e-gor-i-cal par-ti-tion-ing of bou
 nded spher-
  []
 
-[6]
-Overfull \hbox (22.2385pt too wide) in paragraph at lines 120--121
+[8]
+Overfull \hbox (22.2385pt too wide) in paragraph at lines 119--120
 []\T1/cmr/bx/n/12 Theorem 1.6 \T1/cmr/m/n/12 (Ternary--Co-or-di-nate Cor-re-spo
 n-dence)\T1/cmr/bx/n/12 . []\T1/cmr/m/it/12 Each $\OML/cmm/m/it/12 k$\T1/cmr/m/
 it/12 -trit ternary string $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t[]; t[]; [] ; t[
 ]\OT1/cmr/m/n/12 )$
  []
 
-(sections/partition-coordinates.tex [7]
+(sections/partition-coordinates.tex [9]
 Overfull \hbox (83.94138pt too wide) in paragraph at lines 72--73
 \T1/cmr/m/n/12 states $\OMS/cmsy/m/n/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 n[];
  `[]; m[]; s[]\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 g[]$\T1/cmr/m/n/12 , the par-ti
@@ -624,7 +630,7 @@ it/12 ; [] ; \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 n[]; `[]; m[]; s[]\OT1/cmr/m/n/1
 2 ) \OMS/cmsy/m/n/12 g$\T1/cmr/m/n/12 . 
  []
 
-[8] [9]
+[10] [11]
 Overfull \hbox (20.51161pt too wide) in paragraph at lines 140--141
 []\T1/cmr/bx/n/12 Proposition 2.12 \T1/cmr/m/n/12 (Tra-jec-tory Map-ping)\T1/cm
 r/bx/n/12 . []\T1/cmr/m/it/12 A se-quence of par-ti-tion sig-na-tures $\OMS/cms
@@ -677,7 +683,7 @@ l.156 \end{equation}
 The `$' that I just saw supposedly matches a previous `$$'.
 So I shall assume that you typed `$$' both times.
 
-) (sections/categorical-dynamics.tex [10]
+) (sections/categorical-dynamics.tex [12]
 Overfull \hbox (7.7535pt too wide) in paragraph at lines 26--27
 \T1/cmr/m/n/12 where $\OML/cmm/m/it/12 C[] \OT1/cmr/m/n/12 = [(\OML/cmm/m/it/12
  i \OMS/cmsy/m/n/12 ^^@ \OT1/cmr/m/n/12 1)\OML/cmm/m/it/12 S[]=N[]; iS[]=N[]\OT
@@ -687,12 +693,7 @@ T1/cmr/m/n/12 ) = \OMS/cmsy/m/n/12 d\OML/cmm/m/it/12 N[]S=S[]\OMS/cmsy/m/n/12 e
 $\T1/cmr/m/n/12 . 
  []
 
-[11]
-
-LaTeX Warning: Reference `thm:triple_equivalence_dynamics' on page 12 undefined
- on input line 82.
-
-[12] [13]
+[13] [14] [15]
 
 ! LaTeX Error: Bad math environment delimiter.
 
@@ -764,45 +765,37 @@ l.240 \end{proof}
                  
 Things are pretty mixed up, but I think the worst is over.
 
-[14]
+[16]
 
-Package natbib Warning: Citation `herzberg1950spectra' on page 15 undefined on 
+Package natbib Warning: Citation `herzberg1950spectra' on page 17 undefined on 
 input line 292.
 
-[15]
+[17]
 
-LaTeX Warning: Reference `thm:derivative_equivalence' on page 16 undefined on i
-nput line 324.
-
-
-Package natbib Warning: Citation `goldstein2002classical' on page 16 undefined 
+Package natbib Warning: Citation `goldstein2002classical' on page 18 undefined 
 on input line 352.
 
-[16] [17]
+[18] [19]
 
-LaTeX Warning: Reference `ax:memory_reset' on page 18 undefined on input line 4
-60.
-
-
-Package natbib Warning: Citation `giddings1965dynamics' on page 18 undefined on
+Package natbib Warning: Citation `giddings1965dynamics' on page 20 undefined on
  input line 462.
 
-[18]
+[20]
 
-Package natbib Warning: Citation `giddings1965dynamics' on page 19 undefined on
+Package natbib Warning: Citation `giddings1965dynamics' on page 21 undefined on
  input line 509.
 
 
-Package natbib Warning: Citation `van1956kinetics' on page 19 undefined on inpu
+Package natbib Warning: Citation `van1956kinetics' on page 21 undefined on inpu
 t line 509.
 
-[19]
+[21]
 Overfull \hbox (14.01054pt too wide) in paragraph at lines 551--552
 []\T1/cmr/bx/n/12 Without mem-ory re-set\T1/cmr/m/n/12 : Cell must evolve con-t
 in-u-ously through in-ter-me-di-ate metabolic
  []
 
-) (sections/equations-of-state.tex [20] [21]
+) (sections/equations-of-state.tex [22] [23]
 Overfull \hbox (63.31456pt too wide) in paragraph at lines 115--116
 []\T1/cmr/bx/n/12 Theorem 4.9 \T1/cmr/m/n/12 (BEC Equa-tion of State)\T1/cmr/bx
 /n/12 . []\T1/cmr/m/it/12 Be-low the crit-i-cal tem-per-a-ture $\OML/cmm/m/it/1
@@ -811,7 +804,7 @@ Overfull \hbox (63.31456pt too wide) in paragraph at lines 115--116
 2 =\OT1/cmr/m/n/12 2))[]$
  []
 
-[22] [23]) (sections/transport-phenomena.tex
+[24] [25]) (sections/transport-phenomena.tex
 ! Double subscript.
 l.12 \xi = \mathcal{N}^{-1} \sum_{ij} \taulag_
                                               {ij} g_{ij}
@@ -867,7 +860,7 @@ l.15 \end{equation}
 The `$' that I just saw supposedly matches a previous `$$'.
 So I shall assume that you typed `$$' both times.
 
-[24]
+[26]
 Overfull \hbox (9.2183pt too wide) in paragraph at lines 42--43
 []\T1/cmr/m/n/12 The par-ti-tion lag arises from electron-phonon scat-ter-ing, 
 with $\OML/cmm/m/it/12 ^^\[] \OMS/cmsy/m/n/12 / [] jh\OML/cmm/m/it/12 f\OMS/cms
@@ -876,13 +869,13 @@ y/m/n/12 j\OML/cmm/m/it/12 H[]\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 i\OMS/cmsy/m/n
 /12 ^^@
  []
 
-[25]
+[27]
 ! Double subscript.
 l.121 ...n lag vanishes discontinuously: $\taulag_
                                                   {ij}(T < T_c) = 0$.
 I treat `x_1_2' essentially like `x_1{}_2'.
 
-[26]
+[28]
 ! Double subscript.
 l.198 \taulag_
               {\text{cell}} = \taulag_0 \cdot f(\dcat(\Sigma_{\text{target}}...
@@ -898,12 +891,374 @@ l.204 ...onger partition lag. Therefore, $\taulag_
                                                   {\text{cell}}$ increases w...
 I treat `x_1_2' essentially like `x_1{}_2'.
 
-[27]) (sections/ternary-encoding.tex
-Overfull \hbox (1.681pt too wide) in paragraph at lines 10--11
-[]\T1/cmr/bx/n/12 Theorem 6.1 \T1/cmr/m/n/12 (Trit--Co-or-di-nate Cor-re-spon-d
-ence)\T1/cmr/bx/n/12 . []\T1/cmr/m/it/12 Each $\OML/cmm/m/it/12 k$\T1/cmr/m/it/
-12 -trit ternary string $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t[]; t[]; [] ; t[]\O
-T1/cmr/m/n/12 )$
+[29]) (sections/electric-field-mechanism.tex [30] [31] [32] [33] [34]
+Overfull \hbox (0.87926pt too wide) in paragraph at lines 371--372
+[]\T1/cmr/bx/n/12 Field dis-tri-bu-tion\T1/cmr/m/n/12 : Cal-cu-lated elec-tric 
+field mag-ni-tude $\OMS/cmsy/m/n/12 j\OT1/cmr/bx/n/12 E\OMS/cmsy/m/n/12 j \OT1/
+cmr/m/n/12 = 10[]$\T1/cmr/m/n/12 -$\OT1/cmr/m/n/12 10[]$ \T1/cmr/m/n/12 V/m mat
+ches
+ []
+
+[35]) (sections/proton-electron-coupling.tex [36] [37]
+
+Package natbib Warning: Citation `flatt2023abc' on page 38 undefined on input l
+ine 121.
+
+
+Package natbib Warning: Citation `landauer1961irreversibility' on page 38 undef
+ined on input line 155.
+
+[38] [39]) (sections/circuit-dynamics.tex [40]
+Overfull \hbox (3.5909pt too wide) in paragraph at lines 57--58
+\T1/cmr/m/n/12 charge-driven ex-pan-sion: $\OT1/cmr/m/n/12 ^^A\OML/cmm/m/it/12 
+A=A[] \OMS/cmsy/m/n/12 ^^Y \OML/cmm/m/it/12 \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 
+Q=Q[]\OT1/cmr/m/n/12 )$\T1/cmr/m/n/12 . Bend-ing en-ergy is $\OML/cmm/m/it/12 W
+[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 ^^T\OT1/cmr/m/n/12 (^^A\OML/cmm/m/it/12 A
+=A[]\OT1/cmr/m/n/12 )[]\OML/cmm/m/it/12 =\OT1/cmr/m/n/12 2$\T1/cmr/m/n/12 .
+ []
+
+
+Overfull \hbox (14.51788pt too wide) in paragraph at lines 75--76
+[]\T1/cmr/bx/n/12 Theorem 8.6 \T1/cmr/m/n/12 (Vol-ume--Con-cen-tra-tion Cou-pli
+ng)\T1/cmr/bx/n/12 . []\T1/cmr/m/it/12 Vol-ume os-cil-la-tion $\OML/cmm/m/it/12
+ V\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t\OT1/cmr/m/n/12 ) = \OML/cmm/m/it/12 V[] \
+OT1/cmr/m/n/12 + ^^A\OML/cmm/m/it/12 V [][][]$
+ []
+
+
+! LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.80 \end{equation}
+                   
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: \begin{theorem} on input line 73 ended by \end{equation}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.80 \end{equation}
+                   
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.80 \end{equation}
+                   
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Display math should end with $$.
+<to be read again> 
+                   \endgroup 
+l.80 \end{equation}
+                   
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+
+! LaTeX Error: \begin{document} ended by \end{theorem}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.81 \end{theorem}
+                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.81 \end{theorem}
+                  
+Things are pretty mixed up, but I think the worst is over.
+
+[41] [42] [43] [44]) (sections/cytoplasmic-state-resolution.tex
+
+Package natbib Warning: Citation `Luby-Phelps1999' on page 45 undefined on inpu
+t line 4.
+
+
+Package natbib Warning: Citation `Dix2006' on page 45 undefined on input line 4
+.
+
+
+Package natbib Warning: Citation `Parry2014' on page 45 undefined on input line
+ 4.
+
+
+Package natbib Warning: Citation `Joyner2016' on page 45 undefined on input lin
+e 4.
+
+
+Package natbib Warning: Citation `Luby-Phelps1999' on page 45 undefined on inpu
+t line 8.
+
+[45] [46]
+
+! LaTeX Error: Unicode character ₂ (U+2082)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.101 ...Compartment dynamics are reversible (O₂
+                                                  -driven)
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! LaTeX Error: Unicode character ₂ (U+2082)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.102 ...\text{comp}} \approx 0.5$ ms always (O₂
+                                                   clock sets timescale)
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+LaTeX Warning: Reference `sec:oxygen_coordinator' on page 47 undefined on input
+ line 135.
+
+[47]
+
+! LaTeX Error: Unicode character ₂ (U+2082)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.139 \item Higher O₂
+                        coordination efficiency: $K_{La} \propto A/V$
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! LaTeX Error: Unicode character ₂ (U+2082)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.149 \item O₂
+                 movement creates electric and steric fields (Section \ref{s...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+LaTeX Warning: Reference `sec:electric_field' on page 48 undefined on input lin
+e 149.
+
+
+! LaTeX Error: Unicode character ₂ (U+2082)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.155 ...ields, local concentrations, and the O₂
+                                                   clock.
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! LaTeX Error: Unicode character ₂ (U+2082)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.164 ...}$ is the electric field drift (from O₂
+                                                  )
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! LaTeX Error: Unicode character ₂ (U+2082)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.165 ...t{steric}}$ is the steric flow (from O₂
+                                                   rotation)
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! LaTeX Error: Unicode character ₂ (U+2082)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.168 ...rministic} and synchronized with the O₂
+                                                   clock:
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! LaTeX Error: Unicode character ₂ (U+2082)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.182 ...regardless of crowding level (set by O₂
+                                                   clock, not by jamming)
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+[48]
+
+! LaTeX Error: Unicode character ₂ (U+2082)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.186 ... non-Brownian motion correlated with O₂
+                                                   oscillations
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+LaTeX Warning: Reference `sec:therapeutic' on page 49 undefined on input line 2
+09.
+
+
+! LaTeX Error: Unicode character ₂ (U+2082)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.210 \item Restoring O₂
+                           coordination (metabolic therapy)
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+) (sections/protein-function-reinterpretation.tex [49] [50] [51] [52] [53]
+
+Package natbib Warning: Citation `Horwich2006' on page 54 undefined on input li
+ne 227.
+
+
+Package natbib Warning: Citation `Saibil2013' on page 54 undefined on input lin
+e 227.
+
+
+! LaTeX Error: Unicode character ₂ (U+2082)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.236 ...l changes that scan harmonics of the O₂
+                                                   clock ($\omega_{O_2} = 10...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+Overfull \hbox (3.53839pt too wide) in paragraph at lines 236--237
+[]\T1/cmr/bx/n/12 Frequency scan-ning\T1/cmr/m/n/12 : ATP hy-drol-y-sis cy-cles
+ ($\OMS/cmsy/m/n/12 ^^X \OT1/cmr/m/n/12 1$ \T1/cmr/m/n/12 Hz) drive con-for-ma-
+tional changes
+ []
+
+
+! LaTeX Error: Unicode character ₂ (U+2082)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.258 \item Provides resonance environment (O₂
+                                                 clock modulation)
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+[54]
+
+! LaTeX Error: Unicode character α (U+03B1)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.271 \item Tubulin: 9 α
+                         -tubulin, 9 β-tubulin isoforms
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! LaTeX Error: Unicode character β (U+03B2)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.271 \item Tubulin: 9 α-tubulin, 9 β
+                                       -tubulin isoforms
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+Overfull \hbox (5.6581pt too wide) in paragraph at lines 295--296
+[]\T1/cmr/bx/n/12 Theorem 10.3 \T1/cmr/m/n/12 (Iso-form Se-lec-tion)\T1/cmr/bx/
+n/12 . []\T1/cmr/m/it/12 Iso-forms are se-lected based on charge/geometry match
+-
+ []
+
+
+Overfull \hbox (3.22035pt too wide) in paragraph at lines 302--303
+[]\T1/cmr/m/n/12 Isoforms per-form the same func-tion (same mech-a-nism) but in
+ dif-fer-ent charge/geometry
+ []
+
+[55] [56]) (sections/ternary-encoding.tex
+Overfull \hbox (8.42935pt too wide) in paragraph at lines 10--11
+[]\T1/cmr/bx/n/12 Theorem 11.1 \T1/cmr/m/n/12 (Trit--Co-or-di-nate Cor-re-spon-
+dence)\T1/cmr/bx/n/12 . []\T1/cmr/m/it/12 Each $\OML/cmm/m/it/12 k$\T1/cmr/m/it
+/12 -trit ternary string $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t[]; t[]; [] ; t[]\
+OT1/cmr/m/n/12 )$
  []
 
 
@@ -913,20 +1268,35 @@ in-ter-vals. A $\OML/cmm/m/it/12 k$\T1/cmr/m/n/12 -trit string $\OT1/cmr/m/n/12
  (\OML/cmm/m/it/12 t[]; [] ; t[]\OT1/cmr/m/n/12 )$
  []
 
-[28] [29] [30]) (sections/poincare-computing.tex [31]
+
+Package natbib Warning: Citation `weininger1988smiles' on page 57 undefined on 
+input line 29.
+
+
+Package natbib Warning: Citation `cover2006elements' on page 57 undefined on in
+put line 29.
+
+[57] [58] [59]
+Overfull \hbox (2.51187pt too wide) in paragraph at lines 180--181
+[]\T1/cmr/bx/n/12 Definition 11.16 \T1/cmr/m/n/12 (Ham-ming Dis-tance)\T1/cmr/b
+x/n/12 . []\T1/cmr/m/n/12 The Ham-ming dis-tance be-tween two $\OML/cmm/m/it/12
+ k$\T1/cmr/m/n/12 -trit strings
+ []
+
+[60]) (sections/poincare-computing.tex [61]
 Overfull \hbox (1.91495pt too wide) in paragraph at lines 44--45
 []\T1/cmr/m/n/12 This uni-fi-ca-tion re-solves the von Neu-mann bot-tle-neck by
  elim-i-nat-ing memory-processor
  []
 
-[32] [33]
-Overfull \hbox (2.04234pt too wide) in paragraph at lines 160--161
-[]\T1/cmr/bx/n/12 Corollary 7.18 \T1/cmr/m/n/12 (De-ter-min-is-tic Com-pu-ta-ti
-on)\T1/cmr/bx/n/12 . []\T1/cmr/m/it/12 Poincar� com-put-ing is de-ter-min-is-ti
-c: iden-
+[62] [63] [64]
+Overfull \hbox (5.35822pt too wide) in paragraph at lines 196--197
+[]\T1/cmr/bx/n/12 Corollary 12.23 \T1/cmr/m/n/12 (Cel-lu-lar Com-pu-ta-tion)\T1
+/cmr/bx/n/12 . []\T1/cmr/m/it/12 Cel-lu-lar func-tion emerges from col-lec-tive
+ molec-
  []
 
-[34]) (sections/metabolic-sequential-positioning.tex [35]
+) (sections/metabolic-sequential-positioning.tex [65] [66]
 
 ! LaTeX Error: Unicode character μ (U+03BC)
                not set up for use with LaTeX.
@@ -955,7 +1325,7 @@ l.79 This yields $\delta \mathbf{r} \sim 1$ μ
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
-[36]
+[67]
 
 ! LaTeX Error: Environment algorithm undefined.
 
@@ -982,7 +1352,7 @@ Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-[37] [38]
+[68]
 
 ! LaTeX Error: Unicode character μ (U+03BC)
                not set up for use with LaTeX.
@@ -996,20 +1366,13 @@ l.216 where $L_{\text{diff}} \sim 100$ μ
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
-
-Overfull \hbox (4.04868pt too wide) in paragraph at lines 224--225
-[]\T1/cmr/bx/n/12 Corollary 8.16 \T1/cmr/m/n/12 (Mi-to-chon-drial Lo-cal-iza-ti
-on)\T1/cmr/bx/n/12 . []\T1/cmr/m/it/12 Mi-to-chon-dria lo-cal-ize near mem-bran
-e where
- []
-
-) (sections/phase-lock-networks.tex [39]
+) (sections/phase-lock-networks.tex [69]
 Overfull \hbox (10.4291pt too wide) in paragraph at lines 42--43
 []\T1/cmr/m/n/12 Coupling strength de-creases with dis-tance due to field at-te
 n-u-a-tion: $\OML/cmm/m/it/12 g \OMS/cmsy/m/n/12 / [][][]$\T1/cmr/m/n/12 .
  []
 
-[40] [41] [42]) (sections/aperture-dynamics.tex [43] [44] [45]
+[70] [71] [72]) (sections/aperture-dynamics.tex [73] [74] [75] [76]
 
 ! LaTeX Error: Bad math environment delimiter.
 
@@ -1055,7 +1418,7 @@ l.206 \end{equation}
 The `$' that I just saw supposedly matches a previous `$$'.
 So I shall assume that you typed `$$' both times.
 
-[46]) (sections/substrate-navigation.tex [47]
+[77]) (sections/substrate-navigation.tex
 ! Undefined control sequence.
 l.11 \gamma^* = \argmin
                        _{\gamma \in \Gamma(S,P)} \int_{\gamma} \dcat(s) \, ds
@@ -1065,6 +1428,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
+[78]
 ! Undefined control sequence.
 l.33 \gamma^* = \argmin
                        _{\gamma} |\gamma|
@@ -1083,7 +1447,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[48]
+[79]
 ! Undefined control sequence.
 l.81 \gamma^*(t) = \argmin
                           _{\gamma \in \Gamma_{\text{admissible}}(S,P,t)} |\...
@@ -1112,19 +1476,19 @@ and I'll forget about whatever was undefined.
 
 
 Overfull \hbox (1.1536pt too wide) in paragraph at lines 107--108
-[]\T1/cmr/bx/n/12 Theorem 11.10 \T1/cmr/m/n/12 (Par-al-lel Path-way Op-ti-miza-
+[]\T1/cmr/bx/n/12 Theorem 16.10 \T1/cmr/m/n/12 (Par-al-lel Path-way Op-ti-miza-
 tion)\T1/cmr/bx/n/12 . []\T1/cmr/m/it/12 Par-al-lel path-way op-ti-miza-tion is
  equiv-
  []
 
 
 Overfull \hbox (19.49364pt too wide) in paragraph at lines 126--127
-[]\T1/cmr/bx/n/12 Theorem 11.12 \T1/cmr/m/n/12 (Oxy-gen Nav-i-ga-tion The-o-rem
+[]\T1/cmr/bx/n/12 Theorem 16.12 \T1/cmr/m/n/12 (Oxy-gen Nav-i-ga-tion The-o-rem
 )\T1/cmr/bx/n/12 . []\T1/cmr/m/it/12 Sub-strates nav-i-gate to-ward oxy-gen mol
 ecules
  []
 
-[49] [50] [51]) (sections/protein-folding-dynamics.tex [52]
+[80] [81] [82]) (sections/protein-folding-dynamics.tex [83]
 ! Undefined control sequence.
 l.57 \Sigma_{\text{native}} = \argmin
                                      _{\Sigma} \text{Var}(\{\phi_i\})
@@ -1134,9 +1498,9 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[53]
+[84]
 Overfull \hbox (7.05098pt too wide) in paragraph at lines 84--85
-[]\T1/cmr/bx/n/12 Theorem 12.8 \T1/cmr/m/n/12 (AT-P--Driven Fre-quency Scan-nin
+[]\T1/cmr/bx/n/12 Theorem 17.8 \T1/cmr/m/n/12 (AT-P--Driven Fre-quency Scan-nin
 g)\T1/cmr/bx/n/12 . []\T1/cmr/m/it/12 ATP hy-drol-y-sis cy-cles mod-u-late GroE
 L
  []
@@ -1150,7 +1514,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[54] [55]
+[85]
 Overfull \hbox (6.28853pt too wide) in paragraph at lines 189--190
 \T1/cmr/m/n/12 tive, pro-duc-ing tra-jec-tory $\OML/cmm/m/it/12 ^^M[]\OT1/cmr/m
 /n/12 (\OML/cmm/m/it/12 t\OT1/cmr/m/n/12 ) = \OT1/cmr/bx/n/12 S\OT1/cmr/m/n/12 
@@ -1160,7 +1524,7 @@ m/n/12 (\OML/cmm/m/it/12 t\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 k\OML/cmm/m/it/12 d
 t$\T1/cmr/m/n/12 ,
  []
 
-
+[86]
 Overfull \hbox (10.64488pt too wide) in paragraph at lines 201--202
 \T1/cmr/m/it/12 GroEL-encapsulated pro-teins shows se-quen-tial hy-dro-gen bond
  for-ma-tion with cycle-dependent
@@ -1172,7 +1536,7 @@ Overfull \hbox (2.40227pt too wide) in paragraph at lines 208--209
 fre-quency scan-ning model. 
  []
 
-) (sections/membrane-transport-demons.tex [56] [57]
+) (sections/membrane-transport-demons.tex [87]
 Overfull \hbox (2.3524pt too wide) in paragraph at lines 85--87
 \T1/cmr/m/n/12 where phys-i-cal co-or-di-nates are $\OT1/cmr/bx/n/12 r \OT1/cmr
 /m/n/12 = (\OML/cmm/m/it/12 x; y; z\OT1/cmr/m/n/12 )$ \T1/cmr/m/n/12 and cat-e-
@@ -1180,14 +1544,14 @@ gor-i-cal co-or-di-nates are $\OT1/cmr/bx/n/12 S \OT1/cmr/m/n/12 = (\OML/cmm/m/
 it/12 S[]; S[]; S[]\OT1/cmr/m/n/12 )$\T1/cmr/m/n/12 . 
  []
 
-
+[88]
 Overfull \hbox (15.5539pt too wide) in paragraph at lines 122--123
-[]\T1/cmr/bx/n/12 Corollary 13.12 \T1/cmr/m/n/12 (Tra-jec-tory Length)\T1/cmr/b
+[]\T1/cmr/bx/n/12 Corollary 18.12 \T1/cmr/m/n/12 (Tra-jec-tory Length)\T1/cmr/b
 x/n/12 . []\T1/cmr/m/it/12 Typ-i-cal trans-porters have tra-jec-tory length $\O
 ML/cmm/m/it/12 L[] \OMS/cmsy/m/n/12 ^^X
  []
 
-[58]
+[89]
 
 ! LaTeX Error: Bad math environment delimiter.
 
@@ -1233,7 +1597,7 @@ l.186 \end{equation}
 The `$' that I just saw supposedly matches a previous `$$'.
 So I shall assume that you typed `$$' both times.
 
-[59]
+[90]
 
 ! LaTeX Error: Unicode character μ (U+03BC)
                not set up for use with LaTeX.
@@ -1254,12 +1618,12 @@ Overfull \hbox (22.15477pt too wide) in paragraph at lines 238--239
 -ma-tional cy-cles with frequency-
  []
 
-[60]) (sections/categorical-thermometry.tex
+[91]) (sections/categorical-thermometry.tex
 Overfull \hbox (1.5405pt too wide) in paragraph at lines 1--1
 []\T1/cmr/bx/n/17.28 Categorical Ther-mom-e-try Through Vir-tual Tem-per-
  []
 
-[61] [62] [63] [64]
+[92] [93] [94] [95]
 
 ! LaTeX Error: Unicode character μ (U+03BC)
                not set up for use with LaTeX.
@@ -1344,49 +1708,55 @@ l.261 ...(10.2 - 10.0)/10.0 = 2\%$. For $T < 1$ μ
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
-) [65] [66]
+) [96]
+Overfull \hbox (9.78098pt too wide) in paragraph at lines 167--168
+[]\T1/cmr/m/n/12 Equations of state val-i-da-tion con-firms the-o-ret-i-cal pre
+-dic-tions across five phys-i-cal regimes.
+ []
+
+[97] [98]
 ! Double subscript.
-l.177 The partition lag $\taulag_
+l.195 The partition lag $\taulag_
                                  {ij}$ between carriers $i$ and $j$ determin...
 I treat `x_1_2' essentially like `x_1{}_2'.
 
 ! Double subscript.
-l.177 ...\xi = \mathcal{N}^{-1} \sum_{ij} \taulag_
+l.195 ...\xi = \mathcal{N}^{-1} \sum_{ij} \taulag_
                                                   {ij} g_{ij}$ where $g_{ij}...
 I treat `x_1_2' essentially like `x_1{}_2'.
 
 
-Overfull \hbox (1.13654pt too wide) in paragraph at lines 186--187
+Overfull \hbox (1.13654pt too wide) in paragraph at lines 204--205
 \T1/cmr/m/n/12 re-spect to cat-e-gor-i-cal tran-si-tions ($\OML/cmm/m/it/12 @=@
 c$\T1/cmr/m/n/12 ), par-ti-tion re-fine-ments ($\OML/cmm/m/it/12 @=@p$\T1/cmr/m
 /n/12 ), or os-cil-la-tion phases
  []
 
 ! Double subscript.
-l.190 ...\xi = \mathcal{N}^{-1} \sum_{ij} \taulag_
+l.208 ...\xi = \mathcal{N}^{-1} \sum_{ij} \taulag_
                                                   {ij} g_{ij}$ where $\taula...
 I treat `x_1_2' essentially like `x_1{}_2'.
 
 ! Double subscript.
-l.190 ...{ij} \taulag_{ij} g_{ij}$ where $\taulag_
+l.208 ...{ij} \taulag_{ij} g_{ij}$ where $\taulag_
                                                   {ij}$ is partition lag and...
 I treat `x_1_2' essentially like `x_1{}_2'.
 
 
-Overfull \hbox (5.37534pt too wide) in paragraph at lines 192--193
+Overfull \hbox (5.37534pt too wide) in paragraph at lines 210--211
 []\T1/cmr/bx/n/12 Fifth\T1/cmr/m/n/12 , ternary rep-re-sen-ta-tion pro-vides na
 t-u-ral en-cod-ing for three-dimensional S-entropy
  []
 
 
-Overfull \hbox (9.2465pt too wide) in paragraph at lines 194--195
+Overfull \hbox (9.2465pt too wide) in paragraph at lines 212--213
 []\T1/cmr/bx/n/12 Sixth\T1/cmr/m/n/12 , Poincar� com-put-ing es-tab-lishes com-
 pu-ta-tion as tra-jec-tory com-ple-tion in bounded
  []
 
-[67]
+[99]
 ! Undefined control sequence.
-l.202 ...gorical distance $\text{Path}^* = \argmin
+l.220 ...gorical distance $\text{Path}^* = \argmin
                                                   _\gamma \int_\gamma \dcat(...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1395,7 +1765,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (7.30534pt too wide) in paragraph at lines 206--207
+Overfull \hbox (7.30534pt too wide) in paragraph at lines 224--225
 []\T1/cmr/bx/n/12 Twelfth\T1/cmr/m/n/12 , mem-brane trans-porters func-tion thr
 ough cat-e-gor-i-cal aper-ture se-lec-tion achiev-
  []
@@ -1408,19 +1778,19 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.210 ...etry comparison ($\pm 5\%$ for $T > 1$ μ
+l.228 ...etry comparison ($\pm 5\%$ for $T > 1$ μ
                                                   K). Resolution enhancement...
 
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
-[68] (partition-based-cellular-state-equations.bbl [69] [70] [71]
+[100] (partition-based-cellular-state-equations.bbl [101] [102] [103] [104]
 Underfull \hbox (badness 1189) in paragraph at lines 379--383
 []\T1/cmr/m/n/12 Arthur L Hor-wich, William A Fen-ton, Eli Chap-man, and George
  W Farr.
  []
 
-[72] [73]
+[105]
 Underfull \hbox (badness 1107) in paragraph at lines 521--526
 []\T1/cmr/m/n/12 Ernst Abbe.  Beitr�ge zur the-o-rie des mikroskops und der mik
 roskopis-chen
@@ -1430,7 +1800,7 @@ roskopis-chen
 
 Package natbib Warning: There were undefined citations.
 
-[74] (partition-based-cellular-state-equations.aux)
+[106] (partition-based-cellular-state-equations.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
@@ -1442,83 +1812,60 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-
-Package rerunfilecheck Warning: File `partition-based-cellular-state-equations.
-out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `partition-based-cellular-state-equa
-tions.out':
-(rerunfilecheck)             Before: AD6A3741552F641C4CB8314B9C6358A6;26120
-(rerunfilecheck)             After:  60DA3A8ED13AA91A4CDA7F8ADAFF82E0;29606.
+Package rerunfilecheck Info: File `partition-based-cellular-state-equations.out
+' has not changed.
+(rerunfilecheck)             Checksum: 2F469E202C8401502ECFC65F5EB520DE;45479.
  ) 
 Here is how much of TeX's memory you used:
- 19805 strings out of 474486
- 387072 string characters out of 5743283
- 1943542 words of memory out of 5000000
- 40980 multiletter control sequences out of 15000+600000
- 582978 words of font info for 99 fonts, out of 8000000 for 9000
+ 20561 strings out of 474486
+ 401678 string characters out of 5743283
+ 1944542 words of memory out of 5000000
+ 41337 multiletter control sequences out of 15000+600000
+ 583558 words of font info for 103 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 79i,13n,93p,2813b,1315s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{subsection.12.11} has been referenced but does not 
-exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.10.12} has been referenced but does not 
-exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.8.11} has been referenced but does not e
-xist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.6.10} has been referenced but does not e
-xist, replaced by a fixed one
-
- <C:\Users\kundai\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbi1
-200.pk> <C:\Users\kundai\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
-0\ecti0800.pk> <C:\Users\kundai\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/e
-c/dpi600\ecti0600.pk> <C:\Users\kundai\AppData\Local\MiKTeX\fonts/pk/ljfour/jkn
-appen/ec/dpi600\ecrm0600.pk> <C:\Users\kundai\AppData\Local\MiKTeX\fonts/pk/ljf
-our/jknappen/ec/dpi600\tcrm1200.pk> <C:\Users\kundai\AppData\Local\MiKTeX\fonts
-/pk/ljfour/jknappen/ec/dpi600\ecti1200.pk> <C:\Users\kundai\AppData\Local\MiKTe
-X\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\kundai\AppData\Loca
-l\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\kundai\AppDa
-ta\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\kunda
-i\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\User
-s\kundai\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0800.pk> <
-C:\Users\kundai\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm109
-5.pk> <C:\Users\kundai\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\
-ecbx1095.pk> <C:\Users\kundai\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/
-dpi600\ecti1440.pk> <C:\Users\kundai\AppData\Local\MiKTeX\fonts/pk/ljfour/jknap
-pen/ec/dpi600\ecrm1440.pk> <C:\Users\kundai\AppData\Local\MiKTeX\fonts/pk/ljfou
-r/jknappen/ec/dpi600\ecbx2074.pk><C:/Users/kundai/AppData/Local/Programs/MiKTeX
-/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/kundai/AppData/Local/Progr
-ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/kundai/AppData/L
-ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/kundai/
-AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Use
-rs/kundai/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.p
-fb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
-m/cmmi12.pfb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/type1/public/
-amsfonts/cm/cmmi6.pfb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/type
-1/public/amsfonts/cm/cmmi8.pfb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/f
-onts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/kundai/AppData/Local/Progra
-ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/kundai/AppData/Loc
-al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/kundai/Ap
-pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/k
-undai/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:
-/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy
-10.pfb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
-ts/cm/cmsy6.pfb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/type1/publ
-ic/amsfonts/cm/cmsy8.pfb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/t
-ype1/public/amsfonts/symbols/msam10.pfb><C:/Users/kundai/AppData/Local/Programs
-/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on partition-based-cellular-state-equations.pdf (74 pages, 93365
-3 bytes).
+ 79i,13n,93p,3409b,1305s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\kundai\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecb
+i1200.pk> <C:\Users\kundai\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi
+600\ecti0800.pk> <C:\Users\kundai\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen
+/ec/dpi600\ecti0600.pk> <C:\Users\kundai\AppData\Local\MiKTeX\fonts/pk/ljfour/j
+knappen/ec/dpi600\ecrm0600.pk> <C:\Users\kundai\AppData\Local\MiKTeX\fonts/pk/l
+jfour/jknappen/ec/dpi600\tcrm1200.pk> <C:\Users\kundai\AppData\Local\MiKTeX\fon
+ts/pk/ljfour/jknappen/ec/dpi600\ecti1200.pk> <C:\Users\kundai\AppData\Local\MiK
+TeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\kundai\AppData\Lo
+cal\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\kundai\App
+Data\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\kun
+dai\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Us
+ers\kundai\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0800.pk>
+ <C:\Users\kundai\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1
+095.pk> <C:\Users\kundai\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
+0\ecbx1095.pk> <C:\Users\kundai\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/e
+c/dpi600\ectt1440.pk> <C:\Users\kundai\AppData\Local\MiKTeX\fonts/pk/ljfour/jkn
+appen/ec/dpi600\ecrm1440.pk> <C:\Users\kundai\AppData\Local\MiKTeX\fonts/pk/ljf
+our/jknappen/ec/dpi600\ecbx2074.pk><C:/Users/kundai/AppData/Local/Programs/MiKT
+eX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/kundai/AppData/Local/Pro
+grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/kundai/AppData
+/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/kunda
+i/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/U
+sers/kundai/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10
+.pfb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
+/cm/cmmi12.pfb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/type1/publi
+c/amsfonts/cm/cmmi6.pfb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/ty
+pe1/public/amsfonts/cm/cmmi8.pfb><C:/Users/kundai/AppData/Local/Programs/MiKTeX
+/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/kundai/AppData/Local/Prog
+rams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/kundai/AppData/L
+ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/kundai/
+AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users
+/kundai/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><
+C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
+sy10.pfb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
+onts/cm/cmsy6.pfb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/type1/pu
+blic/amsfonts/cm/cmsy8.pfb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts
+/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/kundai/AppData/Local/Progra
+ms/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on partition-based-cellular-state-equations.pdf (106 pages, 1181
+581 bytes).
 PDF statistics:
- 2753 PDF objects out of 2984 (max. 8388607)
- 856 named destinations out of 1000 (max. 500000)
- 1137 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3710 PDF objects out of 4296 (max. 8388607)
+ 1234 named destinations out of 1440 (max. 500000)
+ 1777 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -38,16 +38,19 @@
 \newcommand{\taudecorr}{\tau_{\mathrm{decorr}}}
 
 % Title
-\title{Disease State Equations: Mathematical Principles of Pathological Dynamics in Bounded Phase Space}
-\author{}
-\date{}
+\title{On the Consequences of Oscillatory Geometric Partitioning: Mathematical Principles of Pathological Dynamics in Bounded Phase Space}
+
+\author{
+Kundai Farai Sachikonye\\
+\texttt{kundai.sachikonye@wzw.tum.de}
+}
 
 \begin{document}
 
 \maketitle
 
 \begin{abstract}
-We derive equations of state for disease, immunity, and therapeutics from two foundational axioms: bounded phase space and categorical observation. These axioms necessitate partition coordinates $(n,\ell,m,s)$ with capacity $C(n) = 2n^2$, which map to S-entropy coordinates $(\Sk,\St,\Se) \in [0,1]^3$ representing knowledge, temporal, and evolution entropy. From partition geometry, we derive: (1) thermodynamic equations of state for five physical regimes (neutral gas, plasma, degenerate matter, relativistic gas, Bose-Einstein condensate), validated computationally without adjustable parameters; (2) categorical differential equations formulated with respect to partition refinements, oscillation phases, and gyrometric (oxygen rotational) derivatives, exhibiting Hamiltonian structure with purely imaginary eigenvalues confirming conservative dynamics; (3) categorical memory reset at boundaries, ensuring history independence and enabling rapid state transitions through frequency-selective synchronization to oxygen master clock harmonics; (4) pathological equations of state characterizing disease as disruption of oscillatory dynamics through categorical richness deficits, increased phase variance, and accelerated decorrelation; (5) immune equations of state establishing MHC molecules as categorical apertures that distinguish self (high richness $R > 10^5$) from non-self (low richness $R < 10^4$) through geometric exclusion, with VDJ recombination implementing ternary hierarchy generating $\sim 3^8$ antibody combinations; (6) therapeutic equations of state describing treatment as phase-locking restoration with efficacy $E$ determining frequency disorder reduction and coherence increase. Computational validation confirms all theoretical predictions: equations of state match expected functional forms across parameter ranges, categorical pendulum dynamics exhibit stable centers at $\theta = 2\pi n$ and unstable saddles at $\theta = (2n+1)\pi$ with separatrix at $E = 2\omega_0^2$, memory reset produces history independence with correlation $\rho < 10^{-6}$ across categorical boundaries, and phase coherence order parameter $r$ increases with therapeutic efficacy according to $r_{\mathrm{treated}} = \sqrt{1 - (1-E)(1-r_{\mathrm{untreated}}^2)}$. This framework provides geometric necessity for disease classification, immune recognition, and therapeutic action, treating validation as computational verification of mathematical derivations rather than empirical fitting.
+We derive equations of state for disease, immunity, and therapeutics from two foundational axioms: bounded phase space and categorical observation. These axioms necessitate partition coordinates $(n,\ell,m,s)$ with capacity $C(n) = 2n^2$, which map to S-entropy coordinates $(\Sk,\St,\Se) \in [0,1]^3$ representing knowledge, temporal, and evolution entropy. From partition geometry, we derive: (1) thermodynamic equations of state for five physical regimes (neutral gas, plasma, degenerate matter, relativistic gas, Bose-Einstein condensate), validated computationally without adjustable parameters; (2) categorical differential equations formulated with respect to partition refinements, oscillation phases, and gyrometric (oxygen rotational) derivatives, exhibiting Hamiltonian structure with purely imaginary eigenvalues confirming conservative dynamics; (3) categorical memory reset at boundaries, ensuring history independence and enabling rapid state transitions through frequency-selective synchronization to oxygen master clock harmonics; (4) electric field mechanism providing physical coordination through genome-membrane circuit with resistance $R = 10^6$ $\Omega$, capacitance $C = 10^{-12}$ F, and RC time constant $\tau = 1$ $\mu$s matching biological timescales, enabling electron cascade transport at $v = 10^6$ m/s (10$^{12}$× faster than diffusion) and coupling cellular volume, pH, and ATP through oxygen field modulation; (5) pathological equations of state characterizing disease as disruption of oscillatory dynamics through categorical richness deficits, increased phase variance, and accelerated decorrelation; (6) immune equations of state establishing MHC molecules as categorical apertures that distinguish self (high richness $R > 10^5$) from non-self (low richness $R < 10^4$) through geometric exclusion, with VDJ recombination implementing ternary hierarchy generating $\sim 3^8$ antibody combinations; (7) therapeutic equations of state describing treatment as phase-locking restoration with efficacy $E$ determining frequency disorder reduction and coherence increase. Computational validation confirms all theoretical predictions including electric field distribution ($|\mathbf{E}| = 10^4$-$10^6$ V/m), oxygen trajectories (field-driven, not diffusive), volume-pH-ATP synchronization (±2\%, ±0.1, ±10\% oscillations), cascade conductivity ($\sigma = 10^{8}$-$10^{10}$ S/m), and multi-scale power spectrum coupling (THz oxygen clock to Hz-kHz biological processes). This framework provides geometric necessity for disease classification, immune recognition, and therapeutic action, with electric field mechanism as the physical substrate for rapid cellular coordination.
 \end{abstract}
 
 \tableofcontents
@@ -102,6 +105,11 @@ This parallelism is not metaphorical but mathematical: biological systems are ph
 \input{sections/equations-of-state}
 \input{sections/categorical-differential-equations}
 \input{sections/categorical-memory-reset}
+\input{sections/electric-field-mechanism}
+\input{sections/proton-electron-coupling}
+\input{sections/circuit-dynamics}
+\input{sections/cytoplasmic-state-resolution}
+\input{sections/protein-function-reinterpretation}
 \input{sections/pathological-equations-of-state}
 \input{sections/disease-categories}
 \input{sections/immune-equations-of-state}
