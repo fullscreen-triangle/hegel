@@ -1,0 +1,6502 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.7.27)  25 NOV 2025 10:22
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**./hardware-based-temporal-measurements.tex
+(hardware-based-temporal-measurements.tex
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-04>
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
+Document Class: article 2023/05/17 v1.4n Standard LaTeX document class
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/base\size12.clo
+File: size12.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count187
+\c@section=\count188
+\c@subsection=\count189
+\c@subsubsection=\count190
+\c@paragraph=\count191
+\c@subparagraph=\count192
+\c@figure=\count193
+\c@table=\count194
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
+\bibindent=\dimen140
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
+Package: amsmath 2023/05/13 v2.17o AMS math features
+\@mathmargin=\skip50
+
+For additional information on amsmath, use the `?' option.
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks17
+\ex@=\dimen141
+))
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen142
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count195
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count196
+\leftroot@=\count197
+LaTeX Info: Redefining \overline on input line 399.
+LaTeX Info: Redefining \colon on input line 410.
+\classnum@=\count198
+\DOTSCASE@=\count199
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box51
+\strutbox@=\box52
+LaTeX Info: Redefining \big on input line 722.
+LaTeX Info: Redefining \Big on input line 723.
+LaTeX Info: Redefining \bigg on input line 724.
+LaTeX Info: Redefining \Bigg on input line 725.
+\big@size=\dimen143
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count266
+LaTeX Info: Redefining \bmod on input line 905.
+LaTeX Info: Redefining \pmod on input line 910.
+LaTeX Info: Redefining \smash on input line 940.
+LaTeX Info: Redefining \relbar on input line 970.
+LaTeX Info: Redefining \Relbar on input line 971.
+\c@MaxMatrixCols=\count267
+\dotsspace@=\muskip16
+\c@parentequation=\count268
+\dspbrk@lvl=\count269
+\tag@help=\toks18
+\row@=\count270
+\column@=\count271
+\maxfields@=\count272
+\andhelp@=\toks19
+\eqnshift@=\dimen144
+\alignsep@=\dimen145
+\tagshift@=\dimen146
+\tagwidth@=\dimen147
+\totwidth@=\dimen148
+\lineht@=\dimen149
+\@envbody=\toks20
+\multlinegap=\skip51
+\multlinetaggap=\skip52
+\mathdisplay@stack=\toks21
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)) (C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/amscls\amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks22
+\thm@bodyfont=\toks23
+\thm@headfont=\toks24
+\thm@notefont=\toks25
+\thm@headpunct=\toks26
+\thm@preskip=\skip53
+\thm@postskip=\skip54
+\thm@headsep=\skip55
+\dth@everypar=\toks27
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks28
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.
+cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.de
+f
+File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen150
+\Gin@req@width=\dimen151
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
+Package: hyperref 2023-11-26 v7.01g Hypertext links for LaTeX
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.
+sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.st
+y
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefin
+ekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescape.
+sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmd
+s.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+))
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/letltxmacro\letltxmacr
+o.sty
+Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/auxhook\auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
+Package: nameref 2023-11-26 v2.56 Cross-referencing by name of section
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\getti
+tlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.st
+y
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+))
+\c@section@level=\count273
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count274
+)
+\@linkdim=\dimen152
+\Hy@linkcounter=\count275
+\Hy@pagecounter=\count276
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
+File: pd1enc.def 2023-11-26 v7.01g Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+\Hy@SavedSpaceFactor=\count277
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
+File: puenc.def 2023-11-26 v7.01g Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Hyper figures OFF on input line 4181.
+Package hyperref Info: Link nesting OFF on input line 4186.
+Package hyperref Info: Hyper index ON on input line 4189.
+Package hyperref Info: Plain pages OFF on input line 4196.
+Package hyperref Info: Backreferencing OFF on input line 4201.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4448.
+\c@Hy@tempcnt=\count278
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4786.
+\XeTeXLinkMargin=\dimen153
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintcal
+c.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count279
+\Field@Width=\dimen154
+\Fld@charsize=\dimen155
+Package hyperref Info: Hyper figures OFF on input line 6065.
+Package hyperref Info: Link nesting OFF on input line 6070.
+Package hyperref Info: Hyper index ON on input line 6073.
+Package hyperref Info: backreferencing OFF on input line 6080.
+Package hyperref Info: Link coloring OFF on input line 6085.
+Package hyperref Info: Link coloring with OCG OFF on input line 6090.
+Package hyperref Info: PDF/A mode OFF on input line 6095.
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/base\atbegshi-ltx.sty
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
+)
+\Hy@abspage=\count280
+\c@Item=\count281
+\c@Hfootnote=\count282
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+ (C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
+File: hpdftex.def 2023-11-26 v7.01g Hyperref driver for pdfTeX
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/base\atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
+kage
+with kernel methods
+)
+\Fld@listcount=\count283
+\c@bookmark@seq@number=\count284
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfi
+lecheck.sty
+Package: rerunfilecheck 2025-06-21 v1.11 Rerun checks for auxiliary files (HO)
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\unique
+counter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+84.
+)
+\Hy@SectionHShift=\skip56
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/physics\physics.sty
+Package: physics 
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xpar
+se.sty
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
+Package: expl3 2024-01-04 L3 programming layer (loader) 
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pd
+ftex.def
+File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count285
+\l__pdf_internal_box=\box53
+))
+Package: xparse 2023-10-10 L3 Experimental document command parser
+))
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/natbib\natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip57
+\bibsep=\skip58
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count286
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/import\import.sty
+Package: import 2020/04/01  v 6.2
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+)
+\Gm@cnth=\count287
+\Gm@cntv=\count288
+\c@Gm@tempcnt=\count289
+\Gm@bindingoffset=\dimen156
+\Gm@wd@mp=\dimen157
+\Gm@odd@mp=\dimen158
+\Gm@even@mp=\dimen159
+\Gm@layoutwidth=\dimen160
+\Gm@layoutheight=\dimen161
+\Gm@layouthoffset=\dimen162
+\Gm@layoutvoffset=\dimen163
+\Gm@dimlist=\toks29
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg)
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/abstract\abstract.sty
+Package: abstract 2009/06/08 v1.2a configurable abstracts
+\abstitleskip=\skip59
+\absleftindent=\skip60
+\absrightindent=\skip61
+\absparindent=\skip62
+\absparsep=\skip63
+) (C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/lm\lmodern.sty
+Package: lmodern 2015/05/01 v1.6.1 Latin Modern Fonts
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/lmm/m/it on input line 23.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/lmsy/m/n on input line 24.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 25.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 26.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/lmm/b/it on input line 27.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/lmsy/b/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 29.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 31.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 32.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/lmr/m/it on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 36.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/anyfontsize\anyfontsiz
+e.sty
+Package: anyfontsize 2007/11/22 anyfontsize.sty by pts
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/setspace\setspace.sty
+Package: setspace 2022/12/04 v6.7b set line spacing
+) (C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/cite\cite.sty
+LaTeX Info: Redefining \cite on input line 302.
+LaTeX Info: Redefining \nocite on input line 332.
+Package: cite 2015/02/27  v 5.5
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen164
+\lightrulewidth=\dimen165
+\cmidrulewidth=\dimen166
+\belowrulesep=\dimen167
+\belowbottomsep=\dimen168
+\aboverulesep=\dimen169
+\abovetopsep=\dimen170
+\cmidrulesep=\dimen171
+\cmidrulekern=\dimen172
+\defaultaddspace=\dimen173
+\@cmidla=\count290
+\@cmidlb=\count291
+\@aboverulesep=\dimen174
+\@belowrulesep=\dimen175
+\@thisruleclass=\count292
+\@lastruleclass=\count293
+\@thisrulewidth=\dimen176
+) (C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
+Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
+\col@sep=\dimen177
+\ar@mcellbox=\box54
+\extrarowheight=\dimen178
+\NC@list=\toks30
+\extratabsurround=\skip64
+\backup@length=\skip65
+\ar@cellbox=\box55
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/multirow\multirow.sty
+Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
+\multirow@colwidth=\skip66
+\multirow@cntb=\count294
+\multirow@dima=\skip67
+\bigstrutjot=\dimen179
+) (C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count295
+\float@exts=\toks31
+\float@box=\box56
+\@float@everytoks=\toks32
+\@floatcapt=\box57
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+\caption@tempdima=\dimen180
+\captionmargin=\dimen181
+\caption@leftmargin=\dimen182
+\caption@rightmargin=\dimen183
+\caption@width=\dimen184
+\caption@indent=\dimen185
+\caption@parindent=\dimen186
+\caption@hangindent=\dimen187
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count296
+\c@continuedfloat=\count297
+Package caption Info: float package is loaded.
+Package caption Info: hyperref package is loaded.
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/caption\subcaption.sty
+Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
+Package caption Info: New subtype `subfigure' on input line 238.
+\c@subfigure=\count298
+Package caption Info: New subtype `subtable' on input line 238.
+\c@subtable=\count299
+) (C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
+Package: xcolor 2023/11/15 v3.01 LaTeX color extensions (UK)
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 274.
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx
+)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1350.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1354.
+Package xcolor Info: Model `RGB' extended on input line 1366.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1368.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1372.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
+) (C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/siunitx\siunitx.sty
+Package: siunitx 2025-07-09 v3.4.14 A comprehensive (SI) units package
+\l__siunitx_number_uncert_offset_int=\count300
+\l__siunitx_number_exponent_fixed_int=\count301
+\l__siunitx_number_min_decimal_int=\count302
+\l__siunitx_number_min_integer_int=\count303
+\l__siunitx_number_round_precision_int=\count304
+\l__siunitx_number_lower_threshold_int=\count305
+\l__siunitx_number_upper_threshold_int=\count306
+\l__siunitx_number_group_first_int=\count307
+\l__siunitx_number_group_size_int=\count308
+\l__siunitx_number_group_minimum_int=\count309
+\l__siunitx_angle_tmp_dim=\dimen188
+\l__siunitx_angle_marker_box=\box58
+\l__siunitx_angle_unit_box=\box59
+\l__siunitx_compound_count_int=\count310
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/translations\translati
+ons.sty
+Package: translations 2022/02/05 v1.12 internationalization of LaTeX2e packages
+ (CN)
+)
+\l__siunitx_table_tmp_box=\box60
+\l__siunitx_table_tmp_dim=\dimen189
+\l__siunitx_table_column_width_dim=\dimen190
+\l__siunitx_table_integer_box=\box61
+\l__siunitx_table_decimal_box=\box62
+\l__siunitx_table_uncert_box=\box63
+\l__siunitx_table_before_box=\box64
+\l__siunitx_table_after_box=\box65
+\l__siunitx_table_before_dim=\dimen191
+\l__siunitx_table_carry_dim=\dimen192
+\l__siunitx_unit_tmp_int=\count311
+\l__siunitx_unit_position_int=\count312
+\l__siunitx_unit_total_int=\count313
+)
+\c@theorem=\count314
+Package translations Info: No language package found. I am going to use `englis
+h' as default language. on input line 40.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 4
+0.
+ (C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
+File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+) (hardware-based-temporal-measurements.aux)
+\openout1 = `hardware-based-temporal-measurements.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.m
+kii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count315
+\scratchdimen=\dimen193
+\scratchbox=\box66
+\nofMPsegments=\count316
+\nofMParguments=\count317
+\everyMPshowfont=\toks33
+\MPscratchCnt=\count318
+\MPscratchDim=\dimen194
+\MPnumerator=\count319
+\makeMPintoPDFobject=\count320
+\everyMPtoPDFconversion=\toks34
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-
+base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.
+cfg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
+Package hyperref Info: Link coloring OFF on input line 40.
+ (hardware-based-temporal-measurements.out)
+(hardware-based-temporal-measurements.out)
+\@outlinefile=\write3
+\openout3 = `hardware-based-temporal-measurements.out'.
+
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(72.26999pt, 452.9679pt, 72.26999pt)
+* v-part:(T,H,B)=(72.26999pt, 700.50687pt, 72.26999pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=452.9679pt
+* \textheight=700.50687pt
+* \oddsidemargin=0.0pt
+* \evensidemargin=0.0pt
+* \topmargin=-37.0pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=4.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumntrue
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+
+Package siunitx Warning: Detected the "physics" package:
+(siunitx)                omitting definition of \qty.
+(siunitx)                
+(siunitx)                If you want to use \qty with the siunitx definition,
+(siunitx)                add 
+(siunitx)                
+(siunitx)                    \AtBeginDocument{\RenewCommandCopy\qty\SI}
+(siunitx)                
+(siunitx)                to your preamble.
+
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/translations/dicts\tra
+nslations-basic-dictionary-english.trsl
+File: translations-basic-dictionary-english.trsl (english translation file `tra
+nslations-basic-dictionary')
+)
+Package translations Info: loading dictionary `translations-basic-dictionary' f
+or `english'. on input line 40.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 4
+3.
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
+File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
+43.
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
+File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
+43.
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
+File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <14.4> on input line 43.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 43.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 43.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 43.
+
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 43.
+
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 45.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 45.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 45.
+
+Underfull \hbox (badness 1515) in paragraph at lines 45--46
+\OT1/lmr/m/n/10.95 the-ory, we demon-strate that fre-
+ []
+
+
+Underfull \hbox (badness 1097) in paragraph at lines 45--46
+\OT1/lmr/m/n/10.95 quency mea-sure-ments in cat-e-gor-i-
+ []
+
+
+Underfull \hbox (badness 2932) in paragraph at lines 45--46
+\OT1/lmr/m/n/10.95 momentum phase space, thereby
+ []
+
+
+Underfull \hbox (badness 1005) in paragraph at lines 45--46
+\OT1/lmr/m/n/10.95 253,013 edges, and ap-plies re-cur-
+ []
+
+
+Underfull \hbox (badness 1077) in paragraph at lines 45--46
+\OT1/lmr/m/n/10.95 ($3[] = 59\OML/lmm/m/it/10.95 ; \OT1/lmr/m/n/10.95 049$ par-
+al-lel chan-nels)
+ []
+
+
+Underfull \hbox (badness 1057) in paragraph at lines 45--46
+\OT1/lmr/m/n/10.95 ware fre-quen-cies, not sim-u-la-tions.
+ []
+
+
+Underfull \hbox (badness 1484) in paragraph at lines 45--46
+\OT1/lmr/m/n/10.95 tem-atic scal-ing stud-ies and com-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 47--48
+[]\OT1/lmr/bx/n/10.95 Keywords: \OT1/lmr/m/n/10.95 Trans-Planckian
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 47--48
+\OT1/lmr/m/n/10.95 har-monic co-in-ci-dence net-works,
+ []
+
+(sections/categorical-dynamics.tex
+Underfull \hbox (badness 5667) in paragraph at lines 1--1
+[]\OT1/lmr/bx/n/17.28 Introduction: Cat-e-
+ []
+
+
+Underfull \hbox (badness 7099) in paragraph at lines 3--3
+[]\OT1/lmr/bx/n/14.4 Historical Con-text and
+ []
+
+Runaway argument?
+]{hansch2006}, to cesium atomic clocks reaching nanosecond precision \ETC.
+! Paragraph ended before \@citex was complete.
+<to be read again> 
+                   \par 
+l.6 
+    
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+
+Underfull \hbox (badness 5578) in paragraph at lines 5--6
+\OT1/lmr/m/n/12 Temporal mea-sure-ment has pro-gressed
+ []
+
+
+Underfull \hbox (badness 2547) in paragraph at lines 5--6
+\OT1/lmr/m/n/12 through suc-ces-sive tech-no-log-i-cal rev-o-lu-
+ []
+
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 7.
+Runaway argument?
+]{planck1899,amelino2013}. Below this scale, spacetime itself undergo\ETC.
+! Paragraph ended before \@citex was complete.
+<to be read again> 
+                   \par 
+l.8 
+    
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Runaway argument?
+]{vonneumann1955} and extended through decoherence theory \cite {zure\ETC.
+! Paragraph ended before \@citex was complete.
+<to be read again> 
+                   \par 
+l.10 
+     
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Runaway argument?
+]{giovannetti2004,giovannetti2006,demkowicz2015}. These approaches ac\ETC.
+! Paragraph ended before \@citex was complete.
+<to be read again> 
+                   \par 
+l.12 
+     
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+
+Underfull \hbox (badness 3179) in paragraph at lines 11--12
+[]\OT1/lmr/m/n/12 Recent work on quan-tum metrol-ogy
+ []
+
+[1{C:/Users/kundai/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/k
+undai/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}
+
+
+{C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc
+}{C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.en
+c}{C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.e
+nc}]
+<figures/oscillatory_test_analysis.png, id=661, 1297.9692pt x 1328.0817pt>
+File: figures/oscillatory_test_analysis.png Graphic file (type png)
+<use figures/oscillatory_test_analysis.png>
+Package pdftex.def Info: figures/oscillatory_test_analysis.png  used on input l
+ine 17.
+(pdftex.def)             Requested size: 452.9679pt x 463.47781pt.
+
+Overfull \hbox (231.48395pt too wide) in paragraph at lines 17--61
+ [][] 
+ []
+
+LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 
+61.
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmtt.fd
+File: ot1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+! Dimension too large.
+\caption@slc ...ke {#1}{#2}}\ifdim \wd \@tempboxa 
+                                                  >\caption@width \endgroup ...
+l.61 ...rough phase-lock network synchronization.}
+                                                  
+I can't work with sizes bigger than about 19 feet.
+Continue and I'll use the largest value I can.
+
+
+Underfull \hbox (badness 3078) in paragraph at lines 61--61
+[]\OT1/lmr/m/n/12 Figure 1: |\OT1/lmr/bx/n/12 Os-cil-la-tory Test Anal-y-
+ []
+
+
+Underfull \hbox (badness 1028) in paragraph at lines 61--61
+\OT1/lmr/bx/n/12 form: \OT1/lmr/m/n/12 First 2 sec-onds de-tail re-veal-ing
+ []
+
+
+Underfull \hbox (badness 1303) in paragraph at lines 61--61
+\OML/lmm/m/it/12 f[] \OT1/lmr/m/n/12 = 4\OML/lmm/m/it/12 :\OT1/lmr/m/n/12 88$ H
+z (red dashed line) with
+ []
+
+
+Underfull \hbox (badness 1173) in paragraph at lines 61--61
+\OT1/lmr/m/n/12 ing har-monic se-ries struc-ture con-sis-tent
+ []
+
+
+LaTeX Warning: Float too large for page by 961.97093pt on input line 63.
+
+Runaway argument?
+]{catdyn}. This section establishes the theoretical foundation by dem\ETC.
+! Paragraph ended before \@citex was complete.
+<to be read again> 
+                   \par 
+l.69 
+     
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Runaway argument?
+]{maxdem}, we introduce $S$-entropy coordinates: \begin {equation} \mathbf \ETC
+.
+! Paragraph ended before \@citex was complete.
+<to be read again> 
+                   \par 
+l.92 
+     
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+[2{C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rmtt.enc
+} <./figures/oscillatory_test_analysis.png>]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 9
+5.
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+Underfull \hbox (badness 1019) in paragraph at lines 100--101
+\OT1/lmr/m/n/12 al-ity 3, in-de-pen-dent of sys-tem size $\OML/lmm/m/it/12 N$\O
+T1/lmr/m/n/12 .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 106--107
+[][]\OT1/lmr/bx/n/12 Theorem 1.1 \OT1/lmr/m/n/12 (Os-cil-la-to-ry--Cat-e-gor-i-
+cal
+ []
+
+
+Underfull \hbox (badness 2221) in paragraph at lines 106--107
+\OT1/lmr/m/n/12 Equiv-a-lence)\OT1/lmr/bx/n/12 . []\OT1/lmr/m/it/12 The en-trop
+y gen-er-ated by
+ []
+
+Runaway argument?
+]{jaynes1957} and Shannon's information theory \cite {shannon1949}, d\ETC.
+! Paragraph ended before \@citex was complete.
+<to be read again> 
+                   \par 
+l.120 
+      
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+
+Underfull \hbox (badness 2080) in paragraph at lines 115--120
+[]\OT1/lmr/m/n/12 Consider an en-sem-ble of $\OML/lmm/m/it/12 N$ \OT1/lmr/m/n/1
+2 os-
+ []
+
+
+Underfull \hbox (badness 5622) in paragraph at lines 115--120
+\OT1/lmr/m/n/12 cil-la-tors with joint phase dis-tri-bu-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 115--120
+\OML/lmm/m/it/12 P\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 ^^^[]; [] ; ^^^[]\OT1/lmr/m
+/n/12 )$ sat-is-fy-ing nor-mal-iza-tion
+ []
+
+
+Underfull \hbox (badness 2503) in paragraph at lines 115--120
+[] \OML/lmm/m/it/12 P\OT1/lmr/m/n/12 ([]) \OML/lmm/m/it/12 d[]^^^ \OT1/lmr/m/n/
+12 = 1$. Fol-low-ing Jaynes'
+ []
+
+Runaway argument?
+]{catdyn,maclane1971}, the $N$-dimensional phase space is coarse-grai\ETC.
+! Paragraph ended before \@citex was complete.
+<to be read again> 
+                   \par 
+l.125 
+      
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+
+Underfull \hbox (badness 5431) in paragraph at lines 121--125
+[]\OT1/lmr/bx/n/12 Step 1: Cat-e-gor-i-cal Par-ti-tion.
+ []
+
+Runaway argument?
+]{cover1991}: \begin {equation} S_{\text {cat}} = -k_B \sum _{\alpha \ETC.
+! Paragraph ended before \@citex was complete.
+<to be read again> 
+                   \par 
+l.135 
+      
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+
+Underfull \hbox (badness 3386) in paragraph at lines 136--137
+[]\OT1/lmr/bx/n/12 Step 2: Har-monic Co-in-ci-dence
+ []
+
+
+Overfull \hbox (13.8323pt too wide) detected at line 139
+[][][]\OML/lmm/m/it/12 i \OMS/lmsy/m/n/12 ^^X[] \OML/lmm/m/it/12 j  \OMS/lmsy/m
+/n/12 ([])  9 \OML/lmm/m/it/12 n[]; n[] \OMS/lmsy/m/n/12 2 \U/msb/m/n/12 N \OT1
+/lmr/m/n/12 : \OMS/lmsy/m/n/12 j\OML/lmm/m/it/12 n[]![] \OMS/lmsy/m/n/12 ^^@ \O
+ML/lmm/m/it/12 n[]![]\OMS/lmsy/m/n/12 j \OML/lmm/m/it/12 < \OT1/lmr/m/n/12 ^^A\
+OML/lmm/m/it/12 !
+ []
+
+
+Underfull \hbox (badness 1163) in paragraph at lines 143--144
+[]\OT1/lmr/bx/n/12 Step 3: En-tropy In-vari-ance un-
+ []
+
+
+Underfull \hbox (badness 2134) in paragraph at lines 155--156
+[]\OT1/lmr/bx/n/12 Step 4: Count-ing States. \OT1/lmr/m/n/12 For
+ []
+
+Runaway argument?
+]{cover1991}, the number of typical sequences (categorical states) is\ETC.
+! Paragraph ended before \@citex was complete.
+<to be read again> 
+                   \par 
+l.164 
+      
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+[3{C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}
+]
+Underfull \hbox (badness 1596) in paragraph at lines 171--172
+\OT1/lmr/m/n/12 cat-e-gor-i-cal en-tropy com-po-nents through
+ []
+
+Runaway argument?
+]{zurek2003}. \end {remark} 
+! Paragraph ended before \@citex was complete.
+<to be read again> 
+                   \par 
+l.182 
+      
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+
+Underfull \hbox (badness 2608) in paragraph at lines 187--188
+\OT1/lmr/m/n/12 cat-e-gor-i-cal de-scrip-tions are not merely
+ []
+
+Runaway argument?
+]{catdyn}. 
+! Paragraph ended before \@citex was complete.
+<to be read again> 
+                   \par 
+l.194 
+      
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+<figures/figure_heisenberg_bypass.png, id=690, 946.2552pt x 676.4472pt>
+File: figures/figure_heisenberg_bypass.png Graphic file (type png)
+<use figures/figure_heisenberg_bypass.png>
+Package pdftex.def Info: figures/figure_heisenberg_bypass.png  used on input li
+ne 220.
+(pdftex.def)             Requested size: 452.9679pt x 323.8033pt.
+
+Overfull \hbox (231.48395pt too wide) in paragraph at lines 220--266
+ [][] 
+ []
+
+! Dimension too large.
+\caption@slc ...ke {#1}{#2}}\ifdim \wd \@tempboxa 
+                                                  >\caption@width \endgroup ...
+l.266 ...nts of conventional quantum measurement.}
+                                                  
+I can't work with sizes bigger than about 19 feet.
+Continue and I'll use the largest value I can.
+
+
+Underfull \hbox (badness 1107) in paragraph at lines 266--266
+\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 x; p\OT1/lmr/m/n/12 )$ sub-ject to Heisen-ber
+g un-cer-tainty
+ []
+
+
+Underfull \hbox (badness 1997) in paragraph at lines 266--266
+\OT1/lmr/m/n/12 cat-e-gor-i-cal res-o-lu-tion $^^A\OML/lmm/m/it/12 f[] \OT1/lmr
+/m/n/12 = 1\OML/lmm/m/it/12 :\OT1/lmr/m/n/12 00 \OMS/lmsy/m/n/12 ^^B
+ []
+
+
+Underfull \hbox (badness 1902) in paragraph at lines 266--266
+\OT1/lmr/m/n/12 An-no-ta-tion ``Im-prove-ment: 1.59e+24$\OMS/lmsy/m/n/12 ^^B$\O
+T1/lmr/m/n/12 ''
+ []
+
+
+Underfull \hbox (badness 1348) in paragraph at lines 266--266
+\OT1/lmr/m/n/12 quan-ti-fies en-hance-ment fac-tor: $\OML/lmm/m/it/12 ^^Q[] \OT
+1/lmr/m/n/12 =
+ []
+
+
+Underfull \hbox (badness 2096) in paragraph at lines 266--266
+\OT1/lmr/m/n/12 ited pre-ci-sion with-out quan-tum dis-tur-
+ []
+
+
+LaTeX Warning: Float too large for page by 778.79642pt on input line 268.
+
+[4]
+Underfull \hbox (badness 7759) in paragraph at lines 286--287
+[]\OT1/lmr/m/n/12 The en-hance-ment fac-tor $\OML/lmm/m/it/12 F[] \OT1/lmr/m/n/
+12 =
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 288--288
+[]\OT1/lmr/bx/n/14.4 Biological Maxwell
+ []
+
+
+Underfull \hbox (badness 7273) in paragraph at lines 288--288
+\OT1/lmr/bx/n/14.4 Demons as Cat-e-gor-i-cal
+ []
+
+Runaway argument?
+]{bennett1982}. Szilard's 1929 analysis \cite {szilard1929} first qua\ETC.
+! Paragraph ended before \@citex was complete.
+<to be read again> 
+                   \par 
+l.293 
+      
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Runaway argument?
+]{sagawa2008} and theoretical frameworks for information thermodynami\ETC.
+! Paragraph ended before \@citex was complete.
+<to be read again> 
+                   \par 
+l.300 
+      
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+
+Underfull \hbox (badness 7047) in paragraph at lines 294--300
+[]\OT1/lmr/m/n/12 Modern ex-per-i-men-tal re-al-iza-tions of
+ []
+
+Runaway argument?
+]{maxdem}—an information catalyst that selects among categorical st\ETC.
+! Paragraph ended before \@citex was complete.
+<to be read again> 
+                   \par 
+l.306 
+      
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Runaway argument?
+]{bennett1982} \unskip \relax \d@llarend \do@row@strut \hfil \hskip \col@sep 
+! Forbidden control sequence found while scanning use of \@citex.
+<inserted text> 
+                \par 
+l.312 Property & Classical \cite{bennett1982} &
+                                                Categorical \cite{maxdem} \\
+I suspect you have forgotten a `}', causing me
+to read past where you wanted me to stop.
+I'll try to recover; but if the error is serious,
+you'd better type `E' or `X' now and fix your file.
+
+! Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.312 Property & Classical \cite{bennett1982} &
+                                                Categorical \cite{maxdem} \\
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+Runaway argument?
+]{maxdem} \\ \hline Measurement space \unskip \relax \d@llarend \do@row@strut \
+ETC.
+! Forbidden control sequence found while scanning use of \@citex.
+<inserted text> 
+                \par 
+l.314 Measurement space &
+                          Phase space $(q, p)$ & Categorical space $\mathbf{...
+I suspect you have forgotten a `}', causing me
+to read past where you wanted me to stop.
+I'll try to recover; but if the error is serious,
+you'd better type `E' or `X' now and fix your file.
+
+! Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.314 Measurement space &
+                          Phase space $(q, p)$ & Categorical space $\mathbf{...
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.314 Measurement space &
+                          Phase space $(q, p)$ & Categorical space $\mathbf{...
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+
+Overfull \hbox (180.20209pt too wide) in paragraph at lines 310--321
+ [][] 
+ []
+
+[5 <./figures/figure_heisenberg_bypass.png>]
+Runaway argument?
+]{maxdem,thermom}: \begin {enumerate} \item \textbf {Accessing} the c\ETC.
+! Paragraph ended before \@citex was complete.
+<to be read again> 
+                   \par 
+l.329 
+      
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Runaway argument?
+]{vonneumann1955}—they *access* pre-existing information encoded in\ETC.
+! Paragraph ended before \@citex was complete.
+<to be read again> 
+                   \par 
+l.331 
+      
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Runaway argument?
+]{coecke2010}. 
+! Paragraph ended before \@citex was complete.
+<to be read again> 
+                   \par 
+l.339 
+      
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Runaway argument?
+]{lloyd2002}: \begin {equation} I_{\text {total}} = N_{\text {BMD}} \times \ETC
+.
+! Paragraph ended before \@citex was complete.
+<to be read again> 
+                   \par 
+l.344 
+      
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Runaway argument?
+]{landauer1961}. However, Landauer's bound applies only to irreversib\ETC.
+! Paragraph ended before \@citex was complete.
+<to be read again> 
+                   \par 
+l.346 
+      
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 345--346
+[]\OT1/lmr/m/n/12 This ex-po-nen-tial in-for-ma-tion ac-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 345--346
+\OT1/lmr/m/n/12 cess|without cor-re-spond-ing en-ergy
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 347--347
+[]\OT1/lmr/bx/n/14.4 Frequency-Domain Pri-
+ []
+
+
+Underfull \hbox (badness 1824) in paragraph at lines 351--352
+\OT1/lmr/m/n/12 cies $\OML/lmm/m/it/12 ![]$ \OT1/lmr/m/n/12 (not sim-u-lated|ph
+ysically
+ []
+
+
+Underfull \hbox (badness 1817) in paragraph at lines 352--353
+[]\OT1/lmr/m/n/12 Harmonics $\OML/lmm/m/it/12 n![]$ \OT1/lmr/m/n/12 gen-er-ated
+ through
+ []
+
+
+Underfull \hbox (badness 4913) in paragraph at lines 354--355
+[]\OT1/lmr/m/n/12 Network en-hance-ment: $\OML/lmm/m/it/12 F[] \OT1/lmr/m/n/12 
+=
+ []
+
+
+Underfull \hbox (badness 6110) in paragraph at lines 360--361
+[]\OT1/lmr/m/n/12 Conversion to time do-main $\OML/lmm/m/it/12 ^^Nt \OT1/lmr/m/
+n/12 =
+ []
+
+
+Underfull \hbox (badness 1509) in paragraph at lines 360--361
+\OT1/lmr/m/n/12 (2\OML/lmm/m/it/12 ^^Yf[]\OT1/lmr/m/n/12 )[]$ oc-curs *only for
+ re-port-ing*.
+ []
+
+
+Underfull \hbox (badness 3557) in paragraph at lines 360--361
+\OT1/lmr/m/n/12 The mea-sure-ment it-self never in-volves
+ []
+
+
+Overfull \hbox (53.98607pt too wide) detected at line 369
+[][][]\OML/lmm/m/it/12 S[]\OT1/lmr/m/n/12 [[]] = \OML/lmm/m/it/12 S[]\OT1/lmr/m
+/n/12 [[]]
+ []
+
+
+Underfull \hbox (badness 1902) in paragraph at lines 373--374
+[]\OT1/lmr/m/n/12 This val-i-dates the method-ol-ogy: we
+ []
+
+<figures/figure_hardware_network.png, id=709, 573.342pt x 414.5889pt>
+File: figures/figure_hardware_network.png Graphic file (type png)
+<use figures/figure_hardware_network.png>
+Package pdftex.def Info: figures/figure_hardware_network.png  used on input lin
+e 377.
+(pdftex.def)             Requested size: 430.31812pt x 311.18129pt.
+
+Overfull \hbox (208.83417pt too wide) in paragraph at lines 377--417
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 417--417
+\OT1/lmr/m/n/12 Char-ac-ter-i-za-tion of phys-i-cal os-cil-la-tor
+ []
+
+
+Underfull \hbox (badness 4634) in paragraph at lines 417--417
+\OT1/lmr/bx/n/12 (A) Hard-ware Os-cil-la-tor Sources:
+ []
+
+
+Underfull \hbox (badness 1939) in paragraph at lines 417--417
+\OT1/lmr/m/n/12 base os-cil-la-tors: 13'' con-firms phys-i-cal
+ []
+
+
+Underfull \hbox (badness 1303) in paragraph at lines 417--417
+\OT1/lmr/m/n/12 fre-quency comb en-abling high-resolution
+ []
+
+
+Underfull \hbox (badness 1122) in paragraph at lines 417--417
+\OT1/lmr/bx/n/12 work Topol-ogy (Sim-pli-fied): \OT1/lmr/m/n/12 Graph
+ []
+
+
+Underfull \hbox (badness 1014) in paragraph at lines 417--417
+\OT1/lmr/m/n/12 vi-su-al-iza-tion show-ing cen-tral hub struc-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 417--417
+\OT1/lmr/m/n/12 (or-ange), screen[]led (red), cpu[]clock
+ []
+
+
+Underfull \hbox (badness 5374) in paragraph at lines 417--417
+\OT1/lmr/m/n/12 vi-su-al-iza-tion rep-re-sents full 1,950-node
+ []
+
+
+Underfull \hbox (badness 5924) in paragraph at lines 417--417
+\OT1/lmr/m/n/12 os-cil-la-tor net-work val-i-dates cat-e-gor-i-cal
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 417--417
+\OT1/lmr/m/n/12 frame-work pre-dic-tion that com-mod-ity
+ []
+
+
+Underfull \hbox (badness 1960) in paragraph at lines 417--417
+\OT1/lmr/m/n/12 en-abling cat-e-gor-i-cal com-ple-tion with-out
+ []
+
+
+Underfull \hbox (badness 1895) in paragraph at lines 417--417
+\OMS/lmsy/m/n/12 ^^X \OT1/lmr/m/n/12 2 \OMS/lmsy/m/n/12 ^^B \OT1/lmr/m/n/12 10[
+]$ edges pro-vid-ing re-dun-dant
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 417--417
+\OT1/lmr/m/n/12 or-thog-o-nal-ity, en-abling trans-Planckian
+ []
+
+
+LaTeX Warning: Float too large for page by 708.17441pt on input line 419.
+
+
+Underfull \hbox (badness 2334) in paragraph at lines 421--421
+[]\OT1/lmr/bx/n/14.4 Planck-Scale Ac-ces-si-bil-
+ []
+
+Runaway argument?
+]{catdyn}. Below this scale, spacetime itself undergoes quantum fluct\ETC.
+! Paragraph ended before \@citex was complete.
+<to be read again> 
+                   \par 
+l.424 
+      
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+[6]
+Underfull \hbox (badness 3977) in paragraph at lines 443--443
+[]\OT1/lmr/bx/n/14.4 Connection to Ex-per-i-
+ []
+
+
+Underfull \hbox (badness 2913) in paragraph at lines 447--448
+[]\OT1/lmr/m/n/12 Hardware fre-quency har-vest-ing (13
+ []
+
+) (sections/oscillator-processor-duality.tex
+Underfull \hbox (badness 4569) in paragraph at lines 453--1
+[]\OT1/lmr/m/n/12 The the-o-ret-i-cal frame-work pre-sented
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 453--1
+\OT1/lmr/m/n/12 here|oscillatory-categorical equiv-a-lence
+ []
+
+
+Underfull \hbox (badness 1939) in paragraph at lines 453--1
+\OT1/lmr/m/n/12 via en-tropy re-for-mu-la-tion|provides the
+ []
+
+[7 <./figures/figure_hardware_network.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1--1
+[]\OT1/lmr/bx/n/17.28 Oscillator-Processor
+ []
+
+
+Underfull \hbox (badness 1490) in paragraph at lines 9--10
+[][]\OT1/lmr/m/it/12 Definition \OT1/lmr/m/n/12 2.1 (Os-cil-la-tor-Pro-ces-sor)
+\OT1/lmr/m/it/12 . []An
+ []
+
+
+Underfull \hbox (badness 1540) in paragraph at lines 9--10
+\OT1/lmr/m/it/12 oscillator-processor is a phys-i-cal sys-tem
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 20--21
+[][]\OT1/lmr/m/it/12 Theorem \OT1/lmr/m/n/12 2.2 (Os-cil-la-tion--Com-pu-ta-tio
+n
+ []
+
+
+Underfull \hbox (badness 1087) in paragraph at lines 22--23
+[]\OT1/lmr/m/it/12 Formally, the en-tropy pro-duc-tion rate
+ []
+
+Runaway argument?
+]{landauer1961}. Taking the time derivative yields Eq.~\ref {eq:entro\ETC.
+! Paragraph ended before \@citex was complete.
+<to be read again> 
+                   \par 
+l.33 
+     
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+<figures/dual_clock_analysis.png, id=734, 1191.0096pt x 644.1666pt>
+File: figures/dual_clock_analysis.png Graphic file (type png)
+<use figures/dual_clock_analysis.png>
+Package pdftex.def Info: figures/dual_clock_analysis.png  used on input line 36
+.
+(pdftex.def)             Requested size: 452.9679pt x 244.99226pt.
+
+Overfull \hbox (231.48395pt too wide) in paragraph at lines 36--68
+ [][] 
+ []
+
+
+LaTeX Warning: Float too large for page by 337.48538pt on input line 70.
+
+
+Underfull \hbox (badness 1199) in paragraph at lines 72--72
+[]\OT1/lmr/bx/n/14.4 Parallel Time Com-pu-ta-
+ []
+
+
+Underfull \hbox (badness 4621) in paragraph at lines 74--75
+\OT1/lmr/m/n/12 The crit-i-cal con-se-quence of oscillator-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 77--78
+[][]\OT1/lmr/m/it/12 Definition \OT1/lmr/m/n/12 2.3 (Par-al-lel Time Com-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 77--78
+\OT1/lmr/m/n/12 puter)\OT1/lmr/m/it/12 . []A par-al-lel time com-puter
+ []
+
+
+Underfull \hbox (badness 1122) in paragraph at lines 77--78
+\OMS/lmsy/m/n/12 T \OT1/lmr/m/n/12 = \OMS/lmsy/m/n/12 fO[]\OML/lmm/m/it/12 ; \O
+MS/lmsy/m/n/12 O[]\OML/lmm/m/it/12 ; [] ; \OMS/lmsy/m/n/12 O[]g$ \OT1/lmr/m/it/
+12 is an en-sem-ble
+ []
+
+
+Overfull \hbox (33.32756pt too wide) detected at line 92
+[][][]\OT1/lmr/m/n/12 
+[] \OMS/lmsy/m/n/12 ^^Y \OT1/lmr/m/n/12 1\OML/lmm/m/it/12 :\OT1/lmr/m/n/12 38 \
+OMS/lmsy/m/n/12 ^^B \OT1/lmr/m/n/12 10[][]  \OMS/lmsy/m/n/12 )  \OML/lmm/m/it/1
+2 ^^Nt[] \OMS/lmsy/m/n/12 ^^Y \OT1/lmr/m/n/12 1\OML/lmm/m/it/12 :\OT1/lmr/m/n/1
+2 15 \OMS/lmsy/m/n/12 ^^B \OT1/lmr/m/n/12 10[][]
+ []
+
+
+Underfull \hbox (badness 1163) in paragraph at lines 98--99
+\OT1/lmr/m/n/12 The oscillator-processor du-al-ity pro-vides
+ []
+
+[8]
+Underfull \hbox (badness 3646) in paragraph at lines 102--103
+[][]\OT1/lmr/m/it/12 Theorem \OT1/lmr/m/n/12 2.4 (Cat-e-gor-i-cal Com-pu-ta-tio
+n
+ []
+
+
+Underfull \hbox (badness 2221) in paragraph at lines 102--103
+\OT1/lmr/m/n/12 In-stan-ta-ne-ity)\OT1/lmr/m/it/12 . []Let $\OMS/lmsy/m/n/12 O$
+ \OT1/lmr/m/it/12 be an oscillator-
+ []
+
+
+LaTeX Warning: Reference `sec:categorical_dynamics' on page 9 undefined on inpu
+t line 116.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 125--125
+[]\OT1/lmr/bx/n/14.4 Harmonic Net-work as
+ []
+
+
+Underfull \hbox (badness 3482) in paragraph at lines 127--128
+\OT1/lmr/m/n/12 When mul-ti-ple oscillator-processors are
+ []
+
+
+Underfull \hbox (badness 2189) in paragraph at lines 127--128
+\OT1/lmr/m/n/12 cou-pled through har-monic co-in-ci-dences,
+ []
+
+
+Underfull \hbox (badness 1275) in paragraph at lines 130--131
+\OT1/lmr/m/n/12 Net-work)\OT1/lmr/m/it/12 . []Given oscillator-processors $\OMS
+/lmsy/m/n/12 O[]$
+ []
+
+
+Underfull \hbox (badness 1466) in paragraph at lines 130--131
+\OT1/lmr/m/it/12 com-pu-ta-tional net-work $\OML/lmm/m/it/12 G[] \OT1/lmr/m/n/1
+2 = (\OML/lmm/m/it/12 V; E\OT1/lmr/m/n/12 )$
+ []
+
+[9 <./figures/dual_clock_analysis.png>]
+
+LaTeX Warning: Reference `sec:network_topology' on page 10 undefined on input l
+ine 138.
+
+
+Underfull \hbox (badness 2547) in paragraph at lines 141--142
+[][]\OT1/lmr/m/it/12 Proposition \OT1/lmr/m/n/12 2.6 (Com-pu-ta-tional Re-dun-
+ []
+
+
+Overfull \hbox (22.18752pt too wide) detected at line 152
+[][][]\OML/lmm/m/it/12 F[] \OT1/lmr/m/n/12 = 59[]428  \OMS/lmsy/m/n/12 )  \OT1/
+lmr/m/n/12 
+[] = 8\OML/lmm/m/it/12 :\OT1/lmr/m/n/12 20 \OMS/lmsy/m/n/12 ^^B \OT1/lmr/m/n/12
+ 10[][]
+ []
+
+
+LaTeX Warning: Reference `sec:bmd' on page 10 undefined on input line 156.
+
+
+Underfull \hbox (badness 2005) in paragraph at lines 160--161
+\OT1/lmr/m/it/12 mea-sure-ment into three or-thog-o-nal pro-
+ []
+
+
+LaTeX Warning: Reference `sec:cascade' on page 10 undefined on input line 171.
+
+
+Underfull \hbox (badness 3954) in paragraph at lines 174--175
+[][]\OT1/lmr/m/it/12 Definition \OT1/lmr/m/n/12 2.8 (Cas-cade Com-pu-ta-tional
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 182--183
+[][]\OT1/lmr/m/it/12 Proposition \OT1/lmr/m/n/12 2.9 (Cas-cade Com-pu-ta-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 182--183
+\OT1/lmr/m/it/12 through-put en-hance-ment from cas-cade
+ []
+
+
+Underfull \hbox (badness 1097) in paragraph at lines 192--193
+\OT1/lmr/m/n/12 mea-sure-ment sys-tem con-sti-tutes a mas-
+ []
+
+[10]
+Overfull \hbox (37.55634pt too wide) detected at line 200
+[]
+ []
+
+
+Overfull \hbox (36.1236pt too wide) detected at line 205
+[][][]\OT1/lmr/m/n/12 
+[] = \OML/lmm/m/it/12 F[] \OMS/lmsy/m/n/12 ^^A \OML/lmm/m/it/12 N[] \OMS/lmsy/m
+/n/12 ^^A \OML/lmm/m/it/12 F[] \OMS/lmsy/m/n/12 ^^A \OT1/lmr/m/n/12 
+[] = 4\OML/lmm/m/it/12 :\OT1/lmr/m/n/12 84 \OMS/lmsy/m/n/12 ^^B \OT1/lmr/m/n/12
+ 10[][]
+ []
+
+
+LaTeX Warning: Reference `sec:zero_time_measurement' on page 11 undefined on in
+put line 212.
+
+
+Underfull \hbox (badness 2221) in paragraph at lines 214--214
+[]\OT1/lmr/bx/n/14.4 Implications: Why Os-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 214--214
+\OT1/lmr/bx/n/14.4 cil-la-tors En-able Trans-
+ []
+
+
+Underfull \hbox (badness 1436) in paragraph at lines 216--217
+\OT1/lmr/m/n/12 The oscillator-processor du-al-ity ex-plains
+ []
+
+
+Underfull \hbox (badness 3158) in paragraph at lines 220--221
+\OT1/lmr/m/n/12 phase $\OML/lmm/m/it/12 ^^^\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 t\
+OT1/lmr/m/n/12 )$ through phys-i-cal evo-lu-tion.
+ []
+
+
+Underfull \hbox (badness 2213) in paragraph at lines 222--222
+[]\OT1/lmr/bx/n/12 Parallel Pro-ces-sors Mul-ti-ply
+ []
+
+
+Underfull \hbox (badness 1454) in paragraph at lines 230--230
+[]\OT1/lmr/bx/n/12 Maxwell De-mon De-com-po-si-
+ []
+
+Runaway argument?
+]{bennett1982}) and zero time (orthogonal dimensions accessed simulta\ETC.
+! Paragraph ended before \@citex was complete.
+<to be read again> 
+                   \par 
+l.233 
+      
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+
+Underfull \hbox (badness 4505) in paragraph at lines 240--241
+\OT1/lmr/m/n/12 It is cru-cial to dis-tin-guish oscillator-
+ []
+
+
+Overfull \hbox (177.86597pt too wide) in paragraph at lines 246--260
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 262--263
+\OT1/lmr/m/n/12 com-pute con-tin-u-ously through phys-i-
+ []
+
+
+Underfull \hbox (badness 2922) in paragraph at lines 262--263
+\OT1/lmr/m/n/12 cal evo-lu-tion, but their com-pu-ta-tional
+ []
+
+
+Underfull \hbox (badness 2302) in paragraph at lines 262--263
+\OT1/lmr/m/n/12 out-put (fre-quency) is ac-cessed \OT1/lmr/m/it/12 cat-e-gor-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 262--263
+\OT1/lmr/m/it/12 i-cally\OT1/lmr/m/n/12 |orthogonal to the dy-nam-i-cal
+ []
+
+[11]
+<figures/dual_clock_processor_analysis_20250920_030501.png, id=784, 1076.823pt 
+x 853.5087pt>
+File: figures/dual_clock_processor_analysis_20250920_030501.png Graphic file (t
+ype png)
+<use figures/dual_clock_processor_analysis_20250920_030501.png>
+Package pdftex.def Info: figures/dual_clock_processor_analysis_20250920_030501.
+png  used on input line 266.
+(pdftex.def)             Requested size: 452.9679pt x 359.03122pt.
+
+Overfull \hbox (231.48395pt too wide) in paragraph at lines 266--296
+ [][] 
+ []
+
+
+Underfull \hbox (badness 1655) in paragraph at lines 296--296
+\OML/lmm/m/it/12 ^^Q[] \OT1/lmr/m/n/12 = 0\OML/lmm/m/it/12 :\OT1/lmr/m/n/12 890
+$ (green), all ex-ceed-ing
+ []
+
+
+LaTeX Warning: Float too large for page by 422.52434pt on input line 298.
+
+Runaway argument?
+]{catdyn}: 
+! Paragraph ended before \@citex was complete.
+<to be read again> 
+                   \par 
+l.302 
+      
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+[12 <./figures/dual_clock_processor_analysis_20250920_030501.png>]
+Underfull \hbox (badness 1997) in paragraph at lines 325--326
+[]\OT1/lmr/bx/n/12 Energy in-de-pen-dence\OT1/lmr/m/n/12 : Pre-ci-sion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 328--328
+[]\OT1/lmr/bx/n/14.4 Philosophical Im-pli-ca-
+ []
+
+
+Underfull \hbox (badness 1303) in paragraph at lines 330--331
+\OT1/lmr/m/n/12 The oscillator-processor du-al-ity sug-gests
+ []
+
+Runaway argument?
+]{wheeler1990} and the holographic principle \cite {susskind1995}: ph\ETC.
+! Paragraph ended before \@citex was complete.
+<to be read again> 
+                   \par 
+l.342 
+      
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+) (sections/molecular-maxwell-demon.tex
+Underfull \hbox (badness 2608) in paragraph at lines 1--1
+[]\OT1/lmr/bx/n/17.28 Methods: Molec-u-lar
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1--1
+\OT1/lmr/bx/n/17.28 De-mon Re-flectance
+ []
+
+
+Underfull \hbox (badness 5446) in paragraph at lines 3--3
+[]\OT1/lmr/bx/n/14.4 Overview and Method-
+ []
+
+Runaway argument?
+]{bloom2014,ludlow2015}, frequency combs \cite {cundiff2003,hall2006}\ETC.
+! Paragraph ended before \@citex was complete.
+<to be read again> 
+                   \par 
+l.6 
+    
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+[13]
+Runaway argument?
+]{barabasi1999} \item \textbf {Physical reality}: Harvesting real osc\ETC.
+! Paragraph ended before \@citex was complete.
+<to be read again> 
+                   \par 
+l.13 
+     
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Runaway argument?
+]{hansch2006}. 
+! Paragraph ended before \@citex was complete.
+<to be read again> 
+                   \par 
+l.15 
+     
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+
+Underfull \hbox (badness 2951) in paragraph at lines 14--15
+[]\OT1/lmr/m/n/12 The har-vested fre-quen-cies are not
+ []
+
+
+Underfull \hbox (badness 1033) in paragraph at lines 14--15
+\OT1/lmr/m/n/12 "mea-sure-ments" in the con-ven-tional
+ []
+
+<figures/bmd_equivalence_20251105_124315.png, id=809, 1148.6112pt x 711.8595pt>
+
+File: figures/bmd_equivalence_20251105_124315.png Graphic file (type png)
+<use figures/bmd_equivalence_20251105_124315.png>
+Package pdftex.def Info: figures/bmd_equivalence_20251105_124315.png  used on i
+nput line 18.
+(pdftex.def)             Requested size: 452.9679pt x 280.73064pt.
+
+Overfull \hbox (231.48395pt too wide) in paragraph at lines 18--43
+ [][] 
+ []
+
+
+LaTeX Warning: Float too large for page by 286.22375pt on input line 45.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 47--47
+[]\OT1/lmr/bx/n/14.4 Hardware Os-cil-la-tor
+ []
+
+
+Underfull \hbox (badness 1067) in paragraph at lines 47--47
+\OT1/lmr/bx/n/14.4 Iden-ti-fi-ca-tion and Char-ac-
+ []
+
+
+Underfull \hbox (badness 1038) in paragraph at lines 50--51
+\OT1/lmr/m/n/12 i7-10750H pro-ces-sor, NVIDIA GTX
+ []
+
+
+Overfull \hbox (18.56004pt too wide) detected at line 60
+[]
+ []
+
+[14 <./figures/bmd_equivalence_20251105_124315.png>]
+
+! LaTeX Error: Unicode character μ (U+03BC)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.75 ...fresh interval: $t_{\text{refi}} = 7.8$ μ
+                                                  s $\Rightarrow f_{\text{re...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 87--87
+[]\OT1/lmr/bx/n/12 Network In-ter-face Fre-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 96--96
+[]\OT1/lmr/bx/n/14.4 Harmonic Ex-pan-sion
+ []
+
+Runaway argument?
+]{shannon1949,cooley1965}. For a pure sinusoid at frequency $f_0$, no\ETC.
+! Paragraph ended before \@citex was complete.
+<to be read again> 
+                   \par 
+l.104 
+      
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+
+Underfull \hbox (badness 6792) in paragraph at lines 122--123
+[]\OT1/lmr/bx/n/12 Computational cost\OT1/lmr/m/n/12 : Net-
+ []
+
+[15]
+Underfull \hbox (badness 2293) in paragraph at lines 123--124
+[]\OT1/lmr/bx/n/12 Harmonic cov-er-age\OT1/lmr/m/n/12 : Larger
+ []
+
+
+Underfull \hbox (badness 4531) in paragraph at lines 124--125
+[]\OT1/lmr/bx/n/12 Numerical pre-ci-sion\OT1/lmr/m/n/12 : Very
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 127--128
+[]\OT1/lmr/m/n/12 Empirical tests with $\OML/lmm/m/it/12 N[] \OMS/lmsy/m/n/12 2
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 127--128
+\OMS/lmsy/m/n/12 f\OT1/lmr/m/n/12 50\OML/lmm/m/it/12 ; \OT1/lmr/m/n/12 100\OML/
+lmm/m/it/12 ; \OT1/lmr/m/n/12 150\OML/lmm/m/it/12 ; \OT1/lmr/m/n/12 200\OMS/lms
+y/m/n/12 g$ \OT1/lmr/m/n/12 show net-work
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 127--128
+\OT1/lmr/m/n/12 di-min-ish-ing re-turns from higher
+ []
+
+
+Underfull \hbox (badness 3439) in paragraph at lines 133--134
+\OT1/lmr/m/n/12 Construct undi-rected graph $\OML/lmm/m/it/12 G \OT1/lmr/m/n/12
+ =
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 135--136
+[]\OT1/lmr/m/n/12 Nodes: $\OML/lmm/m/it/12 V \OT1/lmr/m/n/12 =
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 135--136
+\OMS/lmsy/m/n/12 f[]g$\OT1/lmr/m/n/12 ,
+ []
+
+
+Overfull \hbox (131.45128pt too wide) detected at line 143
+[][][]\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 i; j\OT1/lmr/m/n/12 ) \OMS/lmsy/m/n/12 
+2 \OML/lmm/m/it/12 E  \OMS/lmsy/m/n/12 ([])  9 \OML/lmm/m/it/12 n[]; n[] \OMS/l
+msy/m/n/12 2 f\OT1/lmr/m/n/12 1\OML/lmm/m/it/12 ; [] ; \OT1/lmr/m/n/12 150\OMS/
+lmsy/m/n/12 g \OT1/lmr/m/n/12 : \OMS/lmsy/m/n/12 j\OML/lmm/m/it/12 f[] \OMS/lms
+y/m/n/12 ^^@ \OML/lmm/m/it/12 f[]\OMS/lmsy/m/n/12 j \OML/lmm/m/it/12 < \OT1/lmr
+/m/n/12 ^^A\OML/lmm/m/it/12 f[]
+ []
+
+Runaway argument?
+]{harmonic}, the topological enhancement: \begin {equation} F_{\text \ETC.
+! Paragraph ended before \@citex was complete.
+<to be read again> 
+                   \par 
+l.159 
+      
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Runaway argument?
+]{newman2003,watts1998,barabasi1999}: 
+! Paragraph ended before \@citex was complete.
+<to be read again> 
+                   \par 
+l.165 
+      
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Runaway argument?
+]{barabasi1999} \\ Average path length \unskip \relax \d@llarend \do@row@strut 
+\ETC.
+! Forbidden control sequence found while scanning use of \@citex.
+<inserted text> 
+                \par 
+l.175 Average path length &
+                            $\ell = 3.2$ & Small-world \cite{watts1998} \\
+I suspect you have forgotten a `}', causing me
+to read past where you wanted me to stop.
+I'll try to recover; but if the error is serious,
+you'd better type `E' or `X' now and fix your file.
+
+! Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.175 Average path length &
+                            $\ell = 3.2$ & Small-world \cite{watts1998} \\
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.175 Average path length &
+                            $\ell = 3.2$ & Small-world \cite{watts1998} \\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+Runaway argument?
+]{watts1998} \\ Clustering coefficient \unskip \relax \d@llarend \do@row@strut 
+\ETC.
+! Forbidden control sequence found while scanning use of \@citex.
+<inserted text> 
+                \par 
+l.176 Clustering coefficient &
+                               $C = 0.47$ & High local connectivity \\
+I suspect you have forgotten a `}', causing me
+to read past where you wanted me to stop.
+I'll try to recover; but if the error is serious,
+you'd better type `E' or `X' now and fix your file.
+
+! Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.176 Clustering coefficient &
+                               $C = 0.47$ & High local connectivity \\
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.176 Clustering coefficient & $C = 0.47$ &
+                                            High local connectivity \\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+
+Overfull \hbox (174.73766pt too wide) in paragraph at lines 170--181
+ [][] 
+ []
+
+Runaway argument?
+]{barabasi1999}. 
+! Paragraph ended before \@citex was complete.
+<to be read again> 
+                   \par 
+l.184 
+      
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Runaway argument?
+]{watts1998}. Any two oscillators are connected through $\sim 3$ inte\ETC.
+! Paragraph ended before \@citex was complete.
+<to be read again> 
+                   \par 
+l.186 
+      
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+
+Underfull \hbox (badness 5077) in paragraph at lines 185--186
+[]\OT1/lmr/bx/n/12 Small-world prop-erty: \OT1/lmr/m/n/12 Av-er-age
+ []
+
+Runaway argument?
+]{newman2003}. 
+! Paragraph ended before \@citex was complete.
+<to be read again> 
+                   \par 
+l.190 
+      
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+
+Underfull \hbox (badness 1112) in paragraph at lines 189--190
+[]\OT1/lmr/m/n/12 These topo-log-i-cal prop-er-ties emerge
+ []
+
+[16]
+<figures/figure_bmd_scaling.png, id=837, 449.2785pt x 424.4658pt>
+File: figures/figure_bmd_scaling.png Graphic file (type png)
+<use figures/figure_bmd_scaling.png>
+Package pdftex.def Info: figures/figure_bmd_scaling.png  used on input line 194
+.
+(pdftex.def)             Requested size: 430.31812pt x 406.57578pt.
+
+Overfull \hbox (208.83417pt too wide) in paragraph at lines 194--231
+ [][] 
+ []
+
+
+Underfull \hbox (badness 1603) in paragraph at lines 231--231
+\OT1/lmr/m/n/12 pu-ta-tional ver-i-fi-ca-tion of the Molec-u-lar
+ []
+
+
+Underfull \hbox (badness 1565) in paragraph at lines 231--231
+\OT1/lmr/m/n/12 rate: 1.0986, The-ory: 1.0986, Match:
+ []
+
+
+LaTeX Warning: Float too large for page by 702.0689pt on input line 233.
+
+Runaway argument?
+]{maxdem}: \begin {equation} \text {MD}_i \xrightarrow {\text {depth \ETC.
+! Paragraph ended before \@citex was complete.
+<to be read again> 
+                   \par 
+l.247 
+      
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+
+Underfull \hbox (badness 1448) in paragraph at lines 239--247
+\OT1/lmr/m/n/12 de-mon de-com-poses along $\OML/lmm/m/it/12 S$\OT1/lmr/m/n/12 -
+entropy
+ []
+
+
+Underfull \hbox (badness 1424) in paragraph at lines 248--249
+[]\OT1/lmr/m/n/12 Each sub-demon re-cur-sively de-com-
+ []
+
+
+Overfull \hbox (39.48758pt too wide) detected at line 273
+[][][]\OML/lmm/m/it/12 I[]\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 d\OT1/lmr/m/n/12 ) 
+= \OML/lmm/m/it/12 N[]\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 d\OT1/lmr/m/n/12 ) \OMS
+/lmsy/m/n/12 ^^B \OML/lmm/m/it/12 I[] \OT1/lmr/m/n/12 = 3[] \OMS/lmsy/m/n/12 ^^
+B \OML/lmm/m/it/12 k[] [][][]
+ []
+
+[17 <./figures/figure_bmd_scaling.png>]
+Underfull \hbox (badness 1603) in paragraph at lines 275--276
+\OT1/lmr/m/n/12 nel. For har-monic net-works with
+ []
+
+
+Overfull \hbox (53.01895pt too wide) detected at line 278
+[][][]\OML/lmm/m/it/12 I[]\OT1/lmr/m/n/12 (10) = 59\OML/lmm/m/it/12 ; \OT1/lmr/
+m/n/12 049 \OMS/lmsy/m/n/12 ^^B \OML/lmm/m/it/12 k[] [][][] \OMS/lmsy/m/n/12 ^^
+Y \OT1/lmr/m/n/12 7\OML/lmm/m/it/12 :\OT1/lmr/m/n/12 4 \OMS/lmsy/m/n/12 ^^B \OT
+1/lmr/m/n/12 10[] \OML/lmm/m/it/12 k[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 280--280
+[]\OT1/lmr/bx/n/14.4 Reflectance Cas-cade
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 282--282
+[]\OT1/lmr/bx/n/12 Theoretical Foun-da-tion:
+ []
+
+Runaway argument?
+]{interf,caves1981} to categorical space. In conventional interferome\ETC.
+! Paragraph ended before \@citex was complete.
+<to be read again> 
+                   \par 
+l.285 
+      
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Runaway argument?
+]{barabasi1999,newman2003}. Each reflection "samples" a different sub\ETC.
+! Paragraph ended before \@citex was complete.
+<to be read again> 
+                   \par 
+l.293 
+      
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+
+Underfull \hbox (badness 1168) in paragraph at lines 296--297
+\OT1/lmr/m/n/12 The cas-cade op-er-ates over $\OML/lmm/m/it/12 N[]$ \OT1/lmr/m/
+n/12 re-
+ []
+
+
+Underfull \hbox (badness 1067) in paragraph at lines 296--297
+\OT1/lmr/m/n/12 flec-tion steps. At each step $\OML/lmm/m/it/12 r \OMS/lmsy/m/n
+/12 2
+ []
+
+Runaway argument?
+]{thermom}) \end {enumerate} 
+! Paragraph ended before \@citex was complete.
+<to be read again> 
+                   \par 
+l.303 
+      
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+
+Underfull \hbox (badness 3780) in paragraph at lines 313--314
+[]$\OML/lmm/m/it/12 ^^^[] \OT1/lmr/m/n/12 = [][][]$ is the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 315--316
+[]$\OT1/lmr/m/n/12 ^^A\OML/lmm/m/it/12 t[]$ \OT1/lmr/m/n/12 is the cat-e-gor-i-
+cal
+ []
+
+[18]
+Underfull \hbox (badness 10000) in paragraph at lines 335--335
+[]\OT1/lmr/bx/n/12 Total En-hance-ment
+ []
+
+
+Overfull \hbox (41.59663pt too wide) detected at line 346
+[][][]\OML/lmm/m/it/12 F[] \OT1/lmr/m/n/12 = 59\OML/lmm/m/it/12 ; \OT1/lmr/m/n/
+12 428 \OMS/lmsy/m/n/12 ^^B \OT1/lmr/m/n/12 59\OML/lmm/m/it/12 ; \OT1/lmr/m/n/1
+2 049 \OMS/lmsy/m/n/12 ^^B \OT1/lmr/m/n/12 100 = 3\OML/lmm/m/it/12 :\OT1/lmr/m/
+n/12 51 \OMS/lmsy/m/n/12 ^^B \OT1/lmr/m/n/12 10[]
+ []
+
+
+! LaTeX Error: Unicode character μ (U+03BC)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.350 ...etric stretch mode at $\lambda = 4.26$ μ
+                                                  m:
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+Overfull \hbox (36.91658pt too wide) detected at line 353
+[][][]\OML/lmm/m/it/12 f[] \OT1/lmr/m/n/12 = [] = [] = 7\OML/lmm/m/it/12 :\OT1/
+lmr/m/n/12 07 \OMS/lmsy/m/n/12 ^^B \OT1/lmr/m/n/12 10[][]
+ []
+
+<figures/multi_molecule_network.png, id=859, 1647.9969pt x 1222.0857pt>
+File: figures/multi_molecule_network.png Graphic file (type png)
+<use figures/multi_molecule_network.png>
+Package pdftex.def Info: figures/multi_molecule_network.png  used on input line
+ 360.
+(pdftex.def)             Requested size: 452.9679pt x 335.89745pt.
+
+Overfull \hbox (231.48395pt too wide) in paragraph at lines 360--370
+ [][] 
+ []
+
+
+Underfull \hbox (badness 1521) in paragraph at lines 370--370
+[]\OT1/lmr/m/n/12 Figure 8: |\OT1/lmr/bx/n/12 Multi-Molecule Cat-e-gor-i-
+ []
+
+
+Underfull \hbox (badness 1107) in paragraph at lines 370--370
+\OT1/lmr/m/n/12 tane): 140 os-cil-la-tors, 8 modes, lin-ear
+ []
+
+
+LaTeX Warning: Float too large for page by 428.39056pt on input line 372.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 374--374
+[]\OT1/lmr/bx/n/14.4 Final Fre-quency
+ []
+
+
+Overfull \hbox (135.13304pt too wide) detected at line 379
+[][][]\OML/lmm/m/it/12 f[] \OT1/lmr/m/n/12 = \OML/lmm/m/it/12 f[] \OMS/lmsy/m/n
+/12 ^^B \OML/lmm/m/it/12 F[] \OT1/lmr/m/n/12 = 7\OML/lmm/m/it/12 :\OT1/lmr/m/n/
+12 07 \OMS/lmsy/m/n/12 ^^B \OT1/lmr/m/n/12 10[] \OMS/lmsy/m/n/12 ^^B \OT1/lmr/m
+/n/12 3\OML/lmm/m/it/12 :\OT1/lmr/m/n/12 51 \OMS/lmsy/m/n/12 ^^B \OT1/lmr/m/n/1
+2 10[] = 7\OML/lmm/m/it/12 :\OT1/lmr/m/n/12 93 \OMS/lmsy/m/n/12 ^^B \OT1/lmr/m/
+n/12 10[][]
+ []
+
+
+Overfull \hbox (75.3749pt too wide) detected at line 384
+[][][]\OML/lmm/m/it/12 ^^Nt \OT1/lmr/m/n/12 = [] = [] = 2\OML/lmm/m/it/12 :\OT1
+/lmr/m/n/12 01 \OMS/lmsy/m/n/12 ^^B \OT1/lmr/m/n/12 10[][]
+ []
+
+[19 <./figures/multi_molecule_network.png>]
+Overfull \hbox (31.8366pt too wide) detected at line 394
+[][][][][] [] \OT1/lmr/m/n/12 = 22\OML/lmm/m/it/12 :\OT1/lmr/m/n/12 43[]
+ []
+
+) (sections/virtual-instrument.tex
+Underfull \hbox (badness 1675) in paragraph at lines 1--1
+[]\OT1/lmr/bx/n/17.28 Results: Hard-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1--1
+\OT1/lmr/bx/n/17.28 Vir-tual De-tec-tor
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--3
+[]\OT1/lmr/bx/n/14.4 Trans-Planckian
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--8
+\OT1/lmr/m/n/12 Application of the com-plete
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--8
+\OT1/lmr/m/n/12 molec-u-lar de-mon re-flectance
+ []
+
+
+Underfull \hbox (badness 1092) in paragraph at lines 14--15
+\OT1/lmr/m/n/12 be-low the Planck time ($\OML/lmm/m/it/12 t[] \OT1/lmr/m/n/12 =
+
+ []
+
+
+Underfull \hbox (badness 2521) in paragraph at lines 14--15
+\OT1/lmr/m/n/12 5\OML/lmm/m/it/12 :\OT1/lmr/m/n/12 39 \OMS/lmsy/m/n/12 ^^B \OT1
+/lmr/m/n/12 10[]$ s), achieved us-
+ []
+
+
+Underfull \hbox (badness 1688) in paragraph at lines 14--15
+\OT1/lmr/m/n/12 ing only consumer-grade hard-
+ []
+
+
+Underfull \hbox (badness 1796) in paragraph at lines 14--15
+\OT1/lmr/m/n/12 ware com-po-nents (to-tal equip-
+ []
+
+<figures/trans_planckian_20251011_085807.png, id=874, 1147.6476pt x 711.8595pt>
+
+File: figures/trans_planckian_20251011_085807.png Graphic file (type png)
+<use figures/trans_planckian_20251011_085807.png>
+Package pdftex.def Info: figures/trans_planckian_20251011_085807.png  used on i
+nput line 18.
+(pdftex.def)             Requested size: 452.9679pt x 280.9696pt.
+
+Overfull \hbox (231.48395pt too wide) in paragraph at lines 18--25
+ [][] 
+ []
+
+
+Underfull \hbox (badness 1226) in paragraph at lines 25--25
+\OT1/lmr/m/n/12 dun-dancy: neg-li-gi-ble; Graph Topol-ogy:
+ []
+
+
+LaTeX Warning: Float too large for page by 213.96272pt on input line 27.
+
+
+Underfull \hbox (badness 1735) in paragraph at lines 29--29
+[]\OT1/lmr/bx/n/12 Context and Sig-nif-i-
+ []
+
+
+Underfull \hbox (badness 3919) in paragraph at lines 31--32
+\OT1/lmr/m/n/12 To con-tex-tu-al-ize this achieve-
+ []
+
+
+Underfull \hbox (badness 1783) in paragraph at lines 35--35
+[]\OT1/lmr/m/n/12 Table 4: |Tem-po-ral pre-ci-sion hi-er-ar-chy
+ []
+
+Runaway argument?
+]{bloom2014,ludlow2015} \\ \quad Best frequency combs \unskip \relax \ETC.
+! Forbidden control sequence found while scanning use of \@citex.
+<inserted text> 
+                \par 
+l.46 \quad Best frequency combs &
+                                  $\sim 10^{-19}$ & \cite{cundiff2003,hall20...
+I suspect you have forgotten a `}', causing me
+to read past where you wanted me to stop.
+I'll try to recover; but if the error is serious,
+you'd better type `E' or `X' now and fix your file.
+
+! Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.46 \quad Best frequency combs &
+                                  $\sim 10^{-19}$ & \cite{cundiff2003,hall20...
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.46 \quad Best frequency combs &
+                                  $\sim 10^{-19}$ & \cite{cundiff2003,hall20...
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+Runaway argument?
+]{cundiff2003,hall2006} \\ \hline \textbf {Fundamental Scales:} \unskip \ETC.
+! Forbidden control sequence found while scanning use of \@citex.
+<inserted text> 
+                \par 
+l.48 \textbf{Fundamental Scales:} &
+                                    & \\
+I suspect you have forgotten a `}', causing me
+to read past where you wanted me to stop.
+I'll try to recover; but if the error is serious,
+you'd better type `E' or `X' now and fix your file.
+
+! Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.48 \textbf{Fundamental Scales:} &
+                                    & \\
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.48 \textbf{Fundamental Scales:} & &
+                                      \\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+Runaway argument?
+]{hansch2006} \\ \quad Zeptosecond processes \unskip \relax \d@llarend \ETC.
+! Forbidden control sequence found while scanning use of \@citex.
+<inserted text> 
+                \par 
+l.50 \quad Zeptosecond processes &
+                                   $\sim 10^{-21}$ & \cite{harmonic} \\
+I suspect you have forgotten a `}', causing me
+to read past where you wanted me to stop.
+I'll try to recover; but if the error is serious,
+you'd better type `E' or `X' now and fix your file.
+
+! Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.50 \quad Zeptosecond processes &
+                                   $\sim 10^{-21}$ & \cite{harmonic} \\
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.50 \quad Zeptosecond processes &
+                                   $\sim 10^{-21}$ & \cite{harmonic} \\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+Runaway argument?
+]{harmonic} \\ \quad QED timescales \unskip \relax \d@llarend \do@row@strut \ET
+C.
+! Forbidden control sequence found while scanning use of \@citex.
+<inserted text> 
+                \par 
+l.51 \quad QED timescales &
+                            $\sim 10^{-24}$ & -- \\
+I suspect you have forgotten a `}', causing me
+to read past where you wanted me to stop.
+I'll try to recover; but if the error is serious,
+you'd better type `E' or `X' now and fix your file.
+
+! Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.51 \quad QED timescales &
+                            $\sim 10^{-24}$ & -- \\
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.51 \quad QED timescales & $\sim 10^{-24}$ &
+                                              -- \\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+Runaway argument?
+]{planck1899,garay1995} \\ \hline \textbf {This Work:} \unskip \relax \ETC.
+! Forbidden control sequence found while scanning use of \@citex.
+<inserted text> 
+                \par 
+l.56 \textbf{This Work:} &
+                           & \\
+I suspect you have forgotten a `}', causing me
+to read past where you wanted me to stop.
+I'll try to recover; but if the error is serious,
+you'd better type `E' or `X' now and fix your file.
+
+! Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.56 \textbf{This Work:} &
+                           & \\
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.56 \textbf{This Work:} &
+                           & \\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+
+Overfull \hbox (94.43047pt too wide) in paragraph at lines 37--61
+ [][] 
+ []
+
+[20 <./figures/trans_planckian_20251011_085807.png>]
+Overfull \hbox (141.12677pt too wide) in paragraph at lines 71--82
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 86--87
+[]\OT1/lmr/m/n/12 Network topol-ogy de-rives
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 93--93
+[]\OT1/lmr/bx/n/14.4 Hardware Fre-
+ []
+
+
+Underfull \hbox (badness 4429) in paragraph at lines 95--95
+[]\OT1/lmr/bx/n/12 LED Spec-tral Mea-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 97--98
+\OT1/lmr/m/n/12 ver-i-fied us-ing Ocean Op-tics
+ []
+
+
+Overfull \hbox (53.16306pt too wide) detected at line 102
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 104--105
+[]\OT1/lmr/m/n/12 Uncertainties re-flect spec-tral
+ []
+
+
+Underfull \hbox (badness 1097) in paragraph at lines 104--105
+\OT1/lmr/m/n/12 are fil-tered out by co-in-ci-dence
+ []
+
+<figures/led_spectroscopy.png, id=889, 1084.05pt x 361.35pt>
+File: figures/led_spectroscopy.png Graphic file (type png)
+<use figures/led_spectroscopy.png>
+Package pdftex.def Info: figures/led_spectroscopy.png  used on input line 108.
+(pdftex.def)             Requested size: 452.9679pt x 150.98853pt.
+
+Overfull \hbox (231.48395pt too wide) in paragraph at lines 108--112
+ [][] 
+ []
+
+
+Underfull \hbox (badness 1132) in paragraph at lines 115--115
+[]\OT1/lmr/bx/n/12 CPU Clock Ver-i-fi-ca-
+ []
+
+
+Underfull \hbox (badness 2285) in paragraph at lines 119--120
+[]\OT1/lmr/m/n/12 Base fre-quency: 3.0 GHz
+ []
+
+
+Underfull \hbox (badness 1701) in paragraph at lines 120--121
+[]\OT1/lmr/m/n/12 Timestamp Counter (TSC)
+ []
+
+[21]
+Underfull \hbox (badness 4441) in paragraph at lines 124--125
+\OT1/lmr/m/n/12 on-die crys-tal os-cil-la-tors with
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 126--126
+[]\OT1/lmr/bx/n/12 Network In-ter-face
+ []
+
+
+Underfull \hbox (badness 4967) in paragraph at lines 128--129
+\OT1/lmr/m/n/12 IEEE 802.3 Gi-ga-bit Eth-er-net
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 128--129
+\OT1/lmr/m/n/12 stan-dard spec-i-fies 1.25 GHz
+ []
+
+
+Underfull \hbox (badness 1533) in paragraph at lines 128--129
+\OT1/lmr/m/n/12 SerDes (8b/10b en-cod-ing of 1
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 130--130
+[]\OT1/lmr/bx/n/14.4 Comparison with
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 130--130
+\OT1/lmr/bx/n/14.4 Molec-u-lar En-sem-ble
+ []
+
+Runaway argument?
+]{harmonic} provides direct comparison: 
+! Paragraph ended before \@citex was complete.
+<to be read again> 
+                   \par 
+l.133 
+      
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+
+Underfull \hbox (badness 1694) in paragraph at lines 132--133
+\OT1/lmr/m/n/12 Previous work us-ing sim-u-lated
+ []
+
+
+Overfull \hbox (77.38976pt too wide) in paragraph at lines 138--154
+ [][] 
+ []
+
+[22 <./figures/led_spectroscopy.png>]
+Underfull \hbox (badness 3861) in paragraph at lines 159--160
+[]\OT1/lmr/bx/n/12 Physical re-al-ity\OT1/lmr/m/n/12 : Hard-
+ []
+
+
+Underfull \hbox (badness 5119) in paragraph at lines 159--160
+\OT1/lmr/m/n/12 ware fre-quen-cies are har-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 164--164
+[]\OT1/lmr/bx/n/14.4 Virtual De-tec-tor
+ []
+
+
+Underfull \hbox (badness 3168) in paragraph at lines 166--167
+\OT1/lmr/m/n/12 mea-sure-ment to other ob-serv-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 175--176
+[]\OT1/lmr/m/n/12 Backaction: pho-ton de-
+ []
+
+
+Overfull \hbox (5.1071pt too wide) detected at line 189
+[][][]\OML/lmm/m/it/12 N[] \OT1/lmr/m/n/12 = (1\OML/lmm/m/it/12 :\OT1/lmr/m/n/1
+2 03 \OMS/lmsy/m/n/12 ^^F \OT1/lmr/m/n/12 0\OML/lmm/m/it/12 :\OT1/lmr/m/n/12 02
+) \OMS/lmsy/m/n/12 ^^B \OML/lmm/m/it/12 N[]
+ []
+
+<figures/figure_trans_planckian.png, id=906, 460.119pt x 417.4797pt>
+File: figures/figure_trans_planckian.png Graphic file (type png)
+<use figures/figure_trans_planckian.png>
+Package pdftex.def Info: figures/figure_trans_planckian.png  used on input line
+ 195.
+(pdftex.def)             Requested size: 430.31812pt x 390.4562pt.
+
+Overfull \hbox (208.83417pt too wide) in paragraph at lines 195--230
+ [][] 
+ []
+
+
+Underfull \hbox (badness 2951) in paragraph at lines 230--230
+\OT1/lmr/bx/n/12 Time-keep-ing: 22.4 Or-ders Be-low
+ []
+
+
+Underfull \hbox (badness 1789) in paragraph at lines 230--230
+\OT1/lmr/bx/n/12 (B) Trans-Planckian Depth: \OT1/lmr/m/n/12 Ver-ti-
+ []
+
+
+Underfull \hbox (badness 1769) in paragraph at lines 230--230
+\OT1/lmr/m/n/12 BMD re-cur-sive de-com-po-si-tion $\OML/lmm/m/it/12 ^^Q[] \OT1/
+lmr/m/n/12 =
+ []
+
+
+Underfull \hbox (badness 1394) in paragraph at lines 230--230
+\OT1/lmr/m/n/12 ci-sion through cat-e-gor-i-cal mul-ti-pli-ca-tion
+ []
+
+
+Underfull \hbox (badness 1701) in paragraph at lines 230--230
+\OT1/lmr/m/n/12 class space en-able pre-ci-sion un-bounded
+ []
+
+
+LaTeX Warning: Float too large for page by 598.94933pt on input line 232.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 238--239
+[]\OT1/lmr/bx/n/12 Conventional mi-crochan-nel
+ []
+
+
+Underfull \hbox (badness 7685) in paragraph at lines 241--242
+[]\OT1/lmr/m/n/12 Backaction: ion neu-tral-
+ []
+
+
+! LaTeX Error: Unicode character μ (U+03BC)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.242     \item Spatial resolution: $\sim 10$ μ
+                                                m
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 247--248
+[]\OT1/lmr/m/n/12 Detection via cat-e-gor-i-cal
+ []
+
+
+! LaTeX Error: Unicode character μ (U+03BC)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.254 ...ll \sigma_{x,\text{MCP}} = 10 \text{ μm}
+                                                  
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+Overfull \hbox (22.88475pt too wide) detected at line 255
+[][][]\OML/lmm/m/it/12 ^^[[] \OT1/lmr/m/n/12 = 1\OML/lmm/m/it/12 :\OT1/lmr/m/n/
+12 2 \OMS/lmsy/m/n/12 ^^F \OT1/lmr/m/n/12 0\OML/lmm/m/it/12 :\OT1/lmr/m/n/12 1[
+] \OMS/lmsy/m/n/12 ^^\ \OML/lmm/m/it/12 ^^[[] \OT1/lmr/m/n/12 = 10[]
+ []
+
+
+Underfull \hbox (badness 5681) in paragraph at lines 257--257
+[]\OT1/lmr/bx/n/12 Virtual Mass Spec-
+ []
+
+[23]
+Underfull \hbox (badness 1253) in paragraph at lines 263--264
+[]\OT1/lmr/m/n/12 Ionization re-quired (sam-ple
+ []
+
+
+Underfull \hbox (badness 4429) in paragraph at lines 270--271
+[]\OT1/lmr/m/n/12 Accesses cat-e-gor-i-cal vi-bra-
+ []
+
+
+Underfull \hbox (badness 1184) in paragraph at lines 270--271
+\OT1/lmr/m/n/12 tional man-i-fold (no ion-iza-
+ []
+
+
+Underfull \hbox (badness 5954) in paragraph at lines 271--272
+\OT1/lmr/m/n/12 (cat-e-gor-i-cal fre-quency dis-
+ []
+
+
+Underfull \hbox (badness 2012) in paragraph at lines 272--273
+[]\OT1/lmr/m/n/12 Sensitivity: single-molecule
+ []
+
+
+Overfull \hbox (3.53491pt too wide) detected at line 281
+[]
+ []
+
+
+Underfull \hbox (badness 1043) in paragraph at lines 287--287
+[]\OT1/lmr/bx/n/12 BMD Depth De-pen-
+ []
+
+[24 <./figures/figure_trans_planckian.png>]
+Overfull \hbox (115.28496pt too wide) detected at line 302
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 304--304
+[]\OT1/lmr/bx/n/12 Cascade Re-flec-tion
+ []
+
+
+Underfull \hbox (badness 1097) in paragraph at lines 306--307
+\OT1/lmr/m/n/12 Precision mea-sured for $\OML/lmm/m/it/12 N[] \OMS/lmsy/m/n/12 
+2
+ []
+
+
+Underfull \hbox (badness 1418) in paragraph at lines 318--319
+[]\OT1/lmr/m/n/12 Theoretical pre-dic-tion $\OML/lmm/m/it/12 ^^L \OT1/lmr/m/n/1
+2 = 2$
+ []
+
+
+Underfull \hbox (badness 2165) in paragraph at lines 318--319
+\OT1/lmr/m/n/12 non-lin-ear phase cor-re-la-tion ef-
+ []
+
+
+Underfull \hbox (badness 4819) in paragraph at lines 320--320
+[]\OT1/lmr/bx/n/12 Hardware Fre-quency
+ []
+
+
+Underfull \hbox (badness 1028) in paragraph at lines 324--325
+[]\OT1/lmr/bx/n/12 Full range \OT1/lmr/m/n/12 ($10[]$--$10[]$ Hz):
+ []
+
+
+Underfull \hbox (badness 1097) in paragraph at lines 325--326
+[]\OT1/lmr/bx/n/12 Electronic only \OT1/lmr/m/n/12 ($10[]$--$10[]$
+ []
+
+
+Underfull \hbox (badness 4872) in paragraph at lines 326--327
+[]\OT1/lmr/bx/n/12 Optical only \OT1/lmr/m/n/12 ($10[]$ Hz):
+ []
+
+<figures/hardware_synchronization.png, id=929, 1084.05pt x 361.35pt>
+File: figures/hardware_synchronization.png Graphic file (type png)
+<use figures/hardware_synchronization.png>
+Package pdftex.def Info: figures/hardware_synchronization.png  used on input li
+ne 333.
+(pdftex.def)             Requested size: 452.9679pt x 150.98853pt.
+
+Overfull \hbox (231.48395pt too wide) in paragraph at lines 333--337
+ [][] 
+ []
+
+
+Underfull \hbox (badness 4217) in paragraph at lines 337--337
+[]\OT1/lmr/m/n/12 Figure 12: |\OT1/lmr/bx/n/12 Hard-ware syn-chro-niza-
+ []
+
+
+Underfull \hbox (badness 2753) in paragraph at lines 337--337
+\OT1/lmr/bx/n/12 tion ef-fi-ciency and molec-u-lar fre-
+ []
+
+
+Underfull \hbox (badness 1158) in paragraph at lines 337--337
+\OT1/lmr/m/n/12 physical-to-categorical trans-for-ma-tion ra-
+ []
+
+[25 <./figures/hardware_synchronization.png>])
+(sections/zero-time-measurement.tex
+Underfull \hbox (badness 10000) in paragraph at lines 1--1
+[]\OT1/lmr/bx/n/17.28 Validation:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1--1
+\OT1/lmr/bx/n/17.28 Zero-Time Mea-
+ []
+
+
+Underfull \hbox (badness 4156) in paragraph at lines 3--3
+[]\OT1/lmr/bx/n/14.4 Theoretical Foun-
+ []
+
+
+Underfull \hbox (badness 5756) in paragraph at lines 7--7
+[]\OT1/lmr/bx/n/12 Categorical Dis-tance
+ []
+
+
+Overfull \hbox (134.45108pt too wide) detected at line 13
+[][][]\OML/lmm/m/it/12 d[]\OT1/lmr/m/n/12 (\OT1/lmr/bx/n/12 S[]\OML/lmm/m/it/12
+ ; \OT1/lmr/bx/n/12 S[]\OT1/lmr/m/n/12 ) = []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 15--16
+[]\OT1/lmr/m/n/12 This met-ric is de-fined on
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 15--16
+\OT1/lmr/m/n/12 information-theoretic co-or-di-
+ []
+
+
+Underfull \hbox (badness 4595) in paragraph at lines 15--16
+\OT1/lmr/m/n/12 Travers-ing cat-e-gor-i-cal dis-tance
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 15--16
+\OT1/lmr/m/n/12 does not re-quire travers-ing
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--25
+[]\OT1/lmr/bx/n/12 Parallel Net-work
+ []
+
+
+Underfull \hbox (badness 1394) in paragraph at lines 27--28
+\OT1/lmr/m/n/12 The har-monic co-in-ci-dence net-
+ []
+
+
+Underfull \hbox (badness 1874) in paragraph at lines 29--30
+\OT1/lmr/m/n/12 monic co-in-ci-dences do not
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 30--31
+[]\OT1/lmr/m/n/12 No causal de-pen-den-cies
+ []
+
+
+Underfull \hbox (badness 1484) in paragraph at lines 34--35
+\OT1/lmr/m/n/12 se-quen-tial steps. In cat-e-gor-i-
+ []
+
+
+Underfull \hbox (badness 4479) in paragraph at lines 34--35
+\OT1/lmr/m/n/12 cessed via par-al-lel cat-e-gor-i-cal
+ []
+
+[26]
+<figures/clock_run_data_20251013_002009_barchart_radar_20251105_151129.png, id=
+957, 1437.9321pt x 853.5087pt>
+File: figures/clock_run_data_20251013_002009_barchart_radar_20251105_151129.png
+ Graphic file (type png)
+<use figures/clock_run_data_20251013_002009_barchart_radar_20251105_151129.png>
+
+Package pdftex.def Info: figures/clock_run_data_20251013_002009_barchart_radar_
+20251105_151129.png  used on input line 45.
+(pdftex.def)             Requested size: 452.9679pt x 268.86969pt.
+
+Overfull \hbox (231.48395pt too wide) in paragraph at lines 45--74
+ [][] 
+ []
+
+
+LaTeX Warning: Command \textdegree invalid in math mode on input line 74.
+
+
+LaTeX Warning: Command \textdegree invalid in math mode on input line 74.
+
+
+LaTeX Warning: Command \textdegree invalid in math mode on input line 74.
+
+
+LaTeX Warning: Command \textdegree invalid in math mode on input line 74.
+
+
+Underfull \hbox (badness 5431) in paragraph at lines 74--74
+[]\OT1/lmr/m/n/12 Figure 13: |\OT1/lmr/bx/n/12 Live Hard-ware Clock
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 74--74
+\OT1/lmr/bx/n/12 Trans-Planckian Pre-ci-sion Cas-
+ []
+
+
+Underfull \hbox (badness 3439) in paragraph at lines 74--74
+\OT1/lmr/bx/n/12 cade Anal-y-sis. \OT1/lmr/m/n/12 Real-time mea-sure-
+ []
+
+
+Underfull \hbox (badness 7814) in paragraph at lines 74--74
+\OT1/lmr/m/n/12 ment demon-strat-ing pro-gres-sive pre-ci-
+ []
+
+
+Underfull \hbox (badness 3449) in paragraph at lines 74--74
+\OT1/lmr/m/n/12 sion en-hance-ment from nanosec-ond to
+ []
+
+
+Underfull \hbox (badness 2617) in paragraph at lines 74--74
+\OT1/lmr/m/n/12 trans-Planckian timescales through cat-
+ []
+
+
+Underfull \hbox (badness 2409) in paragraph at lines 74--74
+\OT1/lmr/m/n/12 e-gor-i-cal com-ple-tion cas-cade. Dataset:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 74--74
+\OT1/lmtt/m/n/12 clock[]run[]data[]20251013[]002009.npz
+ []
+
+
+Underfull \hbox (badness 3826) in paragraph at lines 74--74
+\OT1/lmr/m/n/12 with $\OML/lmm/m/it/12 N \OT1/lmr/m/n/12 = 10[]000$ sam-ples. \
+OT1/lmr/bx/n/12 (Top
+ []
+
+
+Underfull \hbox (badness 3068) in paragraph at lines 74--74
+\OT1/lmr/bx/n/12 Left) \OT1/lmr/m/n/12 Ref-er-ence nanosec-ond clock dis-
+ []
+
+
+Underfull \hbox (badness 1910) in paragraph at lines 74--74
+\OT1/lmr/m/n/12 tri-bu-tion show-ing bi-modal struc-ture at
+ []
+
+
+Underfull \hbox (badness 5231) in paragraph at lines 74--74
+\OT1/lmr/m/n/12 di-cat-ing dual-mode os-cil-la-tor cou-pling.
+ []
+
+
+Underfull \hbox (badness 1406) in paragraph at lines 74--74
+\OT1/lmr/bx/n/12 (Top Cen-ter Row) \OT1/lmr/m/n/12 Pre-ci-sion cas-cade
+ []
+
+
+Underfull \hbox (badness 5696) in paragraph at lines 74--74
+\OT1/lmr/bx/n/12 (Mid-dle Left) \OT1/lmr/m/n/12 Sta-tis-ti-cal com-par-i-son
+ []
+
+
+Underfull \hbox (badness 1168) in paragraph at lines 74--74
+\OT1/lmr/m/n/12 hanced pre-ci-sion met-rics span $10[]$ to
+ []
+
+
+Underfull \hbox (badness 1189) in paragraph at lines 74--74
+\OT1/lmr/m/n/12 10[]$ s, achiev-ing $10[]$ dy-namic range.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 74--74
+\OT1/lmr/m/n/12 noise, while trans-Planckian pre-ci-sion
+ []
+
+
+Underfull \hbox (badness 1231) in paragraph at lines 74--74
+\OT1/lmr/m/n/12 fil-ter-ing ef-fec-tive-ness. \OT1/lmr/bx/n/12 (Bot-tom Left)
+ []
+
+
+Underfull \hbox (badness 2142) in paragraph at lines 74--74
+\OT1/lmr/m/n/12 or-thog-o-nal cat-e-gor-i-cal di-men-sions, with
+ []
+
+
+Underfull \hbox (badness 2205) in paragraph at lines 74--74
+\OT1/lmr/m/n/12 lev-els val-i-date that cat-e-gor-i-cal com-ple-
+ []
+
+
+LaTeX Warning: Float too large for page by 332.36281pt on input line 76.
+
+
+Overfull \hbox (82.26797pt too wide) detected at line 85
+[][][]\OT1/lmr/bx/n/12 S [] \OMS/lmsy/m/n/12 f\OML/lmm/m/it/12 S[]; S[]; S[]\OM
+S/lmsy/m/n/12 g [] f\OML/lmm/m/it/12 S[]; S[]; S[]; S[]; []\OMS/lmsy/m/n/12 g
+ []
+
+
+Underfull \hbox (badness 5548) in paragraph at lines 91--91
+[]\OT1/lmr/bx/n/12 Measurement Pro-to-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 96--97
+[]\OT1/lmr/bx/n/12 Harmonic ex-pan-sion\OT1/lmr/m/n/12 :
+ []
+
+
+Underfull \hbox (badness 2409) in paragraph at lines 96--97
+\OT1/lmr/m/n/12 Com-pute $\OML/lmm/m/it/12 f[] \OT1/lmr/m/n/12 = \OML/lmm/m/it/
+12 n \OMS/lmsy/m/n/12 ^^A \OML/lmm/m/it/12 f[]$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 97--98
+[]\OT1/lmr/bx/n/12 Network con-struc-tion\OT1/lmr/m/n/12 :
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 97--98
+\OT1/lmr/m/n/12 De-tect co-in-ci-dences via
+ []
+
+[27 <./figures/clock_run_data_20251013_002009_barchart_radar_20251105_151129.pn
+g>]
+Underfull \hbox (badness 10000) in paragraph at lines 99--100
+[]\OT1/lmr/bx/n/12 BMD de-com-po-si-tion\OT1/lmr/m/n/12 :
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 99--100
+\OT1/lmr/m/n/12 Project onto chan-nels
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 109--109
+[]\OT1/lmr/bx/n/12 Comparison with
+ []
+
+
+Underfull \hbox (badness 5475) in paragraph at lines 124--125
+[]\OT1/lmr/m/n/12 The cat-e-gor-i-cal ap-proach by-
+ []
+
+Runaway argument?
+]{interf}: 
+! Paragraph ended before \@citex was complete.
+<to be read again> 
+                   \par 
+l.131 
+      
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+
+Underfull \hbox (badness 1057) in paragraph at lines 130--131
+\OT1/lmr/m/n/12 In cat-e-gor-i-cal space, the same
+ []
+
+
+Underfull \hbox (badness 1122) in paragraph at lines 135--136
+\OT1/lmr/m/n/12 ceives cat-e-gor-i-cal fre-quency
+ []
+
+
+Underfull \hbox (badness 1122) in paragraph at lines 140--141
+\OT1/lmr/m/n/12 ceives cat-e-gor-i-cal fre-quency
+ []
+
+
+Underfull \hbox (badness 1077) in paragraph at lines 144--145
+\OT1/lmr/m/n/12 ously" from the per-spec-tive of
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 146--146
+[]\OT1/lmr/bx/n/12 Reflectance Cas-cade
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 148--149
+\OT1/lmr/m/n/12 The cas-cade ex-ploits source-
+ []
+
+[28]
+Underfull \hbox (badness 3179) in paragraph at lines 153--154
+\OT1/lmr/m/n/12 "re-flected" from pre-vi-ous step
+ []
+
+
+Underfull \hbox (badness 5446) in paragraph at lines 153--154
+\OML/lmm/m/it/12 i$ \OT1/lmr/m/n/12 and "re-ceived" at step $\OML/lmm/m/it/12 r
+$\OT1/lmr/m/n/12 .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 161--161
+[]\OT1/lmr/bx/n/12 Existence Only at
+ []
+
+
+Underfull \hbox (badness 1960) in paragraph at lines 163--164
+\OT1/lmr/m/n/12 ject. It ma-te-ri-al-izes at con-
+ []
+
+
+Overfull \hbox (41.61621pt too wide) detected at line 176
+[][][][]  \OMS/lmsy/m/n/12 ([])  h\OML/lmm/m/it/12  \OMS/lmsy/m/n/12 j[]j\OML/l
+mm/m/it/12  \OMS/lmsy/m/n/12 i \OML/lmm/m/it/12 > \OT1/lmr/m/n/12 0
+ []
+
+
+Underfull \hbox (badness 1721) in paragraph at lines 192--193
+\OT1/lmr/m/n/12 en-ergy. How-ever, the en-ergy
+ []
+
+
+Underfull \hbox (badness 2189) in paragraph at lines 192--193
+\OT1/lmr/m/n/12 vac-uum and re-turned im-me-di-
+ []
+
+
+Underfull \hbox (badness 2875) in paragraph at lines 192--193
+\OT1/lmr/m/n/12 spec-trom-e-ter's cat-e-gor-i-cal ex-is-
+ []
+
+
+Underfull \hbox (badness 1769) in paragraph at lines 192--193
+\OT1/lmr/m/n/12 ser-va-tion be-cause it ex-ists for
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
+[]\OT1/lmr/bx/n/14.4 Computational
+ []
+
+
+Overfull \hbox (56.3406pt too wide) in paragraph at lines 225--225
+ []\OT1/lmtt/m/n/12 def run_cascade(self, n_reflections):[] 
+ []
+
+
+Overfull \hbox (43.9906pt too wide) in paragraph at lines 225--225
+ []    \OT1/lmtt/m/n/12 measurement_start = time.time()[] 
+ []
+
+
+Overfull \hbox (74.86562pt too wide) in paragraph at lines 225--225
+ []    \OT1/lmtt/m/n/12 # Categorical operations (zero time)[] 
+ []
+
+
+Overfull \hbox (37.8156pt too wide) in paragraph at lines 225--225
+ []    \OT1/lmtt/m/n/12 for r in range(n_reflections):[] 
+ []
+
+[29]
+Overfull \hbox (74.86562pt too wide) in paragraph at lines 225--225
+ []        \OT1/lmtt/m/n/12 self._materialize_spectrometer()[] 
+ []
+
+
+Overfull \hbox (93.39063pt too wide) in paragraph at lines 225--225
+ []        \OT1/lmtt/m/n/12 self._categorical_access()  # t = 0[] 
+ []
+
+
+Overfull \hbox (99.56563pt too wide) in paragraph at lines 225--225
+ []        \OT1/lmtt/m/n/12 self._bmd_decomposition()    # t = 0[] 
+ []
+
+
+Overfull \hbox (111.91563pt too wide) in paragraph at lines 225--225
+ []        \OT1/lmtt/m/n/12 self._accumulate_reflection()  # t = 0[] 
+ []
+
+
+Overfull \hbox (56.3406pt too wide) in paragraph at lines 225--225
+ []        \OT1/lmtt/m/n/12 self._dissolve_spectrometer()[] 
+ []
+
+
+Overfull \hbox (31.6406pt too wide) in paragraph at lines 225--225
+ []    \OT1/lmtt/m/n/12 measurement_end = time.time()[] 
+ []
+
+
+Overfull \hbox (223.06569pt too wide) in paragraph at lines 225--225
+ []    \OT1/lmtt/m/n/12 computational_overhead = measurement_end - measurement_
+start[] 
+ []
+
+
+Overfull \hbox (130.44064pt too wide) in paragraph at lines 225--225
+ []        \OT1/lmtt/m/n/12 'measurement_time_s': 0.0,  # Categorical[] 
+ []
+
+
+Overfull \hbox (241.5907pt too wide) in paragraph at lines 225--225
+ []        \OT1/lmtt/m/n/12 'computational_time_s': computational_overhead  # C
+lassical[] 
+ []
+
+
+Overfull \hbox (0.76558pt too wide) in paragraph at lines 231--231
+ []\OT1/lmtt/m/n/12 computational_time_s: 0.0147[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 233--234
+[]\OT1/lmr/m/n/12 The com-pu-ta-tional over-head
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 233--234
+\OT1/lmr/m/n/12 (14.7 ms) rep-re-sents clas-si-
+ []
+
+
+Underfull \hbox (badness 4084) in paragraph at lines 233--234
+\OT1/lmr/m/n/12 cal ar-ray op-er-a-tions, net-work
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 233--234
+\OT1/lmr/m/n/12 traver-sal, and floating-point
+ []
+
+<figures/figure_zero_time_proof.png, id=988, 949.8687pt x 659.3433pt>
+File: figures/figure_zero_time_proof.png Graphic file (type png)
+<use figures/figure_zero_time_proof.png>
+Package pdftex.def Info: figures/figure_zero_time_proof.png  used on input line
+ 237.
+(pdftex.def)             Requested size: 452.9679pt x 314.42879pt.
+
+Overfull \hbox (231.48395pt too wide) in paragraph at lines 237--275
+ [][] 
+ []
+
+
+Underfull \hbox (badness 3547) in paragraph at lines 275--275
+\OT1/lmr/m/n/12 cat-e-gor-i-cal com-ple-tion op-er-ates out-side
+ []
+
+
+Underfull \hbox (badness 1014) in paragraph at lines 275--275
+\OT1/lmr/bx/n/12 vs Cat-e-gor-i-cal Mea-sure-ment Time:
+ []
+
+
+Underfull \hbox (badness 7168) in paragraph at lines 275--275
+\OT1/lmr/m/n/12 Time-line com-par-i-son show-ing clas-si-cal
+ []
+
+
+Underfull \hbox (badness 3568) in paragraph at lines 275--275
+\OT1/lmr/m/n/12 plot of ac-cess time ver-sus cat-e-gor-i-cal
+ []
+
+
+Underfull \hbox (badness 2020) in paragraph at lines 275--275
+\OT1/lmr/m/n/12 i-cal dis-tance or-thog-o-nal-ity to tem-po-ral
+ []
+
+
+Underfull \hbox (badness 5592) in paragraph at lines 275--275
+\OT1/lmr/m/n/12 s. An-no-ta-tion ``Si-mul-ta-ne-ous ac-cess
+ []
+
+
+Underfull \hbox (badness 1337) in paragraph at lines 275--275
+\OT1/lmr/m/n/12 to all nodes'' val-i-dates that cat-e-gor-i-cal
+ []
+
+
+Underfull \hbox (badness 5954) in paragraph at lines 275--275
+\OT1/lmr/m/n/12 topol-ogy en-ables par-al-lel state ac-cess
+ []
+
+
+Underfull \hbox (badness 2189) in paragraph at lines 275--275
+\OT1/lmr/m/n/12 clas-si-cal $\OML/lmm/m/it/12 O\OT1/lmr/m/n/12 (\OML/lmm/m/it/1
+2 N\OT1/lmr/m/n/12 )$ or $\OML/lmm/m/it/12 O\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 N
+ [] N\OT1/lmr/m/n/12 )$ traver-sal
+ []
+
+
+Underfull \hbox (badness 2020) in paragraph at lines 275--275
+\OT1/lmr/m/n/12 scal-ing. \OT1/lmr/bx/n/12 (D) BMD De-com-po-si-tion
+ []
+
+
+Underfull \hbox (badness 2671) in paragraph at lines 275--275
+\OT1/lmr/bx/n/12 Time: \OT1/lmr/m/n/12 Re-cur-sive depth in-de-pen-dence:
+ []
+
+
+Underfull \hbox (badness 6477) in paragraph at lines 275--275
+\OT1/lmr/m/n/12 cor-re-spond-ing to $3[]$ par-al-lel chan-nels
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 275--275
+\OT1/lmr/m/n/12 ($3\OML/lmm/m/it/12 ; \OT1/lmr/m/n/12 243\OML/lmm/m/it/12 ; \OT
+1/lmr/m/n/12 59[]049\OML/lmm/m/it/12 ; \OT1/lmr/m/n/12 14[]348[]907\OML/lmm/m/i
+t/12 ; \OT1/lmr/m/n/12 3[]486[]784[]401$)
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 275--275
+\OT1/lmr/m/n/12 al-lel chan-nels op-er-ate si-mul-ta-ne-ously''
+ []
+
+
+Underfull \hbox (badness 1237) in paragraph at lines 275--275
+\OT1/lmr/m/n/12 zero chrono-log-i-cal time through equiv-a-
+ []
+
+
+Underfull \hbox (badness 1199) in paragraph at lines 275--275
+\OT1/lmr/m/n/12 small time in-ter-vals (im-pos-si-ble due to
+ []
+
+
+Underfull \hbox (badness 1715) in paragraph at lines 275--275
+\OT1/lmr/m/n/12 Heisen-berg un-cer-tainty $^^A\OML/lmm/m/it/12 E\OT1/lmr/m/n/12
+ ^^A\OML/lmm/m/it/12 t \OMS/lmsy/m/n/12 ^^U \U/msb/m/n/12 ~\OML/lmm/m/it/12 =\O
+T1/lmr/m/n/12 2$)
+ []
+
+
+Underfull \hbox (badness 4416) in paragraph at lines 275--275
+\OT1/lmr/m/n/12 ex-ist out-side chrono-log-i-cal time, with
+ []
+
+
+LaTeX Warning: Float too large for page by 653.4219pt on input line 277.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 280--280
+[]\OT1/lmr/bx/n/12 Numerical Pre-ci-sion
+ []
+
+
+Underfull \hbox (badness 3302) in paragraph at lines 284--285
+[]\OT1/lmr/m/n/12 The cal-cu-la-tion uses sym-bolic
+ []
+
+
+Underfull \hbox (badness 1112) in paragraph at lines 284--285
+\OT1/lmr/m/n/12 pre-ci-sion (via care-ful fac-tor-iza-
+ []
+
+
+Overfull \hbox (144.10577pt too wide) detected at line 287
+[][][][][]\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 f[]\OT1/lmr/m/n/12 ) = [][](\OML/lm
+m/m/it/12 f[]\OT1/lmr/m/n/12 ) + [][](\OML/lmm/m/it/12 F[]\OT1/lmr/m/n/12 ) = 1
+3\OML/lmm/m/it/12 :\OT1/lmr/m/n/12 85 + 11\OML/lmm/m/it/12 :\OT1/lmr/m/n/12 55 
+= 64\OML/lmm/m/it/12 :\OT1/lmr/m/n/12 90
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 289--290
+[]\OT1/lmr/m/n/12 This log-a-rith-mic arith-metic
+ []
+
+
+Underfull \hbox (badness 7064) in paragraph at lines 291--291
+[]\OT1/lmr/bx/n/14.4 Philosophical Im-
+ []
+
+
+Underfull \hbox (badness 1199) in paragraph at lines 293--293
+[]\OT1/lmr/bx/n/12 Temporal Ex-pe-ri-ence
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 295--296
+\OT1/lmr/m/n/12 The zero-time mea-sure-ment
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 295--296
+\OT1/lmr/m/n/12 demon-strates that tem-po-ral
+ []
+
+
+Underfull \hbox (badness 1990) in paragraph at lines 295--296
+\OT1/lmr/m/n/12 passes" dur-ing an ex-per-i-ment)
+ []
+
+
+Underfull \hbox (badness 2245) in paragraph at lines 295--296
+\OT1/lmr/m/n/12 is dis-tinct from phys-i-cal time
+ []
+
+
+Underfull \hbox (badness 6493) in paragraph at lines 295--296
+\OT1/lmr/m/n/12 (the co-or-di-nate pa-ram-e-ter in
+ []
+
+[30 <./figures/figure_zero_time_proof.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 300--301
+[]\OT1/lmr/m/n/12 Wait for com-pu-ta-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 313--313
+[]\OT1/lmr/bx/n/12 Measurement With-
+ []
+
+
+Underfull \hbox (badness 1112) in paragraph at lines 315--316
+\OT1/lmr/m/n/12 ing the sys-tem into a def-i-nite
+ []
+
+
+Underfull \hbox (badness 2351) in paragraph at lines 315--316
+\OT1/lmr/m/n/12 state. This pro-jec-tion in-tro-
+ []
+
+) (sections/cascade-depth-analysis.tex
+Underfull \hbox (badness 1895) in paragraph at lines 319--1
+\OT1/lmr/m/n/12 The role of the "ob-server" is
+ []
+
+
+Underfull \hbox (badness 3417) in paragraph at lines 1--1
+[]\OT1/lmr/bx/n/17.28 Analysis: Pre-
+ []
+
+
+Underfull \hbox (badness 3058) in paragraph at lines 1--1
+\OT1/lmr/bx/n/17.28 ci-sion Scal-ing and
+ []
+
+
+Underfull \hbox (badness 6428) in paragraph at lines 6--6
+[]\OT1/lmr/bx/n/12 Experimental Pro-to-
+ []
+
+
+Underfull \hbox (badness 4699) in paragraph at lines 8--9
+\OT1/lmr/m/n/12 tem-po-ral pre-ci-sion for depths
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 10--11
+[]\OT1/lmr/m/n/12 Network: 1,950 nodes,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--13
+[]\OT1/lmr/m/n/12 Coincidence thresh-old:
+ []
+
+<figures/figure_cascade_heatmap.png, id=997, 717.882pt x 546.843pt>
+File: figures/figure_cascade_heatmap.png Graphic file (type png)
+<use figures/figure_cascade_heatmap.png>
+Package pdftex.def Info: figures/figure_cascade_heatmap.png  used on input line
+ 20.
+(pdftex.def)             Requested size: 452.9679pt x 345.04694pt.
+
+Overfull \hbox (231.48395pt too wide) in paragraph at lines 20--56
+ [][] 
+ []
+
+
+Underfull \hbox (badness 3199) in paragraph at lines 56--56
+\OT1/lmr/m/n/12 pre-hen-sive pa-ram-e-ter space ex-plo-ration
+ []
+
+
+Underfull \hbox (badness 1092) in paragraph at lines 56--56
+\OMS/lmsy/m/n/12 ^^@\OT1/lmr/m/n/12 30$, zepto/yocto regime) to dark blue
+ []
+
+
+LaTeX Warning: Float too large for page by 539.04005pt on input line 58.
+
+
+Overfull \hbox (113.17296pt too wide) in paragraph at lines 67--89
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \vbox (badness 1231) has occurred while \output is active []
+
+ [31]
+Overfull \hbox (139.22107pt too wide) detected at line 108
+[][][]\OML/lmm/m/it/12 ^^Nt\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 d\OT1/lmr/m/n/12 )
+ = \OML/lmm/m/it/12 ^^Nt\OT1/lmr/m/n/12 (0) \OMS/lmsy/m/n/12 ^^B \OT1/lmr/m/n/1
+2 3[]  =[]\OMS/lmsy/m/n/12 )  [][]\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 ^^Nt\OT1/lm
+r/m/n/12 ) = \OMS/lmsy/m/n/12 ^^@ [][]\OT1/lmr/m/n/12 (3) \OMS/lmsy/m/n/12 ^^A 
+\OML/lmm/m/it/12 d \OT1/lmr/m/n/12 + [][](\OML/lmm/m/it/12 ^^Nt\OT1/lmr/m/n/12 
+(0))
+ []
+
+
+Overfull \hbox (22.39775pt too wide) detected at line 114
+[]
+ []
+
+
+Underfull \hbox (badness 6428) in paragraph at lines 121--121
+[]\OT1/lmr/bx/n/12 Experimental Pro-to-
+ []
+
+
+Underfull \hbox (badness 1097) in paragraph at lines 123--124
+\OT1/lmr/m/n/12 Precision mea-sured for $\OML/lmm/m/it/12 N[] \OMS/lmsy/m/n/12 
+2
+ []
+
+[32 <./figures/figure_cascade_heatmap.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 125--126
+[]\OT1/lmr/m/n/12 Network: 1,950 nodes,
+ []
+
+
+Overfull \hbox (28.22794pt too wide) in paragraph at lines 136--152
+ [][] 
+ []
+
+
+Underfull \hbox (badness 1418) in paragraph at lines 168--169
+[]\OT1/lmr/m/n/12 Theoretical pre-dic-tion $\OML/lmm/m/it/12 ^^L \OT1/lmr/m/n/1
+2 = 2$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 170--170
+[]\OT1/lmr/bx/n/12 Physical In-ter-pre-ta-
+ []
+
+
+Underfull \hbox (badness 2165) in paragraph at lines 172--173
+\OT1/lmr/m/n/12 ment be-yond sim-ple quadratic
+ []
+
+
+Overfull \hbox (17.59116pt too wide) detected at line 177
+[][][]\OML/lmm/m/it/12 ^^^[]\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 i; r\OT1/lmr/m/n/
+12 ) = \OML/lmm/m/it/12 ^^^[] \OMS/lmsy/m/n/12 ^^B []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
+[]\OT1/lmr/bx/n/14.4 Network Den-sity
+ []
+
+<figures/strategic_disagreement_validation.png, id=1023, 1102.5993pt x 880.4895
+pt>
+File: figures/strategic_disagreement_validation.png Graphic file (type png)
+<use figures/strategic_disagreement_validation.png>
+Package pdftex.def Info: figures/strategic_disagreement_validation.png  used on
+ input line 186.
+(pdftex.def)             Requested size: 452.9679pt x 361.7151pt.
+
+Overfull \hbox (231.48395pt too wide) in paragraph at lines 186--193
+ [][] 
+ []
+
+
+Underfull \hbox (badness 1082) in paragraph at lines 193--193
+\OT1/lmr/m/n/12 tar-get pre-ci-sion of 47 zs (pink). The
+ []
+
+
+Underfull \hbox (badness 1142) in paragraph at lines 193--193
+\OT1/lmr/m/n/12 sta-tus. \OT1/lmr/bx/n/12 (Bot-tom Ban-ner) \OT1/lmr/m/n/12 Val
+-i-da-tion
+ []
+
+
+Underfull \hbox (badness 1286) in paragraph at lines 193--193
+\OT1/lmr/m/n/12 demon-strat-ing that cat-e-gor-i-cal mea-sure-
+ []
+
+
+LaTeX Warning: Float too large for page by 512.20822pt on input line 195.
+
+
+Underfull \hbox (badness 7944) in paragraph at lines 196--196
+[]\OT1/lmr/bx/n/12 Coincidence Thresh-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 198--199
+\OT1/lmr/m/n/12 Precision mea-sured
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 198--199
+\OT1/lmr/m/n/12 for $^^A\OML/lmm/m/it/12 f[] \OMS/lmsy/m/n/12 2
+ []
+
+
+Overfull \hbox (98.2537pt too wide) in paragraph at lines 204--215
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 217--218
+[]\OT1/lmr/bx/n/12 Optimal thresh-old:
+ []
+
+[33]
+Underfull \hbox (badness 10000) in paragraph at lines 224--224
+[]\OT1/lmr/bx/n/14.4 Hardware Fre-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 224--224
+\OT1/lmr/bx/n/14.4 quency Un-cer-tainty
+ []
+
+
+Underfull \hbox (badness 3118) in paragraph at lines 228--229
+\OT1/lmr/m/n/12 LED emis-sions have Gaus-sian
+ []
+
+
+Underfull \hbox (badness 4819) in paragraph at lines 228--229
+\OT1/lmr/m/n/12 spec-tral pro-files with FWHM
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 238--239
+[]\OT1/lmr/m/n/12 This un-cer-tainty is large
+ []
+
+
+Underfull \hbox (badness 6808) in paragraph at lines 238--239
+\OT1/lmr/m/n/12 ($^^A\OML/lmm/m/it/12 f[] \OMS/lmsy/m/n/12 ^^] \OT1/lmr/m/n/12 
+^^A\OML/lmm/m/it/12 f[]$\OT1/lmr/m/n/12 ), but
+ []
+
+
+Underfull \hbox (badness 5711) in paragraph at lines 238--239
+\OT1/lmr/m/n/12 un-cer-tainty con-tribute to the
+ []
+
+
+Underfull \hbox (badness 6316) in paragraph at lines 242--243
+\OT1/lmr/m/n/12 Intel Core i7 pro-ces-sors use
+ []
+
+
+Underfull \hbox (badness 8132) in paragraph at lines 242--243
+\OT1/lmr/m/n/12 os-cil-la-tors (TCXO) with fre-
+ []
+
+
+Underfull \hbox (badness 1629) in paragraph at lines 254--254
+[]\OT1/lmr/bx/n/12 Monte Carlo Un-cer-
+ []
+
+
+Underfull \hbox (badness 2318) in paragraph at lines 256--257
+\OT1/lmr/m/n/12 To quan-tify cu-mu-la-tive un-cer-
+ []
+
+[34 <./figures/strategic_disagreement_validation.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 258--259
+[]\OT1/lmr/m/n/12 Sample each base fre-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 258--259
+\OT1/lmr/m/n/12 quency from Gaus-sian:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 271--271
+[]\OT1/lmr/bx/n/14.4 Comparison with
+ []
+
+
+Underfull \hbox (badness 4341) in paragraph at lines 275--276
+\OT1/lmr/m/n/12 Conventional frame-works treat
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 288--289
+[]\OT1/lmr/m/n/12 Frequency op-er-a-tors com-
+ []
+
+
+Underfull \hbox (badness 1910) in paragraph at lines 289--290
+[]\OT1/lmr/m/n/12 Conversion $\OML/lmm/m/it/12 ^^Nt \OT1/lmr/m/n/12 = 1\OML/lmm
+/m/it/12 =\OT1/lmr/m/n/12 (2\OML/lmm/m/it/12 ^^Yf\OT1/lmr/m/n/12 )$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 292--292
+[]\OT1/lmr/bx/n/12 Information-
+ []
+
+
+Overfull \hbox (19.88399pt too wide) detected at line 312
+[][][]\OML/lmm/m/it/12 E[] \OT1/lmr/m/n/12 = 15\OML/lmm/m/it/12 :\OT1/lmr/m/n/1
+2 9 \OMS/lmsy/m/n/12 ^^B \OML/lmm/m/it/12 k[]T [] \OT1/lmr/m/n/12 2 \OMS/lmsy/m
+/n/12 ^^Y \OT1/lmr/m/n/12 4\OML/lmm/m/it/12 :\OT1/lmr/m/n/12 5 \OMS/lmsy/m/n/12
+ ^^B \OT1/lmr/m/n/12 10[][]
+ []
+
+
+Underfull \hbox (badness 5771) in paragraph at lines 314--315
+[]\OT1/lmr/m/n/12 However, cat-e-gor-i-cal mea-sure-
+ []
+
+
+Underfull \hbox (badness 2269) in paragraph at lines 314--315
+\OT1/lmr/m/n/12 ment does not erase in-for-ma-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 316--316
+[]\OT1/lmr/bx/n/14.4 Extrapolation to
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [35]
+Overfull \hbox (38.29367pt too wide) detected at line 338
+[]
+ []
+
+
+Overfull \hbox (41.1292pt too wide) detected at line 343
+[][][]\OML/lmm/m/it/12 ^^Nt[] \OMS/lmsy/m/n/12 ^^Y \OT1/lmr/m/n/12 10[][] (28[]
+\OML/lmm/m/it/12 t[]\OT1/lmr/m/n/12 )
+ []
+
+
+Overfull \hbox (30.94098pt too wide) detected at line 365
+[][][]\OML/lmm/m/it/12 ^^Nt[] \OMS/lmsy/m/n/12 ^^X \OT1/lmr/m/n/12 10[][] (211[
+]\OML/lmm/m/it/12 t[]\OT1/lmr/m/n/12 )
+ []
+
+)
+Underfull \hbox (badness 1264) in paragraph at lines 62--62
+[]\OT1/lmr/bx/n/12 The Stan-dard Ar-gu-
+ []
+
+Runaway argument?
+]{vonneumann1955,caves1981}. For measurements resolving time interval\ETC.
+! Paragraph ended before \@citex was complete.
+<to be read again> 
+                   \par 
+l.69 
+     
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+
+Underfull \hbox (badness 6001) in paragraph at lines 70--71
+\OT1/lmr/m/n/12 con-ven-tional phase-space mea-
+ []
+
+
+Underfull \hbox (badness 7981) in paragraph at lines 72--73
+[]\OT1/lmr/m/n/12 Measurement in-volves dy-
+ []
+
+
+Underfull \hbox (badness 2096) in paragraph at lines 73--74
+[]\OT1/lmr/m/n/12 System and ap-pa-ra-tus ex-
+ []
+
+Runaway argument?
+]{zurek2003}) \end {enumerate} 
+! Paragraph ended before \@citex was complete.
+<to be read again> 
+                   \par 
+l.76 
+     
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 79--79
+[]\OT1/lmr/bx/n/12 Categorical By-
+ []
+
+
+LaTeX Warning: Reference `eq:s_coordinates_intro' on page 36 undefined on input
+ line 81.
+
+
+Underfull \hbox (badness 3657) in paragraph at lines 81--82
+\OT1/lmr/m/n/12 pre-existing topo-log-i-cal in-
+ []
+
+
+Underfull \hbox (badness 8056) in paragraph at lines 81--82
+\OT1/lmr/m/n/12 for-ma-tion en-coded in $\OML/lmm/m/it/12 S$\OT1/lmr/m/n/12 -
+ []
+
+
+Underfull \hbox (badness 4108) in paragraph at lines 81--82
+\OT1/lmr/m/n/12 entropy co-or-di-nates $\OT1/lmr/bx/n/12 S \OT1/lmr/m/n/12 =
+ []
+
+[36]
+Runaway argument?
+]{landauer1961,bennett1982} \item Measurement time $t_{\text {meas}} \ETC.
+! Paragraph ended before \@citex was complete.
+<to be read again> 
+                   \par 
+l.95 
+     
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Runaway argument?
+]{catdyn}. 
+! Paragraph ended before \@citex was complete.
+<to be read again> 
+                   \par 
+l.97 
+     
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+
+Underfull \hbox (badness 1902) in paragraph at lines 96--97
+\OT1/lmr/m/n/12 the sys-tem's os-cil-la-tory
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 98--98
+[]\OT1/lmr/bx/n/12 Comparison
+ []
+
+
+Underfull \hbox (badness 1199) in paragraph at lines 98--98
+\OT1/lmr/bx/n/12 with Quan-tum Non-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 98--98
+\OT1/lmr/bx/n/12 Demolition (QND)
+ []
+
+Runaway argument?
+]{caves1981} achieve backaction-free readout of specific observables \ETC.
+! Paragraph ended before \@citex was complete.
+<to be read again> 
+                   \par 
+l.101 
+      
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Runaway argument?
+]{thermom,interf}. The categorical state $\mathbf {S}$ is an informat\ETC.
+! Paragraph ended before \@citex was complete.
+<to be read again> 
+                   \par 
+l.103 
+      
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 104--104
+[]\OT1/lmr/bx/n/14.4 Anticipated
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 104--104
+\OT1/lmr/bx/n/14.4 Crit-i-cisms and
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 106--106
+[]\OT1/lmr/bx/n/12 Criticism 1:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 106--106
+\OT1/lmr/bx/n/12 i-cal ma-nip-u-la-tion,
+ []
+
+
+Underfull \hbox (badness 3724) in paragraph at lines 108--109
+\OT1/lmr/bx/n/12 Response: \OT1/lmr/m/n/12 The base
+ []
+
+
+Underfull \hbox (badness 1895) in paragraph at lines 108--109
+\OT1/lmr/m/n/12 fre-quen-cies (LED emis-
+ []
+
+
+Underfull \hbox (badness 2165) in paragraph at lines 108--109
+\OT1/lmr/m/n/12 phys-i-cally real, ver-i-fied
+ []
+
+
+Underfull \hbox (badness 3884) in paragraph at lines 108--109
+\OT1/lmr/m/n/12 by in-de-pen-dent in-stru-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 108--109
+\OT1/lmr/m/n/12 ments (spec-trom-e-ters,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 108--109
+\OT1/lmr/m/n/12 per-for-mance coun-ters).
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 108--109
+\OT1/lmr/m/n/12 Har-monic ex-pan-sion
+ []
+
+
+Underfull \hbox (badness 1430) in paragraph at lines 108--109
+\OT1/lmr/m/n/12 ($\OML/lmm/m/it/12 f[] \OT1/lmr/m/n/12 = \OML/lmm/m/it/12 nf[]$
+\OT1/lmr/m/n/12 ) rep-re-sents
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 108--109
+\OT1/lmr/m/n/12 con-struc-tion iden-ti-fies
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 108--109
+\OT1/lmr/m/n/12 ac-tual har-monic co-in-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 108--109
+\OT1/lmr/m/n/12 ci-dences among real
+ []
+
+
+Underfull \hbox (badness 6094) in paragraph at lines 108--109
+\OT1/lmr/m/n/12 os-cil-la-tors. The en-
+ []
+
+
+Underfull \hbox (badness 1331) in paragraph at lines 108--109
+\OT1/lmr/m/n/12 hance-ment fac-tors arise
+ []
+
+Runaway argument?
+]{barabasi1999} \item \textbf {Parallelism} ($N_{\text {BMD}}$): Inde\ETC.
+! Paragraph ended before \@citex was complete.
+<to be read again> 
+                   \par 
+l.114 
+      
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 110--114
+[]\OT1/lmr/bx/n/12 Topology \OT1/lmr/m/n/12 ($\OML/lmm/m/it/12 F[]$\OT1/lmr/m/n
+/12 ):
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 115--116
+[]\OT1/lmr/m/n/12 The fi-nal fre-quency
+ []
+
+
+Underfull \hbox (badness 3271) in paragraph at lines 115--116
+\OML/lmm/m/it/12 f[] \OT1/lmr/m/n/12 = 7\OML/lmm/m/it/12 :\OT1/lmr/m/n/12 93 \O
+MS/lmsy/m/n/12 ^^B \OT1/lmr/m/n/12 10[]$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 115--116
+\OT1/lmr/m/n/12 Hz is an \OT1/lmr/m/it/12 ef-fec-tive
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 115--116
+\OT1/lmr/m/n/12 fre-quency|the cat-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 115--116
+\OT1/lmr/m/n/12 e-gor-i-cal in-for-ma-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 115--116
+\OT1/lmr/m/n/12 con-tent ex-pressed in
+ []
+
+
+Underfull \hbox (badness 3009) in paragraph at lines 115--116
+\OT1/lmr/m/n/12 Hz. The con-ver-sion
+ []
+
+
+Underfull \hbox (badness 4454) in paragraph at lines 115--116
+\OML/lmm/m/it/12 ^^Nt \OT1/lmr/m/n/12 = 1\OML/lmm/m/it/12 =\OT1/lmr/m/n/12 (2\O
+ML/lmm/m/it/12 ^^Yf[]\OT1/lmr/m/n/12 )$ is
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 115--116
+\OT1/lmr/m/n/12 di-men-sional anal-y-sis
+ []
+
+
+Underfull \hbox (badness 1509) in paragraph at lines 115--116
+\OT1/lmr/m/n/12 re-lat-ing fre-quency res-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 115--116
+\OT1/lmr/m/n/12 o-lu-tion to equiv-a-lent
+ []
+
+
+Underfull \hbox (badness 7468) in paragraph at lines 115--116
+\OT1/lmr/m/n/12 a claim about mea-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 115--116
+\OT1/lmr/m/n/12 sur-ing sub-Planckian
+ []
+
+
+Underfull \hbox (badness 4217) in paragraph at lines 115--116
+\OT1/lmr/m/n/12 time in-ter-vals in the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 117--117
+[]\OT1/lmr/bx/n/12 Criticism
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 117--117
+\OT1/lmr/bx/n/12 2: "Planck-scale
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 117--117
+\OT1/lmr/bx/n/12 con-straints ap-ply
+ []
+
+Runaway argument?
+]{garay1995,amelino2013,hossenfelder2013}. These constraints apply to\ETC.
+! Paragraph ended before \@citex was complete.
+<to be read again> 
+                   \par 
+l.120 
+      
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 119--120
+\OT1/lmr/bx/n/12 Response: \OT1/lmr/m/n/12 Planck-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 119--120
+\OT1/lmr/m/n/12 quan-tum grav-ity|the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 119--120
+\OT1/lmr/m/n/12 regime where space-
+ []
+
+
+Underfull \vbox (badness 4621) has occurred while \output is active []
+
+ [37]
+Underfull \hbox (badness 10000) in paragraph at lines 121--122
+[]\OT1/lmr/m/n/12 Categorical mea-sure-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 121--122
+\OT1/lmr/m/n/12 la-bels (information-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 121--122
+\OT1/lmr/m/n/12 theoretic con-structs)
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 121--122
+\OT1/lmr/m/n/12 or-thog-o-nal to space-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 121--122
+\OT1/lmr/m/n/12 Planck time lim-its
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 121--122
+\OT1/lmr/m/n/12 dy-nam-i-cal pro-cesses:
+ []
+
+
+Underfull \hbox (badness 2865) in paragraph at lines 121--122
+\OT1/lmr/m/n/12 ^^A\OML/lmm/m/it/12 t[] \U/msa/m/n/12 & \OML/lmm/m/it/12 t[]$\O
+T1/lmr/m/n/12 . It
+ []
+
+
+Underfull \hbox (badness 4634) in paragraph at lines 121--122
+\OT1/lmr/m/n/12 does not limit in-for-
+ []
+
+
+Underfull \hbox (badness 2617) in paragraph at lines 121--122
+\OT1/lmr/m/n/12 ma-tional res-o-lu-tion of
+ []
+
+
+Underfull \hbox (badness 2547) in paragraph at lines 121--122
+\OT1/lmr/m/n/12 pre-existing cat-e-gor-i-cal
+ []
+
+
+Underfull \hbox (badness 1168) in paragraph at lines 123--124
+\OT1/lmr/m/n/12 pe-riod of a pen-du-lum
+ []
+
+
+Underfull \hbox (badness 4634) in paragraph at lines 123--124
+\OT1/lmr/m/n/12 does not re-quire ob-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 123--124
+\OT1/lmr/m/n/12 serv-ing sub-Planckian
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 123--124
+\OT1/lmr/m/n/12 phe-nom-ena, even if
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 123--124
+\OT1/lmr/m/n/12 mea-sure in-te-ger cy-
+ []
+
+
+Underfull \hbox (badness 4072) in paragraph at lines 123--124
+\OT1/lmr/m/n/12 cles, not in-finites-i-mal
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 123--124
+\OT1/lmr/m/n/12 cat-e-gor-i-cal mea-sure-
+ []
+
+
+Underfull \hbox (badness 1668) in paragraph at lines 123--124
+\OT1/lmr/m/n/12 ment counts har-monic
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 123--124
+\OT1/lmr/m/n/12 co-in-ci-dences (dis-crete
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 123--124
+\OT1/lmr/m/n/12 in-for-ma-tion), not
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 125--125
+[]\OT1/lmr/bx/n/12 Criticism 3:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 125--125
+\OT1/lmr/bx/n/12 "Zero-time mea-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 125--125
+\OT1/lmr/bx/n/12 sure-ment vi-o-lates
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 127--128
+\OT1/lmr/m/n/12 e-gor-i-cal mea-sure-ment
+ []
+
+
+Underfull \hbox (badness 2799) in paragraph at lines 127--128
+\OT1/lmr/m/n/12 to con-struct the net-
+ []
+
+
+Underfull \hbox (badness 2158) in paragraph at lines 127--128
+\OT1/lmr/m/n/12 (Ta-ble []3[]). How-ever,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 127--128
+\OT1/lmr/m/n/12 the cat-e-gor-i-cal state
+ []
+
+
+Underfull \hbox (badness 3769) in paragraph at lines 127--128
+\OT1/lmr/m/n/12 monic re-la-tion-ships is
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 127--128
+\OT1/lmr/m/n/12 read|occurs in-stan-ta-
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 130--131
+[]\OT1/lmr/m/n/12 Network edges are
+ []
+
+
+Underfull \hbox (badness 5878) in paragraph at lines 130--131
+\OT1/lmr/m/n/12 static (har-monic co-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 130--131
+\OT1/lmr/m/n/12 in-ci-dences do not
+ []
+
+
+Underfull \hbox (badness 2990) in paragraph at lines 131--132
+[]\OT1/lmr/m/n/12 All $\OMS/lmsy/m/n/12 j\OML/lmm/m/it/12 E\OMS/lmsy/m/n/12 j \
+OT1/lmr/m/n/12 = 253\OML/lmm/m/it/12 ; \OT1/lmr/m/n/12 013$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 131--132
+\OT1/lmr/m/n/12 al-lel via cat-e-gor-i-cal
+ []
+
+Runaway argument?
+]{wootters1982}. 
+! Paragraph ended before \@citex was complete.
+<to be read again> 
+                   \par 
+l.135 
+      
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+
+Underfull \hbox (badness 4217) in paragraph at lines 134--135
+\OT1/lmr/m/n/12 nal-ing oc-curs: in-for-
+ []
+
+
+Underfull \hbox (badness 3148) in paragraph at lines 134--135
+\OT1/lmr/m/n/12 in-for-ma-tion, does not
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 136--136
+[]\OT1/lmr/bx/n/12 Criticism 4:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 136--136
+\OT1/lmr/bx/n/12 "En-hance-ment fac-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 136--136
+\OT1/lmr/bx/n/12 tors are ar-bi-trary
+ []
+
+
+Underfull \hbox (badness 7925) in paragraph at lines 138--139
+\OT1/lmr/bx/n/12 Response: \OT1/lmr/m/n/12 All en-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 138--139
+\OT1/lmr/m/n/12 hance-ment fac-tors
+ []
+
+[38]
+Runaway argument?
+]{newman2003,watts1998}: measured $\langle k \rangle = 259.5$, $\rho \ETC.
+! Paragraph ended before \@citex was complete.
+<to be read again> 
+                   \par 
+l.144 
+      
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+
+Underfull \hbox (badness 2409) in paragraph at lines 140--144
+\OT1/lmr/m/n/12 fol-lows from net-work
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 145--146
+[]\OT1/lmr/m/n/12 Changing pa-ram-e-ters
+ []
+
+
+Underfull \hbox (badness 5504) in paragraph at lines 145--146
+\OT1/lmr/m/n/12 count) pro-duces dif-
+ []
+
+
+Underfull \hbox (badness 4739) in paragraph at lines 145--146
+\OT1/lmr/m/n/12 is fal-si-fi-able through
+ []
+
+
+Overfull \hbox (3.24394pt too wide) in paragraph at lines 147--147
+[]\OT1/lmr/bx/n/14.4 Comparison
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\OT1/lmr/bx/n/14.4 with Prior
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+\OT1/lmr/bx/n/14.4 Trans-Planckian
+ []
+
+Runaway argument?
+]{hossenfelder2013}: 
+! Paragraph ended before \@citex was complete.
+<to be read again> 
+                   \par 
+l.150 
+      
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 149--150
+\OT1/lmr/m/n/12 Previous the-o-ret-i-
+ []
+
+
+Underfull \hbox (badness 7722) in paragraph at lines 149--150
+\OT1/lmr/m/n/12 cal work on trans-
+ []
+
+
+! LaTeX Error: Too deeply nested.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.151 \begin{enumerate}
+                       
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Runaway argument?
+]{amelino2013}. Our work does not contradict these theories—it oper\ETC.
+! Paragraph ended before \@citex was complete.
+<to be read again> 
+                   \par 
+l.153 
+      
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 152--153
+[]\OT1/lmr/bx/n/12 Quantum grav-ity
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 152--153
+\OT1/lmr/bx/n/12 the-o-ries \OT1/lmr/m/n/12 (string
+ []
+
+
+Underfull \hbox (badness 7468) in paragraph at lines 152--153
+\OT1/lmr/m/n/12 the-ory, loop quan-
+ []
+
+
+Underfull \hbox (badness 6428) in paragraph at lines 152--153
+\OT1/lmr/m/n/12 min-i-mal length $\OML/lmm/m/it/12 `[]$\OT1/lmr/m/n/12 ,
+ []
+
+
+Underfull \hbox (badness 1460) in paragraph at lines 152--153
+\OT1/lmr/m/n/12 min-i-mal time $\OML/lmm/m/it/12 t[]$ \OT1/lmr/m/n/12 as
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 152--153
+\OT1/lmr/m/n/12 fun-da-men-tal space-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 154--155
+[]\OT1/lmr/bx/n/12 Cosmological
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 154--155
+\OT1/lmr/bx/n/12 ef-fects \OT1/lmr/m/n/12 (trans-
+ []
+
+
+Underfull \hbox (badness 2409) in paragraph at lines 154--155
+\OT1/lmr/m/n/12 in-fla-tion): Ques-tion
+ []
+
+
+Underfull \hbox (badness 6332) in paragraph at lines 154--155
+\OT1/lmr/m/n/12 va-lid-ity of ef-fec-tive
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 154--155
+\OT1/lmr/m/n/12 field the-ory when
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 154--155
+\OT1/lmr/m/n/12 wave-lengths cross
+ []
+
+
+Underfull \hbox (badness 3209) in paragraph at lines 154--155
+\OT1/lmr/m/n/12 Planck scale dur-ing
+ []
+
+
+Underfull \hbox (badness 1968) in paragraph at lines 154--155
+\OT1/lmr/m/n/12 in-fla-tion. Our ap-
+ []
+
+
+Underfull \hbox (badness 1603) in paragraph at lines 154--155
+\OT1/lmr/m/n/12 proach uses ex-ist-ing
+ []
+
+
+Underfull \hbox (badness 7814) in paragraph at lines 154--155
+\OT1/lmr/m/n/12 (non-evolving) os-cil-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 156--157
+\OT1/lmr/m/n/12 (Hawk-ing ra-di-a-tion,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 156--157
+\OT1/lmr/m/n/12 Trans-Planckian
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 156--157
+\OT1/lmr/m/n/12 modes near event
+ []
+
+
+Underfull \hbox (badness 3088) in paragraph at lines 156--157
+\OT1/lmr/m/n/12 in-volves no grav-i-ta-
+ []
+
+
+Underfull \hbox (badness 2772) in paragraph at lines 159--160
+[]\OT1/lmr/m/n/12 In con-trast to these
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 159--160
+\OT1/lmr/m/n/12 spec-u-la-tive sce-nar-ios,
+ []
+
+
+Underfull \hbox (badness 5504) in paragraph at lines 161--162
+\OT1/lmr/m/n/12 tum me-chan-ics (no
+ []
+
+
+Underfull \hbox (badness 3343) in paragraph at lines 162--163
+[]\OT1/lmr/m/n/12 Operates in lab-o-ra-
+ []
+
+
+Underfull \hbox (badness 4805) in paragraph at lines 162--163
+\OT1/lmr/m/n/12 tory con-di-tions (no
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 163--164
+[]\OT1/lmr/m/n/12 Harvests phys-i-cally
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 163--164
+\OT1/lmr/m/n/12 present os-cil-la-tions
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 163--164
+\OT1/lmr/m/n/12 (no hy-po-thet-i-cal
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 164--165
+\OT1/lmr/m/n/12 theoretic pre-ci-sion
+ []
+
+Runaway argument?
+]{lloyd2002}. 
+! Paragraph ended before \@citex was complete.
+<to be read again> 
+                   \par 
+l.168 
+      
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 167--168
+[]\OT1/lmr/m/n/12 The key in-sight:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 167--168
+\OT1/lmr/m/n/12 Planck-scale con-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 167--168
+\OT1/lmr/m/n/12 i-cal pro-cesses*, not
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 167--168
+\OT1/lmr/m/n/12 *in-for-ma-tional ac-
+ []
+
+
+Underfull \hbox (badness 5359) in paragraph at lines 167--168
+\OT1/lmr/m/n/12 cess* to pre-existing
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 169--169
+[]\OT1/lmr/bx/n/14.4 Frequency
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 169--169
+\OT1/lmr/bx/n/14.4 Do-main vs.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 169--169
+\OT1/lmr/bx/n/14.4 Time Do-main
+ []
+
+
+LaTeX Warning: Reference `eq:freq_to_time' on page 39 undefined on input line 1
+71.
+
+
+Underfull \hbox (badness 2119) in paragraph at lines 171--172
+\OT1/lmr/m/n/12 and con-vert to tem-
+ []
+
+
+Underfull \hbox (badness 1502) in paragraph at lines 171--172
+\OT1/lmr/m/n/12 con-strains $^^A\OML/lmm/m/it/12 t$ \OT1/lmr/m/n/12 in dy-
+ []
+
+[39]
+Underfull \hbox (badness 10000) in paragraph at lines 173--173
+[]\OT1/lmr/bx/n/14.4 Limitations
+ []
+
+
+Underfull \hbox (badness 5316) in paragraph at lines 173--173
+\OT1/lmr/bx/n/14.4 and Sys-tem-atic
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 175--175
+[]\OT1/lmr/bx/n/12 Coincidence
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 177--178
+\OT1/lmr/m/n/12 The choice of
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 177--178
+\OMS/lmsy/m/n/12 f\OT1/lmr/m/n/12 10[]\OML/lmm/m/it/12 ; \OT1/lmr/m/n/12 10[]\O
+ML/lmm/m/it/12 ; \OT1/lmr/m/n/12 10[]\OMS/lmsy/m/n/12 g$ \OT1/lmr/m/n/12 Hz
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 184--184
+[]\OT1/lmr/bx/n/12 Hardware
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 184--184
+\OT1/lmr/bx/n/12 Fre-quency Un-cer-
+ []
+
+
+LaTeX Warning: Reference `eq:coincidence' on page 40 undefined on input line 18
+6.
+
+
+Underfull \hbox (badness 1163) in paragraph at lines 186--187
+\OT1/lmr/m/n/12 LED spec-tral width).
+ []
+
+
+Underfull \hbox (badness 3240) in paragraph at lines 186--187
+\OT1/lmr/m/n/12 This in-tro-duces base
+ []
+
+
+Underfull \hbox (badness 4205) in paragraph at lines 186--187
+\OT1/lmr/m/n/12 fre-quency un-cer-tainty
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 186--187
+\OT1/lmr/m/n/12 prop-a-gates through
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 186--187
+\OT1/lmr/m/n/12 har-monic ex-pan-sion.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 186--187
+\OT1/lmr/m/n/12 co-in-ci-dence cri-te-rion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 188--188
+[]\OT1/lmr/bx/n/12 Categorical
+ []
+
+Runaway argument?
+]{maxdem}. Biological systems demonstrate this capability; extension \ETC.
+! Paragraph ended before \@citex was complete.
+<to be read again> 
+                   \par 
+l.191 
+      
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+
+Underfull \hbox (badness 5077) in paragraph at lines 190--191
+\OT1/lmr/m/n/12 ac-cess to cat-e-gor-i-cal
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 190--191
+\OT1/lmr/m/n/12 states via Maxwell
+ []
+
+
+Underfull \hbox (badness 1675) in paragraph at lines 190--191
+\OT1/lmr/m/n/12 de-mon op-er-a-tors $\OMS/lmsy/m/n/12 D[]$\OT1/lmr/m/n/12 .
+ []
+
+
+Underfull \hbox (badness 7379) in paragraph at lines 190--191
+\OT1/lmr/m/n/12 Phys-i-cal im-ple-men-ta-
+ []
+
+
+Underfull \hbox (badness 1902) in paragraph at lines 190--191
+\OT1/lmr/m/n/12 tion re-quires sys-tems
+ []
+
+
+Underfull \vbox (badness 5533) has occurred while \output is active []
+
+
+Overfull \hbox (4.33527pt too wide) in paragraph at lines 192--192
+[]\OT1/lmr/bx/n/14.4 Falsifiability
+ []
+
+
+Underfull \hbox (badness 1997) in paragraph at lines 195--196
+\OT1/lmr/m/n/12 cific, testable pre-dic-
+ []
+
+
+Underfull \hbox (badness 1365) in paragraph at lines 200--202
+[]\OT1/lmr/bx/n/12 BMD depth scal-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 200--202
+\OT1/lmr/m/n/12 scale ex-actly as
+ []
+
+
+Underfull \hbox (badness 2698) in paragraph at lines 200--202
+\OML/lmm/m/it/12 ^^Nt \OMS/lmsy/m/n/12 / \OT1/lmr/m/n/12 3[]$ for de-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 200--202
+\OT1/lmr/m/n/12 com-po-si-tion depth
+ []
+
+
+Underfull \hbox (badness 3449) in paragraph at lines 200--202
+\OML/lmm/m/it/12 d$\OT1/lmr/m/n/12 . Any de-vi-a-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 200--202
+\OT1/lmr/m/n/12 would fal-sify the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 200--202
+\OT1/lmr/m/n/12 re-cur-sive three-way
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 200--202
+\OT1/lmr/m/it/12 Sta-tus\OT1/lmr/m/n/12 : Val-i-dated
+ []
+
+
+Underfull \hbox (badness 2035) in paragraph at lines 200--202
+\OT1/lmr/m/n/12 with $\OML/lmm/m/it/12 R[] > \OT1/lmr/m/n/12 0\OML/lmm/m/it/12 
+:\OT1/lmr/m/n/12 9999$
+ []
+
+
+Underfull \hbox (badness 1552) in paragraph at lines 203--205
+[]\OT1/lmr/bx/n/12 Cascade re-flec-tion
+ []
+
+
+Underfull \hbox (badness 7468) in paragraph at lines 203--205
+\OT1/lmr/bx/n/12 scal-ing\OT1/lmr/m/n/12 : En-hance-
+ []
+
+
+Underfull \hbox (badness 6252) in paragraph at lines 203--205
+\OT1/lmr/m/n/12 ment should fol-low
+ []
+
+
+Underfull \hbox (badness 1360) in paragraph at lines 203--205
+\OT1/lmr/m/n/12 from quadratic scal-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 203--205
+\OT1/lmr/m/n/12 ing would in-di-cate
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 203--205
+\OT1/lmr/m/n/12 non-cumulative in-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 203--205
+\OT1/lmr/m/n/12 for-ma-tion struc-ture.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 203--205
+\OT1/lmr/m/it/12 Sta-tus\OT1/lmr/m/n/12 : Mea-sured
+ []
+
+
+Underfull \hbox (badness 4416) in paragraph at lines 203--205
+\OML/lmm/m/it/12 ^^L \OT1/lmr/m/n/12 = 2\OML/lmm/m/it/12 :\OT1/lmr/m/n/12 10 \O
+MS/lmsy/m/n/12 ^^F \OT1/lmr/m/n/12 0\OML/lmm/m/it/12 :\OT1/lmr/m/n/12 05$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 206--208
+[]\OT1/lmr/bx/n/12 Network den-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 206--208
+\OT1/lmr/bx/n/12 sity de-pen-dence\OT1/lmr/m/n/12 :
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 206--208
+\OT1/lmr/m/n/12 Vary-ing co-in-ci-dence
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 206--208
+\OT1/lmr/m/n/12 thresh-old $^^A\OML/lmm/m/it/12 f[]$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 206--208
+\OT1/lmr/m/n/12 should pro-duce
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 206--208
+\OT1/lmr/m/n/12 pre-ci-sion scal-ing
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 206--208
+\OT1/lmr/m/n/12 match-ing net-work
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 206--208
+\OT1/lmr/m/it/12 Sta-tus\OT1/lmr/m/n/12 : Val-i-dated
+ []
+
+
+Underfull \hbox (badness 5147) in paragraph at lines 206--208
+\OT1/lmr/m/n/12 ni-tude in thresh-old
+ []
+
+[40]
+Underfull \hbox (badness 10000) in paragraph at lines 210--210
+[]\OT1/lmr/bx/n/12 Hardware
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 212--213
+\OT1/lmr/m/n/12 The method should
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 212--213
+\OT1/lmr/m/n/12 os-cil-la-tors, not just
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 212--213
+\OT1/lmr/m/n/12 the spe-cific lap-top
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 212--213
+\OT1/lmr/m/n/12 con-fig-u-ra-tion used
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 214--215
+[]\OT1/lmr/m/n/12 Different lap-top
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 214--215
+\OT1/lmr/m/n/12 model $\OMS/lmsy/m/n/12 )$ \OT1/lmr/m/n/12 dif-fer-ent
+ []
+
+
+Underfull \hbox (badness 4819) in paragraph at lines 214--215
+\OT1/lmr/m/n/12 base fre-quen-cies $\OMS/lmsy/m/n/12 )$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 214--215
+\OT1/lmr/m/n/12 dif-fer-ent net-work
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 214--215
+\OT1/lmr/m/n/12 topol-ogy $\OMS/lmsy/m/n/12 )$ \OT1/lmr/m/n/12 com-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 214--215
+\OT1/lmr/m/n/12 pa-ra-ble pre-ci-sion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 215--216
+[]\OT1/lmr/m/n/12 Adding os-cil-la-tors
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 215--216
+\OT1/lmr/m/n/12 (e.g., GPU clocks,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 215--216
+\OT1/lmr/m/n/12 disk spin-dles) $\OMS/lmsy/m/n/12 )$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 215--216
+\OT1/lmr/m/n/12 in-creased net-work
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 215--216
+\OT1/lmr/m/n/12 den-sity $\OMS/lmsy/m/n/12 )$ \OT1/lmr/m/n/12 higher
+ []
+
+
+Underfull \hbox (badness 3690) in paragraph at lines 216--217
+[]\OT1/lmr/m/n/12 Removing os-cil-la-tors
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 216--217
+\OT1/lmr/m/n/12 den-sity $\OMS/lmsy/m/n/12 )$ \OT1/lmr/m/n/12 lower
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 216--217
+\OT1/lmr/m/n/12 pre-ci-sion fol-low-ing
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
+[]\OT1/lmr/bx/n/12 Independent
+ []
+
+
+Underfull \hbox (badness 4739) in paragraph at lines 219--219
+\OT1/lmr/bx/n/12 Ver-i-fi-ca-tion Pro-to-
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 223--224
+[]\OT1/lmr/m/n/12 Use in-de-pen-dent
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 223--224
+\OT1/lmr/m/n/12 LED wave-lengths
+ []
+
+
+Underfull \hbox (badness 7064) in paragraph at lines 224--225
+\OT1/lmr/m/n/12 via In-tel PCM or
+ []
+
+
+Underfull \hbox (badness 4254) in paragraph at lines 225--226
+\OT1/lmr/m/n/12 fic to con-firm car-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 226--227
+[]\OT1/lmr/m/n/12 Compare mea-sured
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 226--227
+\OT1/lmr/m/n/12 fre-quen-cies against
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 226--227
+\OT1/lmr/m/n/12 re-ported val-ues
+ []
+
+
+Underfull \hbox (badness 1371) in paragraph at lines 228--229
+\OT1/lmr/m/it/12 Falsification cri-te-rion\OT1/lmr/m/n/12 :
+ []
+
+
+Underfull \hbox (badness 3049) in paragraph at lines 228--229
+\OT1/lmr/m/n/12 de-vi-ates by $\OML/lmm/m/it/12 > \OT1/lmr/m/n/12 10%$
+ []
+
+
+Underfull \hbox (badness 2837) in paragraph at lines 230--231
+[]\OT1/lmr/bx/n/12 Protocol 2: Net-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 230--231
+\OT1/lmr/bx/n/12 work Re-con-struc-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 232--233
+[]\OT1/lmr/m/n/12 Provide com-plete
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 232--233
+\OT1/lmr/m/n/12 ex-pan-sion pa-ram-e-
+ []
+
+
+Underfull \hbox (badness 1810) in paragraph at lines 232--233
+\OT1/lmr/m/n/12 ters ($\OML/lmm/m/it/12 N[] \OT1/lmr/m/n/12 = 150$,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 233--234
+[]\OT1/lmr/m/n/12 Independent im-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 233--234
+\OT1/lmr/m/n/12 ple-men-ta-tion con-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 234--235
+[]\OT1/lmr/m/n/12 Compare net-work
+ []
+
+
+Underfull \hbox (badness 1642) in paragraph at lines 234--235
+\OT1/lmr/m/n/12 statis-tics: $\OMS/lmsy/m/n/12 j\OML/lmm/m/it/12 V\OMS/lmsy/m/n
+/12 j$\OT1/lmr/m/n/12 , $\OMS/lmsy/m/n/12 j\OML/lmm/m/it/12 E\OMS/lmsy/m/n/12 j
+$\OT1/lmr/m/n/12 ,
+ []
+
+
+Underfull \hbox (badness 1371) in paragraph at lines 236--237
+\OT1/lmr/m/it/12 Falsification cri-te-rion\OT1/lmr/m/n/12 :
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 236--237
+\OT1/lmr/m/n/12 If $\OMS/lmsy/m/n/12 jj\OML/lmm/m/it/12 E\OMS/lmsy/m/n/12 j[] ^
+^@
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 236--237
+\OT1/lmr/m/n/12 net-work con-struc-tion
+ []
+
+[41]
+Underfull \hbox (badness 4242) in paragraph at lines 241--242
+[]\OT1/lmr/m/n/12 Apply iden-ti-cal pa-
+ []
+
+
+Underfull \hbox (badness 1067) in paragraph at lines 241--242
+\OML/lmm/m/it/12 d \OT1/lmr/m/n/12 = 10$, re-flec-tions
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 242--243
+[]\OT1/lmr/m/n/12 Calculate en-hance-
+ []
+
+
+Underfull \hbox (badness 1371) in paragraph at lines 244--245
+\OT1/lmr/m/it/12 Falsification cri-te-rion\OT1/lmr/m/n/12 :
+ []
+
+
+Underfull \hbox (badness 2418) in paragraph at lines 244--245
+\OML/lmm/m/it/12 > \OT1/lmr/m/n/12 1$ or-der of mag-
+ []
+
+
+Underfull \hbox (badness 5388) in paragraph at lines 244--245
+\OT1/lmr/m/n/12 dent im-ple-men-ta-tions
+ []
+
+
+Overfull \hbox (3.24394pt too wide) in paragraph at lines 246--246
+[]\OT1/lmr/bx/n/14.4 Comparison
+ []
+
+
+Underfull \hbox (badness 6725) in paragraph at lines 246--246
+\OT1/lmr/bx/n/14.4 with Molec-u-lar
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 246--246
+\OT1/lmr/bx/n/14.4 En-sem-ble Ap-
+ []
+
+Runaway argument?
+]{harmonic} using simulated molecular gas ensembles achieved $\delta \ETC.
+! Paragraph ended before \@citex was complete.
+<to be read again> 
+                   \par 
+l.249 
+      
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+
+Overfull \hbox (75.39857pt too wide) in paragraph at lines 253--268
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 272--273
+[]\OT1/lmr/bx/n/12 Wider fre-quency
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 272--273
+\OT1/lmr/bx/n/12 range\OT1/lmr/m/n/12 : Hard-ware
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 272--273
+\OT1/lmr/m/n/12 os-cil-la-tors span 11
+ []
+
+
+Underfull \hbox (badness 1509) in paragraph at lines 272--273
+\OT1/lmr/m/n/12 or-ders of mag-ni-tude
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 273--274
+[]\OT1/lmr/bx/n/12 Physical re-al-ity\OT1/lmr/m/n/12 :
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 273--274
+\OT1/lmr/m/n/12 elim-i-nat-ing sim-u-la-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 274--275
+[]\OT1/lmr/bx/n/12 Higher net-work
+ []
+
+
+Underfull \hbox (badness 5203) in paragraph at lines 274--275
+\OT1/lmr/bx/n/12 con-nec-tiv-ity\OT1/lmr/m/n/12 : Av-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 274--275
+\OT1/lmr/m/n/12 er-age de-gree 259.5
+ []
+
+
+Underfull \hbox (badness 3623) in paragraph at lines 274--275
+\OT1/lmr/m/n/12 vs. 37.5 pro-vides
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 274--275
+\OMS/lmsy/m/n/12 ^^X$\OT1/lmr/m/n/12 7-fold more re-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 274--275
+\OT1/lmr/m/n/12 dun-dant path-ways,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 274--275
+\OT1/lmr/m/n/12 yield-ing $\OMS/lmsy/m/n/12 ^^X$\OT1/lmr/m/n/12 50-fold
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 274--275
+\OT1/lmr/m/n/12 en-hance-ment from
+ []
+
+
+Overfull \hbox (3.7102pt too wide) in paragraph at lines 277--277
+[]\OT1/lmr/bx/n/17.28 Conclusion 
+ []
+
+Runaway argument?
+]{catdyn,maxdem}. 
+! Paragraph ended before \@citex was complete.
+<to be read again> 
+                   \par 
+l.280 
+      
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 279--280
+\OT1/lmr/m/n/12 This work demon-
+ []
+
+
+Underfull \hbox (badness 2818) in paragraph at lines 279--280
+\OT1/lmr/m/n/12 sec-onds|22.43 or-ders
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 279--280
+\OT1/lmr/m/n/12 through cat-e-gor-i-cal
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 279--280
+\OT1/lmr/m/n/12 frequency-domain
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 279--280
+\OT1/lmr/m/n/12 mea-sure-ments of
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 279--280
+\OT1/lmr/m/n/12 har-monic net-works
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 279--280
+\OT1/lmr/m/n/12 con-structed from
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 279--280
+\OT1/lmr/m/n/12 consumer-grade com-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 279--280
+\OT1/lmr/m/n/12 re-sult chal-lenges
+ []
+
+
+Underfull \hbox (badness 3623) in paragraph at lines 279--280
+\OT1/lmr/m/n/12 con-ven-tional in-ter-pre-
+ []
+
+
+Underfull \hbox (badness 2547) in paragraph at lines 279--280
+\OT1/lmr/m/n/12 pro-vides ex-per-i-men-tal
+ []
+
+[42]
+Underfull \hbox (badness 10000) in paragraph at lines 281--281
+[]\OT1/lmr/bx/n/14.4 Principal
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 284--285
+[]\OT1/lmr/bx/n/12 Oscillatory-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 284--285
+\OT1/lmr/bx/n/12 a-lence\OT1/lmr/m/n/12 : Rig-or-ous
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 284--285
+\OT1/lmr/m/n/12 proof that en-tropy
+ []
+
+
+Underfull \hbox (badness 4120) in paragraph at lines 284--285
+\OT1/lmr/m/n/12 in os-cil-la-tory phase
+ []
+
+
+Underfull \hbox (badness 5878) in paragraph at lines 284--285
+\OT1/lmr/m/n/12 in cat-e-gor-i-cal state
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 284--285
+\OT1/lmr/m/n/12 ac-cess pre-existing
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 284--285
+\OT1/lmr/m/n/12 topo-log-i-cal in-for-ma-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 284--285
+\OT1/lmr/m/n/12 tion or-thog-o-nal to
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 286--287
+[]\OT1/lmr/bx/n/12 Heisenberg By-
+ []
+
+
+Underfull \hbox (badness 1776) in paragraph at lines 286--287
+\OT1/lmr/m/n/12 quency mea-sure-ment
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 286--287
+\OT1/lmr/m/n/12 op-er-a-tors com-mute
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 286--287
+\OT1/lmr/m/n/12 with po-si-tion and
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 286--287
+\OT1/lmr/m/n/12 mo-men-tum op-er-a-
+ []
+
+
+Underfull \hbox (badness 1406) in paragraph at lines 286--287
+\OT1/lmr/m/n/12 tors (Eqs. []135[]--[]136[]),
+ []
+
+
+Underfull \hbox (badness 1701) in paragraph at lines 286--287
+\OT1/lmr/m/n/12 tum back-ac-tion and
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 286--287
+\OT1/lmr/m/n/12 cir-cum-vent-ing time-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 286--287
+\OT1/lmr/m/n/12 energy un-cer-tainty
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 288--289
+[]\OT1/lmr/bx/n/12 Hardware Fre-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 288--289
+\OT1/lmr/bx/n/12 quency Har-vest-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 288--289
+\OT1/lmr/bx/n/12 ing\OT1/lmr/m/n/12 : Con-sumer
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 288--289
+\OT1/lmr/m/n/12 hard-ware pro-vides
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 288--289
+\OT1/lmr/m/n/12 13 base os-cil-la-tors
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 288--289
+\OT1/lmr/m/n/12 span-ning $10[]$--$10[]$
+ []
+
+
+Underfull \hbox (badness 1881) in paragraph at lines 288--289
+\OT1/lmr/m/n/12 Hz. Har-monic ex-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 288--289
+\OT1/lmr/m/n/12 pan-sion gen-er-ates
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 288--289
+\OT1/lmr/m/n/12 253,013 co-in-ci-dence
+ []
+
+Runaway argument?
+]{maxdem,landauer1961,parrondo2015}. 
+! Paragraph ended before \@citex was complete.
+<to be read again> 
+                   \par 
+l.291 
+      
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 290--291
+[]\OT1/lmr/bx/n/12 Maxwell De-mon
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 290--291
+\OT1/lmr/bx/n/12 Par-al-lelism\OT1/lmr/m/n/12 : Re-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 290--291
+\OT1/lmr/m/n/12 cur-sive three-way
+ []
+
+
+Underfull \hbox (badness 6125) in paragraph at lines 290--291
+\OT1/lmr/m/n/12 de-com-po-si-tion along
+ []
+
+
+Underfull \hbox (badness 3803) in paragraph at lines 290--291
+\OML/lmm/m/it/12 S$\OT1/lmr/m/n/12 -entropy axes cre-
+ []
+
+
+Underfull \hbox (badness 1895) in paragraph at lines 290--291
+\OT1/lmr/m/n/12 ates $3[] = 59\OML/lmm/m/it/12 ; \OT1/lmr/m/n/12 049$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 290--291
+\OT1/lmr/m/n/12 par-al-lel in-for-ma-
+ []
+
+
+Underfull \hbox (badness 4120) in paragraph at lines 290--291
+\OT1/lmr/m/n/12 tion chan-nels, each
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 290--291
+\OT1/lmr/m/n/12 ac-cess-ing or-thog-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 290--291
+\OT1/lmr/m/n/12 o-nal cat-e-gor-i-cal
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 290--291
+\OT1/lmr/m/n/12 pro-jec-tions with-out
+ []
+
+Runaway argument?
+]{interf}. 
+! Paragraph ended before \@citex was complete.
+<to be read again> 
+                   \par 
+l.293 
+      
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 292--293
+[]\OT1/lmr/bx/n/12 Reflectance Cas-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 292--293
+\OT1/lmr/bx/n/12 cade Am-pli-fi-ca-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 292--293
+\OT1/lmr/bx/n/12 tion\OT1/lmr/m/n/12 : Cu-mu-la-tive
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 292--293
+\OT1/lmr/m/n/12 phase cor-re-la-tion
+ []
+
+
+Underfull \hbox (badness 1939) in paragraph at lines 292--293
+\OT1/lmr/m/n/12 across 10 re-flec-tions
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 292--293
+\OT1/lmr/m/n/12 pro-vides quadratic
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 292--293
+\OT1/lmr/m/n/12 en-hance-ment
+ []
+
+
+Underfull \hbox (badness 2582) in paragraph at lines 292--293
+\OT1/lmr/m/n/12 con-sis-tent with cat-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 292--293
+\OT1/lmr/m/n/12 e-gor-i-cal in-for-ma-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 294--295
+[]\OT1/lmr/bx/n/12 Zero-Time Mea-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 294--295
+\OT1/lmr/bx/n/12 sure-ment\OT1/lmr/m/n/12 : Cat-e-
+ []
+
+
+Underfull \hbox (badness 5726) in paragraph at lines 294--295
+\OT1/lmr/m/n/12 gor-i-cal state ac-cess
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 294--295
+\OT1/lmr/m/n/12 be-tween cat-e-gor-i-cal
+ []
+
+
+Underfull \hbox (badness 1831) in paragraph at lines 294--295
+\OT1/lmr/m/n/12 traver-sal of net-work
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 297--298
+[]\OT1/lmr/m/n/12 Total en-hance-ment:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 297--298
+\OML/lmm/m/it/12 F[] \OT1/lmr/m/n/12 = \OML/lmm/m/it/12 F[] \OMS/lmsy/m/n/12 ^^
+B
+ []
+
+
+Underfull \hbox (badness 7291) in paragraph at lines 297--298
+\OML/lmm/m/it/12 N[] \OMS/lmsy/m/n/12 ^^B \OML/lmm/m/it/12 F[] \OT1/lmr/m/n/12 
+=
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 299--299
+[]\OT1/lmr/bx/n/14.4 Theoretical
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 301--301
+[]\OT1/lmr/bx/n/12 Nature of
+ []
+
+Runaway argument?
+]{catdyn}. Temporal "precision" of $10^{-66}$ s is more accurately de\ETC.
+! Paragraph ended before \@citex was complete.
+<to be read again> 
+                   \par 
+l.304 
+      
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+
+Underfull \hbox (badness 1221) in paragraph at lines 303--304
+\OT1/lmr/m/n/12 sti-tut-ing ex-ter-nal pa-
+ []
+
+[43]
+Underfull \hbox (badness 10000) in paragraph at lines 305--305
+[]\OT1/lmr/bx/n/12 Information
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 307--308
+\OT1/lmr/m/n/12 The Planck scale
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 307--308
+\OT1/lmr/m/n/12 con-strains dy-nam-i-cal
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 307--308
+\OT1/lmr/m/n/12 pro-cesses (phys-i-cal
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 307--308
+\OT1/lmr/m/n/12 evo-lu-tion, causal
+ []
+
+
+Underfull \hbox (badness 1701) in paragraph at lines 307--308
+\OT1/lmr/m/n/12 prop-a-ga-tion) but not
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 307--308
+\OT1/lmr/m/n/12 in-for-ma-tional ac-cess
+ []
+
+
+Underfull \hbox (badness 2165) in paragraph at lines 307--308
+\OT1/lmr/m/n/12 to pre-existing struc-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 307--308
+\OT1/lmr/m/n/12 ob-serv-ing sub-period
+ []
+
+
+Underfull \hbox (badness 1509) in paragraph at lines 307--308
+\OT1/lmr/m/n/12 dy-nam-ics (lim-ited by
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 309--309
+[]\OT1/lmr/bx/n/12 Quantum
+ []
+
+
+Underfull \hbox (badness 2495) in paragraph at lines 309--309
+\OT1/lmr/bx/n/12 Mea-sure-ment The-
+ []
+
+Runaway argument?
+]{vonneumann1955}. Rather than collapsing wavefunctions through physi\ETC.
+! Paragraph ended before \@citex was complete.
+<to be read again> 
+                   \par 
+l.312 
+      
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 311--312
+\OT1/lmr/m/n/12 Categorical mea-sure-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 311--312
+\OT1/lmr/m/n/12 ment pro-vides an
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 311--312
+\OT1/lmr/m/n/12 Neu-mann pro-jec-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 313--313
+[]\OT1/lmr/bx/n/14.4 Practical
+ []
+
+
+Underfull \hbox (badness 2409) in paragraph at lines 317--318
+\OT1/lmr/m/n/12 The method re-quires
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 317--318
+\OT1/lmr/m/n/12 only stan-dard con-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 317--318
+\OT1/lmr/m/n/12 open-source soft-ware
+ []
+
+
+Underfull \hbox (badness 5417) in paragraph at lines 317--318
+\OT1/lmr/m/n/12 (Python, Net-workX).
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 317--318
+\OT1/lmr/m/n/12 pre-ci-sion, en-abling
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 317--318
+\OT1/lmr/m/n/12 widespread in-de-pen-
+ []
+
+
+Underfull \hbox (badness 3138) in paragraph at lines 317--318
+\OT1/lmr/m/n/12 dent ver-i-fi-ca-tion and
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 321--322
+\OT1/lmr/m/n/12 mul-ti-ple os-cil-la-tors
+ []
+
+
+Underfull \hbox (badness 6944) in paragraph at lines 321--322
+\OT1/lmr/m/n/12 with in-com-men-su-rate
+ []
+
+
+Underfull \hbox (badness 5504) in paragraph at lines 321--322
+\OT1/lmr/m/n/12 fre-quency ra-tios can
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 321--322
+\OT1/lmr/m/n/12 gen-er-ate har-monic
+ []
+
+
+Underfull \hbox (badness 6125) in paragraph at lines 321--322
+\OT1/lmr/m/n/12 co-in-ci-dence net-works.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 321--322
+\OT1/lmr/m/n/12 Be-yond com-put-ers,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 321--322
+\OT1/lmr/m/n/12 po-ten-tial sources
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 323--324
+\OT1/lmr/m/n/12 sem-bles (vi-bra-tional
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 325--326
+[]\OT1/lmr/m/n/12 Biological sys-tems
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 325--326
+\OT1/lmr/m/n/12 (neu-ral os-cil-la-tions,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 326--327
+[]\OT1/lmr/m/n/12 Engineered sys-tems
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 326--327
+\OT1/lmr/m/n/12 (MEMS res-onators,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 331--332
+\OT1/lmr/m/n/12 The the-ory makes
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 331--332
+\OT1/lmr/m/n/12 pre-cise quan-ti-ta-tive
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 331--332
+\OT1/lmr/m/n/12 pre-dic-tions testable
+ []
+
+
+Underfull \hbox (badness 1331) in paragraph at lines 331--332
+\OT1/lmr/m/n/12 through scal-ing stud-
+ []
+
+
+Underfull \hbox (badness 6625) in paragraph at lines 331--332
+\OT1/lmr/m/n/12 ies, hard-ware vari-a-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 331--332
+\OT1/lmr/m/n/12 re-pro-duc-tions (Sec-
+ []
+
+
+Underfull \hbox (badness 7081) in paragraph at lines 331--332
+\OT1/lmr/m/n/12 from pre-dicted scal-
+ []
+
+
+Underfull \hbox (badness 8189) in paragraph at lines 331--332
+\OT1/lmr/m/n/12 ing laws ($3[]$, $\OML/lmm/m/it/12 N[]$\OT1/lmr/m/n/12 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 331--332
+\OML/lmm/m/it/12 F[]\OT1/lmr/m/n/12 (\OMS/lmsy/m/n/12 h\OML/lmm/m/it/12 k\OMS/l
+msy/m/n/12 i\OML/lmm/m/it/12 ; ^^Z\OT1/lmr/m/n/12 )$) would
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 333--333
+[]\OT1/lmr/bx/n/14.4 Open
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 336--337
+[]\OT1/lmr/bx/n/12 Physical im-ple-
+ []
+
+
+Underfull \hbox (badness 6063) in paragraph at lines 336--337
+\OT1/lmr/bx/n/12 men-ta-tion\OT1/lmr/m/n/12 : What
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 336--337
+\OT1/lmr/m/n/12 phys-i-cal pro-cess
+ []
+
+
+Underfull \hbox (badness 5147) in paragraph at lines 336--337
+\OT1/lmr/m/n/12 Is it fun-da-men-tally
+ []
+
+
+Underfull \hbox (badness 5388) in paragraph at lines 336--337
+\OT1/lmr/m/n/12 com-pu-ta-tional (clas-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 336--337
+\OT1/lmr/m/n/12 si-cal al-go-rithm),
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 336--337
+\OT1/lmr/m/n/12 or does it re-flect
+ []
+
+
+Underfull \hbox (badness 5504) in paragraph at lines 336--337
+\OT1/lmr/m/n/12 deeper struc-ture in
+ []
+
+[44]
+Underfull \hbox (badness 5105) in paragraph at lines 338--339
+[]\OT1/lmr/bx/n/12 Experimental sig-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 338--339
+\OT1/lmr/m/n/12 pro-duce ob-serv-able
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 338--339
+\OT1/lmr/m/n/12 ef-fects dis-tin-guish-
+ []
+
+
+Underfull \hbox (badness 1701) in paragraph at lines 338--339
+\OT1/lmr/m/n/12 able from nu-mer-i-cal
+ []
+
+
+Underfull \hbox (badness 1661) in paragraph at lines 338--339
+\OT1/lmr/m/n/12 anal-y-sis? Po-ten-tial
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 338--339
+\OT1/lmr/m/n/12 tests: in-ter-fer-ence
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 338--339
+\OT1/lmr/m/n/12 be-tween cat-e-gor-i-
+ []
+
+
+Underfull \hbox (badness 2368) in paragraph at lines 338--339
+\OT1/lmr/m/n/12 cal and phase-space
+ []
+
+
+Underfull \hbox (badness 3907) in paragraph at lines 338--339
+\OT1/lmr/m/n/12 mea-sure-ments, cat-e-
+ []
+
+
+Underfull \hbox (badness 3108) in paragraph at lines 338--339
+\OT1/lmr/m/n/12 gor-i-cal en-tan-gle-ment
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 338--339
+\OT1/lmr/m/n/12 be-tween sep-a-rated
+ []
+
+Runaway argument?
+]{lloyd2002}), fundamental information-theoretic constraints, unknown\ETC.
+! Paragraph ended before \@citex was complete.
+<to be read again> 
+                   \par 
+l.341 
+      
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+
+Underfull \hbox (badness 1052) in paragraph at lines 340--341
+[]\OT1/lmr/bx/n/12 Theoretical lim-its\OT1/lmr/m/n/12 :
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 340--341
+\OT1/lmr/m/n/12 What ul-ti-mately
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 340--341
+\OT1/lmr/m/n/12 bounds cat-e-gor-i-cal
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 340--341
+\OT1/lmr/m/n/12 fre-quency res-o-lu-
+ []
+
+
+Underfull \hbox (badness 4416) in paragraph at lines 340--341
+\OT1/lmr/m/n/12 tion? Can-di-dates:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 340--341
+\OT1/lmr/m/n/12 com-pu-ta-tional com-
+ []
+
+
+Underfull \hbox (badness 7151) in paragraph at lines 342--343
+\OT1/lmr/bx/n/12 ob-serv-ables\OT1/lmr/m/n/12 : Can
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 342--343
+\OT1/lmr/m/n/12 cat-e-gor-i-cal ac-cess
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 342--343
+\OT1/lmr/m/n/12 be ap-plied be-yond
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 342--343
+\OT1/lmr/m/n/12 fre-quency to other
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 342--343
+\OT1/lmr/m/n/12 quan-ti-ties (po-si-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 342--343
+\OT1/lmr/m/n/12 tion, mo-men-tum,
+ []
+
+
+Underfull \hbox (badness 3954) in paragraph at lines 342--343
+\OT1/lmr/m/n/12 en-ergy)? Re-quire-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 342--343
+\OT1/lmr/m/n/12 ments: ob-serv-able
+ []
+
+
+Underfull \hbox (badness 3826) in paragraph at lines 342--343
+\OT1/lmr/m/n/12 must cor-re-spond to
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 345--345
+[]\OT1/lmr/bx/n/14.4 Concluding
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 347--348
+\OT1/lmr/m/n/12 The achieve-ment of
+ []
+
+
+Underfull \hbox (badness 6252) in paragraph at lines 347--348
+\OT1/lmr/m/n/12 or-ders of mag-ni-tude
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \hbox (badness 3343) in paragraph at lines 349--350
+\OT1/lmr/m/n/12 ing the re-la-tion-ship
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 349--350
+\OT1/lmr/m/n/12 be-tween in-for-ma-
+ []
+
+
+Underfull \hbox (badness 5388) in paragraph at lines 349--350
+\OT1/lmr/m/n/12 cat-e-gor-i-cal struc-ture
+ []
+
+
+Underfull \hbox (badness 7963) in paragraph at lines 349--350
+\OT1/lmr/m/n/12 is more fun-da-men-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 349--350
+\OT1/lmr/m/n/12 tal than space-time
+ []
+
+
+Underfull \hbox (badness 1127) in paragraph at lines 350--351
+[]\OT1/lmr/bx/n/12 A care-ful demon-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 350--351
+\OT1/lmr/m/n/12 po-ral pre-ci-sion" as
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 350--351
+\OT1/lmr/m/n/12 chrono-log-i-cal in-ter-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 350--351
+\OT1/lmr/m/n/12 vals|highlighting
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 350--351
+\OT1/lmr/m/n/12 the need for pre-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 350--351
+\OT1/lmr/m/n/12 cise def-i-ni-tions in
+ []
+
+
+Underfull \hbox (badness 6032) in paragraph at lines 350--351
+\OT1/lmr/m/n/12 dis-cussing lim-its of
+ []
+
+Runaway argument?
+]{zurek2003,lloyd2002}. The latter maintains conservative skepticism \ETC.
+! Paragraph ended before \@citex was complete.
+<to be read again> 
+                   \par 
+l.354 
+      
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 353--354
+[]\OT1/lmr/m/n/12 Both in-ter-pre-ta-tions
+ []
+
+
+Underfull \hbox (badness 2846) in paragraph at lines 353--354
+\OT1/lmr/m/n/12 aligns with emerg-ing
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 353--354
+\OT1/lmr/m/n/12 da-tions em-pha-siz-ing
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 353--354
+\OT1/lmr/m/n/12 information-theoretic
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 355--356
+[]\OT1/lmr/m/n/12 What can-not be
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 355--356
+\OT1/lmr/m/n/12 dis-puted: con-sumer
+ []
+
+
+Underfull \hbox (badness 5970) in paragraph at lines 355--356
+\OT1/lmr/m/n/12 hard-ware os-cil-la-tions,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 355--356
+\OT1/lmr/m/n/12 cat-e-gor-i-cal net-works
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 355--356
+\OT1/lmr/m/n/12 with Maxwell de-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 355--356
+\OT1/lmr/m/n/12 mon de-com-po-si-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 355--356
+\OT1/lmr/m/n/12 and re-flectance cas-
+ []
+
+
+Underfull \hbox (badness 3148) in paragraph at lines 355--356
+\OT1/lmr/m/n/12 cades, yield ef-fec-tive
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 355--356
+\OT1/lmr/m/n/12 fre-quency res-o-lu-
+ []
+
+
+Underfull \hbox (badness 5203) in paragraph at lines 355--356
+\OT1/lmr/m/n/12 tion of $7\OML/lmm/m/it/12 :\OT1/lmr/m/n/12 93 \OMS/lmsy/m/n/12
+ ^^B \OT1/lmr/m/n/12 10[]$
+ []
+
+
+Underfull \hbox (badness 5939) in paragraph at lines 355--356
+\OT1/lmr/m/n/12 Hz. The phys-i-cal
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 355--356
+\OT1/lmr/m/n/12 ber|and whether
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 355--356
+\OT1/lmr/m/n/12 it rep-re-sents gen-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 355--356
+\OT1/lmr/m/n/12 uine trans-Planckian
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 355--356
+\OT1/lmr/m/n/12 mea-sure-ment ca-pa-
+ []
+
+
+Underfull \hbox (badness 7814) in paragraph at lines 355--356
+\OT1/lmr/m/n/12 bil-ity|awaits fur-ther
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 355--356
+\OT1/lmr/m/n/12 the-o-ret-i-cal de-vel-op-
+ []
+
+[45]
+Underfull \hbox (badness 10000) in paragraph at lines 357--357
+[][]\OT1/lmr/bx/n/17.28 Data Avail-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 359--360
+\OT1/lmr/m/n/12 All ex-per-i-men-tal
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 359--360
+\OT1/lmr/m/n/12 data, source code,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 359--360
+\OT1/lmr/m/n/12 and anal-y-sis scripts
+ []
+
+
+Underfull \hbox (badness 4254) in paragraph at lines 359--360
+\OT1/lmr/m/n/12 are avail-able in the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 359--360
+\OT1/lmtt/m/n/12 molecular[]demon/
+ []
+
+
+Underfull \hbox (badness 5431) in paragraph at lines 359--360
+\OT1/lmr/m/n/12 with times-tamps for
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 359--360
+\OT1/lmr/m/n/12 pa-ram-e-ter con-fig-u-ra-
+ []
+
+
+Overfull \hbox (33.43033pt too wide) in paragraph at lines 361--361
+[][]\OT1/lmr/bx/n/17.28 Acknowledgments 
+ []
+
+Runaway argument?
+]{catdyn}, biological Maxwell demon theory \cite {maxdem}, categorica\ETC.
+! Paragraph ended before \@citex was complete.
+<to be read again> 
+                   \par 
+l.364 
+      
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+
+Underfull \hbox (badness 1946) in paragraph at lines 363--364
+\OT1/lmr/m/n/12 This work builds on
+ []
+
+(hardware-based-temporal-measurements.bbl
+
+Package natbib Warning: Empty `thebibliography' environment on input line 8.
+
+)
+
+! LaTeX Error: \begin{itemize} on input line 139 ended by \end{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.368 \end{document}
+                    
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[46
+
+] (hardware-based-temporal-measurements.aux)
+ ***********
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-04>
+ ***********
+
+
+LaTeX Warning: There were undefined references.
+
+Package rerunfilecheck Info: File `hardware-based-temporal-measurements.out' ha
+s not changed.
+(rerunfilecheck)             Checksum: 989E2E18B26E70E86F831A00DE6F1EA5;35698.
+ )
+(\end occurred inside a group at level 8)
+
+### semi simple group (level 8) entered at line 139 (\begingroup)
+### semi simple group (level 7) entered at line 109 (\begingroup)
+### semi simple group (level 6) entered at line 89 (\begingroup)
+### semi simple group (level 5) entered at line 71 (\begingroup)
+### semi simple group (level 4) entered at line 297 (\begingroup)
+### semi simple group (level 3) entered at line 8 (\begingroup)
+### semi simple group (level 2) entered at line 30 (\begingroup)
+### semi simple group (level 1) entered at line 179 (\begingroup)
+### bottom level 
+Here is how much of TeX's memory you used:
+ 18568 strings out of 474486
+ 358654 string characters out of 5743283
+ 1953542 words of memory out of 5000000
+ 40099 multiletter control sequences out of 15000+600000
+ 632532 words of font info for 98 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 79i,13n,93p,3965b,2153s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/type1/publ
+ic/lm/lmbx10.pfb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/type1/pub
+lic/lm/lmbx12.pfb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/type1/pu
+blic/lm/lmbx8.pfb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/type1/pu
+blic/lm/lmex10.pfb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/type1/p
+ublic/lm/lmmi10.pfb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/type1/
+public/lm/lmmi12.pfb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/type1
+/public/lm/lmmi6.pfb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/type1
+/public/lm/lmmi8.pfb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/type1
+/public/lm/lmmib10.pfb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/typ
+e1/public/lm/lmr10.pfb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/typ
+e1/public/lm/lmr12.pfb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/typ
+e1/public/lm/lmr17.pfb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/typ
+e1/public/lm/lmr6.pfb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/type
+1/public/lm/lmr8.pfb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/type1
+/public/lm/lmri12.pfb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/type
+1/public/lm/lmri7.pfb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/type
+1/public/lm/lmri8.pfb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/type
+1/public/lm/lmsy10.pfb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/typ
+e1/public/lm/lmsy8.pfb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/typ
+e1/public/lm/lmtt12.pfb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/ty
+pe1/public/amsfonts/symbols/msam10.pfb><C:/Users/kundai/AppData/Local/Programs/
+MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on hardware-based-temporal-measurements.pdf (46 pages, 13107087 
+bytes).
+PDF statistics:
+ 1371 PDF objects out of 1440 (max. 8388607)
+ 467 named destinations out of 1000 (max. 500000)
+ 1361 words of extra memory for PDF output out of 10000 (max. 10000000)
+
