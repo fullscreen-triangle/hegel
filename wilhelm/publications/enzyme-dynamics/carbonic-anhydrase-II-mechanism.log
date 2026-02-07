@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.7.27)  1 FEB 2026 02:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.7.27)  7 FEB 2026 03:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -636,124 +636,112 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 45.
+(hyperref)                removing `\\' on input line 46.
 
 
 Package natbib Warning: Citation `Wolfenden1999' on page 1 undefined on input l
-ine 54.
+ine 55.
 
 
 Package natbib Warning: Citation `Pauling1946' on page 1 undefined on input lin
-e 54.
+e 55.
 
 
 Package natbib Warning: Citation `Fersht1999' on page 1 undefined on input line
- 54.
+ 55.
 
 
 Package natbib Warning: Citation `Warshel1998' on page 1 undefined on input lin
-e 66.
+e 67.
 
 
 Package natbib Warning: Citation `Garcia-Viloca2004' on page 1 undefined on inp
-ut line 66.
+ut line 67.
 
 
 Package natbib Warning: Citation `Kamerlin2010' on page 1 undefined on input li
-ne 66.
+ne 67.
 
 
 Package natbib Warning: Citation `Warshel1998' on page 1 undefined on input lin
-e 68.
+e 69.
 
 
 Package natbib Warning: Citation `Kamerlin2010' on page 1 undefined on input li
-ne 68.
+ne 69.
 
 
 Package natbib Warning: Citation `Kohen2015' on page 1 undefined on input line 
-68.
+69.
 
 
 Package natbib Warning: Citation `Nagel2006' on page 1 undefined on input line 
-68.
+69.
 
 
 Package natbib Warning: Citation `Krishnamurthy2008' on page 1 undefined on inp
-ut line 77.
+ut line 78.
 
 
 Package natbib Warning: Citation `Liljas1972' on page 1 undefined on input line
- 77.
+ 78.
 
 
 Package natbib Warning: Citation `Krishnamurthy2008' on page 1 undefined on inp
-ut line 79.
+ut line 80.
 
 
-Package natbib Warning: Citation `Tu1989' on page 1 undefined on input line 85.
+Package natbib Warning: Citation `Tu1989' on page 1 undefined on input line 86.
 
 
 
 Package natbib Warning: Citation `Maupin2009' on page 1 undefined on input line
- 85.
+ 86.
 
 
 Package natbib Warning: Citation `Mikulski2010' on page 1 undefined on input li
-ne 85.
+ne 86.
 
 [1{C:/Users/kundai/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
 
 Package natbib Warning: Citation `Sachikonye2025' on page 2 undefined on input 
-line 91.
+line 92.
 
 
 Package natbib Warning: Citation `Sachikonye2025' on page 2 undefined on input 
-line 103.
+line 104.
 
+<enzyme_categorical_panel.png, id=196, 1022.6205pt x 1020.4524pt>
+File: enzyme_categorical_panel.png Graphic file (type png)
+<use enzyme_categorical_panel.png>
+Package pdftex.def Info: enzyme_categorical_panel.png  used on input line 122.
+(pdftex.def)             Requested size: 484.49844pt x 483.47426pt.
 
 Package natbib Warning: Citation `Heisenberg1927' on page 2 undefined on input 
-line 121.
+line 129.
 
 
 Package natbib Warning: Citation `Aharonov1988' on page 2 undefined on input li
-ne 131.
+ne 139.
 
 
 Package natbib Warning: Citation `Dressel2014' on page 2 undefined on input lin
-e 131.
+e 139.
 
 
 Package natbib Warning: Citation `Ozawa2003' on page 2 undefined on input line 
-131.
+139.
 
 
 Package natbib Warning: Citation `Rozema2012' on page 2 undefined on input line
- 131.
+ 139.
 
 
 Package natbib Warning: Citation `Erhart2012' on page 2 undefined on input line
- 131.
-
-
-LaTeX Warning: Reference `sec:theory' on page 2 undefined on input line 135.
-
-
-LaTeX Warning: Reference `sec:methods' on page 2 undefined on input line 135.
-
-
-LaTeX Warning: Reference `sec:results' on page 2 undefined on input line 135.
-
-
-LaTeX Warning: Reference `sec:discussion' on page 2 undefined on input line 135
-.
-
-
-LaTeX Warning: Reference `sec:conclusion' on page 2 undefined on input line 135
-.
+ 139.
 
 ! Undefined control sequence.
-l.146 \calM = \mathbb{R}^{3N} \times \calQ
+l.154 \calM = \mathbb{R}^{3N} \times \calQ
                                            \times \calF
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -762,7 +750,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.146 ...\mathbb{R}^{3N} \times \calQ \times \calF
+l.154 ...\mathbb{R}^{3N} \times \calQ \times \calF
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -770,11 +758,11 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[2]
+[2] [3 <./enzyme_categorical_panel.png>]
 ! Undefined control sequence.
 <recently read> \calQ 
                       
-l.149 ... spatial coordinates of $N$ atoms, $\calQ
+l.157 ... spatial coordinates of $N$ atoms, $\calQ
                                                   $ represents charge distri...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -785,7 +773,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <recently read> \calF 
                       
-l.149 ...nd order and oxidation state), and $\calF
+l.157 ...nd order and oxidation state), and $\calF
                                                   $ represents functional gr...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -794,165 +782,244 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Reference `sec:classification' on page 3 undefined on input line
- 158.
-
-
-Underfull \hbox (badness 1248) in paragraph at lines 163--164
+Underfull \hbox (badness 1248) in paragraph at lines 171--172
 \OT1/cmr/m/n/10 that par-ti-tions con-fig-u-ra-tion space into ``pass'' and
  []
 
+<aperture_as_field_panel.png, id=218, 1148.6112pt x 857.604pt>
+File: aperture_as_field_panel.png Graphic file (type png)
+<use aperture_as_field_panel.png>
+Package pdftex.def Info: aperture_as_field_panel.png  used on input line 191.
+(pdftex.def)             Requested size: 484.49844pt x 361.74846pt.
 
-Package natbib Warning: Citation `Pikovsky2001' on page 3 undefined on input li
-ne 184.
+Package natbib Warning: Citation `Pikovsky2001' on page 4 undefined on input li
+ne 199.
 
 
-Package natbib Warning: Citation `Strogatz2000' on page 3 undefined on input li
-ne 184.
+Package natbib Warning: Citation `Strogatz2000' on page 4 undefined on input li
+ne 199.
 
 
-Overfull \hbox (17.22769pt too wide) detected at line 195
+Overfull \hbox (17.22769pt too wide) detected at line 210
 []
  []
 
+<figure6_phase_locked_selection_detailed.png, id=219, 1149.093pt x 715.2321pt>
+File: figure6_phase_locked_selection_detailed.png Graphic file (type png)
+<use figure6_phase_locked_selection_detailed.png>
+Package pdftex.def Info: figure6_phase_locked_selection_detailed.png  used on i
+nput line 218.
+(pdftex.def)             Requested size: 484.49844pt x 301.5741pt.
 
-Package natbib Warning: Citation `Gao2010' on page 3 undefined on input line 21
-1.
+Package natbib Warning: Citation `Gao2010' on page 4 undefined on input line 23
+3.
 
 
-Underfull \hbox (badness 3009) in paragraph at lines 215--216
+Underfull \hbox (badness 3009) in paragraph at lines 237--238
  []$\OML/cmm/m/it/10 C[] \OMS/cmsy/m/n/10 ! \OML/cmm/m/it/10 C[]$\OT1/cmr/m/n/1
 0 : $[][][]$ bind-ing (add
  []
 
-[3]
+[4] [5 <./aperture_as_field_panel.png>]
 
-Package natbib Warning: Citation `Maupin2009' on page 4 undefined on input line
- 257.
-
-
-Package natbib Warning: Citation `Ozawa2003' on page 4 undefined on input line 
-262.
+Package natbib Warning: Citation `Maupin2009' on page 6 undefined on input line
+ 279.
 
 
-Underfull \hbox (badness 1286) in paragraph at lines 262--263
-\OT1/cmr/m/n/10 Heisen-berg un-cer-tainty re-la-tion (Eq. []8[]). How-ever,
+Package natbib Warning: Citation `Ozawa2003' on page 6 undefined on input line 
+284.
+
+
+Underfull \hbox (badness 1286) in paragraph at lines 284--285
+\OT1/cmr/m/n/10 Heisen-berg un-cer-tainty re-la-tion (Eq. []7[]). How-ever,
  []
 
-[4]
+[6 <./figure6_phase_locked_selection_detailed.png>]
 
-Package natbib Warning: Citation `Kuramoto1984' on page 5 undefined on input li
-ne 352.
+Package natbib Warning: Citation `Kuramoto1984' on page 7 undefined on input li
+ne 374.
 
 
-Overfull \hbox (2.9769pt too wide) in paragraph at lines 369--382
+Overfull \hbox (2.9769pt too wide) in paragraph at lines 391--404
  []$[]$ 
  []
 
+[7]
+<sufficient_inclusions_panel.png, id=284, 1147.6476pt x 858.3267pt>
+File: sufficient_inclusions_panel.png Graphic file (type png)
+<use sufficient_inclusions_panel.png>
+Package pdftex.def Info: sufficient_inclusions_panel.png  used on input line 48
+0.
+(pdftex.def)             Requested size: 484.49844pt x 362.35452pt.
 
-LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-LaTeX Warning: Reference `eq:kuramoto' on page 5 undefined on input line 446.
-
-[5]
-
-LaTeX Warning: Reference `fig:trajectory' on page 6 undefined on input line 463
+LaTeX Warning: Reference `fig:trajectory' on page 8 undefined on input line 492
 .
 
 
-Overfull \hbox (9.34167pt too wide) in paragraph at lines 509--519
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<figure1_trajectory.png, id=286, 500.5902pt x 428.3202pt>
+File: figure1_trajectory.png Graphic file (type png)
+<use figure1_trajectory.png>
+Package pdftex.def Info: figure1_trajectory.png  used on input line 532.
+(pdftex.def)             Requested size: 484.49844pt x 414.56818pt.
+
+Overfull \hbox (9.34167pt too wide) in paragraph at lines 545--555
  []$[]$ 
  []
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Warning: Reference `sec:zero-backaction-theory' on page 6 undefined on in
-put line 565.
-
-
-Overfull \hbox (16.76646pt too wide) detected at line 568
+[8] [9 <./sufficient_inclusions_panel.png>]
+Overfull \hbox (16.76646pt too wide) detected at line 604
 [][][][] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 n[] \OMS/cmsy/m/n/10 ^^B [] \OT1/cm
 r/m/n/10 = 25 \OMS/cmsy/m/n/10 ^^B \OT1/cmr/m/n/10 349 \OMS/cmsy/m/n/10 ^^Y \OT
 1/cmr/m/n/10 8[]700
  []
 
-[6]
-Overfull \hbox (53.68057pt too wide) in paragraph at lines 584--597
- []$[]$ 
- []
+<figure2_backaction.png, id=308, 500.5902pt x 428.3202pt>
+File: figure2_backaction.png Graphic file (type png)
+<use figure2_backaction.png>
+Package pdftex.def Info: figure2_backaction.png  used on input line 608.
+(pdftex.def)             Requested size: 484.49844pt x 414.56818pt.
 
-
-LaTeX Warning: Reference `tab:protocol' on page 7 undefined on input line 610.
-
-
-Overfull \hbox (19.09367pt too wide) in paragraph at lines 621--633
+Overfull \hbox (53.68057pt too wide) in paragraph at lines 627--640
  []$[]$ 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
+[10 <./figure1_trajectory.png>]
+<figure3_coherence.png, id=318, 500.5902pt x 428.3202pt>
+File: figure3_coherence.png Graphic file (type png)
+<use figure3_coherence.png>
+Package pdftex.def Info: figure3_coherence.png  used on input line 648.
+(pdftex.def)             Requested size: 484.49844pt x 414.56818pt.
 
-Package natbib Warning: Citation `Tu1989' on page 7 undefined on input line 635
-.
+Overfull \hbox (19.09367pt too wide) in paragraph at lines 671--683
+ []$[]$ 
+ []
+
+[11 <./figure2_backaction.png>]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Package natbib Warning: Citation `Maupin2009' on page 7 undefined on input line
- 635.
+Package natbib Warning: Citation `Tu1989' on page 12 undefined on input line 68
+5.
 
 
-Overfull \hbox (65.9476pt too wide) in paragraph at lines 645--656
+Package natbib Warning: Citation `Maupin2009' on page 12 undefined on input lin
+e 685.
+
+<figure4_aperture.png, id=330, 500.5902pt x 428.3202pt>
+File: figure4_aperture.png Graphic file (type png)
+<use figure4_aperture.png>
+Package pdftex.def Info: figure4_aperture.png  used on input line 689.
+(pdftex.def)             Requested size: 484.49844pt x 414.56818pt.
+
+Overfull \hbox (65.9476pt too wide) in paragraph at lines 702--713
  []$[]$ 
  []
 
 
-Package natbib Warning: Citation `Pauling1946' on page 7 undefined on input lin
-e 672.
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[12 <./figure3_coherence.png>]
+<isoform_paradox_panel.png, id=338, 1147.6476pt x 858.5676pt>
+File: isoform_paradox_panel.png Graphic file (type png)
+<use isoform_paradox_panel.png>
+Package pdftex.def Info: isoform_paradox_panel.png  used on input line 724.
+(pdftex.def)             Requested size: 484.49844pt x 362.45622pt.
 
 
-Package natbib Warning: Citation `Fersht1999' on page 7 undefined on input line
- 672.
+! LaTeX Error: Unicode character ≈ (U+2248)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.725 ...000 confirms charge-function decoupling.}
+                                                  
+You may provide a definition with
+\DeclareUnicodeCharacter 
 
 
-Underfull \hbox (badness 1708) in paragraph at lines 674--675
+! LaTeX Error: Unicode character ≈ (U+2248)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.725 ...000 confirms charge-function decoupling.}
+                                                  
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+Package natbib Warning: Citation `Pauling1946' on page 13 undefined on input li
+ne 736.
+
+
+Package natbib Warning: Citation `Fersht1999' on page 13 undefined on input lin
+e 736.
+
+
+Underfull \hbox (badness 1708) in paragraph at lines 738--739
 []\OT1/cmr/m/n/10 Our re-sults sug-gest an al-ter-na-tive in-ter-pre-ta-tion:
  []
 
-[7]
+[13 <./figure4_aperture.png>] [14 <./isoform_paradox_panel.png>]
 
-LaTeX Warning: Reference `sec:intro' on page 8 undefined on input line 693.
+LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
+ on input line 752.
 
 
-Underfull \hbox (badness 1087) in paragraph at lines 728--729
+Underfull \hbox (badness 1087) in paragraph at lines 792--793
 \OT1/cmr/m/n/10 those that don't are blocked. There is no ``de-ci-
  []
 
 
-Package natbib Warning: Citation `Warshel1998' on page 8 undefined on input lin
-e 734.
+Package natbib Warning: Citation `Warshel1998' on page 15 undefined on input li
+ne 798.
 
 
-Package natbib Warning: Citation `Kamerlin2010' on page 8 undefined on input li
-ne 736.
+Package natbib Warning: Citation `Kamerlin2010' on page 15 undefined on input l
+ine 800.
 
 
-Package natbib Warning: Citation `Kohen2015' on page 8 undefined on input line 
-736.
+Package natbib Warning: Citation `Kohen2015' on page 15 undefined on input line
+ 800.
 
-[8]
-Underfull \hbox (badness 1946) in paragraph at lines 793--794
+[15]
+<unified_function_panel.png, id=366, 1147.6476pt x 858.3267pt>
+File: unified_function_panel.png Graphic file (type png)
+<use unified_function_panel.png>
+Package pdftex.def Info: unified_function_panel.png  used on input line 824.
+(pdftex.def)             Requested size: 484.49844pt x 362.35452pt.
+
+Underfull \hbox (badness 1946) in paragraph at lines 864--865
 []\OT1/cmr/bx/n/10 (6) De-sign im-pli-ca-tions: \OT1/cmr/m/n/10 En-zyme en-gi-n
 eer-ing
  []
 
-(carbonic-anhydrase-II-mechanism.bbl)
+
+Underfull \hbox (badness 4291) in paragraph at lines 877--879
+[]\OT1/cmr/m/n/10 All com-pu-ta-tional im-ple-men-ta-tions, ex-per-i-men-tal
+ []
+
+
+Overfull \hbox (80.03949pt too wide) in paragraph at lines 882--883
+ []\OT1/cmtt/m/n/14.4 https://github.com/fullscreen-triangle/hegel[] 
+ []
+
+(carbonic-anhydrase-II-mechanism.bbl [16])
 
 Package natbib Warning: There were undefined citations.
 
-[9] (carbonic-anhydrase-II-mechanism.aux)
+[17 <./unified_function_panel.png>] (carbonic-anhydrase-II-mechanism.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
@@ -972,53 +1039,49 @@ changed.
 
 Package rerunfilecheck Info: Checksums for `carbonic-anhydrase-II-mechanism.out
 ':
-(rerunfilecheck)             Before: C72BECCD6AF716C95F846C096EB1E6B7;4235
-(rerunfilecheck)             After:  6C47FDCCD150C74189ECD61AE8F85D86;7399.
+(rerunfilecheck)             Before: 6C47FDCCD150C74189ECD61AE8F85D86;7399
+(rerunfilecheck)             After:  1FC4793F3468F6D53F76F12984054BB4;7594.
  ) 
 Here is how much of TeX's memory you used:
- 18487 strings out of 474486
- 349347 string characters out of 5743283
- 1964542 words of memory out of 5000000
- 40442 multiletter control sequences out of 15000+600000
- 571571 words of font info for 85 fonts, out of 8000000 for 9000
+ 18609 strings out of 474486
+ 352403 string characters out of 5743283
+ 1965542 words of memory out of 5000000
+ 40545 multiletter control sequences out of 15000+600000
+ 572375 words of font info for 88 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,22n,79p,1967b,1114s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{equation.0.15} has been referenced but does not exi
-st, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{equation.0.8} has been referenced but does not exis
-t, replaced by a fixed one
-
- <C:\Users\kundai\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1
-000.pk><C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
-ts/cm/cmbx10.pfb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/type1/pub
-lic/amsfonts/cm/cmbx12.pfb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts
-/type1/public/amsfonts/cm/cmbx9.pfb><C:/Users/kundai/AppData/Local/Programs/MiK
-TeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/kundai/AppData/Local/Pr
-ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/kundai/AppDat
-a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/kund
-ai/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/U
-sers/kundai/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.
+ 75i,22n,79p,1860b,1203s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\kundai\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcr
+m0900.pk> <C:\Users\kundai\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi
+600\tcrm1000.pk><C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/type1/publ
+ic/amsfonts/cm/cmbx10.pfb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/
+type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/kundai/AppData/Local/Programs/MiK
+TeX/fonts/type1/public/amsfonts/cm/cmbx6.pfb><C:/Users/kundai/AppData/Local/Pro
+grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Users/kundai/AppData/
+Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/kunda
+i/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/U
+sers/kundai/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.
 pfb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/
-cm/cmmi9.pfb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/type1/public/
-amsfonts/cm/cmr10.pfb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/type
-1/public/amsfonts/cm/cmr6.pfb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/fo
-nts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/kundai/AppData/Local/Programs/M
-iKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/kundai/AppData/Local/Pr
-ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/kundai/AppData/
-Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/kunda
-i/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Us
-ers/kundai/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.p
+cm/cmmi6.pfb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/type1/public/
+amsfonts/cm/cmmi7.pfb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/type
+1/public/amsfonts/cm/cmmi9.pfb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/f
+onts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/kundai/AppData/Local/Programs
+/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/kundai/AppData/Local/
+Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/kundai/AppDat
+a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/kunda
+i/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Use
+rs/kundai/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.p
 fb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
-m/cmsy9.pfb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/type1/public/a
-msfonts/cm/cmti10.pfb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/type
-1/public/amsfonts/cm/cmti9.pfb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/f
-onts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on carbonic-anhydrase-II-mechanism.pdf (9 pages, 376806 bytes).
+m/cmsy6.pfb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/type1/public/a
+msfonts/cm/cmsy7.pfb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/type1
+/public/amsfonts/cm/cmsy9.pfb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/fo
+nts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/kundai/AppData/Local/Programs
+/MiKTeX/fonts/type1/public/amsfonts/cm/cmti9.pfb><C:/Users/kundai/AppData/Local
+/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Users/kundai/App
+Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on carbonic-anhydrase-II-mechanism.pdf (17 pages, 6248007 bytes)
+.
 PDF statistics:
- 392 PDF objects out of 1000 (max. 8388607)
- 120 named destinations out of 1000 (max. 500000)
- 209 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 523 PDF objects out of 1000 (max. 8388607)
+ 137 named destinations out of 1000 (max. 500000)
+ 363 words of extra memory for PDF output out of 10000 (max. 10000000)
 
