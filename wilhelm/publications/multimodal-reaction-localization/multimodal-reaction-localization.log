@@ -664,4 +664,1242 @@ File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@sys@shading@range@num=\count323
 \pgf@shadingcount=\count324
 )
-(C:\Users\kundai\AppData\Local\Pro
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
+reimage.code.tex
+File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
+reexternal.code.tex
+File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfexternal@startupbox=\box72
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
+relayers.code.tex
+File: pgfcorelayers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
+retransparency.code.tex
+File: pgfcoretransparency.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
+repatterns.code.tex
+File: pgfcorepatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
+rerdf.code.tex
+File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)))
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodul
+eshapes.code.tex
+File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfnodeparttextbox=\box73
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodul
+eplot.code.tex
+File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfc
+omp-version-0-65.sty
+Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
+\pgf@nodesepstart=\dimen287
+\pgf@nodesepend=\dimen288
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfc
+omp-version-1-18.sty
+Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
+))
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgffor.s
+ty
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfkeys.
+sty
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkey
+s.code.tex))
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/pgf/math\pgfmath.sty
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.cod
+e.tex))
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgffor
+.code.tex
+Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
+\pgffor@iter=\dimen289
+\pgffor@skip=\dimen290
+\pgffor@stack=\toks45
+\pgffor@toks=\toks46
+))
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/ti
+kz\tikz.code.tex
+Package: tikz 2023-01-15 v3.1.10 (3.1.10)
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflib
+raryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@plot@mark@count=\count325
+\pgfplotmarksize=\dimen291
+)
+\tikz@lastx=\dimen292
+\tikz@lasty=\dimen293
+\tikz@lastxsaved=\dimen294
+\tikz@lastysaved=\dimen295
+\tikz@lastmovetox=\dimen296
+\tikz@lastmovetoy=\dimen297
+\tikzleveldistance=\dimen298
+\tikzsiblingdistance=\dimen299
+\tikz@figbox=\box74
+\tikz@figbox@bg=\box75
+\tikz@tempbox=\box76
+\tikz@tempbox@bg=\box77
+\tikztreelevel=\count326
+\tikznumberofchildren=\count327
+\tikznumberofcurrentchild=\count328
+\tikz@fig@count=\count329
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodul
+ematrix.code.tex
+File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfmatrixcurrentrow=\count330
+\pgfmatrixcurrentcolumn=\count331
+\pgf@matrix@numberofcolumns=\count332
+)
+\tikz@expandcount=\count333
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/ti
+kz/libraries\tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)))
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflib
+raryarrows.meta.code.tex
+File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfarrowinset=\dimen300
+\pgfarrowlength=\dimen301
+\pgfarrowwidth=\dimen302
+\pgfarrowlinewidth=\dimen303
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/ti
+kz/libraries\tikzlibrarypositioning.code.tex
+File: tikzlibrarypositioning.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/ti
+kz/libraries\tikzlibrarycalc.code.tex
+File: tikzlibrarycalc.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/ti
+kz/libraries\tikzlibrarydecorations.pathreplacing.code.tex
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/ti
+kz/libraries\tikzlibrarydecorations.code.tex
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodul
+edecorations.code.tex
+\pgfdecoratedcompleteddistance=\dimen304
+\pgfdecoratedremainingdistance=\dimen305
+\pgfdecoratedinputsegmentcompleteddistance=\dimen306
+\pgfdecoratedinputsegmentremainingdistance=\dimen307
+\pgf@decorate@distancetomove=\dimen308
+\pgf@decorate@repeatstate=\count334
+\pgfdecorationsegmentamplitude=\dimen309
+\pgfdecorationsegmentlength=\dimen310
+)
+\tikz@lib@dec@box=\box78
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/decora
+tions\pgflibrarydecorations.pathreplacing.code.tex))
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/algorithms\algorithm.s
+ty
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
+nment
+ (C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
+Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
+)
+\@float@every@algorithm=\toks47
+\c@algorithm=\count335
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/algorithmicx\algpseudo
+code.sty
+Package: algpseudocode 
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/algorithmicx\algorithm
+icx.sty
+Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
+
+Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
+\c@ALG@line=\count336
+\c@ALG@rem=\count337
+\c@ALG@nested=\count338
+\ALG@tlm=\skip65
+\ALG@thistlm=\skip66
+\c@ALG@Lnr=\count339
+\c@ALG@blocknr=\count340
+\c@ALG@storecount=\count341
+\c@ALG@tmpcounter=\count342
+\ALG@tmplength=\skip67
+)
+Document Style - pseudocode environments for use with the `algorithmicx' style
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcolorbox.st
+y
+Package: tcolorbox 2024/01/10 version 6.2.0 text color boxes
+ (C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/tools\verbatim.sty
+Package: verbatim 2023-11-06 v1.5v LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks48
+\verbatim@line=\toks49
+\verbatim@in@stream=\read3
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/environ\environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/trimspaces\trimspaces.
+sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+))
+\tcb@titlebox=\box79
+\tcb@upperbox=\box80
+\tcb@lowerbox=\box81
+\tcb@phantombox=\box82
+\c@tcbbreakpart=\count343
+\c@tcblayer=\count344
+\c@tcolorbox@number=\count345
+\l__tcobox_tmpa_box=\box83
+\l__tcobox_tmpa_dim=\dimen311
+\tcb@temp=\box84
+\tcb@temp=\box85
+\tcb@temp=\box86
+\tcb@temp=\box87
+)
+\c@theorem=\count346
+Package translations Info: No language package found. I am going to use `englis
+h' as default language. on input line 56.
+ (multimodal-reaction-localization.aux)
+\openout1 = `multimodal-reaction-localization.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(72.26999pt, 469.75502pt, 72.26999pt)
+* v-part:(T,H,B)=(72.26999pt, 650.43001pt, 72.26999pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=469.75502pt
+* \textheight=650.43001pt
+* \oddsidemargin=0.0pt
+* \evensidemargin=0.0pt
+* \topmargin=-37.0pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=4.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumntrue
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.m
+kii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count347
+\scratchdimen=\dimen312
+\scratchbox=\box88
+\nofMPsegments=\count348
+\nofMParguments=\count349
+\everyMPshowfont=\toks50
+\MPscratchCnt=\count350
+\MPscratchDim=\dimen313
+\MPnumerator=\count351
+\makeMPintoPDFobject=\count352
+\everyMPtoPDFconversion=\toks51
+)
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-
+base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.
+cfg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
+Package hyperref Info: Link coloring OFF on input line 56.
+ (multimodal-reaction-localization.out)
+(multimodal-reaction-localization.out)
+\@outlinefile=\write4
+\openout4 = `multimodal-reaction-localization.out'.
+
+
+
+Package siunitx Warning: Detected the "physics" package:
+(siunitx)                omitting definition of \qty.
+(siunitx)                
+(siunitx)                If you want to use \qty with the siunitx definition,
+(siunitx)                add 
+(siunitx)                
+(siunitx)                    \AtBeginDocument{\RenewCommandCopy\qty\SI}
+(siunitx)                
+(siunitx)                to your preamble.
+
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/translations/dicts\tra
+nslations-basic-dictionary-english.trsl
+File: translations-basic-dictionary-english.trsl (english translation file `tra
+nslations-basic-dictionary')
+)
+Package translations Info: loading dictionary `translations-basic-dictionary' f
+or `english'. on input line 56.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 59.
+
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 59.
+
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 5
+9.
+
+(C:\Users\kundai\AppData\Local\Programs\MiKTeX\tex/latex/base\t1cmtt.fd
+File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+)
+Underfull \hbox (badness 1014) in paragraph at lines 65--66
+\T1/cmr/m/n/10 space where all modality-specific cat-e-gor-i-cal dis-
+ []
+
+
+Underfull \hbox (badness 1735) in paragraph at lines 69--71
+[]\T1/cmr/bx/n/10 Keywords: \T1/cmr/m/n/10 re-ac-tion lo-cal-iza-tion, mul-ti-m
+odal
+ []
+
+[1{C:/Users/kundai/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 87--88
+[]\T1/cmr/bx/n/10 Thermal en-ergy \T1/cmr/m/n/10 from bond break-
+ []
+
+
+Overfull \hbox (5.26022pt too wide) detected at line 102
+[]
+ []
+
+
+Overfull \hbox (39.36511pt too wide) in paragraph at lines 116--126
+[][] 
+ []
+
+
+Overfull \hbox (42.71169pt too wide) detected at line 143
+[][][]\OML/cmm/m/it/10 G[]\OT1/cmr/m/n/10 (\OT1/cmr/bx/n/10 r\OML/cmm/m/it/10 ;
+ t\OMS/cmsy/m/n/10 j\OT1/cmr/bx/n/10 r[]\OML/cmm/m/it/10 ; t[]\OT1/cmr/m/n/10 )
+ = [] [] [] ^^B(\OML/cmm/m/it/10 t \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 t[]\OT
+1/cmr/m/n/10 )
+ []
+
+[2]
+Underfull \hbox (badness 3460) in paragraph at lines 163--164
+[]\T1/cmr/m/n/10 Propagation char-ac-ter: \T1/cmr/bx/n/10 dif-fu-sive \T1/cmr/m
+/n/10 (spreads,
+ []
+
+<chemical_modality_panel.png, id=427, 1146.4431pt x 858.5676pt>
+File: chemical_modality_panel.png Graphic file (type png)
+<use chemical_modality_panel.png>
+Package pdftex.def Info: chemical_modality_panel.png  used on input line 168.
+(pdftex.def)             Requested size: 446.26582pt x 334.19807pt.
+
+Underfull \hbox (badness 1629) in paragraph at lines 176--177
+\T1/cmr/m/n/10 Molecular re-ar-range-ment dur-ing re-ac-tion cre-ates
+ []
+
+
+Underfull \hbox (badness 1270) in paragraph at lines 188--189
+[][]\T1/cmr/bx/n/10 Proposition 2.4 \T1/cmr/m/n/10 (Acous-tic Ar-rival Time)\T1
+/cmr/bx/n/10 . []\T1/cmr/m/it/10 The
+ []
+
+
+Underfull \hbox (badness 1622) in paragraph at lines 199--200
+[]\T1/cmr/m/n/10 Propagation char-ac-ter: \T1/cmr/bx/n/10 bal-lis-tic \T1/cmr/m
+/n/10 (main-tains
+ []
+
+
+Overfull \hbox (38.03954pt too wide) detected at line 210
+[][][]\OML/cmm/m/it/10 G[]\OT1/cmr/m/n/10 (\OT1/cmr/bx/n/10 r\OML/cmm/m/it/10 ;
+ t\OMS/cmsy/m/n/10 j\OT1/cmr/bx/n/10 r[]\OML/cmm/m/it/10 ; t[]\OT1/cmr/m/n/10 )
+ = [] [] [] ^^B(\OML/cmm/m/it/10 t \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 t[]\OT
+1/cmr/m/n/10 )
+ []
+
+<electromagnetic_modality_panel.png, id=435, 1145.2386pt x 858.5676pt>
+File: electromagnetic_modality_panel.png Graphic file (type png)
+<use electromagnetic_modality_panel.png>
+Package pdftex.def Info: electromagnetic_modality_panel.png  used on input line
+ 260.
+(pdftex.def)             Requested size: 446.26582pt x 334.55179pt.
+
+Underfull \hbox (badness 3138) in paragraph at lines 267--268
+\T1/cmr/m/n/10 Bond for-ma-tion/breaking changes molec-u-lar vi-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 267--268
+\T1/cmr/m/n/10 bra-tional fre-quen-cies, de-tectable through in-
+ []
+
+[3] [4 <./chemical_modality_panel.png>] [5 <./electromagnetic_modality_panel.pn
+g>]
+Underfull \hbox (badness 2735) in paragraph at lines 292--293
+[][]\T1/cmr/bx/n/10 Definition 2.11 \T1/cmr/m/n/10 (Cat-e-gor-i-cal State Space
+)\T1/cmr/bx/n/10 . []\T1/cmr/m/it/10 A
+ []
+
+
+Underfull \hbox (badness 2293) in paragraph at lines 292--293
+\T1/cmr/m/it/10 num-ber, an-gu-lar mo-men-tum, mag-netic quan-tum
+ []
+
+
+Underfull \hbox (badness 7777) in paragraph at lines 331--332
+[][]\T1/cmr/bx/n/10 Theorem 2.14 \T1/cmr/m/n/10 (Au-to-cat-alytic En-hance-ment
+)\T1/cmr/bx/n/10 .
+ []
+
+
+Underfull \hbox (badness 1152) in paragraph at lines 331--332
+\T1/cmr/m/it/10 pro-vide au-to-cat-alytic en-hance-ment of lo-cal-iza-tion.
+ []
+
+
+Underfull \hbox (badness 1755) in paragraph at lines 334--336
+\T1/cmr/m/it/10 about lo-ca-tion is ex-tracted with-out work, un-like
+ []
+
+[6]
+Underfull \hbox (badness 1325) in paragraph at lines 385--386
+\T1/cmr/m/it/10 their in-ter-sec-tion is nec-es-sary and suf-fi-cient for
+ []
+
+
+Overfull \hbox (204.43158pt too wide) in paragraph at lines 392--404
+ [][] 
+ []
+
+
+Underfull \hbox (badness 1418) in paragraph at lines 444--445
+[][]\T1/cmr/bx/n/10 Proposition 3.3 \T1/cmr/m/n/10 (Acous-tic Sur-face Prop-er-
+ties)\T1/cmr/bx/n/10 .
+ []
+
+<acoustic_modality_panel.png, id=503, 1147.4067pt x 858.5676pt>
+File: acoustic_modality_panel.png Graphic file (type png)
+<use acoustic_modality_panel.png>
+Package pdftex.def Info: acoustic_modality_panel.png  used on input line 455.
+(pdftex.def)             Requested size: 446.26582pt x 333.92296pt.
+[7] [8 <./acoustic_modality_panel.png>]
+<electron_cascade_panel.png, id=532, 1149.093pt x 866.5173pt>
+File: electron_cascade_panel.png Graphic file (type png)
+<use electron_cascade_panel.png>
+Package pdftex.def Info: electron_cascade_panel.png  used on input line 510.
+(pdftex.def)             Requested size: 446.26582pt x 336.52563pt.
+
+Overfull \hbox (25.04988pt too wide) detected at line 538
+[][][]\OMS/cmsy/m/n/10 T[]\OT1/cmr/m/n/10 (\OT1/cmr/bx/n/10 S\OT1/cmr/m/n/10 ) 
+= []
+ []
+
+
+Underfull \hbox (badness 1019) in paragraph at lines 550--551
+[][]\T1/cmr/bx/n/10 Definition 3.10 \T1/cmr/m/n/10 (Sur-face Con-sis-tency)\T1/
+cmr/bx/n/10 . []\T1/cmr/m/it/10 Arrival-
+ []
+
+[9] [10 <./electron_cascade_panel.png>]
+Overfull \hbox (99.66786pt too wide) in paragraph at lines 584--596
+ [][] 
+ []
+
+<integrated_electric_metrics_panel.png, id=563, 1145.4795pt x 863.1447pt>
+File: integrated_electric_metrics_panel.png Graphic file (type png)
+<use integrated_electric_metrics_panel.png>
+Package pdftex.def Info: integrated_electric_metrics_panel.png  used on input l
+ine 602.
+(pdftex.def)             Requested size: 446.26582pt x 336.26947pt.
+[11] [12 <./integrated_electric_metrics_panel.png>]
+Overfull \hbox (53.56676pt too wide) detected at line 711
+[][][][] \OML/cmm/m/it/10 ^^O[] \OT1/cmr/m/n/10 = (10[] \OMS/cmsy/m/n/10 ^^A \O
+T1/cmr/m/n/10 10[] \OMS/cmsy/m/n/10 ^^A \OT1/cmr/m/n/10 10[] \OMS/cmsy/m/n/10 ^
+^A \OT1/cmr/m/n/10 10[] \OMS/cmsy/m/n/10 ^^A \OT1/cmr/m/n/10 10[] \OMS/cmsy/m/n
+/10 ^^A \OT1/cmr/m/n/10 10[])[] = 10[] \OMS/cmsy/m/n/10 ^^Y \OT1/cmr/m/n/10 10[
+]
+ []
+
+<phase_coherence_validation_panel.png, id=596, 1147.6476pt x 866.5173pt>
+File: phase_coherence_validation_panel.png Graphic file (type png)
+<use phase_coherence_validation_panel.png>
+Package pdftex.def Info: phase_coherence_validation_panel.png  used on input li
+ne 772.
+(pdftex.def)             Requested size: 446.26582pt x 336.94875pt.
+[13] [14 <./phase_coherence_validation_panel.png>]
+Overfull \hbox (9.7279pt too wide) detected at line 809
+[]
+ []
+
+
+Overfull \hbox (42.06674pt too wide) detected at line 825
+[][][]\OT1/cmr/bx/n/10 w[] \OMS/cmsy/m/n/10 ^^A \OT1/cmr/bx/n/10 w[] \OT1/cmr/m
+/n/10 = 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 40 \OMS/cmsy/m/n/10 ^^A \OT1/cmr/m/n
+/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 15 + 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 
+35 \OMS/cmsy/m/n/10 ^^A \OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 25 +
+ 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 15 \OMS/cmsy/m/n/10 ^^A \OT1/cmr/m/n/10 0\O
+ML/cmm/m/it/10 :\OT1/cmr/m/n/10 10 + 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 10 \OMS
+/cmsy/m/n/10 ^^A \OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 50 = 0\OML/
+cmm/m/it/10 :\OT1/cmr/m/n/10 21
+ []
+
+<volume_ph_atp_panel.png, id=632, 1149.093pt x 866.5173pt>
+File: volume_ph_atp_panel.png Graphic file (type png)
+<use volume_ph_atp_panel.png>
+Package pdftex.def Info: volume_ph_atp_panel.png  used on input line 831.
+(pdftex.def)             Requested size: 446.26582pt x 336.52563pt.
+
+Underfull \hbox (badness 1303) in paragraph at lines 836--836
+[]\T1/cmr/bx/n/12 Retention-Distance Re-la-tion for
+ []
+
+[15] [16 <./volume_ph_atp_panel.png>]
+<diffusion_comparison_panel.png, id=660, 1133.4345pt x 866.5173pt>
+File: diffusion_comparison_panel.png Graphic file (type png)
+<use diffusion_comparison_panel.png>
+Package pdftex.def Info: diffusion_comparison_panel.png  used on input line 889
+.
+(pdftex.def)             Requested size: 446.26582pt x 341.17978pt.
+
+Underfull \hbox (badness 2096) in paragraph at lines 894--894
+[]\T1/cmr/bx/n/14.4 Thermodynamic Con-straints
+ []
+
+
+Underfull \hbox (badness 4108) in paragraph at lines 912--913
+[]\T1/cmr/m/n/10 Categorical ob-serv-ables (par-ti-tion co-or-di-
+ []
+
+
+Underfull \hbox (badness 1097) in paragraph at lines 946--947
+[][]\T1/cmr/bx/n/10 Theorem 6.3 \T1/cmr/m/n/10 (Lo-cal-iza-tion Ir-re-versibil-
+ity)\T1/cmr/bx/n/10 . []\T1/cmr/m/it/10 The
+ []
+
+<lipid_biochemical_dynamics_panel.png, id=661, 1149.3339pt x 866.5173pt>
+File: lipid_biochemical_dynamics_panel.png Graphic file (type png)
+<use lipid_biochemical_dynamics_panel.png>
+Package pdftex.def Info: lipid_biochemical_dynamics_panel.png  used on input li
+ne 963.
+(pdftex.def)             Requested size: 446.26582pt x 336.4463pt.
+[17] [18 <./diffusion_comparison_panel.png>] [19 <./lipid_biochemical_dynamics_
+panel.png>]
+Overfull \hbox (35.32887pt too wide) in paragraph at lines 996--1006
+ [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1010--1010
+[]\T1/cmr/bx/n/12 Catalytic En-hance-ment from
+ []
+
+
+Underfull \hbox (badness 2245) in paragraph at lines 1041--1042
+\T1/cmr/m/n/10 prove-ment ac-cel-er-ates with more mea-sure-ments:
+ []
+
+<thermal_modality_panel.png, id=691, 1146.4431pt x 858.5676pt>
+File: thermal_modality_panel.png Graphic file (type png)
+<use thermal_modality_panel.png>
+Package pdftex.def Info: thermal_modality_panel.png  used on input line 1065.
+(pdftex.def)             Requested size: 446.26582pt x 334.19807pt.
+
+Underfull \hbox (badness 1097) in paragraph at lines 1073--1074
+\T1/cmr/m/n/10 This sec-tion de-vel-ops the rig-or-ous math-e-mat-i-cal
+ []
+
+[20] [21 <./thermal_modality_panel.png>]
+Underfull \hbox (badness 2096) in paragraph at lines 1096--1097
+[][]\T1/cmr/bx/n/10 Definition 7.2 \T1/cmr/m/n/10 (Par-ti-tion Tran-si-tion)\T1
+/cmr/bx/n/10 . []\T1/cmr/m/it/10 A re-ac-
+ []
+
+
+Underfull \hbox (badness 5475) in paragraph at lines 1096--1097
+\T1/cmr/m/it/10 tion tran-si-tion-ing from state $\OT1/cmr/m/n/10 (\OML/cmm/m/i
+t/10 n[]; l[]; m[]; s[]\OT1/cmr/m/n/10 )$ \T1/cmr/m/it/10 to
+ []
+
+
+Underfull \hbox (badness 1147) in paragraph at lines 1108--1110
+\T1/cmr/m/it/10 These rules con-strain the al-lowed re-ac-tion paths
+ []
+
+
+Underfull \hbox (badness 1661) in paragraph at lines 1124--1126
+\T1/cmr/m/it/10 with no thresh-old pa-ram-e-ter and no false pos-i-
+ []
+
+
+Underfull \hbox (badness 3492) in paragraph at lines 1134--1135
+[]\T1/cmr/m/n/10 Chemical: De-tec-tion when $\OML/cmm/m/it/10 C > C[]$
+ []
+
+
+Underfull \hbox (badness 1270) in paragraph at lines 1135--1136
+[]\T1/cmr/m/n/10 Thermal: De-tec-tion when $\OT1/cmr/m/n/10 ^^A\OML/cmm/m/it/10
+ T > \OT1/cmr/m/n/10 ^^A\OML/cmm/m/it/10 T[]$
+ []
+
+<oxygen_field_tracking_panel.png, id=718, 1057.7919pt x 866.5173pt>
+File: oxygen_field_tracking_panel.png Graphic file (type png)
+<use oxygen_field_tracking_panel.png>
+Package pdftex.def Info: oxygen_field_tracking_panel.png  used on input line 11
+42.
+(pdftex.def)             Requested size: 446.26582pt x 365.5611pt.
+
+Underfull \hbox (badness 1331) in paragraph at lines 1146--1146
+[]\T1/cmr/bx/n/12 Information Con-tent of Tran-si-
+ []
+
+
+Underfull \hbox (badness 2790) in paragraph at lines 1180--1181
+[]\T1/cmr/m/n/10 This co-her-ence en-ables con-sis-tent lo-cal-iza-tion
+ []
+
+[22] [23 <./oxygen_field_tracking_panel.png>]
+<oxygen_geometry_validation_panel.png, id=745, 1147.8885pt x 865.0719pt>
+File: oxygen_geometry_validation_panel.png Graphic file (type png)
+<use oxygen_geometry_validation_panel.png>
+Package pdftex.def Info: oxygen_geometry_validation_panel.png  used on input li
+ne 1207.
+(pdftex.def)             Requested size: 446.26582pt x 336.3075pt.
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
+put line 1240.
+
+Underfull \hbox (badness 7326) in paragraph at lines 1285--1286
+[] \T1/cmr/m/n/10 Com-pute cat-e-gor-i-cal dis-tance: $\OML/cmm/m/it/10 d[] \OM
+S/cmsy/m/n/10  
+ []
+
+
+Underfull \hbox (badness 6842) in paragraph at lines 1294--1295
+[] \T1/cmr/bx/n/10 re-turn \T1/cmr/m/n/10 ER-ROR: "In-con-sis-tent mea-sure-
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [24]
+[25 <./oxygen_geometry_validation_panel.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \vbox (127.33586pt too high) has occurred while \output is active []
+
+
+[26]
+Overfull \hbox (5.26595pt too wide) detected at line 1335
+[]
+ []
+
+
+Underfull \hbox (badness 5563) in paragraph at lines 1407--1408
+[]\T1/cmr/m/n/10 Measurements $\OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 t[]\OMS/cmsy/
+m/n/10 g$\T1/cmr/m/n/10 , ini-tial es-ti-mate
+ []
+
+
+Underfull \hbox (badness 1253) in paragraph at lines 1411--1412
+[]\T1/cmr/m/n/10 Com-pute ro-bust scale: $\OML/cmm/m/it/10 ^^[[] \OT1/cmr/m/n/1
+0 = 1\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 4826 \OMS/cmsy/m/n/10 ^^B
+ []
+
+<multimodal_localization_panel.png, id=783, 1148.1294pt x 858.8085pt>
+File: multimodal_localization_panel.png Graphic file (type png)
+<use multimodal_localization_panel.png>
+Package pdftex.def Info: multimodal_localization_panel.png  used on input line 
+1425.
+(pdftex.def)             Requested size: 446.26582pt x 333.80699pt.
+[27] [28 <./multimodal_localization_panel.png>]
+Underfull \hbox (badness 3746) in paragraph at lines 1444--1444
+[]\T1/cmr/bx/n/14.4 Categorical Dis-tance In-ter-
+ []
+
+! Double subscript.
+l.1459     \dcat_
+                 i(\Scoord_0, \Scoord_{\text{obs}}) = \int_{\gamma_i} ds_{\t...
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Double subscript.
+<argument>  \dcat _
+                   C(\Scoord _0, \Scoord _{\text {obs}}) &= \frac {|\rxnpos ...
+l.1474 \end{align}
+                  
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Double subscript.
+<argument> ... \quad \text {(Chemical)} \\ \dcat _
+                                                  A(\Scoord _0, \Scoord _{\t...
+l.1474 \end{align}
+                  
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Double subscript.
+<argument> ... \quad \text {(Acoustic)} \\ \dcat _
+                                                  T(\Scoord _0, \Scoord _{\t...
+l.1474 \end{align}
+                  
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Double subscript.
+<argument> ...} \quad \text {(Thermal)} \\ \dcat _
+                                                  E(\Scoord _0, \Scoord _{\t...
+l.1474 \end{align}
+                  
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Double subscript.
+<argument> ...da _D} \quad \text {(EM)} \\ \dcat _
+                                                  V(\Scoord _0, \Scoord _{\t...
+l.1474 \end{align}
+                  
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Double subscript.
+<argument> ...uad \text {(Vibrational)} \\ \dcat _
+                                                  {\text {cat}}(\Scoord _0, ...
+l.1474 \end{align}
+                  
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Double subscript.
+<argument>  \dcat _
+                   C(\Scoord _0, \Scoord _{\text {obs}}) &= \frac {|\rxnpos ...
+l.1474 \end{align}
+                  
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Double subscript.
+<argument> ... \quad \text {(Chemical)} \\ \dcat _
+                                                  A(\Scoord _0, \Scoord _{\t...
+l.1474 \end{align}
+                  
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Double subscript.
+<argument> ... \quad \text {(Acoustic)} \\ \dcat _
+                                                  T(\Scoord _0, \Scoord _{\t...
+l.1474 \end{align}
+                  
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Double subscript.
+<argument> ...} \quad \text {(Thermal)} \\ \dcat _
+                                                  E(\Scoord _0, \Scoord _{\t...
+l.1474 \end{align}
+                  
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Double subscript.
+<argument> ...da _D} \quad \text {(EM)} \\ \dcat _
+                                                  V(\Scoord _0, \Scoord _{\t...
+l.1474 \end{align}
+                  
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Double subscript.
+<argument> ...uad \text {(Vibrational)} \\ \dcat _
+                                                  {\text {cat}}(\Scoord _0, ...
+l.1474 \end{align}
+                  
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+
+Overfull \hbox (69.42592pt too wide) detected at line 1474
+[]
+ []
+
+
+Underfull \hbox (badness 2057) in paragraph at lines 1481--1482
+[]\T1/cmr/m/it/10 The cat-e-gor-i-cal dis-tance mea-sures the S-entropy
+ []
+
+! Double subscript.
+<argument>  \dcat _
+                   C &\sim \frac {(10^{-6})^2}{4 \times 10^{-11} \times 4 \t...
+l.1495 \end{align}
+                  
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Double subscript.
+<argument> ...2}} \sim 6 \times 10^{12} \\ \dcat _
+                                                  A &\sim \frac {10^{-6}}{15...
+l.1495 \end{align}
+                  
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Double subscript.
+<argument> ...12}} \sim 6 \times 10^{8} \\ \dcat _
+                                                  T &\sim \frac {(10^{-6})^2...
+l.1495 \end{align}
+                  
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Double subscript.
+<argument>  \dcat _
+                   C &\sim \frac {(10^{-6})^2}{4 \times 10^{-11} \times 4 \t...
+l.1495 \end{align}
+                  
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Double subscript.
+<argument> ...2}} \sim 6 \times 10^{12} \\ \dcat _
+                                                  A &\sim \frac {10^{-6}}{15...
+l.1495 \end{align}
+                  
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Double subscript.
+<argument> ...12}} \sim 6 \times 10^{8} \\ \dcat _
+                                                  T &\sim \frac {(10^{-6})^2...
+l.1495 \end{align}
+                  
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+<categorical_modality_panel.png, id=813, 1147.8885pt x 853.9905pt>
+File: categorical_modality_panel.png Graphic file (type png)
+<use categorical_modality_panel.png>
+Package pdftex.def Info: categorical_modality_panel.png  used on input line 150
+1.
+(pdftex.def)             Requested size: 446.26582pt x 331.99945pt.
+[29] [30 <./categorical_modality_panel.png>]
+! Double subscript.
+<argument> \dcat _
+                  C(\Scoord _0, \Scoord _{\text {obs}})
+l.1512 ...oord_0, \Scoord_{\text{obs}})}{\kappa_C}
+                                                   = \frac{\dcat_A(\Scoord_0...
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Double subscript.
+<argument> \dcat _
+                  A(\Scoord _0, \Scoord _{\text {obs}})
+l.1512 ...oord_0, \Scoord_{\text{obs}})}{\kappa_A}
+                                                   = \frac{\dcat_T(\Scoord_0...
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Double subscript.
+<argument> \dcat _
+                  T(\Scoord _0, \Scoord _{\text {obs}})
+l.1512 ...oord_0, \Scoord_{\text{obs}})}{\kappa_T}
+                                                   = \cdots
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+
+Overfull \hbox (21.89284pt too wide) detected at line 1513
+[][][][] \OT1/cmr/m/n/10 = [] = [] = []
+ []
+
+! Double subscript.
+l.1527     |\rxnpos - \obspos| = \dcat_
+                                       C \cdot 4D \cdot k_B T \cdot \tau_{\t...
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Double subscript.
+l.1527 ...t k_B T \cdot \tau_{\text{obs}} = \dcat_
+                                                  A \cdot c \cdot \tau_{\tex...
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Double subscript.
+l.1527 ...c \cdot \tau_{\text{coherence}} = \dcat_
+                                                  T \cdot 4\alpha \cdot k_B ...
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+
+Overfull \hbox (67.71701pt too wide) detected at line 1528
+[][][]\OMS/cmsy/m/n/10 j\OT1/cmr/bx/n/10 r[] \OMS/cmsy/m/n/10 ^^@ \OT1/cmr/bx/n
+/10 r\OMS/cmsy/m/n/10 j \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 d[][] \OMS/cmsy/m/n/
+10 ^^A \OT1/cmr/m/n/10 4\OML/cmm/m/it/10 D \OMS/cmsy/m/n/10 ^^A \OML/cmm/m/it/1
+0 k[]T \OMS/cmsy/m/n/10 ^^A \OML/cmm/m/it/10 ^^\[] \OT1/cmr/m/n/10 = \OML/cmm/m
+/it/10 d[][] \OMS/cmsy/m/n/10 ^^A \OML/cmm/m/it/10 c \OMS/cmsy/m/n/10 ^^A \OML/
+cmm/m/it/10 ^^\[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 d[][] \OMS/cmsy/m/n/10 ^^A
+ \OT1/cmr/m/n/10 4\OML/cmm/m/it/10  \OMS/cmsy/m/n/10 ^^A \OML/cmm/m/it/10 k[]T
+ \OMS/cmsy/m/n/10 ^^A \OML/cmm/m/it/10 ^^\[]
+ []
+
+! Double subscript.
+<argument> \dcat _
+                  i^{\text {obs}}(j)
+l.1537 ...\frac{\dcat_i^{\text{obs}}(j)}{\kappa_i}
+                                                   - \bar{d}_{\text{phys}}\r...
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1542--1542
+[]\T1/cmr/bx/n/12 The Mul-ti-modal Lo-cal-iza-tion
+ []
+
+! Undefined control sequence.
+<argument> ...\displaystyle  \rxnpos ^* = \argmin 
+                                                  _{\mathbf {r}} \sum _{i,j}...
+l.1550 }
+        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Double subscript.
+<argument> \dcat _
+                  i(\mathbf {r}, \obspos _j)
+l.1550 }
+        
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Double subscript.
+<argument> \dcat _
+                  i^{\text {obs}}(j)
+l.1550 }
+        
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Double subscript.
+l.1552 where $\dcat_
+                    i^{\text{obs}}(j)$ is the categorical distance inferred ...
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+<sentropy_circuit_panel.png, id=847, 1138.4934pt x 866.5173pt>
+File: sentropy_circuit_panel.png Graphic file (type png)
+<use sentropy_circuit_panel.png>
+Package pdftex.def Info: sentropy_circuit_panel.png  used on input line 1565.
+(pdftex.def)             Requested size: 446.26582pt x 339.65924pt.
+! Double subscript.
+l.1573 The categorical distance $\dcat_
+                                       i$ corresponds to the information con...
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Double subscript.
+l.1575 ...esolution},i}}\right) = k_B \cdot \dcat_
+                                                  i
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+
+Underfull \hbox (badness 2846) in paragraph at lines 1576--1578
+\T1/cmr/m/it/10 where $\OML/cmm/m/it/10 V[]$ \T1/cmr/m/it/10 is the ini-tial se
+arch vol-ume and
+ []
+
+
+Underfull \hbox (badness 1132) in paragraph at lines 1596--1596
+[]\T1/cmr/bx/n/12 Categorical Dis-tance as Fun-da-
+ []
+
+[31] [32 <./sentropy_circuit_panel.png>]
+! Double subscript.
+<argument>  \dcat _
+                   {\text {magnetic}} &= \frac {|\rxnpos - \obspos |}{l_{\te...
+l.1615 \end{align}
+                  
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Double subscript.
+<argument> ...(magnetic field changes)} \\ \dcat _
+                                                  {\text {optical}} &= \frac...
+l.1615 \end{align}
+                  
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Double subscript.
+<argument> ...cal absorption/emission)} \\ \dcat _
+                                                  {\text {gravitational}} &=...
+l.1615 \end{align}
+                  
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Double subscript.
+<argument>  \dcat _
+                   {\text {magnetic}} &= \frac {|\rxnpos - \obspos |}{l_{\te...
+l.1615 \end{align}
+                  
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Double subscript.
+<argument> ...(magnetic field changes)} \\ \dcat _
+                                                  {\text {optical}} &= \frac...
+l.1615 \end{align}
+                  
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Double subscript.
+<argument> ...cal absorption/emission)} \\ \dcat _
+                                                  {\text {gravitational}} &=...
+l.1615 \end{align}
+                  
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+
+Overfull \hbox (17.44643pt too wide) detected at line 1615
+[]
+ []
+
+! Double subscript.
+l.1627 ...Convert to categorical distance: $\dcat_
+                                                  i^{\text{obs}}(j) = f_i(t_...
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Double subscript.
+l.1628 ...ormalize: $d_i^{\text{norm}}(j) = \dcat_
+                                                  i^{\text{obs}}(j) / \kappa_i$
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1629--1630
+[]\T1/cmr/m/it/10 Check con-sis-tency: $\OML/cmm/m/it/10 ^^[[] \OT1/cmr/m/n/10 
+=
+ []
+
+
+LaTeX Warning: Reference `sec:results' on page 33 undefined on input line 1642.
+
+
+<sentropy_trajectory.png, id=877, 1004.553pt x 714.5094pt>
+File: sentropy_trajectory.png Graphic file (type png)
+<use sentropy_trajectory.png>
+Package pdftex.def Info: sentropy_trajectory.png  used on input line 1646.
+(pdftex.def)             Requested size: 446.26582pt x 317.41602pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1665--1666
+[]\T1/cmr/m/n/10 8 cube cor-ners:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1666--1667
+[]\T1/cmr/m/n/10 6 face cen-ters:
+ []
+
+
+Overfull \hbox (5.01566pt too wide) detected at line 1689
+[]
+ []
+
+! Double subscript.
+l.1696     \item Record position error $\|\rxnpos_
+                                                  {\text{est}} - \rxnpos_{\t...
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Double subscript.
+l.1696 ...error $\|\rxnpos_{\text{est}} - \rxnpos_
+                                                  {\text{true}}\|$
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+[33] [34 <./sentropy_trajectory.png>]
+Overfull \hbox (271.72566pt too wide) in paragraph at lines 1708--1720
+ [][] 
+ []
+
+! Double subscript.
+l.1731 Modality & Mean $\dcat_
+                              i$ & Std $\dcat_i$ & Normalized distance & Con...
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Double subscript.
+l.1731 Modality & Mean $\dcat_i$ & Std $\dcat_
+                                              i$ & Normalized distance & Con...
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+
+Overfull \hbox (125.31802pt too wide) in paragraph at lines 1729--1741
+ [][] 
+ []
+
+
+Underfull \hbox (badness 1205) in paragraph at lines 1743--1744
+\T1/cmr/m/n/10 The nor-mal-ized dis-tances agree within mea-sure-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1748--1749
+[]\T1/cmr/bx/n/10 Resolution en-hance-ment val-i-da-tion\T1/cmr/m/n/10 :
+ []
+
+
+Underfull \hbox (badness 7433) in paragraph at lines 1748--1749
+\T1/cmr/m/n/10 Adding modal-i-ties im-proves res-o-lu-tion by
+ []
+
+
+Underfull \hbox (badness 1590) in paragraph at lines 1748--1749
+\T1/cmr/m/n/10 tively, con-sis-tent with the-o-ret-i-cal pre-dic-tion
+ []
+
+
+Underfull \hbox (badness 3590) in paragraph at lines 1756--1757
+[]\T1/cmr/bx/n/10 EM con-straint power\T1/cmr/m/n/10 : When avail-able
+ []
+
+
+Underfull \hbox (badness 1648) in paragraph at lines 1756--1757
+\T1/cmr/m/n/10 pro-vides defini-tive sub-nanometer con-straint,
+ []
+
+<six_modality_comparison_panel.png, id=919, 1246.6575pt x 712.5822pt>
+File: six_modality_comparison_panel.png Graphic file (type png)
+<use six_modality_comparison_panel.png>
+Package pdftex.def Info: six_modality_comparison_panel.png  used on input line 
+1764.
+(pdftex.def)             Requested size: 446.26582pt x 255.08327pt.
+
+LaTeX Warning: Command \texttimes invalid in math mode on input line 1765.
+
+
+LaTeX Warning: Command \texttimes invalid in math mode on input line 1765.
+
+Missing character: There is no Ö in font cmr10!
+
+LaTeX Warning: Command \texttimes invalid in math mode on input line 1765.
+
+
+LaTeX Warning: Command \texttimes invalid in math mode on input line 1765.
+
+Missing character: There is no Ö in font cmr10!
+
+Package natbib Warning: Citation `hell2007far' on page 35 undefined on input li
+ne 1779.
+
+
+Package natbib Warning: Citation `cheng2015single' on page 35 undefined on inpu
+t line 1780.
+
+
+Package natbib Warning: Citation `binnig1986atomic' on page 35 undefined on inp
+ut line 1781.
+
+
+Overfull \hbox (171.66782pt too wide) in paragraph at lines 1774--1785
+ [][] 
+ []
+
+[35] [36 <./six_modality_comparison_panel.png>]
+Underfull \hbox (badness 7796) in paragraph at lines 1851--1852
+[]\T1/cmr/m/n/10 Measure inter-enzyme dis-tances (metabolic
+ []
+
+[37]
+Underfull \hbox (badness 5460) in paragraph at lines 1913--1914
+[]\T1/cmr/bx/n/10 Second\T1/cmr/m/n/10 , arrival-time sur-faces from dif-fer-en
+t
+ []
+
+
+Underfull \hbox (badness 1077) in paragraph at lines 1915--1916
+\T1/cmr/m/n/10 pro-vid-ing dig-i-tal rather than ana-log in-for-ma-tion
+ []
+
+
+Underfull \hbox (badness 2020) in paragraph at lines 1925--1926
+[]\T1/cmr/m/n/10 The frame-work es-tab-lishes that cel-lu-lar re-ac-
+ []
+
+(multimodal-reaction-localization.bbl [38]
+Underfull \hbox (badness 3803) in paragraph at lines 106--109
+[]\T1/cmr/m/n/10 Eric Bet-zig, George H Pat-ter-son, Rachid
+ []
+
+)
+
+Package natbib Warning: There were undefined citations.
+
+[39] (multimodal-reaction-localization.aux)
+ ***********
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-04>
+ ***********
+
+
+LaTeX Warning: There were undefined references.
+
+Package rerunfilecheck Info: File `multimodal-reaction-localization.out' has no
+t changed.
+(rerunfilecheck)             Checksum: 242DCBD4B30240F72AC554386FA0F202;17580.
+ ) 
+Here is how much of TeX's memory you used:
+ 31036 strings out of 474486
+ 644110 string characters out of 5743283
+ 1956542 words of memory out of 5000000
+ 52370 multiletter control sequences out of 15000+600000
+ 577214 words of font info for 82 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 84i,13n,93p,2057b,1278s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\kundai\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecr
+m0800.pk> <C:\Users\kundai\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi
+600\ecrm0700.pk> <C:\Users\kundai\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen
+/ec/dpi600\ecbi1000.pk> <C:\Users\kundai\AppData\Local\MiKTeX\fonts/pk/ljfour/j
+knappen/ec/dpi600\ecti0500.pk> <C:\Users\kundai\AppData\Local\MiKTeX\fonts/pk/l
+jfour/jknappen/ec/dpi600\ecti0700.pk> <C:\Users\kundai\AppData\Local\MiKTeX\fon
+ts/pk/ljfour/jknappen/ec/dpi600\ecti1000.pk> <C:\Users\kundai\AppData\Local\MiK
+TeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk> <C:\Users\kundai\AppData\Lo
+cal\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\kundai\App
+Data\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1000.pk> <C:\Users\kun
+dai\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1000.pk> <C:\Us
+ers\kundai\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk>
+ <C:\Users\kundai\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1
+200.pk> <C:\Users\kundai\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
+0\ecrm1200.pk> <C:\Users\kundai\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/e
+c/dpi600\ecbx1728.pk><C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/type1
+/public/amsfonts/cm/cmbx10.pfb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/f
+onts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Users/kundai/AppData/Local/Programs
+/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/kundai/AppData/Loca
+l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/kundai/Ap
+pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/
+kundai/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><
+C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
+r10.pfb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfo
+nts/cm/cmr5.pfb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/type1/publ
+ic/amsfonts/cm/cmr7.pfb><C:/Users/kundai/AppData/Local/Programs/MiKTeX/fonts/ty
+pe1/public/amsfonts/cm/cmsy10.pfb><C:/Users/kundai/AppData/Local/Programs/MiKTe
+X/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/kundai/AppData/Local/Progr
+ams/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on multimodal-reaction-localization.pdf (39 pages, 22478762 byte
+s).
+PDF statistics:
+ 1699 PDF objects out of 1728 (max. 8388607)
+ 492 named destinations out of 1000 (max. 500000)
+ 810 words of extra memory for PDF output out of 10000 (max. 10000000)
+

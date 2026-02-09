@@ -1,4 +1,9 @@
-# Hegel
+<h1 align="center">Hegel</h1>
+<p align="center"><em>Observation is a natural consequence for the existence of reason</em></p>
+
+<p align="center">
+  <img src="/Hegel.png" alt="Logo" width="300"/>
+</p>
 
 **Observational Partition Algebra: Unification of Measurement, Process, and Computation in Bounded Dynamical Systems**
 
@@ -34,6 +39,7 @@ This equivalence implies that oscillatory dynamics, categorical state transition
 ### Partition Coordinates
 
 Categorical partitioning of bounded spherical phase space generates four coordinates:
+
 - Depth n ≥ 1
 - Complexity ℓ ∈ {0, 1, ..., n-1}
 - Orientation m ∈ {-ℓ, ..., +ℓ}
@@ -44,6 +50,7 @@ The capacity formula C(n) = 2n² yields the sequence 2, 8, 18, 32, 50, 72, 98, .
 ### S-Entropy Space
 
 The S-entropy space S = [0,1]³ comprises three coordinates:
+
 - Knowledge entropy Sₖ: uncertainty in state identification
 - Temporal entropy Sₜ: uncertainty in timing relationships
 - Evolution entropy Sₑ: uncertainty in trajectory progression
@@ -130,6 +137,7 @@ D = (D_P, D_E, D_C, D_M, D_A, D_G, D_Ca, D_R)
 ```
 
 The dominant component determines disease class:
+
 - D_P dominant → Protein misfolding diseases (Alzheimer's, Parkinson's, prion)
 - D_E dominant → Metabolic diseases (diabetes, PKU)
 - D_C dominant → Channelopathies (cystic fibrosis, Long QT)
@@ -173,6 +181,7 @@ Measured correlation between categorical and spatial distance: r ≈ 0.12 (consi
 ### Bistable Disease Dynamics
 
 The system exhibits bistable dynamics with:
+
 - Healthy attractor: η ≈ 0.9
 - Disease attractor: η ≈ 0.2
 - Critical threshold: η_c ≈ 0.5
@@ -202,6 +211,7 @@ hegel/
 The validation suite generates 12 charts with corresponding JSON data:
 
 **Core Validation (Charts 1-8):**
+
 1. S-entropy space partition trajectories (3D)
 2. Partition capacity sequence validation
 3. Oscillator frequency spectrum (8 classes)
@@ -212,6 +222,7 @@ The validation suite generates 12 charts with corresponding JSON data:
 8. Cellular coherence ensemble statistics
 
 **Extended Validation (Panels 3-6):**
+
 - Panel 3: Categorical distance spatial independence
 - Panel 4: Information catalysis dynamics
 - Panel 5: Opacity-independent measurement
