@@ -1,0 +1,99 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: cellular-charge-dynamics.aux
+Reallocating 'name_of_file' (item size: 1) to 30 items.
+Reallocating 'name_of_file' (item size: 1) to 11 items.
+Reallocating 'name_of_file' (item size: 1) to 10 items.
+The style file: apsrev4-2.bst
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'wiz_functions' (item size: 4) to 6000 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Database file #1: cellular-charge-dynamicsNotes.bib
+Database file #2: references.bib
+Warning--I didn't find a database entry for "Alberty1953"
+Warning--I didn't find a database entry for "Verkman2002"
+Warning--I didn't find a database entry for "Mika2010"
+Warning--I didn't find a database entry for "Bauler2010"
+Warning--I didn't find a database entry for "Berridge1998"
+Warning--I didn't find a database entry for "Hammes-Schiffer2006"
+Warning--I didn't find a database entry for "Voth2006"
+Warning--I didn't find a database entry for "Zinth1993"
+Warning--I didn't find a database entry for "Pollack2001"
+Warning--I didn't find a database entry for "Ling2001"
+Warning--I didn't find a database entry for "Atkins2011"
+Warning--I didn't find a database entry for "Maroulis2001"
+Warning--I didn't find a database entry for "Guyton2006"
+Warning--I didn't find a database entry for "Ludlow2015"
+Warning--I didn't find a database entry for "Likharev1999"
+Warning--I didn't find a database entry for "Gitlin2006"
+Warning--I didn't find a database entry for "Minton2001"
+Warning--I didn't find a database entry for "Chance1973"
+Warning--I didn't find a database entry for "West1997"
+Warning--I didn't find a database entry for "Milo2016"
+Warning--I didn't find a database entry for "Katan-Khaykovich2002"
+Warning--I didn't find a database entry for "Clapier2017"
+Warning--I didn't find a database entry for "Dekker2017"
+Warning--I didn't find a database entry for "Strom2017"
+Warning--I didn't find a database entry for "Subczynski1992"
+Warning--I didn't find a database entry for "Maroulis2000"
+control{REVTEX42Control}, control.key{N/A}, control.author{N/A}, control.editor{N/A}, control.title{N/A}, control.pages{N/A}, control.year{N/A}, control.eprint{N/A}, 
+control{apsrev42Control}, control.key{N/A}, control.author{08}, control.editor{1}, control.title{0}, control.pages{0}, control.year{1}, control.eprint{N/A}, 
+Warning--jnrlst (dependency: not reversed) set 1
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'wiz_functions' (item size: 4) to 9000 items.
+apsrev4-2.bst 2019-01-14 (MD) hand-edited version of apsrev4-1.bst
+Control: key (0) 
+Control: author (8) initials jnrlst
+Control: editor formatted (1) identically to author
+Control: production of article title (0) allowed
+Control: page (0) single
+Control: year (1) truncated
+Control: production of eprint (0) enabled
+You've used 32 entries,
+            6079 wiz_defined-function locations,
+            1928 strings with 20867 characters,
+and the built_in function-call counts, 29816 in all, are:
+= -- 2294
+> -- 590
+< -- 180
++ -- 196
+- -- 140
+* -- 4219
+:= -- 2946
+add.period$ -- 30
+call.type$ -- 32
+change.case$ -- 155
+chr.to.int$ -- 75
+cite$ -- 32
+duplicate$ -- 2851
+empty$ -- 2192
+format.name$ -- 314
+if$ -- 6046
+int.to.chr$ -- 1
+int.to.str$ -- 39
+missing$ -- 448
+newline$ -- 142
+num.names$ -- 90
+pop$ -- 1151
+preamble$ -- 1
+purify$ -- 150
+quote$ -- 0
+skip$ -- 1372
+stack$ -- 0
+substring$ -- 684
+swap$ -- 2560
+text.length$ -- 60
+text.prefix$ -- 0
+top$ -- 10
+type$ -- 397
+warning$ -- 1
+while$ -- 101
+width$ -- 0
+write$ -- 317
+(There were 27 warnings)

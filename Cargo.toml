@@ -1,26 +1,7 @@
 [workspace]
 resolver = "2"
 members = [
-    "src/core/oxygen-substrate",
-    "src/core/electron-cascade", 
-    "src/core/membrane-quantum",
-    "src/core/genome-consultation",
-    "src/evidence/fuzzy-bayesian",
-    "src/evidence/evidence-rectification",
-    "src/evidence/temporal-decay",
-    "src/intelligence/mzekezeke",
-    "src/intelligence/diggiden", 
-    "src/intelligence/hatata",
-    "src/intelligence/spectacular",
-    "src/intelligence/nicotine",
-    "src/federated/privacy-preserving",
-    "src/federated/consensus-protocol",
-    "src/federated/bloodhound-sync",
-    "src/api/rest-interface",
-    "src/wasm/frontend-bindings",
-    "src/utils/s-distance",
-    "src/utils/zero-computation",
-    "src/utils/oscillatory-dynamics"
+    "wilhelm/implementations/rust/cellular_partition"
 ]
 
 [workspace.package]

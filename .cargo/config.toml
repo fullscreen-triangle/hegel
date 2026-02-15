@@ -57,8 +57,9 @@ git-fetch-with-cli = true
 # Optimize dependencies even in debug mode for better biological simulation performance
 opt-level = 3
 
-[source.crates-io]
-replace-with = "vendored-sources"
-
-[source.vendored-sources]
-directory = "vendor"
+# Vendor configuration disabled - using crates.io directly
+# [source.crates-io]
+# replace-with = "vendored-sources"
+#
+# [source.vendored-sources]
+# directory = "vendor"
