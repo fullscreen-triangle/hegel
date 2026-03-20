@@ -1,0 +1,427 @@
+\begin{thebibliography}{61}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Alon(2007{\natexlab{a}})]{Alon2007}
+Uri Alon.
+\newblock Network motifs: Theory and experimental approaches.
+\newblock \emph{Nature Reviews Genetics}, 8\penalty0 (6):\penalty0 450--461,
+  2007{\natexlab{a}}.
+\newblock \doi{10.1038/nrg2102}.
+
+\bibitem[Alon(2007{\natexlab{b}})]{Alon2007book}
+Uri Alon.
+\newblock \emph{An Introduction to Systems Biology: Design Principles of
+  Biological Circuits}.
+\newblock Chapman \& Hall/CRC, Boca Raton, 2007{\natexlab{b}}.
+\newblock ISBN 978-1-58488-642-6.
+
+\bibitem[Arrhenius(1889)]{Arrhenius1889}
+Svante Arrhenius.
+\newblock {\"U}ber die reaktionsgeschwindigkeit bei der inversion von
+  rohrzucker durch s{\"a}uren.
+\newblock \emph{Zeitschrift f{\"u}r Physikalische Chemie}, 4:\penalty0
+  226--248, 1889.
+\newblock \doi{10.1515/zpch-1889-0416}.
+
+\bibitem[Banach(1922)]{Banach1922}
+Stefan Banach.
+\newblock Sur les op{\'e}rations dans les ensembles abstraits et leur
+  application aux {\'e}quations int{\'e}grales.
+\newblock \emph{Fundamenta Mathematicae}, 3:\penalty0 133--181, 1922.
+\newblock \doi{10.4064/fm-3-1-133-181}.
+
+\bibitem[Barab{\'a}si and Oltvai(2004)]{BarabasiOltvai2004}
+Albert-L{\'a}szl{\'o} Barab{\'a}si and Zolt{\'a}n~N. Oltvai.
+\newblock Network biology: Understanding the cell's functional organization.
+\newblock \emph{Nature Reviews Genetics}, 5\penalty0 (2):\penalty0 101--113,
+  2004.
+\newblock \doi{10.1038/nrg1272}.
+
+\bibitem[Boltzmann(1877)]{Boltzmann1877}
+Ludwig Boltzmann.
+\newblock {\"U}ber die beziehung zwischen dem zweiten hauptsatze der
+  mechanischen w{\"a}rmetheorie und der wahrscheinlichkeitsrechnung respektive
+  den s{\"a}tzen {\"u}ber das w{\"a}rmegleichgewicht.
+\newblock \emph{Sitzungsberichte der Kaiserlichen Akademie der Wissenschaften.
+  Mathematisch-Naturwissen\-schaft\-liche Classe}, 76:\penalty0 373--435, 1877.
+
+\bibitem[Briggs and Haldane(1925)]{Briggs1925}
+George~Edward Briggs and John Burdon~Sanderson Haldane.
+\newblock A note on the kinetics of enzyme action.
+\newblock \emph{Biochemical Journal}, 19\penalty0 (2):\penalty0 338--339, 1925.
+\newblock \doi{10.1042/bj0190338}.
+
+\bibitem[Cover and Thomas(2006)]{CoverThomas2006}
+Thomas~M. Cover and Joy~A. Thomas.
+\newblock \emph{Elements of Information Theory}.
+\newblock Wiley-Interscience, Hoboken, NJ, 2 edition, 2006.
+\newblock ISBN 978-0-471-24195-9.
+
+\bibitem[Eigen(1971)]{Eigen1971}
+Manfred Eigen.
+\newblock Self-organization of matter and the evolution of biological
+  macromolecules.
+\newblock \emph{Die Naturwissenschaften}, 58\penalty0 (10):\penalty0 465--523,
+  1971.
+\newblock \doi{10.1007/BF00623322}.
+
+\bibitem[Elowitz et~al.(2002)Elowitz, Levine, Siggia, and Swain]{Elowitz2002}
+Michael~B. Elowitz, Arnold~J. Levine, Eric~D. Siggia, and Peter~S. Swain.
+\newblock Stochastic gene expression in a single cell.
+\newblock \emph{Science}, 297\penalty0 (5584):\penalty0 1183--1186, 2002.
+\newblock \doi{10.1126/science.1070919}.
+
+\bibitem[Epstein and Pojman(1998)]{EpsteinPojman1998}
+Irving~R. Epstein and John~A. Pojman.
+\newblock \emph{An Introduction to Nonlinear Chemical Dynamics: Oscillations,
+  Waves, Patterns, and Chaos}.
+\newblock Oxford University Press, New York, 1998.
+\newblock ISBN 978-0-19-509670-5.
+
+\bibitem[Evans and Polanyi(1935)]{Evans1935}
+M.~G. Evans and M.~Polanyi.
+\newblock Some applications of the transition state method to the calculation
+  of reaction velocities, especially in solution.
+\newblock \emph{Transactions of the Faraday Society}, 31:\penalty0 875--894,
+  1935.
+\newblock \doi{10.1039/tf9353100875}.
+
+\bibitem[Eyring(1935)]{Eyring1935}
+Henry Eyring.
+\newblock The activated complex in chemical reactions.
+\newblock \emph{Journal of Chemical Physics}, 3\penalty0 (2):\penalty0
+  107--115, 1935.
+\newblock \doi{10.1063/1.1749604}.
+
+\bibitem[Fell(1992)]{Fell1992}
+David~A. Fell.
+\newblock Metabolic control analysis: A survey of its theoretical and
+  experimental development.
+\newblock \emph{Biochemical Journal}, 286\penalty0 (2):\penalty0 313--330,
+  1992.
+\newblock \doi{10.1042/bj2860313}.
+
+\bibitem[Fell and Sauro(1985)]{FellSauro1985}
+David~A. Fell and Herbert~M. Sauro.
+\newblock Metabolic control and its analysis. additional relationships between
+  elasticities and control coefficients.
+\newblock \emph{European Journal of Biochemistry}, 148\penalty0 (3):\penalty0
+  555--561, 1985.
+\newblock \doi{10.1111/j.1432-1033.1985.tb08876.x}.
+
+\bibitem[Forney(1973)]{Forney1973}
+G.~David Forney.
+\newblock The viterbi algorithm.
+\newblock \emph{Proceedings of the IEEE}, 61\penalty0 (3):\penalty0 268--278,
+  1973.
+\newblock \doi{10.1109/PROC.1973.9030}.
+
+\bibitem[Frauenfelder et~al.(1991)Frauenfelder, Sligar, and
+  Wolynes]{Frauenfelder1991}
+Hans Frauenfelder, Stephen~G. Sligar, and Peter~G. Wolynes.
+\newblock The energy landscapes and motions of proteins.
+\newblock \emph{Science}, 254\penalty0 (5038):\penalty0 1598--1603, 1991.
+\newblock \doi{10.1126/science.1749933}.
+
+\bibitem[Gibbs(1875)]{Gibbs1875}
+Josiah~Willard Gibbs.
+\newblock On the equilibrium of heterogeneous substances.
+\newblock \emph{Transactions of the Connecticut Academy of Arts and Sciences},
+  3:\penalty0 108--248, 1875.
+
+\bibitem[Gillespie(1976)]{Gillespie1976}
+Daniel~T. Gillespie.
+\newblock A general method for numerically simulating the stochastic time
+  evolution of coupled chemical reactions.
+\newblock \emph{Journal of Computational Physics}, 22\penalty0 (4):\penalty0
+  403--434, 1976.
+\newblock \doi{10.1016/0021-9991(76)90041-3}.
+
+\bibitem[Gillespie(1977)]{Gillespie1977}
+Daniel~T. Gillespie.
+\newblock Exact stochastic simulation of coupled chemical reactions.
+\newblock \emph{Journal of Physical Chemistry}, 81\penalty0 (25):\penalty0
+  2340--2361, 1977.
+\newblock \doi{10.1021/j100540a008}.
+
+\bibitem[Hausdorff(1914)]{Hausdorff1914}
+Felix Hausdorff.
+\newblock Grundz{\"u}ge der mengenlehre.
+\newblock \emph{Veit und Comp.}, 1914.
+
+\bibitem[Heinrich and Schuster(1996)]{HeinrichSchuster1996}
+Reinhart Heinrich and Stefan Schuster.
+\newblock \emph{The Regulation of Cellular Systems}.
+\newblock Chapman \& Hall, New York, 1996.
+\newblock ISBN 978-0-412-03271-4.
+
+\bibitem[Heisenberg(1927)]{Heisenberg1927}
+Werner Heisenberg.
+\newblock {\"U}ber den anschaulichen inhalt der quantentheoretischen kinematik
+  und mechanik.
+\newblock \emph{Zeitschrift f{\"u}r Physik}, 43\penalty0 (3--4):\penalty0
+  172--198, 1927.
+\newblock \doi{10.1007/BF01397280}.
+
+\bibitem[Jaynes(1957)]{Jaynes1957}
+Edwin~T. Jaynes.
+\newblock Information theory and statistical mechanics.
+\newblock \emph{Physical Review}, 106\penalty0 (4):\penalty0 620--630, 1957.
+\newblock \doi{10.1103/PhysRev.106.620}.
+
+\bibitem[Kacser and Burns(1973)]{KacserBurns1973}
+Henrik Kacser and James~A. Burns.
+\newblock The control of flux.
+\newblock \emph{Symposia of the Society for Experimental Biology}, 27:\penalty0
+  65--104, 1973.
+
+\bibitem[Kauffman(1993)]{Kauffman1993}
+Stuart~A. Kauffman.
+\newblock \emph{The Origins of Order: Self-Organization and Selection in
+  Evolution}.
+\newblock Oxford University Press, New York, 1993.
+\newblock ISBN 978-0-19-507951-7.
+
+\bibitem[Kirchhoff(1845)]{Kirchhoff1845}
+Gustav~Robert Kirchhoff.
+\newblock {\"U}ber den durchgang eines elektrischen stromes durch eine ebene,
+  insbesondere durch eine kreisf{\"o}rmige.
+\newblock \emph{Annalen der Physik und Chemie}, 140\penalty0 (4):\penalty0
+  497--514, 1845.
+\newblock \doi{10.1002/andp.18451400402}.
+
+\bibitem[Klipp et~al.(2005)Klipp, Herwig, Kowald, Wierling, and
+  Lehrach]{Klipp2005}
+Edda Klipp, Ralf Herwig, Axel Kowald, Christoph Wierling, and Hans Lehrach.
+\newblock \emph{Systems Biology in Practice: Concepts, Implementation and
+  Application}.
+\newblock Wiley-VCH, Weinheim, 2005.
+\newblock ISBN 978-3-527-31078-1.
+
+\bibitem[Kolmogorov(1936)]{Kolmogorov1936}
+Andrey~N. Kolmogorov.
+\newblock Sulla teoria di {V}olterra della lotta per l'esistenza.
+\newblock \emph{Giornale dell'Istituto Italiano degli Attuari}, 7:\penalty0
+  74--80, 1936.
+
+\bibitem[Levinthal(1969)]{Levinthal1969}
+Cyrus Levinthal.
+\newblock How to fold graciously.
+\newblock \emph{M\"{o}ssbauer Spectroscopy in Biological Systems: Proceedings
+  of a Meeting held at Allerton House, Monticello, Illinois}, pages 22--24,
+  1969.
+\newblock University of Illinois Press, Urbana.
+
+\bibitem[Lewis(1925)]{Lewis1925}
+Gilbert~N. Lewis.
+\newblock A new principle of equilibrium.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 11\penalty0
+  (3):\penalty0 179--183, 1925.
+\newblock \doi{10.1073/pnas.11.3.179}.
+
+\bibitem[Lotka(1925)]{Lotka1925}
+Alfred~J. Lotka.
+\newblock \emph{Elements of Physical Biology}.
+\newblock Williams \& Wilkins, Baltimore, 1925.
+
+\bibitem[Marcus(1956)]{Marcus1956}
+Rudolph~A. Marcus.
+\newblock On the theory of oxidation-reduction reactions involving electron
+  transfer. {I}.
+\newblock \emph{Journal of Chemical Physics}, 24\penalty0 (5):\penalty0
+  966--978, 1956.
+\newblock \doi{10.1063/1.1742723}.
+
+\bibitem[Michaelis and Menten(1913)]{MichaelisMenten1913}
+Leonor Michaelis and Maud~L. Menten.
+\newblock Die kinetik der invertinwirkung.
+\newblock \emph{Biochemische Zeitschrift}, 49:\penalty0 333--369, 1913.
+
+\bibitem[Mitchell(1961)]{Mitchell1961}
+Peter Mitchell.
+\newblock Coupling of phosphorylation to electron and hydrogen transfer by a
+  chemi-osmotic type of mechanism.
+\newblock \emph{Nature}, 191:\penalty0 144--148, 1961.
+\newblock \doi{10.1038/191144a0}.
+
+\bibitem[Murray(2002)]{Murray2002}
+James~D. Murray.
+\newblock \emph{Mathematical Biology {I}: An Introduction}.
+\newblock Springer, New York, 3 edition, 2002.
+\newblock ISBN 978-0-387-95223-9.
+
+\bibitem[Nicholls and Ferguson(2002)]{NichollsFerguson2002}
+David~G. Nicholls and Stuart~J. Ferguson.
+\newblock \emph{Bioenergetics 3}.
+\newblock Academic Press, London, 2002.
+\newblock ISBN 978-0-12-518121-1.
+
+\bibitem[Nicolis and Prigogine(1977)]{PrigogineNicolis1977}
+Gregoire Nicolis and Ilya Prigogine.
+\newblock \emph{Self-Organization in Nonequilibrium Systems: From Dissipative
+  Structures to Order through Fluctuations}.
+\newblock Wiley-Interscience, New York, 1977.
+\newblock ISBN 978-0-471-02401-9.
+
+\bibitem[Onsager(1931)]{Onsager1931}
+Lars Onsager.
+\newblock Reciprocal relations in irreversible processes. {I}.
+\newblock \emph{Physical Review}, 37\penalty0 (4):\penalty0 405--426, 1931.
+\newblock \doi{10.1103/PhysRev.37.405}.
+
+\bibitem[Orth et~al.(2010)Orth, Thiele, and Palsson]{Orth2010}
+Jeffrey~D. Orth, Ines Thiele, and Bernhard~O. Palsson.
+\newblock What is flux balance analysis?
+\newblock \emph{Nature Biotechnology}, 28\penalty0 (3):\penalty0 245--248,
+  2010.
+\newblock \doi{10.1038/nbt.1614}.
+
+\bibitem[Palsson(2006)]{Palsson2006}
+Bernhard~O. Palsson.
+\newblock \emph{Systems Biology: Properties of Reconstructed Networks}.
+\newblock Cambridge University Press, Cambridge, 2006.
+\newblock ISBN 978-0-521-85903-5.
+
+\bibitem[Palsson(2015)]{Palsson2015}
+Bernhard~O. Palsson.
+\newblock \emph{Systems Biology: Constraint-based Reconstruction and Analysis}.
+\newblock Cambridge University Press, Cambridge, 2015.
+\newblock ISBN 978-1-107-01190-9.
+
+\bibitem[Pearl(1988)]{Pearl1988}
+Judea Pearl.
+\newblock \emph{Probabilistic Reasoning in Intelligent Systems: Networks of
+  Plausible Inference}.
+\newblock Morgan Kaufmann, San Mateo, CA, 1988.
+\newblock ISBN 978-0-934613-73-1.
+
+\bibitem[Price et~al.(2004)Price, Reed, and Palsson]{Price2004}
+Nathan~D. Price, Jennifer~L. Reed, and Bernhard~O. Palsson.
+\newblock Genome-scale models of microbial cells: Evaluating the consequences
+  of constraints.
+\newblock \emph{Nature Reviews Microbiology}, 2\penalty0 (11):\penalty0
+  886--897, 2004.
+\newblock \doi{10.1038/nrmicro1023}.
+
+\bibitem[Prigogine(1967)]{Prigogine1967}
+Ilya Prigogine.
+\newblock \emph{Introduction to Thermodynamics of Irreversible Processes}.
+\newblock Wiley-Interscience, New York, 3 edition, 1967.
+
+\bibitem[Rosen(1991)]{Rosen1991}
+Robert Rosen.
+\newblock \emph{Life Itself: A Comprehensive Inquiry into the Nature, Origin,
+  and Fabrication of Life}.
+\newblock Columbia University Press, New York, 1991.
+\newblock ISBN 978-0-231-07565-7.
+
+\bibitem[Schuster and Schuster(1991)]{Schuster1991}
+Stefan Schuster and Reinhart Schuster.
+\newblock A generalization of {W}egscheider's condition. implications for
+  properties of steady states and for quasi-steady-state approximation.
+\newblock \emph{Journal of Mathematical Chemistry}, 7\penalty0 (1):\penalty0
+  25--42, 1991.
+\newblock \doi{10.1007/BF01192695}.
+
+\bibitem[Shannon(1948)]{Shannon1948}
+Claude~E. Shannon.
+\newblock A mathematical theory of communication.
+\newblock \emph{Bell System Technical Journal}, 27\penalty0 (3):\penalty0
+  379--423, 1948.
+\newblock \doi{10.1002/j.1538-7305.1948.tb01338.x}.
+
+\bibitem[Strogatz(1994)]{Strogatz1994}
+Steven~H. Strogatz.
+\newblock \emph{Nonlinear Dynamics and Chaos: With Applications to Physics,
+  Biology, Chemistry, and Engineering}.
+\newblock Addison-Wesley, Reading, MA, 1994.
+\newblock ISBN 978-0-201-54344-5.
+
+\bibitem[Tyson et~al.(2003)Tyson, Chen, and Novak]{Tyson2003}
+John~J. Tyson, Katherine~C. Chen, and Bela Novak.
+\newblock Sniffers, buzzers, toggles and blinkers: Dynamics of regulatory and
+  signaling pathways in the cell.
+\newblock \emph{Current Opinion in Cell Biology}, 15\penalty0 (2):\penalty0
+  221--231, 2003.
+\newblock \doi{10.1016/S0955-0674(03)00017-6}.
+
+\bibitem[van Kampen(2007)]{vanKampen2007}
+Nicolaas~G. van Kampen.
+\newblock \emph{Stochastic Processes in Physics and Chemistry}.
+\newblock Elsevier, Amsterdam, 3 edition, 2007.
+\newblock ISBN 978-0-444-52965-7.
+
+\bibitem[Varela et~al.(1974)Varela, Maturana, and
+  Uribe]{VarelaMaturanaUribe1974}
+Francisco~G. Varela, Humberto~R. Maturana, and Ricardo Uribe.
+\newblock Autopoiesis: The organization of living systems, its characterization
+  and a model.
+\newblock \emph{BioSystems}, 5\penalty0 (4):\penalty0 187--196, 1974.
+\newblock \doi{10.1016/0303-2647(74)90021-8}.
+
+\bibitem[Viterbi(1967)]{Viterbi1967}
+Andrew~J. Viterbi.
+\newblock Error bounds for convolutional codes and an asymptotically optimum
+  decoding algorithm.
+\newblock \emph{IEEE Transactions on Information Theory}, 13\penalty0
+  (2):\penalty0 260--269, 1967.
+\newblock \doi{10.1109/TIT.1967.1054010}.
+
+\bibitem[Voit(2000)]{Voit2000book}
+Eberhard~O. Voit.
+\newblock \emph{Computational Analysis of Biochemical Systems: A Practical
+  Guide for Biochemists and Molecular Biologists}.
+\newblock Cambridge University Press, Cambridge, 2000.
+\newblock ISBN 978-0-521-78678-8.
+
+\bibitem[Volterra(1926)]{Volterra1926}
+Vito Volterra.
+\newblock Fluctuations in the abundance of a species considered mathematically.
+\newblock \emph{Nature}, 118:\penalty0 558--560, 1926.
+\newblock \doi{10.1038/118558a0}.
+
+\bibitem[Wagner and Fell(2001)]{Wagner2001}
+Andreas Wagner and David~A. Fell.
+\newblock The small world inside large metabolic networks.
+\newblock \emph{Proceedings of the Royal Society B: Biological Sciences},
+  268\penalty0 (1478):\penalty0 1803--1810, 2001.
+\newblock \doi{10.1098/rspb.2001.1711}.
+
+\bibitem[Wegscheider(1901)]{Wegscheider1901}
+Rudolf Wegscheider.
+\newblock Über simultane gleichgewichte und die beziehungen zwischen
+  thermodynamik und reaktionskinetik homogener systeme.
+\newblock \emph{Monatshefte f{\"u}r Chemie}, 22:\penalty0 849--906, 1901.
+\newblock \doi{10.1007/BF01517498}.
+
+\bibitem[Wolfenden and Snider(2001)]{Wolfenden2001}
+Richard Wolfenden and Mark~J. Snider.
+\newblock The depth of chemical time and the power of enzymes as catalysts.
+\newblock \emph{Accounts of Chemical Research}, 34\penalty0 (12):\penalty0
+  938--945, 2001.
+\newblock \doi{10.1021/ar000058i}.
+
+\bibitem[Zadeh(1965)]{Zadeh1965}
+Lotfi~A. Zadeh.
+\newblock Fuzzy sets.
+\newblock \emph{Information and Control}, 8\penalty0 (3):\penalty0 338--353,
+  1965.
+\newblock \doi{10.1016/S0019-9958(65)90241-X}.
+
+\bibitem[Zadeh(1978)]{Zadeh1978}
+Lotfi~A. Zadeh.
+\newblock Fuzzy sets as a basis for a theory of possibility.
+\newblock \emph{Fuzzy Sets and Systems}, 1\penalty0 (1):\penalty0 3--28, 1978.
+\newblock \doi{10.1016/0165-0114(78)90029-5}.
+
+\bibitem[Zimmermann(2001)]{Zimmermann2001book}
+Hans-J{\"u}rgen Zimmermann.
+\newblock \emph{Fuzzy Set Theory---and Its Applications}.
+\newblock Kluwer Academic Publishers, Dordrecht, 4 edition, 2001.
+\newblock ISBN 978-0-7923-7435-0.
+
+\end{thebibliography}
