@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -E \"\\\\.\\(py|rs\\)$\")",
+      "Bash(xargs grep:*)",
+      "Bash(python3 \"c:/Users/kunda/Documents/systems/hegel/wilhelm/publications/circuit-model/build_paper.py\")",
+      "Bash(python3 -c \":*)",
+      "Bash(gh api:*)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(grep -n \"^\\\\\\\\begin{theorem\\\\|^\\\\\\\\begin{definition\\\\|^\\\\\\\\begin{proposition\\\\|^\\\\\\\\begin{lemma\\\\|^\\\\\\\\begin{corollary\\\\|^\\\\\\\\begin{axiom\" \"c:\\\\Users\\\\kunda\\\\Documents\\\\systems\\\\hegel\\\\wilhelm\\\\publications\\\\derivations\\\\biological-partitioning-landscape.tex\")",
+      "Bash(grep -n \"^\\\\\\\\begin{theorem\\\\|^\\\\\\\\begin{definition\\\\|^\\\\\\\\begin{proposition\\\\|^\\\\\\\\begin{lemma\\\\|^\\\\\\\\begin{corollary\\\\|^\\\\\\\\begin{axiom\" \"c:\\\\Users\\\\kunda\\\\Documents\\\\systems\\\\hegel\\\\wilhelm\\\\publications\\\\derivations\\\\origins-of-complexity.tex\")",
+      "Bash(python generate_panels.py)",
+      "Bash(node -e \"const pkg = require\\(''./package.json''\\); console.log\\(JSON.stringify\\({react: pkg.dependencies.react, fiber: pkg.dependencies[''@react-three/fiber''], drei: pkg.dependencies[''@react-three/drei''], three: pkg.dependencies.three}, null, 2\\)\\)\")",
+      "Bash(npx next:*)"
+    ]
+  }
+}

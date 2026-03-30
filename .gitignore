@@ -85,7 +85,6 @@ yarn-error.log*
 /frontend/.next/
 /frontend/.nuxt/
 /frontend/.cache/
-.vercel
 .netlify
 
 # Generated files by molecular visualization tools
@@ -112,9 +111,14 @@ coverage/
 benchmark-results/
 
 # Large datasets (add specific patterns as needed)
-*.csv
 *.tsv
-*.json
+# Ignore large data CSV/JSON but not config/package files
+!*.json
+!*.csv
+**/data/**/*.csv
+**/data/**/*.json
+**/results/**/*.csv
+**/results/**/*.json
 !examples/**/*.csv
 !examples/**/*.json
 !tests/**/*.csv
@@ -143,4 +147,11 @@ data/memory/
 !tests/**/*.inchi
 !tests/**/*.smiles
 
-public/
+# Website (consequences/) — ensure essential files are tracked
+!consequences/public/**
+!consequences/**/*.json
+!consequences/**/*.js
+!consequences/**/*.jsx
+!consequences/**/*.css
+!consequences/**/*.svg
+!consequences/**/*.glb
