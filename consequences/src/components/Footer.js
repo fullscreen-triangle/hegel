@@ -1,4 +1,3 @@
-import Link from "next/link";
 import React from "react";
 import Layout from "./Layout";
 
@@ -10,26 +9,15 @@ const Footer = () => {
     "
     >
       <Layout className="py-8 flex items-center justify-between lg:flex-col lg:py-6">
-        <span>{new Date().getFullYear()} &copy; All Rights Reserved.</span>
+        <span>&copy; 2024 Kundai Farai Sachikonye. Technical University of Munich.</span>
 
         <div className="flex items-center lg:py-2">
-          Built with <span className="text-primary text-2xl px-1 dark:text-primaryDark">&#9825;	</span> by&nbsp;
-          <Link
-            href="https://devdreaming.com"
-            target="_blank"
-            className="underline underline-offset-2"
-          >
-            CodeBucks
-          </Link>
+          School of Life Sciences
         </div>
 
-        <Link
-          href="https://devdreaming.com/about"
-          target="_blank"
-          className="underline underline-offset-2"
-        >
-          Say Hello
-        </Link>
+        <span className="text-sm opacity-70">
+          Partition Framework
+        </span>
       </Layout>
     </footer>
   );

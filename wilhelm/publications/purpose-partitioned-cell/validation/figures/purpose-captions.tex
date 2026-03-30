@@ -1,0 +1,173 @@
+% =============================================================================
+% Figure captions for: Purpose-Partitioned Cellular Circuits
+% =============================================================================
+
+\begin{figure*}[!htbp]
+    \centering
+    \includegraphics[width=\textwidth]{figures/panel_exp1.png}
+    \caption{Subsystem Isomorphism Validation (Theorem~4.1).
+    (a)~Pairwise Pearson correlation matrix across all six subsystem
+    descriptions (Partition, Flux, Charge, Circuit, O$_2$ Microscopy,
+    Purpose); mean off-diagonal $r = 0.936$. Partition, Circuit, and O$_2$
+    Microscopy are perfectly correlated ($r = 1.000$), confirming that
+    concentration-derived depth measures are identical up to scaling. Flux
+    and Charge subsystems correlate at $r > 0.86$ with all others, reflecting
+    the additional weighting by turnover number and formal charge
+    respectively.
+    (b)~Normalised depth profiles across the 10 glycolytic species for all
+    six subsystems overlaid; the shared peak at BPG (index~5) and trough at
+    GLC/ATP-proximal species confirm that all descriptions rank metabolites
+    identically despite differing absolute scales.
+    (c)~Three-dimensional scatter in (Partition depth, Circuit depth, Flux
+    depth) space for all 10 species; points distribute along a
+    low-dimensional manifold rather than filling the cube, demonstrating that
+    the three independently derived measures are geometrically constrained to
+    a common subspace.
+    (d)~Partition depth vs.\ Circuit depth ($r = 1.000$); all 10 species lie
+    exactly on the identity line $y = x$ (grey), confirming that
+    $\mathcal{M}_i = -\log_2(c_i / C_{\mathrm{tot}})$ and
+    $\mathcal{H}_i = -\ln(c_i)/\ln 2$ differ only by a species-independent
+    constant, as required by the Isomorphism Theorem.}
+    \label{fig:panel_exp1_purpose}
+\end{figure*}
+
+\begin{figure*}[!htbp]
+    \centering
+    \includegraphics[width=\textwidth]{figures/panel_exp2.png}
+    \caption{Catalyst Resolution Enhancement (Theorem~6.5).
+    (a)~Progressive resolution improvement on a logarithmic scale as each of
+    12 biological catalysts is applied sequentially; resolution decreases
+    from the diffraction limit $\Delta x_0 = 200\;\mathrm{nm}$ to
+    $\Delta x_{12} = 5.06 \times 10^{-9}\;\mathrm{nm}$ after all catalysts,
+    confirming the multiplicative law
+    $\Delta x_k = \Delta x_{k-1} \cdot \varepsilon_k$.
+    Forward, reverse, and random application orders yield identical final
+    resolutions (difference $< 10^{-24}\;\mathrm{nm}$), validating
+    order independence (Theorem~6.5).
+    (b)~Exclusion factors $\varepsilon_i$ for each catalyst; O$_2$
+    triangulation provides the strongest constraint
+    ($\varepsilon = 0.05$), while mass conservation and cytoskeletal
+    phase-lock are weakest ($\varepsilon = 0.25$ and $0.20$).
+    (c)~Three-dimensional resolution surface over (catalyst index, modality
+    index), showing the combined effect of sequential catalysis and
+    multi-modal fusion; the surface drops monotonically in both dimensions,
+    confirming that additional constraints and modalities both reduce
+    resolution independently.
+    (d)~Final resolution comparison on logarithmic scale: diffraction limit
+    ($200\;\mathrm{nm}$), after catalysis alone
+    ($5.06 \times 10^{-9}\;\mathrm{nm}$), and after fusion with
+    $\sum_{j<k} \rho_{jk} = 4.05$
+    ($8.82 \times 10^{-11}\;\mathrm{nm}$); total enhancement factor
+    $2.27 \times 10^{12}$.}
+    \label{fig:panel_exp2_purpose}
+\end{figure*}
+
+\begin{figure*}[!htbp]
+    \centering
+    \includegraphics[width=\textwidth]{figures/panel_exp3.png}
+    \caption{Four-Stage Compilation Pipeline Validation (Theorems~5--7).
+    (a)~Mean absolute relative error (MARE) at each pipeline stage on a
+    logarithmic scale, demonstrating strict monotonic decrease:
+    Observe ($2.67$) $\to$ Catalyze ($0.94$) $\to$ Fuse ($0.23$) $\to$
+    Access ($6.7 \times 10^{-11}$). The Access stage achieves
+    machine-precision recovery of all 7 unobserved species from only 3
+    observations, confirming that Kirchhoff constraint completion is
+    informationally sufficient.
+    (b)~Completed vs.\ true concentrations for the 8 unobserved glycolytic
+    intermediates after the Access stage; all points lie on the identity
+    line ($y = x$, grey) with MARE $< 10^{-10}$, spanning two orders of
+    magnitude in concentration from BPG ($0.001\;\mathrm{mM}$) to 3PG
+    ($0.12\;\mathrm{mM}$).
+    (c)~Three-dimensional view of (species index, true concentration,
+    completed concentration) confirming pointwise agreement across the full
+    metabolite vector without systematic bias.
+    (d)~Grouped bars comparing three state estimates for each unobserved
+    species: uninformative prior ($0.1\;\mathrm{mM}$, grey), fused estimate
+    after multi-modal integration (teal), and final Access result (green).
+    The prior deviates by up to $99\times$ (BPG); fusion narrows this to
+    ${\sim}20\%$; Access eliminates residual error entirely. Monotonic
+    improvement held in $100\%$ of 50 Monte Carlo trials with $5\%$
+    observation noise.}
+    \label{fig:panel_exp3_purpose}
+\end{figure*}
+
+\begin{figure*}[!htbp]
+    \centering
+    \includegraphics[width=\textwidth]{figures/panel_exp4.png}
+    \caption{Triple Equivalence Validation (Theorem~2.5).
+    (a)~Entropy $S / \kB$ vs.\ partition depth $\Depth$ on log--log axes
+    for three independent derivations: oscillation entropy
+    $S_{\mathrm{osc}}$, categorical entropy $S_{\mathrm{cat}}$, and
+    partition entropy $S_{\mathrm{part}}$; all three produce identical
+    values $S = \kB \Depth \ln 2$ across four decades ($\Depth = 2$ to
+    $1000$), with the three lines perfectly overlapping.
+    (b)~Deviation $|S_{\mathrm{osc}} / S_{\mathrm{cat}} - 1|$ vs.\
+    $\Depth$; all residuals sit at IEEE~754 double-precision floor
+    ($2.22 \times 10^{-16}$), confirming exact algebraic identity rather
+    than mere numerical agreement.
+    (c)~Three-dimensional scatter of $(\Depth,\; \text{base index},\;
+    S/(\kB \Depth))$ for four encoding bases $b \in \{2, 3, 10, e\}$;
+    each base produces a flat plane at height $\ln b$, confirming the
+    general relation $S = \kB \Depth \ln b$ with no cross-terms.
+    (d)~Normalised entropy per partition operation $S / (\kB \Depth)$ for
+    each base: $\ln 2 = 0.693$, $\ln 3 = 1.099$, $\ln 10 = 2.303$,
+    $\ln e = 1.000$; the values match analytic predictions to machine
+    precision, establishing that the triple equivalence
+    (Oscillation $\equiv$ Category $\equiv$ Partition) holds universally
+    regardless of encoding base.}
+    \label{fig:panel_exp4_purpose}
+\end{figure*}
+
+\begin{figure*}[!htbp]
+    \centering
+    \includegraphics[width=\textwidth]{figures/panel_exp5.png}
+    \caption{Autocatalytic Closure Detection (Theorem~7.5).
+    (a)~Closure metric $\eta_i$ for each of 10 glycolytic species under
+    four conditions: healthy (dark blue, $\eta \approx 1.0$), HK knockout
+    (teal, $\eta = 0$), PFK knockout (green, $\eta = 0$), and PK knockout
+    (yellow, $\eta = 0$). The healthy cell recovers from $+50\%$
+    perturbation at every node ($\bar{\eta} = 0.998$), confirming
+    autocatalytic closure. All three knockouts show complete trajectory
+    escape at every node.
+    (b)~Mean closure metric per condition: healthy $\bar{\eta} = 0.998$ vs.\
+    $\bar{\eta} = 0.000$ for all three knockouts, confirming the
+    binary nature of the closure--escape transition. Removal of any single
+    enzyme destroys closure globally, not just locally.
+    (c)~Three-dimensional scatter of (species index, condition index,
+    $\eta$); the healthy plane sits at $\eta \approx 1$ while all knockout
+    planes collapse to $\eta = 0$, visualising the catastrophic loss of
+    self-consistency when any pathway link is severed.
+    (d)~Heatmap of $\eta$ values (10 species $\times$ 4 conditions); the
+    sharp colour boundary between the healthy row (yellow, $\eta = 1$) and
+    the three knockout rows (dark, $\eta = 0$) demonstrates that closure
+    is a global property of the network: it cannot be maintained when any
+    single node's backward trajectory fails to close.}
+    \label{fig:panel_exp5_purpose}
+\end{figure*}
+
+\begin{figure*}[!htbp]
+    \centering
+    \includegraphics[width=\textwidth]{figures/panel_exp6.png}
+    \caption{Purpose Instantiation vs.\ Forward Simulation.
+    (a)~Mean absolute relative error (MARE) with standard deviation bars
+    for forward simulation from uncertain initial conditions
+    ($0.303 \pm 0.120$) vs.\ Purpose backward-trajectory instantiation
+    ($0.012 \pm 0.006$) over 100 independent trials; Purpose achieves
+    $24.7\times$ lower error on a logarithmic scale.
+    (b)~Wall-clock computation time: forward simulation ($11.5\;\mathrm{s}$
+    for 100 ODE integrations) vs.\ Purpose ($0.17\;\mathrm{s}$ for 100
+    algebraic solves); Purpose is $67.7\times$ faster, reflecting the
+    replacement of numerical integration with direct constraint
+    satisfaction.
+    (c)~Three-dimensional comparison of the three performance metrics
+    (MARE, time, information bits) for both approaches, showing that
+    Purpose dominates forward simulation on all three axes simultaneously.
+    (d)~Advantage ratios: MARE ratio $= 24.7\times$ (accuracy gain),
+    speed ratio $= 67.7\times$ (time gain), information efficiency
+    $= 7.2\times$ (accuracy per bit of input). Purpose uses
+    $38.8$ bits of input (3 observations $+$ constraints) vs.\
+    $132.9$ bits for forward simulation (10 uncertain initial conditions),
+    confirming that backward completion extracts more information from
+    less data by exploiting the circuit's attractor structure.}
+    \label{fig:panel_exp6_purpose}
+\end{figure*}
