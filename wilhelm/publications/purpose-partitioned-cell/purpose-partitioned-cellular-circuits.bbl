@@ -1,0 +1,394 @@
+\begin{thebibliography}{54}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Alon(2007{\natexlab{a}})]{Alon2007}
+Uri Alon.
+\newblock Network motifs: Theory and experimental approaches.
+\newblock \emph{Nature Reviews Genetics}, 8\penalty0 (6):\penalty0 450--461,
+  2007{\natexlab{a}}.
+\newblock \doi{10.1038/nrg2102}.
+
+\bibitem[Alon(2007{\natexlab{b}})]{Alon2007book}
+Uri Alon.
+\newblock \emph{An Introduction to Systems Biology: Design Principles of
+  Biological Circuits}.
+\newblock Chapman \& Hall/CRC, Boca Raton, 2007{\natexlab{b}}.
+\newblock ISBN 978-1-58488-642-6.
+
+\bibitem[Arrhenius(1889)]{Arrhenius1889}
+Svante Arrhenius.
+\newblock {\"U}ber die reaktionsgeschwindigkeit bei der inversion von
+  rohrzucker durch s{\"a}uren.
+\newblock \emph{Zeitschrift f{\"u}r Physikalische Chemie}, 4:\penalty0
+  226--248, 1889.
+\newblock \doi{10.1515/zpch-1889-0416}.
+
+\bibitem[Banach(1922)]{Banach1922}
+Stefan Banach.
+\newblock Sur les op{\'e}rations dans les ensembles abstraits et leur
+  application aux {\'e}quations int{\'e}grales.
+\newblock \emph{Fundamenta Mathematicae}, 3:\penalty0 133--181, 1922.
+\newblock \doi{10.4064/fm-3-1-133-181}.
+
+\bibitem[Barab{\'a}si and Oltvai(2004)]{BarabasiOltvai2004}
+Albert-L{\'a}szl{\'o} Barab{\'a}si and Zolt{\'a}n~N. Oltvai.
+\newblock Network biology: Understanding the cell's functional organization.
+\newblock \emph{Nature Reviews Genetics}, 5\penalty0 (2):\penalty0 101--113,
+  2004.
+\newblock \doi{10.1038/nrg1272}.
+
+\bibitem[Beltagy et~al.(2019)Beltagy, Lo, and Cohan]{Beltagy2019}
+Iz~Beltagy, Kyle Lo, and Arman Cohan.
+\newblock {SciBERT}: A pretrained language model for scientific text.
+\newblock \emph{Proceedings of the 2019 Conference on Empirical Methods in
+  Natural Language Processing}, pages 3615--3620, 2019.
+\newblock \doi{10.18653/v1/D19-1371}.
+
+\bibitem[Bengio et~al.(2009)Bengio, Louradour, Collobert, and
+  Weston]{Bengio2009}
+Yoshua Bengio, J{\'e}r{\^o}me Louradour, Ronan Collobert, and Jason Weston.
+\newblock Curriculum learning.
+\newblock \emph{Proceedings of the 26th International Conference on Machine
+  Learning}, pages 41--48, 2009.
+\newblock \doi{10.1145/1553374.1553380}.
+
+\bibitem[Boltzmann(1877)]{Boltzmann1877}
+Ludwig Boltzmann.
+\newblock {\"U}ber die beziehung zwischen dem zweiten hauptsatze der
+  mechanischen w{\"a}rmetheorie und der wahrscheinlichkeitsrechnung respektive
+  den s{\"a}tzen {\"u}ber das w{\"a}rmegleichgewicht.
+\newblock \emph{Sitzungsberichte der Kaiserlichen Akademie der Wissenschaften.
+  Mathematisch-Naturwissen\-schaft\-liche Classe}, 76:\penalty0 373--435, 1877.
+
+\bibitem[Brown et~al.(2020)Brown, Mann, Ryder, Subbiah, Kaplan, Dhariwal,
+  Neelakantan, Shyam, Sastry, Askell, Agarwal, Herbert-Voss, Krueger, Henighan,
+  Child, Ramesh, Ziegler, Wu, Winter, Hesse, Chen, Siber, Litwin, Gray, Chess,
+  Clark, Berner, McCandlish, Radford, Sutskever, and Amodei]{Brown2020}
+Tom Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared~D. Kaplan,
+  Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda
+  Askell, Sandhini Agarwal, Ariel Herbert-Voss, Gretchen Krueger, Tom Henighan,
+  Rewon Child, Aditya Ramesh, Daniel~M. Ziegler, Jeffrey Wu, Clemens Winter,
+  Christopher Hesse, Mark Chen, Eric Siber, Mateusz Litwin, Scott Gray,
+  Benjamin Chess, Jack Clark, Christopher Berner, Sam McCandlish, Alec Radford,
+  Ilya Sutskever, and Dario Amodei.
+\newblock Language models are few-shot learners.
+\newblock \emph{Advances in Neural Information Processing Systems},
+  33:\penalty0 1877--1901, 2020.
+
+\bibitem[Cover and Thomas(2006)]{CoverThomas2006}
+Thomas~M. Cover and Joy~A. Thomas.
+\newblock \emph{Elements of Information Theory}.
+\newblock Wiley-Interscience, Hoboken, NJ, 2 edition, 2006.
+\newblock ISBN 978-0-471-24195-9.
+
+\bibitem[de~Grotthuss(1806)]{Grotthuss1806}
+Christian J.~T. de~Grotthuss.
+\newblock Sur la d{\'e}composition de l'eau et des corps qu'elle tient en
+  dissolution {\`a} l'aide de l'{\'e}lectricit{\'e} galvanique.
+\newblock \emph{Annales de Chimie}, 58:\penalty0 54--73, 1806.
+
+\bibitem[Eigen(1971)]{Eigen1971}
+Manfred Eigen.
+\newblock Self-organization of matter and the evolution of biological
+  macromolecules.
+\newblock \emph{Die Naturwissenschaften}, 58\penalty0 (10):\penalty0 465--523,
+  1971.
+\newblock \doi{10.1007/BF00623322}.
+
+\bibitem[Elowitz et~al.(2002)Elowitz, Levine, Siggia, and Swain]{Elowitz2002}
+Michael~B. Elowitz, Arnold~J. Levine, Eric~D. Siggia, and Peter~S. Swain.
+\newblock Stochastic gene expression in a single cell.
+\newblock \emph{Science}, 297\penalty0 (5584):\penalty0 1183--1186, 2002.
+\newblock \doi{10.1126/science.1070919}.
+
+\bibitem[Eyring(1935)]{Eyring1935}
+Henry Eyring.
+\newblock The activated complex in chemical reactions.
+\newblock \emph{Journal of Chemical Physics}, 3\penalty0 (2):\penalty0
+  107--115, 1935.
+\newblock \doi{10.1063/1.1749604}.
+
+\bibitem[Fell(1992)]{Fell1992}
+David~A. Fell.
+\newblock Metabolic control analysis: A survey of its theoretical and
+  experimental development.
+\newblock \emph{Biochemical Journal}, 286\penalty0 (2):\penalty0 313--330,
+  1992.
+\newblock \doi{10.1042/bj2860313}.
+
+\bibitem[Gibbs(1875)]{Gibbs1875}
+Josiah~Willard Gibbs.
+\newblock On the equilibrium of heterogeneous substances.
+\newblock \emph{Transactions of the Connecticut Academy of Arts and Sciences},
+  3:\penalty0 108--248, 1875.
+
+\bibitem[Gillespie(1977)]{Gillespie1977}
+Daniel~T. Gillespie.
+\newblock Exact stochastic simulation of coupled chemical reactions.
+\newblock \emph{Journal of Physical Chemistry}, 81\penalty0 (25):\penalty0
+  2340--2361, 1977.
+\newblock \doi{10.1021/j100540a008}.
+
+\bibitem[Gururangan et~al.(2020)Gururangan, Marasovi{\'c}, Swayamdipta, Lo,
+  Beltagy, Downey, and Smith]{Gururangan2020}
+Suchin Gururangan, Ana Marasovi{\'c}, Swabha Swayamdipta, Kyle Lo, Iz~Beltagy,
+  Doug Downey, and Noah~A. Smith.
+\newblock Don't stop pretraining: Adapt language models to domains and tasks.
+\newblock \emph{Proceedings of the 58th Annual Meeting of the Association for
+  Computational Linguistics}, pages 8342--8360, 2020.
+\newblock \doi{10.18653/v1/2020.acl-main.740}.
+
+\bibitem[Heisenberg(1927)]{Heisenberg1927}
+Werner Heisenberg.
+\newblock {\"U}ber den anschaulichen inhalt der quantentheoretischen kinematik
+  und mechanik.
+\newblock \emph{Zeitschrift f{\"u}r Physik}, 43\penalty0 (3--4):\penalty0
+  172--198, 1927.
+\newblock \doi{10.1007/BF01397280}.
+
+\bibitem[Hille(2001)]{Hille2001}
+Bertil Hille.
+\newblock \emph{Ion Channels of Excitable Membranes}.
+\newblock Sinauer Associates, Sunderland, MA, 3 edition, 2001.
+\newblock ISBN 978-0-87893-321-1.
+
+\bibitem[Hinton et~al.(2015)Hinton, Vinyals, and Dean]{Hinton2015}
+Geoffrey Hinton, Oriol Vinyals, and Jeff Dean.
+\newblock Distilling the knowledge in a neural network.
+\newblock \emph{arXiv preprint arXiv:1503.02531}, 2015.
+
+\bibitem[Hu et~al.(2022)Hu, Shen, Wallis, Allen-Zhu, Li, Wang, Wang, and
+  Chen]{Hu2022}
+Edward~J. Hu, Yelong Shen, Phillip Wallis, Zeyuan Allen-Zhu, Yuanzhi Li, Shean
+  Wang, Lu~Wang, and Weizhu Chen.
+\newblock {LoRA}: Low-rank adaptation of large language models.
+\newblock \emph{Proceedings of the International Conference on Learning
+  Representations}, 2022.
+
+\bibitem[Jaynes(1957)]{Jaynes1957}
+Edwin~T. Jaynes.
+\newblock Information theory and statistical mechanics.
+\newblock \emph{Physical Review}, 106\penalty0 (4):\penalty0 620--630, 1957.
+\newblock \doi{10.1103/PhysRev.106.620}.
+
+\bibitem[Karr et~al.(2012)Karr, Sanghvi, Macklin, Gutschow, Jacobs, Bolival,
+  Assad-Garcia, Glass, and Covert]{Karr2012}
+Jonathan~R. Karr, Jayodita~C. Sanghvi, Derek~N. Macklin, Miriam~V. Gutschow,
+  Jared~M. Jacobs, Benjamin Bolival, Nacyra Assad-Garcia, John~I. Glass, and
+  Markus~W. Covert.
+\newblock A whole-cell computational model predicts phenotype from genotype.
+\newblock \emph{Cell}, 150\penalty0 (2):\penalty0 389--401, 2012.
+\newblock \doi{10.1016/j.cell.2012.05.044}.
+
+\bibitem[Kauffman(1993)]{Kauffman1993}
+Stuart~A. Kauffman.
+\newblock \emph{The Origins of Order: Self-Organization and Selection in
+  Evolution}.
+\newblock Oxford University Press, New York, 1993.
+\newblock ISBN 978-0-19-507951-7.
+
+\bibitem[Kirchhoff(1845)]{Kirchhoff1845}
+Gustav~Robert Kirchhoff.
+\newblock {\"U}ber den durchgang eines elektrischen stromes durch eine ebene,
+  insbesondere durch eine kreisf{\"o}rmige.
+\newblock \emph{Annalen der Physik und Chemie}, 140\penalty0 (4):\penalty0
+  497--514, 1845.
+\newblock \doi{10.1002/andp.18451400402}.
+
+\bibitem[Levinthal(1969)]{Levinthal1969}
+Cyrus Levinthal.
+\newblock How to fold graciously.
+\newblock \emph{M\"{o}ssbauer Spectroscopy in Biological Systems: Proceedings
+  of a Meeting held at Allerton House, Monticello, Illinois}, pages 22--24,
+  1969.
+\newblock University of Illinois Press, Urbana.
+
+\bibitem[Marcus(1956)]{Marcus1956}
+Rudolph~A. Marcus.
+\newblock On the theory of oxidation-reduction reactions involving electron
+  transfer. {I}.
+\newblock \emph{Journal of Chemical Physics}, 24\penalty0 (5):\penalty0
+  966--978, 1956.
+\newblock \doi{10.1063/1.1742723}.
+
+\bibitem[Michaelis and Menten(1913)]{MichaelisMenten1913}
+Leonor Michaelis and Maud~L. Menten.
+\newblock Die kinetik der invertinwirkung.
+\newblock \emph{Biochemische Zeitschrift}, 49:\penalty0 333--369, 1913.
+
+\bibitem[Mitchell(1961)]{Mitchell1961}
+Peter Mitchell.
+\newblock Coupling of phosphorylation to electron and hydrogen transfer by a
+  chemi-osmotic type of mechanism.
+\newblock \emph{Nature}, 191:\penalty0 144--148, 1961.
+\newblock \doi{10.1038/191144a0}.
+
+\bibitem[Murray(2002)]{Murray2002}
+James~D. Murray.
+\newblock \emph{Mathematical Biology {I}: An Introduction}.
+\newblock Springer, New York, 3 edition, 2002.
+\newblock ISBN 978-0-387-95223-9.
+
+\bibitem[Nicholls and Ferguson(2002)]{NichollsFerguson2002}
+David~G. Nicholls and Stuart~J. Ferguson.
+\newblock \emph{Bioenergetics 3}.
+\newblock Academic Press, London, 2002.
+\newblock ISBN 978-0-12-518121-1.
+
+\bibitem[Onsager(1931)]{Onsager1931}
+Lars Onsager.
+\newblock Reciprocal relations in irreversible processes. {I}.
+\newblock \emph{Physical Review}, 37\penalty0 (4):\penalty0 405--426, 1931.
+\newblock \doi{10.1103/PhysRev.37.405}.
+
+\bibitem[Orth et~al.(2010)Orth, Thiele, and Palsson]{Orth2010}
+Jeffrey~D. Orth, Ines Thiele, and Bernhard~O. Palsson.
+\newblock What is flux balance analysis?
+\newblock \emph{Nature Biotechnology}, 28\penalty0 (3):\penalty0 245--248,
+  2010.
+\newblock \doi{10.1038/nbt.1614}.
+
+\bibitem[Palsson(2006)]{Palsson2006}
+Bernhard~O. Palsson.
+\newblock \emph{Systems Biology: Properties of Reconstructed Networks}.
+\newblock Cambridge University Press, Cambridge, 2006.
+\newblock ISBN 978-0-521-85903-5.
+
+\bibitem[Pearl(1988)]{Pearl1988}
+Judea Pearl.
+\newblock \emph{Probabilistic Reasoning in Intelligent Systems: Networks of
+  Plausible Inference}.
+\newblock Morgan Kaufmann, San Mateo, CA, 1988.
+\newblock ISBN 978-0-934613-73-1.
+
+\bibitem[Prigogine(1967)]{Prigogine1967}
+Ilya Prigogine.
+\newblock \emph{Introduction to Thermodynamics of Irreversible Processes}.
+\newblock Wiley-Interscience, New York, 3 edition, 1967.
+
+\bibitem[Rosen(1991)]{Rosen1991}
+Robert Rosen.
+\newblock \emph{Life Itself: A Comprehensive Inquiry into the Nature, Origin,
+  and Fabrication of Life}.
+\newblock Columbia University Press, New York, 1991.
+\newblock ISBN 978-0-231-07565-7.
+
+\bibitem[Sachikonye(2024{\natexlab{a}})]{Sachikonye2024a}
+Kundai~Farai Sachikonye.
+\newblock On the consequences of global partition structure conservation: The
+  biological partition landscape.
+\newblock \emph{Preprint}, 2024{\natexlab{a}}.
+\newblock Companion paper: partition depth, gradient flow, catalysis, existence
+  cost.
+
+\bibitem[Sachikonye(2024{\natexlab{b}})]{Sachikonye2024b}
+Kundai~Farai Sachikonye.
+\newblock Categorical state propagation in hydrogen bond networks.
+\newblock \emph{Preprint}, 2024{\natexlab{b}}.
+\newblock Companion paper: H-bond networks, partition lag, conductance,
+  Grotthuss mechanism.
+
+\bibitem[Sachikonye(2024{\natexlab{c}})]{Sachikonye2024c}
+Kundai~Farai Sachikonye.
+\newblock Thermodynamic inevitability of biological complexity.
+\newblock \emph{Preprint}, 2024{\natexlab{c}}.
+\newblock Companion paper: charge emergence, autocatalysis, DNA as capacitor.
+
+\bibitem[Sachikonye(2024{\natexlab{d}})]{Sachikonye2024d}
+Kundai~Farai Sachikonye.
+\newblock A unified cellular circuit model: Fuzzy state representation,
+  backward trajectories, and categorical state propagation.
+\newblock \emph{Preprint}, 2024{\natexlab{d}}.
+\newblock Companion paper: fuzzy circuit model, KCL/KVL analogs, trajectory
+  completion.
+
+\bibitem[Sachikonye(2024{\natexlab{e}})]{Sachikonye2024e}
+Kundai~Farai Sachikonye.
+\newblock Reflexive oxygen-mediated categorical microscopy: Cellular
+  self-observation through ternary molecular states.
+\newblock \emph{Preprint}, 2024{\natexlab{e}}.
+\newblock Companion paper: O$_2$ ternary states, capacitor architecture, $T =
+  dM/dt$.
+
+\bibitem[Sachikonye(2024{\natexlab{f}})]{Sachikonye2024f}
+Kundai~Farai Sachikonye.
+\newblock Domain-specific neural compilation for categorical image access.
+\newblock \emph{Preprint}, 2024{\natexlab{f}}.
+\newblock Companion paper: morphism chain compilation, knowledge distillation,
+  LoRA training.
+
+\bibitem[Schr{\"o}dinger(1944)]{Schrodinger1944}
+Erwin Schr{\"o}dinger.
+\newblock \emph{What is Life? The Physical Aspect of the Living Cell}.
+\newblock Cambridge University Press, Cambridge, 1944.
+
+\bibitem[Shannon(1948)]{Shannon1948}
+Claude~E. Shannon.
+\newblock A mathematical theory of communication.
+\newblock \emph{Bell System Technical Journal}, 27\penalty0 (3):\penalty0
+  379--423, 1948.
+\newblock \doi{10.1002/j.1538-7305.1948.tb01338.x}.
+
+\bibitem[Strogatz(1994)]{Strogatz1994}
+Steven~H. Strogatz.
+\newblock \emph{Nonlinear Dynamics and Chaos: With Applications to Physics,
+  Biology, Chemistry, and Engineering}.
+\newblock Addison-Wesley, Reading, MA, 1994.
+\newblock ISBN 978-0-201-54344-5.
+
+\bibitem[van Kampen(2007)]{vanKampen2007}
+Nicolaas~G. van Kampen.
+\newblock \emph{Stochastic Processes in Physics and Chemistry}.
+\newblock Elsevier, Amsterdam, 3 edition, 2007.
+\newblock ISBN 978-0-444-52965-7.
+
+\bibitem[Varela et~al.(1974)Varela, Maturana, and
+  Uribe]{VarelaMaturanaUribe1974}
+Francisco~G. Varela, Humberto~R. Maturana, and Ricardo Uribe.
+\newblock Autopoiesis: The organization of living systems, its characterization
+  and a model.
+\newblock \emph{BioSystems}, 5\penalty0 (4):\penalty0 187--196, 1974.
+\newblock \doi{10.1016/0303-2647(74)90021-8}.
+
+\bibitem[Vaswani et~al.(2017)Vaswani, Shazeer, Parmar, Uszkoreit, Jones, Gomez,
+  Kaiser, and Polosukhin]{Vaswani2017}
+Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones,
+  Aidan~N. Gomez, {\L}ukasz Kaiser, and Illia Polosukhin.
+\newblock Attention is all you need.
+\newblock \emph{Advances in Neural Information Processing Systems},
+  30:\penalty0 5998--6008, 2017.
+
+\bibitem[Viterbi(1967)]{Viterbi1967}
+Andrew~J. Viterbi.
+\newblock Error bounds for convolutional codes and an asymptotically optimum
+  decoding algorithm.
+\newblock \emph{IEEE Transactions on Information Theory}, 13\penalty0
+  (2):\penalty0 260--269, 1967.
+\newblock \doi{10.1109/TIT.1967.1054010}.
+
+\bibitem[Wegscheider(1901)]{Wegscheider1901}
+Rudolf Wegscheider.
+\newblock {\"U}ber simultane gleichgewichte und die beziehungen zwischen
+  thermodynamik und reaktionskinetik homogener systeme.
+\newblock \emph{Monatshefte f{\"u}r Chemie}, 22:\penalty0 849--906, 1901.
+\newblock \doi{10.1007/BF01517498}.
+
+\bibitem[Wolfenden and Snider(2001)]{Wolfenden2001}
+Richard Wolfenden and Mark~J. Snider.
+\newblock The depth of chemical time and the power of enzymes as catalysts.
+\newblock \emph{Accounts of Chemical Research}, 34\penalty0 (12):\penalty0
+  938--945, 2001.
+\newblock \doi{10.1021/ar000058i}.
+
+\bibitem[Zadeh(1965)]{Zadeh1965}
+Lotfi~A. Zadeh.
+\newblock Fuzzy sets.
+\newblock \emph{Information and Control}, 8\penalty0 (3):\penalty0 338--353,
+  1965.
+\newblock \doi{10.1016/S0019-9958(65)90241-X}.
+
+\end{thebibliography}

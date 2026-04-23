@@ -25,7 +25,7 @@ const ModelViewer = ({ className = '' }) => {
         <pointLight position={[-5, 5, -5]} intensity={0.5} color="#58E6D9" />
         <Suspense fallback={null}>
           <Model url="/model/hydria_apothecary_vase.glb" />
-          <ContactShadows position={[0, -1.5, 0]} opacity={0.4} scale={10} blur={2} />
+          <ContactShadows position={[0, -1.5, 0]} opacity={0.4} scale={1} blur={2} />
         </Suspense>
         <OrbitControls enableZoom={false} enablePan={false} autoRotate autoRotateSpeed={1} />
       </Canvas>

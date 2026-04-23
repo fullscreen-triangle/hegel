@@ -2,7 +2,7 @@
 <p align="center"><em>Observation is a natural consequence for the existence of reason</em></p>
 
 <p align="center">
-  <img src="/Hegel.png" alt="Logo" width="300"/>
+  <img src="/hegel.png" alt="Logo" width="300"/>
 </p>
 
 **Observational Partition Algebra: Unification of Measurement, Process, and Computation in Bounded Dynamical Systems**

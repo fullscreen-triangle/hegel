@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99e
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: purpose-partitioned-cellular-circuits.aux
+Reallocating 'name_of_file' (item size: 1) to 9 items.
+The style file: plainnat.bst
+Reallocating 'name_of_file' (item size: 1) to 11 items.
+Database file #1: references.bib
+You've used 54 entries,
+            2773 wiz_defined-function locations,
+            1000 strings with 15232 characters,
+and the built_in function-call counts, 24252 in all, are:
+= -- 2218
+> -- 1265
+< -- 47
++ -- 453
+- -- 393
+* -- 1889
+:= -- 3835
+add.period$ -- 206
+call.type$ -- 54
+change.case$ -- 285
+chr.to.int$ -- 48
+cite$ -- 108
+duplicate$ -- 1119
+empty$ -- 2004
+format.name$ -- 457
+if$ -- 5024
+int.to.chr$ -- 7
+int.to.str$ -- 1
+missing$ -- 67
+newline$ -- 322
+num.names$ -- 216
+pop$ -- 543
+preamble$ -- 1
+purify$ -- 239
+quote$ -- 0
+skip$ -- 815
+stack$ -- 0
+substring$ -- 979
+swap$ -- 98
+text.length$ -- 4
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 529
+warning$ -- 0
+while$ -- 232
+width$ -- 0
+write$ -- 794
