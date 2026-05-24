@@ -94,6 +94,7 @@ const Navbar = () => {
         <CustomLink className="mx-4" href="/purpose-models" title="Purpose" />
         <CustomLink className="mx-4" href="/multimodal-reactions" title="Multimodal" />
         <CustomLink className="mx-4" href="/api-access" title="API" />
+        <CustomLink className="mx-4" href="/sbs-tool" title="SBS" />
         <CustomLink className="ml-4" href="/subscriptions" title="Plans" />
       </nav>
       <nav
@@ -163,6 +164,7 @@ const Navbar = () => {
         <CustomMobileLink toggle={handleClick} className="lg:m-0 lg:my-2" href="/purpose-models" title="Purpose" />
         <CustomMobileLink toggle={handleClick} className="lg:m-0 lg:my-2" href="/multimodal-reactions" title="Multimodal" />
         <CustomMobileLink toggle={handleClick} className="lg:m-0 lg:my-2" href="/api-access" title="API" />
+        <CustomMobileLink toggle={handleClick} className="lg:m-0 lg:my-2" href="/sbs-tool" title="SBS Tool" />
         <CustomMobileLink toggle={handleClick} className="lg:m-0 lg:my-2" href="/subscriptions" title="Subscribe" />
       </nav>
       <nav
