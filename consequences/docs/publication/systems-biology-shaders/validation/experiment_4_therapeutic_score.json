@@ -1,0 +1,73 @@
+{
+  "experiment": "Therapeutic Score Validation",
+  "theorem": "Theorem 10.6 \u2014 Optimal Drug Design as l1 Minimisation",
+  "description": "Given a severely diseased glycolytic circuit (top-3 flux edges at 10%), find the l1-optimal sparse perturbation eta that restores flux-pattern visibility V > 0.9. Verify with <= 3 edges and < 100ms.",
+  "timestamp": "2026-05-23T02:28:32.128519",
+  "pre_treatment": {
+    "diseased_edges": [
+      {
+        "id": 0,
+        "name": "Hexokinase",
+        "flux_weight": 0.946888
+      },
+      {
+        "id": 9,
+        "name": "PyruvateKinase",
+        "flux_weight": 0.012207
+      },
+      {
+        "id": 6,
+        "name": "GAPDH",
+        "flux_weight": 0.011253
+      }
+    ],
+    "reduction": "90% conductance on each",
+    "visibility_V": 0.107066,
+    "coherence_R": 0.610101
+  },
+  "optimization": {
+    "method": "Greedy coordinate descent maximising flux visibility V",
+    "eta_perturbations": [
+      {
+        "edge_id": 0,
+        "edge_name": "Hexokinase",
+        "boost_factor": 10.0,
+        "is_diseased_edge": true
+      },
+      {
+        "edge_id": 6,
+        "edge_name": "GAPDH",
+        "boost_factor": 10.0,
+        "is_diseased_edge": true
+      },
+      {
+        "edge_id": 9,
+        "edge_name": "PyruvateKinase",
+        "boost_factor": 10.0,
+        "is_diseased_edge": true
+      }
+    ],
+    "l0_norm": 3,
+    "optimization_time_ms": 12.25
+  },
+  "post_treatment": {
+    "visibility_V": 1.0,
+    "coherence_R": 0.705051,
+    "V_improvement": 0.892934
+  },
+  "summary": {
+    "V_pre": 0.107066,
+    "V_post": 1.0,
+    "V_post_above_0.9": true,
+    "num_edges_perturbed": 3,
+    "edges_perturbed_leq_3": true,
+    "optimization_time_ms": 12.25,
+    "time_under_100ms": true,
+    "success_criteria": {
+      "V_post > 0.9": true,
+      "||eta||_0 <= 3": true,
+      "time < 100ms": true
+    },
+    "verdict": "PASS"
+  }
+}

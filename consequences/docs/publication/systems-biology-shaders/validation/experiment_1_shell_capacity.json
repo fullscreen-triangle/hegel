@@ -1,0 +1,270 @@
+{
+  "experiment": "Shell Capacity Validation",
+  "theorem": "Theorem 3.2 \u2014 Shell Capacity C(n) = 2n^2",
+  "description": "Partition shell capacity C(n) = 2n^2 derived from hierarchical partition of bounded phase space. Compared against experimentally known electron shell capacities from atomic physics.",
+  "timestamp": "2026-05-23T02:28:32.118978",
+  "shells": [
+    {
+      "n": 1,
+      "C_n_formula": 2,
+      "C_n_breakdown": 2,
+      "C_n_known": 2,
+      "match": true,
+      "cumulative": 2,
+      "breakdown": [
+        {
+          "l": 0,
+          "m_count": 1,
+          "spin_count": 2,
+          "subtotal": 2
+        }
+      ]
+    },
+    {
+      "n": 2,
+      "C_n_formula": 8,
+      "C_n_breakdown": 8,
+      "C_n_known": 8,
+      "match": true,
+      "cumulative": 10,
+      "breakdown": [
+        {
+          "l": 0,
+          "m_count": 1,
+          "spin_count": 2,
+          "subtotal": 2
+        },
+        {
+          "l": 1,
+          "m_count": 3,
+          "spin_count": 2,
+          "subtotal": 6
+        }
+      ]
+    },
+    {
+      "n": 3,
+      "C_n_formula": 18,
+      "C_n_breakdown": 18,
+      "C_n_known": 18,
+      "match": true,
+      "cumulative": 28,
+      "breakdown": [
+        {
+          "l": 0,
+          "m_count": 1,
+          "spin_count": 2,
+          "subtotal": 2
+        },
+        {
+          "l": 1,
+          "m_count": 3,
+          "spin_count": 2,
+          "subtotal": 6
+        },
+        {
+          "l": 2,
+          "m_count": 5,
+          "spin_count": 2,
+          "subtotal": 10
+        }
+      ]
+    },
+    {
+      "n": 4,
+      "C_n_formula": 32,
+      "C_n_breakdown": 32,
+      "C_n_known": 32,
+      "match": true,
+      "cumulative": 60,
+      "breakdown": [
+        {
+          "l": 0,
+          "m_count": 1,
+          "spin_count": 2,
+          "subtotal": 2
+        },
+        {
+          "l": 1,
+          "m_count": 3,
+          "spin_count": 2,
+          "subtotal": 6
+        },
+        {
+          "l": 2,
+          "m_count": 5,
+          "spin_count": 2,
+          "subtotal": 10
+        },
+        {
+          "l": 3,
+          "m_count": 7,
+          "spin_count": 2,
+          "subtotal": 14
+        }
+      ]
+    },
+    {
+      "n": 5,
+      "C_n_formula": 50,
+      "C_n_breakdown": 50,
+      "C_n_known": 50,
+      "match": true,
+      "cumulative": 110,
+      "breakdown": [
+        {
+          "l": 0,
+          "m_count": 1,
+          "spin_count": 2,
+          "subtotal": 2
+        },
+        {
+          "l": 1,
+          "m_count": 3,
+          "spin_count": 2,
+          "subtotal": 6
+        },
+        {
+          "l": 2,
+          "m_count": 5,
+          "spin_count": 2,
+          "subtotal": 10
+        },
+        {
+          "l": 3,
+          "m_count": 7,
+          "spin_count": 2,
+          "subtotal": 14
+        },
+        {
+          "l": 4,
+          "m_count": 9,
+          "spin_count": 2,
+          "subtotal": 18
+        }
+      ]
+    },
+    {
+      "n": 6,
+      "C_n_formula": 72,
+      "C_n_breakdown": 72,
+      "C_n_known": 72,
+      "match": true,
+      "cumulative": 182,
+      "breakdown": [
+        {
+          "l": 0,
+          "m_count": 1,
+          "spin_count": 2,
+          "subtotal": 2
+        },
+        {
+          "l": 1,
+          "m_count": 3,
+          "spin_count": 2,
+          "subtotal": 6
+        },
+        {
+          "l": 2,
+          "m_count": 5,
+          "spin_count": 2,
+          "subtotal": 10
+        },
+        {
+          "l": 3,
+          "m_count": 7,
+          "spin_count": 2,
+          "subtotal": 14
+        },
+        {
+          "l": 4,
+          "m_count": 9,
+          "spin_count": 2,
+          "subtotal": 18
+        },
+        {
+          "l": 5,
+          "m_count": 11,
+          "spin_count": 2,
+          "subtotal": 22
+        }
+      ]
+    },
+    {
+      "n": 7,
+      "C_n_formula": 98,
+      "C_n_breakdown": 98,
+      "C_n_known": 98,
+      "match": true,
+      "cumulative": 280,
+      "breakdown": [
+        {
+          "l": 0,
+          "m_count": 1,
+          "spin_count": 2,
+          "subtotal": 2
+        },
+        {
+          "l": 1,
+          "m_count": 3,
+          "spin_count": 2,
+          "subtotal": 6
+        },
+        {
+          "l": 2,
+          "m_count": 5,
+          "spin_count": 2,
+          "subtotal": 10
+        },
+        {
+          "l": 3,
+          "m_count": 7,
+          "spin_count": 2,
+          "subtotal": 14
+        },
+        {
+          "l": 4,
+          "m_count": 9,
+          "spin_count": 2,
+          "subtotal": 18
+        },
+        {
+          "l": 5,
+          "m_count": 11,
+          "spin_count": 2,
+          "subtotal": 22
+        },
+        {
+          "l": 6,
+          "m_count": 13,
+          "spin_count": 2,
+          "subtotal": 26
+        }
+      ]
+    }
+  ],
+  "cumulative_vs_noble_gas": [
+    {
+      "shell_n": 1,
+      "cumulative_capacity": 2,
+      "noble_gas": "He",
+      "atomic_number_Z": 2,
+      "match": true
+    },
+    {
+      "shell_n": 2,
+      "cumulative_capacity": 10,
+      "noble_gas": "Ne",
+      "atomic_number_Z": 10,
+      "match": true
+    }
+  ],
+  "summary": {
+    "total_shells_tested": 7,
+    "exact_matches": 7,
+    "all_match": true,
+    "verdict": "PASS",
+    "formula": "C(n) = 2n^2",
+    "identity_sum": "sum_{l=0}^{n-1} (2l+1) = n^2"
+  }
+}

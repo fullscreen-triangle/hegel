@@ -1,0 +1,1323 @@
+{
+  "paper": "Systems Biology Shaders",
+  "author": "Kundai Farai Sachikonye",
+  "institution": "Technical University of Munich",
+  "timestamp": "2026-05-23T02:28:32.118937",
+  "experiments": [
+    {
+      "experiment": "Shell Capacity Validation",
+      "theorem": "Theorem 3.2 \u2014 Shell Capacity C(n) = 2n^2",
+      "description": "Partition shell capacity C(n) = 2n^2 derived from hierarchical partition of bounded phase space. Compared against experimentally known electron shell capacities from atomic physics.",
+      "timestamp": "2026-05-23T02:28:32.118978",
+      "shells": [
+        {
+          "n": 1,
+          "C_n_formula": 2,
+          "C_n_breakdown": 2,
+          "C_n_known": 2,
+          "match": true,
+          "cumulative": 2,
+          "breakdown": [
+            {
+              "l": 0,
+              "m_count": 1,
+              "spin_count": 2,
+              "subtotal": 2
+            }
+          ]
+        },
+        {
+          "n": 2,
+          "C_n_formula": 8,
+          "C_n_breakdown": 8,
+          "C_n_known": 8,
+          "match": true,
+          "cumulative": 10,
+          "breakdown": [
+            {
+              "l": 0,
+              "m_count": 1,
+              "spin_count": 2,
+              "subtotal": 2
+            },
+            {
+              "l": 1,
+              "m_count": 3,
+              "spin_count": 2,
+              "subtotal": 6
+            }
+          ]
+        },
+        {
+          "n": 3,
+          "C_n_formula": 18,
+          "C_n_breakdown": 18,
+          "C_n_known": 18,
+          "match": true,
+          "cumulative": 28,
+          "breakdown": [
+            {
+              "l": 0,
+              "m_count": 1,
+              "spin_count": 2,
+              "subtotal": 2
+            },
+            {
+              "l": 1,
+              "m_count": 3,
+              "spin_count": 2,
+              "subtotal": 6
+            },
+            {
+              "l": 2,
+              "m_count": 5,
+              "spin_count": 2,
+              "subtotal": 10
+            }
+          ]
+        },
+        {
+          "n": 4,
+          "C_n_formula": 32,
+          "C_n_breakdown": 32,
+          "C_n_known": 32,
+          "match": true,
+          "cumulative": 60,
+          "breakdown": [
+            {
+              "l": 0,
+              "m_count": 1,
+              "spin_count": 2,
+              "subtotal": 2
+            },
+            {
+              "l": 1,
+              "m_count": 3,
+              "spin_count": 2,
+              "subtotal": 6
+            },
+            {
+              "l": 2,
+              "m_count": 5,
+              "spin_count": 2,
+              "subtotal": 10
+            },
+            {
+              "l": 3,
+              "m_count": 7,
+              "spin_count": 2,
+              "subtotal": 14
+            }
+          ]
+        },
+        {
+          "n": 5,
+          "C_n_formula": 50,
+          "C_n_breakdown": 50,
+          "C_n_known": 50,
+          "match": true,
+          "cumulative": 110,
+          "breakdown": [
+            {
+              "l": 0,
+              "m_count": 1,
+              "spin_count": 2,
+              "subtotal": 2
+            },
+            {
+              "l": 1,
+              "m_count": 3,
+              "spin_count": 2,
+              "subtotal": 6
+            },
+            {
+              "l": 2,
+              "m_count": 5,
+              "spin_count": 2,
+              "subtotal": 10
+            },
+            {
+              "l": 3,
+              "m_count": 7,
+              "spin_count": 2,
+              "subtotal": 14
+            },
+            {
+              "l": 4,
+              "m_count": 9,
+              "spin_count": 2,
+              "subtotal": 18
+            }
+          ]
+        },
+        {
+          "n": 6,
+          "C_n_formula": 72,
+          "C_n_breakdown": 72,
+          "C_n_known": 72,
+          "match": true,
+          "cumulative": 182,
+          "breakdown": [
+            {
+              "l": 0,
+              "m_count": 1,
+              "spin_count": 2,
+              "subtotal": 2
+            },
+            {
+              "l": 1,
+              "m_count": 3,
+              "spin_count": 2,
+              "subtotal": 6
+            },
+            {
+              "l": 2,
+              "m_count": 5,
+              "spin_count": 2,
+              "subtotal": 10
+            },
+            {
+              "l": 3,
+              "m_count": 7,
+              "spin_count": 2,
+              "subtotal": 14
+            },
+            {
+              "l": 4,
+              "m_count": 9,
+              "spin_count": 2,
+              "subtotal": 18
+            },
+            {
+              "l": 5,
+              "m_count": 11,
+              "spin_count": 2,
+              "subtotal": 22
+            }
+          ]
+        },
+        {
+          "n": 7,
+          "C_n_formula": 98,
+          "C_n_breakdown": 98,
+          "C_n_known": 98,
+          "match": true,
+          "cumulative": 280,
+          "breakdown": [
+            {
+              "l": 0,
+              "m_count": 1,
+              "spin_count": 2,
+              "subtotal": 2
+            },
+            {
+              "l": 1,
+              "m_count": 3,
+              "spin_count": 2,
+              "subtotal": 6
+            },
+            {
+              "l": 2,
+              "m_count": 5,
+              "spin_count": 2,
+              "subtotal": 10
+            },
+            {
+              "l": 3,
+              "m_count": 7,
+              "spin_count": 2,
+              "subtotal": 14
+            },
+            {
+              "l": 4,
+              "m_count": 9,
+              "spin_count": 2,
+              "subtotal": 18
+            },
+            {
+              "l": 5,
+              "m_count": 11,
+              "spin_count": 2,
+              "subtotal": 22
+            },
+            {
+              "l": 6,
+              "m_count": 13,
+              "spin_count": 2,
+              "subtotal": 26
+            }
+          ]
+        }
+      ],
+      "cumulative_vs_noble_gas": [
+        {
+          "shell_n": 1,
+          "cumulative_capacity": 2,
+          "noble_gas": "He",
+          "atomic_number_Z": 2,
+          "match": true
+        },
+        {
+          "shell_n": 2,
+          "cumulative_capacity": 10,
+          "noble_gas": "Ne",
+          "atomic_number_Z": 10,
+          "match": true
+        }
+      ],
+      "summary": {
+        "total_shells_tested": 7,
+        "exact_matches": 7,
+        "all_match": true,
+        "verdict": "PASS",
+        "formula": "C(n) = 2n^2",
+        "identity_sum": "sum_{l=0}^{n-1} (2l+1) = n^2"
+      }
+    },
+    {
+      "experiment": "Spectral Reconstruction",
+      "theorem": "Partition Observation Shader \u2014 spectral peaks from C(n)=2n^2",
+      "description": "Spectral line positions computed from partition shell energy levels E_n = -13.6/n^2 eV, compared against NIST Atomic Spectra Database reference wavelengths.",
+      "timestamp": "2026-05-23T02:28:32.120415",
+      "species": [
+        {
+          "name": "Hydrogen (H)",
+          "model": "Rydberg formula from partition shell structure",
+          "num_lines": 20,
+          "mean_relative_error_pct": 0.03869,
+          "max_relative_error_pct": 0.054675,
+          "lines": [
+            {
+              "transition": "Lyman_alpha",
+              "n_upper": 2,
+              "n_lower": 1,
+              "computed_wavelength_nm": 121.502,
+              "nist_wavelength_nm": 121.567,
+              "absolute_error_nm": 0.0647,
+              "relative_error_pct": 0.053244
+            },
+            {
+              "transition": "Lyman_beta",
+              "n_upper": 3,
+              "n_lower": 1,
+              "computed_wavelength_nm": 102.518,
+              "nist_wavelength_nm": 102.572,
+              "absolute_error_nm": 0.0545,
+              "relative_error_pct": 0.053091
+            },
+            {
+              "transition": "Lyman_gamma",
+              "n_upper": 4,
+              "n_lower": 1,
+              "computed_wavelength_nm": 97.202,
+              "nist_wavelength_nm": 97.254,
+              "absolute_error_nm": 0.0522,
+              "relative_error_pct": 0.053655
+            },
+            {
+              "transition": "Lyman_delta",
+              "n_upper": 5,
+              "n_lower": 1,
+              "computed_wavelength_nm": 94.924,
+              "nist_wavelength_nm": 94.974,
+              "absolute_error_nm": 0.0503,
+              "relative_error_pct": 0.053013
+            },
+            {
+              "transition": "Lyman_epsilon",
+              "n_upper": 6,
+              "n_lower": 1,
+              "computed_wavelength_nm": 93.73,
+              "nist_wavelength_nm": 93.78,
+              "absolute_error_nm": 0.0497,
+              "relative_error_pct": 0.052969
+            },
+            {
+              "transition": "Balmer_alpha",
+              "n_upper": 3,
+              "n_lower": 2,
+              "computed_wavelength_nm": 656.112,
+              "nist_wavelength_nm": 656.281,
+              "absolute_error_nm": 0.1687,
+              "relative_error_pct": 0.025709
+            },
+            {
+              "transition": "Balmer_beta",
+              "n_upper": 4,
+              "n_lower": 2,
+              "computed_wavelength_nm": 486.009,
+              "nist_wavelength_nm": 486.135,
+              "absolute_error_nm": 0.1259,
+              "relative_error_pct": 0.025899
+            },
+            {
+              "transition": "Balmer_gamma",
+              "n_upper": 5,
+              "n_lower": 2,
+              "computed_wavelength_nm": 433.937,
+              "nist_wavelength_nm": 434.047,
+              "absolute_error_nm": 0.1103,
+              "relative_error_pct": 0.025414
+            },
+            {
+              "transition": "Balmer_delta",
+              "n_upper": 6,
+              "n_lower": 2,
+              "computed_wavelength_nm": 410.07,
+              "nist_wavelength_nm": 410.174,
+              "absolute_error_nm": 0.1038,
+              "relative_error_pct": 0.025313
+            },
+            {
+              "transition": "Balmer_epsilon",
+              "n_upper": 7,
+              "n_lower": 2,
+              "computed_wavelength_nm": 396.907,
+              "nist_wavelength_nm": 397.007,
+              "absolute_error_nm": 0.0996,
+              "relative_error_pct": 0.025081
+            },
+            {
+              "transition": "Paschen_alpha",
+              "n_upper": 4,
+              "n_lower": 3,
+              "computed_wavelength_nm": 1874.607,
+              "nist_wavelength_nm": 1875.1,
+              "absolute_error_nm": 0.4935,
+              "relative_error_pct": 0.026318
+            },
+            {
+              "transition": "Paschen_beta",
+              "n_upper": 5,
+              "n_lower": 3,
+              "computed_wavelength_nm": 1281.469,
+              "nist_wavelength_nm": 1281.81,
+              "absolute_error_nm": 0.3407,
+              "relative_error_pct": 0.02658
+            },
+            {
+              "transition": "Paschen_gamma",
+              "n_upper": 6,
+              "n_lower": 3,
+              "computed_wavelength_nm": 1093.52,
+              "nist_wavelength_nm": 1093.82,
+              "absolute_error_nm": 0.2995,
+              "relative_error_pct": 0.027385
+            },
+            {
+              "transition": "Paschen_delta",
+              "n_upper": 7,
+              "n_lower": 3,
+              "computed_wavelength_nm": 1004.672,
+              "nist_wavelength_nm": 1004.94,
+              "absolute_error_nm": 0.2681,
+              "relative_error_pct": 0.026676
+            },
+            {
+              "transition": "Brackett_alpha",
+              "n_upper": 5,
+              "n_lower": 4,
+              "computed_wavelength_nm": 4050.076,
+              "nist_wavelength_nm": 4051.2,
+              "absolute_error_nm": 1.1242,
+              "relative_error_pct": 0.02775
+            },
+            {
+              "transition": "Brackett_beta",
+              "n_upper": 6,
+              "n_lower": 4,
+              "computed_wavelength_nm": 2624.449,
+              "nist_wavelength_nm": 2625.2,
+              "absolute_error_nm": 0.7509,
+              "relative_error_pct": 0.028603
+            },
+            {
+              "transition": "Brackett_gamma",
+              "n_upper": 7,
+              "n_lower": 4,
+              "computed_wavelength_nm": 2164.95,
+              "nist_wavelength_nm": 2166.12,
+              "absolute_error_nm": 1.1704,
+              "relative_error_pct": 0.054032
+            },
+            {
+              "transition": "Pfund_alpha",
+              "n_upper": 6,
+              "n_lower": 5,
+              "computed_wavelength_nm": 7455.821,
+              "nist_wavelength_nm": 7459.9,
+              "absolute_error_nm": 4.0787,
+              "relative_error_pct": 0.054675
+            },
+            {
+              "transition": "Pfund_beta",
+              "n_upper": 7,
+              "n_lower": 5,
+              "computed_wavelength_nm": 4651.259,
+              "nist_wavelength_nm": 4653.78,
+              "absolute_error_nm": 2.5211,
+              "relative_error_pct": 0.054173
+            },
+            {
+              "transition": "Humphreys_alpha",
+              "n_upper": 7,
+              "n_lower": 6,
+              "computed_wavelength_nm": 12365.193,
+              "nist_wavelength_nm": 12371.9,
+              "absolute_error_nm": 6.7071,
+              "relative_error_pct": 0.054212
+            }
+          ]
+        },
+        {
+          "name": "Molecular Hydrogen (H2)",
+          "model": "Rigid rotor + harmonic oscillator from partition coordinates",
+          "num_lines": 10,
+          "mean_relative_error_pct": 0.1487,
+          "max_relative_error_pct": 0.3957,
+          "lines": [
+            {
+              "transition": "v0_S0",
+              "v_lower": 0,
+              "v_upper": 0,
+              "J_lower": 0,
+              "J_upper": 2,
+              "computed_wavenumber_cm": 354.17,
+              "nist_wavenumber_cm": 354.39,
+              "absolute_error_cm": 0.217,
+              "relative_error_pct": 0.0612
+            },
+            {
+              "transition": "v0_S1",
+              "v_lower": 0,
+              "v_upper": 0,
+              "J_lower": 1,
+              "J_upper": 3,
+              "computed_wavenumber_cm": 586.42,
+              "nist_wavenumber_cm": 587.04,
+              "absolute_error_cm": 0.619,
+              "relative_error_pct": 0.1054
+            },
+            {
+              "transition": "v0_S2",
+              "v_lower": 0,
+              "v_upper": 0,
+              "J_lower": 2,
+              "J_upper": 4,
+              "computed_wavenumber_cm": 812.99,
+              "nist_wavenumber_cm": 814.42,
+              "absolute_error_cm": 1.432,
+              "relative_error_pct": 0.1759
+            },
+            {
+              "transition": "v0_S3",
+              "v_lower": 0,
+              "v_upper": 0,
+              "J_lower": 3,
+              "J_upper": 5,
+              "computed_wavenumber_cm": 1031.84,
+              "nist_wavenumber_cm": 1034.67,
+              "absolute_error_cm": 2.834,
+              "relative_error_pct": 0.2739
+            },
+            {
+              "transition": "v0_S4",
+              "v_lower": 0,
+              "v_upper": 0,
+              "J_lower": 4,
+              "J_upper": 6,
+              "computed_wavenumber_cm": 1241.17,
+              "nist_wavenumber_cm": 1246.1,
+              "absolute_error_cm": 4.93,
+              "relative_error_pct": 0.3957
+            },
+            {
+              "transition": "v1_Q1",
+              "v_lower": 0,
+              "v_upper": 1,
+              "J_lower": 1,
+              "J_upper": 1,
+              "computed_wavenumber_cm": 4152.4,
+              "nist_wavenumber_cm": 4155.25,
+              "absolute_error_cm": 2.849,
+              "relative_error_pct": 0.0686
+            },
+            {
+              "transition": "v1_Q2",
+              "v_lower": 0,
+              "v_upper": 1,
+              "J_lower": 2,
+              "J_upper": 2,
+              "computed_wavenumber_cm": 4139.95,
+              "nist_wavenumber_cm": 4143.47,
+              "absolute_error_cm": 3.519,
+              "relative_error_pct": 0.0849
+            },
+            {
+              "transition": "v1_Q3",
+              "v_lower": 0,
+              "v_upper": 1,
+              "J_lower": 3,
+              "J_upper": 3,
+              "computed_wavenumber_cm": 4120.9,
+              "nist_wavenumber_cm": 4125.87,
+              "absolute_error_cm": 4.971,
+              "relative_error_pct": 0.1205
+            },
+            {
+              "transition": "v1_S0",
+              "v_lower": 0,
+              "v_upper": 1,
+              "J_lower": 0,
+              "J_upper": 2,
+              "computed_wavenumber_cm": 4494.12,
+              "nist_wavenumber_cm": 4497.84,
+              "absolute_error_cm": 3.716,
+              "relative_error_pct": 0.0826
+            },
+            {
+              "transition": "v1_S1",
+              "v_lower": 0,
+              "v_upper": 1,
+              "J_lower": 1,
+              "J_upper": 3,
+              "computed_wavenumber_cm": 4707.32,
+              "nist_wavenumber_cm": 4712.91,
+              "absolute_error_cm": 5.59,
+              "relative_error_pct": 0.1186
+            }
+          ]
+        },
+        {
+          "name": "Water (H2O)",
+          "model": "Anharmonic oscillator from partition coordinates",
+          "num_lines": 10,
+          "mean_relative_error_pct": 0.229,
+          "max_relative_error_pct": 1.0683,
+          "lines": [
+            {
+              "transition": "v1_symmetric_stretch",
+              "mode": "v1",
+              "quanta": [
+                1,
+                0,
+                0
+              ],
+              "computed_wavenumber_cm": 3656.13,
+              "nist_wavenumber_cm": 3657.05,
+              "absolute_error_cm": 0.915,
+              "relative_error_pct": 0.025
+            },
+            {
+              "transition": "v2_bend",
+              "mode": "v2",
+              "quanta": [
+                0,
+                1,
+                0
+              ],
+              "computed_wavenumber_cm": 1596.72,
+              "nist_wavenumber_cm": 1594.75,
+              "absolute_error_cm": 1.97,
+              "relative_error_pct": 0.1235
+            },
+            {
+              "transition": "v3_asymmetric_stretch",
+              "mode": "v3",
+              "quanta": [
+                0,
+                0,
+                1
+              ],
+              "computed_wavenumber_cm": 3756.72,
+              "nist_wavenumber_cm": 3755.93,
+              "absolute_error_cm": 0.785,
+              "relative_error_pct": 0.0209
+            },
+            {
+              "transition": "2v2_overtone",
+              "mode": "2v2",
+              "quanta": [
+                0,
+                2,
+                0
+              ],
+              "computed_wavenumber_cm": 3159.82,
+              "nist_wavenumber_cm": 3151.63,
+              "absolute_error_cm": 8.19,
+              "relative_error_pct": 0.2599
+            },
+            {
+              "transition": "v1_v2_combination",
+              "mode": "v1+v2",
+              "quanta": [
+                1,
+                1,
+                0
+              ],
+              "computed_wavenumber_cm": 5236.92,
+              "nist_wavenumber_cm": 5234.98,
+              "absolute_error_cm": 1.945,
+              "relative_error_pct": 0.0372
+            },
+            {
+              "transition": "v2_v3_combination",
+              "mode": "v2+v3",
+              "quanta": [
+                0,
+                1,
+                1
+              ],
+              "computed_wavenumber_cm": 5333.1,
+              "nist_wavenumber_cm": 5331.27,
+              "absolute_error_cm": 1.835,
+              "relative_error_pct": 0.0344
+            },
+            {
+              "transition": "2v1_overtone",
+              "mode": "2v1",
+              "quanta": [
+                2,
+                0,
+                0
+              ],
+              "computed_wavenumber_cm": 7227.11,
+              "nist_wavenumber_cm": 7201.54,
+              "absolute_error_cm": 25.57,
+              "relative_error_pct": 0.3551
+            },
+            {
+              "transition": "v1_v3_combination",
+              "mode": "v1+v3",
+              "quanta": [
+                1,
+                0,
+                1
+              ],
+              "computed_wavenumber_cm": 7247.03,
+              "nist_wavenumber_cm": 7249.82,
+              "absolute_error_cm": 2.79,
+              "relative_error_pct": 0.0385
+            },
+            {
+              "transition": "2v3_overtone",
+              "mode": "2v3",
+              "quanta": [
+                0,
+                0,
+                2
+              ],
+              "computed_wavenumber_cm": 7420.69,
+              "nist_wavenumber_cm": 7445.07,
+              "absolute_error_cm": 24.38,
+              "relative_error_pct": 0.3275
+            },
+            {
+              "transition": "3v1_overtone",
+              "mode": "3v1",
+              "quanta": [
+                3,
+                0,
+                0
+              ],
+              "computed_wavenumber_cm": 10712.93,
+              "nist_wavenumber_cm": 10599.69,
+              "absolute_error_cm": 113.235,
+              "relative_error_pct": 1.0683
+            }
+          ]
+        }
+      ],
+      "summary": {
+        "total_spectral_lines": 40,
+        "grand_mean_relative_error_pct": 0.113785,
+        "H_mean_error_pct": 0.03869,
+        "H2_mean_error_pct": 0.1487,
+        "H2O_mean_error_pct": 0.229,
+        "H2O_fundamentals_error_pct": 0.0565,
+        "H2O_overtones_error_pct": 0.303,
+        "success_criterion": "H < 0.1%, H2 < 0.2%, H2O fundamentals < 0.2%, grand mean < 0.5%",
+        "H_pass": true,
+        "H2_pass": true,
+        "H2O_fund_pass": true,
+        "grand_pass": true,
+        "verdict": "PASS"
+      }
+    },
+    {
+      "experiment": "Disease Detection via Coherence",
+      "theorem": "Theorem 10.3 \u2014 Health-Holonomy; Theorem 10.5 \u2014 Coherence-Health Identity",
+      "description": "Glycolytic pathway as cellular circuit. Self-coherence R from Triple Equivalence (Spearman rank correlation of Se, Sk, St). Disease detection via flux-pattern interference visibility V. Healthy: R > 0.7, V = 1.0. Diseased: V < 1.0.",
+      "timestamp": "2026-05-23T02:28:32.124774",
+      "circuit": {
+        "num_nodes": 10,
+        "num_edges": 15,
+        "nodes": [
+          {
+            "id": 0,
+            "name": "Glucose",
+            "mu": -913.01,
+            "conc": 5.0
+          },
+          {
+            "id": 1,
+            "name": "G6P",
+            "mu": -1766.17,
+            "conc": 0.083
+          },
+          {
+            "id": 2,
+            "name": "F6P",
+            "mu": -1770.582,
+            "conc": 0.014
+          },
+          {
+            "id": 3,
+            "name": "FBP",
+            "mu": -2608.611,
+            "conc": 0.031
+          },
+          {
+            "id": 4,
+            "name": "DHAP",
+            "mu": -1300.874,
+            "conc": 0.14
+          },
+          {
+            "id": 5,
+            "name": "G3P",
+            "mu": -1305.825,
+            "conc": 0.019
+          },
+          {
+            "id": 6,
+            "name": "1,3BPG",
+            "mu": -2373.124,
+            "conc": 0.001
+          },
+          {
+            "id": 7,
+            "name": "3PG",
+            "mu": -1507.256,
+            "conc": 0.12
+          },
+          {
+            "id": 8,
+            "name": "PEP",
+            "mu": -1278.351,
+            "conc": 0.023
+          },
+          {
+            "id": 9,
+            "name": "Pyruvate",
+            "mu": -481.377,
+            "conc": 0.051
+          }
+        ],
+        "edges": [
+          {
+            "id": 0,
+            "name": "Hexokinase",
+            "src": 0,
+            "dst": 1,
+            "k": 100.0,
+            "G": 201.6942
+          },
+          {
+            "id": 1,
+            "name": "PGI",
+            "src": 1,
+            "dst": 2,
+            "k": 600.0,
+            "G": 20.0887
+          },
+          {
+            "id": 2,
+            "name": "PFK",
+            "src": 2,
+            "dst": 3,
+            "k": 150.0,
+            "G": 0.8471
+          },
+          {
+            "id": 3,
+            "name": "Aldolase_DHAP",
+            "src": 3,
+            "dst": 4,
+            "k": 50.0,
+            "G": 0.6253
+          },
+          {
+            "id": 4,
+            "name": "Aldolase_G3P",
+            "src": 3,
+            "dst": 5,
+            "k": 50.0,
+            "G": 0.6253
+          },
+          {
+            "id": 5,
+            "name": "TPI",
+            "src": 4,
+            "dst": 5,
+            "k": 2000.0,
+            "G": 112.9488
+          },
+          {
+            "id": 6,
+            "name": "GAPDH",
+            "src": 5,
+            "dst": 6,
+            "k": 250.0,
+            "G": 1.9161
+          },
+          {
+            "id": 7,
+            "name": "PGK",
+            "src": 6,
+            "dst": 7,
+            "k": 800.0,
+            "G": 0.3227
+          },
+          {
+            "id": 8,
+            "name": "Enolase",
+            "src": 7,
+            "dst": 8,
+            "k": 100.0,
+            "G": 4.8407
+          },
+          {
+            "id": 9,
+            "name": "PyruvateKinase",
+            "src": 8,
+            "dst": 9,
+            "k": 300.0,
+            "G": 2.7834
+          },
+          {
+            "id": 10,
+            "name": "Gluconeogenesis",
+            "src": 9,
+            "dst": 0,
+            "k": 5.0,
+            "G": 0.1029
+          },
+          {
+            "id": 11,
+            "name": "PPP_branch",
+            "src": 1,
+            "dst": 5,
+            "k": 30.0,
+            "G": 1.0044
+          },
+          {
+            "id": 12,
+            "name": "2PG_to_F6P",
+            "src": 7,
+            "dst": 2,
+            "k": 10.0,
+            "G": 0.4841
+          },
+          {
+            "id": 13,
+            "name": "DHAP_shunt",
+            "src": 4,
+            "dst": 9,
+            "k": 8.0,
+            "G": 0.4518
+          },
+          {
+            "id": 14,
+            "name": "BPG_mutase_shortcut",
+            "src": 6,
+            "dst": 8,
+            "k": 15.0,
+            "G": 0.0061
+          }
+        ]
+      },
+      "healthy_state": {
+        "coherence_R": 0.705051,
+        "R_above_0.7": true,
+        "flux_pattern": [
+          172077.41,
+          88.63,
+          709.91,
+          817.67,
+          814.57,
+          559.22,
+          2045.05,
+          279.42,
+          1108.05,
+          2218.28,
+          44.4,
+          462.39,
+          127.47,
+          370.24,
+          6.62
+        ],
+        "flux_weights": [
+          0.946888,
+          0.000488,
+          0.003906,
+          0.004499,
+          0.004482,
+          0.003077,
+          0.011253,
+          0.001538,
+          0.006097,
+          0.012207,
+          0.000244,
+          0.002544,
+          0.000701,
+          0.002037,
+          3.6e-05
+        ],
+        "s_entropy_texture": [
+          {
+            "node": "Glucose",
+            "Se": 0.7971,
+            "Sk": 0.9971,
+            "St": 0.9058
+          },
+          {
+            "node": "G6P",
+            "Se": 0.396,
+            "Sk": 1.0,
+            "St": 1.0
+          },
+          {
+            "node": "F6P",
+            "Se": 0.394,
+            "Sk": 0.0054,
+            "St": 0.0961
+          },
+          {
+            "node": "FBP",
+            "Se": 0.0,
+            "Sk": 0.0136,
+            "St": 0.0094
+          },
+          {
+            "node": "DHAP",
+            "Se": 0.6148,
+            "Sk": 0.0101,
+            "St": 0.5118
+          },
+          {
+            "node": "G3P",
+            "Se": 0.6124,
+            "Sk": 0.0225,
+            "St": 0.5229
+          },
+          {
+            "node": "1,3BPG",
+            "Se": 0.1107,
+            "Sk": 0.0135,
+            "St": 0.0101
+          },
+          {
+            "node": "3PG",
+            "Se": 0.5177,
+            "Sk": 0.0088,
+            "St": 0.0253
+          },
+          {
+            "node": "PEP",
+            "Se": 0.6253,
+            "Sk": 0.0193,
+            "St": 0.0342
+          },
+          {
+            "node": "Pyruvate",
+            "Se": 1.0,
+            "Sk": 0.0153,
+            "St": 0.015
+          }
+        ]
+      },
+      "single_edge_disruptions": [
+        {
+          "edge_id": 0,
+          "edge_name": "Hexokinase",
+          "flux_weight": 0.946888,
+          "visibility_V": 0.113009,
+          "coherence_R": 0.644444,
+          "detectable": true
+        },
+        {
+          "edge_id": 1,
+          "edge_name": "PGI",
+          "flux_weight": 0.000488,
+          "visibility_V": 0.998878,
+          "coherence_R": 0.733333,
+          "detectable": false
+        },
+        {
+          "edge_id": 2,
+          "edge_name": "PFK",
+          "flux_weight": 0.003906,
+          "visibility_V": 0.991046,
+          "coherence_R": 0.733333,
+          "detectable": false
+        },
+        {
+          "edge_id": 3,
+          "edge_name": "Aldolase_DHAP",
+          "flux_weight": 0.004499,
+          "visibility_V": 0.989693,
+          "coherence_R": 0.69899,
+          "detectable": false
+        },
+        {
+          "edge_id": 4,
+          "edge_name": "Aldolase_G3P",
+          "flux_weight": 0.004482,
+          "visibility_V": 0.989732,
+          "coherence_R": 0.731313,
+          "detectable": false
+        },
+        {
+          "edge_id": 5,
+          "edge_name": "TPI",
+          "flux_weight": 0.003077,
+          "visibility_V": 0.99294,
+          "coherence_R": 0.664646,
+          "detectable": false
+        },
+        {
+          "edge_id": 6,
+          "edge_name": "GAPDH",
+          "flux_weight": 0.011253,
+          "visibility_V": 0.974421,
+          "coherence_R": 0.725253,
+          "detectable": false
+        },
+        {
+          "edge_id": 7,
+          "edge_name": "PGK",
+          "flux_weight": 0.001538,
+          "visibility_V": 0.996466,
+          "coherence_R": 0.705051,
+          "detectable": false
+        },
+        {
+          "edge_id": 8,
+          "edge_name": "Enolase",
+          "flux_weight": 0.006097,
+          "visibility_V": 0.986059,
+          "coherence_R": 0.715152,
+          "detectable": false
+        },
+        {
+          "edge_id": 9,
+          "edge_name": "PyruvateKinase",
+          "flux_weight": 0.012207,
+          "visibility_V": 0.972285,
+          "coherence_R": 0.587879,
+          "detectable": false
+        },
+        {
+          "edge_id": 10,
+          "edge_name": "Gluconeogenesis",
+          "flux_weight": 0.000244,
+          "visibility_V": 0.999438,
+          "coherence_R": 0.705051,
+          "detectable": false
+        },
+        {
+          "edge_id": 11,
+          "edge_name": "PPP_branch",
+          "flux_weight": 0.002544,
+          "visibility_V": 0.994158,
+          "coherence_R": 0.705051,
+          "detectable": false
+        },
+        {
+          "edge_id": 12,
+          "edge_name": "2PG_to_F6P",
+          "flux_weight": 0.000701,
+          "visibility_V": 0.998386,
+          "coherence_R": 0.705051,
+          "detectable": false
+        },
+        {
+          "edge_id": 13,
+          "edge_name": "DHAP_shunt",
+          "flux_weight": 0.002037,
+          "visibility_V": 0.99532,
+          "coherence_R": 0.654545,
+          "detectable": false
+        },
+        {
+          "edge_id": 14,
+          "edge_name": "BPG_mutase_shortcut",
+          "flux_weight": 3.6e-05,
+          "visibility_V": 0.999916,
+          "coherence_R": 0.705051,
+          "detectable": false
+        }
+      ],
+      "multi_edge_disruptions": [
+        {
+          "num_edges_disrupted": 2,
+          "edges": [
+            "Hexokinase",
+            "PyruvateKinase"
+          ],
+          "visibility_V": 0.109877,
+          "coherence_R": 0.537374,
+          "V_below_0.3": true
+        },
+        {
+          "num_edges_disrupted": 3,
+          "edges": [
+            "Hexokinase",
+            "PyruvateKinase",
+            "GAPDH"
+          ],
+          "visibility_V": 0.107066,
+          "coherence_R": 0.610101,
+          "V_below_0.3": true
+        },
+        {
+          "num_edges_disrupted": 5,
+          "edges": [
+            "Hexokinase",
+            "PyruvateKinase",
+            "GAPDH",
+            "Enolase",
+            "Aldolase_DHAP"
+          ],
+          "visibility_V": 0.104485,
+          "coherence_R": 0.624242,
+          "V_below_0.3": true
+        }
+      ],
+      "severity_gradient": [
+        {
+          "edge": "PFK",
+          "reduction_pct": 10,
+          "visibility_V": 0.999589
+        },
+        {
+          "edge": "PFK",
+          "reduction_pct": 30,
+          "visibility_V": 0.998608
+        },
+        {
+          "edge": "PFK",
+          "reduction_pct": 50,
+          "visibility_V": 0.997296
+        },
+        {
+          "edge": "PFK",
+          "reduction_pct": 70,
+          "visibility_V": 0.995308
+        },
+        {
+          "edge": "PFK",
+          "reduction_pct": 90,
+          "visibility_V": 0.991046
+        },
+        {
+          "edge": "PFK",
+          "reduction_pct": 95,
+          "visibility_V": 0.988366
+        },
+        {
+          "edge": "PFK",
+          "reduction_pct": 99,
+          "visibility_V": 0.982171
+        }
+      ],
+      "summary": {
+        "healthy_R": 0.705051,
+        "healthy_above_0.7": true,
+        "single_edge_V_mean": 0.932783,
+        "single_edge_V_min": 0.113009,
+        "single_edge_V_max": 0.999916,
+        "num_detectable_at_0.95": 1,
+        "num_edges_tested": 15,
+        "multi_edge_worst_V": 0.104485,
+        "multi_edge_below_0.3": true,
+        "success_criterion": "R_healthy > 0.7 AND multi-edge disease V < 0.3 AND severity gradient is monotonically decreasing",
+        "verdict": "PASS"
+      }
+    },
+    {
+      "experiment": "Therapeutic Score Validation",
+      "theorem": "Theorem 10.6 \u2014 Optimal Drug Design as l1 Minimisation",
+      "description": "Given a severely diseased glycolytic circuit (top-3 flux edges at 10%), find the l1-optimal sparse perturbation eta that restores flux-pattern visibility V > 0.9. Verify with <= 3 edges and < 100ms.",
+      "timestamp": "2026-05-23T02:28:32.128519",
+      "pre_treatment": {
+        "diseased_edges": [
+          {
+            "id": 0,
+            "name": "Hexokinase",
+            "flux_weight": 0.946888
+          },
+          {
+            "id": 9,
+            "name": "PyruvateKinase",
+            "flux_weight": 0.012207
+          },
+          {
+            "id": 6,
+            "name": "GAPDH",
+            "flux_weight": 0.011253
+          }
+        ],
+        "reduction": "90% conductance on each",
+        "visibility_V": 0.107066,
+        "coherence_R": 0.610101
+      },
+      "optimization": {
+        "method": "Greedy coordinate descent maximising flux visibility V",
+        "eta_perturbations": [
+          {
+            "edge_id": 0,
+            "edge_name": "Hexokinase",
+            "boost_factor": 10.0,
+            "is_diseased_edge": true
+          },
+          {
+            "edge_id": 6,
+            "edge_name": "GAPDH",
+            "boost_factor": 10.0,
+            "is_diseased_edge": true
+          },
+          {
+            "edge_id": 9,
+            "edge_name": "PyruvateKinase",
+            "boost_factor": 10.0,
+            "is_diseased_edge": true
+          }
+        ],
+        "l0_norm": 3,
+        "optimization_time_ms": 12.25
+      },
+      "post_treatment": {
+        "visibility_V": 1.0,
+        "coherence_R": 0.705051,
+        "V_improvement": 0.892934
+      },
+      "summary": {
+        "V_pre": 0.107066,
+        "V_post": 1.0,
+        "V_post_above_0.9": true,
+        "num_edges_perturbed": 3,
+        "edges_perturbed_leq_3": true,
+        "optimization_time_ms": 12.25,
+        "time_under_100ms": true,
+        "success_criteria": {
+          "V_post > 0.9": true,
+          "||eta||_0 <= 3": true,
+          "time < 100ms": true
+        },
+        "verdict": "PASS"
+      }
+    }
+  ]
+}
