@@ -3,13 +3,23 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, useGLTF, ContactShadows } from '@react-three/drei';
 
 function Model({ url }) {
-  const { scene } = useGLTF(url);
+  const { scene, animations } = useGLTF(url);
   const ref = useRef();
+  const mixerRef = useRef();
 
-  useFrame((state) => {
+  React.useEffect(() => {
+    if (animations && animations.length > 0) {
+      const { AnimationMixer } = require('three');
+      mixerRef.current = new AnimationMixer(scene);
+      animations.forEach(clip => mixerRef.current.clipAction(clip).play());
+    }
+    return () => { if (mixerRef.current) mixerRef.current.stopAllAction(); };
+  }, [animations, scene]);
+
+  useFrame((state, delta) => {
+    if (mixerRef.current) mixerRef.current.update(delta);
     if (ref.current) {
-      ref.current.rotation.y += 0.005;
-      ref.current.position.y = Math.sin(state.clock.elapsedTime * 0.5) * 0.1;
+      ref.current.rotation.y += 0.003;
     }
   });
 
@@ -24,8 +34,8 @@ const ModelViewer = ({ className = '' }) => {
         <directionalLight position={[5, 5, 5]} intensity={1} />
         <pointLight position={[-5, 5, -5]} intensity={0.5} color="#58E6D9" />
         <Suspense fallback={null}>
-          <Model url="/model/hydria_apothecary_vase.glb" />
-          <ContactShadows position={[0, -1.5, 0]} opacity={0.4} scale={1} blur={2} />
+          <Model url="/model/ssd_solid-state_drive.glb" />
+          <ContactShadows position={[0, -1.5, 0]} opacity={0.4} scale={5} blur={2.5} />
         </Suspense>
         <OrbitControls enableZoom={false} enablePan={false} autoRotate autoRotateSpeed={1} />
       </Canvas>
