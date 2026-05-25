@@ -148,6 +148,8 @@ data/memory/
 !tests/**/*.smiles
 
 # Website (consequences/) — ensure essential files are tracked
+!consequences/src/lib/
+!consequences/src/lib/**
 !consequences/public/**
 !consequences/**/*.json
 !consequences/**/*.js
