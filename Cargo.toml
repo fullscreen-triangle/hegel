@@ -1,7 +1,8 @@
 [workspace]
 resolver = "2"
 members = [
-    "wilhelm/implementations/rust/cellular_partition"
+    "wilhelm/implementations/rust/cellular_partition",
+    "sbs",
 ]
 
 [workspace.package]
