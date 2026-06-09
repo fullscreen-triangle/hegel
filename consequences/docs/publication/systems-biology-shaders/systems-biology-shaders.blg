@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99e
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: systems-biology-shaders.aux
+Reallocating 'name_of_file' (item size: 1) to 9 items.
+The style file: plainnat.bst
+Reallocating 'name_of_file' (item size: 1) to 11 items.
+Database file #1: references.bib
+You've used 37 entries,
+            2773 wiz_defined-function locations,
+            815 strings with 10086 characters,
+and the built_in function-call counts, 15894 in all, are:
+= -- 1391
+> -- 883
+< -- 29
++ -- 311
+- -- 273
+* -- 1254
+:= -- 2528
+add.period$ -- 127
+call.type$ -- 37
+change.case$ -- 191
+chr.to.int$ -- 36
+cite$ -- 74
+duplicate$ -- 733
+empty$ -- 1340
+format.name$ -- 322
+if$ -- 3271
+int.to.chr$ -- 2
+int.to.str$ -- 1
+missing$ -- 47
+newline$ -- 209
+num.names$ -- 148
+pop$ -- 406
+preamble$ -- 1
+purify$ -- 162
+quote$ -- 0
+skip$ -- 533
+stack$ -- 0
+substring$ -- 543
+swap$ -- 40
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 342
+warning$ -- 0
+while$ -- 150
+width$ -- 0
+write$ -- 509

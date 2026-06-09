@@ -1,0 +1,247 @@
+\begin{thebibliography}{37}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Acebr{\'o}n et~al.(2005)Acebr{\'o}n, Bonilla, P{\'e}rez~Vicente,
+  Ritort, and Spigler]{acebron2005}
+J.~A. Acebr{\'o}n, L.~L. Bonilla, C.~J. P{\'e}rez~Vicente, F.~Ritort, and
+  R.~Spigler.
+\newblock The {Kuramoto} model: A simple paradigm for synchronization
+  phenomena.
+\newblock \emph{Reviews of Modern Physics}, 77\penalty0 (1):\penalty0 137--185,
+  2005.
+\newblock \doi{10.1103/RevModPhys.77.137}.
+
+\bibitem[Andrews(1976)]{andrews1976}
+G.~E. Andrews.
+\newblock \emph{The Theory of Partitions}.
+\newblock Addison-Wesley, 1976.
+
+\bibitem[Backus(1978)]{backus1978}
+J.~Backus.
+\newblock Can programming be liberated from the von {Neumann} style? {A}
+  functional style and its algebra of programs.
+\newblock \emph{Communications of the ACM}, 21\penalty0 (8):\penalty0 613--641,
+  1978.
+\newblock \doi{10.1145/359576.359579}.
+
+\bibitem[Beer(1993)]{beer1993}
+G.~Beer.
+\newblock \emph{Topologies on Closed and Closed Convex Sets}.
+\newblock Kluwer Academic Publishers, 1993.
+
+\bibitem[Boyd and Vandenberghe(2004)]{boyd2004}
+S.~Boyd and L.~Vandenberghe.
+\newblock \emph{Convex Optimization}.
+\newblock Cambridge University Press, 2004.
+
+\bibitem[Demir et~al.(2010)Demir, Cary, Paley, Fukuda, Lemer, Vastrik, Wu,
+  D'Eustachio, Schaefer, Luciano, et~al.]{demir2010biopax}
+E.~Demir, M.~P. Cary, S.~Paley, K.~Fukuda, C.~Lemer, I.~Vastrik, G.~Wu,
+  P.~D'Eustachio, C.~Schaefer, J.~Luciano, et~al.
+\newblock The {BioPAX} community standard for pathway data sharing.
+\newblock \emph{Nature Biotechnology}, 28\penalty0 (9):\penalty0 935--942,
+  2010.
+\newblock \doi{10.1038/nbt.1666}.
+
+\bibitem[Gillespie(1977)]{gillespie1977}
+D.~T. Gillespie.
+\newblock Exact stochastic simulation of coupled chemical reactions.
+\newblock \emph{The Journal of Physical Chemistry}, 81\penalty0 (25):\penalty0
+  2340--2361, 1977.
+\newblock \doi{10.1021/j100540a008}.
+
+\bibitem[Goldbeter(1996)]{goldbeter1996}
+A.~Goldbeter.
+\newblock Biochemical oscillations and cellular rhythms.
+\newblock \emph{Cambridge University Press}, 1996.
+
+\bibitem[Graham et~al.(1994)Graham, Knuth, and Patashnik]{graham1994}
+R.~L. Graham, D.~E. Knuth, and O.~Patashnik.
+\newblock \emph{Concrete Mathematics}.
+\newblock Addison-Wesley, 2 edition, 1994.
+
+\bibitem[Granas and Dugundji(2003)]{granas2003}
+A.~Granas and J.~Dugundji.
+\newblock \emph{Fixed Point Theory}.
+\newblock Springer, 2003.
+
+\bibitem[Griffiths and Schroeter(2018)]{griffiths2018}
+D.~J. Griffiths and D.~F. Schroeter.
+\newblock \emph{Introduction to Quantum Mechanics}.
+\newblock Cambridge University Press, 3 edition, 2018.
+
+\bibitem[Herzberg(1944)]{herzberg1944}
+G.~Herzberg.
+\newblock \emph{Atomic Spectra and Atomic Structure}.
+\newblock Dover Publications, 1944.
+
+\bibitem[Hucka et~al.(2003)Hucka, Finney, Sauro, Bolouri, Doyle, Kitano, Arkin,
+  Bornstein, Bray, Cornish-Bowden, et~al.]{hucka2003sbml}
+M.~Hucka, A.~Finney, H.~M. Sauro, H.~Bolouri, J.~C. Doyle, H.~Kitano, A.~P.
+  Arkin, B.~J. Bornstein, D.~Bray, A.~Cornish-Bowden, et~al.
+\newblock The {Systems Biology Markup Language} ({SBML}): A medium for
+  representation and exchange of biochemical network models.
+\newblock \emph{Bioinformatics}, 19\penalty0 (4):\penalty0 524--531, 2003.
+\newblock \doi{10.1093/bioinformatics/btg015}.
+
+\bibitem[Katok and Hasselblatt(1995)]{katok1995}
+A.~Katok and B.~Hasselblatt.
+\newblock \emph{Introduction to the Modern Theory of Dynamical Systems}.
+\newblock Cambridge University Press, 1995.
+
+\bibitem[Keating et~al.(2020)Keating, Waltemath, K{\"o}nig, Zhang, Dr{\"a}ger,
+  Chaouiya, Bergmann, Finney, Gillespie, Helikar, et~al.]{keating2020sbml}
+S.~M. Keating, D.~Waltemath, M.~K{\"o}nig, F.~Zhang, A.~Dr{\"a}ger,
+  C.~Chaouiya, F.~T. Bergmann, A.~Finney, C.~S. Gillespie, T.~Helikar, et~al.
+\newblock {SBML Level 3}: An extensible format for the exchange and reuse of
+  biological models.
+\newblock \emph{Molecular Systems Biology}, 16\penalty0 (8):\penalty0 e9110,
+  2020.
+\newblock \doi{10.15252/msb.20199110}.
+
+\bibitem[{Khronos Group}(2017{\natexlab{a}})]{khronosglsl}
+{Khronos Group}.
+\newblock The {OpenGL} shading language, version 4.60.
+\newblock
+  \url{https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.pdf},
+  2017{\natexlab{a}}.
+
+\bibitem[{Khronos Group}(2017{\natexlab{b}})]{khronoswebgl2}
+{Khronos Group}.
+\newblock {WebGL} 2.0 specification.
+\newblock \url{https://registry.khronos.org/webgl/specs/latest/2.0/},
+  2017{\natexlab{b}}.
+
+\bibitem[Kobayashi and Nomizu(1963)]{kobayashi1963}
+S.~Kobayashi and K.~Nomizu.
+\newblock \emph{Foundations of Differential Geometry}, volume~1.
+\newblock Interscience Publishers, 1963.
+
+\bibitem[Kreyszig(1978)]{kreyszig1978}
+E.~Kreyszig.
+\newblock \emph{Introductory Functional Analysis with Applications}.
+\newblock John Wiley \& Sons, 1978.
+
+\bibitem[Kuramoto(1975)]{kuramoto1975}
+Y.~Kuramoto.
+\newblock Self-entrainment of a population of coupled non-linear oscillators.
+\newblock \emph{Lecture Notes in Physics}, 39:\penalty0 420--422, 1975.
+
+\bibitem[Lloyd et~al.(2004)Lloyd, Halstead, and Nielsen]{lloyd2004cellml}
+C.~M. Lloyd, M.~D.~B. Halstead, and P.~F. Nielsen.
+\newblock {CellML}: Its future, present and past.
+\newblock \emph{Progress in Biophysics and Molecular Biology}, 85\penalty0
+  (2--3):\penalty0 433--450, 2004.
+\newblock \doi{10.1016/j.pbiomolbio.2004.01.004}.
+
+\bibitem[Mac~Lane(1998)]{maclane1998}
+S.~Mac~Lane.
+\newblock \emph{Categories for the Working Mathematician}.
+\newblock Springer, 2 edition, 1998.
+
+\bibitem[Nakahara(2003)]{nakahara2003}
+M.~Nakahara.
+\newblock \emph{Geometry, Topology and Physics}.
+\newblock Institute of Physics Publishing, 2 edition, 2003.
+
+\bibitem[Nickolls et~al.(2008)Nickolls, Buck, Garland, and
+  Skadron]{nickolls2008}
+J.~Nickolls, I.~Buck, M.~Garland, and K.~Skadron.
+\newblock Scalable parallel programming with {CUDA}.
+\newblock \emph{ACM Queue}, 6\penalty0 (2):\penalty0 40--53, 2008.
+\newblock \doi{10.1145/1365490.1365500}.
+
+\bibitem[{NIST}(2024)]{nist_asd}
+{NIST}.
+\newblock Atomic spectra database.
+\newblock \url{https://www.nist.gov/pml/atomic-spectra-database}, 2024.
+
+\bibitem[Novak and Tyson(2008)]{novak2008}
+B.~Novak and J.~J. Tyson.
+\newblock Design principles of biochemical oscillators.
+\newblock \emph{Nature Reviews Molecular Cell Biology}, 9\penalty0
+  (12):\penalty0 981--991, 2008.
+\newblock \doi{10.1038/nrm2530}.
+
+\bibitem[Owens et~al.(2008)Owens, Houston, Luebke, Green, Stone, and
+  Phillips]{owens2008}
+J.~D. Owens, M.~Houston, D.~Luebke, S.~Green, J.~E. Stone, and J.~C. Phillips.
+\newblock {GPU} computing.
+\newblock \emph{Proceedings of the IEEE}, 96\penalty0 (5):\penalty0 879--899,
+  2008.
+\newblock \doi{10.1109/JPROC.2008.917757}.
+
+\bibitem[Poincar{\'e}(1890)]{poincare1890}
+H.~Poincar{\'e}.
+\newblock Sur le probl{\`e}me des trois corps et les {\'e}quations de la
+  dynamique.
+\newblock \emph{Acta Mathematica}, 13:\penalty0 1--270, 1890.
+
+\bibitem[Rabiner(1989)]{rabiner1989}
+L.~R. Rabiner.
+\newblock A tutorial on hidden {Markov} models and selected applications in
+  speech recognition.
+\newblock \emph{Proceedings of the IEEE}, 77\penalty0 (2):\penalty0 257--286,
+  1989.
+\newblock \doi{10.1109/5.18626}.
+
+\bibitem[Rudin(1987)]{rudin1987}
+W.~Rudin.
+\newblock \emph{Real and Complex Analysis}.
+\newblock McGraw-Hill, 3 edition, 1987.
+
+\bibitem[Strogatz(2000)]{strogatz2000}
+S.~H. Strogatz.
+\newblock From {Kuramoto} to {Crawford}: Exploring the onset of synchronization
+  in populations of coupled oscillators.
+\newblock \emph{Physica D}, 143\penalty0 (1--4):\penalty0 1--20, 2000.
+\newblock \doi{10.1016/S0167-2789(00)00094-4}.
+
+\bibitem[Tyson et~al.(2003)Tyson, Chen, and Novak]{tyson2003}
+J.~J. Tyson, K.~C. Chen, and B.~Novak.
+\newblock Sniffers, buzzers, toggles and blinkers: Dynamics of regulatory and
+  signaling pathways in the cell.
+\newblock \emph{Current Opinion in Cell Biology}, 15\penalty0 (2):\penalty0
+  221--231, 2003.
+\newblock \doi{10.1016/S0955-0674(03)00017-6}.
+
+\bibitem[Viterbi(1967)]{viterbi1967}
+A.~Viterbi.
+\newblock Error bounds for convolutional codes and an asymptotically optimum
+  decoding algorithm.
+\newblock \emph{IEEE Transactions on Information Theory}, 13\penalty0
+  (2):\penalty0 260--269, 1967.
+\newblock \doi{10.1109/TIT.1967.1054010}.
+
+\bibitem[Wegscheider(1901)]{wegscheider1901}
+R.~Wegscheider.
+\newblock {\"U}ber simultane gleichgewichte und die beziehungen zwischen
+  thermodynamik und reaktionskinetik homogener systeme.
+\newblock \emph{Monatshefte f{\"u}r Chemie}, 22:\penalty0 849--906, 1901.
+
+\bibitem[Winfree(1967)]{winfree1967}
+A.~T. Winfree.
+\newblock Biological rhythms and the behavior of populations of coupled
+  oscillators.
+\newblock \emph{Journal of Theoretical Biology}, 16\penalty0 (1):\penalty0
+  15--42, 1967.
+\newblock \doi{10.1016/0022-5193(67)90051-3}.
+
+\bibitem[Zadeh(1965)]{zadeh1965}
+L.~A. Zadeh.
+\newblock Fuzzy sets.
+\newblock \emph{Information and Control}, 8\penalty0 (3):\penalty0 338--353,
+  1965.
+\newblock \doi{10.1016/S0019-9958(65)90241-X}.
+
+\bibitem[Zadeh(1975)]{zadeh1975}
+L.~A. Zadeh.
+\newblock The concept of a linguistic variable and its application to
+  approximate reasoning.
+\newblock \emph{Information Sciences}, 8\penalty0 (3):\penalty0 199--249, 1975.
+
+\end{thebibliography}
