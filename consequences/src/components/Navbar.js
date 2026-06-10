@@ -96,6 +96,7 @@ const Navbar = () => {
         <CustomLink className="mx-4" href="/api-access" title="API" />
         <CustomLink className="mx-4" href="/sbs-tool" title="SBS" />
         <CustomLink className="mx-4" href="/sbs-playground" title="Playground" />
+        <CustomLink className="mx-4" href="/sbs-sandbox" title="Sandbox" />
         <CustomLink className="ml-4" href="/subscriptions" title="Plans" />
       </nav>
       <nav
@@ -167,6 +168,7 @@ const Navbar = () => {
         <CustomMobileLink toggle={handleClick} className="lg:m-0 lg:my-2" href="/api-access" title="API" />
         <CustomMobileLink toggle={handleClick} className="lg:m-0 lg:my-2" href="/sbs-tool" title="SBS Tool" />
         <CustomMobileLink toggle={handleClick} className="lg:m-0 lg:my-2" href="/sbs-playground" title="Playground" />
+        <CustomMobileLink toggle={handleClick} className="lg:m-0 lg:my-2" href="/sbs-sandbox" title="Sandbox" />
         <CustomMobileLink toggle={handleClick} className="lg:m-0 lg:my-2" href="/subscriptions" title="Subscribe" />
       </nav>
       <nav

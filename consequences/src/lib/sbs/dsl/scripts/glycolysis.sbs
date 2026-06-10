@@ -1,0 +1,35 @@
+// Glycolysis — 10 metabolites, 9 enzymatic reactions
+// The canonical SBS demo circuit
+
+circuit glycolysis {
+  node Glucose     { mu: -917.0, concentration: 5.0, compartment: "cytoplasm" }
+  node G6P         { mu: -1760.0, concentration: 0.083 }
+  node F6P         { mu: -1755.0, concentration: 0.014 }
+  node FBP         { mu: -2600.0, concentration: 0.031 }
+  node G3P         { mu: -1290.0, concentration: 0.14 }
+  node BPG13       { mu: -2356.0, concentration: 0.001 }
+  node PG3         { mu: -1515.0, concentration: 0.1 }
+  node PG2         { mu: -1510.0, concentration: 0.03 }
+  node PEP         { mu: -1263.0, concentration: 0.023 }
+  node Pyruvate    { mu: -472.0, concentration: 0.051 }
+
+  // Forward reactions
+  edge Glucose  -> G6P      { rate: 230.0, conductance: 464.1 }
+  edge G6P      -> F6P      { rate: 100.0, conductance: 3.35 }
+  edge F6P      -> FBP      { rate: 150.0, conductance: 0.85 }
+  edge FBP      -> G3P      { rate: 80.0, conductance: 1.0 }
+  edge G3P      -> BPG13    { rate: 200.0, conductance: 11.3 }
+  edge BPG13    -> PG3      { rate: 300.0, conductance: 0.12 }
+  edge PG3      -> PG2      { rate: 180.0, conductance: 7.27 }
+  edge PG2      -> PEP      { rate: 100.0, conductance: 1.21 }
+  edge PEP      -> Pyruvate { rate: 500.0, conductance: 4.64 }
+}
+
+// Observe the healthy baseline
+observe glycolysis
+
+// Disease: hexokinase deficiency — 90% reduction
+perturb glycolysis { factor: 0.1 }
+
+// Navigate backward from Pyruvate to find rate-limiting step
+navigate from Pyruvate
