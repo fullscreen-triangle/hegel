@@ -1,5 +1,6 @@
 import { tokenize } from './tokenizer';
 import { parse } from './parser';
+import { resolveImport } from './registry';
 
 class Compiler {
   constructor() {
@@ -13,6 +14,8 @@ class Compiler {
     this.observations = [];
     this.catalysts = {};
     this.circuits = {};
+    this.imports = {};
+    this.glbModel = null;
   }
 
   compile(source) {
@@ -30,6 +33,8 @@ class Compiler {
         circuit: this.buildCircuit(),
         perturbations: this.perturbations,
         observations: this.observations,
+        imports: this.imports,
+        glbModel: this.glbModel,
         errors: this.errors,
         warnings: this.warnings,
         glsl: this.emitGLSL(),
@@ -175,6 +180,21 @@ class Compiler {
         return this.evalExpr(node.expression);
 
       case 'Import':
+        if (node.source) {
+          const data = resolveImport(node.name, node.source);
+          if (data) {
+            this.imports[node.alias || node.name] = data;
+            this.variables[node.alias || node.name] = { type: 'value', value: data };
+            if (data.file) {
+              this.glbModel = data;
+            }
+          } else {
+            this.warnings.push({ message: `Unresolved import '${node.source}' — using as annotation`, line: 0 });
+            this.variables[node.alias || node.name] = { type: 'value', value: { source: node.source, name: node.name } };
+          }
+        }
+        return;
+
       case 'Export':
         return;
 

@@ -94,17 +94,20 @@ function Editor({ value, onChange, onCursor }) {
   );
 }
 
-/* ── Charts panel — D3 scatter + bar ── */
-function ChartsPanel({ metrics, circuit }) {
+/* ── Charts panel — D3 scatter + bar + phase coherence + heatmap + 3D surface ── */
+function ChartsPanel({ metrics, circuit, imports }) {
   const scatterRef = useRef(null);
   const barRef = useRef(null);
+  const phaseRef = useRef(null);
+  const heatmapRef = useRef(null);
+  const surfaceRef = useRef(null);
 
+  // S-entropy scatter
   useEffect(() => {
     if (!metrics || !scatterRef.current) return;
     let d3;
     try { d3 = require("d3"); } catch { return; }
 
-    // S-entropy scatter
     const svg = d3.select(scatterRef.current);
     svg.selectAll("*").remove();
     const margin = { top: 20, right: 20, bottom: 40, left: 50 };
@@ -141,6 +144,7 @@ function ChartsPanel({ metrics, circuit }) {
     });
   }, [metrics, circuit]);
 
+  // Flux comparison bar chart
   useEffect(() => {
     if (!metrics || !barRef.current) return;
     let d3;
@@ -184,11 +188,320 @@ function ChartsPanel({ metrics, circuit }) {
         .append("title").text(`Current: ${c_val.toFixed(4)}`);
     });
 
-    // Legend
     g.append("rect").attr("x", w - 90).attr("y", 0).attr("width", 10).attr("height", 10).attr("fill", "#4a9eff");
     g.append("text").attr("x", w - 76).attr("y", 9).style("fill", "#888").style("font-size", "10px").text("Healthy");
     g.append("rect").attr("x", w - 90).attr("y", 15).attr("width", 10).attr("height", 10).attr("fill", "#ff6b6b");
     g.append("text").attr("x", w - 76).attr("y", 24).style("fill", "#888").style("font-size", "10px").text("Perturbed");
+  }, [metrics, circuit]);
+
+  // Phase coherence circular plot
+  useEffect(() => {
+    if (!metrics || !phaseRef.current || !circuit) return;
+    let d3;
+    try { d3 = require("d3"); } catch { return; }
+
+    const svg = d3.select(phaseRef.current);
+    svg.selectAll("*").remove();
+    const size = 280;
+    const cx = size / 2;
+    const cy = size / 2;
+    const radius = size / 2 - 40;
+    const g = svg.append("g").attr("transform", `translate(${cx},${cy})`);
+
+    const Se = metrics.Se || [];
+    const Sk = metrics.Sk || [];
+    const names = circuit.nodes?.map(n => n.name) || [];
+    const n = Se.length;
+    if (n === 0) return;
+
+    // Compute phase for each node: phi = 2*pi * Se (normalized position on unit circle)
+    const phases = Se.map((se, i) => ({
+      phase: se * 2 * Math.PI,
+      amplitude: Sk[i] || 0.5,
+      name: names[i] || `n${i}`,
+    }));
+
+    // Grid circles
+    for (let i = 1; i <= 4; i++) {
+      const r = (radius / 4) * i;
+      g.append("circle").attr("cx", 0).attr("cy", 0).attr("r", r)
+        .attr("fill", "none").attr("stroke", "#2a2a4a").attr("stroke-width", 1);
+      g.append("text").attr("x", 4).attr("y", -r + 4)
+        .style("fill", "#4a4a6a").style("font-size", "9px").text((i / 4).toFixed(1));
+    }
+
+    // Radial lines every 45 degrees
+    for (let a = 0; a < 360; a += 45) {
+      const rad = (a * Math.PI) / 180;
+      g.append("line")
+        .attr("x1", 0).attr("y1", 0)
+        .attr("x2", radius * Math.cos(rad - Math.PI / 2))
+        .attr("y2", radius * Math.sin(rad - Math.PI / 2))
+        .attr("stroke", "#2a2a4a").attr("stroke-width", 1);
+    }
+
+    const color = d3.scaleOrdinal(d3.schemeTableau10);
+
+    // Phase vectors
+    let sumX = 0, sumY = 0;
+    phases.forEach((p, i) => {
+      const amp = Math.max(0.1, p.amplitude);
+      const px = radius * amp * Math.cos(p.phase - Math.PI / 2);
+      const py = radius * amp * Math.sin(p.phase - Math.PI / 2);
+
+      g.append("line")
+        .attr("x1", 0).attr("y1", 0).attr("x2", px).attr("y2", py)
+        .attr("stroke", color(i)).attr("stroke-width", 1.5).attr("opacity", 0.7);
+
+      g.append("circle").attr("cx", px).attr("cy", py).attr("r", 5)
+        .attr("fill", color(i)).attr("stroke", "#fff").attr("stroke-width", 0.5)
+        .append("title").text(`${p.name}: phase=${(p.phase * 180 / Math.PI).toFixed(1)}°, amp=${amp.toFixed(3)}`);
+
+      g.append("text").attr("x", px * 1.18).attr("y", py * 1.18)
+        .attr("text-anchor", "middle").attr("dominant-baseline", "middle")
+        .style("fill", "#888").style("font-size", "9px")
+        .text(p.name.length > 6 ? p.name.slice(0, 5) + "…" : p.name);
+
+      sumX += Math.cos(p.phase);
+      sumY += Math.sin(p.phase);
+    });
+
+    // Order parameter (red vector)
+    const r = Math.sqrt(sumX * sumX + sumY * sumY) / n;
+    const avgPhase = Math.atan2(sumY, sumX);
+    const opx = radius * r * Math.cos(avgPhase - Math.PI / 2);
+    const opy = radius * r * Math.sin(avgPhase - Math.PI / 2);
+
+    g.append("line")
+      .attr("x1", 0).attr("y1", 0).attr("x2", opx).attr("y2", opy)
+      .attr("stroke", "#ff4444").attr("stroke-width", 3).attr("opacity", 0.9);
+    g.append("circle").attr("cx", opx).attr("cy", opy).attr("r", 4)
+      .attr("fill", "#ff4444");
+
+    // Labels
+    const status = r > 0.7 ? "Coherent" : r > 0.4 ? "Partial" : "Incoherent";
+    const statusColor = r > 0.7 ? "#4ec9b0" : r > 0.4 ? "#dcdcaa" : "#ff6b6b";
+
+    g.append("text").attr("x", 0).attr("y", -radius - 18)
+      .attr("text-anchor", "middle").style("fill", "#ccc").style("font-size", "12px").style("font-weight", "bold")
+      .text(`r = ${r.toFixed(3)}`);
+    g.append("text").attr("x", 0).attr("y", -radius - 5)
+      .attr("text-anchor", "middle").style("fill", statusColor).style("font-size", "10px")
+      .text(status);
+  }, [metrics, circuit]);
+
+  // Coupling matrix heatmap
+  useEffect(() => {
+    if (!metrics || !heatmapRef.current || !circuit) return;
+    let d3;
+    try { d3 = require("d3"); } catch { return; }
+
+    const svg = d3.select(heatmapRef.current);
+    svg.selectAll("*").remove();
+    const nodes = circuit.nodes || [];
+    const edges = circuit.edges || [];
+    const n = nodes.length;
+    if (n === 0) return;
+
+    const margin = { top: 60, right: 40, bottom: 20, left: 70 };
+    const size = Math.min(320, 20 * n + margin.left + margin.right);
+    const cellSize = (size - margin.left - margin.right) / n;
+    const g = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
+
+    // Build coupling matrix: K_ij = conductance of edge i->j (or j->i)
+    const matrix = Array.from({ length: n }, () => Array(n).fill(0));
+    edges.forEach(e => {
+      matrix[e.src][e.dst] = e.conductance;
+      matrix[e.dst][e.src] = e.conductance * 0.3;
+    });
+
+    const maxVal = Math.max(1e-10, ...matrix.flat());
+    const color = d3.scaleSequential(d3.interpolatePlasma).domain([0, maxVal]);
+    const names = nodes.map(nd => nd.name.length > 7 ? nd.name.slice(0, 6) + "…" : nd.name);
+
+    // Cells
+    for (let i = 0; i < n; i++) {
+      for (let j = 0; j < n; j++) {
+        g.append("rect")
+          .attr("x", j * cellSize).attr("y", i * cellSize)
+          .attr("width", cellSize - 1).attr("height", cellSize - 1)
+          .attr("fill", matrix[i][j] > 0 ? color(matrix[i][j]) : "#0a0a14")
+          .attr("rx", 1)
+          .append("title").text(`${nodes[i].name} → ${nodes[j].name}: ${matrix[i][j].toFixed(2)}`);
+      }
+    }
+
+    // Row labels
+    g.selectAll(".row-label").data(names).enter().append("text")
+      .attr("x", -4).attr("y", (d, i) => i * cellSize + cellSize / 2)
+      .attr("text-anchor", "end").attr("dominant-baseline", "middle")
+      .style("fill", "#888").style("font-size", "9px").text(d => d);
+
+    // Column labels
+    g.selectAll(".col-label").data(names).enter().append("text")
+      .attr("x", (d, i) => i * cellSize + cellSize / 2).attr("y", -4)
+      .attr("text-anchor", "end").attr("dominant-baseline", "middle")
+      .attr("transform", (d, i) => `rotate(-45, ${i * cellSize + cellSize / 2}, -4)`)
+      .style("fill", "#888").style("font-size", "9px").text(d => d);
+
+    // Color legend
+    const legendW = 10;
+    const legendH = n * cellSize;
+    const legendX = n * cellSize + 10;
+    const defs = svg.append("defs");
+    const gradient = defs.append("linearGradient").attr("id", "hm-grad")
+      .attr("x1", "0%").attr("y1", "100%").attr("x2", "0%").attr("y2", "0%");
+    for (let i = 0; i <= 10; i++) {
+      gradient.append("stop")
+        .attr("offset", `${i * 10}%`)
+        .attr("stop-color", color(maxVal * i / 10));
+    }
+    g.append("rect").attr("x", legendX).attr("y", 0)
+      .attr("width", legendW).attr("height", legendH)
+      .style("fill", "url(#hm-grad)");
+    g.append("text").attr("x", legendX + legendW + 4).attr("y", 8)
+      .style("fill", "#888").style("font-size", "9px").text(maxVal.toFixed(1));
+    g.append("text").attr("x", legendX + legendW + 4).attr("y", legendH)
+      .style("fill", "#888").style("font-size", "9px").text("0");
+  }, [metrics, circuit]);
+
+  // 3D S-entropy surface (pseudo-3D using D3 with isometric projection)
+  useEffect(() => {
+    if (!metrics || !surfaceRef.current || !circuit) return;
+    let d3;
+    try { d3 = require("d3"); } catch { return; }
+
+    const canvas = surfaceRef.current;
+    const ctx = canvas.getContext("2d");
+    const w = canvas.width;
+    const h = canvas.height;
+    ctx.clearRect(0, 0, w, h);
+
+    const Se = metrics.Se || [];
+    const Sk = metrics.Sk || [];
+    const St = metrics.St || [];
+    const names = circuit.nodes?.map(n => n.name) || [];
+    const n = Se.length;
+    if (n === 0) return;
+
+    // Isometric projection: (Se, Sk, St) -> (x, y)
+    const scale = Math.min(w, h) * 0.35;
+    const ox = w / 2;
+    const oy = h / 2 + 20;
+    const isoX = (se, sk) => ox + scale * (se - sk) * Math.cos(Math.PI / 6);
+    const isoY = (se, sk, st) => oy - scale * st * 0.8 + scale * (se + sk) * Math.sin(Math.PI / 6) * 0.5;
+
+    // Draw axes
+    ctx.strokeStyle = "#3a3a5a";
+    ctx.lineWidth = 1;
+    ctx.setLineDash([3, 3]);
+
+    // Se axis
+    ctx.beginPath();
+    ctx.moveTo(isoX(0, 0), isoY(0, 0, 0));
+    ctx.lineTo(isoX(1, 0), isoY(1, 0, 0));
+    ctx.stroke();
+    ctx.fillStyle = "#888";
+    ctx.font = "10px monospace";
+    ctx.fillText("Se", isoX(1.05, 0), isoY(1.05, 0, 0) + 4);
+
+    // Sk axis
+    ctx.beginPath();
+    ctx.moveTo(isoX(0, 0), isoY(0, 0, 0));
+    ctx.lineTo(isoX(0, 1), isoY(0, 1, 0));
+    ctx.stroke();
+    ctx.fillText("Sk", isoX(0, 1.05), isoY(0, 1.05, 0) + 4);
+
+    // St axis
+    ctx.beginPath();
+    ctx.moveTo(isoX(0, 0), isoY(0, 0, 0));
+    ctx.lineTo(isoX(0, 0), isoY(0, 0, 1));
+    ctx.stroke();
+    ctx.fillText("St", isoX(0, 0) + 4, isoY(0, 0, 1) - 4);
+
+    ctx.setLineDash([]);
+
+    // Draw grid floor (Se-Sk plane at St=0)
+    ctx.strokeStyle = "#1a1a3e";
+    ctx.lineWidth = 0.5;
+    for (let i = 0; i <= 4; i++) {
+      const t = i / 4;
+      ctx.beginPath();
+      ctx.moveTo(isoX(t, 0), isoY(t, 0, 0));
+      ctx.lineTo(isoX(t, 1), isoY(t, 1, 0));
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(isoX(0, t), isoY(0, t, 0));
+      ctx.lineTo(isoX(1, t), isoY(1, t, 0));
+      ctx.stroke();
+    }
+
+    // Draw drop lines (from point to floor)
+    ctx.strokeStyle = "#2a2a4a";
+    ctx.lineWidth = 0.5;
+    ctx.setLineDash([2, 2]);
+    Se.forEach((se, i) => {
+      const sk = Sk[i] || 0;
+      const st = St[i] || 0;
+      ctx.beginPath();
+      ctx.moveTo(isoX(se, sk), isoY(se, sk, st));
+      ctx.lineTo(isoX(se, sk), isoY(se, sk, 0));
+      ctx.stroke();
+    });
+    ctx.setLineDash([]);
+
+    // Draw shadow points on floor
+    ctx.fillStyle = "rgba(78, 201, 176, 0.15)";
+    Se.forEach((se, i) => {
+      const sk = Sk[i] || 0;
+      ctx.beginPath();
+      ctx.arc(isoX(se, sk), isoY(se, sk, 0), 3, 0, 2 * Math.PI);
+      ctx.fill();
+    });
+
+    // Sort by depth for proper overlap
+    const sorted = Se.map((se, i) => ({ se, sk: Sk[i] || 0, st: St[i] || 0, name: names[i] || `n${i}`, i }));
+    sorted.sort((a, b) => (a.se + a.sk) - (b.se + b.sk));
+
+    // Draw data points
+    const viridis = (t) => {
+      const r = Math.round(255 * Math.max(0, Math.min(1, 0.267 + 0.005 * t + 2.817 * t * t - 5.765 * t * t * t + 2.676 * t * t * t * t)));
+      const g = Math.round(255 * Math.max(0, Math.min(1, 0.005 + 1.404 * t - 2.799 * t * t + 4.390 * t * t * t - 2.000 * t * t * t * t)));
+      const b = Math.round(255 * Math.max(0, Math.min(1, 0.329 + 1.074 * t - 0.734 * t * t + 0.331 * t * t * t)));
+      return `rgb(${r},${g},${b})`;
+    };
+
+    sorted.forEach(({ se, sk, st, name }) => {
+      const px = isoX(se, sk);
+      const py = isoY(se, sk, st);
+
+      // Glow
+      ctx.beginPath();
+      ctx.arc(px, py, 10, 0, 2 * Math.PI);
+      ctx.fillStyle = viridis(st).replace("rgb", "rgba").replace(")", ",0.2)");
+      ctx.fill();
+
+      // Point
+      ctx.beginPath();
+      ctx.arc(px, py, 6, 0, 2 * Math.PI);
+      ctx.fillStyle = viridis(st);
+      ctx.fill();
+      ctx.strokeStyle = "#fff";
+      ctx.lineWidth = 0.8;
+      ctx.stroke();
+
+      // Label
+      ctx.fillStyle = "#aaa";
+      ctx.font = "9px monospace";
+      ctx.textAlign = "center";
+      ctx.fillText(name.length > 8 ? name.slice(0, 7) + "…" : name, px, py - 10);
+    });
+
+    // Title
+    ctx.fillStyle = "#6a6a8a";
+    ctx.font = "10px monospace";
+    ctx.textAlign = "left";
+    ctx.fillText("S-entropy space [0,1]³", 8, 14);
   }, [metrics, circuit]);
 
   if (!metrics) {
@@ -216,7 +529,20 @@ function ChartsPanel({ metrics, circuit }) {
         ))}
       </div>
 
+      {/* Import sources */}
+      {imports && Object.keys(imports).length > 0 && (
+        <div className="mb-4 flex flex-wrap gap-2">
+          {Object.entries(imports).map(([name, data]) => (
+            <div key={name} className="flex items-center gap-1.5 rounded px-2 py-1" style={{ background: "#1a1a3e", border: "1px solid #2a2a4a" }}>
+              <span className="text-[10px] uppercase tracking-wider" style={{ color: "#4ec9b0" }}>{data.source || "API"}</span>
+              <span className="text-[11px]" style={{ color: "#888" }}>{data.name || name}</span>
+            </div>
+          ))}
+        </div>
+      )}
+
       <div className="flex flex-wrap gap-4">
+        {/* Row 1: Scatter + Flux bars */}
         <div>
           <div className="mb-1 text-[11px] uppercase tracking-wider" style={{ color: "#6a6a8a" }}>S-entropy Scatter (Se vs Sk, color=St)</div>
           <svg ref={scatterRef} width={320} height={220} />
@@ -225,6 +551,24 @@ function ChartsPanel({ metrics, circuit }) {
           <div className="mb-1 text-[11px] uppercase tracking-wider" style={{ color: "#6a6a8a" }}>Flux Comparison (log scale)</div>
           <svg ref={barRef} width={380} height={200} />
         </div>
+      </div>
+
+      <div className="mt-4 flex flex-wrap gap-4">
+        {/* Row 2: Phase coherence + Heatmap */}
+        <div>
+          <div className="mb-1 text-[11px] uppercase tracking-wider" style={{ color: "#6a6a8a" }}>Phase Coherence (Kuramoto order parameter)</div>
+          <svg ref={phaseRef} width={280} height={280} />
+        </div>
+        <div>
+          <div className="mb-1 text-[11px] uppercase tracking-wider" style={{ color: "#6a6a8a" }}>Coupling Matrix (conductance heatmap)</div>
+          <svg ref={heatmapRef} width={340} height={340} />
+        </div>
+      </div>
+
+      <div className="mt-4">
+        {/* Row 3: 3D S-entropy surface */}
+        <div className="mb-1 text-[11px] uppercase tracking-wider" style={{ color: "#6a6a8a" }}>S-Entropy Landscape (isometric 3D)</div>
+        <canvas ref={surfaceRef} width={600} height={350} style={{ background: "#0a0a14", borderRadius: 4 }} />
       </div>
 
       {/* Backward path */}
@@ -247,12 +591,103 @@ function ChartsPanel({ metrics, circuit }) {
   );
 }
 
-/* ── Preview panel — circuit graph rendered with D3 force ── */
-function PreviewPanel({ circuit, metrics }) {
-  const svgRef = useRef(null);
+/* ── GLB 3D viewer ── */
+function GLBViewer({ glbModel, circuit }) {
+  const containerRef = useRef(null);
+  const rendererRef = useRef(null);
 
   useEffect(() => {
-    if (!circuit || !svgRef.current) return;
+    if (!glbModel?.file || !containerRef.current) return;
+    let THREE, GLTFLoader, OrbitControls;
+    try {
+      THREE = require("three");
+      GLTFLoader = require("three/examples/jsm/loaders/GLTFLoader").GLTFLoader;
+      OrbitControls = require("three/examples/jsm/controls/OrbitControls").OrbitControls;
+    } catch { return; }
+
+    const el = containerRef.current;
+    const w = el.clientWidth || 600;
+    const h = el.clientHeight || 400;
+
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color(0x0a0a14);
+
+    const camera = new THREE.PerspectiveCamera(50, w / h, 0.1, 100);
+    camera.position.set(3, 2, 4);
+
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setSize(w, h);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    el.appendChild(renderer.domElement);
+    rendererRef.current = renderer;
+
+    const controls = new OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.05;
+
+    scene.add(new THREE.AmbientLight(0x404040, 2));
+    const dirLight = new THREE.DirectionalLight(0xffffff, 1.5);
+    dirLight.position.set(3, 5, 3);
+    scene.add(dirLight);
+
+    const loader = new GLTFLoader();
+    loader.load(glbModel.file, (gltf) => {
+      const model = gltf.scene;
+      const box = new THREE.Box3().setFromObject(model);
+      const center = box.getCenter(new THREE.Vector3());
+      const size = box.getSize(new THREE.Vector3());
+      const maxDim = Math.max(size.x, size.y, size.z);
+      model.position.sub(center);
+      model.scale.setScalar(2.5 / maxDim);
+      scene.add(model);
+
+      // Add node markers if species_map is present
+      if (glbModel.species_map && circuit) {
+        const markerGeom = new THREE.SphereGeometry(0.08, 16, 16);
+        for (const [name, info] of Object.entries(glbModel.species_map)) {
+          const mat = new THREE.MeshPhongMaterial({ color: info.color || "#4ec9b0", emissive: info.color || "#4ec9b0", emissiveIntensity: 0.3 });
+          const marker = new THREE.Mesh(markerGeom, mat);
+          marker.position.set(...(info.position || [0, 0, 0]));
+          scene.add(marker);
+        }
+      }
+    }, undefined, (err) => {
+      console.warn("GLB load error:", err);
+    });
+
+    let animId;
+    const animate = () => {
+      animId = requestAnimationFrame(animate);
+      controls.update();
+      renderer.render(scene, camera);
+    };
+    animate();
+
+    return () => {
+      cancelAnimationFrame(animId);
+      controls.dispose();
+      renderer.dispose();
+      if (el.contains(renderer.domElement)) el.removeChild(renderer.domElement);
+    };
+  }, [glbModel, circuit]);
+
+  return (
+    <div ref={containerRef} className="h-full w-full" style={{ background: "#0a0a14" }} />
+  );
+}
+
+/* ── Preview panel — circuit graph + optional GLB ── */
+function PreviewPanel({ circuit, metrics, glbModel }) {
+  const svgRef = useRef(null);
+  const [showGLB, setShowGLB] = useState(false);
+
+  useEffect(() => {
+    if (glbModel?.file) setShowGLB(true);
+    else setShowGLB(false);
+  }, [glbModel]);
+
+  useEffect(() => {
+    if (!circuit || !svgRef.current || showGLB) return;
     let d3;
     try { d3 = require("d3"); } catch { return; }
 
@@ -325,7 +760,7 @@ function PreviewPanel({ circuit, metrics }) {
     svg.call(zoom);
 
     return () => sim.stop();
-  }, [circuit]);
+  }, [circuit, showGLB]);
 
   if (!circuit) {
     return <div className="flex h-full items-center justify-center text-sm" style={{ color: "#5a5a5a" }}>Run a script to see the circuit</div>;
@@ -333,9 +768,25 @@ function PreviewPanel({ circuit, metrics }) {
 
   return (
     <div className="relative h-full w-full" style={{ background: "#0a0a14" }}>
-      <svg ref={svgRef} className="h-full w-full" />
-      <div className="absolute left-3 top-3 rounded px-2 py-1 text-[11px] font-mono" style={{ background: "rgba(15,15,26,0.85)", color: "#4ec9b0" }}>
-        {circuit.numNodes} nodes, {circuit.numEdges} edges — drag nodes, scroll to zoom
+      {showGLB && glbModel ? (
+        <GLBViewer glbModel={glbModel} circuit={circuit} />
+      ) : (
+        <svg ref={svgRef} className="h-full w-full" />
+      )}
+      <div className="absolute left-3 top-3 flex items-center gap-2">
+        <span className="rounded px-2 py-1 text-[11px] font-mono" style={{ background: "rgba(15,15,26,0.85)", color: "#4ec9b0" }}>
+          {circuit.numNodes} nodes, {circuit.numEdges} edges
+          {showGLB ? " — 3D model" : " — drag nodes, scroll to zoom"}
+        </span>
+        {glbModel?.file && (
+          <button
+            onClick={() => setShowGLB(s => !s)}
+            className="rounded px-2 py-1 text-[11px] font-mono"
+            style={{ background: "rgba(15,15,26,0.85)", color: showGLB ? "#dcdcaa" : "#4ec9b0", border: "1px solid #2a2a4a" }}
+          >
+            {showGLB ? "Show Graph" : "Show 3D"}
+          </button>
+        )}
       </div>
       {circuit.compartments && circuit.compartments.length > 1 && (
         <div className="absolute bottom-3 left-3 flex gap-2">
@@ -349,7 +800,7 @@ function PreviewPanel({ circuit, metrics }) {
 }
 
 /* ── Output column ── */
-function OutputColumn({ circuit, metrics, compiled, logs, onRun, onClear, errors }) {
+function OutputColumn({ circuit, metrics, compiled, logs, onRun, onClear, errors, imports, glbModel }) {
   const [tab, setTab] = useState("preview");
   const tabs = [
     { id: "preview", label: "Preview", Icon: Eye },
@@ -389,8 +840,8 @@ function OutputColumn({ circuit, metrics, compiled, logs, onRun, onClear, errors
       </div>
 
       <div className="min-h-0 flex-1">
-        {tab === "preview" && <PreviewPanel circuit={circuit} metrics={metrics} />}
-        {tab === "charts" && <ChartsPanel metrics={metrics} circuit={circuit} />}
+        {tab === "preview" && <PreviewPanel circuit={circuit} metrics={metrics} glbModel={glbModel} />}
+        {tab === "charts" && <ChartsPanel metrics={metrics} circuit={circuit} imports={imports} />}
         {tab === "console" && (
           <div className="h-full overflow-y-auto p-2 font-mono text-[12px] leading-relaxed">
             {errors.length > 0 && errors.map((e, i) => (
@@ -467,6 +918,8 @@ export default function Sandbox() {
   const [compiled, setCompiled] = useState({ glsl: null, js: null, ast: null, circuit: null });
   const [logs, setLogs] = useState([]);
   const [errors, setErrors] = useState([]);
+  const [imports, setImports] = useState({});
+  const [glbModel, setGlbModel] = useState(null);
 
   const [editorWidth, setEditorWidth] = useState(50);
   const splitRef = useRef(null);
@@ -491,9 +944,23 @@ export default function Sandbox() {
       setLogs(newLogs);
       setCircuit(null);
       setMetrics(null);
+      setImports({});
+      setGlbModel(null);
       setCompiled({ glsl: null, js: null, ast: null, circuit: null });
       return;
     }
+
+    // Track resolved imports
+    if (result.imports && Object.keys(result.imports).length > 0) {
+      setImports(result.imports);
+      for (const [name, data] of Object.entries(result.imports)) {
+        newLogs.push({ level: "info", message: `import ${name} from ${data.source || "registry"}: ${data.name || data.id || "resolved"}` });
+      }
+    } else {
+      setImports({});
+    }
+
+    setGlbModel(result.glbModel || null);
 
     newLogs.push({ level: "info", message: `Compiled in ${compileTime.toFixed(1)}ms` });
 
@@ -760,6 +1227,7 @@ export default function Sandbox() {
           <OutputColumn
             circuit={circuit} metrics={metrics} compiled={compiled}
             logs={logs} errors={errors}
+            imports={imports} glbModel={glbModel}
             onRun={run} onClear={() => setLogs([])}
           />
         </div>

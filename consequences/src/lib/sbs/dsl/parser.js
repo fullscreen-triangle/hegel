@@ -217,6 +217,19 @@ class Parser {
 
   parseImport() {
     this.expect(TOKEN_TYPES.KEYWORD, 'import');
+    // import NAME from "source"  OR  import "module"
+    const next = this.peek();
+    if (next.type === TOKEN_TYPES.IDENT) {
+      const name = this.advance().value;
+      let alias = name;
+      if (this.match(TOKEN_TYPES.KEYWORD, 'as')) {
+        alias = this.expect(TOKEN_TYPES.IDENT).value;
+      }
+      this.expect(TOKEN_TYPES.KEYWORD, 'from');
+      const source = this.expect(TOKEN_TYPES.STRING).value;
+      this.match(TOKEN_TYPES.PUNC, ';');
+      return { type: 'Import', name, alias, source };
+    }
     const module = this.expect(TOKEN_TYPES.STRING).value;
     this.match(TOKEN_TYPES.PUNC, ';');
     return { type: 'Import', module };

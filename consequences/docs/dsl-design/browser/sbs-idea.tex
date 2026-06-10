@@ -1,0 +1,1469 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{geometry}
+\usepackage{natbib}
+
+\geometry{margin=1in}
+
+\title{\textbf{Partition-Bio: A Domain-Specific Language for\\
+GPU-Accelerated Systems Biology Based on\\
+Partition Theory and S-Entropy Calculus}}
+
+\author{
+Kundai Farai Sachikonye\\
+\textit{Technical University of Munich}\\
+\textit{School of Life Sciences}\\
+\texttt{kundai.sachikonye@tum.de}
+}
+
+\date{June 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We present \textbf{Partition-Bio}, a novel domain-specific language (DSL) for systems biology that unifies partition theory, circuit models, oscillator-relative computation, and S-entropy calculus into a coherent computational framework. Unlike traditional markup languages (SBML, CellML) that rely on forward numerical simulation, Partition-Bio treats biological observation as a \textit{rendering operation} on GPU fragment shaders, achieving O(1) memory complexity and eliminating the parser-based attack surface. The language integrates seamlessly with existing systems biology resources including Reactome pathways, Hugging Face model repositories, and live microscopy data streams. We demonstrate that the triple equivalence theorem (oscillatory $\leftrightarrow$ categorical $\leftrightarrow$ partition) enables automatic representation selection for optimal computational efficiency, while the unconstrained subtask theorem explains metabolic compensation and therapeutic "miracles." The framework achieves real-time disease detection via loop holonomy computation ($<100$ ms on integrated GPUs) and therapeutic optimization via convex $\ell_1$ minimization. We provide both a web-based implementation (TypeScript + WebGL2) for interactive exploration and a high-performance Rust implementation (wgpu + rayon) for production deployment. Validation against atomic spectroscopy (0.039\% error), enzyme kinetics (6 orders of magnitude), and ALS disease progression (88\% correlation) demonstrates the framework's predictive power across scales.
+\end{abstract}
+
+\section{Introduction}
+
+\subsection{The Crisis of Simulation in Systems Biology}
+
+The dominant paradigm in computational systems biology relies on markup languages such as SBML (Systems Biology Markup Language) and CellML to encode biological models as systems of ordinary differential equations (ODEs) or stochastic differential equations (SDEs)~\cite{hucka2003systems,cuellar2003overview}. These models are then integrated forward in time using numerical solvers like CVODE or the Gillespie algorithm~\cite{gillespie1977exact}. While this approach has enabled significant advances in understanding oscillatory dynamics and signal transduction, it suffers from a fundamental epistemological limitation: \textit{informational equivalence}~\cite{sachikonye2026cellular}.
+
+A forward simulation merely reproduces the system's own dynamics, producing zero surplus information compared to the cell itself. If a biological system cannot "self-diagnose" a disease state through its own forward dynamics—because rate laws depend only on current concentrations and parameters, not on a reference "healthy" state—then a simulation of those dynamics cannot diagnose disease either. This phenomenon, termed \textit{epistemic blindness}, necessitates a paradigm shift from simulation to \textit{observation}~\cite{sachikonye2026sbs}.
+
+\subsection{The Partition Landscape Framework}
+
+Recent theoretical work has established that biological dynamics can be derived from a single geometric principle: physical systems occupy bounded regions of phase space that admit partition and nesting~\cite{sachikonye2026partition}. By defining \textit{partition depth} ($M$) as the hierarchical structure required for unique specification, the framework proves that:
+
+\begin{enumerate}
+    \item All biological dynamics flow along partition depth gradients: $\frac{dx}{dt} = -\gamma \nabla M(x)$
+    \item Enzymatic catalysis is geometric aperture selection with categorical distance $d_{cat}$
+    \item Disease is trajectory escape from healthy attractor basins
+    \item Life is autocatalytic closure of partition structure
+\end{enumerate}
+
+This framework has been validated against atomic shell structures (exact $C(n) = 2n^2$ formula), enzyme kinetics spanning six orders of magnitude (85\% accuracy), and ALS disease progression (88\% correlation with SOD1 coherence)~\cite{sachikonye2026partition}.
+
+\subsection{Cellular Circuit Model and Trajectory Completion}
+
+The circuit model maps biological networks to electrical circuits where nodes represent species (with potential $\mu_i =$ chemical potential) and edges represent reactions (with conductance $G_{ij} = k_{ij}[C_i]/RT$)~\cite{sachikonye2026cellular}. Kirchhoff's laws hold exactly:
+
+\begin{itemize}
+    \item \textbf{KCL (Current Law):} Stoichiometric mass balance at steady state
+    \item \textbf{KVL (Voltage Law):} Thermodynamic cycle consistency (Wegscheider conditions)
+\end{itemize}
+
+The \textit{trajectory completion algorithm} solves the inverse problem: given partial observations, infer the complete cellular state by iterating three constraint operators ($T_{KCL}$, $T_{KVL}$, $T_{Back}$) until convergence. The Banach fixed-point theorem guarantees convergence to a unique solution~\cite{sachikonye2026cellular}.
+
+\subsection{S-Entropy Coordinates and Oxygen Master Clock}
+
+The complete cellular state is determined by eleven coupled coordinate systems, with S-entropy coordinates $(S_k, S_t, S_e) \in [0,1]^3$ serving as universal observables~\cite{sachikonye2026cellular}:
+
+\begin{itemize}
+    \item $S_k$ (Knowledge entropy): Normalized Shannon entropy
+    \item $S_t$ (Temporal entropy): Normalized decorrelation rate
+    \item $S_e$ (Evolution entropy): Normalized entropy change rate
+\end{itemize}
+
+Molecular oxygen ($O_2$) functions as a master clock with fundamental frequency $\omega_{O_2} \approx 10^{13}$ Hz, carrying an information density of $3.2 \times 10^{15}$ bits/molecule/s across 25,110 accessible quantum states~\cite{sachikonye2026equations}. All cellular processes phase-lock to $O_2$ harmonics, enabling metabolic GPS via triangulation.
+
+\subsection{Systems Biology Shaders (SBS)}
+
+The SBS formalism proves that \textit{rendering is measurement}: for a fragment shader implementing a partition observation, the act of rendering a texture is mathematically identical to performing a physical measurement~\cite{sachikonye2026sbs}. This enables:
+
+\begin{itemize}
+    \item O(1) memory complexity independent of database size
+    \item Disease detection via loop holonomy ($H_\ell = \text{Identity}$ iff healthy)
+    \item Therapeutic optimization via $\ell_1$ minimization ($<100$ ms on laptop GPU)
+    \item Label-free training using physics-based quality metrics
+\end{itemize}
+
+\subsection{Temporal Programming and Parser-Free Computation}
+
+Temporal programming shifts computation from payload content to timing deviations~\cite{sachikonye2026temporal}. Signals are bare pulses with timing deviation $\Delta P(k) = T_{ref}(k) - t_{rec}(k)$ relative to a reference oscillator. Timing cells (measurable intervals in $\Delta P$-space) trigger pre-compiled actions, eliminating parsers and achieving structural incorruptibility against buffer overflows and injection attacks. The composition inflation theorem proves that $T(n,d) = d(1+d)^{n-1}$ distinguishable trajectories exist for $n$ events across $d$ channels~\cite{sachikonye2026temporal}.
+
+\subsection{S-Entropy Calculus and Triple Equivalence}
+
+The S-entropy calculus establishes three fundamental results~\cite{sachikonye2026sentropy}:
+
+\begin{enumerate}
+    \item \textbf{Floor Theorem:} No bounded receiver can attain $S = 0$ (perfect knowledge)
+    \item \textbf{Triple Equivalence:} Oscillatory, categorical, and partition representations are mathematically identical with free conversion
+    \item \textbf{Unconstrained Subtask Theorem:} Global truth does not constrain local subtask form, enabling "miraculous" compositions
+\end{enumerate}
+
+These results provide the mathematical foundation for a unified DSL that seamlessly integrates multiple representations and enables optimal computational strategies.
+
+\subsection{Contributions}
+
+This paper presents:
+
+\begin{enumerate}
+    \item A formal grammar and type system for Partition-Bio integrating all six theoretical frameworks
+    \item Compilation strategies for both web (TypeScript + WebGL2) and native (Rust + wgpu) targets
+    \item Integration protocols for Reactome pathways~\cite{reactome2026}, Hugging Face models, and live microscopy streams
+    \item Real-time visualization pipelines for S-entropy coordinates, loop holonomy, and phase coherence
+    \item Validation against multi-scale biological data (atomic to organismal)
+\end{enumerate}
+
+\section{Language Design Principles}
+
+\subsection{Core Design Philosophy}
+
+Partition-Bio is designed around five core principles:
+
+\subsubsection{Principle 1: Parser-Free Execution}
+
+Following temporal programming~\cite{sachikonye2026temporal}, Partition-Bio eliminates content parsing by representing biological states as intervals in S-entropy space. Cell assignment is interval tree lookup (O($\log m$)), not string parsing. This achieves structural incorruptibility: buffer overflows and injection attacks are architecturally precluded.
+
+\subsubsection{Principle 2: Triple Equivalence}
+
+The language provides first-class support for oscillatory, categorical, and partition representations with automatic conversion via functors $F_{OC}$, $F_{CP}$, $F_{PO}$~\cite{sachikonye2026sentropy}. The compiler selects the optimal representation for each operation based on computational cost (Theorem 7.3).
+
+\subsubsection{Principle 3: Oscillator-Relative Computation}
+
+All temporal references are relative to the $O_2$ master clock~\cite{sachikonye2026equations}. Phase deviations $\Delta\phi = \phi_{actual} - \phi_{expected}$ map to partition cells, eliminating absolute time and enabling time-invariant categorical addresses~\cite{sachikonye2026cellular}.
+
+\subsubsection{Principle 4: Shader-Native Execution}
+
+Models compile directly to GPU fragment shaders~\cite{sachikonye2026sbs}. Rendering \textit{is} measurement, not simulation. This achieves O(1) memory and real-time performance on integrated GPUs.
+
+\subsubsection{Principle 5: Recursive Decomposition}
+
+Every state decomposes into recursive triples $(S_k, S_t, S_e)$ at arbitrary depth~\cite{sachikonye2026sentropy}. The language supports multi-scale analysis from molecular to organismal levels with no privileged level of description.
+
+\subsection{Type System}
+
+Partition-Bio employs a rich type system that captures biological semantics:
+
+\subsubsection{Primitive Types}
+
+\begin{lstlisting}[language=Haskell, basicstyle=\ttfamily\small]
+-- Scalar types
+Float, Int, Bool, String
+
+-- Physical units
+Concentration :: Float  -- mol/L
+ChemicalPotential :: Float  -- J/mol
+ReactionRate :: Float  -- mol/L/s
+Frequency :: Float  -- Hz
+Phase :: Float  -- radians [0, 2π)
+\end{lstlisting}
+
+\subsubsection{S-Entropy Types}
+
+\begin{lstlisting}[language=Haskell, basicstyle=\ttfamily\small]
+-- S-entropy coordinates (bounded [0,1])
+SEntropy :: (S_k :: Float, S_t :: Float, S_e :: Float)
+  where 0 <= S_k <= 1
+        0 <= S_t <= 1
+        0 <= S_e <= 1
+
+-- Recursive triple at depth d
+RecursiveTriple :: (xi_k :: Expr, xi_t :: Expr, xi_e :: Expr)
+
+-- Floor bounds (Theorem 3.5)
+Floor :: (S_k_floor :: Float, S_t_floor :: Float, S_e_floor :: Float)
+  where S_k_floor > 0
+        S_t_floor > 0
+        S_e_floor > 0
+\end{lstlisting}
+
+\subsubsection{Representation Types}
+
+\begin{lstlisting}[language=Haskell, basicstyle=\ttfamily\small]
+-- Oscillatory representation
+Oscillatory :: (omega :: Frequency, phi :: Phase, amplitude :: Float)
+
+-- Categorical representation
+Categorical :: (cell :: CellID, label :: String, transitions :: [Transition])
+
+-- Partition representation
+Partition :: (space :: Interval, partition :: [Float], measure :: Measure)
+
+-- Conversion functors (Theorem 6.4)
+F_OC :: Oscillatory -> Categorical
+F_CP :: Categorical -> Partition
+F_PO :: Partition -> Oscillatory
+\end{lstlisting}
+
+\subsubsection{Circuit Types}
+
+\begin{lstlisting}[language=Haskell, basicstyle=\ttfamily\small]
+-- Species (circuit nodes)
+Species :: {
+  id :: String,
+  concentration :: Concentration,
+  potential :: ChemicalPotential,
+  shell_coords :: (n :: Int, l :: Int, m :: Int, s :: Float)
+}
+
+-- Reaction (circuit edges)
+Reaction :: {
+  id :: String,
+  substrates :: [Species],
+  products :: [Species],
+  enzyme :: Enzyme,
+  k_cat :: Float,
+  K_m :: Concentration,
+  d_cat :: Int  -- Categorical distance
+}
+
+-- Circuit graph
+Circuit :: {
+  species :: [Species],
+  reactions :: [Reaction],
+  topology :: Graph
+}
+\end{lstlisting}
+
+\subsubsection{Fuzzy Types}
+
+\begin{lstlisting}[language=Haskell, basicstyle=\ttfamily\small]
+-- Fuzzy interval (from cellular circuit model)
+FuzzyInterval :: {
+  core :: (Float, Float),
+  support :: (Float, Float),
+  alpha_cuts :: Map Float (Float, Float)
+}
+
+-- Fuzzy state (for trajectory completion)
+FuzzyState :: Map Species FuzzyInterval
+\end{lstlisting}
+
+\subsubsection{Timing Types}
+
+\begin{lstlisting}[language=Haskell, basicstyle=\ttfamily\small]
+-- Timing cell (from temporal programming)
+TimingCell :: {
+  bounds :: (S_k :: Interval, S_t :: Interval, S_e :: Interval),
+  coherence :: (Float, Float),  -- (min, max)
+  holonomy :: HolonomyConstraint,
+  action :: Action
+}
+
+-- Oscillator reference
+Oscillator :: {
+  frequency :: Frequency,
+  stability :: Float,  -- epsilon
+  phase :: Phase,
+  channels :: [FrequencyRange]
+}
+\end{lstlisting}
+
+\subsubsection{Catalyst Types}
+
+\begin{lstlisting}[language=Haskell, basicstyle=\ttfamily\small]
+-- Therapeutic catalyst (from S-entropy calculus)
+Catalyst :: {
+  target :: Species | Reaction,
+  catalytic_power :: Float,  -- kappa in [0,1]
+  mechanism :: CatalyticMechanism
+}
+
+-- Catalytic power composition (Theorem 14.1)
+compose_catalysts :: Catalyst -> Catalyst -> Catalyst
+  where kappa_combined = 1 - (1 - kappa_1)(1 - kappa_2)
+\end{lstlisting}
+
+\subsection{Syntax and Grammar}
+
+We present the formal grammar in Extended Backus-Naur Form (EBNF):
+
+\begin{lstlisting}[basicstyle=\ttfamily\small]
+<program> ::= <declaration>*
+
+<declaration> ::= <model_decl>
+                | <oscillator_decl>
+                | <partition_cell_decl>
+                | <observation_decl>
+                | <hypothesis_decl>
+                | <catalyst_decl>
+                | <ensemble_decl>
+                | <shader_decl>
+
+<model_decl> ::= "model" <id> ":"
+                   "species" ":" <species_list>
+                   "reactions" ":" <reaction_list>
+                   ("partition_depth" ":" <depth_map>)?
+
+<oscillator_decl> ::= "oscillator" <id> ":"
+                        "frequency" ":" <float>
+                        "stability" ":" <float>
+                        "phase" ":" <float>
+                        "channels" ":" <channel_list>
+
+<partition_cell_decl> ::= "partition_cell" <id> ":"
+                            "bounds" ":" <s_entropy_bounds>
+                            "coherence" ":" <coherence_constraint>
+                            "holonomy" ":" <holonomy_constraint>
+                            "action" ":" <action>
+
+<observation_decl> ::= "observation" <id> ":"
+                         "from_model" ":" <id>
+                         "measure" ":" <measurement_list>
+                         "map_to" ":" <mapping_list>
+                         "constraints" ":" <constraint_list>
+
+<hypothesis_decl> ::= "hypothesis" <id> ":"
+                        "context" ":" <id>
+                        "reference" ":" <id>
+                        "motion" <id> "(" <string> ")" ":"
+                          "validate" ":" <validation_expr>
+
+<catalyst_decl> ::= "therapeutic_catalyst" <id> ":"
+                      "drug" <id> ":"
+                        "target" ":" <target>
+                        "catalytic_power" ":" <float>
+
+<ensemble_decl> ::= "ensemble" <id> ":"
+                      "nodes" ":" <node_list>
+                      "synchronization" ":" <sync_spec>
+                      "coupling" ":" <oscillator_ref>
+
+<shader_decl> ::= "compile_to_shader" ":"
+                    "model" ":" <id>
+                    "observation" ":" <id>
+                    "pipeline" ":" <pipeline_spec>
+                    "output" ":" <output_spec>
+
+<s_entropy_bounds> ::= "S_k" "in" <interval> ","
+                       "S_t" "in" <interval> ","
+                       "S_e" "in" <interval>
+\end{lstlisting}
+
+\subsection{Operational Semantics}
+
+The language operates in four phases, inspired by temporal programming's phase separation~\cite{sachikonye2026temporal}:
+
+\subsubsection{Phase 1: PARSE}
+
+The source code is tokenized and parsed into an Abstract Syntax Tree (AST). Type checking verifies:
+\begin{itemize}
+    \item S-entropy coordinates are bounded $[0,1]$
+    \item Partition cells are Borel-measurable with positive Lebesgue measure
+    \item Oscillator frequencies are positive
+    \item Catalytic powers are in $[0,1]$
+\end{itemize}
+
+\subsubsection{Phase 2: OPTIMIZE}
+
+The optimizer applies Theorem 7.3 (optimal representation selection)~\cite{sachikonye2026sentropy}:
+
+$$\text{cost}(f) = \min_{R \in \{O, C, P\}} \left( \text{cost}_R(f) + \text{cost}_{\text{conv}}(R) \right)$$
+
+For each operation, the compiler estimates computational cost in oscillatory, categorical, and partition representations, then selects the cheapest including conversion overhead.
+
+\subsubsection{Phase 3: COMPILE}
+
+The IR (Intermediate Representation) is compiled to target-specific code:
+
+\begin{itemize}
+    \item \textbf{Web target:} GLSL ES 3.0 fragment shaders + TypeScript runtime
+    \item \textbf{Native target:} WGSL shaders + Rust runtime (wgpu + rayon)
+\end{itemize}
+
+Partition cells are compiled to interval trees stored in GPU uniform buffers. Trajectory completion operators ($T_{KCL}$, $T_{KVL}$, $T_{Back}$) are compiled to compute shaders.
+
+\subsubsection{Phase 4: EXECUTE}
+
+Execution follows the SBS pipeline~\cite{sachikonye2026sbs}:
+
+\begin{enumerate}
+    \item \textbf{Vertex shader:} Universal fullscreen triangle (vertex-ID trick)
+    \item \textbf{Fragment shader:} Partition observation (map concentrations to S-entropy)
+    \item \textbf{Compute shader:} Trajectory completion (iterate $T = T_{Back} \circ T_{KVL} \circ T_{KCL}$)
+    \item \textbf{Quality shader:} Compute metrics (sharpness, coherence, visibility, consistency)
+    \item \textbf{Display shader:} Render visualization
+\end{enumerate}
+
+\section{Integration with External Resources}
+
+\subsection{Reactome Pathway Database}
+
+Reactome is a comprehensive, manually curated database of human pathways covering 2,706 pathways and 11,389 reactions~\cite{reactome2026}. Partition-Bio integrates Reactome via its RESTful API:
+
+\subsubsection{Pathway Import}
+
+\begin{lstlisting}[language=Python, basicstyle=\ttfamily\small]
+import_pathway:
+  source: Reactome
+  pathway_id: "R-HSA-70171"  # Glycolysis
+  
+  fetch:
+    url: "https://reactome.org/ContentService/data/pathway/{id}/containedEvents"
+    format: JSON
+  
+  map_to_circuit:
+    species: extract_participants(events)
+    reactions: extract_reactions(events)
+    stoichiometry: extract_stoichiometry(events)
+    
+  augment:
+    k_cat: fetch_from_brenda(enzyme_id)
+    K_m: fetch_from_brenda(enzyme_id)
+    d_cat: compute_categorical_distance(reaction)
+\end{lstlisting}
+
+The Reactome API provides structured data including:
+\begin{itemize}
+    \item Pathway hierarchy and cross-references
+    \item Reaction participants (substrates, products, catalysts)
+    \item Stoichiometry and compartmentalization
+    \item Disease associations and drug targets
+\end{itemize}
+
+\subsubsection{Kinetic Parameter Enrichment}
+
+Reactome provides qualitative pathway topology but lacks kinetic parameters. Partition-Bio automatically enriches models by querying:
+
+\begin{itemize}
+    \item \textbf{BRENDA}~\cite{schomburg2004brenda}: Enzyme kinetics ($k_{cat}$, $K_m$, $k_i$)
+    \item \textbf{SABIO-RK}~\cite{wittig2012sabio}: Reaction kinetics and rate laws
+    \item \textbf{MetaNetX}~\cite{moretti2016metanetx}: Metabolite identifiers and cross-references
+\end{itemize}
+
+\subsubsection{Example: Glycolysis Import}
+
+\begin{lstlisting}[basicstyle=\ttfamily\small]
+// Import glycolysis from Reactome
+model Glycolysis:
+  import_from: Reactome("R-HSA-70171")
+  
+  // Automatically fetched:
+  // - 10 reactions (Hexokinase, PGI, PFK, Aldolase, ...)
+  // - 13 species (Glucose, G6P, F6P, F16BP, ...)
+  // - Stoichiometry and compartments
+  
+  // Augment with kinetics
+  augment_kinetics:
+    source: BRENDA
+    fallback: literature_values
+    
+  // Compute partition structure
+  compute_partition_depth:
+    method: shell_coordinates
+    // Glucose: M = 12.5
+    // Pyruvate: M = 8.1
+    // Total ΔM = -4.4 (partition cascade)
+\end{lstlisting}
+
+\subsection{Hugging Face Model Hub}
+
+Hugging Face hosts over 500,000 machine learning models, including systems biology models for protein structure prediction, gene expression analysis, and drug discovery~\cite{huggingface2024}. Partition-Bio integrates these models as \textit{catalysts} in the S-entropy calculus framework.
+
+\subsubsection{Model Import Protocol}
+
+\begin{lstlisting}[language=Python, basicstyle=\ttfamily\small]
+import_model:
+  source: HuggingFace
+  model_id: "facebook/esm2_t33_650M_UR50D"  # Protein LM
+  
+  task: protein_structure_prediction
+  
+  wrap_as_catalyst:
+    input: amino_acid_sequence
+    output: structure_coordinates
+    
+    catalytic_power:
+      // Measure reduction in S-entropy
+      kappa = (S_before - S_after) / (S_before - S_floor)
+      
+    integration:
+      // Use as subtask in protein folding pipeline
+      global_task: fold_protein(sequence)
+      subtask: predict_structure_esm2(sequence)
+      compose: unconstrained_subtask_theorem
+\end{lstlisting}
+
+\subsubsection{Example: AlphaFold Integration}
+
+\begin{lstlisting}[basicstyle=\ttfamily\small]
+// Import AlphaFold2 from Hugging Face
+catalyst AlphaFold2:
+  source: HuggingFace("DeepMind/alphafold2")
+  
+  task: protein_structure_prediction
+  
+  input:
+    sequence: AminoAcidSequence
+    templates: [PDB_ID]  // Optional
+  
+  output:
+    structure: AtomicCoordinates
+    confidence: pLDDT  // Per-residue confidence
+  
+  catalytic_power:
+    // Measure S-entropy reduction
+    S_before = partition_depth(sequence)  // 1D
+    S_after = partition_depth(structure)  // 3D
+    kappa = (S_before - S_after) / (S_before - S_floor)
+    // Typical kappa ≈ 0.8 (strong catalyst)
+  
+  integration_with_circuit:
+    // Use predicted structure to compute:
+    // - Enzyme active site geometry (aperture)
+    // - Substrate binding affinity (conductance)
+    // - Categorical distance (d_cat)
+    
+    enzyme Hexokinase:
+      structure: AlphaFold2("P19367")
+      active_site: extract_active_site(structure)
+      d_cat: compute_from_geometry(active_site, substrate)
+\end{lstlisting}
+
+\subsubsection{Multi-Modal Model Composition}
+
+Following the unconstrained subtask theorem~\cite{sachikonye2026sentropy}, models from different modalities can be composed freely:
+
+\begin{lstlisting}[basicstyle=\ttfamily\small]
+// Compose genomics, proteomics, metabolomics models
+multi_modal_analysis:
+  
+  genomics_model:
+    source: HuggingFace("gagneurlab/spliceai")
+    task: splice_site_prediction
+    representation: categorical
+  
+  proteomics_model:
+    source: HuggingFace("facebook/esm2")
+    task: protein_embedding
+    representation: oscillatory
+  
+  metabolomics_model:
+    source: local("metabolic_flux_predictor.pt")
+    task: flux_prediction
+    representation: partition
+  
+  // Automatic conversion to S-entropy space
+  integrate:
+    genomics_data -> S_k
+    proteomics_data -> S_t
+    metabolomics_data -> S_e
+    
+  // Compose in S-space (Theorem 6.4)
+  result = analyze(S_k, S_t, S_e)
+\end{lstlisting}
+
+\subsection{Live Microscopy Integration}
+
+Partition-Bio supports real-time analysis of microscopy data streams, treating images as observations in S-entropy space.
+
+\subsubsection{Image Acquisition Pipeline}
+
+\begin{lstlisting}[language=Python, basicstyle=\ttfamily\small]
+microscopy_stream:
+  source: live_camera
+  protocol: "SPIM"  // Selective Plane Illumination
+  
+  acquisition:
+    frame_rate: 10 Hz
+    resolution: (1024, 1024)
+    bit_depth: 16
+    channels: [GFP, RFP, BF]  // Green, Red, Brightfield
+  
+  preprocessing:
+    - background_subtraction()
+    - flat_field_correction()
+    - deconvolution(psf: measured_psf)
+  
+  segmentation:
+    method: cellpose  // Deep learning segmentation
+    model: HuggingFace("cellpose/cyto2")
+    
+  feature_extraction:
+    per_cell:
+      - area, perimeter, circularity
+      - mean_intensity[channel]
+      - texture_features(GLCM)
+      - morphological_features
+  
+  map_to_s_entropy:
+    S_k = shannon_entropy(intensity_histogram)
+    S_t = temporal_correlation(frame[t], frame[t-1])
+    S_e = entropy_rate(trajectory)
+\end{lstlisting}
+
+\subsubsection{Real-Time Cell Classification}
+
+\begin{lstlisting}[basicstyle=\ttfamily\small]
+// Real-time classification of cell health
+cell_classifier:
+  input: microscopy_stream
+  
+  observation:
+    measure: [morphology, intensity, texture]
+    map_to: S_entropy(S_k, S_t, S_e)
+  
+  partition_cells:
+    Healthy:
+      bounds: S_k ∈ [0.0, 0.3], S_t ∈ [0.0, 0.2], S_e ∈ [0.0, 0.25]
+      action: classify_as_healthy
+    
+    Apoptotic:
+      bounds: S_k ∈ [0.6, 1.0], S_t ∈ [0.5, 1.0], S_e ∈ [0.5, 1.0]
+      action: classify_as_apoptotic
+    
+    Mitotic:
+      bounds: S_k ∈ [0.3, 0.6], S_t ∈ [0.7, 1.0], S_e ∈ [0.3, 0.6]
+      action: classify_as_mitotic
+  
+  // O(log m) lookup per cell per frame
+  // 10 Hz × 100 cells = 1000 classifications/s
+  // Achievable on integrated GPU
+\end{lstlisting}
+
+\subsubsection{Trajectory Tracking}
+
+\begin{lstlisting}[basicstyle=\ttfamily\small]
+// Track cell trajectories in S-entropy space
+trajectory_tracker:
+  input: cell_classifier.output
+  
+  tracking:
+    method: Hungarian_algorithm
+    cost_function: euclidean_distance_in_S_space
+    max_displacement: 50 pixels
+  
+  trajectory_analysis:
+    for cell in tracked_cells:
+      trajectory = [(S_k[t], S_t[t], S_e[t]) for t in timepoints]
+      
+      // Compute backward trajectory (categorical address)
+      B_cell = compute_backward_trajectory(trajectory, circuit)
+      
+      // Compare to healthy reference
+      d_cat = categorical_distance(B_cell, B_healthy)
+      
+      if d_cat > threshold:
+        classify_as_diseased(cell)
+        predict_outcome(trajectory)
+\end{lstlisting}
+
+\subsection{Multi-Database Integration}
+
+Partition-Bio provides a unified query interface across multiple databases:
+
+\begin{lstlisting}[basicstyle=\ttfamily\small]
+// Unified database query
+query_databases:
+  
+  // Pathway databases
+  pathways:
+    - Reactome: "https://reactome.org/ContentService"
+    - KEGG: "https://rest.kegg.jp"
+    - WikiPathways: "https://webservice.wikipathways.org"
+  
+  // Kinetic databases
+  kinetics:
+    - BRENDA: "https://www.brenda-enzymes.org/soap"
+    - SABIO-RK: "http://sabiork.h-its.org/sabioRestWebServices"
+  
+  // Structural databases
+  structures:
+    - PDB: "https://data.rcsb.org/graphql"
+    - AlphaFold DB: "https://alphafold.ebi.ac.uk/api"
+  
+  // Omics databases
+  omics:
+    - GEO: "https://www.ncbi.nlm.nih.gov/geo"
+    - PRIDE: "https://www.ebi.ac.uk/pride/ws/archive"
+    - MetaboLights: "https://www.ebi.ac.uk/metabolights/ws"
+  
+  // Model repositories
+  models:
+    - BioModels: "https://www.ebi.ac.uk/biomodels"
+    - HuggingFace: "https://huggingface.co/api"
+  
+  // Unified query syntax
+  fetch:
+    entity: "Hexokinase"
+    databases: [Reactome, BRENDA, PDB, AlphaFold]
+    
+  integrate:
+    pathway: Reactome.get_reactions(entity)
+    kinetics: BRENDA.get_kinetics(entity)
+    structure: AlphaFold.get_structure(entity)
+    
+  build_circuit:
+    species: extract_from_pathway(pathway)
+    reactions: augment_with_kinetics(pathway, kinetics)
+    geometry: compute_from_structure(structure)
+\end{lstlisting}
+
+\section{Visualization System}
+
+\subsection{S-Entropy Space Visualization}
+
+The primary visualization is a 3D representation of S-entropy space $(S_k, S_t, S_e)$ with partition cells rendered as colored regions.
+
+\subsubsection{3D Volume Rendering}
+
+\begin{lstlisting}[language=GLSL, basicstyle=\ttfamily\small]
+// Fragment shader for S-entropy volume rendering
+#version 300 es
+precision highp float;
+
+uniform sampler3D u_s_entropy_volume;  // 3D texture
+uniform vec3 u_camera_pos;
+uniform vec3 u_camera_dir;
+uniform float u_step_size;
+
+in vec2 vUV;
+out vec4 fragColor;
+
+// Ray marching through S-entropy volume
+vec4 raymarch(vec3 origin, vec3 direction) {
+    vec4 color = vec4(0.0);
+    float t = 0.0;
+    
+    for (int i = 0; i < 256; i++) {
+        vec3 pos = origin + t * direction;
+        
+        // Sample S-entropy at position
+        vec4 sample = texture(u_s_entropy_volume, pos);
+        
+        // Color by partition cell
+        if (sample.a > 0.01) {
+            vec3 cell_color = get_cell_color(sample.rgb);
+            color.rgb += (1.0 - color.a) * cell_color * sample.a;
+            color.a += (1.0 - color.a) * sample.a;
+        }
+        
+        if (color.a > 0.99) break;
+        t += u_step_size;
+    }
+    
+    return color;
+}
+
+void main() {
+    vec3 ray_dir = normalize(u_camera_dir);
+    fragColor = raymarch(u_camera_pos, ray_dir);
+}
+\end{lstlisting}
+
+\subsubsection{Partition Cell Boundaries}
+
+Partition cells are rendered with distinct colors and labeled boundaries:
+
+\begin{lstlisting}[language=JavaScript, basicstyle=\ttfamily\small]
+// Partition cell color scheme
+const CELL_COLORS = {
+  Healthy: [0.2, 0.8, 0.2, 0.8],      // Green
+  Stressed: [0.9, 0.7, 0.2, 0.8],     // Yellow
+  Diseased: [0.9, 0.2, 0.2, 0.8],     // Red
+  Apoptotic: [0.5, 0.2, 0.8, 0.8],    // Purple
+  Mitotic: [0.2, 0.5, 0.9, 0.8]       // Blue
+};
+
+// Render cell boundaries as isosurfaces
+function renderCellBoundaries(cells) {
+  for (const cell of cells) {
+    const geometry = computeIsosurface(
+      cell.bounds,
+      resolution = 64
+    );
+    
+    const material = new THREE.MeshPhongMaterial({
+      color: CELL_COLORS[cell.label],
+      transparent: true,
+      opacity: 0.6,
+      side: THREE.DoubleSide
+    });
+    
+    const mesh = new THREE.Mesh(geometry, material);
+    scene.add(mesh);
+  }
+}
+\end{lstlisting}
+
+\subsection{Circuit Topology Visualization}
+
+The circuit graph is rendered as a force-directed layout with nodes (species) and edges (reactions).
+
+\subsubsection{Force-Directed Layout}
+
+\begin{lstlisting}[language=JavaScript, basicstyle=\ttfamily\small]
+// D3.js force simulation
+const simulation = d3.forceSimulation(nodes)
+  .force("link", d3.forceLink(links)
+    .id(d => d.id)
+    .distance(d => 100 / d.conductance)  // Stronger reactions = shorter
+  )
+  .force("charge", d3.forceManyBody()
+    .strength(-300)
+  )
+  .force("center", d3.forceCenter(width / 2, height / 2));
+
+// Node rendering (species)
+const node = svg.selectAll(".node")
+  .data(nodes)
+  .enter().append("circle")
+    .attr("class", "node")
+    .attr("r", d => 5 + 10 * d.concentration)  // Size by concentration
+    .attr("fill", d => colorByPotential(d.potential))
+    .call(d3.drag()
+      .on("start", dragstarted)
+      .on("drag", dragged)
+      .on("end", dragended)
+    );
+
+// Edge rendering (reactions)
+const link = svg.selectAll(".link")
+  .data(links)
+  .enter().append("line")
+    .attr("class", "link")
+    .attr("stroke-width", d => 1 + 5 * d.flux)  // Width by flux
+    .attr("stroke", d => colorByCategoricalDistance(d.d_cat));
+\end{lstlisting}
+
+\subsubsection{Real-Time Flux Animation}
+
+\begin{lstlisting}[language=JavaScript, basicstyle=\ttfamily\small]
+// Animate reaction fluxes as flowing particles
+function animateFlux(links, dt) {
+  for (const link of links) {
+    // Number of particles proportional to flux
+    const numParticles = Math.floor(link.flux * 10);
+    
+    for (let i = 0; i < numParticles; i++) {
+      const particle = {
+        x: link.source.x,
+        y: link.source.y,
+        vx: (link.target.x - link.source.x) / 100,
+        vy: (link.target.y - link.source.y) / 100,
+        life: 100
+      };
+      
+      particles.push(particle);
+    }
+  }
+  
+  // Update particle positions
+  for (const particle of particles) {
+    particle.x += particle.vx * dt;
+    particle.y += particle.vy * dt;
+    particle.life -= dt;
+  }
+  
+  // Remove dead particles
+  particles = particles.filter(p => p.life > 0);
+  
+  // Render particles
+  ctx.fillStyle = "rgba(255, 255, 0, 0.8)";
+  for (const particle of particles) {
+    ctx.beginPath();
+    ctx.arc(particle.x, particle.y, 2, 0, 2 * Math.PI);
+    ctx.fill();
+  }
+}
+\end{lstlisting}
+
+\subsection{Phase Coherence Visualization}
+
+Phase coherence is visualized using the Kuramoto order parameter $r = N^{-1}|\sum_j e^{i\phi_j}|$.
+
+\subsubsection{Circular Phase Plot}
+
+\begin{lstlisting}[language=JavaScript, basicstyle=\ttfamily\small]
+// Render phases on unit circle
+function renderPhaseCoherence(species, phases) {
+  const canvas = document.getElementById("phase-canvas");
+  const ctx = canvas.getContext("2d");
+  const centerX = canvas.width / 2;
+  const centerY = canvas.height / 2;
+  const radius = 100;
+  
+  // Draw unit circle
+  ctx.strokeStyle = "#333";
+  ctx.beginPath();
+  ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI);
+  ctx.stroke();
+  
+  // Draw phase vectors
+  let sumX = 0, sumY = 0;
+  for (let i = 0; i < species.length; i++) {
+    const phi = phases[i];
+    const x = centerX + radius * Math.cos(phi);
+    const y = centerY + radius * Math.sin(phi);
+    
+    // Draw vector
+    ctx.strokeStyle = SPECIES_COLORS[species[i]];
+    ctx.beginPath();
+    ctx.moveTo(centerX, centerY);
+    ctx.lineTo(x, y);
+    ctx.stroke();
+    
+    // Draw point
+    ctx.fillStyle = SPECIES_COLORS[species[i]];
+    ctx.beginPath();
+    ctx.arc(x, y, 5, 0, 2 * Math.PI);
+    ctx.fill();
+    
+    // Accumulate for order parameter
+    sumX += Math.cos(phi);
+    sumY += Math.sin(phi);
+  }
+  
+  // Draw order parameter vector
+  const r = Math.sqrt(sumX * sumX + sumY * sumY) / species.length;
+  const avgPhi = Math.atan2(sumY, sumX);
+  const endX = centerX + radius * r * Math.cos(avgPhi);
+  const endY = centerY + radius * r * Math.sin(avgPhi);
+  
+  ctx.strokeStyle = "#ff0000";
+  ctx.lineWidth = 3;
+  ctx.beginPath();
+  ctx.moveTo(centerX, centerY);
+  ctx.lineTo(endX, endY);
+  ctx.stroke();
+  
+  // Display r value
+  ctx.fillStyle = "#000";
+  ctx.font = "16px Arial";
+  ctx.fillText(`r = ${r.toFixed(3)}`, 10, 30);
+  
+  // Health status
+  const status = r > 0.7 ? "Healthy" : r > 0.5 ? "Stressed" : "Diseased";
+  ctx.fillText(`Status: ${status}`, 10, 50);
+}
+\end{lstlisting}
+
+\subsection{Loop Holonomy Visualization}
+
+Loop holonomy $H_\ell$ is visualized by highlighting cycles in the circuit graph and displaying the deviation from identity.
+
+\subsubsection{Cycle Detection and Rendering}
+
+\begin{lstlisting}[language=JavaScript, basicstyle=\ttfamily\small]
+// Detect all cycles in circuit graph
+function detectCycles(graph) {
+  const cycles = [];
+  const visited = new Set();
+  const stack = [];
+  
+  function dfs(node) {
+    if (stack.includes(node)) {
+      // Found cycle
+      const cycleStart = stack.indexOf(node);
+      cycles.push(stack.slice(cycleStart));
+      return;
+    }
+    
+    if (visited.has(node)) return;
+    
+    visited.add(node);
+    stack.push(node);
+    
+    for (const neighbor of graph.neighbors(node)) {
+      dfs(neighbor);
+    }
+    
+    stack.pop();
+  }
+  
+  for (const node of graph.nodes) {
+    dfs(node);
+  }
+  
+  return cycles;
+}
+
+// Compute holonomy for cycle
+function computeHolonomy(cycle, circuit) {
+  let holonomy = math.identity(2, 2);  // Start with identity
+  
+  for (let i = 0; i < cycle.length; i++) {
+    const source = cycle[i];
+    const target = cycle[(i + 1) % cycle.length];
+    const reaction = circuit.getReaction(source, target);
+    
+    // Transition matrix (parallel transport)
+    const T = computeTransitionMatrix(reaction);
+    holonomy = math.multiply(holonomy, T);
+  }
+  
+  return holonomy;
+}
+
+// Visualize holonomy deviation
+function visualizeHolonomy(cycles, circuit) {
+  for (const cycle of cycles) {
+    const H = computeHolonomy(cycle, circuit);
+    const I = math.identity(2, 2);
+    const deviation = math.norm(math.subtract(H, I));
+    
+    // Color cycle by deviation
+    const color = deviation < 0.1 ? "green" :  // Healthy
+                  deviation < 0.3 ? "yellow" : // Stressed
+                  "red";                        // Diseased
+    
+    // Highlight cycle in graph
+    highlightCycle(cycle, color, deviation);
+  }
+}
+\end{lstlisting}
+
+\subsection{Time-Series Visualization}
+
+For temporal dynamics, we provide interactive time-series plots with synchronized views.
+
+\subsubsection{Multi-Panel Time Series}
+
+\begin{lstlisting}[language=JavaScript, basicstyle=\ttfamily\small]
+// Plotly.js multi-panel time series
+function renderTimeSeries(data) {
+  const traces = [];
+  
+  // Panel 1: Concentrations
+  for (const species of data.species) {
+    traces.push({
+      x: data.time,
+      y: data.concentrations[species],
+      name: species,
+      type: 'scatter',
+      mode: 'lines',
+      xaxis: 'x1',
+      yaxis: 'y1'
+    });
+  }
+  
+  // Panel 2: S-entropy coordinates
+  traces.push({
+    x: data.time,
+    y: data.S_k,
+    name: 'S_k',
+    type: 'scatter',
+    mode: 'lines',
+    line: { color: 'red' },
+    xaxis: 'x2',
+    yaxis: 'y2'
+  });
+  
+  traces.push({
+    x: data.time,
+    y: data.S_t,
+    name: 'S_t',
+    type: 'scatter',
+    mode: 'lines',
+    line: { color: 'green' },
+    xaxis: 'x2',
+    yaxis: 'y2'
+  });
+  
+  traces.push({
+    x: data.time,
+    y: data.S_e,
+    name: 'S_e',
+    type: 'scatter',
+    mode: 'lines',
+    line: { color: 'blue' },
+    xaxis: 'x2',
+    yaxis: 'y2'
+  });
+  
+  // Panel 3: Phase coherence
+  traces.push({
+    x: data.time,
+    y: data.coherence,
+    name: 'Coherence (r)',
+    type: 'scatter',
+    mode: 'lines',
+    line: { color: 'purple' },
+    xaxis: 'x3',
+    yaxis: 'y3'
+  });
+  
+  // Layout with 3 panels
+  const layout = {
+    grid: { rows: 3, columns: 1, pattern: 'independent' },
+    xaxis1: { title: 'Time (s)' },
+    yaxis1: { title: 'Concentration (mM)' },
+    xaxis2: { title: 'Time (s)' },
+    yaxis2: { title: 'S-entropy', range: [0, 1] },
+    xaxis3: { title: 'Time (s)' },
+    yaxis3: { title: 'Coherence', range: [0, 1] },
+    height: 900
+  };
+  
+  Plotly.newPlot('timeseries-plot', traces, layout);
+}
+\end{lstlisting}
+
+\subsection{Interactive 3D Molecular Visualization}
+
+For structural data (e.g., from AlphaFold), we provide 3D molecular visualization with enzyme active sites highlighted.
+
+\subsubsection{Mol* Integration}
+
+\begin{lstlisting}[language=JavaScript, basicstyle=\ttfamily\small]
+// Mol* molecular viewer integration
+async function visualizeProteinStructure(pdbId, activeSite) {
+  const viewer = await molstar.Viewer.create('molstar-container', {
+    layoutIsExpanded: false,
+    layoutShowControls: false,
+    layoutShowRemoteState: false,
+    layoutShowSequence: true,
+    layoutShowLog: false,
+    layoutShowLeftPanel: true,
+    viewportShowExpand: true,
+    viewportShowSelectionMode: false,
+    viewportShowAnimation: false,
+  });
+  
+  // Load structure
+  await viewer.loadStructureFromUrl(
+    `https://files.rcsb.org/download/${pdbId}.cif`,
+    'mmcif'
+  );
+  
+  // Color by B-factor (confidence)
+  await viewer.visual.setColor({
+    name: 'uncertainty',
+    params: { palette: 'rainbow' }
+  });
+  
+  // Highlight active site
+  if (activeSite) {
+    const selection = Script.getStructureSelection(
+      Q => Q.struct.generator.atomGroups({
+        'residue-test': Q.core.set.has([
+          Q.struct.atomProperty.macromolecular.label_seq_id(),
+          Q.set(...activeSite.residues)
+        ])
+      })
+    );
+    
+    await viewer.visual.select({ data: selection });
+    await viewer.visual.setColor({
+      name: 'uniform',
+      params: { value: 0xff0000 }  // Red for active site
+    });
+  }
+  
+  // Add substrate (if available)
+  if (activeSite.substrate) {
+    await viewer.loadStructureFromUrl(
+      activeSite.substrate.url,
+      'sdf'
+    );
+    
+    // Position substrate in active site
+    await viewer.visual.transform({
+      translation: activeSite.substrate.position,
+      rotation: activeSite.substrate.orientation
+    });
+  }
+}
+\end{lstlisting}
+
+\subsection{Dashboard Layout}
+
+The complete visualization system is organized into an interactive dashboard:
+
+\begin{lstlisting}[language=HTML, basicstyle=\ttfamily\small]
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Partition-Bio Visualization Dashboard</title>
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; }
+    #dashboard { display: grid; grid-template-columns: 1fr 1fr; 
+                 grid-template-rows: auto 1fr 1fr; gap: 10px; 
+                 height: 100vh; padding: 10px; }
+    #header { grid-column: 1 / 3; }
+    #s-entropy-3d { grid-row: 2; grid-column: 1; }
+    #circuit-graph { grid-row: 2; grid-column: 2; }
+    #timeseries { grid-row: 3; grid-column: 1; }
+    #phase-coherence { grid-row: 3; grid-column: 2; }
+    .panel { border: 1px solid #ccc; border-radius: 5px; 
+             padding: 10px; background: #f9f9f9; }
+  </style>
+</head>
+<body>
+  <div id="dashboard">
+    <!-- Header with controls -->
+    <div id="header" class="panel">
+      <h1>Partition-Bio: Glycolysis Analysis</h1>
+      <button onclick="runSimulation()">Run Analysis</button>
+      <button onclick="optimizeTherapy()">Optimize Therapy</button>
+      <span id="status">Status: Ready</span>
+    </div>
+    
+    <!-- S-entropy 3D volume -->
+    <div id="s-entropy-3d" class="panel">
+      <h3>S-Entropy Space</h3>
+      <canvas id="s-entropy-canvas"></canvas>
+    </div>
+    
+    <!-- Circuit graph -->
+    <div id="circuit-graph" class="panel">
+      <h3>Metabolic Circuit</h3>
+      <svg id="circuit-svg"></svg>
+    </div>
+    
+    <!-- Time series -->
+    <div id="timeseries" class="panel">
+      <h3>Temporal Dynamics</h3>
+      <div id="timeseries-plot"></div>
+    </div>
+    
+    <!-- Phase coherence -->
+    <div id="phase-coherence" class="panel">
+      <h3>Phase Coherence</h3>
+      <canvas id="phase-canvas"></canvas>
+      <div id="holonomy-display"></div>
+    </div>
+  </div>
+  
+  <script src="partition-bio.js"></script>
+</body>
+</html>
+\end{lstlisting}
+
+\section{Implementation Architecture}
+
+\subsection{Web Implementation (TypeScript + WebGL2)}
+
+The web implementation targets modern browsers with WebGL2 support.
+
+\subsubsection{Project Structure}
+
+\begin{lstlisting}[basicstyle=\ttfamily\small]
+partition-bio-web/
+├── src/
+│   ├── parser/
+│   │   ├── lexer.ts           # Tokenization
+│   │   ├── parser.ts          # AST generation
+│   │   └── type-checker.ts    # Type validation
+│   ├── compiler/
+│   │   ├── optimizer.ts       # Representation selection
+│   │   ├── ir.ts              # Intermediate representation
+│   │   └── codegen/
+│   │       ├── glsl.ts        # GLSL shader generation
+│   │       └── javascript.ts  # Runtime generation
+│   ├── runtime/
+│   │   ├── webgl-context.ts   # WebGL2 setup
+│   │   ├── shader-manager.ts  # Shader compilation
+│   │   ├── trajectory.ts      # Trajectory completion
+│   │   └── fuzzy-logic.ts     # Fuzzy arithmetic
+│   ├── integration/
+│   │   ├── reactome.ts        # Reactome API client
+│   │   ├── huggingface.ts     # HF model loader
+│   │   └── microscopy.ts      # Image stream handler
+│   ├── visualization/
+│   │   ├── s-entropy-3d.ts    # 3D volume rendering
+│   │   ├── circuit-graph.ts   # Force-directed layout
+│   │   ├── phase-plot.ts      # Circular phase plot
+│   │   └── timeseries.ts      # Multi-panel plots
+│   └── main.ts                # Entry point
+├── shaders/
+│   ├── vertex.glsl            # Universal vertex shader
+│   ├── observation.glsl       # Partition observation
+│   ├── interference.glsl      # Interference pattern
+│   ├── quality.glsl           # Quality metrics
+│   └── display.glsl           # Final display
+├── public/
+│   ├── index.html             # Dashboard
+│   └── examples/              # Example models
+└── package.json
+\end{lstlisting}
+
+\subsubsection{Parser Implementation}
+
+\begin{lstlisting}[language=TypeScript, basicstyle=\ttfamily\small]
+// TypeScript parser using recursive descent
+class PartitionBioParser {
+  private tokens: Token[];
+  private current: number = 0;
+  
+  parse(source: string): Program {
+    this.tokens = new Lexer(source).tokenize();
+    return this.parseProgram();
+  }
+  
+  private parseProgram(): Program {
+    const declarations: Declaration[] = [];
+    
+    while (!this.isAtEnd()) {
+      declarations.push(this.parseDeclaration());
+    }
+    
+    return { type: 'Program', declarations };
+  }
+  
+  private parseDeclaration(): Declaration {
+    if (this.match('model')) return this.parseModel();
+    if (this.match('oscillator')) return this.parseOscillator();
+    if (this.match('partition_cell')) return this.parsePartitionCell();
+    if (this.match('observation')) return this.parseObservation();
+    if (this.match('hypothesis')) return this.parseHypothesis();
+    if (this.match('catalyst')) return this.parseCatalyst();
+    if (this.match('ensemble')) return this.parseEnsemble();
+    if (this.match('compile_to_shader')) return this.parseShader();
+    
+    throw new Error(`Unexpected token: ${this.peek().value}`);
+  }
+  
+  private parseModel(): ModelDeclaration {
+    const name = this.consume('IDENTIFIER').value;
+    this.consume(':');
+    
+    let species: Species[] = [];
+    let reactions: Reaction[] = [];
+    let partitionDepth: Map<string, number> | undefined;
+    
+    while (!this.check('model') && !this.isAtEnd()) {
+      if (this.match('species')) {
+        this.consume(':');
+        species = this.parseSpeciesList();
+      } else if (this.match('reactions')) {
+        this.consume(':');
+        reactions = this.parseReactionList();
+      } else if (this.match('partition_depth')) {
+        this.consume(':');
+        partitionDepth = this.parseDepthMap();
+      } else {
+        break;
+      }
+    }
+    
+    return {
+      type: 'ModelDeclaration',
+      name,
+      species,
+      reactions,
+      partitionDepth
+    };
+  }
+  
+  private parsePartitionCell(): PartitionCellDeclaration {
+    const name = this.consume('IDENTIFIER').value;
+    this.consume(':');
+    
+    this.consume('bounds');
+    this.consume(':');
+    const bounds = this.parseSEntropyBounds();
+    
+    this.consume('coherence');
+    this.consume(':');
+    const coherence = this.parseCoherenceConstraint();
+    
+    this.consume('holonomy');
+    this.consume(':');
+    const holonomy = this.parseHolonomyConstraint();
+    
+    this.consume('action');
+    this.consume(':');
+    const action = this.parseAction();
+    
+    return {
+      type: 'PartitionCellDeclaration',
+      name,
+      bounds,
+      coherence,
+      holonomy,
+      action
+    };
+  }
+  
+  private parseSEntropyBounds(): SEntropyBounds {
+    // S_k in [0.0, 0.3], S_t in [0.0, 0.2], S_e in [0.0, 0.25]
+    this.consume('S_k');
+    this.consume('in');
+    const S_k = this.parseInterval();
+    this.consume(',');
+    
+    this.consume('S_t');
+    this.consume('in');
+    const S_t = this.parseInterval();
+    this.consume(',');
+    
+    this.consume('S_e');
+    this.consume('in');
+    const S_e = this.parseInterval();
+    
+    return { S_k, S_t, S_e };
+  }
+  
+  // ... more parsing methods
+}
+\end{lstlisting}
+
+\subsubsection{GLSL Shader Generation}
+
+\begin{lstlisting}[language=TypeScript, basicstyle=\ttfamily\small]
+// Generate GLSL observation shader from AST
+class GLSLCodeGenerator {
+  generate(model: ModelDeclaration, observation: ObservationDeclaration): string {
+    const uniforms = this.generateUniforms(model);
+    const functions = this.generateFunctions(model);
+    const main = this.generateMain(model, observation);
+    
+    return `#version 300 es
+precision highp float;
+
+${uniforms}
+
+in vec2 vUV;
+out vec4 fragColor;
+
+${functions}
+
+void main() {
+${main}
+}`;
+  }
+  
+  private generateUniforms(model: ModelDeclaration): string {
+    let code = '';
+    
+    // Species concentrations
+    for (const species of model.species) {
+      code += `uniform float u_${species.id}_concentration;\n`;
+    }
+    
+    // Partition cells (as interval tree in texture)
+    code += `uniform sampler2D u_partition_cells;\n`;
+    code += `uniform int u_num_cells;\n`;
+    
+    // S-entropy floor
+    code += `uniform vec3 u_s_floor;\n`;
+    
+    return code;
+  }
+  
+  private generateFunctions(model: ModelDeclaration): string {
+    return `
+// Map concentration to chemical potential
+float concentration_to_potential(float C, float mu_0, float RT) {
+  return mu_0 + RT * log(C);
+}
+
+// Map potential to shell coordinates
+vec4 potential_to_shell(float mu) {
+  // Quantization rules (from partition theory)
+  float n = floor(sqrt(abs(mu) / 13.6));  // Principal quantum number
+  float l = mod(n, n);  // Angular momentum
+  float m = mod(l, 2.0 * l + 1.0) - l;  // Magnetic
+  float s = sign(mu) * 0.5;  // Spin
+  return vec4(n, l, m, s);
+}
+
+// Map shell coordinates to S_k (knowledge entropy)
+float shell_to_S_k(vec4 shell) {
+  float n = shell.x;
+  float capacity = 2.0 * n
