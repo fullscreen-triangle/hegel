@@ -180,91 +180,142 @@ function GLBViewer({ glbModel, circuit }) {
   );
 }
 
-/* ── Preview panel — circuit graph + optional GLB ── */
+/* ── 3D Network Graph (react-force-graph) ── */
+function NetworkGraph3D({ circuit, metrics }) {
+  const containerRef = useRef(null);
+  const fgRef = useRef(null);
+  const [ForceGraph, setForceGraph] = useState(null);
+  const [dims, setDims] = useState({ width: 600, height: 400 });
+
+  useEffect(() => {
+    import("react-force-graph").then(mod => setForceGraph(() => mod.ForceGraph3D));
+  }, []);
+
+  useEffect(() => {
+    if (!containerRef.current) return;
+    const ro = new ResizeObserver((entries) => {
+      const { width, height } = entries[0].contentRect;
+      if (width > 0 && height > 0) setDims({ width, height });
+    });
+    ro.observe(containerRef.current);
+    return () => ro.disconnect();
+  }, []);
+
+  const graphData = useMemo(() => {
+    if (!circuit) return { nodes: [], links: [] };
+    const Se = metrics?.Se || [];
+    const muMin = Math.min(...circuit.nodes.map(n => n.mu));
+    const muMax = Math.max(...circuit.nodes.map(n => n.mu));
+    const muRange = muMax - muMin || 1;
+
+    const nodes = circuit.nodes.map((n, i) => ({
+      id: i,
+      name: n.name,
+      mu: n.mu,
+      concentration: n.concentration,
+      compartment: n.compartment,
+      se: Se[i] || 0,
+      muNorm: (n.mu - muMin) / muRange,
+    }));
+    const links = circuit.edges.map(e => ({
+      source: e.src,
+      target: e.dst,
+      conductance: e.conductance,
+      name: e.name,
+    }));
+    return { nodes, links };
+  }, [circuit, metrics]);
+
+  const maxG = useMemo(() => {
+    if (!circuit) return 1;
+    return Math.max(1, ...circuit.edges.map(e => e.conductance));
+  }, [circuit]);
+
+  const nodeColor = useCallback((node) => {
+    const t = node.muNorm;
+    const r = Math.round(255 * Math.max(0, Math.min(1, 0.267 + 2.82 * t * t - 5.77 * t ** 3 + 2.68 * t ** 4)));
+    const g = Math.round(255 * Math.max(0, Math.min(1, 0.005 + 1.4 * t - 2.8 * t * t + 4.4 * t ** 3 - 2 * t ** 4)));
+    const b = Math.round(255 * Math.max(0, Math.min(1, 0.329 + 1.07 * t - 0.73 * t * t + 0.33 * t ** 3)));
+    return `rgb(${r},${g},${b})`;
+  }, []);
+
+  const nodeLabel = useCallback((node) => {
+    return `<div style="background:rgba(10,10,20,0.9);padding:6px 10px;border-radius:4px;border:1px solid #2a2a4a;font-family:monospace;font-size:11px;">
+      <div style="color:#4ec9b0;font-weight:bold;margin-bottom:2px;">${node.name}</div>
+      <div style="color:#888;">μ = ${node.mu.toFixed(1)} kJ/mol</div>
+      <div style="color:#888;">conc = ${node.concentration}</div>
+      <div style="color:#888;">compartment: ${node.compartment}</div>
+      <div style="color:#888;">Se = ${node.se.toFixed(3)}</div>
+    </div>`;
+  }, []);
+
+  const nodeThreeObject = useCallback((node) => {
+    const THREE = require("three");
+    const group = new THREE.Group();
+    const geom = new THREE.SphereGeometry(4, 16, 16);
+    const color = nodeColor(node);
+    const mat = new THREE.MeshPhongMaterial({ color, emissive: color, emissiveIntensity: 0.3, transparent: true, opacity: 0.9 });
+    group.add(new THREE.Mesh(geom, mat));
+    const canvas = document.createElement("canvas");
+    canvas.width = 128; canvas.height = 32;
+    const ctx = canvas.getContext("2d");
+    ctx.fillStyle = "#ffffff";
+    ctx.font = "bold 18px monospace";
+    ctx.textAlign = "center";
+    ctx.fillText(node.name.length > 10 ? node.name.slice(0, 9) + "…" : node.name, 64, 22);
+    const tex = new THREE.CanvasTexture(canvas);
+    const spriteMat = new THREE.SpriteMaterial({ map: tex, transparent: true, depthWrite: false });
+    const sprite = new THREE.Sprite(spriteMat);
+    sprite.scale.set(24, 6, 1);
+    sprite.position.set(0, 7, 0);
+    group.add(sprite);
+    return group;
+  }, [nodeColor]);
+
+  const linkWidth = useCallback((link) => Math.max(0.5, 3 * link.conductance / maxG), [maxG]);
+  const linkColor = useCallback(() => "rgba(74,158,255,0.3)", []);
+
+  if (!ForceGraph) {
+    return (
+      <div ref={containerRef} className="flex h-full w-full items-center justify-center" style={{ background: "#0a0a14" }}>
+        <span style={{ color: "#5a5a5a" }}>Loading 3D graph…</span>
+      </div>
+    );
+  }
+
+  return (
+    <div ref={containerRef} className="h-full w-full" style={{ background: "#0a0a14" }}>
+      <ForceGraph
+        ref={fgRef}
+        width={dims.width}
+        height={dims.height}
+        graphData={graphData}
+        backgroundColor="#0a0a14"
+        nodeThreeObject={nodeThreeObject}
+        nodeLabel={nodeLabel}
+        linkWidth={linkWidth}
+        linkColor={linkColor}
+        linkDirectionalArrowLength={4}
+        linkDirectionalArrowRelPos={0.85}
+        linkDirectionalArrowColor={() => "rgba(74,158,255,0.6)"}
+        linkCurvature={0.1}
+        linkOpacity={0.6}
+        enableNodeDrag={true}
+        enableNavigationControls={true}
+        showNavInfo={false}
+      />
+    </div>
+  );
+}
+
+/* ── Preview panel — 3D network graph + optional GLB ── */
 function PreviewPanel({ circuit, metrics, glbModel }) {
-  const svgRef = useRef(null);
   const [showGLB, setShowGLB] = useState(false);
 
   useEffect(() => {
     if (glbModel?.file) setShowGLB(true);
     else setShowGLB(false);
   }, [glbModel]);
-
-  useEffect(() => {
-    if (!circuit || !svgRef.current || showGLB) return;
-    let d3;
-    try { d3 = require("d3"); } catch { return; }
-
-    const svg = d3.select(svgRef.current);
-    svg.selectAll("*").remove();
-
-    const width = svgRef.current.clientWidth || 600;
-    const height = svgRef.current.clientHeight || 400;
-
-    const defs = svg.append("defs");
-    defs.append("marker").attr("id", "arrow").attr("viewBox", "0 -5 10 10")
-      .attr("refX", 20).attr("refY", 0).attr("markerWidth", 6).attr("markerHeight", 6)
-      .attr("orient", "auto")
-      .append("path").attr("d", "M0,-5L10,0L0,5").attr("fill", "#4a4a6a");
-
-    const muExtent = d3.extent(circuit.nodes, d => d.mu);
-    const colorScale = d3.scaleSequential(d3.interpolateViridis).domain(muExtent);
-
-    const nodes = circuit.nodes.map(n => ({ ...n }));
-    const links = circuit.edges.map(e => ({ ...e, source: e.src, target: e.dst }));
-
-    const sim = d3.forceSimulation(nodes)
-      .force("link", d3.forceLink(links).id((_, i) => i).distance(80))
-      .force("charge", d3.forceManyBody().strength(-300))
-      .force("center", d3.forceCenter(width / 2, height / 2))
-      .force("collide", d3.forceCollide(30));
-
-    const gLinks = svg.append("g");
-    const gNodes = svg.append("g");
-    const gLabels = svg.append("g");
-
-    const maxG = Math.max(1, ...circuit.edges.map(e => e.conductance));
-
-    const link = gLinks.selectAll("line").data(links).join("line")
-      .attr("stroke", "#3a3a5a")
-      .attr("stroke-width", d => Math.max(1, 3 * d.conductance / maxG))
-      .attr("marker-end", "url(#arrow)");
-
-    const node = gNodes.selectAll("circle").data(nodes).join("circle")
-      .attr("r", 14)
-      .attr("fill", d => colorScale(d.mu))
-      .attr("stroke", "#fff")
-      .attr("stroke-width", 1.5)
-      .style("cursor", "grab")
-      .call(d3.drag()
-        .on("start", (e, d) => { if (!e.active) sim.alphaTarget(0.3).restart(); d.fx = d.x; d.fy = d.y; })
-        .on("drag", (e, d) => { d.fx = e.x; d.fy = e.y; })
-        .on("end", (e, d) => { if (!e.active) sim.alphaTarget(0); d.fx = null; d.fy = null; })
-      );
-    node.append("title").text(d => `${d.name}\nmu: ${d.mu.toFixed(1)} kJ/mol\nconc: ${d.concentration}`);
-
-    const label = gLabels.selectAll("text").data(nodes).join("text")
-      .text(d => d.name.length > 10 ? d.name.slice(0, 9) + "…" : d.name)
-      .attr("text-anchor", "middle").attr("dy", -20)
-      .style("fill", "#ccc").style("font-size", "11px").style("font-family", "monospace")
-      .style("pointer-events", "none");
-
-    sim.on("tick", () => {
-      link.attr("x1", d => d.source.x).attr("y1", d => d.source.y)
-        .attr("x2", d => d.target.x).attr("y2", d => d.target.y);
-      node.attr("cx", d => d.x).attr("cy", d => d.y);
-      label.attr("x", d => d.x).attr("y", d => d.y);
-    });
-
-    const zoom = d3.zoom().scaleExtent([0.3, 4]).on("zoom", (e) => {
-      gLinks.attr("transform", e.transform);
-      gNodes.attr("transform", e.transform);
-      gLabels.attr("transform", e.transform);
-    });
-    svg.call(zoom);
-
-    return () => sim.stop();
-  }, [circuit, showGLB]);
 
   if (!circuit) {
     return <div className="flex h-full items-center justify-center text-sm" style={{ color: "#5a5a5a" }}>Run a script to see the circuit</div>;
@@ -275,25 +326,25 @@ function PreviewPanel({ circuit, metrics, glbModel }) {
       {showGLB && glbModel ? (
         <GLBViewer glbModel={glbModel} circuit={circuit} />
       ) : (
-        <svg ref={svgRef} className="h-full w-full" />
+        <NetworkGraph3D circuit={circuit} metrics={metrics} />
       )}
-      <div className="absolute left-3 top-3 flex items-center gap-2">
+      <div className="absolute left-3 top-3 flex items-center gap-2" style={{ pointerEvents: "none" }}>
         <span className="rounded px-2 py-1 text-[11px] font-mono" style={{ background: "rgba(15,15,26,0.85)", color: "#4ec9b0" }}>
           {circuit.numNodes} nodes, {circuit.numEdges} edges
-          {showGLB ? " — 3D model" : " — drag nodes, scroll to zoom"}
+          {showGLB ? " — GLB model" : " — 3D force graph"}
         </span>
         {glbModel?.file && (
           <button
             onClick={() => setShowGLB(s => !s)}
             className="rounded px-2 py-1 text-[11px] font-mono"
-            style={{ background: "rgba(15,15,26,0.85)", color: showGLB ? "#dcdcaa" : "#4ec9b0", border: "1px solid #2a2a4a" }}
+            style={{ background: "rgba(15,15,26,0.85)", color: showGLB ? "#dcdcaa" : "#4ec9b0", border: "1px solid #2a2a4a", pointerEvents: "auto" }}
           >
             {showGLB ? "Show Graph" : "Show 3D"}
           </button>
         )}
       </div>
       {circuit.compartments && circuit.compartments.length > 1 && (
-        <div className="absolute bottom-3 left-3 flex gap-2">
+        <div className="absolute bottom-3 left-3 flex gap-2" style={{ pointerEvents: "none" }}>
           {circuit.compartments.map(c => (
             <span key={c} className="rounded-full px-2 py-0.5 text-[10px]" style={{ background: "#1a1a3e", color: "#888" }}>{c}</span>
           ))}

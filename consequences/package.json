@@ -1,5 +1,5 @@
 {
-  "name": "developer-portfolio",
+  "name": "consequences",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -19,6 +19,7 @@
     "next": "^13.2.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-force-graph": "^1.48.2",
     "three": "^0.160.0"
   },
   "devDependencies": {

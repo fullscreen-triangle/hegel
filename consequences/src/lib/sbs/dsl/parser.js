@@ -245,7 +245,13 @@ class Parser {
     if (!this.match(TOKEN_TYPES.PUNC, '{')) return {};
     const props = {};
     while (!this.match(TOKEN_TYPES.PUNC, '}')) {
-      const key = this.expect(TOKEN_TYPES.IDENT).value;
+      const tok = this.peek();
+      let key;
+      if (tok.type === TOKEN_TYPES.IDENT || tok.type === TOKEN_TYPES.KEYWORD) {
+        key = this.advance().value;
+      } else {
+        throw new Error(`Expected property name but got ${tok.type} '${tok.value}' at line ${tok.line}`);
+      }
       this.expect(TOKEN_TYPES.PUNC, ':');
       props[key] = this.parseExpression();
       this.match(TOKEN_TYPES.PUNC, ',');
