@@ -1,0 +1,261 @@
+{
+  "experiment": "Non-Instantaneity of Individuation",
+  "theorem": "Theorem 2.1",
+  "timestamp": "2026-06-23T00:28:14.677872",
+  "pathways": [
+    {
+      "pathway": "Glycolysis",
+      "beta_min": 0.001789,
+      "individuation_costs": [
+        {
+          "species": "Glucose",
+          "min_partition_cost": 0.231201,
+          "closest_species": "G6P",
+          "positive": true
+        },
+        {
+          "species": "G6P",
+          "min_partition_cost": 0.231201,
+          "closest_species": "Glucose",
+          "positive": true
+        },
+        {
+          "species": "F6P",
+          "min_partition_cost": 0.076352,
+          "closest_species": "PEP",
+          "positive": true
+        },
+        {
+          "species": "FBP",
+          "min_partition_cost": 0.085979,
+          "closest_species": "BPG13",
+          "positive": true
+        },
+        {
+          "species": "G3P",
+          "min_partition_cost": 0.019737,
+          "closest_species": "PEP",
+          "positive": true
+        },
+        {
+          "species": "BPG13",
+          "min_partition_cost": 0.085979,
+          "closest_species": "FBP",
+          "positive": true
+        },
+        {
+          "species": "3PG",
+          "min_partition_cost": 0.001789,
+          "closest_species": "2PG",
+          "positive": true
+        },
+        {
+          "species": "2PG",
+          "min_partition_cost": 0.001789,
+          "closest_species": "3PG",
+          "positive": true
+        },
+        {
+          "species": "PEP",
+          "min_partition_cost": 0.019737,
+          "closest_species": "G3P",
+          "positive": true
+        },
+        {
+          "species": "Pyruvate",
+          "min_partition_cost": 0.421862,
+          "closest_species": "PEP",
+          "positive": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pathway": "TCA Cycle",
+      "beta_min": 0.152136,
+      "individuation_costs": [
+        {
+          "species": "AcCoA",
+          "min_partition_cost": 0.437024,
+          "closest_species": "Fum",
+          "positive": true
+        },
+        {
+          "species": "Citrate",
+          "min_partition_cost": 0.739209,
+          "closest_species": "Fum",
+          "positive": true
+        },
+        {
+          "species": "Isocit",
+          "min_partition_cost": 0.476014,
+          "closest_species": "aKG",
+          "positive": true
+        },
+        {
+          "species": "aKG",
+          "min_partition_cost": 0.152136,
+          "closest_species": "Succ",
+          "positive": true
+        },
+        {
+          "species": "SucCoA",
+          "min_partition_cost": 0.227945,
+          "closest_species": "Succ",
+          "positive": true
+        },
+        {
+          "species": "Succ",
+          "min_partition_cost": 0.152136,
+          "closest_species": "aKG",
+          "positive": true
+        },
+        {
+          "species": "Fum",
+          "min_partition_cost": 0.437024,
+          "closest_species": "AcCoA",
+          "positive": true
+        },
+        {
+          "species": "Malate",
+          "min_partition_cost": 0.633568,
+          "closest_species": "OAA",
+          "positive": true
+        },
+        {
+          "species": "OAA",
+          "min_partition_cost": 0.608891,
+          "closest_species": "Fum",
+          "positive": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pathway": "OxPhos",
+      "beta_min": 0.125005,
+      "individuation_costs": [
+        {
+          "species": "NADH",
+          "min_partition_cost": 0.125005,
+          "closest_species": "H2O",
+          "positive": true
+        },
+        {
+          "species": "CoQ",
+          "min_partition_cost": 0.185372,
+          "closest_species": "CytC",
+          "positive": true
+        },
+        {
+          "species": "CytC",
+          "min_partition_cost": 0.185372,
+          "closest_species": "CoQ",
+          "positive": true
+        },
+        {
+          "species": "O2",
+          "min_partition_cost": 0.201017,
+          "closest_species": "NADH",
+          "positive": true
+        },
+        {
+          "species": "H2O",
+          "min_partition_cost": 0.125005,
+          "closest_species": "NADH",
+          "positive": true
+        },
+        {
+          "species": "ADP",
+          "min_partition_cost": 0.39476,
+          "closest_species": "ATP",
+          "positive": true
+        },
+        {
+          "species": "Pi",
+          "min_partition_cost": 0.440347,
+          "closest_species": "NADH",
+          "positive": true
+        },
+        {
+          "species": "ATP",
+          "min_partition_cost": 0.39476,
+          "closest_species": "ADP",
+          "positive": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pathway": "EGFR/MAPK",
+      "beta_min": 0.014782,
+      "individuation_costs": [
+        {
+          "species": "EGF",
+          "min_partition_cost": 0.378346,
+          "closest_species": "EGFR",
+          "positive": true
+        },
+        {
+          "species": "EGFR",
+          "min_partition_cost": 0.378346,
+          "closest_species": "EGF",
+          "positive": true
+        },
+        {
+          "species": "GRB2",
+          "min_partition_cost": 0.014782,
+          "closest_species": "SOS",
+          "positive": true
+        },
+        {
+          "species": "SOS",
+          "min_partition_cost": 0.014782,
+          "closest_species": "GRB2",
+          "positive": true
+        },
+        {
+          "species": "RAS",
+          "min_partition_cost": 0.033249,
+          "closest_species": "MYC",
+          "positive": true
+        },
+        {
+          "species": "RAF",
+          "min_partition_cost": 0.030558,
+          "closest_species": "MYC",
+          "positive": true
+        },
+        {
+          "species": "MEK",
+          "min_partition_cost": 0.026616,
+          "closest_species": "ERK",
+          "positive": true
+        },
+        {
+          "species": "ERK",
+          "min_partition_cost": 0.026616,
+          "closest_species": "MEK",
+          "positive": true
+        },
+        {
+          "species": "MYC",
+          "min_partition_cost": 0.030558,
+          "closest_species": "RAF",
+          "positive": true
+        },
+        {
+          "species": "CycD",
+          "min_partition_cost": 0.029027,
+          "closest_species": "MEK",
+          "positive": true
+        }
+      ],
+      "pass": true
+    }
+  ],
+  "summary": {
+    "all_pass": true,
+    "conclusion": "Every species requires strictly positive thermodynamic cost (β_min > 0) for individuation from its complement."
+  }
+}

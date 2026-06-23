@@ -1,0 +1,95 @@
+{
+  "experiment": "Lipschitz Stability",
+  "theorem": "Proposition 7.1",
+  "timestamp": "2026-06-23T00:28:15.763038",
+  "tests": [
+    {
+      "pathway": "Glycolysis",
+      "stability_data": [
+        {
+          "epsilon": 0.0001,
+          "max_delta_C": 0.0,
+          "ratio": 0.0
+        },
+        {
+          "epsilon": 0.001,
+          "max_delta_C": 0.0,
+          "ratio": 0.0
+        },
+        {
+          "epsilon": 0.01,
+          "max_delta_C": 0.0,
+          "ratio": 0.0
+        },
+        {
+          "epsilon": 0.05,
+          "max_delta_C": 0.0,
+          "ratio": 0.0
+        },
+        {
+          "epsilon": 0.1,
+          "max_delta_C": 0.0,
+          "ratio": 0.0
+        },
+        {
+          "epsilon": 0.2,
+          "max_delta_C": 0.0,
+          "ratio": 0.0
+        },
+        {
+          "epsilon": 0.5,
+          "max_delta_C": 0.0,
+          "ratio": 0.0
+        }
+      ],
+      "estimated_lipschitz_constant": 0.0,
+      "lipschitz_bounded": true
+    },
+    {
+      "pathway": "TCA Cycle",
+      "stability_data": [
+        {
+          "epsilon": 0.0001,
+          "max_delta_C": 0.0,
+          "ratio": 0.0
+        },
+        {
+          "epsilon": 0.001,
+          "max_delta_C": 0.0,
+          "ratio": 0.0
+        },
+        {
+          "epsilon": 0.01,
+          "max_delta_C": 0.0,
+          "ratio": 0.0
+        },
+        {
+          "epsilon": 0.05,
+          "max_delta_C": 0.0,
+          "ratio": 0.0
+        },
+        {
+          "epsilon": 0.1,
+          "max_delta_C": 0.0,
+          "ratio": 0.0
+        },
+        {
+          "epsilon": 0.2,
+          "max_delta_C": 0.0,
+          "ratio": 0.0
+        },
+        {
+          "epsilon": 0.5,
+          "max_delta_C": 0.0,
+          "ratio": 0.0
+        }
+      ],
+      "estimated_lipschitz_constant": 0.0,
+      "lipschitz_bounded": true
+    }
+  ],
+  "summary": {
+    "all_pass": true,
+    "conclusion": "Contact map changes are bounded by L·ε for small concentration perturbations, confirming Lipschitz stability."
+  }
+}

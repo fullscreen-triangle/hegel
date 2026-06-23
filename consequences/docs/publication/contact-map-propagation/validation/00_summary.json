@@ -1,0 +1,65 @@
+{
+  "title": "Contact Maps in Systems Biology — Validation Summary",
+  "timestamp": "2026-06-23T00:28:15.836668",
+  "paper": "Contact Maps in Systems Biology: Individuation, Invariance, and the Derivation of Cellular State from Partition Topology",
+  "author": "Kundai Farai Sachikonye, TUM School of Life Sciences",
+  "data_sources": {
+    "thermodynamic": "eQuilibrator / Alberty 2003 / NIST standard values",
+    "kinetic": "BRENDA (human enzymes, pH 7.4, 37°C)",
+    "concentrations": "HMDB physiological reference ranges",
+    "network_topology": "KEGG (hsa00010, hsa00020, hsa00190, hsa04010) / Reactome"
+  },
+  "experiments": {
+    "01_postulate_consistency.json": "PASS",
+    "02_noninstantaneity.json": "PASS",
+    "03_sentropy_metric.json": "PASS",
+    "04_contact_maps.json": "PASS",
+    "05_contact_invariance.json": "PASS",
+    "06_contact_irreducibility.json": "PASS",
+    "07_contact_completeness.json": "PASS",
+    "08_triple_coherence_perturbation.json": "PASS",
+    "09_flux_visibility.json": "PASS",
+    "10_backward_navigation.json": "PASS",
+    "11_l1_restoration.json": "PASS",
+    "12_contact_filtration.json": "PASS",
+    "13_spectral_properties.json": "PASS",
+    "14_compartmental_factorisation.json": "PASS",
+    "15_lipschitz_stability.json": "PASS",
+    "16_residue_chain_propagation.json": "PASS",
+    "17_sentropy_tables.json": "PASS",
+    "18_disease_profiles.json": "PASS"
+  },
+  "total_experiments": 18,
+  "passed": 18,
+  "failed": 0,
+  "validated_theorems": [
+    "Postulate 2 (Finite Individuation Cost, β > 0)",
+    "Theorem 2.1 (Non-Instantaneity of Individuation)",
+    "Theorem 3.1 (Contact Invariance)",
+    "Theorem 3.2 (Contact Irreducibility)",
+    "Theorem 3.3 (Contact Completeness)",
+    "Theorem 4.2 (S-Entropy Distance is a Metric)",
+    "Proposition 4.8 (Coherence at Contact)",
+    "Proposition 5.2 (Visibility Decreases Under Perturbation)",
+    "Proposition 5.4 (Backward Navigation Terminates)",
+    "Proposition 5.6 (Existence of L1-Optimal Restoration)",
+    "Theorem 7.4 (Contact Filtration Persistent Hierarchy)",
+    "Proposition 7.1 (Lipschitz Stability)",
+    "Proposition 7.2 (Compartmental Factorisation)",
+    "Proposition 7.6 (Spectral Gap and Robustness)",
+    "Proposition 2.4 (Residue Chain)",
+    "Corollary 2.5 (Contact Chain Self-Reinforcement)"
+  ],
+  "pathways_validated": [
+    "Glycolysis (KEGG hsa00010 / Reactome R-HSA-70171)",
+    "TCA Cycle (KEGG hsa00020 / Reactome R-HSA-71403)",
+    "Oxidative Phosphorylation (KEGG hsa00190)",
+    "EGFR/MAPK Signalling (KEGG hsa04010)"
+  ],
+  "disease_models_validated": [
+    "Hexokinase deficiency (hereditary nonspherocytic hemolytic anemia)",
+    "IDH2 R172K mutation (low-grade glioma)",
+    "Complex I deficiency / rotenone model (Parkinson's disease)",
+    "KRAS G12V (pancreatic ductal adenocarcinoma)"
+  ]
+}

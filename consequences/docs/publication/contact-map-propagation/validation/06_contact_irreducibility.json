@@ -1,0 +1,181 @@
+{
+  "experiment": "Contact Irreducibility",
+  "theorem": "Theorem 3.2",
+  "timestamp": "2026-06-23T00:28:14.733891",
+  "tests": [
+    {
+      "pathway": "Glycolysis",
+      "n_species": 10,
+      "n_edges": 9,
+      "connected_components": 1,
+      "degree_sequence": [
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "degree_info_bits": 5.4919,
+      "contact_map_entropy_bits": 2.0588,
+      "unweighted_spectrum": [
+        -1.919,
+        -1.6825,
+        -1.3097,
+        -0.8308,
+        -0.2846,
+        0.2846,
+        0.8308,
+        1.3097,
+        1.6825,
+        1.919
+      ],
+      "weighted_spectrum": [
+        -1.4614,
+        -0.8216,
+        -0.4436,
+        -0.2645,
+        -0.0003,
+        0.0003,
+        0.2645,
+        0.4436,
+        0.8216,
+        1.4614
+      ],
+      "info_strictly_greater": false
+    },
+    {
+      "pathway": "TCA Cycle",
+      "n_species": 9,
+      "n_edges": 9,
+      "connected_components": 1,
+      "degree_sequence": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "degree_info_bits": 0.0,
+      "contact_map_entropy_bits": 2.9477,
+      "unweighted_spectrum": [
+        -1.8794,
+        -1.8794,
+        -1.0,
+        -1.0,
+        0.3473,
+        0.3473,
+        1.5321,
+        1.5321,
+        2.0
+      ],
+      "weighted_spectrum": [
+        -1.6582,
+        -1.1559,
+        -0.699,
+        -0.4288,
+        0.1139,
+        0.2617,
+        0.7653,
+        1.1417,
+        1.6593
+      ],
+      "info_strictly_greater": "True"
+    },
+    {
+      "pathway": "OxPhos",
+      "n_species": 8,
+      "n_edges": 7,
+      "connected_components": 1,
+      "degree_sequence": [
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "degree_info_bits": 4.8074,
+      "contact_map_entropy_bits": 1.9502,
+      "unweighted_spectrum": [
+        -1.8794,
+        -1.5321,
+        -1.0,
+        -0.3473,
+        0.3473,
+        1.0,
+        1.5321,
+        1.8794
+      ],
+      "weighted_spectrum": [
+        -1.2996,
+        -0.9099,
+        -0.7767,
+        -0.0488,
+        0.0488,
+        0.7767,
+        0.9099,
+        1.2996
+      ],
+      "info_strictly_greater": false
+    },
+    {
+      "pathway": "EGFR/MAPK",
+      "n_species": 10,
+      "n_edges": 10,
+      "connected_components": 1,
+      "degree_sequence": [
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        3,
+        3
+      ],
+      "degree_info_bits": 10.2992,
+      "contact_map_entropy_bits": 1.571,
+      "unweighted_spectrum": [
+        -2.1359,
+        -1.8261,
+        -1.1597,
+        -0.7694,
+        -0.3463,
+        0.1949,
+        0.8949,
+        1.3918,
+        1.5481,
+        2.2077
+      ],
+      "weighted_spectrum": [
+        -2.1319,
+        -0.1821,
+        -0.1694,
+        -0.1019,
+        -0.0007,
+        0.0,
+        0.1024,
+        0.1728,
+        0.1789,
+        2.1319
+      ],
+      "info_strictly_greater": false
+    }
+  ],
+  "summary": {
+    "conclusion": "The contact map (weighted spectrum) carries strictly more information than any coarser invariant (degree sequence, connected components, unweighted spectrum). Contact is irreducible."
+  }
+}

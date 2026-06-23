@@ -1,0 +1,396 @@
+{
+  "experiment": "Contact Invariance Theorem",
+  "theorem": "Theorem 3.1",
+  "timestamp": "2026-06-23T00:28:14.726592",
+  "tests": [
+    {
+      "pathway": "Glycolysis",
+      "perturbation": "HK1 90% inhibition",
+      "alpha": 0.1,
+      "edge_idx": 0,
+      "edge_set_preserved": true,
+      "edge_comparisons": [
+        {
+          "edge": "G6P→F6P",
+          "healthy_cost": 1.354019,
+          "perturbed_cost": 1.080571,
+          "change": -0.273448
+        },
+        {
+          "edge": "G3P→BPG13",
+          "healthy_cost": 0.569437,
+          "perturbed_cost": 0.56945,
+          "change": 1.3e-05
+        },
+        {
+          "edge": "2PG→PEP",
+          "healthy_cost": 0.137268,
+          "perturbed_cost": 0.437908,
+          "change": 0.30064
+        },
+        {
+          "edge": "3PG→2PG",
+          "healthy_cost": 0.001789,
+          "perturbed_cost": 0.01018,
+          "change": 0.008391
+        },
+        {
+          "edge": "F6P→FBP",
+          "healthy_cost": 0.470822,
+          "perturbed_cost": 0.652974,
+          "change": 0.182153
+        },
+        {
+          "edge": "BPG13→3PG",
+          "healthy_cost": 0.462936,
+          "perturbed_cost": 0.620906,
+          "change": 0.15797
+        },
+        {
+          "edge": "FBP→G3P",
+          "healthy_cost": 0.483462,
+          "perturbed_cost": 0.483587,
+          "change": 0.000125
+        },
+        {
+          "edge": "PEP→Pyruvate",
+          "healthy_cost": 0.421862,
+          "perturbed_cost": 0.422134,
+          "change": 0.000272
+        },
+        {
+          "edge": "Glucose→G6P",
+          "healthy_cost": 0.231201,
+          "perturbed_cost": 0.510481,
+          "change": 0.27928
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pathway": "Glycolysis",
+      "perturbation": "GAPDH 50% inhibition",
+      "alpha": 0.5,
+      "edge_idx": 4,
+      "edge_set_preserved": true,
+      "edge_comparisons": [
+        {
+          "edge": "G6P→F6P",
+          "healthy_cost": 1.354019,
+          "perturbed_cost": 1.354019,
+          "change": 0.0
+        },
+        {
+          "edge": "G3P→BPG13",
+          "healthy_cost": 0.569437,
+          "perturbed_cost": 0.569437,
+          "change": 0.0
+        },
+        {
+          "edge": "2PG→PEP",
+          "healthy_cost": 0.137268,
+          "perturbed_cost": 0.137268,
+          "change": 0.0
+        },
+        {
+          "edge": "3PG→2PG",
+          "healthy_cost": 0.001789,
+          "perturbed_cost": 0.001789,
+          "change": 0.0
+        },
+        {
+          "edge": "F6P→FBP",
+          "healthy_cost": 0.470822,
+          "perturbed_cost": 0.470822,
+          "change": 0.0
+        },
+        {
+          "edge": "BPG13→3PG",
+          "healthy_cost": 0.462936,
+          "perturbed_cost": 0.463061,
+          "change": 0.000125
+        },
+        {
+          "edge": "FBP→G3P",
+          "healthy_cost": 0.483462,
+          "perturbed_cost": 0.483464,
+          "change": 2e-06
+        },
+        {
+          "edge": "PEP→Pyruvate",
+          "healthy_cost": 0.421862,
+          "perturbed_cost": 0.421862,
+          "change": 0.0
+        },
+        {
+          "edge": "Glucose→G6P",
+          "healthy_cost": 0.231201,
+          "perturbed_cost": 0.231201,
+          "change": 0.0
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pathway": "TCA Cycle",
+      "perturbation": "IDH2 R172K mutation",
+      "alpha": 0.15,
+      "edge_idx": 2,
+      "edge_set_preserved": true,
+      "edge_comparisons": [
+        {
+          "edge": "Succ→Fum",
+          "healthy_cost": 0.668675,
+          "perturbed_cost": 0.668675,
+          "change": 0.0
+        },
+        {
+          "edge": "Isocit→aKG",
+          "healthy_cost": 0.476014,
+          "perturbed_cost": 0.476014,
+          "change": 0.0
+        },
+        {
+          "edge": "AcCoA→Citrate",
+          "healthy_cost": 1.008341,
+          "perturbed_cost": 1.008341,
+          "change": 0.0
+        },
+        {
+          "edge": "SucCoA→Succ",
+          "healthy_cost": 0.227945,
+          "perturbed_cost": 0.227945,
+          "change": 0.0
+        },
+        {
+          "edge": "Citrate→Isocit",
+          "healthy_cost": 0.865209,
+          "perturbed_cost": 0.905554,
+          "change": 0.040345
+        },
+        {
+          "edge": "OAA→AcCoA",
+          "healthy_cost": 1.016583,
+          "perturbed_cost": 1.016583,
+          "change": 0.0
+        },
+        {
+          "edge": "aKG→SucCoA",
+          "healthy_cost": 0.369664,
+          "perturbed_cost": 0.369303,
+          "change": -0.000361
+        },
+        {
+          "edge": "Fum→Malate",
+          "healthy_cost": 0.823734,
+          "perturbed_cost": 0.823734,
+          "change": 0.0
+        },
+        {
+          "edge": "Malate→OAA",
+          "healthy_cost": 0.633568,
+          "perturbed_cost": 0.633568,
+          "change": 0.0
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pathway": "OxPhos",
+      "perturbation": "Complex I 70% inhibition",
+      "alpha": 0.3,
+      "edge_idx": 0,
+      "edge_set_preserved": true,
+      "edge_comparisons": [
+        {
+          "edge": "ADP→ATP",
+          "healthy_cost": 0.39476,
+          "perturbed_cost": 0.39476,
+          "change": 0.0
+        },
+        {
+          "edge": "CytC→O2",
+          "healthy_cost": 0.729352,
+          "perturbed_cost": 0.729352,
+          "change": 0.0
+        },
+        {
+          "edge": "ATP→Pi",
+          "healthy_cost": 0.93456,
+          "perturbed_cost": 0.93456,
+          "change": 0.0
+        },
+        {
+          "edge": "NADH→ADP",
+          "healthy_cost": 0.960282,
+          "perturbed_cost": 0.968591,
+          "change": 0.008309
+        },
+        {
+          "edge": "O2→H2O",
+          "healthy_cost": 0.26922,
+          "perturbed_cost": 0.26922,
+          "change": 0.0
+        },
+        {
+          "edge": "CoQ→CytC",
+          "healthy_cost": 0.185372,
+          "perturbed_cost": 0.237199,
+          "change": 0.051827
+        },
+        {
+          "edge": "NADH→CoQ",
+          "healthy_cost": 0.729565,
+          "perturbed_cost": 0.729565,
+          "change": 0.0
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pathway": "EGFR/MAPK",
+      "perturbation": "KRAS G12V gain-of-function",
+      "alpha": 5.0,
+      "edge_idx": 3,
+      "edge_set_preserved": true,
+      "edge_comparisons": [
+        {
+          "edge": "ERK→MYC",
+          "healthy_cost": 0.171808,
+          "perturbed_cost": 0.171808,
+          "change": 0.0
+        },
+        {
+          "edge": "EGF→EGFR",
+          "healthy_cost": 0.378346,
+          "perturbed_cost": 0.378346,
+          "change": 0.0
+        },
+        {
+          "edge": "SOS→RAS",
+          "healthy_cost": 0.158268,
+          "perturbed_cost": 0.158268,
+          "change": 0.0
+        },
+        {
+          "edge": "RAS→RAF",
+          "healthy_cost": 0.06377,
+          "perturbed_cost": 0.063762,
+          "change": -8e-06
+        },
+        {
+          "edge": "GRB2→SOS",
+          "healthy_cost": 0.014782,
+          "perturbed_cost": 0.014767,
+          "change": -1.5e-05
+        },
+        {
+          "edge": "RAF→MEK",
+          "healthy_cost": 0.114976,
+          "perturbed_cost": 0.114976,
+          "change": 0.0
+        },
+        {
+          "edge": "ERK→EGFR",
+          "healthy_cost": 1.527928,
+          "perturbed_cost": 1.527928,
+          "change": 0.0
+        },
+        {
+          "edge": "MYC→CycD",
+          "healthy_cost": 0.123705,
+          "perturbed_cost": 0.123705,
+          "change": 0.0
+        },
+        {
+          "edge": "MEK→ERK",
+          "healthy_cost": 0.026616,
+          "perturbed_cost": 0.026616,
+          "change": 0.0
+        },
+        {
+          "edge": "EGFR→GRB2",
+          "healthy_cost": 1.432288,
+          "perturbed_cost": 1.432288,
+          "change": 0.0
+        }
+      ],
+      "pass": true
+    },
+    {
+      "pathway": "EGFR/MAPK",
+      "perturbation": "MEK inhibition (trametinib)",
+      "alpha": 0.2,
+      "edge_idx": 6,
+      "edge_set_preserved": true,
+      "edge_comparisons": [
+        {
+          "edge": "ERK→MYC",
+          "healthy_cost": 0.171808,
+          "perturbed_cost": 0.170807,
+          "change": -0.001001
+        },
+        {
+          "edge": "EGF→EGFR",
+          "healthy_cost": 0.378346,
+          "perturbed_cost": 0.378346,
+          "change": 0.0
+        },
+        {
+          "edge": "SOS→RAS",
+          "healthy_cost": 0.158268,
+          "perturbed_cost": 0.158268,
+          "change": 0.0
+        },
+        {
+          "edge": "RAS→RAF",
+          "healthy_cost": 0.06377,
+          "perturbed_cost": 0.06377,
+          "change": 0.0
+        },
+        {
+          "edge": "GRB2→SOS",
+          "healthy_cost": 0.014782,
+          "perturbed_cost": 0.014782,
+          "change": 0.0
+        },
+        {
+          "edge": "RAF→MEK",
+          "healthy_cost": 0.114976,
+          "perturbed_cost": 0.113741,
+          "change": -0.001234
+        },
+        {
+          "edge": "ERK→EGFR",
+          "healthy_cost": 1.527928,
+          "perturbed_cost": 1.537818,
+          "change": 0.00989
+        },
+        {
+          "edge": "MYC→CycD",
+          "healthy_cost": 0.123705,
+          "perturbed_cost": 0.123705,
+          "change": 0.0
+        },
+        {
+          "edge": "MEK→ERK",
+          "healthy_cost": 0.026616,
+          "perturbed_cost": 0.026616,
+          "change": 0.0
+        },
+        {
+          "edge": "EGFR→GRB2",
+          "healthy_cost": 1.432288,
+          "perturbed_cost": 1.432288,
+          "change": 0.0
+        }
+      ],
+      "pass": true
+    }
+  ],
+  "summary": {
+    "all_pass": true,
+    "num_tests": 6,
+    "conclusion": "Contact graph edge set is invariant under all tested perturbations. Edge weights (current partition depth) change but the topology is preserved."
+  }
+}

@@ -1,0 +1,434 @@
+{
+  "experiment": "Postulate Consistency — Irreducible Residue β > 0",
+  "theorem": "Postulate 2 (Finite Individuation Cost)",
+  "timestamp": "2026-06-23T00:28:14.673961",
+  "pathways": [
+    {
+      "pathway": "Glycolysis",
+      "num_species": 10,
+      "num_edges": 9,
+      "min_beta": 0.001789,
+      "all_edges_positive": true,
+      "all_pairwise_distinguishable": true,
+      "edges": [
+        {
+          "edge": "Glucose→G6P",
+          "beta": 0.231201,
+          "positive": true
+        },
+        {
+          "edge": "G6P→F6P",
+          "beta": 1.354019,
+          "positive": true
+        },
+        {
+          "edge": "F6P→FBP",
+          "beta": 0.470822,
+          "positive": true
+        },
+        {
+          "edge": "FBP→G3P",
+          "beta": 0.483462,
+          "positive": true
+        },
+        {
+          "edge": "G3P→BPG13",
+          "beta": 0.569437,
+          "positive": true
+        },
+        {
+          "edge": "BPG13→3PG",
+          "beta": 0.462936,
+          "positive": true
+        },
+        {
+          "edge": "3PG→2PG",
+          "beta": 0.001789,
+          "positive": true
+        },
+        {
+          "edge": "2PG→PEP",
+          "beta": 0.137268,
+          "positive": true
+        },
+        {
+          "edge": "PEP→Pyruvate",
+          "beta": 0.421862,
+          "positive": true
+        }
+      ],
+      "pairwise_sample": [
+        {
+          "pair": "Glucose–G6P",
+          "distance": 0.231201,
+          "distinguishable": true
+        },
+        {
+          "pair": "Glucose–F6P",
+          "distance": 1.319194,
+          "distinguishable": true
+        },
+        {
+          "pair": "Glucose–FBP",
+          "distance": 1.516636,
+          "distinguishable": true
+        },
+        {
+          "pair": "Glucose–G3P",
+          "distance": 1.367092,
+          "distinguishable": true
+        },
+        {
+          "pair": "Glucose–BPG13",
+          "distance": 1.556961,
+          "distinguishable": true
+        },
+        {
+          "pair": "Glucose–3PG",
+          "distance": 1.346089,
+          "distinguishable": true
+        },
+        {
+          "pair": "Glucose–2PG",
+          "distance": 1.344596,
+          "distinguishable": true
+        },
+        {
+          "pair": "Glucose–PEP",
+          "distance": 1.348652,
+          "distinguishable": true
+        },
+        {
+          "pair": "Glucose–Pyruvate",
+          "distance": 1.356232,
+          "distinguishable": true
+        },
+        {
+          "pair": "G6P–F6P",
+          "distance": 1.354019,
+          "distinguishable": true
+        }
+      ]
+    },
+    {
+      "pathway": "TCA Cycle",
+      "num_species": 9,
+      "num_edges": 9,
+      "min_beta": 0.227945,
+      "all_edges_positive": true,
+      "all_pairwise_distinguishable": true,
+      "edges": [
+        {
+          "edge": "AcCoA→Citrate",
+          "beta": 1.008341,
+          "positive": true
+        },
+        {
+          "edge": "Citrate→Isocit",
+          "beta": 0.865209,
+          "positive": true
+        },
+        {
+          "edge": "Isocit→aKG",
+          "beta": 0.476014,
+          "positive": true
+        },
+        {
+          "edge": "aKG→SucCoA",
+          "beta": 0.369664,
+          "positive": true
+        },
+        {
+          "edge": "SucCoA→Succ",
+          "beta": 0.227945,
+          "positive": true
+        },
+        {
+          "edge": "Succ→Fum",
+          "beta": 0.668675,
+          "positive": true
+        },
+        {
+          "edge": "Fum→Malate",
+          "beta": 0.823734,
+          "positive": true
+        },
+        {
+          "edge": "Malate→OAA",
+          "beta": 0.633568,
+          "positive": true
+        },
+        {
+          "edge": "OAA→AcCoA",
+          "beta": 1.016583,
+          "positive": true
+        }
+      ],
+      "pairwise_sample": [
+        {
+          "pair": "AcCoA–Citrate",
+          "distance": 1.008341,
+          "distinguishable": true
+        },
+        {
+          "pair": "AcCoA–Isocit",
+          "distance": 1.355242,
+          "distinguishable": true
+        },
+        {
+          "pair": "AcCoA–aKG",
+          "distance": 1.023132,
+          "distinguishable": true
+        },
+        {
+          "pair": "AcCoA–SucCoA",
+          "distance": 0.90899,
+          "distinguishable": true
+        },
+        {
+          "pair": "AcCoA–Succ",
+          "distance": 0.971638,
+          "distinguishable": true
+        },
+        {
+          "pair": "AcCoA–Fum",
+          "distance": 0.437024,
+          "distinguishable": true
+        },
+        {
+          "pair": "AcCoA–Malate",
+          "distance": 1.068638,
+          "distinguishable": true
+        },
+        {
+          "pair": "AcCoA–OAA",
+          "distance": 1.016583,
+          "distinguishable": true
+        },
+        {
+          "pair": "Citrate–Isocit",
+          "distance": 0.865209,
+          "distinguishable": true
+        },
+        {
+          "pair": "Citrate–aKG",
+          "distance": 0.953725,
+          "distinguishable": true
+        }
+      ]
+    },
+    {
+      "pathway": "OxPhos",
+      "num_species": 8,
+      "num_edges": 7,
+      "min_beta": 0.185372,
+      "all_edges_positive": true,
+      "all_pairwise_distinguishable": true,
+      "edges": [
+        {
+          "edge": "NADH→CoQ",
+          "beta": 0.729565,
+          "positive": true
+        },
+        {
+          "edge": "CoQ→CytC",
+          "beta": 0.185372,
+          "positive": true
+        },
+        {
+          "edge": "CytC→O2",
+          "beta": 0.729352,
+          "positive": true
+        },
+        {
+          "edge": "O2→H2O",
+          "beta": 0.26922,
+          "positive": true
+        },
+        {
+          "edge": "ADP→ATP",
+          "beta": 0.39476,
+          "positive": true
+        },
+        {
+          "edge": "NADH→ADP",
+          "beta": 0.960282,
+          "positive": true
+        },
+        {
+          "edge": "ATP→Pi",
+          "beta": 0.93456,
+          "positive": true
+        }
+      ],
+      "pairwise_sample": [
+        {
+          "pair": "NADH–CoQ",
+          "distance": 0.729565,
+          "distinguishable": true
+        },
+        {
+          "pair": "NADH–CytC",
+          "distance": 0.91451,
+          "distinguishable": true
+        },
+        {
+          "pair": "NADH–O2",
+          "distance": 0.201017,
+          "distinguishable": true
+        },
+        {
+          "pair": "NADH–H2O",
+          "distance": 0.125005,
+          "distinguishable": true
+        },
+        {
+          "pair": "NADH–ADP",
+          "distance": 0.960282,
+          "distinguishable": true
+        },
+        {
+          "pair": "NADH–Pi",
+          "distance": 0.440347,
+          "distinguishable": true
+        },
+        {
+          "pair": "NADH–ATP",
+          "distance": 1.352709,
+          "distinguishable": true
+        },
+        {
+          "pair": "CoQ–CytC",
+          "distance": 0.185372,
+          "distinguishable": true
+        },
+        {
+          "pair": "CoQ–O2",
+          "distance": 0.544401,
+          "distinguishable": true
+        },
+        {
+          "pair": "CoQ–H2O",
+          "distance": 0.805842,
+          "distinguishable": true
+        }
+      ]
+    },
+    {
+      "pathway": "EGFR/MAPK",
+      "num_species": 10,
+      "num_edges": 10,
+      "min_beta": 0.014782,
+      "all_edges_positive": true,
+      "all_pairwise_distinguishable": true,
+      "edges": [
+        {
+          "edge": "EGF→EGFR",
+          "beta": 0.378346,
+          "positive": true
+        },
+        {
+          "edge": "EGFR→GRB2",
+          "beta": 1.432288,
+          "positive": true
+        },
+        {
+          "edge": "GRB2→SOS",
+          "beta": 0.014782,
+          "positive": true
+        },
+        {
+          "edge": "SOS→RAS",
+          "beta": 0.158268,
+          "positive": true
+        },
+        {
+          "edge": "RAS→RAF",
+          "beta": 0.06377,
+          "positive": true
+        },
+        {
+          "edge": "RAF→MEK",
+          "beta": 0.114976,
+          "positive": true
+        },
+        {
+          "edge": "MEK→ERK",
+          "beta": 0.026616,
+          "positive": true
+        },
+        {
+          "edge": "ERK→MYC",
+          "beta": 0.171808,
+          "positive": true
+        },
+        {
+          "edge": "MYC→CycD",
+          "beta": 0.123705,
+          "positive": true
+        },
+        {
+          "edge": "ERK→EGFR",
+          "beta": 1.527928,
+          "positive": true
+        }
+      ],
+      "pairwise_sample": [
+        {
+          "pair": "EGF–EGFR",
+          "distance": 0.378346,
+          "distinguishable": true
+        },
+        {
+          "pair": "EGF–GRB2",
+          "distance": 1.539888,
+          "distinguishable": true
+        },
+        {
+          "pair": "EGF–SOS",
+          "distance": 1.546923,
+          "distinguishable": true
+        },
+        {
+          "pair": "EGF–RAS",
+          "distance": 1.61949,
+          "distinguishable": true
+        },
+        {
+          "pair": "EGF–RAF",
+          "distance": 1.64991,
+          "distinguishable": true
+        },
+        {
+          "pair": "EGF–MEK",
+          "distance": 1.701483,
+          "distinguishable": true
+        },
+        {
+          "pair": "EGF–ERK",
+          "distance": 1.71454,
+          "distinguishable": true
+        },
+        {
+          "pair": "EGF–MYC",
+          "distance": 1.63415,
+          "distinguishable": true
+        },
+        {
+          "pair": "EGF–CycD",
+          "distance": 1.70279,
+          "distinguishable": true
+        },
+        {
+          "pair": "EGFR–GRB2",
+          "distance": 1.432288,
+          "distinguishable": true
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "all_pathways_pass": true,
+    "conclusion": "All pairwise S-entropy distances > 0; irreducible residue is strictly positive for every species pair across all four pathways."
+  }
+}

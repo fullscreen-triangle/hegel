@@ -1,0 +1,91 @@
+{
+  "experiment": "Backward Navigation",
+  "theorem": "Proposition 5.4",
+  "timestamp": "2026-06-23T00:28:15.739051",
+  "tests": [
+    {
+      "pathway": "Glycolysis",
+      "perturbation": "HK1 90% inhibition",
+      "target": "Pyruvate",
+      "expected_source": "Glucose",
+      "navigation_path": [
+        "Pyruvate",
+        "PEP",
+        "2PG",
+        "3PG",
+        "BPG13",
+        "G3P",
+        "FBP",
+        "F6P",
+        "G6P",
+        "Glucose"
+      ],
+      "path_length": 10,
+      "terminates": true,
+      "found_expected_source": true
+    },
+    {
+      "pathway": "TCA Cycle",
+      "perturbation": "IDH2 R172K",
+      "target": "OAA",
+      "expected_source": "Isocit",
+      "navigation_path": [
+        "OAA",
+        "Malate",
+        "Fum",
+        "Succ",
+        "SucCoA",
+        "aKG",
+        "Isocit",
+        "Citrate",
+        "AcCoA"
+      ],
+      "path_length": 9,
+      "terminates": true,
+      "found_expected_source": true
+    },
+    {
+      "pathway": "OxPhos",
+      "perturbation": "Complex I rotenone",
+      "target": "ATP",
+      "expected_source": "NADH",
+      "navigation_path": [
+        "ATP",
+        "ADP",
+        "NADH",
+        "CoQ",
+        "CytC",
+        "O2",
+        "H2O"
+      ],
+      "path_length": 7,
+      "terminates": true,
+      "found_expected_source": true
+    },
+    {
+      "pathway": "EGFR/MAPK",
+      "perturbation": "KRAS G12V",
+      "target": "CycD",
+      "expected_source": "SOS",
+      "navigation_path": [
+        "CycD",
+        "MYC",
+        "ERK",
+        "MEK",
+        "RAF",
+        "RAS",
+        "SOS",
+        "GRB2",
+        "EGFR",
+        "EGF"
+      ],
+      "path_length": 10,
+      "terminates": true,
+      "found_expected_source": true
+    }
+  ],
+  "summary": {
+    "all_pass": true,
+    "conclusion": "Backward navigation terminates within |V| steps in all cases and traverses through the perturbed region."
+  }
+}

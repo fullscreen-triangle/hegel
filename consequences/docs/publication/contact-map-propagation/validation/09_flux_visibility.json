@@ -1,0 +1,255 @@
+{
+  "experiment": "Flux Visibility Under Perturbation",
+  "theorem": "Proposition 5.2",
+  "timestamp": "2026-06-23T00:28:15.723628",
+  "tests": [
+    {
+      "pathway": "Glycolysis",
+      "perturbation": "HK1 90% inhibition",
+      "alpha": 0.1,
+      "flux_visibility_V": 0.1427,
+      "V_less_than_1": true,
+      "alpha_sweep": [
+        {
+          "alpha": 0.01,
+          "V": 0.0204
+        },
+        {
+          "alpha": 0.05,
+          "V": 0.0794
+        },
+        {
+          "alpha": 0.1,
+          "V": 0.1427
+        },
+        {
+          "alpha": 0.2,
+          "V": 0.2564
+        },
+        {
+          "alpha": 0.3,
+          "V": 0.3613
+        },
+        {
+          "alpha": 0.5,
+          "V": 0.5565
+        },
+        {
+          "alpha": 0.7,
+          "V": 0.7396
+        },
+        {
+          "alpha": 0.9,
+          "V": 0.9148
+        },
+        {
+          "alpha": 1.0,
+          "V": 1.0
+        },
+        {
+          "alpha": 1.5,
+          "V": 0.7097
+        },
+        {
+          "alpha": 2.0,
+          "V": 0.5565
+        },
+        {
+          "alpha": 5.0,
+          "V": 0.2564
+        },
+        {
+          "alpha": 10.0,
+          "V": 0.1427
+        }
+      ]
+    },
+    {
+      "pathway": "TCA Cycle",
+      "perturbation": "IDH2 R172K",
+      "alpha": 0.15,
+      "flux_visibility_V": 0.9844,
+      "V_less_than_1": true,
+      "alpha_sweep": [
+        {
+          "alpha": 0.01,
+          "V": 0.9624
+        },
+        {
+          "alpha": 0.05,
+          "V": 0.9754
+        },
+        {
+          "alpha": 0.1,
+          "V": 0.981
+        },
+        {
+          "alpha": 0.2,
+          "V": 0.9867
+        },
+        {
+          "alpha": 0.3,
+          "V": 0.99
+        },
+        {
+          "alpha": 0.5,
+          "V": 0.9943
+        },
+        {
+          "alpha": 0.7,
+          "V": 0.997
+        },
+        {
+          "alpha": 0.9,
+          "V": 0.9991
+        },
+        {
+          "alpha": 1.0,
+          "V": 1.0
+        },
+        {
+          "alpha": 1.5,
+          "V": 0.9966
+        },
+        {
+          "alpha": 2.0,
+          "V": 0.9943
+        },
+        {
+          "alpha": 5.0,
+          "V": 0.9867
+        },
+        {
+          "alpha": 10.0,
+          "V": 0.981
+        }
+      ]
+    },
+    {
+      "pathway": "OxPhos",
+      "perturbation": "Complex I rotenone",
+      "alpha": 0.3,
+      "flux_visibility_V": 0.9356,
+      "V_less_than_1": true,
+      "alpha_sweep": [
+        {
+          "alpha": 0.01,
+          "V": 0.7751
+        },
+        {
+          "alpha": 0.05,
+          "V": 0.8473
+        },
+        {
+          "alpha": 0.1,
+          "V": 0.8804
+        },
+        {
+          "alpha": 0.2,
+          "V": 0.9148
+        },
+        {
+          "alpha": 0.3,
+          "V": 0.9356
+        },
+        {
+          "alpha": 0.5,
+          "V": 0.9624
+        },
+        {
+          "alpha": 0.7,
+          "V": 0.9805
+        },
+        {
+          "alpha": 0.9,
+          "V": 0.9942
+        },
+        {
+          "alpha": 1.0,
+          "V": 1.0
+        },
+        {
+          "alpha": 1.5,
+          "V": 0.9778
+        },
+        {
+          "alpha": 2.0,
+          "V": 0.9624
+        },
+        {
+          "alpha": 5.0,
+          "V": 0.9148
+        },
+        {
+          "alpha": 10.0,
+          "V": 0.8804
+        }
+      ]
+    },
+    {
+      "pathway": "EGFR/MAPK",
+      "perturbation": "KRAS G12V",
+      "alpha": 5.0,
+      "flux_visibility_V": 0.9999,
+      "V_less_than_1": true,
+      "alpha_sweep": [
+        {
+          "alpha": 0.01,
+          "V": 0.9998
+        },
+        {
+          "alpha": 0.05,
+          "V": 0.9999
+        },
+        {
+          "alpha": 0.1,
+          "V": 0.9999
+        },
+        {
+          "alpha": 0.2,
+          "V": 0.9999
+        },
+        {
+          "alpha": 0.3,
+          "V": 0.9999
+        },
+        {
+          "alpha": 0.5,
+          "V": 1.0
+        },
+        {
+          "alpha": 0.7,
+          "V": 1.0
+        },
+        {
+          "alpha": 0.9,
+          "V": 1.0
+        },
+        {
+          "alpha": 1.0,
+          "V": 1.0
+        },
+        {
+          "alpha": 1.5,
+          "V": 1.0
+        },
+        {
+          "alpha": 2.0,
+          "V": 1.0
+        },
+        {
+          "alpha": 5.0,
+          "V": 0.9999
+        },
+        {
+          "alpha": 10.0,
+          "V": 0.9999
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "all_pass": true,
+    "conclusion": "Flux visibility V < 1 for all non-identity perturbations, confirming Proposition 5.2."
+  }
+}

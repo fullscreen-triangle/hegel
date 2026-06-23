@@ -1,0 +1,632 @@
+{
+  "experiment": "Disease Perturbation Profiles",
+  "timestamp": "2026-06-23T00:28:15.803893",
+  "profiles": [
+    {
+      "pathway": "Glycolysis",
+      "disease": "Hexokinase deficiency (hereditary nonspherocytic hemolytic anemia)",
+      "reference": "Kanno et al., Blood 2002",
+      "perturbation_alpha": 0.1,
+      "perturbed_edge_idx": 0,
+      "R_healthy": 0.4626,
+      "R_diseased": 0.4626,
+      "delta_R": 0.0,
+      "V_diseased": 0.1427,
+      "V_restored": 1.0,
+      "backward_navigation": [
+        "Pyruvate",
+        "PEP",
+        "2PG",
+        "3PG",
+        "BPG13",
+        "G3P",
+        "FBP",
+        "F6P",
+        "G6P",
+        "Glucose"
+      ],
+      "per_species_shifts": [
+        {
+          "species": "Glucose",
+          "healthy_S": [
+            0.9985,
+            0.921,
+            0.7713
+          ],
+          "diseased_S": [
+            0.9851,
+            0.5383,
+            0.7713
+          ],
+          "S_shift": 0.382932
+        },
+        {
+          "species": "G6P",
+          "healthy_S": [
+            1.0,
+            1.0,
+            0.554
+          ],
+          "diseased_S": [
+            1.0,
+            1.0,
+            0.554
+          ],
+          "S_shift": 0.0
+        },
+        {
+          "species": "F6P",
+          "healthy_S": [
+            0.0058,
+            0.0808,
+            0.5502
+          ],
+          "diseased_S": [
+            0.057,
+            0.4725,
+            0.5502
+          ],
+          "S_shift": 0.394954
+        },
+        {
+          "species": "FBP",
+          "healthy_S": [
+            0.0053,
+            0.0023,
+            0.086
+          ],
+          "diseased_S": [
+            0.0523,
+            0.0133,
+            0.086
+          ],
+          "S_shift": 0.048257
+        },
+        {
+          "species": "G3P",
+          "healthy_S": [
+            0.0064,
+            0.0023,
+            0.5694
+          ],
+          "diseased_S": [
+            0.0633,
+            0.0136,
+            0.5694
+          ],
+          "S_shift": 0.058017
+        },
+        {
+          "species": "BPG13",
+          "healthy_S": [
+            0.006,
+            0.0022,
+            0.0
+          ],
+          "diseased_S": [
+            0.0595,
+            0.0127,
+            0.0
+          ],
+          "S_shift": 0.054533
+        },
+        {
+          "species": "3PG",
+          "healthy_S": [
+            0.0009,
+            0.0735,
+            0.4574
+          ],
+          "diseased_S": [
+            0.0091,
+            0.4296,
+            0.4574
+          ],
+          "S_shift": 0.356206
+        },
+        {
+          "species": "2PG",
+          "healthy_S": [
+            0.0014,
+            0.0751,
+            0.4581
+          ],
+          "diseased_S": [
+            0.0136,
+            0.4387,
+            0.4581
+          ],
+          "S_shift": 0.363865
+        },
+        {
+          "species": "PEP",
+          "healthy_S": [
+            0.0215,
+            0.0116,
+            0.5781
+          ],
+          "diseased_S": [
+            0.2125,
+            0.0675,
+            0.5781
+          ],
+          "S_shift": 0.198998
+        },
+        {
+          "species": "Pyruvate",
+          "healthy_S": [
+            0.0204,
+            0.0097,
+            1.0
+          ],
+          "diseased_S": [
+            0.2016,
+            0.0567,
+            1.0
+          ],
+          "S_shift": 0.187194
+        }
+      ],
+      "most_affected_species": "F6P",
+      "restoration_target": "Glucose→G6P"
+    },
+    {
+      "pathway": "TCA Cycle",
+      "disease": "IDH2 R172K mutation (low-grade glioma)",
+      "reference": "Ward et al., Cancer Cell 2010",
+      "perturbation_alpha": 0.15,
+      "perturbed_edge_idx": 2,
+      "R_healthy": 0.1111,
+      "R_diseased": 0.1722,
+      "delta_R": 0.0611,
+      "V_diseased": 0.9844,
+      "V_restored": 1.0,
+      "backward_navigation": [
+        "OAA",
+        "Malate",
+        "Fum",
+        "Succ",
+        "SucCoA",
+        "aKG",
+        "Isocit",
+        "Citrate",
+        "AcCoA"
+      ],
+      "per_species_shifts": [
+        {
+          "species": "AcCoA",
+          "healthy_S": [
+            0.961,
+            0.1101,
+            1.0
+          ],
+          "diseased_S": [
+            0.961,
+            0.1101,
+            1.0
+          ],
+          "S_shift": 0.0
+        },
+        {
+          "species": "Citrate",
+          "healthy_S": [
+            0.9075,
+            0.2299,
+            0.0002
+          ],
+          "diseased_S": [
+            0.9075,
+            0.2299,
+            0.0002
+          ],
+          "S_shift": 0.0
+        },
+        {
+          "species": "Isocit",
+          "healthy_S": [
+            0.0468,
+            0.1418,
+            0.0
+          ],
+          "diseased_S": [
+            0.0073,
+            0.1324,
+            0.0
+          ],
+          "S_shift": 0.040682
+        },
+        {
+          "species": "aKG",
+          "healthy_S": [
+            0.0967,
+            0.0259,
+            0.459
+          ],
+          "diseased_S": [
+            0.0571,
+            0.0165,
+            0.459
+          ],
+          "S_shift": 0.040682
+        },
+        {
+          "species": "SucCoA",
+          "healthy_S": [
+            0.0724,
+            0.0257,
+            0.8279
+          ],
+          "diseased_S": [
+            0.0724,
+            0.0257,
+            0.8279
+          ],
+          "S_shift": 0.0
+        },
+        {
+          "species": "Succ",
+          "healthy_S": [
+            0.0748,
+            0.0673,
+            0.6038
+          ],
+          "diseased_S": [
+            0.0748,
+            0.0673,
+            0.6038
+          ],
+          "S_shift": 0.0
+        },
+        {
+          "species": "Fum",
+          "healthy_S": [
+            0.6956,
+            0.2941,
+            0.7055
+          ],
+          "diseased_S": [
+            0.6956,
+            0.2941,
+            0.7055
+          ],
+          "S_shift": 0.0
+        },
+        {
+          "species": "Malate",
+          "healthy_S": [
+            1.0,
+            1.0,
+            0.4096
+          ],
+          "diseased_S": [
+            1.0,
+            1.0,
+            0.4096
+          ],
+          "S_shift": 0.0
+        },
+        {
+          "species": "OAA",
+          "healthy_S": [
+            0.4106,
+            0.7733,
+            0.4608
+          ],
+          "diseased_S": [
+            0.4106,
+            0.7733,
+            0.4608
+          ],
+          "S_shift": 0.0
+        }
+      ],
+      "most_affected_species": "Isocit",
+      "restoration_target": "Isocit→aKG"
+    },
+    {
+      "pathway": "Oxidative Phosphorylation",
+      "disease": "Complex I deficiency (rotenone model, Parkinson's disease)",
+      "reference": "Betarbet et al., Nature Neuroscience 2000",
+      "perturbation_alpha": 0.3,
+      "perturbed_edge_idx": 0,
+      "R_healthy": -0.0794,
+      "R_diseased": -0.0873,
+      "delta_R": -0.0079,
+      "V_diseased": 0.9356,
+      "V_restored": 1.0,
+      "backward_navigation": [
+        "ATP",
+        "ADP",
+        "NADH",
+        "CoQ",
+        "CytC",
+        "O2",
+        "H2O"
+      ],
+      "per_species_shifts": [
+        {
+          "species": "NADH",
+          "healthy_S": [
+            0.0908,
+            0.0859,
+            0.9897
+          ],
+          "diseased_S": [
+            0.09,
+            0.0341,
+            0.9897
+          ],
+          "S_shift": 0.051858
+        },
+        {
+          "species": "CoQ",
+          "healthy_S": [
+            0.0594,
+            0.8148,
+            0.991
+          ],
+          "diseased_S": [
+            0.0587,
+            0.763,
+            0.991
+          ],
+          "S_shift": 0.051858
+        },
+        {
+          "species": "CytC",
+          "healthy_S": [
+            0.0639,
+            1.0,
+            0.9981
+          ],
+          "diseased_S": [
+            0.0639,
+            1.0,
+            0.9981
+          ],
+          "S_shift": 0.0
+        },
+        {
+          "species": "O2",
+          "healthy_S": [
+            0.016,
+            0.2722,
+            1.0
+          ],
+          "diseased_S": [
+            0.016,
+            0.2722,
+            1.0
+          ],
+          "S_shift": 0.0
+        },
+        {
+          "species": "H2O",
+          "healthy_S": [
+            0.0105,
+            0.013,
+            0.9277
+          ],
+          "diseased_S": [
+            0.0105,
+            0.013,
+            0.9277
+          ],
+          "S_shift": 0.0
+        },
+        {
+          "species": "ADP",
+          "healthy_S": [
+            0.7608,
+            0.2044,
+            0.312
+          ],
+          "diseased_S": [
+            0.7608,
+            0.2044,
+            0.312
+          ],
+          "S_shift": 0.0
+        },
+        {
+          "species": "Pi",
+          "healthy_S": [
+            0.3289,
+            0.0474,
+            0.6213
+          ],
+          "diseased_S": [
+            0.3289,
+            0.0474,
+            0.6213
+          ],
+          "S_shift": 0.0
+        },
+        {
+          "species": "ATP",
+          "healthy_S": [
+            1.0,
+            0.24,
+            0.0
+          ],
+          "diseased_S": [
+            1.0,
+            0.24,
+            0.0
+          ],
+          "S_shift": 0.0
+        }
+      ],
+      "most_affected_species": "NADH",
+      "restoration_target": "NADH→CoQ"
+    },
+    {
+      "pathway": "EGFR/MAPK Signalling",
+      "disease": "KRAS G12V (pancreatic ductal adenocarcinoma)",
+      "reference": "Prior et al., Cancer Research 2012",
+      "perturbation_alpha": 5.0,
+      "perturbed_edge_idx": 3,
+      "R_healthy": 0.1515,
+      "R_diseased": 0.1515,
+      "delta_R": 0.0,
+      "V_diseased": 0.9999,
+      "V_restored": 1.0,
+      "backward_navigation": [
+        "CycD",
+        "MYC",
+        "ERK",
+        "MEK",
+        "RAF",
+        "RAS",
+        "SOS",
+        "GRB2",
+        "EGFR",
+        "EGF"
+      ],
+      "per_species_shifts": [
+        {
+          "species": "EGF",
+          "healthy_S": [
+            0.9977,
+            0.998,
+            0.0
+          ],
+          "diseased_S": [
+            0.9977,
+            0.998,
+            0.0
+          ],
+          "S_shift": 0.0
+        },
+        {
+          "species": "EGFR",
+          "healthy_S": [
+            1.0,
+            1.0,
+            0.3783
+          ],
+          "diseased_S": [
+            1.0,
+            1.0,
+            0.3783
+          ],
+          "S_shift": 0.0
+        },
+        {
+          "species": "GRB2",
+          "healthy_S": [
+            0.0007,
+            0.0035,
+            0.6231
+          ],
+          "diseased_S": [
+            0.0007,
+            0.0035,
+            0.6231
+          ],
+          "S_shift": 0.0
+        },
+        {
+          "species": "SOS",
+          "healthy_S": [
+            0.0001,
+            0.0025,
+            0.6378
+          ],
+          "diseased_S": [
+            0.0002,
+            0.0027,
+            0.6378
+          ],
+          "S_shift": 0.000216
+        },
+        {
+          "species": "RAS",
+          "healthy_S": [
+            0.0002,
+            0.001,
+            0.7961
+          ],
+          "diseased_S": [
+            0.0003,
+            0.0012,
+            0.7961
+          ],
+          "S_shift": 0.000216
+        },
+        {
+          "species": "RAF",
+          "healthy_S": [
+            0.0009,
+            0.0034,
+            0.8598
+          ],
+          "diseased_S": [
+            0.0009,
+            0.0034,
+            0.8598
+          ],
+          "S_shift": 0.0
+        },
+        {
+          "species": "MEK",
+          "healthy_S": [
+            0.002,
+            0.0204,
+            0.9735
+          ],
+          "diseased_S": [
+            0.002,
+            0.0204,
+            0.9735
+          ],
+          "S_shift": 0.0
+        },
+        {
+          "species": "ERK",
+          "healthy_S": [
+            0.0042,
+            0.022,
+            1.0
+          ],
+          "diseased_S": [
+            0.0042,
+            0.022,
+            1.0
+          ],
+          "S_shift": 0.0
+        },
+        {
+          "species": "MYC",
+          "healthy_S": [
+            0.0014,
+            0.003,
+            0.8293
+          ],
+          "diseased_S": [
+            0.0014,
+            0.003,
+            0.8293
+          ],
+          "S_shift": 0.0
+        },
+        {
+          "species": "CycD",
+          "healthy_S": [
+            0.0,
+            0.0,
+            0.9529
+          ],
+          "diseased_S": [
+            0.0,
+            0.0,
+            0.9529
+          ],
+          "S_shift": 0.0
+        }
+      ],
+      "most_affected_species": "SOS",
+      "restoration_target": "SOS→RAS"
+    }
+  ]
+}

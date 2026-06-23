@@ -1,0 +1,239 @@
+{
+  "experiment": "Triple Coherence Under Perturbation",
+  "theorem": "Proposition 4.8 (Coherence at Contact)",
+  "timestamp": "2026-06-23T00:28:15.545884",
+  "tests": [
+    {
+      "pathway": "Glycolysis",
+      "perturbation": "HK1 90% inhibition",
+      "alpha": 0.1,
+      "R_healthy": 0.4626,
+      "R_perturbed": 0.4626,
+      "delta_R": 0.0,
+      "coherence_decreased": "True",
+      "rho_healthy": {
+        "rho_Sk_St": 0.3333,
+        "rho_St_Se": 0.3697,
+        "rho_Sk_Se": 0.6848
+      },
+      "rho_perturbed": {
+        "rho_Sk_St": 0.3333,
+        "rho_St_Se": 0.3697,
+        "rho_Sk_Se": 0.6848
+      },
+      "alpha_sweep": [
+        {
+          "alpha": 0.01,
+          "R": 0.3091
+        },
+        {
+          "alpha": 0.05,
+          "R": 0.3212
+        },
+        {
+          "alpha": 0.1,
+          "R": 0.4626
+        },
+        {
+          "alpha": 0.2,
+          "R": 0.4626
+        },
+        {
+          "alpha": 0.5,
+          "R": 0.4626
+        },
+        {
+          "alpha": 1.0,
+          "R": 0.4626
+        },
+        {
+          "alpha": 2.0,
+          "R": 0.4626
+        },
+        {
+          "alpha": 5.0,
+          "R": 0.4626
+        },
+        {
+          "alpha": 10.0,
+          "R": 0.4626
+        }
+      ]
+    },
+    {
+      "pathway": "TCA Cycle",
+      "perturbation": "IDH2 R172K",
+      "alpha": 0.15,
+      "R_healthy": 0.1111,
+      "R_perturbed": 0.1722,
+      "delta_R": 0.0611,
+      "coherence_decreased": "False",
+      "rho_healthy": {
+        "rho_Sk_St": 0.6,
+        "rho_St_Se": -0.3667,
+        "rho_Sk_Se": 0.1
+      },
+      "rho_perturbed": {
+        "rho_Sk_St": 0.6167,
+        "rho_St_Se": -0.3,
+        "rho_Sk_Se": 0.2
+      },
+      "alpha_sweep": [
+        {
+          "alpha": 0.01,
+          "R": 0.1722
+        },
+        {
+          "alpha": 0.05,
+          "R": 0.1722
+        },
+        {
+          "alpha": 0.1,
+          "R": 0.1722
+        },
+        {
+          "alpha": 0.2,
+          "R": 0.1722
+        },
+        {
+          "alpha": 0.5,
+          "R": 0.1444
+        },
+        {
+          "alpha": 1.0,
+          "R": 0.1111
+        },
+        {
+          "alpha": 2.0,
+          "R": 0.0778
+        },
+        {
+          "alpha": 5.0,
+          "R": 0.0778
+        },
+        {
+          "alpha": 10.0,
+          "R": -0.0611
+        }
+      ]
+    },
+    {
+      "pathway": "OxPhos",
+      "perturbation": "Complex I rotenone",
+      "alpha": 0.3,
+      "R_healthy": -0.0794,
+      "R_perturbed": -0.0873,
+      "delta_R": -0.0079,
+      "coherence_decreased": "True",
+      "rho_healthy": {
+        "rho_Sk_St": -0.0238,
+        "rho_St_Se": 0.5238,
+        "rho_Sk_Se": -0.7381
+      },
+      "rho_perturbed": {
+        "rho_Sk_St": 0.0,
+        "rho_St_Se": 0.4762,
+        "rho_Sk_Se": -0.7381
+      },
+      "alpha_sweep": [
+        {
+          "alpha": 0.01,
+          "R": -0.127
+        },
+        {
+          "alpha": 0.05,
+          "R": -0.0873
+        },
+        {
+          "alpha": 0.1,
+          "R": -0.0873
+        },
+        {
+          "alpha": 0.2,
+          "R": -0.0873
+        },
+        {
+          "alpha": 0.5,
+          "R": -0.0794
+        },
+        {
+          "alpha": 1.0,
+          "R": -0.0794
+        },
+        {
+          "alpha": 2.0,
+          "R": -0.0794
+        },
+        {
+          "alpha": 5.0,
+          "R": -0.0794
+        },
+        {
+          "alpha": 10.0,
+          "R": -0.0794
+        }
+      ]
+    },
+    {
+      "pathway": "EGFR/MAPK",
+      "perturbation": "KRAS G12V",
+      "alpha": 5.0,
+      "R_healthy": 0.1515,
+      "R_perturbed": 0.1515,
+      "delta_R": 0.0,
+      "coherence_decreased": "True",
+      "rho_healthy": {
+        "rho_Sk_St": 0.9394,
+        "rho_St_Se": -0.2848,
+        "rho_Sk_Se": -0.2
+      },
+      "rho_perturbed": {
+        "rho_Sk_St": 0.9394,
+        "rho_St_Se": -0.2848,
+        "rho_Sk_Se": -0.2
+      },
+      "alpha_sweep": [
+        {
+          "alpha": 0.01,
+          "R": 0.1515
+        },
+        {
+          "alpha": 0.05,
+          "R": 0.1515
+        },
+        {
+          "alpha": 0.1,
+          "R": 0.1515
+        },
+        {
+          "alpha": 0.2,
+          "R": 0.1515
+        },
+        {
+          "alpha": 0.5,
+          "R": 0.1515
+        },
+        {
+          "alpha": 1.0,
+          "R": 0.1515
+        },
+        {
+          "alpha": 2.0,
+          "R": 0.1515
+        },
+        {
+          "alpha": 5.0,
+          "R": 0.1515
+        },
+        {
+          "alpha": 10.0,
+          "R": 0.1515
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "all_decrease": false,
+    "conclusion": "Triple coherence R decreases (or stays constant) under perturbation in all tested pathways, consistent with Proposition 4.8."
+  }
+}

@@ -1,0 +1,971 @@
+{
+  "experiment": "S-Entropy Coordinate Tables",
+  "timestamp": "2026-06-23T00:28:15.783353",
+  "pathways": [
+    {
+      "pathway": "Glycolysis",
+      "species": [
+        {
+          "id": "Glucose",
+          "name": "D-Glucose",
+          "compartment": "cytoplasm",
+          "mu0_kJ_mol": -917.0,
+          "concentration_M": 0.005,
+          "mu_kJ_mol": -930.66,
+          "Sk": 0.9985,
+          "St": 0.921,
+          "Se": 0.7713,
+          "S_vector": [
+            0.9985,
+            0.921,
+            0.7713
+          ]
+        },
+        {
+          "id": "G6P",
+          "name": "Glucose 6-phosphate",
+          "compartment": "cytoplasm",
+          "mu0_kJ_mol": -1318.0,
+          "concentration_M": 8.3e-05,
+          "mu_kJ_mol": -1342.22,
+          "Sk": 1.0,
+          "St": 1.0,
+          "Se": 0.554,
+          "S_vector": [
+            1.0,
+            1.0,
+            0.554
+          ]
+        },
+        {
+          "id": "F6P",
+          "name": "Fructose 6-phosphate",
+          "compartment": "cytoplasm",
+          "mu0_kJ_mol": -1321.0,
+          "concentration_M": 1.6e-05,
+          "mu_kJ_mol": -1349.46,
+          "Sk": 0.0058,
+          "St": 0.0808,
+          "Se": 0.5502,
+          "S_vector": [
+            0.0058,
+            0.0808,
+            0.5502
+          ]
+        },
+        {
+          "id": "FBP",
+          "name": "Fructose 1,6-bisphosphate",
+          "compartment": "cytoplasm",
+          "mu0_kJ_mol": -2202.0,
+          "concentration_M": 3.1e-05,
+          "mu_kJ_mol": -2228.76,
+          "Sk": 0.0053,
+          "St": 0.0023,
+          "Se": 0.086,
+          "S_vector": [
+            0.0053,
+            0.0023,
+            0.086
+          ]
+        },
+        {
+          "id": "G3P",
+          "name": "Glyceraldehyde 3-phosphate",
+          "compartment": "cytoplasm",
+          "mu0_kJ_mol": -1285.0,
+          "concentration_M": 1.9e-05,
+          "mu_kJ_mol": -1313.02,
+          "Sk": 0.0064,
+          "St": 0.0023,
+          "Se": 0.5694,
+          "S_vector": [
+            0.0064,
+            0.0023,
+            0.5694
+          ]
+        },
+        {
+          "id": "BPG13",
+          "name": "1,3-Bisphosphoglycerate",
+          "compartment": "cytoplasm",
+          "mu0_kJ_mol": -2356.0,
+          "concentration_M": 1e-06,
+          "mu_kJ_mol": -2391.61,
+          "Sk": 0.006,
+          "St": 0.0022,
+          "Se": 0.0,
+          "S_vector": [
+            0.006,
+            0.0022,
+            0.0
+          ]
+        },
+        {
+          "id": "3PG",
+          "name": "3-Phosphoglycerate",
+          "compartment": "cytoplasm",
+          "mu0_kJ_mol": -1502.0,
+          "concentration_M": 0.00012,
+          "mu_kJ_mol": -1525.27,
+          "Sk": 0.0009,
+          "St": 0.0735,
+          "Se": 0.4574,
+          "S_vector": [
+            0.0009,
+            0.0735,
+            0.4574
+          ]
+        },
+        {
+          "id": "2PG",
+          "name": "2-Phosphoglycerate",
+          "compartment": "cytoplasm",
+          "mu0_kJ_mol": -1497.0,
+          "concentration_M": 3e-05,
+          "mu_kJ_mol": -1523.84,
+          "Sk": 0.0014,
+          "St": 0.0751,
+          "Se": 0.4581,
+          "S_vector": [
+            0.0014,
+            0.0751,
+            0.4581
+          ]
+        },
+        {
+          "id": "PEP",
+          "name": "Phosphoenolpyruvate",
+          "compartment": "cytoplasm",
+          "mu0_kJ_mol": -1269.0,
+          "concentration_M": 2.3e-05,
+          "mu_kJ_mol": -1296.53,
+          "Sk": 0.0215,
+          "St": 0.0116,
+          "Se": 0.5781,
+          "S_vector": [
+            0.0215,
+            0.0116,
+            0.5781
+          ]
+        },
+        {
+          "id": "Pyruvate",
+          "name": "Pyruvate",
+          "compartment": "cytoplasm",
+          "mu0_kJ_mol": -472.0,
+          "concentration_M": 5.1e-05,
+          "mu_kJ_mol": -497.47,
+          "Sk": 0.0204,
+          "St": 0.0097,
+          "Se": 1.0,
+          "S_vector": [
+            0.0204,
+            0.0097,
+            1.0
+          ]
+        }
+      ],
+      "reactions": [
+        {
+          "reaction": "Glucose→G6P",
+          "enzyme": "Hexokinase (HK1)",
+          "ec": "2.7.1.1",
+          "kcat_s_inv": 240.0,
+          "conductance": 0.46559631,
+          "flux": 191.622144,
+          "contact_cost": 0.231201
+        },
+        {
+          "reaction": "G6P→F6P",
+          "enzyme": "Phosphoglucose isomerase",
+          "ec": "5.3.1.9",
+          "kcat_s_inv": 1240.0,
+          "conductance": 0.03993264,
+          "flux": 0.28923,
+          "contact_cost": 1.354019
+        },
+        {
+          "reaction": "F6P→FBP",
+          "enzyme": "Phosphofructokinase (PFK1)",
+          "ec": "2.7.1.11",
+          "kcat_s_inv": 150.0,
+          "conductance": 0.00093119,
+          "flux": 0.818793,
+          "contact_cost": 0.470822
+        },
+        {
+          "reaction": "FBP→G3P",
+          "enzyme": "Aldolase",
+          "ec": "4.1.2.13",
+          "kcat_s_inv": 18.0,
+          "conductance": 0.0002165,
+          "flux": -0.198259,
+          "contact_cost": 0.483462
+        },
+        {
+          "reaction": "G3P→BPG13",
+          "enzyme": "GAPDH",
+          "ec": "1.2.1.12",
+          "kcat_s_inv": 130.0,
+          "conductance": 0.00095835,
+          "flux": 1.033668,
+          "contact_cost": 0.569437
+        },
+        {
+          "reaction": "BPG13→3PG",
+          "enzyme": "Phosphoglycerate kinase",
+          "ec": "2.7.2.3",
+          "kcat_s_inv": 370.0,
+          "conductance": 0.00014356,
+          "flux": -0.124371,
+          "contact_cost": 0.462936
+        },
+        {
+          "reaction": "3PG→2PG",
+          "enzyme": "Phosphoglycerate mutase",
+          "ec": "5.4.2.12",
+          "kcat_s_inv": 795.0,
+          "conductance": 0.03701491,
+          "flux": -0.052822,
+          "contact_cost": 0.001789
+        },
+        {
+          "reaction": "2PG→PEP",
+          "enzyme": "Enolase",
+          "ec": "4.2.1.11",
+          "kcat_s_inv": 80.0,
+          "conductance": 0.00093119,
+          "flux": -0.211674,
+          "contact_cost": 0.137268
+        },
+        {
+          "reaction": "PEP→Pyruvate",
+          "enzyme": "Pyruvate kinase (PKM2)",
+          "ec": "2.7.1.40",
+          "kcat_s_inv": 550.0,
+          "conductance": 0.00490816,
+          "flux": -3.921878,
+          "contact_cost": 0.421862
+        }
+      ],
+      "triple_coherence": {
+        "R": 0.4626,
+        "rho_Sk_St": 0.3333,
+        "rho_St_Se": 0.3697,
+        "rho_Sk_Se": 0.6848
+      }
+    },
+    {
+      "pathway": "TCA Cycle",
+      "species": [
+        {
+          "id": "AcCoA",
+          "name": "Acetyl-CoA",
+          "compartment": "mito_matrix",
+          "mu0_kJ_mol": -374.0,
+          "concentration_M": 6e-05,
+          "mu_kJ_mol": -399.05,
+          "Sk": 0.961,
+          "St": 0.1101,
+          "Se": 1.0,
+          "S_vector": [
+            0.961,
+            0.1101,
+            1.0
+          ]
+        },
+        {
+          "id": "Citrate",
+          "name": "Citrate",
+          "compartment": "mito_matrix",
+          "mu0_kJ_mol": -1166.0,
+          "concentration_M": 0.00044,
+          "mu_kJ_mol": -1185.92,
+          "Sk": 0.9075,
+          "St": 0.2299,
+          "Se": 0.0002,
+          "S_vector": [
+            0.9075,
+            0.2299,
+            0.0002
+          ]
+        },
+        {
+          "id": "Isocit",
+          "name": "Isocitrate",
+          "compartment": "mito_matrix",
+          "mu0_kJ_mol": -1160.0,
+          "concentration_M": 4e-05,
+          "mu_kJ_mol": -1186.1,
+          "Sk": 0.0468,
+          "St": 0.1418,
+          "Se": 0.0,
+          "S_vector": [
+            0.0468,
+            0.1418,
+            0.0
+          ]
+        },
+        {
+          "id": "aKG",
+          "name": "α-Ketoglutarate",
+          "compartment": "mito_matrix",
+          "mu0_kJ_mol": -798.0,
+          "concentration_M": 3e-05,
+          "mu_kJ_mol": -824.84,
+          "Sk": 0.0967,
+          "St": 0.0259,
+          "Se": 0.459,
+          "S_vector": [
+            0.0967,
+            0.0259,
+            0.459
+          ]
+        },
+        {
+          "id": "SucCoA",
+          "name": "Succinyl-CoA",
+          "compartment": "mito_matrix",
+          "mu0_kJ_mol": -509.0,
+          "concentration_M": 5e-05,
+          "mu_kJ_mol": -534.52,
+          "Sk": 0.0724,
+          "St": 0.0257,
+          "Se": 0.8279,
+          "S_vector": [
+            0.0724,
+            0.0257,
+            0.8279
+          ]
+        },
+        {
+          "id": "Succ",
+          "name": "Succinate",
+          "compartment": "mito_matrix",
+          "mu0_kJ_mol": -690.0,
+          "concentration_M": 0.0003,
+          "mu_kJ_mol": -710.91,
+          "Sk": 0.0748,
+          "St": 0.0673,
+          "Se": 0.6038,
+          "S_vector": [
+            0.0748,
+            0.0673,
+            0.6038
+          ]
+        },
+        {
+          "id": "Fum",
+          "name": "Fumarate",
+          "compartment": "mito_matrix",
+          "mu0_kJ_mol": -604.0,
+          "concentration_M": 3e-05,
+          "mu_kJ_mol": -630.84,
+          "Sk": 0.6956,
+          "St": 0.2941,
+          "Se": 0.7055,
+          "S_vector": [
+            0.6956,
+            0.2941,
+            0.7055
+          ]
+        },
+        {
+          "id": "Malate",
+          "name": "Malate",
+          "compartment": "mito_matrix",
+          "mu0_kJ_mol": -842.0,
+          "concentration_M": 0.00022,
+          "mu_kJ_mol": -863.71,
+          "Sk": 1.0,
+          "St": 1.0,
+          "Se": 0.4096,
+          "S_vector": [
+            1.0,
+            1.0,
+            0.4096
+          ]
+        },
+        {
+          "id": "OAA",
+          "name": "Oxaloacetate",
+          "compartment": "mito_matrix",
+          "mu0_kJ_mol": -794.0,
+          "concentration_M": 1.1e-05,
+          "mu_kJ_mol": -823.43,
+          "Sk": 0.4106,
+          "St": 0.7733,
+          "Se": 0.4608,
+          "S_vector": [
+            0.4106,
+            0.7733,
+            0.4608
+          ]
+        }
+      ],
+      "reactions": [
+        {
+          "reaction": "AcCoA→Citrate",
+          "enzyme": "Citrate synthase",
+          "ec": "2.3.3.1",
+          "kcat_s_inv": 167.0,
+          "conductance": 0.00388773,
+          "flux": 3.059117,
+          "contact_cost": 1.008341
+        },
+        {
+          "reaction": "Citrate→Isocit",
+          "enzyme": "Aconitase",
+          "ec": "4.2.1.3",
+          "kcat_s_inv": 30.0,
+          "conductance": 0.00512156,
+          "flux": 0.000923,
+          "contact_cost": 0.865209
+        },
+        {
+          "reaction": "Isocit→aKG",
+          "enzyme": "Isocitrate dehydrogenase",
+          "ec": "1.1.1.42",
+          "kcat_s_inv": 28.0,
+          "conductance": 0.00043456,
+          "flux": -0.156987,
+          "contact_cost": 0.476014
+        },
+        {
+          "reaction": "aKG→SucCoA",
+          "enzyme": "α-KG dehydrogenase",
+          "ec": "1.2.4.2",
+          "kcat_s_inv": 50.0,
+          "conductance": 0.000582,
+          "flux": -0.168963,
+          "contact_cost": 0.369664
+        },
+        {
+          "reaction": "SucCoA→Succ",
+          "enzyme": "Succinyl-CoA ligase",
+          "ec": "6.2.1.4",
+          "kcat_s_inv": 22.0,
+          "conductance": 0.0004268,
+          "flux": 0.075279,
+          "contact_cost": 0.227945
+        },
+        {
+          "reaction": "Succ→Fum",
+          "enzyme": "Succinate dehydrogenase",
+          "ec": "1.3.5.1",
+          "kcat_s_inv": 19.0,
+          "conductance": 0.00221158,
+          "flux": -0.177071,
+          "contact_cost": 0.668675
+        },
+        {
+          "reaction": "Fum→Malate",
+          "enzyme": "Fumarase",
+          "ec": "4.2.1.2",
+          "kcat_s_inv": 800.0,
+          "conductance": 0.00931193,
+          "flux": 2.16842,
+          "contact_cost": 0.823734
+        },
+        {
+          "reaction": "Malate→OAA",
+          "enzyme": "Malate dehydrogenase",
+          "ec": "1.1.1.37",
+          "kcat_s_inv": 350.0,
+          "conductance": 0.02987576,
+          "flux": -1.203365,
+          "contact_cost": 0.633568
+        },
+        {
+          "reaction": "OAA→AcCoA",
+          "enzyme": "OAA→AcCoA (cycle closure)",
+          "ec": "—",
+          "kcat_s_inv": 100.0,
+          "conductance": 0.0004268,
+          "flux": -0.181121,
+          "contact_cost": 1.016583
+        }
+      ],
+      "triple_coherence": {
+        "R": 0.1111,
+        "rho_Sk_St": 0.6,
+        "rho_St_Se": -0.3667,
+        "rho_Sk_Se": 0.1
+      }
+    },
+    {
+      "pathway": "OxPhos",
+      "species": [
+        {
+          "id": "NADH",
+          "name": "NADH",
+          "compartment": "mito_matrix",
+          "mu0_kJ_mol": -32.0,
+          "concentration_M": 0.0001,
+          "mu_kJ_mol": -55.74,
+          "Sk": 0.0908,
+          "St": 0.0859,
+          "Se": 0.9897,
+          "S_vector": [
+            0.0908,
+            0.0859,
+            0.9897
+          ]
+        },
+        {
+          "id": "CoQ",
+          "name": "Ubiquinone (CoQ10)",
+          "compartment": "mito_IMM",
+          "mu0_kJ_mol": -36.0,
+          "concentration_M": 0.002,
+          "mu_kJ_mol": -52.02,
+          "Sk": 0.0594,
+          "St": 0.8148,
+          "Se": 0.991,
+          "S_vector": [
+            0.0594,
+            0.8148,
+            0.991
+          ]
+        },
+        {
+          "id": "CytC",
+          "name": "Cytochrome c",
+          "compartment": "mito_IMS",
+          "mu0_kJ_mol": -13.0,
+          "concentration_M": 0.0005,
+          "mu_kJ_mol": -32.59,
+          "Sk": 0.0639,
+          "St": 1.0,
+          "Se": 0.9981,
+          "S_vector": [
+            0.0639,
+            1.0,
+            0.9981
+          ]
+        },
+        {
+          "id": "O2",
+          "name": "Molecular oxygen",
+          "compartment": "mito_matrix",
+          "mu0_kJ_mol": 0.0,
+          "concentration_M": 2.5e-05,
+          "mu_kJ_mol": -27.31,
+          "Sk": 0.016,
+          "St": 0.2722,
+          "Se": 1.0,
+          "S_vector": [
+            0.016,
+            0.2722,
+            1.0
+          ]
+        },
+        {
+          "id": "H2O",
+          "name": "Water",
+          "compartment": "mito_matrix",
+          "mu0_kJ_mol": -237.0,
+          "concentration_M": 55.5,
+          "mu_kJ_mol": -226.65,
+          "Sk": 0.0105,
+          "St": 0.013,
+          "Se": 0.9277,
+          "S_vector": [
+            0.0105,
+            0.013,
+            0.9277
+          ]
+        },
+        {
+          "id": "ADP",
+          "name": "ADP",
+          "compartment": "mito_matrix",
+          "mu0_kJ_mol": -1906.0,
+          "concentration_M": 0.0013,
+          "mu_kJ_mol": -1923.13,
+          "Sk": 0.7608,
+          "St": 0.2044,
+          "Se": 0.312,
+          "S_vector": [
+            0.7608,
+            0.2044,
+            0.312
+          ]
+        },
+        {
+          "id": "Pi",
+          "name": "Inorganic phosphate",
+          "compartment": "mito_matrix",
+          "mu0_kJ_mol": -1059.0,
+          "concentration_M": 0.01,
+          "mu_kJ_mol": -1070.87,
+          "Sk": 0.3289,
+          "St": 0.0474,
+          "Se": 0.6213,
+          "S_vector": [
+            0.3289,
+            0.0474,
+            0.6213
+          ]
+        },
+        {
+          "id": "ATP",
+          "name": "ATP",
+          "compartment": "mito_matrix",
+          "mu0_kJ_mol": -2768.0,
+          "concentration_M": 0.0032,
+          "mu_kJ_mol": -2782.81,
+          "Sk": 1.0,
+          "St": 0.24,
+          "Se": 0.0,
+          "S_vector": [
+            1.0,
+            0.24,
+            0.0
+          ]
+        }
+      ],
+      "reactions": [
+        {
+          "reaction": "NADH→CoQ",
+          "enzyme": "Complex I (NADH:CoQ reductase)",
+          "ec": "7.1.1.2",
+          "kcat_s_inv": 500.0,
+          "conductance": 0.01939985,
+          "flux": -0.072187,
+          "contact_cost": 0.729565
+        },
+        {
+          "reaction": "CoQ→CytC",
+          "enzyme": "Complex III (CoQH2:CytC reductase)",
+          "ec": "7.1.1.8",
+          "kcat_s_inv": 250.0,
+          "conductance": 0.19399846,
+          "flux": -3.768817,
+          "contact_cost": 0.185372
+        },
+        {
+          "reaction": "CytC→O2",
+          "enzyme": "Complex IV (CytC oxidase)",
+          "ec": "7.1.1.9",
+          "kcat_s_inv": 350.0,
+          "conductance": 0.06789946,
+          "flux": -0.35844,
+          "contact_cost": 0.729352
+        },
+        {
+          "reaction": "O2→H2O",
+          "enzyme": "Water formation (Complex IV)",
+          "ec": "7.1.1.9",
+          "kcat_s_inv": 350.0,
+          "conductance": 0.00339497,
+          "flux": 0.676745,
+          "contact_cost": 0.26922
+        },
+        {
+          "reaction": "ADP→ATP",
+          "enzyme": "ATP synthase (Complex V)",
+          "ec": "7.1.2.2",
+          "kcat_s_inv": 100.0,
+          "conductance": 0.0504396,
+          "flux": 43.361833,
+          "contact_cost": 0.39476
+        },
+        {
+          "reaction": "NADH→ADP",
+          "enzyme": "Proton motive force coupling",
+          "ec": "—",
+          "kcat_s_inv": 80.0,
+          "conductance": 0.00310398,
+          "flux": 5.79633,
+          "contact_cost": 0.960282
+        },
+        {
+          "reaction": "ATP→Pi",
+          "enzyme": "ATP hydrolysis (basal)",
+          "ec": "3.6.1.3",
+          "kcat_s_inv": 10.0,
+          "conductance": 0.0124159,
+          "flux": -21.255238,
+          "contact_cost": 0.93456
+        }
+      ],
+      "triple_coherence": {
+        "R": -0.0794,
+        "rho_Sk_St": -0.0238,
+        "rho_St_Se": 0.5238,
+        "rho_Sk_Se": -0.7381
+      }
+    },
+    {
+      "pathway": "EGFR/MAPK",
+      "species": [
+        {
+          "id": "EGF",
+          "name": "Epidermal Growth Factor",
+          "compartment": "extracellular",
+          "mu0_kJ_mol": -50.0,
+          "concentration_M": 1e-09,
+          "mu_kJ_mol": -103.41,
+          "Sk": 0.9977,
+          "St": 0.998,
+          "Se": 0.0,
+          "S_vector": [
+            0.9977,
+            0.998,
+            0.0
+          ]
+        },
+        {
+          "id": "EGFR",
+          "name": "EGFR",
+          "compartment": "membrane",
+          "mu0_kJ_mol": -40.0,
+          "concentration_M": 1e-07,
+          "mu_kJ_mol": -81.54,
+          "Sk": 1.0,
+          "St": 1.0,
+          "Se": 0.3783,
+          "S_vector": [
+            1.0,
+            1.0,
+            0.3783
+          ]
+        },
+        {
+          "id": "GRB2",
+          "name": "GRB2",
+          "compartment": "cytoplasm",
+          "mu0_kJ_mol": -30.0,
+          "concentration_M": 5e-07,
+          "mu_kJ_mol": -67.39,
+          "Sk": 0.0007,
+          "St": 0.0035,
+          "Se": 0.6231,
+          "S_vector": [
+            0.0007,
+            0.0035,
+            0.6231
+          ]
+        },
+        {
+          "id": "SOS",
+          "name": "SOS1",
+          "compartment": "cytoplasm",
+          "mu0_kJ_mol": -25.0,
+          "concentration_M": 1e-07,
+          "mu_kJ_mol": -66.54,
+          "Sk": 0.0001,
+          "St": 0.0025,
+          "Se": 0.6378,
+          "S_vector": [
+            0.0001,
+            0.0025,
+            0.6378
+          ]
+        },
+        {
+          "id": "RAS",
+          "name": "KRAS",
+          "compartment": "membrane",
+          "mu0_kJ_mol": -20.0,
+          "concentration_M": 5e-07,
+          "mu_kJ_mol": -57.39,
+          "Sk": 0.0002,
+          "St": 0.001,
+          "Se": 0.7961,
+          "S_vector": [
+            0.0002,
+            0.001,
+            0.7961
+          ]
+        },
+        {
+          "id": "RAF",
+          "name": "BRAF",
+          "compartment": "cytoplasm",
+          "mu0_kJ_mol": -15.0,
+          "concentration_M": 3e-07,
+          "mu_kJ_mol": -53.71,
+          "Sk": 0.0009,
+          "St": 0.0034,
+          "Se": 0.8598,
+          "S_vector": [
+            0.0009,
+            0.0034,
+            0.8598
+          ]
+        },
+        {
+          "id": "MEK",
+          "name": "MEK1/2",
+          "compartment": "cytoplasm",
+          "mu0_kJ_mol": -12.0,
+          "concentration_M": 1.2e-06,
+          "mu_kJ_mol": -47.14,
+          "Sk": 0.002,
+          "St": 0.0204,
+          "Se": 0.9735,
+          "S_vector": [
+            0.002,
+            0.0204,
+            0.9735
+          ]
+        },
+        {
+          "id": "ERK",
+          "name": "ERK1/2",
+          "compartment": "cytoplasm",
+          "mu0_kJ_mol": -10.0,
+          "concentration_M": 1e-06,
+          "mu_kJ_mol": -45.61,
+          "Sk": 0.0042,
+          "St": 0.022,
+          "Se": 1.0,
+          "S_vector": [
+            0.0042,
+            0.022,
+            1.0
+          ]
+        },
+        {
+          "id": "MYC",
+          "name": "c-MYC",
+          "compartment": "nucleus",
+          "mu0_kJ_mol": -8.0,
+          "concentration_M": 1e-08,
+          "mu_kJ_mol": -55.48,
+          "Sk": 0.0014,
+          "St": 0.003,
+          "Se": 0.8293,
+          "S_vector": [
+            0.0014,
+            0.003,
+            0.8293
+          ]
+        },
+        {
+          "id": "CycD",
+          "name": "Cyclin D1",
+          "compartment": "nucleus",
+          "mu0_kJ_mol": -5.0,
+          "concentration_M": 5e-08,
+          "mu_kJ_mol": -48.33,
+          "Sk": 0.0,
+          "St": 0.0,
+          "Se": 0.9529,
+          "S_vector": [
+            0.0,
+            0.0,
+            0.9529
+          ]
+        }
+      ],
+      "reactions": [
+        {
+          "reaction": "EGF→EGFR",
+          "enzyme": "EGF–EGFR binding",
+          "ec": "—",
+          "kcat_s_inv": 1000000.0,
+          "conductance": 0.000388,
+          "flux": -0.008485,
+          "contact_cost": 0.378346
+        },
+        {
+          "reaction": "EGFR→GRB2",
+          "enzyme": "EGFR autophosphorylation",
+          "ec": "2.7.10.1",
+          "kcat_s_inv": 10.0,
+          "conductance": 3.9e-07,
+          "flux": -5e-06,
+          "contact_cost": 1.432288
+        },
+        {
+          "reaction": "GRB2→SOS",
+          "enzyme": "GRB2–SOS recruitment",
+          "ec": "—",
+          "kcat_s_inv": 5.0,
+          "conductance": 9.7e-07,
+          "flux": -1e-06,
+          "contact_cost": 0.014782
+        },
+        {
+          "reaction": "SOS→RAS",
+          "enzyme": "SOS→RAS-GTP exchange",
+          "ec": "—",
+          "kcat_s_inv": 0.5,
+          "conductance": 2e-08,
+          "flux": -0.0,
+          "contact_cost": 0.158268
+        },
+        {
+          "reaction": "RAS→RAF",
+          "enzyme": "RAS→RAF activation",
+          "ec": "—",
+          "kcat_s_inv": 2.0,
+          "conductance": 3.9e-07,
+          "flux": -1e-06,
+          "contact_cost": 0.06377
+        },
+        {
+          "reaction": "RAF→MEK",
+          "enzyme": "RAF→MEK phosphorylation",
+          "ec": "2.7.11.1",
+          "kcat_s_inv": 8.0,
+          "conductance": 9.3e-07,
+          "flux": -6e-06,
+          "contact_cost": 0.114976
+        },
+        {
+          "reaction": "MEK→ERK",
+          "enzyme": "MEK→ERK phosphorylation",
+          "ec": "2.7.12.2",
+          "kcat_s_inv": 15.0,
+          "conductance": 6.98e-06,
+          "flux": -1.1e-05,
+          "contact_cost": 0.026616
+        },
+        {
+          "reaction": "ERK→MYC",
+          "enzyme": "ERK→MYC stabilisation",
+          "ec": "—",
+          "kcat_s_inv": 3.0,
+          "conductance": 1.16e-06,
+          "flux": 1.1e-05,
+          "contact_cost": 0.171808
+        },
+        {
+          "reaction": "MYC→CycD",
+          "enzyme": "MYC→CyclinD transcription",
+          "ec": "—",
+          "kcat_s_inv": 0.8,
+          "conductance": 0.0,
+          "flux": -0.0,
+          "contact_cost": 0.123705
+        },
+        {
+          "reaction": "ERK→EGFR",
+          "enzyme": "ERK→EGFR negative feedback",
+          "ec": "—",
+          "kcat_s_inv": 1.0,
+          "conductance": 3.9e-07,
+          "flux": 1.4e-05,
+          "contact_cost": 1.527928
+        }
+      ],
+      "triple_coherence": {
+        "R": 0.1515,
+        "rho_Sk_St": 0.9394,
+        "rho_St_Se": -0.2848,
+        "rho_Sk_Se": -0.2
+      }
+    }
+  ],
+  "data_sources": {
+    "thermodynamic": "eQuilibrator (Noor et al. 2013), Alberty 2003",
+    "kinetic": "BRENDA (Schomburg et al. 2004, human enzymes pH 7.4 37°C)",
+    "concentrations": "HMDB (Wishart et al. 2018, physiological reference)",
+    "network_topology": "KEGG (Kanehisa et al. 2000), Reactome (Jassal et al. 2020)"
+  }
+}

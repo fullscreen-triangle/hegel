@@ -1,0 +1,96 @@
+{
+  "experiment": "Contact Completeness",
+  "theorem": "Theorem 3.3",
+  "timestamp": "2026-06-23T00:28:15.540003",
+  "tests": [
+    {
+      "pathway": "Glycolysis",
+      "n_species": 10,
+      "permutation": [
+        9,
+        5,
+        6,
+        3,
+        8,
+        7,
+        2,
+        1,
+        4,
+        0
+      ],
+      "spectra_match": true,
+      "weight_multiset_match": true,
+      "isomorphism_detected": true,
+      "non_isomorphism_detected": true,
+      "eigenvalues_original": [
+        -1.461409,
+        -0.821648,
+        -0.443633,
+        -0.264536,
+        -0.000332,
+        0.000332,
+        0.264536,
+        0.443633,
+        0.821648,
+        1.461409
+      ],
+      "eigenvalues_permuted": [
+        -1.461409,
+        -0.821648,
+        -0.443633,
+        -0.264536,
+        -0.000332,
+        0.000332,
+        0.264536,
+        0.443633,
+        0.821648,
+        1.461409
+      ]
+    },
+    {
+      "pathway": "TCA Cycle",
+      "n_species": 9,
+      "permutation": [
+        3,
+        7,
+        6,
+        0,
+        1,
+        4,
+        8,
+        2,
+        5
+      ],
+      "spectra_match": true,
+      "weight_multiset_match": true,
+      "isomorphism_detected": true,
+      "non_isomorphism_detected": true,
+      "eigenvalues_original": [
+        -1.658236,
+        -1.15585,
+        -0.699038,
+        -0.428763,
+        0.113913,
+        0.261717,
+        0.765259,
+        1.141675,
+        1.659324
+      ],
+      "eigenvalues_permuted": [
+        -1.658236,
+        -1.15585,
+        -0.699038,
+        -0.428763,
+        0.113913,
+        0.261717,
+        0.765259,
+        1.141675,
+        1.659324
+      ]
+    }
+  ],
+  "summary": {
+    "all_pass": true,
+    "conclusion": "Contact map is a complete invariant: permuted copies produce identical spectra and weight multisets; non-isomorphic networks are correctly distinguished."
+  }
+}

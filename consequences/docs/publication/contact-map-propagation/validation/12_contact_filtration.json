@@ -1,0 +1,393 @@
+{
+  "experiment": "Contact Filtration & Persistent Hierarchy",
+  "theorem": "Theorem 7.4",
+  "timestamp": "2026-06-23T00:28:15.746021",
+  "tests": [
+    {
+      "pathway": "Glycolysis",
+      "filtration": [
+        {
+          "edge": "3PG→2PG",
+          "cost": 0.001789,
+          "components_after": 9,
+          "merged": true
+        },
+        {
+          "edge": "2PG→PEP",
+          "cost": 0.137268,
+          "components_after": 8,
+          "merged": true
+        },
+        {
+          "edge": "Glucose→G6P",
+          "cost": 0.231201,
+          "components_after": 7,
+          "merged": true
+        },
+        {
+          "edge": "PEP→Pyruvate",
+          "cost": 0.421862,
+          "components_after": 6,
+          "merged": true
+        },
+        {
+          "edge": "BPG13→3PG",
+          "cost": 0.462936,
+          "components_after": 5,
+          "merged": true
+        },
+        {
+          "edge": "F6P→FBP",
+          "cost": 0.470822,
+          "components_after": 4,
+          "merged": true
+        },
+        {
+          "edge": "FBP→G3P",
+          "cost": 0.483462,
+          "components_after": 3,
+          "merged": true
+        },
+        {
+          "edge": "G3P→BPG13",
+          "cost": 0.569437,
+          "components_after": 2,
+          "merged": true
+        },
+        {
+          "edge": "G6P→F6P",
+          "cost": 1.354019,
+          "components_after": 1,
+          "merged": true
+        }
+      ],
+      "merge_heights": [
+        {
+          "merged": "3PG–2PG",
+          "height": 0.001789
+        },
+        {
+          "merged": "2PG–PEP",
+          "height": 0.137268
+        },
+        {
+          "merged": "Glucose–G6P",
+          "height": 0.231201
+        },
+        {
+          "merged": "PEP–Pyruvate",
+          "height": 0.421862
+        },
+        {
+          "merged": "BPG13–3PG",
+          "height": 0.462936
+        },
+        {
+          "merged": "F6P–FBP",
+          "height": 0.470822
+        },
+        {
+          "merged": "FBP–G3P",
+          "height": 0.483462
+        },
+        {
+          "merged": "G3P–BPG13",
+          "height": 0.569437
+        },
+        {
+          "merged": "G6P–F6P",
+          "height": 1.354019
+        }
+      ],
+      "monotone_inclusion": true,
+      "persistent_merges": true,
+      "pass": true
+    },
+    {
+      "pathway": "TCA Cycle",
+      "filtration": [
+        {
+          "edge": "SucCoA→Succ",
+          "cost": 0.227945,
+          "components_after": 8,
+          "merged": true
+        },
+        {
+          "edge": "aKG→SucCoA",
+          "cost": 0.369664,
+          "components_after": 7,
+          "merged": true
+        },
+        {
+          "edge": "Isocit→aKG",
+          "cost": 0.476014,
+          "components_after": 6,
+          "merged": true
+        },
+        {
+          "edge": "Malate→OAA",
+          "cost": 0.633568,
+          "components_after": 5,
+          "merged": true
+        },
+        {
+          "edge": "Succ→Fum",
+          "cost": 0.668675,
+          "components_after": 4,
+          "merged": true
+        },
+        {
+          "edge": "Fum→Malate",
+          "cost": 0.823734,
+          "components_after": 3,
+          "merged": true
+        },
+        {
+          "edge": "Citrate→Isocit",
+          "cost": 0.865209,
+          "components_after": 2,
+          "merged": true
+        },
+        {
+          "edge": "AcCoA→Citrate",
+          "cost": 1.008341,
+          "components_after": 1,
+          "merged": true
+        },
+        {
+          "edge": "OAA→AcCoA",
+          "cost": 1.016583,
+          "components_after": 1,
+          "merged": false
+        }
+      ],
+      "merge_heights": [
+        {
+          "merged": "SucCoA–Succ",
+          "height": 0.227945
+        },
+        {
+          "merged": "aKG–SucCoA",
+          "height": 0.369664
+        },
+        {
+          "merged": "Isocit–aKG",
+          "height": 0.476014
+        },
+        {
+          "merged": "Malate–OAA",
+          "height": 0.633568
+        },
+        {
+          "merged": "Succ–Fum",
+          "height": 0.668675
+        },
+        {
+          "merged": "Fum–Malate",
+          "height": 0.823734
+        },
+        {
+          "merged": "Citrate–Isocit",
+          "height": 0.865209
+        },
+        {
+          "merged": "AcCoA–Citrate",
+          "height": 1.008341
+        }
+      ],
+      "monotone_inclusion": true,
+      "persistent_merges": true,
+      "pass": true
+    },
+    {
+      "pathway": "OxPhos",
+      "filtration": [
+        {
+          "edge": "CoQ→CytC",
+          "cost": 0.185372,
+          "components_after": 7,
+          "merged": true
+        },
+        {
+          "edge": "O2→H2O",
+          "cost": 0.26922,
+          "components_after": 6,
+          "merged": true
+        },
+        {
+          "edge": "ADP→ATP",
+          "cost": 0.39476,
+          "components_after": 5,
+          "merged": true
+        },
+        {
+          "edge": "CytC→O2",
+          "cost": 0.729352,
+          "components_after": 4,
+          "merged": true
+        },
+        {
+          "edge": "NADH→CoQ",
+          "cost": 0.729565,
+          "components_after": 3,
+          "merged": true
+        },
+        {
+          "edge": "ATP→Pi",
+          "cost": 0.93456,
+          "components_after": 2,
+          "merged": true
+        },
+        {
+          "edge": "NADH→ADP",
+          "cost": 0.960282,
+          "components_after": 1,
+          "merged": true
+        }
+      ],
+      "merge_heights": [
+        {
+          "merged": "CoQ–CytC",
+          "height": 0.185372
+        },
+        {
+          "merged": "O2–H2O",
+          "height": 0.26922
+        },
+        {
+          "merged": "ADP–ATP",
+          "height": 0.39476
+        },
+        {
+          "merged": "CytC–O2",
+          "height": 0.729352
+        },
+        {
+          "merged": "NADH–CoQ",
+          "height": 0.729565
+        },
+        {
+          "merged": "ATP–Pi",
+          "height": 0.93456
+        },
+        {
+          "merged": "NADH–ADP",
+          "height": 0.960282
+        }
+      ],
+      "monotone_inclusion": true,
+      "persistent_merges": true,
+      "pass": true
+    },
+    {
+      "pathway": "EGFR/MAPK",
+      "filtration": [
+        {
+          "edge": "GRB2→SOS",
+          "cost": 0.014782,
+          "components_after": 9,
+          "merged": true
+        },
+        {
+          "edge": "MEK→ERK",
+          "cost": 0.026616,
+          "components_after": 8,
+          "merged": true
+        },
+        {
+          "edge": "RAS→RAF",
+          "cost": 0.06377,
+          "components_after": 7,
+          "merged": true
+        },
+        {
+          "edge": "RAF→MEK",
+          "cost": 0.114976,
+          "components_after": 6,
+          "merged": true
+        },
+        {
+          "edge": "MYC→CycD",
+          "cost": 0.123705,
+          "components_after": 5,
+          "merged": true
+        },
+        {
+          "edge": "SOS→RAS",
+          "cost": 0.158268,
+          "components_after": 4,
+          "merged": true
+        },
+        {
+          "edge": "ERK→MYC",
+          "cost": 0.171808,
+          "components_after": 3,
+          "merged": true
+        },
+        {
+          "edge": "EGF→EGFR",
+          "cost": 0.378346,
+          "components_after": 2,
+          "merged": true
+        },
+        {
+          "edge": "EGFR→GRB2",
+          "cost": 1.432288,
+          "components_after": 1,
+          "merged": true
+        },
+        {
+          "edge": "ERK→EGFR",
+          "cost": 1.527928,
+          "components_after": 1,
+          "merged": false
+        }
+      ],
+      "merge_heights": [
+        {
+          "merged": "GRB2–SOS",
+          "height": 0.014782
+        },
+        {
+          "merged": "MEK–ERK",
+          "height": 0.026616
+        },
+        {
+          "merged": "RAS–RAF",
+          "height": 0.06377
+        },
+        {
+          "merged": "RAF–MEK",
+          "height": 0.114976
+        },
+        {
+          "merged": "MYC–CycD",
+          "height": 0.123705
+        },
+        {
+          "merged": "SOS–RAS",
+          "height": 0.158268
+        },
+        {
+          "merged": "ERK–MYC",
+          "height": 0.171808
+        },
+        {
+          "merged": "EGF–EGFR",
+          "height": 0.378346
+        },
+        {
+          "merged": "EGFR–GRB2",
+          "height": 1.432288
+        }
+      ],
+      "monotone_inclusion": true,
+      "persistent_merges": true,
+      "pass": true
+    }
+  ],
+  "summary": {
+    "all_pass": true,
+    "conclusion": "Contact filtration produces a strictly monotone sequence of subgraphs. Merges are persistent (never split). Hierarchy is well-defined."
+  }
+}

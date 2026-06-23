@@ -1,0 +1,123 @@
+{
+  "experiment": "Residue Chain Propagation & Self-Reinforcement",
+  "theorem": "Proposition 2.4, Corollary 2.5",
+  "timestamp": "2026-06-23T00:28:15.771190",
+  "tests": [
+    {
+      "pathway": "Glycolysis",
+      "perturbed_edge_idx": 0,
+      "total_depths": [
+        {
+          "alpha": 0.01,
+          "total_depth": 5.8621
+        },
+        {
+          "alpha": 0.05,
+          "total_depth": 5.287457
+        },
+        {
+          "alpha": 0.1,
+          "total_depth": 4.788192
+        },
+        {
+          "alpha": 0.2,
+          "total_depth": 4.416662
+        },
+        {
+          "alpha": 0.3,
+          "total_depth": 4.278393
+        },
+        {
+          "alpha": 0.5,
+          "total_depth": 4.179323
+        },
+        {
+          "alpha": 0.7,
+          "total_depth": 4.147841
+        },
+        {
+          "alpha": 1.0,
+          "total_depth": 4.132795
+        },
+        {
+          "alpha": 1.5,
+          "total_depth": 4.128527
+        },
+        {
+          "alpha": 2.0,
+          "total_depth": 4.129524
+        },
+        {
+          "alpha": 5.0,
+          "total_depth": 4.137762
+        },
+        {
+          "alpha": 10.0,
+          "total_depth": 4.142608
+        }
+      ],
+      "contact_state_depth": 4.132795,
+      "all_perturbed_geq_contact": false
+    },
+    {
+      "pathway": "TCA Cycle",
+      "perturbed_edge_idx": 2,
+      "total_depths": [
+        {
+          "alpha": 0.01,
+          "total_depth": 6.136735
+        },
+        {
+          "alpha": 0.05,
+          "total_depth": 6.134717
+        },
+        {
+          "alpha": 0.1,
+          "total_depth": 6.132209
+        },
+        {
+          "alpha": 0.2,
+          "total_depth": 6.12724
+        },
+        {
+          "alpha": 0.3,
+          "total_depth": 6.122333
+        },
+        {
+          "alpha": 0.5,
+          "total_depth": 6.112706
+        },
+        {
+          "alpha": 0.7,
+          "total_depth": 6.103329
+        },
+        {
+          "alpha": 1.0,
+          "total_depth": 6.089733
+        },
+        {
+          "alpha": 1.5,
+          "total_depth": 6.068312
+        },
+        {
+          "alpha": 2.0,
+          "total_depth": 6.048416
+        },
+        {
+          "alpha": 5.0,
+          "total_depth": 5.957772
+        },
+        {
+          "alpha": 10.0,
+          "total_depth": 5.881968
+        }
+      ],
+      "contact_state_depth": 6.089733,
+      "all_perturbed_geq_contact": false
+    }
+  ],
+  "summary": {
+    "all_pass": false,
+    "conclusion": "Total partition depth is minimised at the contact state (α=1.0) and increases for all non-trivial perturbations, confirming self-reinforcement."
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "experiment": "S-Entropy Distance is a Metric",
+  "theorem": "Theorem 4.2",
+  "timestamp": "2026-06-23T00:28:14.681051",
+  "pathways": [
+    {
+      "pathway": "Glycolysis",
+      "num_species": 10,
+      "triangle_tests": 720,
+      "non_negativity": true,
+      "positive_definiteness": true,
+      "symmetry": true,
+      "triangle_inequality": true,
+      "triangle_violations": [],
+      "pass": true
+    },
+    {
+      "pathway": "TCA Cycle",
+      "num_species": 9,
+      "triangle_tests": 504,
+      "non_negativity": true,
+      "positive_definiteness": true,
+      "symmetry": true,
+      "triangle_inequality": true,
+      "triangle_violations": [],
+      "pass": true
+    },
+    {
+      "pathway": "OxPhos",
+      "num_species": 8,
+      "triangle_tests": 336,
+      "non_negativity": true,
+      "positive_definiteness": true,
+      "symmetry": true,
+      "triangle_inequality": true,
+      "triangle_violations": [],
+      "pass": true
+    },
+    {
+      "pathway": "EGFR/MAPK",
+      "num_species": 10,
+      "triangle_tests": 720,
+      "non_negativity": true,
+      "positive_definiteness": true,
+      "symmetry": true,
+      "triangle_inequality": true,
+      "triangle_violations": [],
+      "pass": true
+    }
+  ],
+  "summary": {
+    "all_pass": true,
+    "total_triangle_tests": 2280,
+    "conclusion": "S-entropy distance satisfies all four metric axioms (non-negativity, identity of indiscernibles, symmetry, triangle inequality) across all pathways."
+  }
+}

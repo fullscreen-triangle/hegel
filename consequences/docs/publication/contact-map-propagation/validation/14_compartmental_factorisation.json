@@ -1,0 +1,140 @@
+{
+  "experiment": "Compartmental Factorisation",
+  "theorem": "Proposition 7.2",
+  "timestamp": "2026-06-23T00:28:15.759839",
+  "tests": [
+    {
+      "pathway": "OxPhos",
+      "compartments": [
+        "mito_matrix",
+        "mito_IMS",
+        "mito_IMM"
+      ],
+      "num_intra_edges": 4,
+      "num_inter_edges": 3,
+      "mean_intra_cost": 0.639705,
+      "mean_inter_cost": 0.548096,
+      "factorisation_holds": "False",
+      "intra_edges": [
+        {
+          "edge": "O2→H2O",
+          "cost": 0.26922,
+          "compartment": "mito_matrix"
+        },
+        {
+          "edge": "ADP→ATP",
+          "cost": 0.39476,
+          "compartment": "mito_matrix"
+        },
+        {
+          "edge": "NADH→ADP",
+          "cost": 0.960282,
+          "compartment": "mito_matrix"
+        },
+        {
+          "edge": "ATP→Pi",
+          "cost": 0.93456,
+          "compartment": "mito_matrix"
+        }
+      ],
+      "inter_edges": [
+        {
+          "edge": "NADH→CoQ",
+          "cost": 0.729565,
+          "src_comp": "mito_matrix",
+          "dst_comp": "mito_IMM"
+        },
+        {
+          "edge": "CoQ→CytC",
+          "cost": 0.185372,
+          "src_comp": "mito_IMM",
+          "dst_comp": "mito_IMS"
+        },
+        {
+          "edge": "CytC→O2",
+          "cost": 0.729352,
+          "src_comp": "mito_IMS",
+          "dst_comp": "mito_matrix"
+        }
+      ]
+    },
+    {
+      "pathway": "EGFR/MAPK",
+      "compartments": [
+        "nucleus",
+        "extracellular",
+        "cytoplasm",
+        "membrane"
+      ],
+      "num_intra_edges": 4,
+      "num_inter_edges": 6,
+      "mean_intra_cost": 0.07002,
+      "mean_inter_cost": 0.622068,
+      "factorisation_holds": "True",
+      "intra_edges": [
+        {
+          "edge": "GRB2→SOS",
+          "cost": 0.014782,
+          "compartment": "cytoplasm"
+        },
+        {
+          "edge": "RAF→MEK",
+          "cost": 0.114976,
+          "compartment": "cytoplasm"
+        },
+        {
+          "edge": "MEK→ERK",
+          "cost": 0.026616,
+          "compartment": "cytoplasm"
+        },
+        {
+          "edge": "MYC→CycD",
+          "cost": 0.123705,
+          "compartment": "nucleus"
+        }
+      ],
+      "inter_edges": [
+        {
+          "edge": "EGF→EGFR",
+          "cost": 0.378346,
+          "src_comp": "extracellular",
+          "dst_comp": "membrane"
+        },
+        {
+          "edge": "EGFR→GRB2",
+          "cost": 1.432288,
+          "src_comp": "membrane",
+          "dst_comp": "cytoplasm"
+        },
+        {
+          "edge": "SOS→RAS",
+          "cost": 0.158268,
+          "src_comp": "cytoplasm",
+          "dst_comp": "membrane"
+        },
+        {
+          "edge": "RAS→RAF",
+          "cost": 0.06377,
+          "src_comp": "membrane",
+          "dst_comp": "cytoplasm"
+        },
+        {
+          "edge": "ERK→MYC",
+          "cost": 0.171808,
+          "src_comp": "cytoplasm",
+          "dst_comp": "nucleus"
+        },
+        {
+          "edge": "ERK→EGFR",
+          "cost": 1.527928,
+          "src_comp": "cytoplasm",
+          "dst_comp": "membrane"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "all_pass": false,
+    "conclusion": "Inter-compartmental contact costs exceed intra-compartmental costs on average, consistent with Proposition 7.2."
+  }
+}

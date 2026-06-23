@@ -1,0 +1,67 @@
+{
+  "experiment": "L1-Optimal Restoration",
+  "theorem": "Proposition 5.6",
+  "timestamp": "2026-06-23T00:28:15.742720",
+  "tests": [
+    {
+      "pathway": "Glycolysis",
+      "perturbation": "HK1 90% inhibition",
+      "alpha": 0.1,
+      "V_perturbed": 0.1427,
+      "V_restored": 1.0,
+      "restoration_sparsity": 1,
+      "restored_edges": [
+        0
+      ],
+      "trivial_restoration_V": 1.0,
+      "restoration_exists": true,
+      "V_threshold": 0.9
+    },
+    {
+      "pathway": "TCA Cycle",
+      "perturbation": "IDH2 R172K",
+      "alpha": 0.15,
+      "V_perturbed": 0.9844,
+      "V_restored": 1.0,
+      "restoration_sparsity": 1,
+      "restored_edges": [
+        2
+      ],
+      "trivial_restoration_V": 1.0,
+      "restoration_exists": true,
+      "V_threshold": 0.9
+    },
+    {
+      "pathway": "OxPhos",
+      "perturbation": "Complex I rotenone",
+      "alpha": 0.3,
+      "V_perturbed": 0.9356,
+      "V_restored": 1.0,
+      "restoration_sparsity": 1,
+      "restored_edges": [
+        0
+      ],
+      "trivial_restoration_V": 1.0,
+      "restoration_exists": true,
+      "V_threshold": 0.9
+    },
+    {
+      "pathway": "EGFR/MAPK",
+      "perturbation": "KRAS G12V",
+      "alpha": 5.0,
+      "V_perturbed": 0.9999,
+      "V_restored": 1.0,
+      "restoration_sparsity": 1,
+      "restored_edges": [
+        3
+      ],
+      "trivial_restoration_V": 1.0,
+      "restoration_exists": true,
+      "V_threshold": 0.9
+    }
+  ],
+  "summary": {
+    "all_pass": true,
+    "conclusion": "L1-optimal restoration exists for all perturbations. Single-edge restoration suffices for single-edge perturbations (sparsity = 1)."
+  }
+}
