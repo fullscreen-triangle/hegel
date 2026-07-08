@@ -1,0 +1,2017 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{none/global//global/global/global}
+  \entry{kitano2002systems}{article}{}{}
+    \name{author}{1}{}{%
+      {{hash=KH}{%
+         family={Kitano},
+         familyi={K\bibinitperiod},
+         given={Hiroaki},
+         giveni={H\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{KH1}
+    \strng{fullhash}{KH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1126/science.1069492
+    \endverb
+    \field{number}{5560}
+    \field{pages}{1662\bibrangedash 1664}
+    \field{title}{Systems Biology: A Brief Overview}
+    \field{volume}{295}
+    \field{journaltitle}{Science}
+    \field{year}{2002}
+  \endentry
+
+  \entry{palsson2015systems}{book}{}{}
+    \name{author}{1}{}{%
+      {{hash=PBO}{%
+         family={Palsson},
+         familyi={P\bibinitperiod},
+         given={Bernhard\bibnamedelima {\O}.},
+         giveni={B\bibinitperiod\bibinitdelim {\O}\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Cambridge University Press}%
+    }
+    \strng{namehash}{PBO1}
+    \strng{fullhash}{PBO1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1017/CBO9781139854610
+    \endverb
+    \field{edition}{2}
+    \field{title}{Systems Biology: Constraint-Based Reconstruction and
+  Analysis}
+    \field{year}{2015}
+  \endentry
+
+  \entry{klipp2016systems}{book}{}{}
+    \name{author}{5}{}{%
+      {{hash=KE}{%
+         family={Klipp},
+         familyi={K\bibinitperiod},
+         given={Edda},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=LW}{%
+         family={Liebermeister},
+         familyi={L\bibinitperiod},
+         given={Wolfram},
+         giveni={W\bibinitperiod},
+      }}%
+      {{hash=WC}{%
+         family={Wierling},
+         familyi={W\bibinitperiod},
+         given={Christoph},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=KA}{%
+         family={Kowald},
+         familyi={K\bibinitperiod},
+         given={Axel},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=HR}{%
+         family={Herwig},
+         familyi={H\bibinitperiod},
+         given={Ralf},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Wiley-VCH}%
+    }
+    \strng{namehash}{KE+1}
+    \strng{fullhash}{KELWWCKAHR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1002/9783527696130
+    \endverb
+    \field{edition}{2}
+    \field{title}{Systems Biology: A Textbook}
+    \field{year}{2016}
+  \endentry
+
+  \entry{tyson2003sniffers}{article}{}{}
+    \name{author}{3}{}{%
+      {{hash=TJJ}{%
+         family={Tyson},
+         familyi={T\bibinitperiod},
+         given={John\bibnamedelima J.},
+         giveni={J\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=CKC}{%
+         family={Chen},
+         familyi={C\bibinitperiod},
+         given={Katherine\bibnamedelima C.},
+         giveni={K\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+      {{hash=NB}{%
+         family={Novak},
+         familyi={N\bibinitperiod},
+         given={Bela},
+         giveni={B\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{TJJCKCNB1}
+    \strng{fullhash}{TJJCKCNB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1016/S0955-0674(03)00017-6
+    \endverb
+    \field{number}{2}
+    \field{pages}{221\bibrangedash 231}
+    \field{title}{Sniffers, Buzzers, Toggles and Blinkers: Dynamics of
+  Regulatory and Signaling Pathways in the Cell}
+    \field{volume}{15}
+    \field{journaltitle}{Current Opinion in Cell Biology}
+    \field{year}{2003}
+  \endentry
+
+  \entry{orth2010flux}{article}{}{}
+    \name{author}{3}{}{%
+      {{hash=OJD}{%
+         family={Orth},
+         familyi={O\bibinitperiod},
+         given={Jeffrey\bibnamedelima D.},
+         giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+      {{hash=TI}{%
+         family={Thiele},
+         familyi={T\bibinitperiod},
+         given={Ines},
+         giveni={I\bibinitperiod},
+      }}%
+      {{hash=PBO}{%
+         family={Palsson},
+         familyi={P\bibinitperiod},
+         given={Bernhard\bibnamedelima {\O}.},
+         giveni={B\bibinitperiod\bibinitdelim {\O}\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{OJDTIPBO1}
+    \strng{fullhash}{OJDTIPBO1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1038/nbt.1614
+    \endverb
+    \field{number}{3}
+    \field{pages}{245\bibrangedash 248}
+    \field{title}{What is Flux Balance Analysis?}
+    \field{volume}{28}
+    \field{journaltitle}{Nature Biotechnology}
+    \field{year}{2010}
+  \endentry
+
+  \entry{schellenberger2011quantitative}{article}{}{}
+    \name{author}{13}{}{%
+      {{hash=SJ}{%
+         family={Schellenberger},
+         familyi={S\bibinitperiod},
+         given={Jan},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=QR}{%
+         family={Que},
+         familyi={Q\bibinitperiod},
+         given={Richard},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=FRMT}{%
+         family={Fleming},
+         familyi={F\bibinitperiod},
+         given={Ronan M.\bibnamedelima T.},
+         giveni={R\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim
+  T\bibinitperiod},
+      }}%
+      {{hash=TI}{%
+         family={Thiele},
+         familyi={T\bibinitperiod},
+         given={Ines},
+         giveni={I\bibinitperiod},
+      }}%
+      {{hash=OJD}{%
+         family={Orth},
+         familyi={O\bibinitperiod},
+         given={Jeffrey\bibnamedelima D.},
+         giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+      {{hash=FAM}{%
+         family={Feist},
+         familyi={F\bibinitperiod},
+         given={Adam\bibnamedelima M.},
+         giveni={A\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+      {{hash=ZDC}{%
+         family={Zielinski},
+         familyi={Z\bibinitperiod},
+         given={Daniel\bibnamedelima C.},
+         giveni={D\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+      {{hash=BA}{%
+         family={Bordbar},
+         familyi={B\bibinitperiod},
+         given={Aarash},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=LNE}{%
+         family={Lewis},
+         familyi={L\bibinitperiod},
+         given={Nathan\bibnamedelima E.},
+         giveni={N\bibinitperiod\bibinitdelim E\bibinitperiod},
+      }}%
+      {{hash=RS}{%
+         family={Rahmanian},
+         familyi={R\bibinitperiod},
+         given={Sorena},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=KJ}{%
+         family={Kang},
+         familyi={K\bibinitperiod},
+         given={Joseph},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=HDR}{%
+         family={Hyduke},
+         familyi={H\bibinitperiod},
+         given={Daniel\bibnamedelima R.},
+         giveni={D\bibinitperiod\bibinitdelim R\bibinitperiod},
+      }}%
+      {{hash=PBO}{%
+         family={Palsson},
+         familyi={P\bibinitperiod},
+         given={Bernhard\bibnamedelima {\O}.},
+         giveni={B\bibinitperiod\bibinitdelim {\O}\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SJ+1}
+    \strng{fullhash}{SJQRFRMTTIOJDFAMZDCBALNERSKJHDRPBO1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1038/nprot.2011.308
+    \endverb
+    \field{number}{9}
+    \field{pages}{1290\bibrangedash 1307}
+    \field{title}{Quantitative Prediction of Cellular Metabolism with
+  Constraint-Based Models: The {COBRA} {T}oolbox v2.0}
+    \field{volume}{6}
+    \field{journaltitle}{Nature Protocols}
+    \field{year}{2011}
+  \endentry
+
+  \entry{barabasi2004network}{article}{}{}
+    \name{author}{2}{}{%
+      {{hash=BAL}{%
+         family={Barab{\'a}si},
+         familyi={B\bibinitperiod},
+         given={Albert-L{\'a}szl{\'o}},
+         giveni={A\bibinithyphendelim L\bibinitperiod},
+      }}%
+      {{hash=OZN}{%
+         family={Oltvai},
+         familyi={O\bibinitperiod},
+         given={Zolt{\'a}n\bibnamedelima N.},
+         giveni={Z\bibinitperiod\bibinitdelim N\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BALOZN1}
+    \strng{fullhash}{BALOZN1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1038/nrg1272
+    \endverb
+    \field{number}{2}
+    \field{pages}{101\bibrangedash 113}
+    \field{title}{Network Biology: Understanding the Cell's Functional
+  Organization}
+    \field{volume}{5}
+    \field{journaltitle}{Nature Reviews Genetics}
+    \field{year}{2004}
+  \endentry
+
+  \entry{jeong2000large}{article}{}{}
+    \name{author}{5}{}{%
+      {{hash=JH}{%
+         family={Jeong},
+         familyi={J\bibinitperiod},
+         given={Hawoong},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=TB}{%
+         family={Tombor},
+         familyi={T\bibinitperiod},
+         given={B{\'a}lint},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=AR}{%
+         family={Albert},
+         familyi={A\bibinitperiod},
+         given={R{\'e}ka},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=OZN}{%
+         family={Oltvai},
+         familyi={O\bibinitperiod},
+         given={Zolt{\'a}n\bibnamedelima N.},
+         giveni={Z\bibinitperiod\bibinitdelim N\bibinitperiod},
+      }}%
+      {{hash=BAL}{%
+         family={Barab{\'a}si},
+         familyi={B\bibinitperiod},
+         given={Albert-L{\'a}szl{\'o}},
+         giveni={A\bibinithyphendelim L\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{JH+1}
+    \strng{fullhash}{JHTBAROZNBAL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1038/35036627
+    \endverb
+    \field{number}{6804}
+    \field{pages}{651\bibrangedash 654}
+    \field{title}{The Large-Scale Organization of Metabolic Networks}
+    \field{volume}{407}
+    \field{journaltitle}{Nature}
+    \field{year}{2000}
+  \endentry
+
+  \entry{cornishbowden2012fundamentals}{book}{}{}
+    \name{author}{1}{}{%
+      {{hash=CBA}{%
+         family={Cornish-Bowden},
+         familyi={C\bibinithyphendelim B\bibinitperiod},
+         given={Athel},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Wiley-Blackwell}%
+    }
+    \strng{namehash}{CBA1}
+    \strng{fullhash}{CBA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{edition}{4}
+    \field{title}{Fundamentals of Enzyme Kinetics}
+    \field{year}{2012}
+  \endentry
+
+  \entry{schomburg2004brenda}{article}{}{}
+    \name{author}{7}{}{%
+      {{hash=SI}{%
+         family={Schomburg},
+         familyi={S\bibinitperiod},
+         given={Ida},
+         giveni={I\bibinitperiod},
+      }}%
+      {{hash=CA}{%
+         family={Chang},
+         familyi={C\bibinitperiod},
+         given={Antje},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=EC}{%
+         family={Ebeling},
+         familyi={E\bibinitperiod},
+         given={Christian},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=GM}{%
+         family={Gremse},
+         familyi={G\bibinitperiod},
+         given={Marion},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=HC}{%
+         family={Heldt},
+         familyi={H\bibinitperiod},
+         given={Christian},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=HG}{%
+         family={Huhn},
+         familyi={H\bibinitperiod},
+         given={Gregor},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=SD}{%
+         family={Schomburg},
+         familyi={S\bibinitperiod},
+         given={Dietmar},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SI+1}
+    \strng{fullhash}{SICAECGMHCHGSD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1093/nar/gkh081
+    \endverb
+    \field{number}{suppl\_1}
+    \field{pages}{D431\bibrangedash D433}
+    \field{title}{{BRENDA}, the Enzyme Database: Updates and Major New
+  Developments}
+    \field{volume}{32}
+    \field{journaltitle}{Nucleic Acids Research}
+    \field{year}{2004}
+  \endentry
+
+  \entry{ravasz2002hierarchical}{article}{}{}
+    \name{author}{5}{}{%
+      {{hash=RE}{%
+         family={Ravasz},
+         familyi={R\bibinitperiod},
+         given={Erzs{\'e}bet},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=SAL}{%
+         family={Somera},
+         familyi={S\bibinitperiod},
+         given={Anna\bibnamedelima Lisa},
+         giveni={A\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+      {{hash=MDA}{%
+         family={Mongru},
+         familyi={M\bibinitperiod},
+         given={Dale\bibnamedelima A.},
+         giveni={D\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=OZN}{%
+         family={Oltvai},
+         familyi={O\bibinitperiod},
+         given={Zolt{\'a}n\bibnamedelima N.},
+         giveni={Z\bibinitperiod\bibinitdelim N\bibinitperiod},
+      }}%
+      {{hash=BAL}{%
+         family={Barab{\'a}si},
+         familyi={B\bibinitperiod},
+         given={Albert-L{\'a}szl{\'o}},
+         giveni={A\bibinithyphendelim L\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{RE+1}
+    \strng{fullhash}{RESALMDAOZNBAL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1126/science.1073374
+    \endverb
+    \field{number}{5586}
+    \field{pages}{1551\bibrangedash 1555}
+    \field{title}{Hierarchical Organization of Modularity in Metabolic
+  Networks}
+    \field{volume}{297}
+    \field{journaltitle}{Science}
+    \field{year}{2002}
+  \endentry
+
+  \entry{alon2007network}{article}{}{}
+    \name{author}{1}{}{%
+      {{hash=AU}{%
+         family={Alon},
+         familyi={A\bibinitperiod},
+         given={Uri},
+         giveni={U\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{AU1}
+    \strng{fullhash}{AU1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1038/nrg2102
+    \endverb
+    \field{number}{6}
+    \field{pages}{450\bibrangedash 461}
+    \field{title}{Network Motifs: Theory and Experimental Approaches}
+    \field{volume}{8}
+    \field{journaltitle}{Nature Reviews Genetics}
+    \field{year}{2007}
+  \endentry
+
+  \entry{atkins2014physical}{book}{}{}
+    \name{author}{2}{}{%
+      {{hash=APW}{%
+         family={Atkins},
+         familyi={A\bibinitperiod},
+         given={Peter\bibnamedelima W.},
+         giveni={P\bibinitperiod\bibinitdelim W\bibinitperiod},
+      }}%
+      {{hash=dPJ}{%
+         prefix={de},
+         prefixi={d\bibinitperiod},
+         family={Paula},
+         familyi={P\bibinitperiod},
+         given={Julio},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Oxford University Press}%
+    }
+    \strng{namehash}{APWPJd1}
+    \strng{fullhash}{APWPJd1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{edition}{10}
+    \field{title}{Physical Chemistry: Thermodynamics, Structure, and Change}
+    \field{year}{2014}
+  \endentry
+
+  \entry{denbigh1981principles}{book}{}{}
+    \name{author}{1}{}{%
+      {{hash=DKG}{%
+         family={Denbigh},
+         familyi={D\bibinitperiod},
+         given={Kenneth\bibnamedelima George},
+         giveni={K\bibinitperiod\bibinitdelim G\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Cambridge University Press}%
+    }
+    \strng{namehash}{DKG1}
+    \strng{fullhash}{DKG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{edition}{4}
+    \field{title}{The Principles of Chemical Equilibrium}
+    \field{year}{1981}
+  \endentry
+
+  \entry{kondepudi2014modern}{book}{}{}
+    \name{author}{2}{}{%
+      {{hash=KD}{%
+         family={Kondepudi},
+         familyi={K\bibinitperiod},
+         given={Dilip},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=PI}{%
+         family={Prigogine},
+         familyi={P\bibinitperiod},
+         given={Ilya},
+         giveni={I\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {John Wiley \& Sons}%
+    }
+    \strng{namehash}{KDPI1}
+    \strng{fullhash}{KDPI1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1002/9781118698723
+    \endverb
+    \field{edition}{2}
+    \field{title}{Modern Thermodynamics: From Heat Engines to Dissipative
+  Structures}
+    \field{year}{2014}
+  \endentry
+
+  \entry{prigogine1967introduction}{article}{}{}
+    \name{author}{1}{}{%
+      {{hash=PI}{%
+         family={Prigogine},
+         familyi={P\bibinitperiod},
+         given={Ilya},
+         giveni={I\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Interscience Publishers}%
+    }
+    \strng{namehash}{PI1}
+    \strng{fullhash}{PI1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{edition}{3}
+    \field{title}{Introduction to Thermodynamics of Irreversible Processes}
+    \field{year}{1967}
+  \endentry
+
+  \entry{shannon1948mathematical}{article}{}{}
+    \name{author}{1}{}{%
+      {{hash=SCE}{%
+         family={Shannon},
+         familyi={S\bibinitperiod},
+         given={Claude\bibnamedelima E.},
+         giveni={C\bibinitperiod\bibinitdelim E\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SCE1}
+    \strng{fullhash}{SCE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1002/j.1538-7305.1948.tb01338.x
+    \endverb
+    \field{number}{3}
+    \field{pages}{379\bibrangedash 423}
+    \field{title}{A Mathematical Theory of Communication}
+    \field{volume}{27}
+    \field{journaltitle}{Bell System Technical Journal}
+    \field{year}{1948}
+  \endentry
+
+  \entry{jaynes1957information}{article}{}{}
+    \name{author}{1}{}{%
+      {{hash=JET}{%
+         family={Jaynes},
+         familyi={J\bibinitperiod},
+         given={Edwin\bibnamedelima T.},
+         giveni={E\bibinitperiod\bibinitdelim T\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{JET1}
+    \strng{fullhash}{JET1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1103/PhysRev.106.620
+    \endverb
+    \field{number}{4}
+    \field{pages}{620\bibrangedash 630}
+    \field{title}{Information Theory and Statistical Mechanics}
+    \field{volume}{106}
+    \field{journaltitle}{Physical Review}
+    \field{year}{1957}
+  \endentry
+
+  \entry{onsager1931reciprocal}{article}{}{}
+    \name{author}{1}{}{%
+      {{hash=OL}{%
+         family={Onsager},
+         familyi={O\bibinitperiod},
+         given={Lars},
+         giveni={L\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{OL1}
+    \strng{fullhash}{OL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1103/PhysRev.37.405
+    \endverb
+    \field{number}{4}
+    \field{pages}{405\bibrangedash 426}
+    \field{title}{Reciprocal Relations in Irreversible Processes. {I}}
+    \field{volume}{37}
+    \field{journaltitle}{Physical Review}
+    \field{year}{1931}
+  \endentry
+
+  \entry{alberty2003thermodynamics}{book}{}{}
+    \name{author}{1}{}{%
+      {{hash=ARA}{%
+         family={Alberty},
+         familyi={A\bibinitperiod},
+         given={Robert\bibnamedelima A.},
+         giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {John Wiley \& Sons}%
+    }
+    \strng{namehash}{ARA1}
+    \strng{fullhash}{ARA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1002/0471332607
+    \endverb
+    \field{title}{Thermodynamics of Biochemical Reactions}
+    \field{year}{2003}
+  \endentry
+
+  \entry{spearman1904proof}{article}{}{}
+    \name{author}{1}{}{%
+      {{hash=SC}{%
+         family={Spearman},
+         familyi={S\bibinitperiod},
+         given={Charles},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SC1}
+    \strng{fullhash}{SC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.2307/1412159
+    \endverb
+    \field{number}{1}
+    \field{pages}{72\bibrangedash 101}
+    \field{title}{The Proof and Measurement of Association between Two Things}
+    \field{volume}{15}
+    \field{journaltitle}{The American Journal of Psychology}
+    \field{year}{1904}
+  \endentry
+
+  \entry{wishart2018hmdb}{article}{}{}
+    \name{author}{28}{}{%
+      {{hash=WDS}{%
+         family={Wishart},
+         familyi={W\bibinitperiod},
+         given={David\bibnamedelima S.},
+         giveni={D\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+      {{hash=FYD}{%
+         family={Feunang},
+         familyi={F\bibinitperiod},
+         given={Yannick\bibnamedelima Djoumbou},
+         giveni={Y\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+      {{hash=MA}{%
+         family={Marcu},
+         familyi={M\bibinitperiod},
+         given={Ana},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=GAC}{%
+         family={Guo},
+         familyi={G\bibinitperiod},
+         given={An\bibnamedelima Chi},
+         giveni={A\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+      {{hash=LK}{%
+         family={Liang},
+         familyi={L\bibinitperiod},
+         given={Kevin},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=VFR}{%
+         family={V{\'a}zquez-Fresno},
+         familyi={V\bibinithyphendelim F\bibinitperiod},
+         given={Rosa},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=ST}{%
+         family={Sajed},
+         familyi={S\bibinitperiod},
+         given={Tanvir},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=JD}{%
+         family={Johnson},
+         familyi={J\bibinitperiod},
+         given={Daniel},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=LC}{%
+         family={Li},
+         familyi={L\bibinitperiod},
+         given={Carin},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=KN}{%
+         family={Karu},
+         familyi={K\bibinitperiod},
+         given={Naama},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=SZ}{%
+         family={Sayeeda},
+         familyi={S\bibinitperiod},
+         given={Zinat},
+         giveni={Z\bibinitperiod},
+      }}%
+      {{hash=LE}{%
+         family={Lo},
+         familyi={L\bibinitperiod},
+         given={Edmond},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=AN}{%
+         family={Assempour},
+         familyi={A\bibinitperiod},
+         given={Nazanin},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=BM}{%
+         family={Berjanskii},
+         familyi={B\bibinitperiod},
+         given={Mark},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=SS}{%
+         family={Singhal},
+         familyi={S\bibinitperiod},
+         given={Sandeep},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=AD}{%
+         family={Arndt},
+         familyi={A\bibinitperiod},
+         given={David},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=LY}{%
+         family={Liang},
+         familyi={L\bibinitperiod},
+         given={Yonjie},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=BH}{%
+         family={Badran},
+         familyi={B\bibinitperiod},
+         given={Hasan},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=GJ}{%
+         family={Grant},
+         familyi={G\bibinitperiod},
+         given={Jason},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=SCA}{%
+         family={Serra-Cayuela},
+         familyi={S\bibinithyphendelim C\bibinitperiod},
+         given={Arnau},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=LY}{%
+         family={Liu},
+         familyi={L\bibinitperiod},
+         given={Yifeng},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=MR}{%
+         family={Mandal},
+         familyi={M\bibinitperiod},
+         given={Rupa},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=NV}{%
+         family={Neveu},
+         familyi={N\bibinitperiod},
+         given={Vanessa},
+         giveni={V\bibinitperiod},
+      }}%
+      {{hash=PA}{%
+         family={Pon},
+         familyi={P\bibinitperiod},
+         given={Allison},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=KC}{%
+         family={Knox},
+         familyi={K\bibinitperiod},
+         given={Craig},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=WM}{%
+         family={Wilson},
+         familyi={W\bibinitperiod},
+         given={Michael},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=MC}{%
+         family={Manach},
+         familyi={M\bibinitperiod},
+         given={Claudine},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=SA}{%
+         family={Scalbert},
+         familyi={S\bibinitperiod},
+         given={Augustin},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{WDS+1}
+  \strng{fullhash}{WDSFYDMAGACLKVFRSTJDLCKNSZLEANBMSSADLYBHGJSCALYMRNVPAKCWMMCSA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1093/nar/gkx1089
+    \endverb
+    \field{number}{D1}
+    \field{pages}{D608\bibrangedash D617}
+    \field{title}{{HMDB} 4.0: The Human Metabolome Database for 2018}
+    \field{volume}{46}
+    \field{journaltitle}{Nucleic Acids Research}
+    \field{year}{2018}
+  \endentry
+
+  \entry{kanehisa2000kegg}{article}{}{}
+    \name{author}{2}{}{%
+      {{hash=KM}{%
+         family={Kanehisa},
+         familyi={K\bibinitperiod},
+         given={Minoru},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=GS}{%
+         family={Goto},
+         familyi={G\bibinitperiod},
+         given={Susumu},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{KMGS1}
+    \strng{fullhash}{KMGS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1093/nar/28.1.27
+    \endverb
+    \field{number}{1}
+    \field{pages}{27\bibrangedash 30}
+    \field{title}{{KEGG}: {K}yoto Encyclopedia of Genes and Genomes}
+    \field{volume}{28}
+    \field{journaltitle}{Nucleic Acids Research}
+    \field{year}{2000}
+  \endentry
+
+  \entry{jassal2020reactome}{article}{}{}
+    \name{author}{23}{}{%
+      {{hash=JB}{%
+         family={Jassal},
+         familyi={J\bibinitperiod},
+         given={Bijay},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=ML}{%
+         family={Matthews},
+         familyi={M\bibinitperiod},
+         given={Lisa},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=VG}{%
+         family={Viteri},
+         familyi={V\bibinitperiod},
+         given={Guilherme},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=GC}{%
+         family={Gong},
+         familyi={G\bibinitperiod},
+         given={Chuqiao},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=LP}{%
+         family={Lorente},
+         familyi={L\bibinitperiod},
+         given={Pascual},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=FA}{%
+         family={Fabregat},
+         familyi={F\bibinitperiod},
+         given={Antonio},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=SK}{%
+         family={Sidiropoulos},
+         familyi={S\bibinitperiod},
+         given={Konstantinos},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=CJ}{%
+         family={Cook},
+         familyi={C\bibinitperiod},
+         given={Justin},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=GM}{%
+         family={Gillespie},
+         familyi={G\bibinitperiod},
+         given={Marc},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=HR}{%
+         family={Haw},
+         familyi={H\bibinitperiod},
+         given={Robin},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=LF}{%
+         family={Loney},
+         familyi={L\bibinitperiod},
+         given={Fred},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=MB}{%
+         family={May},
+         familyi={M\bibinitperiod},
+         given={Bruce},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=MM}{%
+         family={Milacic},
+         familyi={M\bibinitperiod},
+         given={Marija},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=RK}{%
+         family={Rothfels},
+         familyi={R\bibinitperiod},
+         given={Karen},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=SC}{%
+         family={Sevilla},
+         familyi={S\bibinitperiod},
+         given={Cristoffer},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=SV}{%
+         family={Shamovsky},
+         familyi={S\bibinitperiod},
+         given={Veronica},
+         giveni={V\bibinitperiod},
+      }}%
+      {{hash=SS}{%
+         family={Shorser},
+         familyi={S\bibinitperiod},
+         given={Solomon},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=VT}{%
+         family={Varusai},
+         familyi={V\bibinitperiod},
+         given={Thawfeek},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=WJ}{%
+         family={Weiser},
+         familyi={W\bibinitperiod},
+         given={Joel},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=WG}{%
+         family={Wu},
+         familyi={W\bibinitperiod},
+         given={Guanming},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=SL}{%
+         family={Stein},
+         familyi={S\bibinitperiod},
+         given={Lincoln},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=HH}{%
+         family={Hermjakob},
+         familyi={H\bibinitperiod},
+         given={Henning},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=DP}{%
+         family={D'Eustachio},
+         familyi={D\bibinitperiod},
+         given={Peter},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{JB+1}
+    \strng{fullhash}{JBMLVGGCLPFASKCJGMHRLFMBMMRKSCSVSSVTWJWGSLHHDP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1093/nar/gkz1031
+    \endverb
+    \field{number}{D1}
+    \field{pages}{D498\bibrangedash D503}
+    \field{title}{The Reactome Pathway Knowledgebase}
+    \field{volume}{48}
+    \field{journaltitle}{Nucleic Acids Research}
+    \field{year}{2020}
+  \endentry
+
+  \entry{hucka2003sbml}{article}{}{}
+    \name{author}{43}{}{%
+      {{hash=HM}{%
+         family={Hucka},
+         familyi={H\bibinitperiod},
+         given={Michael},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=FA}{%
+         family={Finney},
+         familyi={F\bibinitperiod},
+         given={Andrew},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=SHM}{%
+         family={Sauro},
+         familyi={S\bibinitperiod},
+         given={Herbert\bibnamedelima M.},
+         giveni={H\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+      {{hash=BH}{%
+         family={Bolouri},
+         familyi={B\bibinitperiod},
+         given={Hamid},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=DJC}{%
+         family={Doyle},
+         familyi={D\bibinitperiod},
+         given={John\bibnamedelima C.},
+         giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+      {{hash=KH}{%
+         family={Kitano},
+         familyi={K\bibinitperiod},
+         given={Hiroaki},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=AAP}{%
+         family={Arkin},
+         familyi={A\bibinitperiod},
+         given={Adam\bibnamedelima P.},
+         giveni={A\bibinitperiod\bibinitdelim P\bibinitperiod},
+      }}%
+      {{hash=BBJ}{%
+         family={Bornstein},
+         familyi={B\bibinitperiod},
+         given={Benjamin\bibnamedelima J.},
+         giveni={B\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=BD}{%
+         family={Bray},
+         familyi={B\bibinitperiod},
+         given={Dennis},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=CBA}{%
+         family={Cornish-Bowden},
+         familyi={C\bibinithyphendelim B\bibinitperiod},
+         given={Athel},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=CAA}{%
+         family={Cuellar},
+         familyi={C\bibinitperiod},
+         given={Autumn\bibnamedelima A.},
+         giveni={A\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=DS}{%
+         family={Dronov},
+         familyi={D\bibinitperiod},
+         given={Sergey},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=GED}{%
+         family={Gilles},
+         familyi={G\bibinitperiod},
+         given={Ernst\bibnamedelima Dieter},
+         giveni={E\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+      {{hash=GM}{%
+         family={Ginkel},
+         familyi={G\bibinitperiod},
+         given={Martin},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=GV}{%
+         family={Gor},
+         familyi={G\bibinitperiod},
+         given={Victoria},
+         giveni={V\bibinitperiod},
+      }}%
+      {{hash=GII}{%
+         family={Goryanin},
+         familyi={G\bibinitperiod},
+         given={Igor\bibnamedelima I.},
+         giveni={I\bibinitperiod\bibinitdelim I\bibinitperiod},
+      }}%
+      {{hash=HWJ}{%
+         family={Hedley},
+         familyi={H\bibinitperiod},
+         given={Warren\bibnamedelima J.},
+         giveni={W\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=HTC}{%
+         family={Hodgman},
+         familyi={H\bibinitperiod},
+         given={T.\bibnamedelima Charles},
+         giveni={T\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+      {{hash=HJHS}{%
+         family={Hofmeyr},
+         familyi={H\bibinitperiod},
+         given={Jan-Hendrik\bibnamedelima S.},
+         giveni={J\bibinithyphendelim H\bibinitperiod\bibinitdelim
+  S\bibinitperiod},
+      }}%
+      {{hash=HPJ}{%
+         family={Hunter},
+         familyi={H\bibinitperiod},
+         given={Peter\bibnamedelima J.},
+         giveni={P\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=JNS}{%
+         family={Juty},
+         familyi={J\bibinitperiod},
+         given={Nick\bibnamedelima S.},
+         giveni={N\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+      {{hash=KJL}{%
+         family={Kasberger},
+         familyi={K\bibinitperiod},
+         given={Jay\bibnamedelima L.},
+         giveni={J\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+      {{hash=KA}{%
+         family={Kremling},
+         familyi={K\bibinitperiod},
+         given={Andreas},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=KU}{%
+         family={Kummer},
+         familyi={K\bibinitperiod},
+         given={Ursula},
+         giveni={U\bibinitperiod},
+      }}%
+      {{hash=LNN}{%
+         family={Le\bibnamedelima Nov{\`e}re},
+         familyi={L\bibinitperiod\bibinitdelim N\bibinitperiod},
+         given={Nicolas},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=LLM}{%
+         family={Loew},
+         familyi={L\bibinitperiod},
+         given={Leslie\bibnamedelima M.},
+         giveni={L\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+      {{hash=LD}{%
+         family={Lucio},
+         familyi={L\bibinitperiod},
+         given={Daniel},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=MP}{%
+         family={Mendes},
+         familyi={M\bibinitperiod},
+         given={Pedro},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=ME}{%
+         family={Minch},
+         familyi={M\bibinitperiod},
+         given={Eric},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=MED}{%
+         family={Mjolsness},
+         familyi={M\bibinitperiod},
+         given={Eric\bibnamedelima D.},
+         giveni={E\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+      {{hash=NY}{%
+         family={Nakayama},
+         familyi={N\bibinitperiod},
+         given={Yoichi},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=NMR}{%
+         family={Nelson},
+         familyi={N\bibinitperiod},
+         given={Melanie\bibnamedelima R.},
+         giveni={M\bibinitperiod\bibinitdelim R\bibinitperiod},
+      }}%
+      {{hash=NPF}{%
+         family={Nielsen},
+         familyi={N\bibinitperiod},
+         given={Poul\bibnamedelima F.},
+         giveni={P\bibinitperiod\bibinitdelim F\bibinitperiod},
+      }}%
+      {{hash=ST}{%
+         family={Sakurada},
+         familyi={S\bibinitperiod},
+         given={Takeshi},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=SJC}{%
+         family={Schaff},
+         familyi={S\bibinitperiod},
+         given={James\bibnamedelima C.},
+         giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+      {{hash=SBE}{%
+         family={Shapiro},
+         familyi={S\bibinitperiod},
+         given={Bruce\bibnamedelima E.},
+         giveni={B\bibinitperiod\bibinitdelim E\bibinitperiod},
+      }}%
+      {{hash=STS}{%
+         family={Shimizu},
+         familyi={S\bibinitperiod},
+         given={Thomas\bibnamedelima S.},
+         giveni={T\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+      {{hash=SHD}{%
+         family={Spence},
+         familyi={S\bibinitperiod},
+         given={Hugh\bibnamedelima D.},
+         giveni={H\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+      {{hash=SJ}{%
+         family={Stelling},
+         familyi={S\bibinitperiod},
+         given={J{\"o}rg},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=TK}{%
+         family={Takahashi},
+         familyi={T\bibinitperiod},
+         given={Koichi},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=TM}{%
+         family={Tomita},
+         familyi={T\bibinitperiod},
+         given={Masaru},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=WJ}{%
+         family={Wagner},
+         familyi={W\bibinitperiod},
+         given={John},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=WJ}{%
+         family={Wang},
+         familyi={W\bibinitperiod},
+         given={Jian},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{HM+1}
+  \strng{fullhash}{HMFASHMBHDJCKHAAPBBJBDCBACAADSGEDGMGVGIIHWJHTCHJHSHPJJNSKJLKAKULNNLLMLDMPMEMEDNYNMRNPFSTSJCSBESTSSHDSJTKTMWJWJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1093/bioinformatics/btg015
+    \endverb
+    \field{number}{4}
+    \field{pages}{524\bibrangedash 531}
+    \field{title}{The Systems Biology Markup Language ({SBML}): A Medium for
+  Representation and Exchange of Biochemical Network Models}
+    \field{volume}{19}
+    \field{journaltitle}{Bioinformatics}
+    \field{year}{2003}
+  \endentry
+
+  \entry{beard2002energy}{article}{}{}
+    \name{author}{4}{}{%
+      {{hash=BDA}{%
+         family={Beard},
+         familyi={B\bibinitperiod},
+         given={Daniel\bibnamedelima A.},
+         giveni={D\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=BE}{%
+         family={Babson},
+         familyi={B\bibinitperiod},
+         given={Eric},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=CE}{%
+         family={Curtis},
+         familyi={C\bibinitperiod},
+         given={Edward},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=QH}{%
+         family={Qian},
+         familyi={Q\bibinitperiod},
+         given={Hong},
+         giveni={H\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BDA+1}
+    \strng{fullhash}{BDABECEQH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1016/j.jtbi.2004.01.008
+    \endverb
+    \field{number}{3}
+    \field{pages}{327\bibrangedash 333}
+    \field{title}{Thermodynamic Constraints for Biochemical Networks}
+    \field{volume}{228}
+    \field{journaltitle}{Journal of Theoretical Biology}
+    \field{year}{2004}
+  \endentry
+
+  \entry{noor2014pathway}{article}{}{}
+    \name{author}{6}{}{%
+      {{hash=NE}{%
+         family={Noor},
+         familyi={N\bibinitperiod},
+         given={Elad},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=BEA}{%
+         family={Bar-Even},
+         familyi={B\bibinithyphendelim E\bibinitperiod},
+         given={Arren},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=FA}{%
+         family={Flamholz},
+         familyi={F\bibinitperiod},
+         given={Avi},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=RE}{%
+         family={Reznik},
+         familyi={R\bibinitperiod},
+         given={Ed},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=LW}{%
+         family={Liebermeister},
+         familyi={L\bibinitperiod},
+         given={Wolfram},
+         giveni={W\bibinitperiod},
+      }}%
+      {{hash=MR}{%
+         family={Milo},
+         familyi={M\bibinitperiod},
+         given={Ron},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{NE+1}
+    \strng{fullhash}{NEBEAFARELWMR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1371/journal.pcbi.1003483
+    \endverb
+    \field{number}{2}
+    \field{pages}{e1003483}
+    \field{title}{Pathway Thermodynamics Highlights Kinetic Obstacles in
+  Central Metabolism}
+    \field{volume}{10}
+    \field{journaltitle}{PLoS Computational Biology}
+    \field{year}{2014}
+  \endentry
+
+  \entry{foucart2013mathematical}{book}{}{}
+    \name{author}{2}{}{%
+      {{hash=FS}{%
+         family={Foucart},
+         familyi={F\bibinitperiod},
+         given={Simon},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=RH}{%
+         family={Rauhut},
+         familyi={R\bibinitperiod},
+         given={Holger},
+         giveni={H\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{FSRH1}
+    \strng{fullhash}{FSRH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1007/978-0-8176-4948-7
+    \endverb
+    \field{title}{A Mathematical Introduction to Compressive Sensing}
+    \field{year}{2013}
+  \endentry
+
+  \entry{candes2006robust}{article}{}{}
+    \name{author}{3}{}{%
+      {{hash=CEJ}{%
+         family={Cand{\`e}s},
+         familyi={C\bibinitperiod},
+         given={Emmanuel\bibnamedelima J.},
+         giveni={E\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=RJ}{%
+         family={Romberg},
+         familyi={R\bibinitperiod},
+         given={Justin},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=TT}{%
+         family={Tao},
+         familyi={T\bibinitperiod},
+         given={Terence},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CEJRJTT1}
+    \strng{fullhash}{CEJRJTT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1109/TIT.2005.862083
+    \endverb
+    \field{number}{2}
+    \field{pages}{489\bibrangedash 509}
+    \field{title}{Robust Uncertainty Principles: Exact Signal Recovery from
+  Highly Incomplete Frequency Information}
+    \field{volume}{52}
+    \field{journaltitle}{IEEE Transactions on Information Theory}
+    \field{year}{2006}
+  \endentry
+
+  \entry{hopkins2008network}{article}{}{}
+    \name{author}{1}{}{%
+      {{hash=HAL}{%
+         family={Hopkins},
+         familyi={H\bibinitperiod},
+         given={Andrew\bibnamedelima L.},
+         giveni={A\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{HAL1}
+    \strng{fullhash}{HAL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1038/nchembio.118
+    \endverb
+    \field{number}{11}
+    \field{pages}{682\bibrangedash 690}
+    \field{title}{Network Pharmacology: The Next Paradigm in Drug Discovery}
+    \field{volume}{4}
+    \field{journaltitle}{Nature Chemical Biology}
+    \field{year}{2008}
+  \endentry
+
+  \entry{csermely2013structure}{article}{}{}
+    \name{author}{5}{}{%
+      {{hash=CP}{%
+         family={Csermely},
+         familyi={C\bibinitperiod},
+         given={P{\'e}ter},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=KT}{%
+         family={Korcsm{\'a}ros},
+         familyi={K\bibinitperiod},
+         given={Tam{\'a}s},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=KHJM}{%
+         family={Kiss},
+         familyi={K\bibinitperiod},
+         given={Huba J.\bibnamedelima M.},
+         giveni={H\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim
+  M\bibinitperiod},
+      }}%
+      {{hash=LG}{%
+         family={London},
+         familyi={L\bibinitperiod},
+         given={G{\'a}bor},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=NR}{%
+         family={Nussinov},
+         familyi={N\bibinitperiod},
+         given={Ruth},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CP+1}
+    \strng{fullhash}{CPKTKHJMLGNR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1016/j.pharmthera.2013.01.016
+    \endverb
+    \field{number}{3}
+    \field{pages}{333\bibrangedash 408}
+    \field{title}{Structure and Dynamics of Molecular Networks: A Novel
+  Paradigm of Drug Discovery}
+    \field{volume}{138}
+    \field{journaltitle}{Pharmacology \& Therapeutics}
+    \field{year}{2013}
+  \endentry
+
+  \entry{kacser1973control}{article}{}{}
+    \name{author}{2}{}{%
+      {{hash=KH}{%
+         family={Kacser},
+         familyi={K\bibinitperiod},
+         given={Henrik},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=BJA}{%
+         family={Burns},
+         familyi={B\bibinitperiod},
+         given={James\bibnamedelima A.},
+         giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{KHBJA1}
+    \strng{fullhash}{KHBJA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{pages}{65\bibrangedash 104}
+    \field{title}{The Control of Flux}
+    \field{volume}{27}
+    \field{journaltitle}{Symposia of the Society for Experimental Biology}
+    \field{year}{1973}
+  \endentry
+
+  \entry{fell1992metabolic}{article}{}{}
+    \name{author}{1}{}{%
+      {{hash=FDA}{%
+         family={Fell},
+         familyi={F\bibinitperiod},
+         given={David\bibnamedelima A.},
+         giveni={D\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{FDA1}
+    \strng{fullhash}{FDA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1042/bj2860313
+    \endverb
+    \field{number}{2}
+    \field{pages}{313\bibrangedash 330}
+    \field{title}{Metabolic Control Analysis: A Survey of Its Theoretical and
+  Experimental Development}
+    \field{volume}{286}
+    \field{journaltitle}{Biochemical Journal}
+    \field{year}{1992}
+  \endentry
+
+  \entry{kitano2004biological}{article}{}{}
+    \name{author}{1}{}{%
+      {{hash=KH}{%
+         family={Kitano},
+         familyi={K\bibinitperiod},
+         given={Hiroaki},
+         giveni={H\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{KH1}
+    \strng{fullhash}{KH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1038/nrg1471
+    \endverb
+    \field{number}{11}
+    \field{pages}{826\bibrangedash 837}
+    \field{title}{Biological Robustness}
+    \field{volume}{5}
+    \field{journaltitle}{Nature Reviews Genetics}
+    \field{year}{2004}
+  \endentry
+
+  \entry{chung1997spectral}{book}{}{}
+    \name{author}{1}{}{%
+      {{hash=CFRK}{%
+         family={Chung},
+         familyi={C\bibinitperiod},
+         given={Fan R.\bibnamedelima K.},
+         giveni={F\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim
+  K\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {American Mathematical Society}%
+    }
+    \strng{namehash}{CFRK1}
+    \strng{fullhash}{CFRK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Spectral Graph Theory}
+    \field{year}{1997}
+  \endentry
+
+  \entry{diekmann2013evolution}{article}{}{}
+    \name{author}{2}{}{%
+      {{hash=DY}{%
+         family={Diekmann},
+         familyi={D\bibinitperiod},
+         given={Yves},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=PLJB}{%
+         family={Pereira-Leal},
+         familyi={P\bibinithyphendelim L\bibinitperiod},
+         given={Jos{\'e}\bibnamedelima B.},
+         giveni={J\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{DYPLJB1}
+    \strng{fullhash}{DYPLJB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1042/BJ20120982
+    \endverb
+    \field{number}{2}
+    \field{pages}{319\bibrangedash 331}
+    \field{title}{Evolution of Intracellular Compartmentalization}
+    \field{volume}{449}
+    \field{journaltitle}{Biochemical Journal}
+    \field{year}{2013}
+  \endentry
+
+  \entry{zecchin2015metabolic}{article}{}{}
+    \name{author}{4}{}{%
+      {{hash=ZA}{%
+         family={Zecchin},
+         familyi={Z\bibinitperiod},
+         given={Andrea},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=SPC}{%
+         family={Stapor},
+         familyi={S\bibinitperiod},
+         given={Paulina\bibnamedelima Claudia},
+         giveni={P\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+      {{hash=GJ}{%
+         family={Goveia},
+         familyi={G\bibinitperiod},
+         given={Jermaine},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=CP}{%
+         family={Carmeliet},
+         familyi={C\bibinitperiod},
+         given={Peter},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{ZA+1}
+    \strng{fullhash}{ZASPCGJCP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1016/j.copbio.2014.11.022
+    \endverb
+    \field{pages}{73\bibrangedash 81}
+    \field{title}{Metabolic Pathway Compartmentalization: An Underappreciated
+  Opportunity?}
+    \field{volume}{34}
+    \field{journaltitle}{Current Opinion in Biotechnology}
+    \field{year}{2015}
+  \endentry
+
+  \entry{edelsbrunner2008persistent}{article}{}{}
+    \name{author}{2}{}{%
+      {{hash=EH}{%
+         family={Edelsbrunner},
+         familyi={E\bibinitperiod},
+         given={Herbert},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=HJ}{%
+         family={Harer},
+         familyi={H\bibinitperiod},
+         given={John},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{EHHJ1}
+    \strng{fullhash}{EHHJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1090/conm/453/08802
+    \endverb
+    \field{pages}{257\bibrangedash 282}
+    \field{title}{Persistent Homology --- A Survey}
+    \field{volume}{453}
+    \field{journaltitle}{Contemporary Mathematics}
+    \field{year}{2008}
+  \endentry
+
+  \entry{ghrist2008barcodes}{article}{}{}
+    \name{author}{1}{}{%
+      {{hash=GR}{%
+         family={Ghrist},
+         familyi={G\bibinitperiod},
+         given={Robert},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{GR1}
+    \strng{fullhash}{GR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1090/S0273-0979-07-01191-3
+    \endverb
+    \field{number}{1}
+    \field{pages}{61\bibrangedash 75}
+    \field{title}{Barcodes: The Persistent Topology of Data}
+    \field{volume}{45}
+    \field{journaltitle}{Bulletin of the American Mathematical Society}
+    \field{year}{2008}
+  \endentry
+
+  \entry{carlsson2009topology}{article}{}{}
+    \name{author}{1}{}{%
+      {{hash=CG}{%
+         family={Carlsson},
+         familyi={C\bibinitperiod},
+         given={Gunnar},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CG1}
+    \strng{fullhash}{CG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1090/S0273-0979-09-01249-X
+    \endverb
+    \field{number}{2}
+    \field{pages}{255\bibrangedash 308}
+    \field{title}{Topology and Data}
+    \field{volume}{46}
+    \field{journaltitle}{Bulletin of the American Mathematical Society}
+    \field{year}{2009}
+  \endentry
+
+  \entry{albert2000error}{article}{}{}
+    \name{author}{3}{}{%
+      {{hash=AR}{%
+         family={Albert},
+         familyi={A\bibinitperiod},
+         given={R{\'e}ka},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=JH}{%
+         family={Jeong},
+         familyi={J\bibinitperiod},
+         given={Hawoong},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=BAL}{%
+         family={Barab{\'a}si},
+         familyi={B\bibinitperiod},
+         given={Albert-L{\'a}szl{\'o}},
+         giveni={A\bibinithyphendelim L\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{ARJHBAL1}
+    \strng{fullhash}{ARJHBAL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1038/35019019
+    \endverb
+    \field{number}{6794}
+    \field{pages}{378\bibrangedash 382}
+    \field{title}{Error and Attack Tolerance of Complex Networks}
+    \field{volume}{406}
+    \field{journaltitle}{Nature}
+    \field{year}{2000}
+  \endentry
+
+  \entry{stelling2004robustness}{article}{}{}
+    \name{author}{5}{}{%
+      {{hash=SJ}{%
+         family={Stelling},
+         familyi={S\bibinitperiod},
+         given={J{\"o}rg},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=SU}{%
+         family={Sauer},
+         familyi={S\bibinitperiod},
+         given={Uwe},
+         giveni={U\bibinitperiod},
+      }}%
+      {{hash=SZ}{%
+         family={Szallasi},
+         familyi={S\bibinitperiod},
+         given={Zoltan},
+         giveni={Z\bibinitperiod},
+      }}%
+      {{hash=DFJ}{%
+         family={Doyle},
+         familyi={D\bibinitperiod},
+         given={Francis\bibnamedelima J.},
+         giveni={F\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=DJ}{%
+         family={Doyle},
+         familyi={D\bibinitperiod},
+         given={John},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SJ+2}
+    \strng{fullhash}{SJSUSZDFJDJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1016/j.cell.2004.09.008
+    \endverb
+    \field{number}{6}
+    \field{pages}{675\bibrangedash 685}
+    \field{title}{Robustness of Cellular Functions}
+    \field{volume}{118}
+    \field{journaltitle}{Cell}
+    \field{year}{2004}
+  \endentry
+
+  \entry{heinrich1974linear}{article}{}{}
+    \name{author}{2}{}{%
+      {{hash=HR}{%
+         family={Heinrich},
+         familyi={H\bibinitperiod},
+         given={Reinhart},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=RTA}{%
+         family={Rapoport},
+         familyi={R\bibinitperiod},
+         given={Tom\bibnamedelima A.},
+         giveni={T\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{HRRTA1}
+    \strng{fullhash}{HRRTA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1111/j.1432-1033.1974.tb03318.x
+    \endverb
+    \field{number}{1}
+    \field{pages}{89\bibrangedash 95}
+    \field{title}{A Linear Steady-State Treatment of Enzymatic Chains: General
+  Properties, Control and Effector Strength}
+    \field{volume}{42}
+    \field{journaltitle}{European Journal of Biochemistry}
+    \field{year}{1974}
+  \endentry
+
+  \entry{rabadan2020topological}{article}{}{}
+    \name{author}{2}{}{%
+      {{hash=RR}{%
+         family={Rabad{\'a}n},
+         familyi={R\bibinitperiod},
+         given={Ra{\'u}l},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=BAJ}{%
+         family={Blumberg},
+         familyi={B\bibinitperiod},
+         given={Andrew\bibnamedelima J.},
+         giveni={A\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{RRBAJ1}
+    \strng{fullhash}{RRBAJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1017/9781316671665
+    \endverb
+    \field{title}{Topological Data Analysis for Genomics and Evolution}
+    \field{journaltitle}{Cambridge University Press}
+    \field{year}{2020}
+  \endentry
+\enddatalist
+\endinput

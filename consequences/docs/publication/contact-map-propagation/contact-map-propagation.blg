@@ -1,0 +1,69 @@
+This is BibTeX, Version 0.99e
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: contact-map-propagation.aux
+Reallocating 'name_of_file' (item size: 1) to 9 items.
+The style file: biblatex.bst
+Reallocating 'name_of_file' (item size: 1) to 28 items.
+Reallocating 'name_of_file' (item size: 1) to 11 items.
+Reallocating 'glb_str_end' (item size: 4) to 20 items.
+Reallocating 'glb_str_ptr' (item size: 4) to 20 items.
+Reallocating 'global_strs' (item size: 1) to 4000000 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'wiz_functions' (item size: 4) to 6000 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'field_info' (item size: 4) to 11300 items.
+Database file #1: contact-map-propagation-blx.bib
+Database file #2: references.bib
+Biblatex version: 3.21
+Reallocating 'wiz_functions' (item size: 4) to 9000 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+You've used 45 entries,
+            6402 wiz_defined-function locations,
+            1493 strings with 18281 characters,
+and the built_in function-call counts, 547133 in all, are:
+= -- 49910
+> -- 5036
+< -- 977
++ -- 17316
+- -- 2037
+* -- 40011
+:= -- 68856
+add.period$ -- 0
+call.type$ -- 45
+change.case$ -- 509
+chr.to.int$ -- 42
+cite$ -- 88
+duplicate$ -- 54853
+empty$ -- 46208
+format.name$ -- 3838
+if$ -- 106745
+int.to.chr$ -- 0
+int.to.str$ -- 101
+missing$ -- 0
+newline$ -- 1999
+num.names$ -- 1902
+pop$ -- 17788
+preamble$ -- 1
+purify$ -- 975
+quote$ -- 0
+skip$ -- 7944
+stack$ -- 0
+substring$ -- 99906
+swap$ -- 7479
+text.length$ -- 1007
+text.prefix$ -- 0
+top$ -- 1
+type$ -- 1518
+warning$ -- 0
+while$ -- 8086
+width$ -- 0
+write$ -- 1955

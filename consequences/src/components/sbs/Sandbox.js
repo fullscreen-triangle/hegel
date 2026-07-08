@@ -185,10 +185,13 @@ function NetworkGraph3D({ circuit, metrics }) {
   const containerRef = useRef(null);
   const fgRef = useRef(null);
   const [ForceGraph, setForceGraph] = useState(null);
+  const [graphLoadError, setGraphLoadError] = useState(false);
   const [dims, setDims] = useState({ width: 600, height: 400 });
 
   useEffect(() => {
-    import("react-force-graph").then(mod => setForceGraph(() => mod.ForceGraph3D));
+    import("react-force-graph-3d")
+      .then(mod => setForceGraph(() => mod.default || mod))
+      .catch(() => setGraphLoadError(true));
   }, []);
 
   useEffect(() => {
@@ -278,7 +281,9 @@ function NetworkGraph3D({ circuit, metrics }) {
   if (!ForceGraph) {
     return (
       <div ref={containerRef} className="flex h-full w-full items-center justify-center" style={{ background: "#0a0a14" }}>
-        <span style={{ color: "#5a5a5a" }}>Loading 3D graph…</span>
+        <span style={{ color: graphLoadError ? "#ef4444" : "#5a5a5a" }}>
+          {graphLoadError ? "Failed to load 3D graph" : "Loading 3D graph…"}
+        </span>
       </div>
     );
   }
