@@ -230,9 +230,9 @@ class Parser {
       this.match(TOKEN_TYPES.PUNC, ';');
       return { type: 'Import', name, alias, source };
     }
-    const module = this.expect(TOKEN_TYPES.STRING).value;
+    const moduleName = this.expect(TOKEN_TYPES.STRING).value;
     this.match(TOKEN_TYPES.PUNC, ';');
-    return { type: 'Import', module };
+    return { type: 'Import', module: moduleName };
   }
 
   parseExport() {

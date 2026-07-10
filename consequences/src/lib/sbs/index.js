@@ -17,13 +17,17 @@
  * metrics extractor are implementation and may change; runSBS is the contract.
  * ========================================================================== */
 
-import { compileSBS, validateSBS } from './dsl/compiler';
-import { solveCircuit, solveCPU, computeFluxPattern } from './shaderSolver';
+// Explicit .js extensions: the entry point must resolve unambiguously in every
+// loader. './dsl/compiler' is ambiguous — it collides with the ./dsl/compiler/
+// TypeScript source directory, which webpack silently disambiguates but Node
+// ESM rejects. The explicit file path is correct under both.
+import { compileSBS, validateSBS } from './dsl/compiler.js';
+import { solveCircuit, solveCPU, computeFluxPattern } from './shaderSolver.js';
 import {
   extractMetrics,
   computeBackwardNavigation,
   findOptimalPerturbation,
-} from './metricsExtractor';
+} from './metricsExtractor.js';
 
 /**
  * Translate the DSL's circuit-level `perturb <circuit> { factor }` statements
