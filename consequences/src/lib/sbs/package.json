@@ -1,0 +1,35 @@
+{
+  "name": "@sachikonye/sbs",
+  "version": "0.1.0",
+  "description": "Systems Biology Shaders (SBS) DSL runtime: compile .sbs source to a cellular circuit, render the S-entropy observation on WebGL2 (CPU fallback), extract coherence/visibility metrics. Public surface is runSBS(source).",
+  "type": "module",
+  "main": "./index.js",
+  "module": "./index.js",
+  "exports": {
+    ".": "./index.js"
+  },
+  "sideEffects": false,
+  "files": [
+    "index.js",
+    "dsl/tokenizer.js",
+    "dsl/parser.js",
+    "dsl/compiler.js",
+    "dsl/registry.js",
+    "shaderSolver.js",
+    "metricsExtractor.js",
+    "shaders/observation.vert.js",
+    "shaders/observation.frag.js"
+  ],
+  "keywords": [
+    "systems-biology",
+    "shaders",
+    "dsl",
+    "webgl2",
+    "s-entropy",
+    "cellular-circuit",
+    "sbs"
+  ],
+  "author": "Kundai Farai Sachikonye <kundai.sachikonye@wzw.tum.de>",
+  "license": "UNLICENSED",
+  "private": true
+}
