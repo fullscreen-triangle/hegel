@@ -157,3 +157,6 @@ data/memory/
 !consequences/**/*.css
 !consequences/**/*.svg
 !consequences/**/*.glb
+
+# purpose local index cache (not source)
+.purpose/

@@ -1,0 +1,719 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{siunitx}
+\usepackage{microtype}
+\usepackage{lmodern}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage[margin=2.4cm]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{cleveref}
+\usepackage{natbib}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{assumption}[theorem]{Assumption}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{observation}[theorem]{Observation}
+
+\definecolor{codebg}{gray}{0.96}
+\lstdefinestyle{sparql}{
+  basicstyle=\ttfamily\footnotesize,
+  backgroundcolor=\color{codebg},
+  frame=single,
+  framesep=5pt,
+  breaklines=true,
+  showstringspaces=false,
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  numbersep=8pt,
+  keywordstyle=\bfseries,
+  morekeywords={PREFIX,SELECT,WHERE,VALUES,COUNT,DISTINCT,AS,FILTER,OPTIONAL,UNION},
+  commentstyle=\itshape\color{gray},
+  morecomment=[l]{\#},
+  xleftmargin=1.2em,
+}
+\lstset{style=sparql}
+
+\newcommand{\Tmap}{\mathcal{T}}
+\newcommand{\Adm}{\mathcal{A}}
+\newcommand{\Uset}{\mathcal{U}}
+
+\title{\textbf{Database Divergence Is a Measurement, Not a Defect}\\[0.4em]
+\large A worked case in federated reaction retrieval,\\
+and the conditions under which two answers cannot contradict}
+
+\author{%
+Kundai Farai Sachikonye\\[0.3em]
+\normalsize Experimental Bioinformatics, TUM School of Life Sciences\\
+\normalsize Maximus-von-Imhof-Forum 3, 85354 Freising, Germany\\
+\normalsize \texttt{kundai.sachikonye@bitspark.com}}
+
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Two SPARQL queries that the specification declares equivalent returned $2$ and
+$397$ results respectively against a public biochemical reaction endpoint. The
+two differ only in whether a shared property path binds two variables through an
+object list (\texttt{?p ?a , ?o}) or through two separate triple patterns. We
+document the observation in full, establish by grammar reference that the two
+spellings must denote the same abstract query, and confirm on two independent
+local engines against a hand-checkable miniature of the same data shape that
+both spellings do in fact agree there. The divergence is therefore real,
+reproducible against the endpoint, and \emph{not} a specification ambiguity.
+
+The natural conclusion is that a defect exists somewhere in the service stack.
+We argue that this conclusion, while defensible, is weaker than it appears, and
+that a different reading is available and in our judgement more useful. Under a
+propagation model of retrieval in which an answer is the set of items reachable
+from a query under a convergent process, we prove that two routes sharing
+endpoints and fixed point cannot contradict each other
+(\cref{thm:noncontradiction}), and that their numerical difference measures how
+much of the underlying network each route resolved
+(\cref{thm:extent}). On that reading the pair $(2,397)$ is a measurement of
+resolved extent --- specifically, that one route resolved a strict superset of
+what the other did --- and reporting it as ``one query is broken'' discards the
+quantity it carries.
+
+We are explicit about what this argument does not establish. It requires that
+both routes converge to the same fixed point, which for the endpoint in question
+we could not verify from outside; without that check the reclassification does
+not apply and the ordinary defect reading stands. It also does not establish
+that the endpoint conforms to its own documentation, which is a separate
+question we do not address. A further confound is documented: the endpoint's
+loaded ontology carries $204\,585$ classes against $237\,672$ in the
+corresponding download, so the two artefacts are not the same snapshot and no
+count comparison across them is clean.
+
+We close with the practical consequence for federated retrieval: a client that
+treats divergence between routes as an error condition is discarding
+information, and a client that treats it as a measurement gains a coverage
+statistic at no additional cost. Neither reading justifies acting on a third
+party's service, and we did not.
+\end{abstract}
+
+\tableofcontents
+
+\section{Introduction}
+\label{sec:intro}
+
+\subsection{The situation}
+
+Ask a public database the same question twice, spelled two ways that the
+governing specification says are the same question. You expect the same answer.
+When you get $2$ and $397$, three readings are available.
+
+\begin{enumerate}[label=(R\arabic*),leftmargin=3em]
+\item \textbf{Specification ambiguity.} The two spellings are not in fact
+required to agree, and the expectation was wrong.
+\item \textbf{Implementation defect.} The spellings must agree, they do not, and
+something in the service stack is broken.
+\item \textbf{Extent measurement.} The spellings are two \emph{routes} to the
+same query, routes are not part of an answer, and the difference between the
+counts measures how much of the data each route reached.
+\end{enumerate}
+
+This paper does three things. \Cref{sec:observation,sec:control} establish the
+facts well enough to eliminate (R1) --- the specification is unambiguous and two
+independent local engines agree with each other and with a hand computation.
+\Cref{sec:propagation,sec:reclassification} develop (R3) and prove the two
+results that make it a claim rather than a preference.
+\Cref{sec:caveats,sec:whatnot} state precisely the conditions under which (R3)
+holds, which we could not verify, and are therefore honest that (R2) is not
+refuted.
+
+\subsection{Why this is worth a paper rather than a bug report}
+
+Because the choice between (R2) and (R3) is not about this endpoint. Federated
+biological retrieval routinely produces multiple routes to nominally the same
+question: a live endpoint against a downloaded dump, one ontology version
+against another, a property path against an explicit join. Divergences among
+those routes are common and are almost universally handled by picking one route
+and calling the others wrong. If (R3) is available even sometimes, then that
+handling discards a coverage statistic that costs nothing to compute, on every
+divergence, in every federated system. The general argument is what we are
+after; the observed pair $(2,397)$ is the instance that motivated it.
+
+\subsection{What we did not do}
+\label{sec:notdone}
+
+We did not report the observation to the service operator. The finding concerns
+a third party's public infrastructure, and the decision whether and how to
+report it is the operator's counterpart's to make --- a human one, made by the
+person accountable for the relationship, not a side effect of an analysis. We
+also ran no load against the endpoint beyond the handful of queries documented
+in \cref{tab:runs}, and every mechanistic investigation reported here was
+carried out against local engines on synthetic data
+(\cref{sec:control}). Nothing in this paper should be read as a recommendation
+to probe a public service for the cause.
+
+\section{The observation}
+\label{sec:observation}
+
+\subsection{Setting}
+
+The endpoint is a public SPARQL service over a curated resource of biochemical
+reactions \citep{Alcantara2012,Bansal2022}, whose participants are identified by
+terms from a chemical ontology \citep{Hastings2016}. The question asked is a
+standard one for that resource: how many approved reactions have, among their
+participants, both a member of a specified amino-acid branch and a member of a
+specified oxidant branch, where ``member of a branch'' means transitive
+subsumption under one of a small set of ontology roots.
+
+All measurements below were taken on \textbf{10 August 2026} against
+\url{https://sparql.rhea-db.org/sparql} with request header
+\texttt{Accept: application/sparql-results+json}.
+
+\subsection{The two queries}
+
+The two queries are byte-identical except for one line, reproduced here in full
+so the reader need not reconstruct them.
+
+\paragraph{Form A --- object list (comma).}
+
+\begin{lstlisting}[caption={Form A. Returns \textbf{2}.},label=lst:comma]
+PREFIX rh:    <http://rdf.rhea-db.org/>
+PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX chebi: <http://purl.obolibrary.org/obo/CHEBI_>
+SELECT (COUNT(DISTINCT ?r) AS ?n) WHERE {
+  ?r rdfs:subClassOf rh:Reaction ; rh:status rh:Approved .
+  ?r rh:side/rh:contains/rh:compound/rh:chebi ?a , ?o .
+  VALUES ?aa { chebi:35238 chebi:37022 }
+  VALUES ?ox { chebi:35179 chebi:36147 chebi:133294 }
+  ?a rdfs:subClassOf* ?aa .
+  ?o rdfs:subClassOf* ?ox .
+}
+\end{lstlisting}
+
+\paragraph{Form B --- two triple patterns (longhand).}
+
+\begin{lstlisting}[caption={Form B. Returns \textbf{397}. Differs from Form A only at lines 6--7.},label=lst:longhand]
+PREFIX rh:    <http://rdf.rhea-db.org/>
+PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX chebi: <http://purl.obolibrary.org/obo/CHEBI_>
+SELECT (COUNT(DISTINCT ?r) AS ?n) WHERE {
+  ?r rdfs:subClassOf rh:Reaction ; rh:status rh:Approved .
+  ?r rh:side/rh:contains/rh:compound/rh:chebi ?a .
+  ?r rh:side/rh:contains/rh:compound/rh:chebi ?o .
+  VALUES ?aa { chebi:35238 chebi:37022 }
+  VALUES ?ox { chebi:35179 chebi:36147 chebi:133294 }
+  ?a rdfs:subClassOf* ?aa .
+  ?o rdfs:subClassOf* ?ox .
+}
+\end{lstlisting}
+
+\begin{table}[H]
+\centering
+\small
+\caption{Measurements, 10 August 2026.}
+\label{tab:runs}
+\begin{tabular}{llr}
+\toprule
+Form & Distinguishing line & \texttt{?n} \\
+\midrule
+A (object list)      & \texttt{... rh:chebi ?a , ?o .}                          & $2$ \\
+B (two patterns)     & \texttt{... rh:chebi ?a .} \; \texttt{... rh:chebi ?o .} & $397$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Why the two must denote the same query}
+\label{sec:spec}
+
+The comma in a triple block is not an operator. It is punctuation that the
+grammar expands before any evaluation semantics is reached.
+
+\begin{observation}[Object lists are syntax]
+\label{obs:syntax}
+In SPARQL 1.1 \citep{SPARQL11}, a triple pattern with an object list is defined
+by the production for \emph{ObjectList} \textup{(}grammar rule 79 in the
+\emph{PropertyListPathNotEmpty} family, with \emph{ObjectPath}/\emph{Object}
+at rules 83--84 and \emph{GraphNode} forms at 86 and 90\textup{)}. Section
+4.2.2 of the specification states directly that an object list abbreviates the
+repetition of subject and predicate: the pattern
+\texttt{?s ?p ?o1 , ?o2} is defined to expand to
+\texttt{?s ?p ?o1 . ?s ?p ?o2 .}
+The expansion is performed during translation to the abstract query, before
+evaluation. No evaluation rule distinguishes the two.
+\end{observation}
+
+\begin{observation}[Property paths are not special-cased]
+\label{obs:paths}
+The expansion of \cref{obs:syntax} is stated over the predicate slot without
+restriction on its form, and the grammar admits a \emph{PathAlternative} in that
+slot via \emph{PropertyListPathNotEmpty}. Nothing in the object-list expansion
+or in the property-path evaluation semantics (specification §9) makes the
+expansion conditional on the predicate being a bare IRI. Hence
+\texttt{?r p1/p2/p3/p4 ?a , ?o} expands to the two-pattern form exactly as a
+simple predicate would.
+\end{observation}
+
+\begin{corollary}
+\label{cor:equivalent}
+Forms A and B of \cref{lst:comma,lst:longhand} translate to the same abstract
+query and must, under a conforming implementation, return the same result.
+Reading (R1) of \cref{sec:intro} is therefore eliminated.
+\end{corollary}
+
+\subsection{What the correct answer looks like}
+
+It is worth being concrete about the semantics, because the shape of this
+query is one where intuition often goes wrong in the direction of expecting the
+smaller number.
+
+Both $?a$ and $?o$ range over \emph{the same} set: the ChEBI terms reachable
+from reaction $?r$ by the path
+\texttt{side/contains/compound/chebi}. They are two independent variables over
+one set, not two disjoint slots. A reaction qualifies exactly when that set
+contains at least one member under an amino-acid root \emph{and} at least one
+member under an oxidant root --- and, notably, a single participant that happens
+to lie under both roots would satisfy both conditions simultaneously, since
+nothing forces $?a \ne ?o$.
+
+That reading makes $397$ the plausible number and $2$ the surprising one: the
+qualifying condition is a conjunction of two existence statements over a set
+that is typically of size four to ten, and the branches involved are large. We
+note this asymmetry without treating it as proof; the local control of
+\cref{sec:control} is what actually settles which value the semantics gives on a
+data shape we control.
+
+\section{The local control}
+\label{sec:control}
+
+\subsection{Design}
+
+Rather than probe the endpoint further, we reproduced the data \emph{shape} in
+miniature: a reaction node linked through the same four-step path to compounds,
+with one entity placed under each branch root, small enough that the correct
+answer can be computed by hand and checked by inspection.
+
+The miniature contains two reactions:
+\begin{itemize}[leftmargin=1.6em]
+\item $r_1$ reaches $\{A, O\}$, where $A$ is under an amino-acid root and $O$ is
+under an oxidant root;
+\item $r_2$ reaches $\{A\}$ only.
+\end{itemize}
+
+\paragraph{Hand computation.}
+For $r_1$: bind $?a \mapsto A$ (satisfying $A\,\texttt{subClassOf*}\,?aa$) and
+$?o \mapsto O$ (satisfying $O\,\texttt{subClassOf*}\,?ox$). Both constraints hold
+simultaneously, so $r_1$ qualifies.
+For $r_2$: the only value available to either variable is $A$. Binding
+$?o \mapsto A$ requires $A$ under an oxidant root, which it is not. No other
+binding exists, so $r_2$ does not qualify.
+The correct answer is $\{r_1\}$, of size $1$.
+
+\subsection{Result}
+
+Both forms were run unmodified against two independent, unrelated SPARQL
+implementations.
+
+\begin{table}[H]
+\centering
+\small
+\caption{Local control. Both engines, both spellings, against the miniature of
+\cref{sec:control}. Expected answer by hand computation: $[r_1]$.}
+\label{tab:control}
+\begin{tabular}{llll}
+\toprule
+Engine & Form A (comma) & Form B (longhand) & Agreement \\
+\midrule
+rdflib 7.6.0     & $[r_1]$ & $[r_1]$ & yes \\
+pyoxigraph 0.5.9 & $[r_1]$ & $[r_1]$ & yes \\
+\midrule
+\multicolumn{3}{l}{Hand computation} & $[r_1]$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{observation}[The control is clean]
+\label{obs:control}
+Two independently developed engines agree with each other, agree across both
+spellings, and agree with the hand-computed answer. This confirms
+\cref{cor:equivalent} operationally on a data shape matching the endpoint's,
+and rules out the possibility that the equivalence fails in practice for
+property-path predicates.
+\end{observation}
+
+\begin{remark}[What the control does \emph{not} establish]
+\label{rem:control-limits}
+The miniature has two reactions and a handful of triples. The endpoint has
+millions. A control at this scale can establish that the semantics is what we
+say it is; it cannot establish anything about behaviour under query planning,
+result caps, timeouts, or partial evaluation, all of which are scale phenomena
+and none of which the miniature exercises. We built the control to answer one
+question --- is the expected answer what we think it is --- and it answers only
+that.
+\end{remark}
+
+\subsection{A confound: the snapshots differ}
+\label{sec:snapshot}
+
+Separately from the query question, the artefacts are not the same data.
+
+\begin{table}[H]
+\centering
+\small
+\caption{Ontology class counts, 10 August 2026.}
+\label{tab:snapshot}
+\begin{tabular}{lr}
+\toprule
+Artefact & classes \\
+\midrule
+Loaded at the SPARQL endpoint            & $204\,585$ \\
+Corresponding published download         & $237\,672$ \\
+\midrule
+Difference                               & $33\,087$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The gap of $33\,087$ classes ($13.9\%$ of the download) means the endpoint's
+ontology is a different snapshot, or a filtered subset, or both. Since the
+qualifying condition of \cref{lst:comma,lst:longhand} runs through
+\texttt{rdfs:subClassOf*} over exactly that ontology, branch membership can
+differ between the two artefacts, and \emph{any} count comparison that crosses
+them is confounded.
+
+We stress that this confound does not explain the $(2,397)$ pair, because both
+forms were run against the same endpoint and therefore the same snapshot. It
+matters for a different reason: it means an investigator who tries to adjudicate
+the pair by reproducing the query against the download is not running a control,
+they are running a third route.
+
+\begin{observation}[Scale context]
+For orientation: the resource carries $12\,738$ distinct compounds; the ``has
+role'' relation in the lightweight ontology serialisation carries $59\,087$
+restrictions; and a representative single metabolite --- a lysine-biosynthesis
+intermediate --- participates in exactly $2$ approved reactions. The last figure
+is a reminder that per-compound reaction counts in this resource are small,
+which is why a jump from $2$ to $397$ at the reaction level is a large relative
+change and not a rounding artefact.
+\end{observation}
+
+\subsection{Status of the finding}
+\label{sec:status}
+
+\begin{center}
+\fbox{\parbox{0.92\textwidth}{%
+\textbf{Divergence: established.} Two spellings the specification declares
+equivalent (\cref{cor:equivalent}), verified equivalent on two independent
+engines against a hand-checked miniature (\cref{obs:control}), return $2$ and
+$397$ against the same endpoint on the same date.\\[0.5em]
+\textbf{Cause: not established.} Query planning, an internal result or
+traversal cap, and evaluation-order effects on the shared property path all
+remain live candidates. We did not investigate further, for the reason in
+\cref{sec:notdone}.}}
+\end{center}
+
+\section{A propagation model of retrieval}
+\label{sec:propagation}
+
+We now develop the machinery for reading (R3). It is deliberately abstract: the
+argument is about routes and answers in general, and the SPARQL case is one
+instance.
+
+\subsection{Routes, endpoints, fixed points}
+
+\begin{definition}[Retrieval network]
+\label{def:network}
+A \emph{retrieval network} is a weighted undirected graph
+$(\mathcal{V},\mathcal{E},w)$ whose vertices are addressable items and whose
+edge weights $w(e) > 0$ are the cost of traversing a contact between items.
+\end{definition}
+
+\begin{assumption}[Contact floor]
+\label{ass:floor}
+There is $\beta > 0$ with $w(e)\ge\beta$ for every $e\in\mathcal{E}$.
+\end{assumption}
+
+\Cref{ass:floor} says no contact is free. For retrieval it is uncontroversial:
+following any link costs at least one dereference.
+
+\begin{definition}[Route and admissible set]
+\label{def:route}
+A \emph{route} $r$ from $v_0$ is a rule for extending contact sequences. Its
+\emph{admissible set} at fixed point $x^\ast$ is
+\begin{equation}
+\Adm_r(v_0, x^\ast) \;=\;
+\Bigl\{ v \in \mathcal{V} \;:\;
+\exists\, \text{a sequence } v_0 \rightsquigarrow v \text{ permitted by } r
+\text{ whose accumulated weight converges to } x^\ast \Bigr\}.
+\end{equation}
+The \emph{answer} returned by $r$ is $\Adm_r(v_0,x^\ast)$; the query's
+\emph{endpoints} are the pair $(v_0, x^\ast)$.
+\end{definition}
+
+The two SPARQL forms are two routes in this sense: they start from the same
+seed (the reaction class and status constraint), they permit different
+extension orders through the shared path, and each returns the set of reactions
+it reached.
+
+\subsection{Two structural facts}
+
+\begin{lemma}[Sequences are finite]
+\label{lem:finite}
+Under \cref{ass:floor}, any contact sequence whose accumulated weight converges
+to $x^\ast$ has at most $x^\ast/\beta$ contacts.
+\end{lemma}
+
+\begin{proof}
+A sum of $n$ terms each at least $\beta$ is at least $n\beta$. Convergence to
+$x^\ast$ requires $n\beta \le x^\ast$.
+\end{proof}
+
+\begin{theorem}[Inadmissibility has one source]
+\label{thm:onesource}
+Under \cref{ass:floor}, $v \notin \Adm_r(v_0,x^\ast)$ if and only if no
+$r$-permitted sequence from $v_0$ to $v$ converges to $x^\ast$. In particular,
+no single mismatched contact along an otherwise convergent sequence can cause
+exclusion.
+\end{theorem}
+
+\begin{proof}
+($\Leftarrow$) By \cref{def:route}. ($\Rightarrow$) Suppose some permitted
+sequence converges. By \cref{lem:finite} it is finite, hence exhibits $v$ as a
+member. So non-membership forces non-convergence of every permitted sequence.
+For the last clause: a mismatched contact can at worst carry larger weight,
+which by \cref{lem:finite} shortens the admissible bound rather than removing
+the witness; removal requires the whole sequence to fail to converge.
+\end{proof}
+
+\begin{theorem}[Route opacity]
+\label{thm:opacity}
+Let $P,Q$ be distinct convergent sequences from $v_0$ to $v$ reaching the same
+$x^\ast$. Then no quantity that is a function of $(v_0,v,x^\ast)$ distinguishes
+$P$ from $Q$.
+\end{theorem}
+
+\begin{proof}
+$P$ and $Q$ agree on all three arguments by hypothesis, so any function of those
+arguments takes the same value on both.
+\end{proof}
+
+\begin{corollary}[Routes are not part of answers]
+\label{cor:notpart}
+The answer of \cref{def:route} is defined by \emph{existence} of a convergent
+sequence, not by choice of one. Hence the interior of a route is not recoverable
+from the answer and was never part of it.
+\end{corollary}
+
+\Cref{cor:notpart} is the pivot of the whole argument, and it is worth pausing
+on how ordinary it is. A query result is a set of items. It does not contain the
+join order, the index chosen, the intermediate bindings enumerated, or the
+number of triples touched. Two plans that produce the same set are, to a client
+consuming the set, the same answer. Nobody disputes this for query
+\emph{plans}; the claim of \cref{sec:reclassification} is that it applies to the
+route as a whole and not merely to the plan.
+
+\section{Reclassification}
+\label{sec:reclassification}
+
+\subsection{The two results}
+
+\begin{definition}[Resolved extent]
+\label{def:extent}
+Let $\Uset_r \subseteq \mathcal{E}$ be the set of contacts route $r$ actually
+resolved in producing its answer. The \emph{resolved extent} of $r$ is
+$|\Uset_r|$; its \emph{unresolved remainder} is
+$\mathcal{E}\setminus\Uset_r$.
+\end{definition}
+
+\begin{theorem}[Non-contradiction]
+\label{thm:noncontradiction}
+Let routes $r_1, r_2$ share endpoints $(v_0,x^\ast)$, track the same item set,
+and both converge. Then their answers cannot be in contradiction: neither
+excludes an item the other admits on grounds of route interior, and any item
+excluded by one is excluded by the other on the same grounds
+\textup{(}non-convergence\textup{)}.
+\end{theorem}
+
+\begin{proof}
+By \cref{cor:notpart} the interiors of $r_1$ and $r_2$ are not part of either
+answer, so no disagreement about interiors is expressible in the answers. By
+\cref{thm:onesource} the only ground for exclusion is non-convergence of every
+permitted sequence, which is a property of the pair $(v_0,v)$ and the fixed
+point $x^\ast$, shared by hypothesis. Hence the exclusion criteria coincide.
+\end{proof}
+
+\begin{theorem}[Divergence measures extent]
+\label{thm:extent}
+Under the hypotheses of \cref{thm:noncontradiction}, if
+$\Adm_{r_1}\ne\Adm_{r_2}$ then $\Uset_{r_1}\ne\Uset_{r_2}$, and the symmetric
+difference of the answers is attributable to the symmetric difference of the
+resolved extents. Under \cref{ass:floor} each unresolved contact contributes at
+least $\beta$ to the corresponding remainder, so
+\begin{equation}
+\bigl|\,|\Adm_{r_1}| - |\Adm_{r_2}|\,\bigr| \;\le\;
+\frac{1}{\beta}\Bigl| \sum_{e\in\Uset_{r_1}} w(e) - \sum_{e\in\Uset_{r_2}} w(e)\Bigr| .
+\label{eq:extentbound}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+By \cref{thm:noncontradiction} the exclusion criteria coincide, so a difference
+in answers cannot come from the criteria. The remaining input to
+\cref{def:route} that can differ is which permitted sequences were actually
+followed, i.e.\ $\Uset_r$. For \cref{eq:extentbound}: each item present in one
+answer and absent from the other required at least one contact resolved by one
+route and not the other, and each such contact carries weight at least $\beta$
+by \cref{ass:floor}; summing gives the bound.
+\end{proof}
+
+\begin{corollary}[The pair is a statistic]
+\label{cor:statistic}
+Under the hypotheses, the observed pair $(2,397)$ states that one route resolved
+a strictly larger portion of the network than the other, with the difference in
+resolved extent bounded below by $395\beta$. Reporting it as ``one query is
+broken'' records the fact of disagreement and discards its magnitude.
+\end{corollary}
+
+\subsection{The reading in words}
+
+Stripped of notation: a route is not part of an answer. Two routes that reach
+the same place have not disagreed about anything the answer contains; they have
+covered different amounts of ground getting there. The number $397 - 2 = 395$ is
+then not an error magnitude --- it does not say ``$395$ results were lost'' in
+the sense of a fault --- it says the two routes differ in coverage by at least
+that much. That is a quantity about the \emph{retrieval}, and it is available
+for free whenever a system happens to run two routes.
+
+\subsection{Why the alternative reading is not thereby refuted}
+
+\Cref{cor:statistic} is conditional, and the condition is not decorative.
+\Cref{thm:noncontradiction} requires both routes to converge to the same
+$x^\ast$. If they do not --- if the two spellings are, at the level of the
+engine's execution, asking different questions of different portions of the
+store --- then the theorem's hypothesis fails, the routes are not two routes to
+one query, and disagreement between them means exactly what it appears to mean.
+
+We could not verify convergence to a common fixed point from outside the
+service. Verifying it would require observing the execution, which is precisely
+the investigation we declined to run against a third party's infrastructure
+(\cref{sec:notdone}). So the honest statement is: (R3) is available if the
+convergence condition holds, we did not establish that it holds, and therefore
+(R2) --- an implementation defect --- remains a live and reasonable reading of
+the same data.
+
+\section{Caveats, stated as such}
+\label{sec:caveats}
+
+\paragraph{Caveat 1: convergence to a common fixed point is unverified.}
+This is the load-bearing one. Every result in
+\cref{sec:reclassification} assumes it. Without it,
+\cref{thm:noncontradiction,thm:extent,cor:statistic} do not apply to the
+observed pair. A reader who wants the reclassification must either verify the
+condition or treat the conclusion as conditional; we treat it as conditional.
+
+\paragraph{Caveat 2: nothing here validates the endpoint against its documentation.}
+Whether the service behaves as its own documentation says is a separate question
+from whether two routes through it can contradict. We have not examined the
+documentation and make no claim about conformance. In particular, if the service
+documents a result cap or a traversal bound, that documentation may fully
+explain the observation, and our argument neither anticipates nor contradicts
+it.
+
+\paragraph{Caveat 3: the control is small.}
+Per \cref{rem:control-limits}, the miniature establishes semantics and nothing
+about scale behaviour. Since scale behaviour is the leading candidate cause, the
+control is silent on cause by construction.
+
+\paragraph{Caveat 4: the snapshots differ.}
+Per \cref{sec:snapshot}, endpoint and download carry different ontology class
+counts. Any attempt to adjudicate by cross-artefact comparison introduces a
+third route rather than a control.
+
+\paragraph{Caveat 5: single date, single endpoint.}
+All measurements are from one date against one service. We did not test
+persistence across days, alternative mirrors, or the same query shape against
+other resources. A divergence that is not reproducible over time is a different
+phenomenon from one that is, and we do not know which this is.
+
+\section{What follows for federated retrieval}
+\label{sec:practice}
+
+Independently of which reading is right for this case, the framework has a
+consequence that costs nothing to adopt.
+
+\begin{enumerate}[label=(P\arabic*),leftmargin=3em]
+\item \textbf{Record both answers.} A federated client that runs two routes and
+keeps only one has thrown away the pair. Keeping both costs one integer.
+\item \textbf{Report the difference as coverage, not as error.} By
+\cref{thm:extent} the difference bounds a resolved-extent gap. Even if the
+convergence hypothesis is unverified, ``routes A and B differ by $395$'' is a
+strictly more informative log line than ``route A failed''.
+\item \textbf{Check the convergence hypothesis before reclassifying.} The
+reclassification is conditional. A system that applies it unconditionally will
+silently absorb genuine faults as coverage differences, which is the failure
+mode this framework introduces and the reason (P4) exists.
+\item \textbf{Keep a route that can fail.} If every route in a federation is
+tolerant enough to converge on anything, divergence stops being informative.
+At least one route should be strict enough that its disagreement is meaningful.
+\item \textbf{Never compare counts across snapshots.} Per \cref{sec:snapshot}.
+This one is not conditional on anything.
+\end{enumerate}
+
+\section{What this paper does not claim}
+\label{sec:whatnot}
+
+\begin{itemize}[leftmargin=1.6em]
+\item That the endpoint is correct. We do not know.
+\item That the endpoint is defective. We do not know that either; we established
+divergence, not cause (\cref{sec:status}).
+\item That $397$ is the right answer and $2$ the wrong one. The semantic
+argument of \cref{sec:spec} makes $397$ the more plausible value on a full
+store, and the local control shows the semantics behaves as expected in
+miniature, but neither computes the correct value on the endpoint's actual data.
+\item That the reclassification of \cref{sec:reclassification} applies to this
+case. It applies if the convergence hypothesis holds, which is unverified
+(Caveat 1).
+\item That divergences in general should not be investigated as bugs. Sometimes
+they are bugs. The claim is that ``bug'' and ``coverage measurement'' are
+distinguishable by a checkable condition, and that the check is worth running
+before choosing.
+\end{itemize}
+
+\section{Conclusion}
+
+Two spellings that SPARQL 1.1 §4.2.2 defines as the same abstract query, and
+that two independent engines confirm behave identically on a hand-checkable
+replica of the data shape, returned $2$ and $397$ against a public endpoint on
+10 August 2026. The divergence is established; its cause is not, and we declined
+to pursue the cause against a third party's service.
+
+The conventional reading is that something is broken. We have set out an
+alternative under which the observation is a measurement: routes are not part of
+answers (\cref{cor:notpart}), two routes sharing endpoints and fixed point
+cannot contradict each other (\cref{thm:noncontradiction}), and their difference
+therefore quantifies resolved extent rather than error
+(\cref{thm:extent,cor:statistic}). The alternative is conditional on a
+convergence check we could not perform from outside, and we have said so
+plainly rather than presenting a conditional result as a settled one.
+
+What survives either reading is the practice in \cref{sec:practice}: a federated
+client that logs the divergence as a magnitude rather than a failure is strictly
+better informed, and it costs one integer. The framework's own risk --- that
+applying the reclassification without the check would absorb real faults as
+coverage differences --- is stated as (P3) precisely because it is the thing that
+would make this argument harmful if adopted carelessly.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

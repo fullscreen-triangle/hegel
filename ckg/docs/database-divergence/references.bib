@@ -1,0 +1,299 @@
+%=============================================================================
+% references.bib
+% Database divergence: a worked case in federated reaction retrieval.
+%
+% External literature and specifications only.
+%=============================================================================
+
+%------------------------------------------------------------------
+% Specifications
+%------------------------------------------------------------------
+
+@techreport{SPARQL11,
+  author      = {Harris, Steve and Seaborne, Andy},
+  title       = {{SPARQL} 1.1 Query Language},
+  institution = {World Wide Web Consortium},
+  type        = {W3C Recommendation},
+  year        = {2013},
+  month       = mar,
+  url         = {https://www.w3.org/TR/sparql11-query/},
+  note        = {See §4.2.2 (predicate-object lists and object lists),
+                 §9 (property paths), and grammar productions 79--90}
+}
+
+@techreport{SPARQL11Protocol,
+  author      = {Feigenbaum, Lee and Williams, Gregory Todd and
+                 Clark, Kendall Grant and Torres, Elias},
+  title       = {{SPARQL} 1.1 Protocol},
+  institution = {World Wide Web Consortium},
+  type        = {W3C Recommendation},
+  year        = {2013},
+  month       = mar,
+  url         = {https://www.w3.org/TR/sparql11-protocol/}
+}
+
+@techreport{SPARQL11Federated,
+  author      = {Prud'hommeaux, Eric and Buil-Aranda, Carlos},
+  title       = {{SPARQL} 1.1 Federated Query},
+  institution = {World Wide Web Consortium},
+  type        = {W3C Recommendation},
+  year        = {2013},
+  month       = mar,
+  url         = {https://www.w3.org/TR/sparql11-federated-query/}
+}
+
+@techreport{SPARQL11Results,
+  author      = {Seaborne, Andy},
+  title       = {{SPARQL} 1.1 Query Results {JSON} Format},
+  institution = {World Wide Web Consortium},
+  type        = {W3C Recommendation},
+  year        = {2013},
+  month       = mar,
+  url         = {https://www.w3.org/TR/sparql11-results-json/}
+}
+
+@techreport{RDF11Concepts,
+  author      = {Cyganiak, Richard and Wood, David and Lanthaler, Markus},
+  title       = {{RDF} 1.1 Concepts and Abstract Syntax},
+  institution = {World Wide Web Consortium},
+  type        = {W3C Recommendation},
+  year        = {2014},
+  month       = feb,
+  url         = {https://www.w3.org/TR/rdf11-concepts/}
+}
+
+@techreport{RDFSchema11,
+  author      = {Brickley, Dan and Guha, Ramanathan V.},
+  title       = {{RDF} {S}chema 1.1},
+  institution = {World Wide Web Consortium},
+  type        = {W3C Recommendation},
+  year        = {2014},
+  month       = feb,
+  url         = {https://www.w3.org/TR/rdf-schema/}
+}
+
+%------------------------------------------------------------------
+% Semantics and evaluation of SPARQL
+%------------------------------------------------------------------
+
+@article{Perez2009,
+  author  = {P{\'e}rez, Jorge and Arenas, Marcelo and Gutierrez, Claudio},
+  title   = {Semantics and Complexity of {SPARQL}},
+  journal = {ACM Transactions on Database Systems},
+  volume  = {34},
+  number  = {3},
+  pages   = {1--45},
+  year    = {2009},
+  doi     = {10.1145/1567274.1567278}
+}
+
+@article{Arenas2011,
+  author  = {Arenas, Marcelo and P{\'e}rez, Jorge},
+  title   = {Querying Semantic Web Data with {SPARQL}},
+  journal = {Proceedings of the 30th ACM SIGMOD-SIGACT-SIGART Symposium on
+             Principles of Database Systems (PODS)},
+  pages   = {305--316},
+  year    = {2011},
+  doi     = {10.1145/1989284.1989312}
+}
+
+@article{Losemann2013,
+  author  = {Losemann, Katja and Martens, Wim},
+  title   = {The Complexity of Regular Expressions and Property Paths in
+             {SPARQL}},
+  journal = {ACM Transactions on Database Systems},
+  volume  = {38},
+  number  = {4},
+  pages   = {1--39},
+  year    = {2013},
+  doi     = {10.1145/2494529}
+}
+
+@inproceedings{Arenas2012,
+  author    = {Arenas, Marcelo and Conca, Sebasti{\'a}n and P{\'e}rez, Jorge},
+  title     = {Counting Beyond a Yottabyte, or How {SPARQL} 1.1 Property Paths
+               Will Prevent Adoption of the Standard},
+  booktitle = {Proceedings of the 21st International Conference on World Wide
+               Web (WWW)},
+  pages     = {629--638},
+  year      = {2012},
+  doi       = {10.1145/2187836.2187922}
+}
+
+@inproceedings{Buil2013,
+  author    = {Buil-Aranda, Carlos and Hogan, Aidan and Umbrich, J{\"u}rgen and
+               Vandenbussche, Pierre-Yves},
+  title     = {{SPARQL} Web-Querying Infrastructure: Ready for Action?},
+  booktitle = {The Semantic Web --- ISWC 2013},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {8219},
+  pages     = {277--293},
+  publisher = {Springer},
+  year      = {2013},
+  doi       = {10.1007/978-3-642-41338-4_18},
+  note      = {Documents availability, result caps and timeout behaviour of
+               public SPARQL endpoints}
+}
+
+@article{Saleem2018,
+  author  = {Saleem, Muhammad and Sz{\'a}rnyas, G{\'a}bor and Conrads, Felix and
+             Bukhari, Syed Ahmad Chan and Mehmood, Qaiser and
+             Ngonga Ngomo, Axel-Cyrille},
+  title   = {How Representative Is a {SPARQL} Benchmark? An Analysis of
+             {RDF} Triplestore Benchmarks},
+  journal = {Proceedings of the World Wide Web Conference},
+  pages   = {1623--1633},
+  year    = {2019},
+  doi     = {10.1145/3308558.3313556}
+}
+
+%------------------------------------------------------------------
+% Engines used in the local control
+%------------------------------------------------------------------
+
+@misc{RDFLib,
+  author       = {{RDFLib Team}},
+  title        = {{RDFLib}: A {P}ython Library for Working with {RDF}},
+  howpublished = {Software, version 7.6.0},
+  year         = {2026},
+  url          = {https://github.com/RDFLib/rdflib}
+}
+
+@misc{Oxigraph,
+  author       = {Pellissier Tanon, Thomas},
+  title        = {{O}xigraph: A Graph Database Implementing the {SPARQL}
+                  Standard},
+  howpublished = {Software; {\tt pyoxigraph} bindings, version 0.5.9},
+  year         = {2026},
+  url          = {https://github.com/oxigraph/oxigraph}
+}
+
+%------------------------------------------------------------------
+% The resources queried
+%------------------------------------------------------------------
+
+@article{Alcantara2012,
+  author  = {Alc{\'a}ntara, Rafael and Axelsen, Kristian B. and Morgat, Anne and
+             Belda, Eugeni and Coudert, Elisabeth and Bridge, Alan and
+             Cao, Hong and de Matos, Paula and Ennis, Marcus and
+             Turner, Steve and Owen, Gareth and Bougueleret, Lydie and
+             Xenarios, Ioannis and Steinbeck, Christoph},
+  title   = {Rhea---A Manually Curated Resource of Biochemical Reactions},
+  journal = {Nucleic Acids Research},
+  volume  = {40},
+  number  = {D1},
+  pages   = {D754--D760},
+  year    = {2012},
+  doi     = {10.1093/nar/gkr1126}
+}
+
+@article{Bansal2022,
+  author  = {Bansal, Parit and Morgat, Anne and Axelsen, Kristian B. and
+             Muthukrishnan, Venkatesh and Coudert, Elisabeth and
+             Aimo, Lucila and Hyka-Nouspikel, Nevila and Gasteiger, Elisabeth
+             and Kerhornou, Arnaud and Neto, Teresa Batista and
+             Pozzato, Monica and Blatter, Marie-Claude and Ignatchenko, Alex
+             and Redaschi, Nicole and Bridge, Alan},
+  title   = {Rhea, the Reaction Knowledgebase in 2022},
+  journal = {Nucleic Acids Research},
+  volume  = {50},
+  number  = {D1},
+  pages   = {D693--D700},
+  year    = {2022},
+  doi     = {10.1093/nar/gkab1016}
+}
+
+@article{Hastings2016,
+  author  = {Hastings, Janna and Owen, Gareth and Dekker, Adriano and
+             Ennis, Marcus and Kale, Namrata and Muthukrishnan, Venkatesh and
+             Turner, Steve and Swainston, Neil and Mendes, Pedro and
+             Steinbeck, Christoph},
+  title   = {{C}h{EBI} in 2016: Improved Services and an Expanding Collection
+             of Metabolites},
+  journal = {Nucleic Acids Research},
+  volume  = {44},
+  number  = {D1},
+  pages   = {D1214--D1219},
+  year    = {2016},
+  doi     = {10.1093/nar/gkv1031}
+}
+
+@article{Degtyarenko2008,
+  author  = {Degtyarenko, Kirill and de Matos, Paula and Ennis, Marcus and
+             Hastings, Janna and Zbinden, Martin and McNaught, Alan and
+             Alc{\'a}ntara, Rafael and Darsow, Michael and Guedj, Micka{\"e}l
+             and Ashburner, Michael},
+  title   = {{C}h{EBI}: A Database and Ontology for Chemical Entities of
+             Biological Interest},
+  journal = {Nucleic Acids Research},
+  volume  = {36},
+  number  = {suppl\_1},
+  pages   = {D344--D350},
+  year    = {2008},
+  doi     = {10.1093/nar/gkm791}
+}
+
+@article{UniProt2023,
+  author  = {{The UniProt Consortium}},
+  title   = {{U}ni{P}rot: The Universal Protein Knowledgebase in 2023},
+  journal = {Nucleic Acids Research},
+  volume  = {51},
+  number  = {D1},
+  pages   = {D523--D531},
+  year    = {2023},
+  doi     = {10.1093/nar/gkac1052}
+}
+
+%------------------------------------------------------------------
+% Reproducibility and data-versioning context
+%------------------------------------------------------------------
+
+@article{Wilkinson2016,
+  author  = {Wilkinson, Mark D. and Dumontier, Michel and Aalbersberg,
+             IJsbrand Jan and others},
+  title   = {The {FAIR} Guiding Principles for Scientific Data Management and
+             Stewardship},
+  journal = {Scientific Data},
+  volume  = {3},
+  pages   = {160018},
+  year    = {2016},
+  doi     = {10.1038/sdata.2016.18}
+}
+
+@article{Vandenbussche2017,
+  author  = {Vandenbussche, Pierre-Yves and Umbrich, J{\"u}rgen and
+             Matteis, Luca and Hogan, Aidan and Buil-Aranda, Carlos},
+  title   = {{SPARQLES}: Monitoring Public {SPARQL} Endpoints},
+  journal = {Semantic Web},
+  volume  = {8},
+  number  = {6},
+  pages   = {1049--1065},
+  year    = {2017},
+  doi     = {10.3233/SW-170254}
+}
+
+@article{Klein2014,
+  author  = {Klein, Martin and Van de Sompel, Herbert and Sanderson, Robert and
+             Shankar, Harihar and Balakireva, Lyudmila and Zhou, Ke and
+             Tobin, Richard},
+  title   = {Scholarly Context Not Found: One in Five Articles Suffers from
+             Reference Rot},
+  journal = {PLoS ONE},
+  volume  = {9},
+  number  = {12},
+  pages   = {e115253},
+  year    = {2014},
+  doi     = {10.1371/journal.pone.0115253}
+}
+
+%------------------------------------------------------------------
+% Companion document
+%------------------------------------------------------------------
+
+@unpublished{Sachikonye2026Circuit,
+  author = {Sachikonye, Kundai Farai},
+  title  = {Causal Knowledge Graphs Constructed by Circuit Propagation over
+            Ternary Address Space},
+  note   = {Companion manuscript, this series},
+  year   = {2026}
+}

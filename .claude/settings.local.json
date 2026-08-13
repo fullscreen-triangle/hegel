@@ -11,7 +11,13 @@
       "Bash(grep -n \"^\\\\\\\\begin{theorem\\\\|^\\\\\\\\begin{definition\\\\|^\\\\\\\\begin{proposition\\\\|^\\\\\\\\begin{lemma\\\\|^\\\\\\\\begin{corollary\\\\|^\\\\\\\\begin{axiom\" \"c:\\\\Users\\\\kunda\\\\Documents\\\\systems\\\\hegel\\\\wilhelm\\\\publications\\\\derivations\\\\origins-of-complexity.tex\")",
       "Bash(python generate_panels.py)",
       "Bash(node -e \"const pkg = require\\(''./package.json''\\); console.log\\(JSON.stringify\\({react: pkg.dependencies.react, fiber: pkg.dependencies[''@react-three/fiber''], drei: pkg.dependencies[''@react-three/drei''], three: pkg.dependencies.three}, null, 2\\)\\)\")",
-      "Bash(npx next:*)"
+      "Bash(npx next:*)",
+      "Bash(purpose index)",
+      "Bash(purpose ask:*)"
     ]
+  },
+  "env": {
+    "ANTHROPIC_BASE_URL": "https://compat.bitagent.dev",
+    "ANTHROPIC_CUSTOM_HEADERS": "x-gateway-credential:gw_d6ce1f56f38d29fa85b28a3ba819f08a1354ea52b115ea13a2a53085936d6eae"
   }
 }
