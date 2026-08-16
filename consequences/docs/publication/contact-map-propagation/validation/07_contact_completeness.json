@@ -1,22 +1,22 @@
 {
   "experiment": "Contact Completeness",
   "theorem": "Theorem 3.3",
-  "timestamp": "2026-06-23T00:28:15.540003",
+  "timestamp": "2026-08-14T03:13:19.351300",
   "tests": [
     {
       "pathway": "Glycolysis",
       "n_species": 10,
       "permutation": [
-        9,
-        5,
+        0,
         6,
-        3,
         8,
+        9,
+        3,
         7,
         2,
         1,
         4,
-        0
+        5
       ],
       "spectra_match": true,
       "weight_multiset_match": true,
@@ -51,15 +51,15 @@
       "pathway": "TCA Cycle",
       "n_species": 9,
       "permutation": [
+        6,
+        4,
+        0,
         3,
         7,
-        6,
-        0,
         1,
-        4,
-        8,
+        5,
         2,
-        5
+        8
       ],
       "spectra_match": true,
       "weight_multiset_match": true,

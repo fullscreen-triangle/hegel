@@ -1,0 +1,51 @@
+\contentsline {part}{I\hspace {1em}The Circuit}{3}{part.1}%
+\contentsline {section}{\numberline {1}Introduction}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}What is being claimed}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Why the cost structure is the interesting part}{3}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Standing conventions}{4}{subsection.1.3}%
+\contentsline {section}{\numberline {2}The steady-state circuit}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Species, reactions, and the potential}{4}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}The electrical analogy, stated as a theorem and not a metaphor}{4}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}From the solved circuit to a point in the unit cube}{5}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Reference computation}{6}{subsection.2.4}%
+\contentsline {part}{II\hspace {1em}The Address Space}{6}{part.2}%
+\contentsline {section}{\numberline {3}Ternary addressing}{6}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Why base three}{6}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}The encoding}{6}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Ancestry is a prefix operation}{7}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Similarity as shared prefix}{8}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Choosing the depth}{8}{subsection.3.5}%
+\contentsline {part}{III\hspace {1em}Propagation}{9}{part.3}%
+\contentsline {section}{\numberline {4}The propagation operator}{9}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Contact graph and admissible sets}{9}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Path opacity}{10}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Direction agnosticism, and the CKG as a value of $\mathcal {T}$}{10}{subsection.4.3}%
+\contentsline {section}{\numberline {5}The cost of going backward}{11}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Virtual sub-states}{11}{subsection.5.1}%
+\contentsline {section}{\numberline {6}The empty-scheme property}{13}{section.6}%
+\contentsline {part}{IV\hspace {1em}Interrogation}{13}{part.4}%
+\contentsline {section}{\numberline {7}Why more than one probe}{13}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Collision, and the discrimination bound}{13}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Reasoners as disjoint agents}{14}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Allocation by water-filling}{15}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}Agreement by phase locking}{15}{subsection.7.4}%
+\contentsline {subsection}{\numberline {7.5}Search, not fetch}{16}{subsection.7.5}%
+\contentsline {subsection}{\numberline {7.6}Count-dependence is correct}{16}{subsection.7.6}%
+\contentsline {section}{\numberline {8}Identity of a panel}{17}{section.8}%
+\contentsline {part}{V\hspace {1em}Assessment}{18}{part.5}%
+\contentsline {section}{\numberline {9}Divergence between derivations}{18}{section.9}%
+\contentsline {section}{\numberline {10}Validation design}{18}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Results}{19}{subsection.10.1}%
+\contentsline {paragraph}{The coordinate degenerates under a dominating species.}{21}{section*.2}%
+\contentsline {paragraph}{The panel floor is two, not three.}{21}{section*.3}%
+\contentsline {section}{\numberline {11}Limitations}{23}{section.11}%
+\contentsline {paragraph}{Steady state is assumed throughout.}{23}{section*.4}%
+\contentsline {paragraph}{Ideal-solution chemical potentials.}{23}{section*.5}%
+\contentsline {paragraph}{Mechanism is not recoverable.}{23}{section*.6}%
+\contentsline {paragraph}{Coordinates are network-relative.}{23}{section*.7}%
+\contentsline {paragraph}{The normalisation is not robust to a dominating species.}{23}{section*.8}%
+\contentsline {paragraph}{Kinetic parameters bound accuracy.}{24}{section*.9}%
+\contentsline {paragraph}{Two constants are unreconciled.}{24}{section*.10}%
+\contentsline {paragraph}{Metric compatibility is unverified.}{24}{section*.11}%
+\contentsline {paragraph}{The panel results are structural, not empirical.}{24}{section*.12}%
+\contentsline {section}{\numberline {12}Conclusion}{24}{section.12}%

@@ -1,0 +1,38 @@
+\contentsline {section}{\numberline {1}Introduction}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}The failure mode that motivates this paper}{2}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Why incompleteness is the expected state}{3}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}What follows from taking incompleteness seriously}{3}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Relation to existing work, and what is new}{4}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Organisation}{4}{subsection.1.5}%
+\contentsline {section}{\numberline {2}Setting}{4}{section.2}%
+\contentsline {section}{\numberline {3}Three independent predicates}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Definitions}{5}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Independence}{6}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}The specific structure of counting}{7}{subsection.3.3}%
+\contentsline {section}{\numberline {4}The verdict space}{7}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Construction}{7}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Non-degeneracy}{9}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Refusal as a measurement}{9}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Capability is a property of the compiler}{10}{section.5}%
+\contentsline {subsection}{\numberline {5.1}The containment check}{10}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}The formalism can do what the compiler cannot}{10}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}One name for two mechanisms}{11}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Nameability}{11}{subsection.5.4}%
+\contentsline {section}{\numberline {6}Vacuity}{11}{section.6}%
+\contentsline {section}{\numberline {7}The blocker trichotomy}{12}{section.7}%
+\contentsline {section}{\numberline {8}Divergent semantics as a result}{13}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Bounding a question can make it cheaper}{14}{subsection.8.1}%
+\contentsline {section}{\numberline {9}One derivation}{15}{section.9}%
+\contentsline {section}{\numberline {10}Computational validation}{16}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Method}{16}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}The propositions under test}{17}{subsection.10.2}%
+\contentsline {subsection}{\numberline {10.3}Results}{17}{subsection.10.3}%
+\contentsline {paragraph}{Experiment 06.}{17}{section*.2}%
+\contentsline {paragraph}{Experiment 08.}{18}{section*.3}%
+\contentsline {paragraph}{Experiment 11.}{18}{section*.4}%
+\contentsline {paragraph}{Experiment 16.}{18}{section*.5}%
+\contentsline {subsection}{\numberline {10.4}What the suite does not establish}{18}{subsection.10.4}%
+\contentsline {section}{\numberline {11}Discussion}{18}{section.11}%
+\contentsline {subsection}{\numberline {11.1}What the framework buys}{18}{subsection.11.1}%
+\contentsline {subsection}{\numberline {11.2}What the framework does not do}{18}{subsection.11.2}%
+\contentsline {subsection}{\numberline {11.3}Outlook}{19}{subsection.11.3}%

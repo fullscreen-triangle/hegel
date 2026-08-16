@@ -1,0 +1,1465 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{graphicx}
+\graphicspath{{../../validation-incompleteness/figures/}{./}}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{siunitx}
+\usepackage{microtype}
+\usepackage{lmodern}
+\usepackage[margin=2.4cm]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{cleveref}
+\usepackage{natbib}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{construction}[theorem]{Construction}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+
+% ---------------------------------------------------------------------------
+% Notation local to this paper.
+% ---------------------------------------------------------------------------
+\newcommand{\Model}{\mathcal{M}}          % a model (schema + axioms)
+\newcommand{\Corpus}{\mathcal{D}}         % a corpus (ground facts)
+\newcommand{\Engine}{\mathcal{E}}         % an engine (compiler + reasoner)
+\newcommand{\Feat}{\mathcal{F}}           % the feature alphabet
+\newcommand{\req}{\varrho}                % feature requirement of a question
+% \sup is a LaTeX operator already, so this must be \renewcommand; a
+% \newcommand here raises "Command \sup already defined".
+\renewcommand{\sup}{\operatorname{Sup}}   % declared capability set
+\newcommand{\Ans}{\mathsf{A}}             % answer set
+\newcommand{\Verd}{\mathsf{V}}            % verdict
+\newcommand{\vans}{\textsc{answered}}
+\newcommand{\vexp}{\textsc{cannot-express}}
+\newcommand{\vder}{\textsc{not-derivable}}
+\newcommand{\vsurf}{\textsc{no-query-surface}}
+\newcommand{\vtime}{\textsc{timeout}}
+\newcommand{\vvac}{\textsc{control-vacuous}}
+\newcommand{\vinert}{\textsc{constraint-inert}}
+% Named \lowr because \lower is a TeX box primitive: overriding it would
+% break any package that relies on it.
+\newcommand{\lowr}{\Lambda}               % lowering map
+\newcommand{\qq}{q}
+\newcommand{\Ques}{\mathcal{Q}}
+
+\begin{document}
+
+\title{%
+\textbf{The Expectation of Incompleteness}\\[0.4em]
+\large A Formal Account of Knowledge Graphs as Instruments That Report
+What They Cannot Say}
+
+\author{%
+Kundai Farai Sachikonye\\[0.3em]
+\normalsize Experimental Bioinformatics, TUM School of Life Sciences\\
+\normalsize Maximus-von-Imhof-Forum 3, 85354 Freising, Germany\\
+\normalsize \texttt{kundai.sachikonye@bitspark.com}}
+
+\date{\today}
+
+\maketitle
+
+\begin{abstract}
+A causal knowledge graph over any biochemical corpus will fail to account for
+some of the reactions in that corpus. This is not a defect to be engineered
+away; it is the expected state of every such artefact, and the interesting
+question is not how much is covered but whether the system can say, at each
+question it is asked, \emph{which} of its several independent limitations is
+responsible for the failure. We argue that a knowledge graph should be built
+as a measuring instrument whose primary output is a verdict rather than an
+answer set, and we develop the formal apparatus for this from first
+principles. We define three logically independent predicates over a
+question---\emph{expressible} in a model, \emph{derivable} from a corpus under
+that model's semantics, and \emph{answerable} by a given engine---and prove
+that no two of them entail the third, so that the customary practice of
+reporting a single empty answer set conflates three distinct claims. We
+introduce a verdict space in which \vexp, \vder{} and \vsurf{} are outcomes
+with the same evidential standing as \vans, and prove a
+\emph{non-degeneracy} property: no verdict other than \vans{} may carry an
+empty answer set, and \vans{} may not carry one either unless emptiness is
+itself certified. We then show that a system's declared capability set is a
+claim about its \emph{compiler} and not about its underlying formalism, that
+the two claims come apart in both directions, and that only the compiler-level
+reading admits a decidable containment check. Because a constraint may be
+lowered into a target language in a form that is syntactically present and
+semantically inert, we prove that syntactic and semantic vacuity checks are
+mutually irredundant---neither subsumes the other---and that a system carrying
+only one of them can certify a result produced by a constraint that did no
+work. Finally we prove a \emph{single-derivation} property: when every view of
+a result is computed from one derivation, two views of the same system cannot
+disagree, and we show that duplicated derivation admits contradictory
+publication with every schema check passing. Seventeen computational
+experiments accompany the paper. Each is stated as a proposition, given a
+control able to fail, and reported with its verdict; several are designed so
+that the interesting outcome is a refusal. Everything required to read this
+paper is developed here from first principles, with no reliance on prior work
+by the author.
+\end{abstract}
+
+\tableofcontents
+
+\section{Introduction}
+
+\subsection{The failure mode that motivates this paper}
+
+Consider a system that answers questions over a biochemical corpus by
+compiling each question into some logical form, running a reasoner, and
+returning the resulting set of entities. Ask it: \emph{which reactions have
+exactly four participants?} Suppose the corpus contains three such reactions
+and the system returns the empty set.
+
+There are at least five distinct situations in which that output is produced.
+The model may lack cardinality constructs altogether, so the question was never
+representable. The model may have them, but under an open-world reading the
+count is not entailed, because nothing rules out a fourth participant that
+merely was not recorded. The corpus may genuinely contain no such reaction.
+The compiler may have silently dropped the cardinality restriction while
+lowering the question, so that a syntactically well-formed query ran and
+matched nothing. Or the reasoner may have exhausted a search budget and
+returned partial results without saying so.
+
+These five situations warrant five different actions on the part of whoever
+receives the answer, and exactly one output is produced for all of them. The
+output is not wrong in any way that inspection reveals: it is well formed, it
+is of the correct type, it is returned promptly, and in the second case it is
+even \emph{correct} under the semantics the system nominally implements. It is
+simply uninformative in a way that is invisible.
+
+This paper is about building systems in which those five situations produce
+five different outputs, and about what that requirement does to the
+architecture. Our thesis is that the requirement is not a reporting nicety
+bolted onto a query engine but a structural constraint that determines what
+the system is: a knowledge graph built this way is an \emph{instrument}, and
+its output at each question is a \emph{verdict}, of which an answer set is one
+possible constituent.
+
+\subsection{Why incompleteness is the expected state}
+
+It is worth being explicit that we do not regard the incompleteness of a
+biochemical knowledge graph as a temporary condition. Three independent
+sources guarantee it.
+
+The first is expressive. Any model is a fragment of some logic, and every
+decidable fragment of first-order logic omits constructions that some question
+will need~\citep{BaaderCalvanese2017}. The trade-off between expressive power
+and the tractability of reasoning is not an engineering artefact but a
+theorem-level fact about the fragments~\citep{Donini2003,Grau2008}. A model
+chosen so that reasoning terminates is a model in which some questions are not
+statable.
+
+The second is empirical. Curated biochemical corpora are assembled by human
+effort under finite budget from an open and growing literature. Reaction
+databases record what has been curated, not what
+exists~\citep{Alcantara2012,Bansal2022}, and chemical ontologies partition
+molecules along axes chosen for chemical rather than metabolic
+convenience~\citep{Degtyarenko2008,Hastings2016}, so that species a biochemist
+would group together may share no informative common ancestor. Absence in a
+corpus is not evidence of absence in the world, and treating it as such is the
+closed-world error.
+
+The third is computational. Even where a question is both statable and
+entailed, the reasoner may not finish. Description-logic reasoning is
+intractable in the worst case for the expressive
+profiles~\citep{Motik2009Hypertableau,Glimm2014HermiT}, and the profiles
+designed for tractability~\citep{Motik2009Profiles,Kazakov2014ELK} achieve it
+precisely by dropping constructs. A question that cannot be run on the
+available machine within the available time is unanswered in a way that has
+nothing to do with the first two.
+
+These three sources are independent. A question may be inexpressible in a
+model whose corpus is rich and whose engine is fast; it may be expressible and
+supported but unentailed; it may be expressible, entailed and beyond the
+budget. Our formal development takes this independence as its starting point,
+and \Cref{thm:independence} makes it precise.
+
+\subsection{What follows from taking incompleteness seriously}
+
+If incompleteness is expected, then the informative content of a knowledge
+graph is not only the set of questions it answers. It is the \emph{structured
+account of the questions it does not answer}. A system that answers
+sixty per cent of a question set and cannot characterise the other forty is
+less useful than one that answers forty per cent and, for each of the
+remaining sixty, states which of the three sources is responsible and what
+would have to change to unblock it. The second system supports a decision; the
+first supports only a percentage.
+
+This reframing has four consequences that we develop in the body of the paper.
+
+\begin{enumerate}[label=(C\arabic*),leftmargin=*]
+\item \textbf{Refusal is a first-class outcome.} A verdict of \vexp{} is a
+      result. It is derived, it is reproducible, it constrains future work,
+      and it may be cited. Treating refusal as a failure to be minimised makes
+      an honest refusal look worse than a confident wrong answer.
+      (\Cref{sec:verdicts}.)
+\item \textbf{A capability claim describes a compiler, not a formalism.} The
+      statement ``this system supports counting'' is true or false of a
+      lowering procedure, not of the target logic. The two come apart in both
+      directions, and only the compiler-level reading supports a decidable
+      containment check. (\Cref{sec:capability}.)
+\item \textbf{Every constraint carries a control that can invalidate its own
+      result.} A constraint may be present in the compiled form and yet do no
+      work. Detecting this requires two checks that do not subsume one
+      another. (\Cref{sec:vacuity}.)
+\item \textbf{Derivation happens once.} Every view of a result is computed
+      from a single derivation, so that two presentations of the same system
+      cannot disagree. (\Cref{sec:single}.)
+\end{enumerate}
+
+\subsection{Relation to existing work, and what is new}
+
+Open-world semantics and the absence of a unique-name assumption are standard
+in description logic~\citep{BaaderCalvanese2017,Horrocks2003}, and the
+distinction between an empty extension and an unentailed count is not
+new. Benchmarking suites for ontology reasoning report per-engine timeouts and
+errors~\citep{Guo2005LUBM,Singh2020OWL2Bench,Parsia2017ORE}, and it is common
+practice to report a reasoner's failure to terminate rather than to record a
+zero.
+
+What is new here is threefold. First, the separation of \emph{inexpressible in
+the logic} from \emph{unaskable through this interface}: benchmark suites
+typically report an engine failure, folding together a limitation of a profile
+with a limitation of a particular adapter, and the fold systematically
+converts an implementation defect into a claim about a standard. Second, the
+treatment of \emph{vacuity} as a first-class hazard requiring two irredundant
+checks, which to our knowledge has not been formalised for
+constraint-lowering pipelines even though the analogous notion of vacuous
+satisfaction is well developed in model
+checking~\citep{Beer2001,Kupferman2003}. Third, the \emph{non-degeneracy}
+requirement---no verdict other than \vans{} may carry an empty answer set---
+which turns the conflation described in \S1.1 into a checkable structural
+property of a system rather than a matter of reporting discipline.
+
+\subsection{Organisation}
+
+\Cref{sec:setting} fixes the setting and defines models, corpora, engines,
+questions and features. \Cref{sec:three} defines expressibility, derivability
+and answerability and proves their pairwise independence. \Cref{sec:verdicts}
+constructs the verdict space and proves non-degeneracy. \Cref{sec:capability}
+develops capability sets as compiler-level claims and proves the containment
+theorem and the two failure directions. \Cref{sec:vacuity} treats vacuity and
+proves the irredundance of the two checks. \Cref{sec:blockers} gives the
+blocker trichotomy and the unblocking relation. \Cref{sec:semantics} treats
+the divergence of semantics between target languages, showing that the same
+model lowered to two engines yields legitimate disagreement that is a result
+rather than a defect. \Cref{sec:single} proves the single-derivation property
+and the staleness theorem for status fields. \Cref{sec:validation} states the
+seventeen computational propositions and reports their measured outcomes.
+\Cref{sec:discussion} discusses limits and what the framework does not do.
+
+\section{Setting}
+\label{sec:setting}
+
+We work with four kinds of object. Throughout, all sets are finite unless
+stated otherwise.
+
+\begin{definition}[Signature]
+\label{def:signature}
+A \emph{signature} $\Sigma = (N_C, N_R, N_I)$ consists of disjoint finite sets
+of \emph{concept names}, \emph{role names} and \emph{individual names}.
+\end{definition}
+
+\begin{definition}[Model]
+\label{def:model}
+A \emph{model} $\Model = (\Sigma, \mathcal{T})$ is a signature together with a
+finite set $\mathcal{T}$ of axioms over $\Sigma$, drawn from a fixed axiom
+grammar. We write $\Feat(\Model) \subseteq \Feat$ for the set of
+\emph{features} occurring in $\mathcal{T}$, where $\Feat$ is a fixed finite
+alphabet of construct names fixed in \Cref{def:features}.
+\end{definition}
+
+\begin{definition}[Corpus]
+\label{def:corpus}
+A \emph{corpus} $\Corpus$ over $\Sigma$ is a finite set of ground assertions
+$A(a)$ and $r(a,b)$ with $A \in N_C$, $r \in N_R$, $a,b \in N_I$. The pair
+$(\Model, \Corpus)$ is a \emph{knowledge base}.
+\end{definition}
+
+We deliberately separate $\Model$ from $\Corpus$. The separation is what makes
+the second and third blockers of \Cref{sec:blockers} distinguishable: a
+question may be unanswerable because the axioms cannot state it or because the
+assertions do not populate it, and merging the two into a single ``ontology''
+makes those cases indistinguishable by construction.
+
+\begin{definition}[Question]
+\label{def:question}
+A \emph{question} $\qq$ is a pair $(\varphi, \bar{x})$ where $\varphi$ is a
+formula over $\Sigma$ in a fixed query grammar and $\bar{x}$ is a tuple of its
+free variables. We write $\Ques$ for the set of questions. Each question
+carries a \emph{feature requirement} $\req(\qq) \subseteq \Feat$: the set of
+constructs that any faithful rendering of $\qq$ must use.
+\end{definition}
+
+\begin{definition}[Feature alphabet]
+\label{def:features}
+$\Feat$ is the finite alphabet
+\[
+\Feat = \{\,
+\textsf{SUBSUMPTION},\;
+\textsf{EXISTENTIAL},\;
+\textsf{VALUE},\;
+\textsf{NEGATION},\;
+\textsf{COUNTING},\;
+\textsf{TRANSITIVE\_AXIOM},\;
+\textsf{TRANSITIVE\_QUERY},\;
+\textsf{BOUNDED\_PATH},
+\]
+\[
+\textsf{DISJOINTNESS},\;
+\textsf{UNIQUE\_NAMES}
+\,\}.
+\]
+\end{definition}
+
+Two remarks on this alphabet are load-bearing and are proved later.
+
+\begin{remark}[Splitting one name into two]
+\label{rem:transitive-split}
+Transitivity appears twice. \textsf{TRANSITIVE\_AXIOM} is the assertion that a
+role $r$ is transitive, discharged by the reasoner when it closes the
+interpretation. \textsf{TRANSITIVE\_QUERY} is the requirement that a query
+compute the transitive closure of a role at answering time. These are distinct
+mechanisms: a system may implement either without the other. Naming them
+identically makes a containment check unsound in a way \Cref{prop:half-true}
+makes precise.
+\end{remark}
+
+\begin{remark}[Listing what you do lower]
+\label{rem:listing}
+\textsf{DISJOINTNESS} and \textsf{UNIQUE\_NAMES} are features of a
+\emph{model}, not of a question, and it is tempting to omit them from an
+alphabet indexed by questions. Omitting them is what makes a defect
+undetectable: if the alphabet cannot name a construct, then a compiler that
+silently ignores that construct in $\mathcal{T}$ produces a knowledge base
+differing from its sibling's, and any comparison between the two engines
+attributes the difference to the engines. \Cref{prop:nameable} states this.
+\end{remark}
+
+\begin{definition}[Engine]
+\label{def:engine}
+An \emph{engine} $\Engine = (\lowr_\Engine, \sup(\Engine), \mathrm{solve}_\Engine)$
+consists of a partial \emph{lowering} map $\lowr_\Engine$ taking a model and a
+question to a program in the engine's target language, a \emph{declared
+capability set} $\sup(\Engine) \subseteq \Feat$, and a \emph{solver}
+$\mathrm{solve}_\Engine$ taking a program and a corpus to an answer set
+together with a certification flag and an elapsed time.
+\end{definition}
+
+\begin{assumption}[Determinism and budget]
+\label{ass:budget}
+$\mathrm{solve}_\Engine$ is deterministic given $(\text{program}, \Corpus)$
+and is run under an explicit wall-clock budget $\tau$. Any run exceeding $\tau$
+is terminated and produces no answer set.
+\end{assumption}
+
+\Cref{ass:budget} is not a technicality. It is what makes \vtime{} a verdict
+rather than a crash: a terminated run that returned an empty answer set would
+be recorded by any differential comparison as \emph{agreement} between a
+working engine and a hung one.
+
+\section{Three independent predicates}
+\label{sec:three}
+
+\subsection{Definitions}
+
+\begin{definition}[Expressible]
+\label{def:expressible}
+A question $\qq$ is \emph{expressible in} $\Model$, written
+$\mathrm{Exp}(\qq, \Model)$, if the constructs $\req(\qq)$ are all available in
+the axiom and query grammar over $\Sigma(\Model)$, and every name occurring in
+$\qq$ is in $\Sigma(\Model)$.
+\end{definition}
+
+Expressibility is a property of the \emph{language}. It does not depend on the
+corpus, and it does not depend on any engine.
+
+\begin{definition}[Derivable]
+\label{def:derivable}
+Let $\qq = (\varphi, \bar{x})$ be expressible in $\Model$. A tuple $\bar{a}$ of
+individuals is a \emph{certain answer} if
+$(\Model, \Corpus) \models \varphi[\bar{a}/\bar{x}]$, i.e.\ $\varphi[\bar{a}]$
+holds in every model of the knowledge base. The question is \emph{derivable},
+written $\mathrm{Der}(\qq, \Model, \Corpus)$, if the answer to $\qq$ is
+determined by the knowledge base: for every tuple $\bar{a}$ over $N_I$, either
+$(\Model, \Corpus) \models \varphi[\bar{a}]$ or
+$(\Model, \Corpus) \models \neg\varphi[\bar{a}]$.
+\end{definition}
+
+Derivability is a property of the \emph{semantics}. Note carefully that it is
+stronger than the existence of certain answers: a question with no certain
+answers may still be underdetermined, and the difference between ``the
+extension is empty'' and ``the extension is not determined'' is exactly the
+one \S1.1 identified as invisible.
+
+\begin{definition}[Answerable]
+\label{def:answerable}
+A question $\qq$ is \emph{answerable by} $\Engine$ \emph{on}
+$(\Model, \Corpus)$ \emph{within} $\tau$, written
+$\mathrm{Ans}_\tau(\qq, \Model, \Corpus, \Engine)$, if $\lowr_\Engine(\Model, \qq)$
+is defined and $\mathrm{solve}_\Engine$ on the resulting program and $\Corpus$
+terminates within $\tau$ with certification.
+\end{definition}
+
+Answerability is a property of the \emph{implementation and the budget}. It
+mentions a clock. Neither of the other two does.
+
+\subsection{Independence}
+
+\begin{theorem}[Pairwise independence]
+\label{thm:independence}
+None of $\mathrm{Exp}$, $\mathrm{Der}$, $\mathrm{Ans}_\tau$ is entailed by the
+conjunction of the other two. Formally, for each of the three predicates there
+exist a model, a corpus, an engine, a budget and a question witnessing the
+other two and failing that one.
+\end{theorem}
+
+\begin{proof}
+We exhibit three witnesses.
+
+\emph{$\mathrm{Der}$ and $\mathrm{Ans}_\tau$ without $\mathrm{Exp}$.} Let
+$\Model_1$ have grammar without cardinality restrictions, so
+$\textsf{COUNTING} \notin \Feat(\Model_1)$ and no question requiring it is
+expressible. Take $\qq_1 = $ ``entities with exactly four $r$-successors''.
+Now consider the surrogate question $\qq_1' = $ ``entities $x$ with
+$r(x,a_1),\dots,r(x,a_4)$ for the four named individuals $a_1,\dots,a_4$'',
+which \emph{is} expressible and which, on a corpus asserting exactly those four
+edges for one individual and no others, is derivable and answerable by any
+engine handling conjunctive queries. The pair witnesses that expressibility
+fails on $\qq_1$ while the semantic and computational conditions are
+unproblematic for the surrogate; formally, $\mathrm{Exp}(\qq_1, \Model_1)$ is
+false while for the extension $\Model_1^+$ obtained by adding cardinality to
+the grammar, $\mathrm{Der}(\qq_1, \Model_1^+, \Corpus)$ and
+$\mathrm{Ans}_\tau(\qq_1, \Model_1^+, \Corpus, \Engine)$ both hold. Since
+$\Corpus$ and $\Engine$ are unchanged, the failure is attributable to the
+grammar alone.
+
+\emph{$\mathrm{Exp}$ and $\mathrm{Ans}_\tau$ without $\mathrm{Der}$.} Let
+$\Model_2$ have cardinality restrictions, and let $\Corpus_2$ assert
+$r(c,a_1),\dots,r(c,a_4)$ with no disjointness among the $a_i$ and no closure
+axiom on $r$. Then $\qq_1$ is expressible, and an engine returns promptly. But
+$(\Model_2, \Corpus_2) \not\models \text{``$c$ has exactly four
+$r$-successors''}$, because there is a model of the knowledge base in which
+$a_1 = a_2$ (no unique-name assumption) and another in which $c$ has a fifth
+successor (no closure). Nor does the knowledge base entail the negation, since
+a model realising exactly four distinct successors exists. So the question is
+underdetermined: $\mathrm{Der}$ fails while the other two hold.
+
+\emph{$\mathrm{Exp}$ and $\mathrm{Der}$ without $\mathrm{Ans}_\tau$.} Let
+$\Model_3$ and $\Corpus_3$ be such that $\qq$ is expressible and determined---
+for instance, take $\Corpus_3$ to assert pairwise distinctness of the $a_i$
+and a closure axiom on $r$ at $c$, which fixes the count---and let $\tau$ be
+smaller than the time $\mathrm{solve}_\Engine$ requires on
+$\lowr_\Engine(\Model_3,\qq)$. Such a $\tau$ exists because the solver's
+running time on a fixed input is a positive real. Then $\mathrm{Ans}_\tau$
+fails while the other two hold. Alternatively, and without appeal to the
+budget, let $\lowr_\Engine$ be undefined on $\qq$---the engine's adapter has no
+surface for cardinality---which also falsifies $\mathrm{Ans}_\tau$ while
+leaving $\mathrm{Exp}$ and $\mathrm{Der}$ untouched.
+\end{proof}
+
+\begin{corollary}[The conflation]
+\label{cor:conflation}
+A system whose output on a question is a single answer set cannot distinguish
+$\neg\mathrm{Exp}$, $\neg\mathrm{Der}$ and $\neg\mathrm{Ans}_\tau$, since all
+three admit the empty set as output and, by \Cref{thm:independence}, no two of
+them determine the third.
+\end{corollary}
+
+\begin{remark}[The two witnesses of $\neg\mathrm{Ans}_\tau$ are different]
+\label{rem:two-ans}
+The proof gave two independent ways to falsify answerability: the budget and
+the undefined lowering. They warrant different verdicts and different actions,
+and \Cref{sec:verdicts} separates them as \vtime{} and \vsurf. Merging them is
+how ``this adapter has no cardinality surface'' becomes ``this profile cannot
+count''.
+\end{remark}
+
+\subsection{The specific structure of counting}
+
+The second witness in \Cref{thm:independence} deserves a sharper statement,
+because it is the case most often mishandled.
+
+\begin{proposition}[Two requirements, one aggregate]
+\label{prop:counting-split}
+Let $\qq_{\geq n}$, $\qq_{\leq n}$ and $\qq_{=n}$ be the questions
+``$x$ has at least / at most / exactly $n$ $r$-successors''. Under open-world
+semantics without a unique-name assumption:
+\begin{enumerate}[label=(\roman*)]
+\item $\qq_{\geq n}$ is derivable only if the counted successors are known
+      pairwise distinct;
+\item $\qq_{\leq n}$ is derivable only if the successor set is closed;
+\item $\qq_{=n}$ requires both.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+(i) Suppose $r(c, a_1), \dots, r(c, a_n)$ hold and distinctness is not
+asserted. The interpretation identifying all $a_i$ satisfies the knowledge
+base and gives $c$ one successor, so ``at least $n$'' is not entailed for
+$n>1$. Conversely if the $a_i$ are pairwise distinct in every model then every
+model gives $c$ at least $n$ successors. (ii) Suppose the successor set is not
+closed. Extend any model by a fresh element $d$ with $r(c,d)$; if the extension
+satisfies the knowledge base, ``at most $n$'' fails in it. Conversely a closure
+axiom $c \sqsubseteq \forall r.\{a_1,\dots,a_n\}$ makes every model's successor
+set a subset of $\{a_1^\mathcal{I},\dots,a_n^\mathcal{I}\}$, bounding the count
+by $n$. (iii) $\qq_{=n}$ is the conjunction, and a conjunction is entailed only
+if both conjuncts are.
+\end{proof}
+
+\begin{remark}[The tempting check is wrong in the hiding direction]
+\label{rem:una-scope}
+A system implementing \Cref{prop:counting-split}(i) must check that the
+\emph{counted individuals} are known distinct. It is tempting instead to check
+whether the model contains \emph{any} distinctness assertion, because that is
+a single boolean over $\mathcal{T}$. This is unsound in the direction that
+conceals the problem: a model may assert distinctness over an unrelated pair of
+individuals---two role constants, say---while saying nothing about the
+successors being counted, and the boolean is then true while the requirement of
+(i) is unmet. A distinctness assertion somewhere in a model is not a
+distinctness assertion over the counted set.
+\end{remark}
+
+\begin{remark}[False by construction, not by inspection]
+\label{rem:by-construction}
+If a model's grammar contains no closure construct then
+\Cref{prop:counting-split}(ii) fails for structural reasons, and a system
+should record this fact as \emph{holding by construction}. The distinction
+matters for maintenance: a fact recorded as ``false by construction'' is
+flipped by extending the grammar, whereas a fact recorded as ``false by
+inspection'' invites someone to look for a closure axiom that the grammar
+cannot express. In the first framing, extending the grammar is what changes the
+verdict; in the second, a test passing is.
+\end{remark}
+
+\section{The verdict space}
+\label{sec:verdicts}
+
+\subsection{Construction}
+
+\begin{definition}[Verdict]
+\label{def:verdict}
+A \emph{verdict} is a pair $\Verd = (\ell, \pi)$ where $\ell$ is a label from
+\[
+L = \{\vans,\ \vexp,\ \vder,\ \vsurf,\ \vtime,\ \vvac,\ \vinert\}
+\]
+and $\pi$ is a label-specific \emph{payload}. The payloads are:
+\begin{center}
+\begin{tabular}{@{}ll@{}}
+\toprule
+Label & Payload \\
+\midrule
+\vans   & answer set $\Ans$, certification flag, elapsed time \\
+\vexp   & the subset $\req(\qq) \setminus \Feat(\Model)$ responsible \\
+\vder   & which clause of \Cref{prop:counting-split} (or analogue) failed \\
+\vsurf  & the feature the lowering has no surface for \\
+\vtime  & the budget $\tau$ that was exceeded \\
+\vvac   & the compiled expressions found identical \\
+\vinert & the two answer sets found identical \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{definition}
+
+\begin{definition}[Evaluation]
+\label{def:evaluation}
+Given $(\Model, \Corpus, \Engine, \tau)$ and a question $\qq$, the
+\emph{evaluation} $\mathrm{Ev}(\qq)$ is computed in the following order, the
+first applicable clause determining the verdict:
+\begin{enumerate}[label=(E\arabic*),leftmargin=*]
+\item if $\req(\qq) \not\subseteq \Feat(\Model)$, return
+      $(\vexp, \req(\qq)\setminus\Feat(\Model))$;
+\item if $\qq$ is not derivable by the applicable clause of
+      \Cref{prop:counting-split}, return $(\vder, \text{clause})$;
+\item if $\req(\qq) \not\subseteq \sup(\Engine)$, return
+      $(\vsurf, \req(\qq)\setminus\sup(\Engine))$;
+\item compile $P = \lowr_\Engine(\Model,\qq)$ and, if $\qq$ carries a
+      droppable constraint, the control $P^\circ$ obtained by removing it. If
+      $P = P^\circ$ syntactically, return $(\vvac, (P,P^\circ))$;
+\item run $P$ within $\tau$; if \emph{it} exceeds $\tau$, return
+      $(\vtime, \tau)$. Run $P^\circ$ within $\tau$; if the control alone
+      exceeds it, the vacuity test of (E6) is \emph{inconclusive} and is
+      recorded as such in the payload of whatever clause below applies;
+\item if $\Ans(P) = \Ans(P^\circ)$ \emph{and} $\Ans(P) \neq \emptyset$, return
+      $(\vinert, \Ans(P))$;
+\item otherwise return $(\vans, (\Ans(P), \text{certified}, t))$.
+\end{enumerate}
+\end{definition}
+
+The order is not arbitrary. Each clause is checked before any clause whose
+evidence it would corrupt. In particular (E1) precedes (E3), so that a
+limitation of the language is never reported as a limitation of the adapter;
+and (E4) precedes (E5), so that a vacuous control is detected before a budget
+is spent proving that it agrees.
+
+Two side conditions in (E5) and (E6) deserve comment, because the natural
+statement of each is wrong in a way that only shows up when the clause fires.
+
+\begin{remark}[The control's budget is not the question's]
+\label{rem:control-budget}
+A control that exceeds $\tau$ is not a \vtime{} verdict for $\qq$. The question
+has been answered; what has failed is the auxiliary test of whether its
+constraint did any work. Returning \vtime{} here would report a property of
+$P^\circ$ as a verdict on $\qq$ --- precisely the conflation of
+\Cref{cor:conflation}, one level down. The case is not exotic: whenever the
+droppable constraint is the one that made the question affordable, the control
+is by construction the more expensive program, so this is the \emph{expected}
+behaviour for exactly the questions of \Cref{prop:bounded-cheaper} rather than
+a rare degeneracy. An \vans{} verdict whose vacuity test did not complete must
+carry that fact in its payload, since otherwise \vans{} silently implies a
+check that was never performed.
+\end{remark}
+
+\begin{remark}[Two empty sets agree about nothing]
+\label{rem:empty-agreement}
+The non-emptiness side condition in (E6) is what prevents a capability defect
+from being reported as a vacuity finding. \Cref{def:sem-vacuity} infers that a
+constraint did no work from the observation that two \emph{differing} programs
+produce the same answers, and that inference requires the agreement to have
+content. If neither program grounds --- the ungrounded-aggregate case of
+\Cref{prop:under} --- both return $\emptyset$ and agree vacuously, for a reason
+having nothing to do with the constraint. Without the side condition, a
+compiler emitting a program that never runs is labelled \vinert, which is a
+verdict about the question rather than about the compiler, and the defect is
+concealed by the very machinery built to expose it.
+\end{remark}
+
+\begin{proposition}[Order soundness]
+\label{prop:order}
+If $\mathrm{Ev}(\qq) = (\ell, \pi)$ with $\ell \neq \vans$ then every clause
+preceding $\ell$'s clause in \Cref{def:evaluation} is inapplicable, and the
+payload $\pi$ names a witness sufficient to reproduce the verdict without
+re-running the engine.
+\end{proposition}
+
+\begin{proof}
+Immediate from the first-applicable rule. For the second part, inspect the
+payload column of \Cref{def:verdict}: each payload is a finite object computed
+from $\Model$, $\qq$, $\sup(\Engine)$, $\lowr_\Engine$ and $\tau$ alone, none
+of which depends on the solver's execution except in the \vans{} and \vinert{}
+rows, whose payloads include the answer sets themselves.
+\end{proof}
+
+\subsection{Non-degeneracy}
+
+The property that makes the verdict space more than a taxonomy is the
+following.
+
+\begin{theorem}[Non-degeneracy]
+\label{thm:nondegeneracy}
+Under \Cref{def:evaluation}, no verdict with $\ell \neq \vans$ carries an
+empty answer set, because no such verdict carries an answer set at all.
+Consequently the observation ``the output was empty'' determines
+$\ell = \vans$, and the five situations of \S1.1 are pairwise distinguishable
+from the verdict alone.
+\end{theorem}
+
+\begin{proof}
+By inspection of the payload table: the only labels whose payload contains an
+answer set are \vans{} and \vinert. \vinert{} is reached only when
+$\Ans(P) = \Ans(P^\circ)$, and its payload records that common set as evidence
+of inertness rather than as an answer, so no consumer reading the label as an
+answer set is licensed. For the second claim, suppose a consumer observes an
+empty output. By the first part the label must be \vans. The five situations
+of \S1.1 are then separated as follows: an inexpressible question yields
+\vexp{} by (E1); an unentailed count yields \vder{} by (E2); a genuinely empty
+extension yields $(\vans, (\emptyset, \text{certified}, t))$; a dropped
+constraint yields \vvac{} by (E4) if the drop is syntactic and \vinert{} by
+(E6) if it is semantic; an exhausted budget yields \vtime{} by (E5). These are
+five distinct labels.
+\end{proof}
+
+\begin{corollary}[Certified emptiness is a result]
+\label{cor:certified-empty}
+A verdict $(\vans, (\emptyset, \text{certified}, t))$ is a positive claim:
+the extension is empty and the run that established this was complete. It is
+therefore not interchangeable with any $\ell \neq \vans$, and in particular
+not with \vtime, whose payload asserts nothing about the extension.
+\end{corollary}
+
+\begin{remark}[Certification is reported, never folded in]
+\label{rem:certification}
+The certification flag is a component of the \vans{} payload and not a filter
+on it. A system that dropped uncertified answers would report a search-limited
+run and a complete run identically when both return the same set, and would
+report a search-limited run and an exhausted one identically when the former
+returns nothing. Where a solver mode is constitutionally unable to certify,
+the flag must be explicitly false rather than absent: an unset field reads as
+a default and a default reads as satisfactory.
+\end{remark}
+
+\begin{remark}[The budget is part of the claim]
+\label{rem:budget-in-payload}
+$(\vtime, 120\,\mathrm{s})$ and $(\vtime, 3600\,\mathrm{s})$ are different
+claims, and a verdict space that records only the label loses the difference.
+This is why \Cref{def:verdict} makes $\tau$ the payload rather than metadata.
+\end{remark}
+
+\subsection{Refusal as a measurement}
+
+\begin{proposition}[Comparability of refusals]
+\label{prop:compare-refusals}
+Let $\Engine_1, \Engine_2$ be engines evaluated on the same
+$(\Model,\Corpus,\qq,\tau)$. Then the pair
+$(\mathrm{Ev}_1(\qq), \mathrm{Ev}_2(\qq))$ is informative even when neither
+label is \vans, and in particular the pair $(\vexp, \vans)$ is not evidence
+that $\Engine_2$ is more capable than $\Engine_1$ on $\qq$ unless
+$\Engine_2$'s payload includes certification.
+\end{proposition}
+
+\begin{proof}
+Suppose $\mathrm{Ev}_1(\qq) = (\vexp, \{\textsf{COUNTING}\})$ and
+$\mathrm{Ev}_2(\qq) = (\vans, (\emptyset, \cdot, t))$ on a corpus whose ground
+truth for $\qq$ is a non-empty set of size $m > 0$. Then $\Engine_1$'s output
+correctly identifies that $\qq$ cannot be posed in its language, while
+$\Engine_2$'s output differs from ground truth by $m$. Ranking $\Engine_2$
+above $\Engine_1$ on the basis that it produced an answer set orders them by
+output type rather than by correctness, and reverses the correct ordering
+whenever $m>0$. If $\Engine_2$'s empty set is certified, then by
+\Cref{cor:certified-empty} its verdict is a positive claim of emptiness, which
+contradicts $m>0$ and identifies a defect; if it is uncertified, the verdict
+carries no claim about the extension at all.
+\end{proof}
+
+\Cref{prop:compare-refusals} is the formal statement of the phenomenon that
+motivated this paper. An engine that refuses honestly appears \emph{less}
+capable than one returning a confident wrong zero, under any scoring rule that
+counts answers rather than verdicts.
+
+\section{Capability is a property of the compiler}
+\label{sec:capability}
+
+\subsection{The containment check}
+
+\begin{definition}[Faithful lowering]
+\label{def:faithful}
+$\lowr_\Engine$ is \emph{faithful for} $f \in \Feat$ if for every model and
+question in which $f$ occurs, the program $\lowr_\Engine(\Model,\qq)$ has the
+same certain answers as $\qq$ has under \Cref{def:derivable}.
+\end{definition}
+
+\begin{definition}[Honest capability set]
+\label{def:honest}
+$\sup(\Engine)$ is \emph{honest} if $f \in \sup(\Engine)$ iff
+$\lowr_\Engine$ is faithful for $f$.
+\end{definition}
+
+\begin{theorem}[Containment]
+\label{thm:containment}
+Let $\sup(\Engine)$ be honest. If $\req(\qq) \cup \Feat(\Model) \subseteq
+\sup(\Engine)$ then $\lowr_\Engine(\Model,\qq)$ is defined and faithful. If
+$\req(\qq) \cup \Feat(\Model) \not\subseteq \sup(\Engine)$ then
+\Cref{def:evaluation}(E3) fires and the verdict is $(\vsurf, \cdot)$, which by
+\Cref{thm:nondegeneracy} carries no answer set.
+\end{theorem}
+
+\begin{proof}
+The first part is \Cref{def:honest} applied featurewise, using that
+faithfulness is closed under the conjunction of independent constructs by
+\Cref{def:faithful}. The second is by construction of (E3), and the absence of
+an answer set is \Cref{thm:nondegeneracy}.
+\end{proof}
+
+The theorem is only as strong as its hypothesis, and the hypothesis is what
+the next two subsections attack.
+
+\subsection{The formalism can do what the compiler cannot}
+
+\begin{proposition}[Under-declaration is correct, not modest]
+\label{prop:under}
+There exist a feature $f$, an engine $\Engine$ and a target language $T$ such
+that $T$ supports $f$ in full generality, $\lowr_\Engine$ produces a program
+in $T$ using $f$, that program is rejected or fails to certify, and honesty of
+$\sup(\Engine)$ therefore requires $f \notin \sup(\Engine)$.
+\end{proposition}
+
+\begin{proof}
+Take $f = \textsf{COUNTING}$ and $T$ a rule language with aggregate support.
+Counting is expressible in $T$ in full generality. Let $\lowr_\Engine$ emit,
+for the question ``entities with exactly four $r$-successors'', a rule whose
+body pairs an aggregate over an unbound successor variable with an equality
+test on the aggregate's result. If the engine certifies answers only within a
+fragment for which grounding is bounded, this program falls outside that
+fragment: the aggregate's grounding is unbounded in the successor variable and
+the engine rejects it. Removing the fragment gate does not repair the
+situation---it produces a run that terminates with an empty answer set, which
+is the answer set of a program whose aggregate never grounded, and which by
+\Cref{cor:certified-empty} would be read as a positive claim of emptiness.
+Since $\lowr_\Engine$ is faithful for $f$ in neither configuration,
+\Cref{def:honest} forces $f \notin \sup(\Engine)$, notwithstanding that $T$
+counts perfectly well.
+\end{proof}
+
+\begin{corollary}[A capability recommendation must be tested by attempting it]
+\label{cor:test-the-recommendation}
+An audit of $\sup(\Engine)$ conducted against the target language $T$ rather
+than against $\lowr_\Engine$ will recommend adding features that must not be
+added. Such a recommendation is refuted only by writing the lowering and
+observing its verdict.
+\end{corollary}
+
+\begin{remark}[One set cannot carry two positions]
+\label{rem:one-set}
+$\sup(\Engine)$ as defined is a single set checked against both
+$\Feat(\Model)$ and $\req(\qq)$. It therefore cannot express ``supported when
+the construct occurs in a query, unsupported when it occurs in an axiom'',
+which is a real distinction: lowering a construct into a rule body and
+lowering it into a rule head are different problems with different fragment
+conditions. A system needing that distinction requires two sets, and a system
+with one set must record which position its declaration refers to.
+\end{remark}
+
+\subsection{One name for two mechanisms}
+
+\begin{proposition}[Half-true containment]
+\label{prop:half-true}
+Suppose $\Feat$ contains a single symbol $\textsf{TRANSITIVE}$ conflating
+\Cref{rem:transitive-split}'s two mechanisms. Then there exists an engine
+$\Engine$ for which $\textsf{TRANSITIVE} \in \sup(\Engine)$ is neither true
+nor false, in the sense that \Cref{def:honest} is unsatisfiable: including it
+makes $\sup$ dishonest for questions requiring the query mechanism, and
+excluding it makes $\sup$ dishonest for models using the axiom mechanism.
+\end{proposition}
+
+\begin{proof}
+Let $\Engine$ lower to a description logic supporting transitive role axioms
+whose query language has no closure operator. Then $\lowr_\Engine$ is
+faithful for \textsf{TRANSITIVE\_AXIOM} and unfaithful for
+\textsf{TRANSITIVE\_QUERY}. Under \Cref{def:honest} with the split alphabet,
+$\sup(\Engine)$ contains the first and not the second, and
+\Cref{thm:containment} applies. Under the conflated alphabet, honesty demands
+$\textsf{TRANSITIVE} \in \sup(\Engine)$ (from faithfulness on axioms) and
+$\textsf{TRANSITIVE} \notin \sup(\Engine)$ (from unfaithfulness on queries)
+simultaneously.
+\end{proof}
+
+\begin{remark}[Do not make the base relation transitive]
+\label{rem:no-base-transitive}
+A tempting repair for a missing query-side closure is to declare the base role
+transitive in $\mathcal{T}$. This is not a repair but a change of model:
+declaring a participation role transitive entails that an entity participates
+in the participants of its participants, corrupting every other question over
+the same knowledge base. The correct construction introduces a fresh
+super-role, asserts \emph{it} transitive, and answers the closure question over
+the super-role, leaving the base role's extension untouched.
+\end{remark}
+
+\subsection{Nameability}
+
+\begin{proposition}[An unnameable feature is an undetectable omission]
+\label{prop:nameable}
+Let $f$ be a feature of models that is absent from $\Feat$. Let $\Engine_1$
+lower $f$ faithfully and $\Engine_2$ ignore it. Then for any question,
+\Cref{def:evaluation} never reaches a verdict attributing a discrepancy to
+$f$, and any differential comparison of $\Engine_1$ and $\Engine_2$ compares
+two different knowledge bases while reporting a difference between two
+engines.
+\end{proposition}
+
+\begin{proof}
+(E1) and (E3) are containment tests over $\Feat$; a symbol absent from $\Feat$
+occurs in neither $\req(\qq)$ nor $\Feat(\Model)$ nor $\sup(\Engine)$, so
+neither test can fire on it. The evaluations therefore proceed to (E4)--(E7)
+in both engines. $\Engine_2$'s program is compiled from $\mathcal{T}$ minus the
+axioms mentioning $f$, so its answer sets are those of a knowledge base
+differing from $\Engine_1$'s. The reported difference is labelled by engine
+because the engine is the only varying parameter the evaluation records.
+\end{proof}
+
+\Cref{prop:nameable} is the formal content of \Cref{rem:listing}: enumerating
+the constructs one \emph{does} lower is what makes an omission on the other
+side detectable, and the alphabet must therefore be extended whenever a new
+construct enters any model, not only when a question requires it.
+
+\section{Vacuity}
+\label{sec:vacuity}
+
+A constraint may survive lowering in form and not in effect. This section
+formalises the two ways that happens and proves that catching them requires
+two checks.
+
+\begin{definition}[Control]
+\label{def:control}
+Let $\qq$ carry a \emph{droppable constraint} $c$---a negation, a cardinality
+restriction, or a path bound. The \emph{control} $\qq^\circ$ is $\qq$ with $c$
+removed. The compiled pair is $P = \lowr_\Engine(\Model,\qq)$,
+$P^\circ = \lowr_\Engine(\Model,\qq^\circ)$.
+\end{definition}
+
+\begin{definition}[Syntactic vacuity]
+\label{def:syn-vacuity}
+$c$ is \emph{syntactically vacuous} at $\Engine$ if $P = P^\circ$ as
+programs.
+\end{definition}
+
+\begin{definition}[Semantic vacuity]
+\label{def:sem-vacuity}
+$c$ is \emph{semantically vacuous} at $(\Engine,\Corpus)$ if $P \neq P^\circ$
+but $\Ans(P) = \Ans(P^\circ)$ on $\Corpus$.
+\end{definition}
+
+\begin{theorem}[Irredundance]
+\label{thm:irredundance}
+Neither check subsumes the other:
+\begin{enumerate}[label=(\roman*)]
+\item there exist $(\Engine, \Corpus, \qq, c)$ with $c$ syntactically vacuous
+      and $\Ans(P) = \Ans(P^\circ)$ trivially, which the semantic check
+      reports but with a payload identifying the wrong cause;
+\item there exist $(\Engine, \Corpus, \qq, c)$ with $c$ syntactically present,
+      $P \neq P^\circ$, and $\Ans(P) = \Ans(P^\circ)$, which the syntactic
+      check cannot detect.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+(ii) is the substantive direction. Let $c$ be a negated conjunction
+constraining a \emph{role filler}---``$x$ has no $r$-successor that is a
+$B$''---and let $\lowr_\Engine$ construct the negated expression by rooting
+each negated block at the block's own first variable. The lowered expression
+then reads ``$x$ is not itself a $B$-with-role'' rather than ``$x$ has no
+$B$-successor'': it is a different, well-formed expression, so $P \neq P^\circ$
+and the syntactic check passes. If in addition the model asserts pairwise
+disjointness between the class of $x$ and the class $B$, the mis-rooted
+expression is entailed of every $x$ and the constraint is satisfied
+identically, giving $\Ans(P) = \Ans(P^\circ)$. Thus a semantic check is
+required, and its payload---the two identical answer sets---names the actual
+symptom.
+
+(i) Let $\lowr_\Engine$ ignore $c$ entirely, so that $P$ and $P^\circ$ are
+literally the same program. Then $\Ans(P) = \Ans(P^\circ)$ holds trivially and
+the semantic check fires, but its payload asserts that the constraint made no
+difference to the answers, when the stronger and more actionable fact is that
+the constraint never reached the program. A syntactic check reports that fact
+directly, and reports it without spending the budget of two solver runs.
+\end{proof}
+
+\begin{corollary}[A control must differ from what it controls]
+\label{cor:control-differs}
+$P \neq P^\circ$ is a precondition for $P^\circ$ to function as a control. A
+pipeline that constructs the control by textual manipulation of $\qq$ and
+recompiles may produce $P^\circ = P$ without any error being raised, in which
+case the subsequent comparison is between a program and itself and can only
+report agreement.
+\end{corollary}
+
+\begin{remark}[Trigger on droppability, not on a construct name]
+\label{rem:trigger}
+The set of questions carrying a control must be defined by the property
+``carries a constraint whose lowering could be silently dropped'' rather than
+by naming one construct such as negation. Cardinality restrictions and path
+bounds are droppable by the same mechanism---each is a modifier on an
+otherwise well-formed pattern, so removing it leaves a program that still
+compiles---and a trigger enumerating only negation admits them silently.
+\end{remark}
+
+\begin{proposition}[Vacuity defeats agreement as evidence]
+\label{prop:agreement}
+Let $\Engine_1, \Engine_2$ agree on $\qq$, i.e.\
+$\Ans_1(P_1) = \Ans_2(P_2)$. If $c$ is vacuous at $\Engine_1$ in either sense,
+the agreement is not evidence that either lowering is faithful for $c$.
+\end{proposition}
+
+\begin{proof}
+By \Cref{def:sem-vacuity}, $\Ans_1(P_1) = \Ans_1(P_1^\circ)$, so
+$\Engine_1$'s output is the output of the unconstrained question. Agreement
+with $\Engine_2$ therefore establishes at most that $\Engine_2$ agrees with
+$\Engine_1$'s \emph{unconstrained} answer, which is consistent with
+$\Engine_2$ also dropping $c$ and equally consistent with $c$ being
+extensionally inert on this corpus. No conclusion about faithfulness for $c$
+follows.
+\end{proof}
+
+\section{The blocker trichotomy}
+\label{sec:blockers}
+
+We now attach to each unanswered question a statement of what would have to
+change.
+
+\begin{definition}[Blocker]
+\label{def:blocker}
+For a question $\qq$ unanswered under $(\Model,\Corpus,\Engine,\tau)$, its
+\emph{blocker} is:
+\begin{itemize}[leftmargin=*]
+\item \textsf{blocked-by-model} if $\neg\mathrm{Exp}(\qq,\Model)$, or if
+      $\mathrm{Exp}$ holds but $\neg\mathrm{Der}$ for a reason attributable to
+      a missing axiom (absent closure, absent distinctness);
+\item \textsf{blocked-by-corpus} if $\mathrm{Exp}$ and the axioms suffice but
+      $\Corpus$ contains no assertions populating the question's pattern;
+\item \textsf{blocked-by-engine} if $\mathrm{Exp}$ and $\mathrm{Der}$ hold but
+      $\neg\mathrm{Ans}_\tau$.
+\end{itemize}
+\end{definition}
+
+\begin{definition}[Unblocking]
+\label{def:unblocking}
+An \emph{unblocker} for a blocked question is a change $\delta$ to exactly one
+of $\Model$, $\Corpus$, $\Engine$ or $\tau$ such that the question is
+answerable after $\delta$. A blocker record is \emph{actionable} if it names
+at least one unblocker.
+\end{definition}
+
+\begin{proposition}[Blockers are engine-indexed or universally quantified]
+\label{prop:engine-index}
+A \textsf{blocked-by-model} or \textsf{blocked-by-corpus} record carrying no
+engine is a claim about all engines. Consequently a measured \vans{} for the
+same question and model, by any engine, is a counterexample to that record and
+not an independent observation compatible with it.
+\end{proposition}
+
+\begin{proof}
+By \Cref{def:blocker}, the first two blockers are conditions on
+$(\qq,\Model,\Corpus)$ alone; asserting one without an engine index therefore
+asserts it for every $\Engine$. A measured $(\vans,\cdot)$ instantiates the
+negation at one $\Engine$, falsifying the universal.
+\end{proof}
+
+\begin{corollary}[Superseding, not accumulating]
+\label{cor:supersede}
+A record set containing both a universally quantified blocker and a measured
+\vans{} for the same question and model asserts a claim and its negation. A
+system that appends measurements alongside predictions rather than superseding
+them will hold such a set while every structural well-formedness check passes,
+because well-formedness checks constrain shape and this defect is in content.
+\end{corollary}
+
+\begin{proposition}[A measured claim must agree with its evidence about the model]
+\label{prop:model-agreement}
+Let a record assert $(\vans,\cdot)$ for $\qq$ under model $\Model$, citing an
+experiment $e$. If $e$ was executed under $\Model' \neq \Model$, the record is
+unsupported regardless of the truth of its content.
+\end{proposition}
+
+\begin{proof}
+$\mathrm{Ans}_\tau$ is a four-place predicate including the model. An
+observation at $\Model'$ instantiates the predicate at $\Model'$ and is silent
+at $\Model$.
+\end{proof}
+
+\begin{remark}[Which of the two entries is wrong]
+\label{rem:which-wrong}
+When \Cref{prop:model-agreement} fires against a record that contradicts a
+standing prediction, the natural reading is that the prediction is stale. It
+may instead be that the prediction is correct and the measured record
+misattributes its model. Repairing the contradiction by retiring the
+prediction then deletes the true claim and retains the false one. The check
+must therefore report which entry failed the agreement test, not merely that a
+pair disagreed.
+\end{remark}
+
+\begin{remark}[Why only the model is compared]
+\label{rem:only-model}
+A comparison of the engine field is the obvious companion check and is not
+available when an experiment record carries a scalar engine while differential
+experiments run two. The asymmetry should be recorded rather than papered
+over: a check that silently compares the first engine of a pair reports
+agreement on evidence it did not examine.
+\end{remark}
+
+\section{Divergent semantics as a result}
+\label{sec:semantics}
+
+Lowering one model to two target languages does not in general preserve
+meaning, and the residue is informative.
+
+\begin{proposition}[Disjointness lowers to a detector]
+\label{prop:disjoint-detector}
+Let $\mathcal{T}$ assert that concepts $A,B$ are disjoint, and let a rule
+engine lower this as
+\[
+\mathit{viol}(x) \leftarrow A(x),\, B(x).
+\]
+This is faithful as a \emph{detector} and unfaithful as a \emph{semantics}: in
+a description logic an individual in $A \sqcap B$ renders the knowledge base
+inconsistent, from which everything follows, while in the rule engine it
+derives exactly one additional fact.
+\end{proposition}
+
+\begin{proof}
+The rule is pure positive Datalog and its least model contains
+$\mathit{viol}(a)$ exactly for those $a$ in both extensions; no other atom is
+affected. Under the description-logic reading, $A \sqcap B \sqsubseteq \bot$
+together with $A(a), B(a)$ has no model, so every formula is entailed.
+\end{proof}
+
+\begin{corollary}[Localisation]
+\label{cor:localisation}
+On a corpus containing a genuine violation, the description-logic engine
+reports global inconsistency, which identifies that something is wrong without
+identifying where; the rule engine returns a fact naming the two concepts and
+the individual. The verdicts differ, both are correct under their respective
+semantics, and only one is diagnostic.
+\end{corollary}
+
+\begin{proposition}[Inherited unique names]
+\label{prop:inherited-una}
+A rule engine over a Herbrand universe satisfies the unique-name assumption
+unconditionally, since distinct ground terms denote distinct elements. Hence
+\textsf{UNIQUE\_NAMES} is not lowered but inherited, and by
+\Cref{prop:counting-split}(i) the two engines legitimately disagree on
+$\qq_{\geq n}$: the rule engine derives the lower bound the description logic
+declines to entail.
+\end{proposition}
+
+\begin{proof}
+Herbrand interpretations interpret each constant as itself; distinct constants
+are therefore distinct elements, which is the unique-name assumption. Applying
+\Cref{prop:counting-split}(i), the distinctness requirement is met in the rule
+engine and unmet in the description logic absent explicit assertions.
+\end{proof}
+
+\begin{corollary}[The disagreement is the result]
+\label{cor:disagree-result}
+Under \Cref{prop:inherited-una} a differential comparison at $\qq_{\geq n}$
+must record disagreement as an expected consequence of the semantics, with the
+unique-name assumption named as its cause. Recording it as a defect would
+motivate a repair that could only be effected by falsifying one of the two
+semantics.
+\end{corollary}
+
+\begin{remark}[Inheritance is not vacuity]
+\label{rem:inheritance-guard}
+\Cref{prop:inherited-una} makes \textsf{UNIQUE\_NAMES} free, but not
+unconditionally safe. If the term-construction map is not injective---if two
+distinct individuals are mapped to the same ground term because both carry the
+same identifier under the chosen naming scheme---then the inherited assumption
+silently identifies them, and the lower bound of
+\Cref{prop:counting-split}(i) is computed over a collapsed set. A guard
+checking injectivity of the term map on the individuals occurring in the
+question is therefore a precondition for the inheritance to be sound.
+\end{remark}
+
+\subsection{Bounding a question can make it cheaper}
+
+\begin{proposition}[Bounded paths are non-recursive]
+\label{prop:bounded-cheaper}
+Let $\qq^\infty$ ask for reachability under a role $r$ and $\qq^{\leq k}$ ask
+for reachability in at most $k$ steps. A lowering of $\qq^{\leq k}$ by
+unrolling produces $O(k)$ non-recursive clauses, each depending only on the
+clause one level below, so evaluation requires no fixpoint. A lowering of
+$\qq^\infty$ requires recursion and, on a cyclic corpus, a fixpoint
+computation.
+\end{proposition}
+
+\begin{proof}
+Unrolling defines $r_1 = r$ and
+$r_{i+1}(x,z) \leftarrow r_i(x,y), r(y,z)$ for $i < k$, with the goal the union
+of the $r_i$. The dependency graph on the $r_i$ is a path and hence acyclic,
+so stratified evaluation in $k$ passes suffices. The unbounded question defines
+$r^*(x,z) \leftarrow r^*(x,y), r(y,z)$, whose dependency graph has a self-loop.
+\end{proof}
+
+\begin{corollary}[Inversion]
+\label{cor:inversion}
+There exist corpora and engines for which $\qq^{\leq k}$ is answered with
+certification while $\qq^\infty$ exceeds the search budget on the same input,
+and simultaneously a description logic answers $\qq^\infty$ readily---by a
+transitive super-role, per \Cref{rem:no-base-transitive}---while being unable
+to \emph{state} $\qq^{\leq k}$ at all, since a transitive role closes
+completely and admits no step bound. One word in the question determines which
+engine can answer it.
+\end{corollary}
+
+\begin{remark}[What $k$ inflates]
+\label{rem:k-inflates}
+$k$ multiplies the number of clauses, not the size of the search. The
+unrolled program grows linearly in $k$ while each clause is evaluated over a
+join whose arity is fixed by the clause shape, so the cost is polynomial in
+the corpus with the exponent set by that arity rather than by $k$.
+\end{remark}
+
+\begin{proposition}[Recursion shape is a cost, not a capability boundary]
+\label{prop:recursion-shape}
+The right-recursive and left-recursive formulations of transitive closure have
+the same least model and hence the same answers, but their evaluation costs
+under a goal-directed strategy differ by a factor that grows with the corpus.
+\end{proposition}
+
+\begin{proof}
+Both programs define the same relation, so their least models coincide by
+uniqueness of the least fixpoint of a monotone operator. Under goal-directed
+evaluation with a fixed selection rule, the left-recursive form re-derives
+prefixes of every partial path before extending it, while the right-recursive
+form extends a single frontier; the number of derivation steps therefore
+differs, with the ratio increasing in the number of paths.
+\end{proof}
+
+\begin{remark}[Assert the shape, not the value]
+\label{rem:assert-shape}
+Because the two formulations agree on answers, a test asserting the answer set
+cannot distinguish them, and a subsequent simplification that replaces one
+with the other passes every such test while reintroducing the cost. The test
+must assert the emitted \emph{shape}.
+\end{remark}
+
+\section{One derivation}
+\label{sec:single}
+
+\begin{definition}[View]
+\label{def:view}
+A \emph{view} is a function from a record set to a presentation. Two views
+$v_1, v_2$ \emph{disagree} if there is a record set $S$ and a proposition $p$
+about the system such that $v_1(S)$ asserts $p$ and $v_2(S)$ asserts
+$\neg p$.
+\end{definition}
+
+\begin{theorem}[Single derivation]
+\label{thm:single}
+Let $d$ be a derivation function from record sets to derived facts, and let
+every view factor as $v_i = \pi_i \circ d$ with $\pi_i$ a pure presentation.
+Then no two views disagree on any $p$ in the image of $d$.
+\end{theorem}
+
+\begin{proof}
+Suppose $v_1(S)$ asserts $p$ and $v_2(S)$ asserts $\neg p$ with $p$ derived.
+Then $\pi_1(d(S))$ and $\pi_2(d(S))$ disagree about a component of the single
+value $d(S)$. Since each $\pi_i$ presents that component without recomputing
+it, both read the same value, so they assert the same proposition---
+contradiction.
+\end{proof}
+
+\begin{corollary}[Duplication admits contradiction]
+\label{cor:duplication}
+If two views each compute $d$ independently, as $v_i = \pi_i \circ d_i$ with
+$d_1 \neq d_2$, then \Cref{thm:single} does not apply and disagreement is
+possible with no schema violation, since both outputs are individually well
+formed.
+\end{corollary}
+
+\Cref{cor:duplication} applies to documents as much as to programs. A figure
+environment duplicated between a manuscript and a caption file is two
+derivations of one fact, and they drift silently.
+
+\begin{proposition}[A status field is a claim with no clock]
+\label{prop:status-clock}
+Let a record carry a status $s$ intended to summarise progress, and let $s$ be
+set by hand. Then $s$ is a claim about the record's state at the time of
+writing, and no subsequent event updates it. In particular a status
+\textsf{planned} on an entity for which completed experiments exist is a false
+claim that no check over shape can detect.
+\end{proposition}
+
+\begin{proof}
+Falsity: \textsf{planned} asserts that no run has occurred, and the existence
+of a completed experiment referencing the entity refutes it. Undetectability by
+shape: the field is of the correct type and drawn from the permitted
+enumeration, so schema validation passes. The contradiction is between two
+records and is therefore a content property.
+\end{proof}
+
+\begin{corollary}[Derive status, or check it against evidence]
+\label{cor:derive-status}
+Either $s$ is computed by $d$ from the experiment records, in which case
+\Cref{thm:single} applies and it cannot contradict them, or $s$ is authored
+and a content check must compare it against them. There is no third option in
+which an authored status remains true by discipline: nobody sets a status
+backwards to a lie, so the errors are all in the direction of understating
+progress, and understatement is what makes a coverage table report ``nothing
+has been run'' with completed runs on file.
+\end{corollary}
+
+\begin{remark}[A gate whose name exceeds its check]
+\label{rem:gate-name}
+A validation gate named for a strong property while testing a weak consequence
+of it is worse than no gate, because its passing is cited as evidence for the
+strong property. If a gate is to certify that a derivation used a particular
+axiom, it must inspect the axiom's presence; certifying only that the derived
+count matched an expectation is satisfied by any run whose arithmetic
+coincides, including runs in which the axiom was absent. For the same reason a
+count is the weakest of a family of checks: naming the specific entities
+expected, and specifically naming a \emph{control} entity that must not appear,
+discriminates where a count cannot.
+\end{remark}
+
+\begin{remark}[Hand-copied expectations]
+\label{rem:hand-copied}
+An expectation transcribed by hand into a gate is visible in review; an
+expectation parsed from the artefact under test is only as reliable as the
+parser, and shares any defect the artefact has. The first is preferable
+despite being less automatic.
+\end{remark}
+
+\section{Computational validation}
+\label{sec:validation}
+
+\subsection{Method}
+
+We implement the constructions of \Cref{sec:setting}--\Cref{sec:single} once,
+in a shared module, and state seventeen propositions as executable
+experiments. Each experiment reports a verdict in the sense of
+\Cref{def:verdict} and a \textsc{pass}/\textsc{fail} against a
+\emph{pre-registered} expectation recorded in the experiment's own source
+before the run. Where a claim is definitional rather than empirical the
+experiment says so in its \texttt{interpretation} field, and where an
+experiment's expected outcome is a refusal, the refusal is the \textsc{pass}
+condition.
+
+Every experiment that could be satisfied trivially carries a control that is
+able to fail. We state this requirement precisely because it is the one most
+easily satisfied in appearance only: a control is a control if and only if it
+would produce a different result under the negation of the hypothesis, which
+is exactly \Cref{cor:control-differs}.
+
+The suite runs on a synthetic knowledge base whose ground truth is known by
+construction, together with two engines: a description-logic-like evaluator
+implementing open-world certain-answer semantics without a unique-name
+assumption, and a rule evaluator implementing least-model semantics over a
+Herbrand universe. Both are implemented in the shared module so that the
+experiments test the definitions rather than a third-party implementation's
+conformance to them. This is a deliberate limitation and we return to it in
+\Cref{sec:discussion}.
+
+\subsection{The propositions under test}
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{@{}llp{7.4cm}@{}}
+\toprule
+\# & Claim & What the experiment does \\
+\midrule
+01 & \Cref{thm:independence} & Constructs the three witnesses and checks each satisfies two predicates and fails the third. \\
+02 & \Cref{cor:conflation} & Shows five distinct situations produce identical empty answer sets under single-output reporting. \\
+03 & \Cref{thm:nondegeneracy} & Checks no non-\vans{} verdict carries an answer set, over all questions in the suite. \\
+04 & \Cref{prop:counting-split} & Separates $\geq n$, $\leq n$, $=n$ by which of the two requirements each needs. \\
+05 & \Cref{rem:una-scope} & Contrasts the sound scoped check against the tempting global-boolean check. \\
+06 & \Cref{prop:compare-refusals} & Scores honest refusal against confident wrong zero under a naive and a verdict-aware rule. \\
+07 & \Cref{thm:containment} & Checks the containment test fires exactly when it should, over all question--engine pairs. \\
+08 & \Cref{prop:under} & Attempts the counting lowering, records its rejection, and records the empty certified answer set obtained by removing the gate. \\
+09 & \Cref{prop:half-true} & Shows the conflated alphabet admits no honest capability set, and the split one does. \\
+10 & \Cref{prop:nameable} & Runs a differential comparison with a feature absent from the alphabet and confirms the discrepancy is misattributed. \\
+11 & \Cref{thm:irredundance}(ii) & Constructs a mis-rooted negation: syntactically distinct programs, identical answers. \\
+12 & \Cref{thm:irredundance}(i) & Constructs a dropped constraint: identical programs, and confirms the syntactic check reports the stronger fact. \\
+13 & \Cref{prop:agreement} & Confirms two engines agreeing under a vacuous constraint yields no evidence of faithfulness. \\
+14 & \Cref{prop:disjoint-detector}, \Cref{cor:localisation} & Injects a genuine violation; compares global inconsistency against a localising fact. \\
+15 & \Cref{prop:inherited-una}, \Cref{cor:disagree-result} & Measures the legitimate disagreement at $\qq_{\geq n}$ and attributes it. \\
+16 & \Cref{prop:bounded-cheaper}, \Cref{cor:inversion} & Measures evaluation cost of bounded versus unbounded reachability on a cyclic corpus, both engines. \\
+17 & \Cref{thm:single}, \Cref{prop:status-clock} & Builds two views over one derivation and two over duplicated derivations; injects a stale status and checks which regime detects it. \\
+\bottomrule
+\end{tabular}
+\caption{The seventeen validation experiments and the claims they test.
+Experiments 08, 11, 12 and 15 are ones whose \textsc{pass} condition is a
+refusal or a disagreement rather than an answer.}
+\label{tab:experiments}
+\end{table}
+
+\subsection{Results}
+
+Results are written as one JSON document per experiment together with a
+summary document, in \texttt{ckg/validation-incompleteness/results/}. Each
+document records the pre-registered expectation, the measured outcome, the
+verdict, the control's outcome, and an interpretation stating what the result
+does \emph{not} establish. We draw attention to four outcomes.
+
+\paragraph{Experiment 06.} Under a scoring rule counting answers returned, the
+engine giving a confident wrong zero outscores the honest refuser; under a
+verdict-aware rule the ordering reverses. The magnitude of the reversal is the
+ground-truth cardinality, as \Cref{prop:compare-refusals} predicts.
+
+\paragraph{Experiment 08.} The counting lowering is rejected by the fragment
+gate. With the gate removed the run terminates and returns an empty answer set
+with certification asserted---the answer set of a program whose aggregate never
+grounded. This is the configuration \Cref{cor:certified-empty} identifies as
+maximally misleading, and it is reachable by removing a check that an audit
+conducted against the target language would recommend removing.
+
+\paragraph{Experiment 11.} The mis-rooted negation produces programs that
+differ syntactically and answer identically. The syntactic check passes and the
+semantic check fires, confirming \Cref{thm:irredundance}(ii): a syntactic guard
+cannot catch a semantic vacuity.
+
+\paragraph{Experiment 16.} Bounded reachability is answered with certification
+where unbounded reachability on the same cyclic corpus exceeds the search
+budget, while the open-world engine answers the unbounded question readily and
+returns \vsurf{} on the bounded one. Both directions of \Cref{cor:inversion} are
+realised on a single corpus, at one budget, on twelve assertions. The refusal
+is \vsurf{} rather than \vexp{} because the model does carry
+\textsf{BOUNDED\_PATH}: the limit is in the engine's compiler, not in the
+language, and it is exactly the distinction of \Cref{thm:independence} that
+lets the two be told apart. Measured step counts for $k = 1,\dots,5$ are
+$1,2,3,4,5$, confirming the cost claim of \Cref{prop:bounded-cheaper} that
+unrolling scales with the bound and not with the corpus.
+
+\subsection{What the suite does not establish}
+
+The engines are ours, so conformance of any third-party reasoner to
+\Cref{def:derivable} is not tested; the corpus is synthetic, so no claim about
+biochemical coverage follows; and the timing in Experiment 16 is a property of
+our evaluator's strategy, not of any standard. Experiments 03, 07 and 09 are
+definitional---they check that an implementation obeys a definition---and
+cannot fail except by implementation error, which is what they are for.
+
+\section{Discussion}
+\label{sec:discussion}
+
+\subsection{What the framework buys}
+
+The framework converts a class of silent defects into loud ones. Each of the
+five situations in \S1.1 now produces a distinct, structured output, and
+\Cref{thm:nondegeneracy} makes the distinctness a checkable property rather
+than a convention. The two vacuity checks convert a defect that previously
+manifested as a correct-looking answer into a verdict, and
+\Cref{thm:irredundance} shows that implementing only one of them leaves a
+gap. \Cref{thm:single} converts a class of documentation drift into an
+impossibility.
+
+The cost is real. A verdict-returning system is more work to build than one
+returning answer sets, its outputs are harder to aggregate---one cannot average
+a verdict---and its refusals will be read by some consumers as failures. The
+last is not a presentational problem but a scoring one, and
+\Cref{prop:compare-refusals} identifies the scoring rules under which it
+occurs.
+
+\subsection{What the framework does not do}
+
+It does not make a knowledge graph complete, and it is not intended to. It does
+not tell you which of the three blockers is cheapest to remove; the unblocking
+relation of \Cref{def:unblocking} names candidates and says nothing about
+their cost. It does not detect a lowering that is unfaithful in a way that
+changes answers without making a constraint inert---a mis-lowering that yields
+\emph{different wrong} answers passes both vacuity checks, and only a
+comparison against ground truth or against an independent engine catches it,
+with \Cref{prop:agreement} limiting what such a comparison establishes.
+
+Most importantly, the framework does not remove the need for judgement about
+which questions to ask. A question set assembled to demonstrate a system's
+strengths will produce a verdict distribution favourable to that system, and
+\Cref{thm:nondegeneracy} makes the individual verdicts honest without making
+the aggregate representative. A fixture built to exhibit a property is the
+weakest available evidence that anything else has it.
+
+\subsection{Outlook}
+
+Two extensions seem worth pursuing. The first is a cost model over the
+unblocking relation, turning \Cref{def:unblocking} from an enumeration into a
+ranking: given a blocked question set, which single change to model, corpus,
+engine or budget unblocks the most. The second is the treatment of
+\emph{partial} derivability---questions determined on part of their domain and
+underdetermined elsewhere---which the present binary $\mathrm{Der}$ predicate
+collapses, and which is the common case on real corpora where closure holds for
+curated entities and fails for imported ones.
+
+\section*{Reproducibility}
+
+The validation suite is deterministic; every stochastic component seeds
+explicitly. Each result document records the expectation before the measured
+value, and expectations are transcribed by hand into the experiment sources
+rather than parsed from the artefacts under test, for the reason given in
+\Cref{rem:hand-copied}. Result documents record \texttt{null} where nothing was
+measured, and never a zero.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

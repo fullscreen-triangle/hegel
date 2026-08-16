@@ -1,0 +1,157 @@
+\begin{thebibliography}{22}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Acebr{\'o}n et~al.(2005)Acebr{\'o}n, Bonilla, P{\'e}rez~Vicente,
+  Ritort, and Spigler]{Acebron2005}
+Juan~A. Acebr{\'o}n, Luis~L. Bonilla, Conrad~J. P{\'e}rez~Vicente, F{\'e}lix
+  Ritort, and Renato Spigler.
+\newblock The {K}uramoto model: A simple paradigm for synchronization
+  phenomena.
+\newblock \emph{Reviews of Modern Physics}, 77\penalty0 (1):\penalty0 137--185,
+  2005.
+\newblock \doi{10.1103/RevModPhys.77.137}.
+
+\bibitem[Amari(2016)]{Amari2016}
+Shun-ichi Amari.
+\newblock \emph{Information Geometry and Its Applications}, volume 194 of
+  \emph{Applied Mathematical Sciences}.
+\newblock Springer, Tokyo, 2016.
+
+\bibitem[Atkins et~al.(2018)Atkins, de~Paula, and Keeler]{Atkins2018}
+Peter Atkins, Julio de~Paula, and James Keeler.
+\newblock \emph{Atkins' Physical Chemistry}.
+\newblock Oxford University Press, Oxford, 11 edition, 2018.
+
+\bibitem[Boyd and Vandenberghe(2004)]{Boyd2004}
+Stephen Boyd and Lieven Vandenberghe.
+\newblock \emph{Convex Optimization}.
+\newblock Cambridge University Press, Cambridge, 2004.
+
+\bibitem[Caspi et~al.(2020)Caspi, Billington, Keseler, Kothari, Krummenacker,
+  Midford, Ong, Paley, Subhraveti, and Karp]{Caspi2020}
+Ron Caspi, Richard Billington, Ingrid~M. Keseler, Anamika Kothari, Markus
+  Krummenacker, Peter~E. Midford, Wai~Kit Ong, Suzanne Paley, Pallavi
+  Subhraveti, and Peter~D. Karp.
+\newblock The {M}eta{C}yc database of metabolic pathways and enzymes --- a 2019
+  update.
+\newblock \emph{Nucleic Acids Research}, 48\penalty0 (D1):\penalty0 D445--D453,
+  2020.
+\newblock \doi{10.1093/nar/gkz862}.
+
+\bibitem[Cover and Thomas(2006)]{Cover2006}
+Thomas~M. Cover and Joy~A. Thomas.
+\newblock \emph{Elements of Information Theory}.
+\newblock Wiley-Interscience, Hoboken, NJ, 2 edition, 2006.
+
+\bibitem[Denisov et~al.(2005)Denisov, Makris, Sligar, and
+  Schlichting]{Denisov2005}
+Ilia~G. Denisov, Thomas~M. Makris, Stephen~G. Sligar, and Ilme Schlichting.
+\newblock Structure and chemistry of cytochrome {P}450.
+\newblock \emph{Chemical Reviews}, 105\penalty0 (6):\penalty0 2253--2277, 2005.
+\newblock \doi{10.1021/cr0307143}.
+
+\bibitem[Kanehisa and Goto(2000)]{Kanehisa2000}
+Minoru Kanehisa and Susumu Goto.
+\newblock {KEGG}: {K}yoto {E}ncyclopedia of {G}enes and {G}enomes.
+\newblock \emph{Nucleic Acids Research}, 28\penalty0 (1):\penalty0 27--30,
+  2000.
+\newblock \doi{10.1093/nar/28.1.27}.
+
+\bibitem[Knuth(1997)]{Knuth1997}
+Donald~E. Knuth.
+\newblock \emph{The Art of Computer Programming, Volume 2: Seminumerical
+  Algorithms}.
+\newblock Addison-Wesley, Reading, MA, 3 edition, 1997.
+\newblock Section 4.1 discusses balanced and unbalanced ternary positional
+  notation.
+
+\bibitem[Kuramoto(1975)]{Kuramoto1975}
+Yoshiki Kuramoto.
+\newblock Self-entrainment of a population of coupled non-linear oscillators.
+\newblock In \emph{International Symposium on Mathematical Problems in
+  Theoretical Physics}, volume~39 of \emph{Lecture Notes in Physics}, pages
+  420--422. Springer, Berlin, 1975.
+\newblock \doi{10.1007/BFb0013365}.
+
+\bibitem[Oster et~al.(1971)Oster, Perelson, and Katchalsky]{Oster1971}
+George~F. Oster, Alan~S. Perelson, and Aharon Katchalsky.
+\newblock Network thermodynamics.
+\newblock \emph{Nature}, 234:\penalty0 393--399, 1971.
+\newblock \doi{10.1038/234393a0}.
+
+\bibitem[Pearl(2009)]{Pearl2009}
+Judea Pearl.
+\newblock \emph{Causality: Models, Reasoning, and Inference}.
+\newblock Cambridge University Press, Cambridge, 2 edition, 2009.
+
+\bibitem[Percha and Altman(2018)]{Percha2018}
+Bethany Percha and Russ~B. Altman.
+\newblock A global network of biomedical relationships derived from text.
+\newblock \emph{Bioinformatics}, 34\penalty0 (15):\penalty0 2614--2624, 2018.
+\newblock \doi{10.1093/bioinformatics/bty114}.
+
+\bibitem[Peusner(1986)]{Peusner1986}
+Leonardo Peusner.
+\newblock \emph{Studies in Network Thermodynamics}.
+\newblock Elsevier, Amsterdam, 1986.
+
+\bibitem[Rittle and Green(2010)]{Rittle2010}
+Jonathan Rittle and Michael~T. Green.
+\newblock Cytochrome {P}450 compound {I}: Capture, characterization, and
+  {C}--{H} bond activation kinetics.
+\newblock \emph{Science}, 330\penalty0 (6006):\penalty0 933--937, 2010.
+\newblock \doi{10.1126/science.1193478}.
+
+\bibitem[Sachikonye(2026)]{Sachikonye2026Divergence}
+Kundai~Farai Sachikonye.
+\newblock Database divergence is a measurement, not a defect: A worked case in
+  federated reaction retrieval.
+\newblock Companion manuscript, this series, 2026.
+
+\bibitem[Schuster and Schuster(1989)]{Schuster1989}
+Stefan Schuster and Reinhart Schuster.
+\newblock A generalization of wegscheider's condition. implications for
+  properties of steady states and for quasi-steady-state approximation.
+\newblock \emph{Journal of Mathematical Chemistry}, 3\penalty0 (1):\penalty0
+  25--42, 1989.
+\newblock \doi{10.1007/BF01171883}.
+
+\bibitem[Shannon(1948)]{Shannon1948}
+Claude~E. Shannon.
+\newblock A mathematical theory of communication.
+\newblock \emph{Bell System Technical Journal}, 27\penalty0 (3):\penalty0
+  379--423, 1948.
+\newblock \doi{10.1002/j.1538-7305.1948.tb01338.x}.
+
+\bibitem[Spearman(1904)]{Spearman1904}
+Charles Spearman.
+\newblock The proof and measurement of association between two things.
+\newblock \emph{American Journal of Psychology}, 15\penalty0 (1):\penalty0
+  72--101, 1904.
+\newblock \doi{10.2307/1412159}.
+
+\bibitem[Spirtes et~al.(2000)Spirtes, Glymour, and Scheines]{Spirtes2000}
+Peter Spirtes, Clark Glymour, and Richard Scheines.
+\newblock \emph{Causation, Prediction, and Search}.
+\newblock MIT Press, Cambridge, MA, 2 edition, 2000.
+
+\bibitem[Strogatz(2000)]{Strogatz2000}
+Steven~H. Strogatz.
+\newblock From {K}uramoto to {C}rawford: Exploring the onset of synchronization
+  in populations of coupled oscillators.
+\newblock \emph{Physica D: Nonlinear Phenomena}, 143\penalty0 (1--4):\penalty0
+  1--20, 2000.
+\newblock \doi{10.1016/S0167-2789(00)00094-4}.
+
+\bibitem[Wegscheider(1901)]{Wegscheider1901}
+Rudolf Wegscheider.
+\newblock {\"U}ber simultane gleichgewichte und die beziehungen zwischen
+  thermodynamik und reactionskinetik homogener systeme.
+\newblock \emph{Monatshefte f{\"u}r Chemie}, 22:\penalty0 849--906, 1901.
+\newblock \doi{10.1007/BF01517498}.
+
+\end{thebibliography}

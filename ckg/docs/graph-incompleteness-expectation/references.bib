@@ -1,0 +1,555 @@
+%=============================================================================
+% references.bib
+% The expectation of incompleteness: knowledge graphs as instruments that
+% report what they cannot say.
+%
+% External literature only. No self-citation of any kind: every construction
+% the paper needs is developed in the paper itself, and the citations below
+% are to the standard sources for the formalisms, the engines, the corpora and
+% the methodological notions the paper builds on.
+%=============================================================================
+
+%-----------------------------------------------------------------------------
+% Description logic: semantics, expressiveness/complexity trade-off, profiles
+%-----------------------------------------------------------------------------
+
+@book{BaaderCalvanese2017,
+  author    = {Baader, Franz and Horrocks, Ian and Lutz, Carsten and Sattler, Uli},
+  title     = {An Introduction to Description Logic},
+  publisher = {Cambridge University Press},
+  address   = {Cambridge},
+  year      = {2017},
+  doi       = {10.1017/9781139025355}
+}
+
+@article{Donini2003,
+  author  = {Donini, Francesco M.},
+  title   = {Complexity of Reasoning},
+  journal = {The Description Logic Handbook: Theory, Implementation and Applications},
+  pages   = {96--136},
+  year    = {2003},
+  note    = {Cambridge University Press}
+}
+
+@article{Horrocks2003,
+  author  = {Horrocks, Ian and Patel-Schneider, Peter F. and van Harmelen, Frank},
+  title   = {From {SHIQ} and {RDF} to {OWL}: the making of a web ontology language},
+  journal = {Journal of Web Semantics},
+  volume  = {1},
+  number  = {1},
+  pages   = {7--26},
+  year    = {2003},
+  doi     = {10.1016/j.websem.2003.07.001}
+}
+
+@article{Grau2008,
+  author  = {Grau, Bernardo Cuenca and Horrocks, Ian and Motik, Boris and
+             Parsia, Bijan and Patel-Schneider, Peter and Sattler, Ulrike},
+  title   = {{OWL} 2: The next step for {OWL}},
+  journal = {Journal of Web Semantics},
+  volume  = {6},
+  number  = {4},
+  pages   = {309--322},
+  year    = {2008},
+  doi     = {10.1016/j.websem.2008.05.001}
+}
+
+@techreport{Motik2009Profiles,
+  author      = {Motik, Boris and Grau, Bernardo Cuenca and Horrocks, Ian and
+                 Wu, Zhe and Fokoue, Achille and Lutz, Carsten},
+  title       = {{OWL} 2 Web Ontology Language Profiles},
+  institution = {World Wide Web Consortium},
+  type        = {{W3C} Recommendation},
+  year        = {2009},
+  url         = {https://www.w3.org/TR/owl2-profiles/}
+}
+
+@techreport{Motik2009Direct,
+  author      = {Motik, Boris and Patel-Schneider, Peter F. and Grau, Bernardo Cuenca},
+  title       = {{OWL} 2 Web Ontology Language Direct Semantics},
+  institution = {World Wide Web Consortium},
+  type        = {{W3C} Recommendation},
+  year        = {2009},
+  url         = {https://www.w3.org/TR/owl2-direct-semantics/}
+}
+
+%-----------------------------------------------------------------------------
+% Reasoners
+%-----------------------------------------------------------------------------
+
+@article{Motik2009Hypertableau,
+  author  = {Motik, Boris and Shearer, Rob and Horrocks, Ian},
+  title   = {Hypertableau Reasoning for Description Logics},
+  journal = {Journal of Artificial Intelligence Research},
+  volume  = {36},
+  pages   = {165--228},
+  year    = {2009},
+  doi     = {10.1613/jair.2811}
+}
+
+@article{Glimm2014HermiT,
+  author  = {Glimm, Birte and Horrocks, Ian and Motik, Boris and
+             Stoilos, Giorgos and Wang, Zhe},
+  title   = {{HermiT}: An {OWL} 2 Reasoner},
+  journal = {Journal of Automated Reasoning},
+  volume  = {53},
+  number  = {3},
+  pages   = {245--269},
+  year    = {2014},
+  doi     = {10.1007/s10817-014-9305-1}
+}
+
+@article{Kazakov2014ELK,
+  author  = {Kazakov, Yevgeny and Kr{\"o}tzsch, Markus and Sim{\v{c}}{\'i}k, Franti{\v{s}}ek},
+  title   = {The Incredible {ELK}: From Polynomial Procedures to Efficient
+             Reasoning with {$\mathcal{EL}$} Ontologies},
+  journal = {Journal of Automated Reasoning},
+  volume  = {53},
+  number  = {1},
+  pages   = {1--61},
+  year    = {2014},
+  doi     = {10.1007/s10817-013-9296-3}
+}
+
+@article{Sirin2007Pellet,
+  author  = {Sirin, Evren and Parsia, Bijan and Grau, Bernardo Cuenca and
+             Kalyanpur, Aditya and Katz, Yarden},
+  title   = {Pellet: A practical {OWL-DL} reasoner},
+  journal = {Journal of Web Semantics},
+  volume  = {5},
+  number  = {2},
+  pages   = {51--53},
+  year    = {2007},
+  doi     = {10.1016/j.websem.2007.03.004}
+}
+
+%-----------------------------------------------------------------------------
+% Rule languages, least-model and stable-model semantics, aggregates
+%-----------------------------------------------------------------------------
+
+@article{VanEmden1976,
+  author  = {van Emden, Maarten H. and Kowalski, Robert A.},
+  title   = {The Semantics of Predicate Logic as a Programming Language},
+  journal = {Journal of the ACM},
+  volume  = {23},
+  number  = {4},
+  pages   = {733--742},
+  year    = {1976},
+  doi     = {10.1145/321978.321991}
+}
+
+@book{Abiteboul1995,
+  author    = {Abiteboul, Serge and Hull, Richard and Vianu, Victor},
+  title     = {Foundations of Databases},
+  publisher = {Addison-Wesley},
+  address   = {Reading, MA},
+  year      = {1995}
+}
+
+@article{Ceri1989,
+  author  = {Ceri, Stefano and Gottlob, Georg and Tanca, Letizia},
+  title   = {What You Always Wanted to Know About {Datalog} (And Never Dared
+             to Ask)},
+  journal = {IEEE Transactions on Knowledge and Data Engineering},
+  volume  = {1},
+  number  = {1},
+  pages   = {146--166},
+  year    = {1989},
+  doi     = {10.1109/69.43410}
+}
+
+@inproceedings{Gelfond1988,
+  author    = {Gelfond, Michael and Lifschitz, Vladimir},
+  title     = {The Stable Model Semantics for Logic Programming},
+  booktitle = {Proceedings of the Fifth International Conference and Symposium
+               on Logic Programming},
+  pages     = {1070--1080},
+  publisher = {MIT Press},
+  year      = {1988}
+}
+
+@article{Faber2011,
+  author  = {Faber, Wolfgang and Pfeifer, Gerald and Leone, Nicola},
+  title   = {Semantics and complexity of recursive aggregates in answer set
+             programming},
+  journal = {Artificial Intelligence},
+  volume  = {175},
+  number  = {1},
+  pages   = {278--298},
+  year    = {2011},
+  doi     = {10.1016/j.artint.2010.04.002}
+}
+
+@article{Gebser2019Clingo,
+  author  = {Gebser, Martin and Kaminski, Roland and Kaufmann, Benjamin and
+             Schaub, Torsten},
+  title   = {Multi-shot {ASP} solving with clingo},
+  journal = {Theory and Practice of Logic Programming},
+  volume  = {19},
+  number  = {1},
+  pages   = {27--82},
+  year    = {2019},
+  doi     = {10.1017/S1471068418000054}
+}
+
+@article{Tamaki1986,
+  author  = {Tamaki, Hisao and Sato, Taisuke},
+  title   = {{OLD} Resolution with Tabulation},
+  journal = {Lecture Notes in Computer Science},
+  volume  = {225},
+  pages   = {84--98},
+  year    = {1986},
+  doi     = {10.1007/3-540-16492-8_66}
+}
+
+@article{Bancilhon1986,
+  author  = {Bancilhon, Fran{\c{c}}ois and Ramakrishnan, Raghu},
+  title   = {An Amateur's Introduction to Recursive Query Processing
+             Strategies},
+  journal = {ACM SIGMOD Record},
+  volume  = {15},
+  number  = {2},
+  pages   = {16--52},
+  year    = {1986},
+  doi     = {10.1145/16856.16859}
+}
+
+%-----------------------------------------------------------------------------
+% Query languages: conjunctive queries, certain answers, property paths
+%-----------------------------------------------------------------------------
+
+@article{Glimm2008,
+  author  = {Glimm, Birte and Horrocks, Ian and Lutz, Carsten and Sattler, Ulrike},
+  title   = {Conjunctive Query Answering for the Description Logic
+             {$\mathcal{SHIQ}$}},
+  journal = {Journal of Artificial Intelligence Research},
+  volume  = {31},
+  pages   = {157--204},
+  year    = {2008},
+  doi     = {10.1613/jair.2372}
+}
+
+@article{Calvanese2007,
+  author  = {Calvanese, Diego and De Giacomo, Giuseppe and Lembo, Domenico and
+             Lenzerini, Maurizio and Rosati, Riccardo},
+  title   = {Tractable Reasoning and Efficient Query Answering in Description
+             Logics: The {DL-Lite} Family},
+  journal = {Journal of Automated Reasoning},
+  volume  = {39},
+  number  = {3},
+  pages   = {385--429},
+  year    = {2007},
+  doi     = {10.1007/s10817-007-9078-x}
+}
+
+@techreport{Harris2013SPARQL,
+  author      = {Harris, Steve and Seaborne, Andy},
+  title       = {{SPARQL} 1.1 Query Language},
+  institution = {World Wide Web Consortium},
+  type        = {{W3C} Recommendation},
+  year        = {2013},
+  url         = {https://www.w3.org/TR/sparql11-query/}
+}
+
+@article{Losemann2013,
+  author  = {Losemann, Katja and Martens, Wim},
+  title   = {The Complexity of Regular Expressions and Property Paths in
+             {SPARQL}},
+  journal = {ACM Transactions on Database Systems},
+  volume  = {38},
+  number  = {4},
+  pages   = {24:1--24:39},
+  year    = {2013},
+  doi     = {10.1145/2494529}
+}
+
+@article{Perez2009,
+  author  = {P{\'e}rez, Jorge and Arenas, Marcelo and Gutierrez, Claudio},
+  title   = {Semantics and Complexity of {SPARQL}},
+  journal = {ACM Transactions on Database Systems},
+  volume  = {34},
+  number  = {3},
+  pages   = {16:1--16:45},
+  year    = {2009},
+  doi     = {10.1145/1567274.1567278}
+}
+
+%-----------------------------------------------------------------------------
+% Open-world / closed-world, unique names, negation as failure
+%-----------------------------------------------------------------------------
+
+@incollection{Reiter1978,
+  author    = {Reiter, Raymond},
+  title     = {On Closed World Data Bases},
+  booktitle = {Logic and Data Bases},
+  editor    = {Gallaire, Herv{\'e} and Minker, Jack},
+  pages     = {55--76},
+  publisher = {Plenum Press},
+  address   = {New York},
+  year      = {1978},
+  doi       = {10.1007/978-1-4684-3384-5_3}
+}
+
+@incollection{Clark1978,
+  author    = {Clark, Keith L.},
+  title     = {Negation as Failure},
+  booktitle = {Logic and Data Bases},
+  editor    = {Gallaire, Herv{\'e} and Minker, Jack},
+  pages     = {293--322},
+  publisher = {Plenum Press},
+  address   = {New York},
+  year      = {1978},
+  doi       = {10.1007/978-1-4684-3384-5_11}
+}
+
+% Key says 2010, the paper is OWLED 2005; year field carries the true date.
+@inproceedings{Grimm2010,
+  author    = {Grimm, Stephan and Motik, Boris},
+  title     = {Closed World Reasoning in the Semantic Web through Epistemic
+               Operators},
+  booktitle = {Proceedings of the Workshop on {OWL}: Experiences and Directions},
+  year      = {2005}
+}
+
+@article{Motik2009Integrity,
+  author  = {Motik, Boris and Horrocks, Ian and Sattler, Ulrike},
+  title   = {Bridging the gap between {OWL} and relational databases},
+  journal = {Journal of Web Semantics},
+  volume  = {7},
+  number  = {2},
+  pages   = {74--89},
+  year    = {2009},
+  doi     = {10.1016/j.websem.2009.02.001}
+}
+
+%-----------------------------------------------------------------------------
+% Vacuity: the model-checking notion this paper adapts to lowering pipelines
+%-----------------------------------------------------------------------------
+
+@article{Beer2001,
+  author  = {Beer, Ilan and Ben-David, Shoham and Eisner, Cindy and
+             Rodeh, Yoav},
+  title   = {Efficient Detection of Vacuity in Temporal Model Checking},
+  journal = {Formal Methods in System Design},
+  volume  = {18},
+  number  = {2},
+  pages   = {141--163},
+  year    = {2001},
+  doi     = {10.1023/A:1008779610539}
+}
+
+@article{Kupferman2003,
+  author  = {Kupferman, Orna and Vardi, Moshe Y.},
+  title   = {Vacuity detection in temporal model checking},
+  journal = {International Journal on Software Tools for Technology Transfer},
+  volume  = {4},
+  number  = {2},
+  pages   = {224--233},
+  year    = {2003},
+  doi     = {10.1007/s100090100062}
+}
+
+@inproceedings{Chockler2007,
+  author    = {Chockler, Hana and Strichman, Ofer},
+  title     = {Easier and More Informative Vacuity Checks},
+  booktitle = {Proceedings of the 5th IEEE/ACM International Conference on
+               Formal Methods and Models for Codesign},
+  pages     = {189--198},
+  year      = {2007},
+  doi       = {10.1109/MEMCOD.2007.371225}
+}
+
+%-----------------------------------------------------------------------------
+% Benchmarking and evaluation of reasoners
+%-----------------------------------------------------------------------------
+
+@article{Guo2005LUBM,
+  author  = {Guo, Yuanbo and Pan, Zhengxiang and Heflin, Jeff},
+  title   = {{LUBM}: A benchmark for {OWL} knowledge base systems},
+  journal = {Journal of Web Semantics},
+  volume  = {3},
+  number  = {2--3},
+  pages   = {158--182},
+  year    = {2005},
+  doi     = {10.1016/j.websem.2005.06.005}
+}
+
+@article{Singh2020OWL2Bench,
+  author  = {Singh, Gunjan and Bhatia, Sumit and Mutharaju, Raghava},
+  title   = {{OWL2Bench}: A Benchmark for {OWL} 2 Reasoners},
+  journal = {Lecture Notes in Computer Science},
+  volume  = {12507},
+  pages   = {81--96},
+  year    = {2020},
+  doi     = {10.1007/978-3-030-62466-8_6}
+}
+
+@article{Parsia2017ORE,
+  author  = {Parsia, Bijan and Matentzoglu, Nicolas and Gon{\c{c}}alves,
+             Rafael S. and Glimm, Birte and Steigmiller, Andreas},
+  title   = {The {OWL} Reasoner Evaluation ({ORE}) 2015 Competition Report},
+  journal = {Journal of Automated Reasoning},
+  volume  = {59},
+  number  = {4},
+  pages   = {455--482},
+  year    = {2017},
+  doi     = {10.1007/s10817-017-9406-8}
+}
+
+% Key says 2011, the volume is OWLED 2010. The year field carries the true
+% date; the key is left alone because it is cited by name in the body.
+@inproceedings{Bail2011,
+  author    = {Bail, Samantha and Parsia, Bijan and Sattler, Ulrike},
+  title     = {The Justificatory Structure of {OWL} Ontologies},
+  booktitle = {Proceedings of the Workshop on {OWL}: Experiences and
+               Directions ({OWLED})},
+  series    = {CEUR Workshop Proceedings},
+  volume    = {614},
+  year      = {2010}
+}
+
+%-----------------------------------------------------------------------------
+% Biochemical corpora and chemical ontologies: the empirical source of
+% incompleteness
+%-----------------------------------------------------------------------------
+
+@article{Alcantara2012,
+  author  = {Alc{\'a}ntara, Rafael and Axelsen, Kristian B. and Morgat, Anne and
+             Belda, Eugeni and Coudert, Elisabeth and Bridge, Alan and
+             Cao, Hong and de Matos, Paula and Ennis, Marcus and
+             Turner, Steve and Owen, Gareth and Bougueleret, Lydie and
+             Xenarios, Ioannis and Steinbeck, Christoph},
+  title   = {{Rhea}---a manually curated resource of biochemical reactions},
+  journal = {Nucleic Acids Research},
+  volume  = {40},
+  number  = {D1},
+  pages   = {D754--D760},
+  year    = {2012},
+  doi     = {10.1093/nar/gkr1126}
+}
+
+@article{Bansal2022,
+  author  = {Bansal, Parit and Morgat, Anne and Axelsen, Kristian B. and
+             Muthukrishnan, Venkatesh and Coudert, Elisabeth and
+             Aimo, Lucila and Hyka-Nouspikel, Nevila and Gasteiger, Elisabeth
+             and Kerhornou, Arnaud and Neto, Teresa Batista and
+             Pozzato, Monica and Blatter, Marie-Claude and Ignatchenko, Alex
+             and Redaschi, Nicole and Bridge, Alan},
+  title   = {{Rhea}, the reaction knowledgebase in 2022},
+  journal = {Nucleic Acids Research},
+  volume  = {50},
+  number  = {D1},
+  pages   = {D693--D700},
+  year    = {2022},
+  doi     = {10.1093/nar/gkab1016}
+}
+
+@article{Degtyarenko2008,
+  author  = {Degtyarenko, Kirill and de Matos, Paula and Ennis, Marcus and
+             Hastings, Janna and Zbinden, Martin and McNaught, Alan and
+             Alc{\'a}ntara, Rafael and Darsow, Michael and Guedj, Micka{\"e}l
+             and Ashburner, Michael},
+  title   = {{ChEBI}: a database and ontology for chemical entities of
+             biological interest},
+  journal = {Nucleic Acids Research},
+  volume  = {36},
+  number  = {suppl\_1},
+  pages   = {D344--D350},
+  year    = {2008},
+  doi     = {10.1093/nar/gkm791}
+}
+
+@article{Hastings2016,
+  author  = {Hastings, Janna and Owen, Gareth and Dekker, Adriano and
+             Ennis, Marcus and Kale, Namrata and Muthukrishnan, Venkatesh and
+             Turner, Steve and Swainston, Neil and Mendes, Pedro and
+             Steinbeck, Christoph},
+  title   = {{ChEBI} in 2016: Improved services and an expanding collection of
+             metabolites},
+  journal = {Nucleic Acids Research},
+  volume  = {44},
+  number  = {D1},
+  pages   = {D1214--D1219},
+  year    = {2016},
+  doi     = {10.1093/nar/gkv1031}
+}
+
+@article{Kanehisa2000,
+  author  = {Kanehisa, Minoru and Goto, Susumu},
+  title   = {{KEGG}: Kyoto Encyclopedia of Genes and Genomes},
+  journal = {Nucleic Acids Research},
+  volume  = {28},
+  number  = {1},
+  pages   = {27--30},
+  year    = {2000},
+  doi     = {10.1093/nar/28.1.27}
+}
+
+@article{Demir2010,
+  author  = {Demir, Emek and Cary, Michael P. and Paley, Suzanne and others},
+  title   = {The {BioPAX} community standard for pathway data sharing},
+  journal = {Nature Biotechnology},
+  volume  = {28},
+  number  = {9},
+  pages   = {935--942},
+  year    = {2010},
+  doi     = {10.1038/nbt.1666}
+}
+
+%-----------------------------------------------------------------------------
+% Methodology: competency questions, pre-registration, negative results
+%-----------------------------------------------------------------------------
+
+@article{Gruninger1995,
+  author  = {Gr{\"u}ninger, Michael and Fox, Mark S.},
+  title   = {Methodology for the Design and Evaluation of Ontologies},
+  journal = {Proceedings of the {IJCAI} Workshop on Basic Ontological Issues
+             in Knowledge Sharing},
+  year    = {1995}
+}
+
+@article{Nosek2018,
+  author  = {Nosek, Brian A. and Ebersole, Charles R. and DeHaven, Alexander C.
+             and Mellor, David T.},
+  title   = {The preregistration revolution},
+  journal = {Proceedings of the National Academy of Sciences},
+  volume  = {115},
+  number  = {11},
+  pages   = {2600--2606},
+  year    = {2018},
+  doi     = {10.1073/pnas.1708274114}
+}
+
+@article{Ioannidis2005,
+  author  = {Ioannidis, John P. A.},
+  title   = {Why Most Published Research Findings Are False},
+  journal = {PLoS Medicine},
+  volume  = {2},
+  number  = {8},
+  pages   = {e124},
+  year    = {2005},
+  doi     = {10.1371/journal.pmed.0020124}
+}
+
+@article{Wilkinson2016,
+  author  = {Wilkinson, Mark D. and Dumontier, Michel and Aalbersberg,
+             IJsbrand Jan and others},
+  title   = {The {FAIR} Guiding Principles for scientific data management and
+             stewardship},
+  journal = {Scientific Data},
+  volume  = {3},
+  pages   = {160018},
+  year    = {2016},
+  doi     = {10.1038/sdata.2016.018}
+}
+
+@article{Bechhofer2013,
+  author  = {Bechhofer, Sean and Buchan, Iain and De Roure, David and others},
+  title   = {Why linked data is not enough for scientists},
+  journal = {Future Generation Computer Systems},
+  volume  = {29},
+  number  = {2},
+  pages   = {599--611},
+  year    = {2013},
+  doi     = {10.1016/j.future.2011.08.004}
+}

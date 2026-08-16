@@ -1,0 +1,156 @@
+\begin{thebibliography}{17}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Alc{\'a}ntara et~al.(2012)Alc{\'a}ntara, Axelsen, Morgat, Belda,
+  Coudert, Bridge, Cao, de~Matos, Ennis, Turner, Owen, Bougueleret, Xenarios,
+  and Steinbeck]{Alcantara2012}
+Rafael Alc{\'a}ntara, Kristian~B. Axelsen, Anne Morgat, Eugeni Belda, Elisabeth
+  Coudert, Alan Bridge, Hong Cao, Paula de~Matos, Marcus Ennis, Steve Turner,
+  Gareth Owen, Lydie Bougueleret, Ioannis Xenarios, and Christoph Steinbeck.
+\newblock {Rhea}---a manually curated resource of biochemical reactions.
+\newblock \emph{Nucleic Acids Research}, 40\penalty0 (D1):\penalty0 D754--D760,
+  2012.
+\newblock \doi{10.1093/nar/gkr1126}.
+
+\bibitem[Baader et~al.(2017)Baader, Horrocks, Lutz, and
+  Sattler]{BaaderCalvanese2017}
+Franz Baader, Ian Horrocks, Carsten Lutz, and Uli Sattler.
+\newblock \emph{An Introduction to Description Logic}.
+\newblock Cambridge University Press, Cambridge, 2017.
+\newblock \doi{10.1017/9781139025355}.
+
+\bibitem[Bansal et~al.(2022)Bansal, Morgat, Axelsen, Muthukrishnan, Coudert,
+  Aimo, Hyka-Nouspikel, Gasteiger, Kerhornou, Neto, Pozzato, Blatter,
+  Ignatchenko, Redaschi, and Bridge]{Bansal2022}
+Parit Bansal, Anne Morgat, Kristian~B. Axelsen, Venkatesh Muthukrishnan,
+  Elisabeth Coudert, Lucila Aimo, Nevila Hyka-Nouspikel, Elisabeth Gasteiger,
+  Arnaud Kerhornou, Teresa~Batista Neto, Monica Pozzato, Marie-Claude Blatter,
+  Alex Ignatchenko, Nicole Redaschi, and Alan Bridge.
+\newblock {Rhea}, the reaction knowledgebase in 2022.
+\newblock \emph{Nucleic Acids Research}, 50\penalty0 (D1):\penalty0 D693--D700,
+  2022.
+\newblock \doi{10.1093/nar/gkab1016}.
+
+\bibitem[Beer et~al.(2001)Beer, Ben-David, Eisner, and Rodeh]{Beer2001}
+Ilan Beer, Shoham Ben-David, Cindy Eisner, and Yoav Rodeh.
+\newblock Efficient detection of vacuity in temporal model checking.
+\newblock \emph{Formal Methods in System Design}, 18\penalty0 (2):\penalty0
+  141--163, 2001.
+\newblock \doi{10.1023/A:1008779610539}.
+
+\bibitem[Degtyarenko et~al.(2008)Degtyarenko, de~Matos, Ennis, Hastings,
+  Zbinden, McNaught, Alc{\'a}ntara, Darsow, Guedj, and
+  Ashburner]{Degtyarenko2008}
+Kirill Degtyarenko, Paula de~Matos, Marcus Ennis, Janna Hastings, Martin
+  Zbinden, Alan McNaught, Rafael Alc{\'a}ntara, Michael Darsow, Micka{\"e}l
+  Guedj, and Michael Ashburner.
+\newblock {ChEBI}: a database and ontology for chemical entities of biological
+  interest.
+\newblock \emph{Nucleic Acids Research}, 36\penalty0 (suppl\_1):\penalty0
+  D344--D350, 2008.
+\newblock \doi{10.1093/nar/gkm791}.
+
+\bibitem[Donini(2003)]{Donini2003}
+Francesco~M. Donini.
+\newblock Complexity of reasoning.
+\newblock \emph{The Description Logic Handbook: Theory, Implementation and
+  Applications}, pages 96--136, 2003.
+\newblock Cambridge University Press.
+
+\bibitem[Glimm et~al.(2014)Glimm, Horrocks, Motik, Stoilos, and
+  Wang]{Glimm2014HermiT}
+Birte Glimm, Ian Horrocks, Boris Motik, Giorgos Stoilos, and Zhe Wang.
+\newblock {HermiT}: An {OWL} 2 reasoner.
+\newblock \emph{Journal of Automated Reasoning}, 53\penalty0 (3):\penalty0
+  245--269, 2014.
+\newblock \doi{10.1007/s10817-014-9305-1}.
+
+\bibitem[Grau et~al.(2008)Grau, Horrocks, Motik, Parsia, Patel-Schneider, and
+  Sattler]{Grau2008}
+Bernardo~Cuenca Grau, Ian Horrocks, Boris Motik, Bijan Parsia, Peter
+  Patel-Schneider, and Ulrike Sattler.
+\newblock {OWL} 2: The next step for {OWL}.
+\newblock \emph{Journal of Web Semantics}, 6\penalty0 (4):\penalty0 309--322,
+  2008.
+\newblock \doi{10.1016/j.websem.2008.05.001}.
+
+\bibitem[Guo et~al.(2005)Guo, Pan, and Heflin]{Guo2005LUBM}
+Yuanbo Guo, Zhengxiang Pan, and Jeff Heflin.
+\newblock {LUBM}: A benchmark for {OWL} knowledge base systems.
+\newblock \emph{Journal of Web Semantics}, 3\penalty0 (2--3):\penalty0
+  158--182, 2005.
+\newblock \doi{10.1016/j.websem.2005.06.005}.
+
+\bibitem[Hastings et~al.(2016)Hastings, Owen, Dekker, Ennis, Kale,
+  Muthukrishnan, Turner, Swainston, Mendes, and Steinbeck]{Hastings2016}
+Janna Hastings, Gareth Owen, Adriano Dekker, Marcus Ennis, Namrata Kale,
+  Venkatesh Muthukrishnan, Steve Turner, Neil Swainston, Pedro Mendes, and
+  Christoph Steinbeck.
+\newblock {ChEBI} in 2016: Improved services and an expanding collection of
+  metabolites.
+\newblock \emph{Nucleic Acids Research}, 44\penalty0 (D1):\penalty0
+  D1214--D1219, 2016.
+\newblock \doi{10.1093/nar/gkv1031}.
+
+\bibitem[Horrocks et~al.(2003)Horrocks, Patel-Schneider, and van
+  Harmelen]{Horrocks2003}
+Ian Horrocks, Peter~F. Patel-Schneider, and Frank van Harmelen.
+\newblock From {SHIQ} and {RDF} to {OWL}: the making of a web ontology
+  language.
+\newblock \emph{Journal of Web Semantics}, 1\penalty0 (1):\penalty0 7--26,
+  2003.
+\newblock \doi{10.1016/j.websem.2003.07.001}.
+
+\bibitem[Kazakov et~al.(2014)Kazakov, Kr{\"o}tzsch, and
+  Sim{\v{c}}{\'i}k]{Kazakov2014ELK}
+Yevgeny Kazakov, Markus Kr{\"o}tzsch, and Franti{\v{s}}ek Sim{\v{c}}{\'i}k.
+\newblock The incredible {ELK}: From polynomial procedures to efficient
+  reasoning with {$\mathcal{EL}$} ontologies.
+\newblock \emph{Journal of Automated Reasoning}, 53\penalty0 (1):\penalty0
+  1--61, 2014.
+\newblock \doi{10.1007/s10817-013-9296-3}.
+
+\bibitem[Kupferman and Vardi(2003)]{Kupferman2003}
+Orna Kupferman and Moshe~Y. Vardi.
+\newblock Vacuity detection in temporal model checking.
+\newblock \emph{International Journal on Software Tools for Technology
+  Transfer}, 4\penalty0 (2):\penalty0 224--233, 2003.
+\newblock \doi{10.1007/s100090100062}.
+
+\bibitem[Motik et~al.(2009{\natexlab{a}})Motik, Grau, Horrocks, Wu, Fokoue, and
+  Lutz]{Motik2009Profiles}
+Boris Motik, Bernardo~Cuenca Grau, Ian Horrocks, Zhe Wu, Achille Fokoue, and
+  Carsten Lutz.
+\newblock {OWL} 2 web ontology language profiles.
+\newblock {W3C} recommendation, World Wide Web Consortium, 2009{\natexlab{a}}.
+\newblock URL \url{https://www.w3.org/TR/owl2-profiles/}.
+
+\bibitem[Motik et~al.(2009{\natexlab{b}})Motik, Shearer, and
+  Horrocks]{Motik2009Hypertableau}
+Boris Motik, Rob Shearer, and Ian Horrocks.
+\newblock Hypertableau reasoning for description logics.
+\newblock \emph{Journal of Artificial Intelligence Research}, 36:\penalty0
+  165--228, 2009{\natexlab{b}}.
+\newblock \doi{10.1613/jair.2811}.
+
+\bibitem[Parsia et~al.(2017)Parsia, Matentzoglu, Gon{\c{c}}alves, Glimm, and
+  Steigmiller]{Parsia2017ORE}
+Bijan Parsia, Nicolas Matentzoglu, Rafael~S. Gon{\c{c}}alves, Birte Glimm, and
+  Andreas Steigmiller.
+\newblock The {OWL} reasoner evaluation ({ORE}) 2015 competition report.
+\newblock \emph{Journal of Automated Reasoning}, 59\penalty0 (4):\penalty0
+  455--482, 2017.
+\newblock \doi{10.1007/s10817-017-9406-8}.
+
+\bibitem[Singh et~al.(2020)Singh, Bhatia, and Mutharaju]{Singh2020OWL2Bench}
+Gunjan Singh, Sumit Bhatia, and Raghava Mutharaju.
+\newblock {OWL2Bench}: A benchmark for {OWL} 2 reasoners.
+\newblock \emph{Lecture Notes in Computer Science}, 12507:\penalty0 81--96,
+  2020.
+\newblock \doi{10.1007/978-3-030-62466-8_6}.
+
+\end{thebibliography}

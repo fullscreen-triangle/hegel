@@ -1,13 +1,13 @@
 {
   "experiment": "Compartmental Factorisation",
   "theorem": "Proposition 7.2",
-  "timestamp": "2026-06-23T00:28:15.759839",
+  "timestamp": "2026-08-14T03:13:19.515786",
   "tests": [
     {
       "pathway": "OxPhos",
       "compartments": [
-        "mito_matrix",
         "mito_IMS",
+        "mito_matrix",
         "mito_IMM"
       ],
       "num_intra_edges": 4,
@@ -62,9 +62,9 @@
       "pathway": "EGFR/MAPK",
       "compartments": [
         "nucleus",
-        "extracellular",
+        "membrane",
         "cytoplasm",
-        "membrane"
+        "extracellular"
       ],
       "num_intra_edges": 4,
       "num_inter_edges": 6,

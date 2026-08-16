@@ -4,6 +4,9 @@
 \usepackage[T1]{fontenc}
 \usepackage{amsmath,amssymb,amsthm,mathtools}
 \usepackage{graphicx}
+% Panels are read from where make_figures.py writes them, so there is no second
+% copy to fall out of date with the validation results.
+\graphicspath{{../../validation/}{./}}
 \usepackage{booktabs}
 \usepackage{array}
 \usepackage{enumitem}
@@ -1051,22 +1054,51 @@ $\SI{370}{\nano\metre}$) --- both within linewidth. A magnetic-resonance probe
 separates the first pair, since it reads spin state directly and the two forms
 differ there. A vibrational probe separates the second, since one of the two
 carries a metal--oxo stretch the other lacks. Neither of the two additional
-probes separates the pair the other handles. Hence three probes with mutually
-non-substitutable observables are necessary and, on that system, sufficient
-\citep{Denisov2005,Rittle2010}.
+probes separates the pair the other handles. So no single probe suffices, and
+$\chi\ge 2$ on this system \citep{Denisov2005,Rittle2010}.
+
+It is tempting to conclude that three probes are therefore necessary, and we
+originally did. Exhaustive search over probe subsets shows otherwise, and the
+correction is instructive rather than incidental. Once the state table carries a
+fourth observable that is independently available on this system --- formal iron
+oxidation state, read by M\"ossbauer or X-ray absorption --- the minimum drops to
+two. Oxidation state separates \emph{both} residual pairs at once, since the
+resting and oxygen-bound forms differ as $\mathrm{Fe(III)}$ against
+$\mathrm{Fe(II)}$ and the two high-valent intermediates as $\mathrm{Fe(III)}$
+against $\mathrm{Fe(IV)}$. The absorption probe then handles everything else,
+and the vibrational probe becomes redundant. The minimum separating family is
+$\{\text{absorption},\text{oxidation state}\}$, of size two.
 
 \begin{corollary}[Panel floor]
 \label{cor:three}
-For a state space whose collisions have the structure above, a probe panel must
-contain at least three members with pairwise non-substitutable observables.
-Redundant copies of one probe do not raise discrimination.
+For a state space $\mathcal{X}$ and an available observable set $\Pi$, the panel
+floor is
+$\chi(\mathcal{X},\Pi) = \min\{|\pan| : \pan\subseteq\Pi,\ \mathcal{C}(\pan)
+\text{ edgeless}\}$,
+and a panel must contain at least $\chi$ members with pairwise non-substitutable
+observables. Redundant copies of one probe do not raise discrimination, so
+$\chi$ is unchanged by duplicating any member.
 \end{corollary}
+
+\begin{remark}[The floor is computed, not constant]
+\label{rem:floor-computed}
+$\chi$ is a joint property of the state set \emph{and} the observable set, and
+must be computed per system. It is not a constant of the method, and in
+particular it is not three: on the seven-state cycle above it is two once
+oxidation state is admitted, and three if that observable is unavailable.
+Enlarging $\Pi$ can only lower $\chi$; enlarging $\mathcal{X}$ can only raise it.
+Reporting a panel size without the search that produced it asserts a floor rather
+than establishing one.
+\end{remark}
 
 \begin{remark}
 This is the argument for a panel of reasoners, stated in instrument terms. The
 members are not voters whose agreement is averaged; they are non-overlapping
-observables whose \emph{disjointness} is what buys resolution. A panel of three
-identical reasoners has the discriminating power of one.
+observables whose \emph{disjointness} is what buys resolution. A panel of $m$
+identical reasoners has the discriminating power of one, for every $m$. What the
+correction above adds is that disjointness is the operative property and
+cardinality is downstream of it: a smaller panel of more separating observables
+beats a larger panel of overlapping ones.
 \end{remark}
 
 \subsection{Reasoners as disjoint agents}
@@ -1437,8 +1469,10 @@ of each test network to solver tolerance, and the Wegscheider condition holds on
 every independent cycle. Failure here invalidates everything downstream.
 \item \textbf{Relabelling invariance.} The contact map is unchanged under
 permutation of species indices. This tests \cref{prop:contact-determined}.
-\item \textbf{Coordinate irreducibility.} No axis of $\Scoord$ is a function of
-the other two on the test networks; triple coherence $\mathcal{R}$ is reported
+\item \textbf{Coordinate irreducibility.} No axis of $\Scoord$ is redundant
+\emph{by construction}: reducibility on some network is a fact about that
+network and is to be reported, whereas reducibility on every network would show
+the third axis carries nothing. Triple coherence $\mathcal{R}$ is reported
 rather than thresholded.
 \item \textbf{Address arithmetic.} Step-to-root equals address length at every
 depth tested, with zero variance. This tests \cref{prop:notree} and is a
@@ -1447,8 +1481,13 @@ consistency check on the implementation, not evidence for a bound.
 virtual is reported at several dispersion settings, together with recovery of
 the mean. This supports the mechanism of \cref{thm:collapse}, not its
 asymptotics.
-\item \textbf{Panel disjointness.} Every pair of reasoners carries a
-certificate per \cref{def:disjointness}, \emph{including} the isomorphism check.
+\item \textbf{Panel floor.} The minimum separating family is obtained by
+exhaustive search over subsets of the available observables per
+\cref{cor:three}, and both directions of \cref{thm:discrimination} are checked
+on every subset. The floor is reported as computed, never assumed
+(\cref{rem:floor-computed}). Every pair of reasoners additionally carries a
+disjointness certificate per \cref{def:disjointness}, \emph{including} the
+isomorphism check.
 \item \textbf{Water-filling residual.} The solved allocation satisfies
 \cref{eq:waterfill} to a stated numerical residual, and the dropout boundary
 $\gamma_i'(0)\le p^\star$ is exhibited for at least one reasoner.
@@ -1485,6 +1524,197 @@ the reasoners were constructed disjoint by fiat tests nothing. The isomorphism
 clause of \cref{def:disjointness} exists to give the check a way to fail.
 \end{remark}
 
+\subsection{Results}
+\label{sec:results}
+
+The design above was executed as seventeen experiments over four networks ---
+glycolysis, the citric-acid cycle, oxidative phosphorylation, and an
+EGFR/MAPK cascade --- with thermodynamic parameters from standard compilations,
+$k_{\mathrm{cat}}$ values from enzyme kinetics databases, and concentrations
+from physiological reference ranges. Every stochastic experiment is seeded.
+\Cref{fig:panel1,fig:panel2,fig:panel3,fig:panel4,fig:panel5,fig:panel6}
+report the outcome.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{figures/panel_1_circuit.pdf}
+  \caption[The circuit layer]{\textbf{The circuit layer.}
+  (a) Every solved edge of all four networks in
+  $(\log_{10} G_{ij}, \log_{10}|J_{ij}|, \mu_i)$: conductances span fourteen
+  decades, so the circuit is stiff rather than uniform.
+  (b) Kirchhoff residuals per network on a logarithmic axis; all bars are drawn
+  at the floor because every residual is exactly zero. The right-hand axis gives
+  the number of simple directed cycles enumerated, and it is the honest
+  limitation of this check: only the citric-acid cycle contributes one, so the
+  Wegscheider half of \cref{thm:kirchhoff} rests on a single cycle.
+  (c) The potential ladder $\mu_i = \mu_i^\circ + RT\ln c_i$ against normalised
+  species rank.
+  (d) The invariance of \cref{prop:contact-determined} against its control:
+  relabelling moves the contact map by nothing at all, permuting the underlying
+  concentrations moves it by roughly $10^{0}$.}
+  \label{fig:panel1}
+\end{figure}
+
+The consistency results hold as stated. Wegscheider residuals sit at machine
+epsilon on every enumerated cycle, which is the check that cannot be fudged:
+were it to fail, $\mu$ would not be a function on vertices and the circuit
+representation would be inadmissible. Relabelling leaves the contact map fixed
+exactly, while the control that permutes concentrations rather than labels moves
+it by $0.80$ to $1.41$, so the invariance of
+\cref{prop:contact-determined} is being tested rather than assumed. Step count
+equals address length with zero variance at every depth from $2$ to $10$;
+the equivalence of \cref{prop:sigma-partition} holds with no mismatches;
+deleting the cache changes no output byte.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{figures/panel_3_addressing.pdf}
+  \caption[Addressing]{\textbf{Addressing.}
+  (a) The depth-one ternary cells actually occupied by the four networks, drawn
+  in the unit cube with opacity proportional to occupancy: the addressing scheme
+  partitions $[0,1]^3$, but the coordinates populate a small part of it.
+  (b) Ancestry cost. Observed steps to root against $N = 3^{\text{depth}}$ on a
+  logarithmic axis, lying on $\log_3 N$ with zero variance at every depth --- the
+  content of \cref{prop:notree}(ii), computed without materialising the trie.
+  (c) Capacity $k\log_2 3$ against address depth, with the four tiers of the
+  worked family plotted at their entropies; every tier sits below the line, which
+  is the inequality of \cref{prop:capacity} holding with slack.
+  (d) Distribution of shared prefix length over all species pairs at $k = 9$.
+  Mass concentrated at short prefixes is what makes the address discriminating.}
+  \label{fig:panel3}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{figures/panel_4_propagation.pdf}
+  \caption[Propagation]{\textbf{Propagation.}
+  (a) Prefix similarity $\sigma$ against contact cost $\lVert S_u - S_v\rVert_2$
+  for every species pair. The relation is not monotone --- pairs at
+  $\sigma = 0$ occur at every cost, and pairs at equal cost take most available
+  $\sigma$ --- which is \cref{rem:sigma-not-metric} shown directly: $\sigma$
+  reports a partition, not a distance.
+  (b) Cumulative distribution of edge contact costs, with the floor $\beta$
+  marked; the mass of edges above $\beta$ is what makes budgets bind.
+  (c) Mean reachable nodes against budget $x^\star$ per network. Reachability
+  grows with budget at a network-specific rate, so the budget is a real
+  constraint rather than a formality.
+  (d) For each endpoint pair, the number of distinct route interiors against the
+  number of distinct endpoint invariants. Interiors proliferate; the invariant
+  stays at one. This is \cref{thm:opacity}: the construction returns an
+  equivalence class of routes, and increasing $k$ does not narrow it.}
+  \label{fig:panel4}
+\end{figure}
+
+Two results are negative, and they are the informative ones.
+
+\paragraph{The coordinate degenerates under a dominating species.}
+On oxidative phosphorylation, $\Sk$ and $\St$ are exactly collinear:
+each regresses on the other two axes at $R^2 = 1.000$. The cause is visible in
+the inputs. Water at $\SI{55}{\mole\per\litre}$ exceeds the next-largest concentration
+by roughly six orders of magnitude, so both max-normalisers in \cref{eq:coords}
+collapse onto a two-valued indicator separating the water/ATP pair from
+everything else, and the address carries about one axis of information instead
+of three. Glycolysis sits close to the same edge at $R^2 = 0.989$. This is a
+defect of the normalisation, not of the networks: \cref{eq:coords} divides by
+network extrema and is therefore not robust to a species that dominates the
+extremum. On the remaining three networks no axis is recoverable from the other
+two, so the third axis is not redundant by construction --- which is the claim
+(V3) actually makes --- but a practitioner should compute the axis regressions
+before trusting a three-axis address on any given network.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{figures/panel_2_coordinate.pdf}
+  \caption[The coordinate and its degeneracy]{\textbf{The coordinate, and where
+  it degenerates.}
+  (a) Every species of all four networks at its coordinate
+  $(\Sk, \St, \Se)$ in the unit cube of \cref{eq:coords}.
+  (b) Axis reducibility: $R^2$ from regressing each axis on the other two, with
+  the $0.99$ line marked. Oxidative phosphorylation saturates on $\Sk$ and $\St$
+  and glycolysis nearly does; the citric-acid cycle and the EGFR cascade do not.
+  (c) The oxidative-phosphorylation collinearity shown without a regression:
+  $\St$ against $\Sk$ collapses onto a two-valued indicator rather than
+  spreading over the square.
+  (d) The mechanism. Largest axis $R^2$ against the concentration dominance
+  ratio $c_{(1)}/c_{(2)}$ on a logarithmic axis. Degeneracy tracks dominance:
+  the two networks carrying a species that exceeds the next by orders of
+  magnitude are the two whose coordinate collapses. Since \cref{eq:coords}
+  divides by network extrema, this is a defect of the normalisation and not of
+  the networks.}
+  \label{fig:panel2}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{figures/panel_5_virtual.pdf}
+  \caption[Virtual sub-states]{\textbf{Virtual sub-states and the collapse.}
+  (a) One state (black) and its sub-state decompositions. Sub-states falling
+  outside the unit cube (red) are virtual in the sense of
+  \cref{thm:collapse} --- they are not themselves admissible coordinates, yet
+  they average exactly to one that is.
+  (b) Virtual fraction against dispersion $M$, with mean reconstruction error on
+  the right-hand axis. Every decomposition at every dispersion is virtual, and
+  reconstruction holds to $10^{-15}$: the averaging identity is exact while the
+  parts are unphysical.
+  (c) The collapse of \cref{cor:speedup}. Operations against $N$ cells,
+  logarithmic in $N$; permitting virtual sub-states tracks $\log_3 N$ (drawn as
+  the wide underlay, which the data lies on) where the physical-only count
+  saturates.
+  (d) Why the normalisers are global. Truncating a network to its largest
+  species shifts the coordinates of the survivors, by up to order unity for
+  small truncations --- so a coordinate is a statement about a network, not
+  about a species in isolation.}
+  \label{fig:panel5}
+\end{figure}
+
+\paragraph{The panel floor is two, not three.}
+\Cref{thm:discrimination} holds exactly: across all subsets of the available
+observables, separating every pair and separating the whole state set coincide
+with no exceptions in either direction. The floor asserted by the earlier
+reading of \cref{cor:three} does not survive. Exhaustive search returns
+$\chi = 2$, attained uniquely by absorption together with oxidation state, for
+the reason given in \cref{rem:floor-computed}. We report this rather than
+adjusting the state table to recover the number three, since a state table
+tuned until the answer comes out right is the failure mode
+\cref{rem:control-refused} describes. What survives is the substantive claim,
+and it is the one worth carrying: disjointness of observables buys resolution,
+cardinality does not, and the floor must be computed per system.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{figures/panel_6_panel_layer.pdf}
+  \caption[The panel layer]{\textbf{The panel layer.}
+  (a) Colliding state pairs for every subset of the four observables, against
+  subset size. Subsets reaching zero collisions (blue) are exactly those that
+  separate the whole state set, with no exceptions in either direction, which is
+  \cref{thm:discrimination}. The floor $\chi = 2$ is marked; size alone does not
+  determine separation, since some three-element subsets still collide.
+  (b) Water-filling. Allocation against price for each reasoner, with the
+  solution at the single shadow price $p^\star$ marked. Allocations are graded
+  and the low-weight, high-cost reasoner sits at the dropout boundary of
+  \cref{cor:graded} rather than being excluded by a separate rule.
+  (c) The locking threshold of \cref{thm:lock}. Order parameter against
+  $K/K_c$ with $K_c$ computed rather than fitted, and the finite-$M$ incoherent
+  floor $1/\sqrt{M}$ marked; the transition occurs at the predicted place.
+  (d) Localisation, plotted as incoherence $1-\mathcal{R}$ on a logarithmic axis
+  because the whole effect lies in the third decimal. Admitting a mismatched
+  newcomer drops the global order parameter, the order parameter restricted to
+  the original members is essentially unmoved, and the matched-newcomer control
+  does not drop at all. The dashed line is the bound of
+  \cref{prop:localisation}.}
+  \label{fig:panel6}
+\end{figure}
+
+One further correction belongs in the record. The discrimination experiment
+initially modelled each probe as a bin label --- band position rounded to the
+instrument's resolving power --- and reported that absorption alone separates
+all seven states. That was an artefact: rounding separates two readings
+whenever they straddle a bin edge, however close they are, so
+$\SI{417}{\nano\metre}$ and $\SI{418}{\nano\metre}$ came apart while
+genuinely-resolved pairs did not. A resolving power is a proximity relation,
+not a partition. Rewriting each probe as the separation relation it actually
+denotes produced exactly the two documented collisions.
+
 \section{Limitations}
 \label{sec:limits}
 
@@ -1509,6 +1739,17 @@ tracing --- this is the wrong instrument, and increasing $k$ does not help.
 The normalisers in \cref{eq:coords} are network extrema, so addresses are not
 comparable across networks without a shared normalisation. Comparing addresses
 computed under different networks is the most likely misuse.
+
+\paragraph{The normalisation is not robust to a dominating species.}
+Dividing by a network extremum makes the coordinate fragile when one species
+carries that extremum by orders of magnitude. \Cref{sec:results} exhibits the
+failure: on oxidative phosphorylation, water at bulk concentration collapses
+$\Sk$ and $\St$ into the same two-valued indicator, giving exact collinearity
+and reducing an address that nominally carries three axes to about one. A rank
+or logarithmic normalisation would likely be better behaved, but we have not
+established that and do not use it, so the practical guidance is to compute the
+axis regressions of (V3) per network and to distrust the address where an axis
+is recoverable from the others.
 
 \paragraph{Kinetic parameters bound accuracy.}
 \Cref{prop:contact-determined} says the graph is a function of the kinetic
@@ -1567,6 +1808,14 @@ convergence check that must actually be performed.
 What the construction does not supply is accuracy. \Cref{prop:contact-determined}
 guarantees the graph is a faithful function of the kinetic description it was
 given, and says nothing whatever about whether that description is right.
+
+The validation of \cref{sec:results} bears this out in both directions. The
+consistency claims hold to machine precision, and two claims that were stated
+too strongly do not: the coordinate degenerates on a network containing a
+species at bulk concentration, and the panel floor is a computed property of the
+state and observable sets rather than the constant three. Both were found by
+tests built to be capable of failing, which is the only reason they were found
+at all.
 
 \bibliographystyle{plainnat}
 \bibliography{references}
