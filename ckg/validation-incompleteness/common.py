@@ -1017,6 +1017,40 @@ def chain_corpus(n=6, cyclic=True):
     return Corpus(f"chain{n}{'-cyclic' if cyclic else ''}", concepts, edges)
 
 
+def lattice_corpus(n=6, cyclic=False, width=2):
+    """
+    A DIAMOND lattice, not a chain: level i has `width` nodes and every node
+    at level i points at every node at level i+1.
+
+    A chain cannot separate the two recursion shapes. On a chain each node has
+    exactly one successor, so the left-recursive agenda holds a single path at
+    a time and never re-derives anything -- both shapes cost the same number of
+    steps, and Proposition 8.8's cost claim is invisible. The separation the
+    proposition describes needs a node reachable by SEVERAL prefixes, so that
+    the left shape re-explores it once per prefix while the right shape visits
+    it once per BFS level. That is what this corpus supplies.
+
+    Uses the same role and node concept as `chain_corpus`, so `chain_model`
+    covers it and no new grammar is needed.
+    """
+    edges = set()
+    levels = [[f"L{i}_{j}" for j in range(width)] for i in range(n)]
+    for i in range(n - 1):
+        for x in levels[i]:
+            for y in levels[i + 1]:
+                edges.add(("precedes", x, y))
+    # a single source so a reachability query has one subject
+    for x in levels[0]:
+        edges.add(("precedes", "a0", x))
+    if cyclic:
+        for x in levels[-1]:
+            edges.add(("precedes", x, "a0"))
+    nodes = {"a0"} | {x for lvl in levels for x in lvl}
+    concepts = {("Node", x) for x in nodes}
+    name = f"lattice{n}x{width}{'-cyclic' if cyclic else ''}"
+    return Corpus(name, concepts, edges)
+
+
 def chain_model(with_bounded=True, with_transitive_query=True):
     grammar = {SUBSUMPTION, EXISTENTIAL, TRANSITIVE_AXIOM}
     if with_transitive_query:

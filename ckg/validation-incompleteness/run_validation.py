@@ -19,6 +19,7 @@ import exp_capability
 import exp_derivation
 import exp_divergence
 import exp_predicates
+import exp_sweeps
 import exp_vacuity
 from common import save_result, utc_stamp
 
@@ -28,6 +29,7 @@ MODULES = [
     ("vacuity", exp_vacuity),
     ("divergence", exp_divergence),
     ("derivation", exp_derivation),
+    ("sweeps", exp_sweeps),
 ]
 
 CLAIM_INDEX = {
@@ -48,6 +50,15 @@ CLAIM_INDEX = {
     "15_inherited_una": "prop:inherited-una + cor:disagree-result",
     "16_bounded_inversion": "prop:bounded-cheaper + cor:inversion",
     "17_single_derivation": "thm:single + prop:status-clock",
+    # 18-23 sweep parameters the constructions already carry. They re-measure
+    # claims 01-17 across a range rather than adding claims of their own, so
+    # each entry names the proposition it magnifies, not a new one.
+    "18_closure_cost_sweep": "prop:recursion-shape -- same least model, different cost, swept over corpus size",
+    "19_budget_sweep": "thm:independence -- Ans is the only predicate with a clock, swept over tau",
+    "20_bounded_surface": "prop:bounded-cheaper + cor:inversion -- swept over (k, n)",
+    "21_counting_surface": "prop:counting-split + prop:inherited-una -- the prerequisite geometry",
+    "22_scoring_sweep": "prop:compare-refusals -- the deficit swept over benchmark composition",
+    "23_blocker_grid": "def:blocker + sec:blockers -- the trichotomy discriminates when each axis is varied",
 }
 
 # Experiments whose PASS condition is a refusal or a disagreement rather than
