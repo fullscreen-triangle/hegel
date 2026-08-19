@@ -119,6 +119,16 @@ class Plan:
 _CLAUSE_HEAD = re.compile(r"^\s*(let|emit|budget|assert|plan|\})")
 _ARG = re.compile(r'"([^"]*)"|\?([A-Za-z_]\w*)|([-+]?\d+(?:\.\d+)?)|([A-Za-z_][\w:.\-]*)')
 
+# Boolean connectives, as whole words and outside any quoted run. The other
+# half of the fix: the pattern this replaces was written with \b escapes
+# that had been resolved into literal backspace bytes, so it searched for a
+# control character that never occurs in plan text and matched nothing at
+# all. Boundaries are spelled with explicit look-arounds here so the same
+# corruption cannot recur silently. Matching `and|or|not` unanchored would
+# fire on the `or` inside `chlorine` and reject a genuine one-comparison
+# filter, so the boundaries are required rather than decorative.
+_CONNECTIVE = re.compile(r"(?<![\w\"])(?:and|or|not)(?![\w\"])", re.IGNORECASE)
+
 
 def _strip_comment(line: str) -> str:
     # A '#' outside a quoted string starts a comment.
@@ -204,18 +214,23 @@ def _parse_let(body: str, line: int) -> Step:
             raise ParseError("malformed filter", line)
         a, attr, op, val = mm.groups()
         val = val.strip()
-        if val.startswith('"') and val.endswith('"'):
-            parsed: Any = val[1:-1]
-        elif re.search(r"(and|or|not)", val, re.IGNORECASE):
-            # The grammar admits one comparison per filter. Without this
-            # check a conjunction parses as a single unquoted literal that
-            # matches nothing, so the filter silently passes its whole input
-            # and the plan looks cheaper than it is. A plan language whose
-            # failures are invisible is the thing the verdict rules exist to
-            # prevent, so this is a parse error rather than a warning.
+        # Reject a boolean connective BEFORE deciding the value is a
+        # literal. Without this check a conjunction parses as a single
+        # literal that matches nothing, so the filter silently passes its
+        # whole input and the plan looks cheaper than it is. A plan
+        # language whose failures are invisible is the thing the verdict
+        # rules exist to prevent, so this is a parse error, not a warning.
+        #
+        # Order is half the fix. While this test sat in an `elif` below the
+        # quoted-string case, `label == "x" and size > 2` reached neither
+        # branch: it does not open and close as one quoted string, and an
+        # `elif` under that case never runs once the `if` has been taken.
+        if _CONNECTIVE.search(val):
             raise ParseError(
                 "filter admits one comparison; chain filter steps instead "
                 "of writing a boolean connective", line)
+        if len(val) >= 2 and val.startswith('"') and val.endswith('"'):
+            parsed: Any = val[1:-1]
         else:
             try:
                 parsed = float(val) if "." in val else int(val)
