@@ -1,0 +1,19 @@
+# The plan can afford the step; the step's own `within` cannot. (R4) fires and
+# def:blocker assigns `engine`, distinct from the `budget` of (R3).
+plan step_timeout {
+  budget 400 requests
+
+  let acids = from chebi
+      ask descendants_of("CHEBI:1")
+      within 10
+
+  let kegg  = map acids via chebi2kegg
+      expect partial 0.1
+
+  let rxns  = from rhea
+      ask reactions_consuming(?c)
+      with ?c in kegg
+      within 2
+
+  emit rxns
+}

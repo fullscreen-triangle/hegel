@@ -1,0 +1,18 @@
+# lst:routes of part4-translation.tex, verbatim inside a plan wrapper.
+# The listing in the paper is a fragment; the header and budget are the
+# minimum a parseable plan needs and add nothing the fragment did not say.
+plan parallel_routes {
+  budget 40 requests
+
+  let compounds = from CHEBI
+      ask descendants_of("CHEBI:1")
+      within 4
+
+  let direct   = map compounds via chebi_to_kegg
+  let indirect = map compounds via chebi_to_inchikey
+                 then via inchikey_to_kegg
+
+  let both     = union direct indirect
+  assert soundness(direct) and soundness(indirect)
+  emit divergence(direct, indirect) as resolved_extent
+}

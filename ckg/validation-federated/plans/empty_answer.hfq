@@ -1,0 +1,20 @@
+# The request is well-formed, affordable and answered; the corpus simply has
+# no producing reaction for these compounds. (R5) fires, and def:blocker
+# assigns no blocker -- the JSON omits the key entirely.
+plan empty_answer {
+  budget 40 requests
+
+  let seeds = from chebi
+      ask descendants_of("CHEBI:3")
+      within 4
+
+  let kegg  = map seeds via chebi2kegg
+      expect partial 0.1
+
+  let none  = from rhea
+      ask reactions_producing(?c)
+      with ?c in kegg
+      within 20
+
+  emit none
+}

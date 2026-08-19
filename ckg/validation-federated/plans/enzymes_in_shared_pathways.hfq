@@ -1,0 +1,30 @@
+# lst:plan of part2-language.tex, verbatim.
+plan enzymes_in_shared_pathways {
+  budget 400 requests
+
+  let acids = from CHEBI
+      ask descendants_of("CHEBI:35238")
+      within 20
+
+  let rxns  = from RHEA
+      ask reactions_consuming(?c)
+      with ?c in acids
+      within 120
+      else fail unresolved
+
+  let ecs   = from RHEA
+      ask enzyme_of(?r)
+      with ?r in rxns
+      within 60
+
+  let kids  = map ecs via ec_to_kegg
+      expect partial 0.6
+
+  let paths = from KEGG
+      ask link("pathway", ?k)
+      with ?k in kids
+      within 200
+      when starved emit partial
+
+  emit paths with provenance
+}

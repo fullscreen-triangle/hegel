@@ -1,0 +1,185 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{graphicx}
+\graphicspath{{../../validation-federated/}{./}}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{siunitx}
+\usepackage{microtype}
+\usepackage{lmodern}
+\usepackage[margin=2.4cm]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{cleveref}
+\usepackage{natbib}
+\usepackage{stmaryrd}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{construction}[theorem]{Construction}
+\newtheorem{principle}[theorem]{Principle}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{observation}[theorem]{Observation}
+
+%--- notation -----------------------------------------------------------
+\newcommand{\Plan}{\mathcal{P}}
+\newcommand{\Step}{\sigma}
+\newcommand{\Src}{\mathsf{S}}
+\newcommand{\Capset}{\mathrm{cap}}
+\newcommand{\Req}{\mathrm{req}}
+\newcommand{\Low}{\mathrm{low}}
+\newcommand{\Ext}{\mathrm{ext}}
+\newcommand{\Res}{\mathcal{R}}
+\newcommand{\Bind}{\Gamma}
+\newcommand{\Verd}{\mathrm{v}}
+\newcommand{\vans}{\textsf{answered}}
+\newcommand{\vempty}{\textsf{empty}}
+\newcommand{\vsurf}{\textsf{unsupported}}
+\newcommand{\vtime}{\textsf{exhausted}}
+\newcommand{\vref}{\textsf{refused}}
+\newcommand{\vstarve}{\textsf{starved}}
+\newcommand{\bmdl}{\textsf{blocked-by-model}}
+\newcommand{\bcorp}{\textsf{blocked-by-corpus}}
+\newcommand{\beng}{\textsf{blocked-by-engine}}
+\newcommand{\bbud}{\textsf{blocked-by-budget}}
+\newcommand{\Univ}{\mathcal{U}}
+\newcommand{\Nspace}{\mathcal{N}}
+\newcommand{\idm}{\mathrm{id}}
+\newcommand{\Rset}{\mathbb{R}}
+\newcommand{\Nset}{\mathbb{N}}
+\newcommand{\Bud}{B}
+\newcommand{\cost}{c}
+\newcommand{\HFQ}{\textsc{hfq}}
+\newcommand{\Feat}{\mathcal{F}}
+\newcommand{\Zset}{\mathbb{Z}}
+
+\lstdefinestyle{hfq}{
+  basicstyle=\ttfamily\footnotesize,
+  keywordstyle=\bfseries,
+  commentstyle=\itshape\color{gray!70!black},
+  stringstyle=\color{black},
+  showstringspaces=false,
+  breaklines=true,
+  frame=single,
+  framerule=0.3pt,
+  rulecolor=\color{gray!60},
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  xleftmargin=2.2em,
+  morekeywords={let,from,ask,where,filter,join,map,via,keep,drop,union,
+    intersect,minus,require,budget,within,on,fail,else,emit,assert,using,
+    plan,source,expect,cost,limit,order,by,as,in,not,and,or,exists,
+    with,when,unresolved,partial}
+}
+\lstset{style=hfq}
+
+\title{\textbf{A Plan Language for Federated Biological Retrieval}\\[0.4em]
+\large Capability-indexed lowering, verdict-carrying steps,\\
+and the arithmetic of partial identifier translation}
+
+\author{%
+Kundai Farai Sachikonye\\[0.3em]
+\normalsize Experimental Bioinformatics, TUM School of Life Sciences\\
+\normalsize Maximus-von-Imhof-Forum 3, 85354 Freising, Germany\\
+\normalsize \texttt{kundai.sachikonye@bitspark.com}}
+
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+A biological question that spans more than one public database is today
+answered by a script: a host-language program that interpolates identifiers
+into query strings, sends them, parses what returns, and interpolates again.
+The host language knows nothing about the data and the query language knows
+nothing about control flow, and every failure mode of federated retrieval lives
+in the seam between them. We give a language that closes the seam by refusing
+to be a query language at all.
+
+The design rests on one observation. The databases a biologist must cross ---
+a reaction knowledge base with a SPARQL endpoint, a protein resource exposing
+both SPARQL and a REST interface, a pathway resource exposing only flat-file
+REST, an ontology available as a downloadable artefact --- do not share a query
+model, and no amount of engineering will give them one. They do share a
+\emph{result} model: finite sets of identifiers carrying attributes. A language
+whose terms denote result sets and whose operators denote instructions on what
+to do with a result is therefore portable across backends in a way that a
+language whose terms denote graph patterns can never be. We call the resulting
+object a \emph{plan language}; queries are its leaves and are never written by
+the user.
+
+We develop the language in four layers. \Cref{sec:model} fixes a source model
+in which a backend is a triple of an endpoint, a capability set, and an
+extraction function, and proves that lowering a plan step is total exactly on
+the steps whose required capabilities are contained in the source's declared
+set (\Cref{thm:lowering}). \Cref{sec:ir} gives the intermediate representation
+and shows that a plan admits a static capability check that decides
+compilability before any request is issued (\Cref{thm:static}), which converts
+a class of runtime failures into compile-time diagnostics.
+\Cref{sec:verdicts} replaces the boolean answer of conventional query
+interfaces with a six-valued verdict and proves that the six are pairwise
+distinguishable by a plan executor while any two of them are conflated by an
+interface returning rows alone (\Cref{thm:six}, \Cref{cor:onebit}). The
+verdict $\vstarve$ --- a step that failed because an \emph{earlier} step
+under-retrieved --- is reachable only in the federated setting, and we show
+that it is the characteristic failure of federation rather than an exotic case
+(\Cref{prop:starve-reachable}).
+\Cref{sec:translation} treats identifier translation, which is where the real
+losses occur: cross-namespace maps are partial, non-injective and
+non-confluent, and we give exact composition laws for retention
+(\Cref{thm:retention}), a proof that translation loss is not recoverable by
+reordering (\Cref{thm:reorder}) and a proof that two plans differing only in
+translation route may return different sets without either being wrong
+(\Cref{thm:route-extent}).
+
+Three further results concern execution. \Cref{thm:allocation} solves budget
+allocation across heterogeneous sources by a water-filling argument with a
+single shadow price, and \Cref{prop:necessary-not-sufficient} shows that a
+budget exceeding the sum of minimum step costs is necessary but not sufficient
+for a plan to complete. \Cref{thm:interpolation} shows that structural
+interpolation --- lowering a bound result set into a target language through
+the language's own value-binding construct rather than through string
+concatenation --- eliminates by construction a family of semantic defects that
+textual interpolation admits, and we exhibit a documented instance of that
+family in which two spellings of the same intent against the same endpoint
+returned counts differing by more than two orders of magnitude.
+\Cref{thm:idempotent} characterises when a plan may be safely re-executed.
+
+We specify an executable prototype, report its behaviour on offline fixtures
+across four source kinds, and state plainly what has not been established: the
+prototype has not been run against any live public endpoint, no claim is made
+about answer correctness against biology, and the capability declarations are
+asserted by the source adapter rather than verified against the service.
+\end{abstract}
+
+\tableofcontents
+
+\clearpage
+
+\input{part1-setting}
+\input{part2-language}
+\input{part3-verdicts}
+\input{part4-translation}
+\input{part5-execution}
+\input{part6-realisation}
+
+\clearpage
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

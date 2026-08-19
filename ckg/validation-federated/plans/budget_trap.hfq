@@ -1,0 +1,18 @@
+# c_1 = c_2 = 1 and budget = 2, so B >= sum c_i. Step 1 returns cardinality 3,
+# so step 2's realised cost is 3 and only 1 request remains: (R3) refuses.
+# prop:necessary-not-sufficient: the c_i are minima over inputs, and the
+# realised input is not the minimising one.
+plan budget_trap {
+  budget 2 requests
+
+  let roots = from tiny_onto
+      ask descendants_of("CHEBI:1")
+      within 1
+
+  let rxns  = from tiny_graph
+      ask reactions_consuming(?c)
+      with ?c in roots
+      within 1
+
+  emit rxns
+}

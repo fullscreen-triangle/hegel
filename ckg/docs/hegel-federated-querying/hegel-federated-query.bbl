@@ -1,0 +1,253 @@
+\begin{thebibliography}{30}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Acosta et~al.(2011)Acosta, Vidal, Lampo, Castillo, and
+  Ruckhaus]{Acosta2011}
+Maribel Acosta, Maria-Esther Vidal, Tomas Lampo, Julio Castillo, and Edna
+  Ruckhaus.
+\newblock {ANAPSID}: An adaptive query processing engine for {SPARQL}
+  endpoints.
+\newblock In \emph{The Semantic Web -- ISWC 2011}, volume 7031 of \emph{Lecture
+  Notes in Computer Science}, pages 18--34. Springer, 2011.
+\newblock \doi{10.1007/978-3-642-25073-6_2}.
+
+\bibitem[Berthold et~al.(2009)Berthold, Cebron, Dill, Gabriel, K{\"o}tter,
+  Meinl, Ohl, Thiel, and Wiswedel]{Berthold2009}
+Michael~R. Berthold, Nicolas Cebron, Fabian Dill, Thomas~R. Gabriel, Tobias
+  K{\"o}tter, Thorsten Meinl, Peter Ohl, Kilian Thiel, and Bernd Wiswedel.
+\newblock {KNIME} --- the {Konstanz} information miner.
+\newblock In \emph{Data Analysis, Machine Learning and Applications}, Studies
+  in Classification, Data Analysis, and Knowledge Organization, pages 319--326.
+  Springer, 2009.
+\newblock \doi{10.1007/978-3-540-78246-9_38}.
+
+\bibitem[Chen et~al.(2005)Chen, Mani, Nikolskaya, and Wu]{Chen2005}
+Yi-An Chen, Sethuraman Mani, Anastasia~N. Nikolskaya, and Cathy~H. Wu.
+\newblock Bioinformatics resource discovery and identifier mapping: Problems
+  and approaches.
+\newblock \emph{Briefings in Bioinformatics}, 6\penalty0 (3):\penalty0
+  239--250, 2005.
+\newblock \doi{10.1093/bib/6.3.239}.
+
+\bibitem[Codd(1979)]{Codd1979}
+Edgar~F. Codd.
+\newblock Extending the database relational model to capture more meaning.
+\newblock \emph{ACM Transactions on Database Systems}, 4\penalty0 (4):\penalty0
+  397--434, 1979.
+\newblock \doi{10.1145/320107.320109}.
+
+\bibitem[Di~Tommaso et~al.(2017)Di~Tommaso, Chatzou, Floden, Barja, Palumbo,
+  and Notredame]{DiTommaso2017}
+Paolo Di~Tommaso, Maria Chatzou, Evan~W. Floden, Pablo~Prieto Barja, Emilio
+  Palumbo, and Cedric Notredame.
+\newblock {Nextflow} enables reproducible computational workflows.
+\newblock \emph{Nature Biotechnology}, 35\penalty0 (4):\penalty0 316--319,
+  2017.
+\newblock \doi{10.1038/nbt.3820}.
+
+\bibitem[Florescu et~al.(1999)Florescu, Levy, Manolescu, and
+  Suciu]{Florescu1999}
+Daniela Florescu, Alon Levy, Ioana Manolescu, and Dan Suciu.
+\newblock Query optimization in the presence of limited access patterns.
+\newblock In \emph{Proceedings of the 1999 ACM SIGMOD International Conference
+  on Management of Data}, pages 311--322, 1999.
+\newblock \doi{10.1145/304182.304210}.
+
+\bibitem[Garcia-Molina et~al.(1997)Garcia-Molina, Papakonstantinou, Quass,
+  Rajaraman, Sagiv, Ullman, Vassalos, and Widom]{GarciaMolina1997}
+Hector Garcia-Molina, Yannis Papakonstantinou, Dallan Quass, Anand Rajaraman,
+  Yehoshua Sagiv, Jeffrey Ullman, Vasilis Vassalos, and Jennifer Widom.
+\newblock The {TSIMMIS} approach to mediation: Data models and languages.
+\newblock \emph{Journal of Intelligent Information Systems}, 8\penalty0
+  (2):\penalty0 117--132, 1997.
+\newblock \doi{10.1023/A:1008683107812}.
+
+\bibitem[G{\"o}rlitz and Staab(2011)]{Gorlitz2011}
+Olaf G{\"o}rlitz and Steffen Staab.
+\newblock {SPLENDID}: {SPARQL} endpoint federation exploiting {VOID}
+  descriptions.
+\newblock In \emph{Proceedings of the 2nd International Workshop on Consuming
+  Linked Data (COLD 2011)}, volume 782 of \emph{CEUR Workshop Proceedings},
+  2011.
+
+\bibitem[Haas et~al.(1997)Haas, Kossmann, Wimmers, and Yang]{Haas1997}
+Laura~M. Haas, Donald Kossmann, Edward~L. Wimmers, and Jun Yang.
+\newblock Optimizing queries across diverse data sources.
+\newblock In \emph{Proceedings of the 23rd International Conference on Very
+  Large Data Bases (VLDB)}, pages 276--285, 1997.
+
+\bibitem[Harris and Seaborne(2013)]{Harris2013}
+Steve Harris and Andy Seaborne.
+\newblock {SPARQL} 1.1 query language.
+\newblock W3c recommendation, World Wide Web Consortium, March 2013.
+\newblock URL \url{https://www.w3.org/TR/sparql11-query/}.
+\newblock See in particular \S4.2.2 (predicate--object and object lists) and
+  the grammar rules for \texttt{ObjectList}, \texttt{Object}, and
+  \texttt{GraphNode}.
+
+\bibitem[Imielinski and Lipski(1984)]{Imielinski1984}
+Tomasz Imielinski and Witold Lipski.
+\newblock Incomplete information in relational databases.
+\newblock \emph{Journal of the ACM}, 31\penalty0 (4):\penalty0 761--791, 1984.
+\newblock \doi{10.1145/1634.1886}.
+
+\bibitem[Ison et~al.(2016)Ison, Rapacki, Menager, Kalas, Rydza, Chmura, Anthon,
+  Beard, Berka, Bolser, et~al.]{Ison2016}
+Jon Ison, Kristoffer Rapacki, Herve Menager, Matus Kalas, Emil Rydza, Piotr
+  Chmura, Christian Anthon, Niall Beard, Karel Berka, Dan Bolser, et~al.
+\newblock Tools and data services registry: A community effort to document
+  bioinformatics resources.
+\newblock \emph{Nucleic Acids Research}, 44\penalty0 (D1):\penalty0 D38--D47,
+  2016.
+\newblock \doi{10.1093/nar/gkv1116}.
+
+\bibitem[Juty et~al.(2012)Juty, Le~Novere, and Laibe]{Juty2012}
+Nick Juty, Nicolas Le~Novere, and Camille Laibe.
+\newblock {Identifiers.org} and {MIRIAM Registry}: Community resources to
+  provide persistent identification.
+\newblock \emph{Nucleic Acids Research}, 40\penalty0 (D1):\penalty0 D580--D586,
+  2012.
+\newblock \doi{10.1093/nar/gkr1097}.
+
+\bibitem[Kanehisa and Goto(2000)]{Kanehisa2000}
+Minoru Kanehisa and Susumu Goto.
+\newblock {KEGG}: {Kyoto} encyclopedia of genes and genomes.
+\newblock \emph{Nucleic Acids Research}, 28\penalty0 (1):\penalty0 27--30,
+  2000.
+\newblock \doi{10.1093/nar/28.1.27}.
+
+\bibitem[Kanehisa et~al.(2023)Kanehisa, Furumichi, Sato, Kawashima, and
+  Ishiguro-Watanabe]{Kanehisa2023}
+Minoru Kanehisa, Miho Furumichi, Yoko Sato, Masayuki Kawashima, and Mari
+  Ishiguro-Watanabe.
+\newblock {KEGG} for taxonomy-based analysis of pathways and genomes.
+\newblock \emph{Nucleic Acids Research}, 51\penalty0 (D1):\penalty0 D587--D592,
+  2023.
+\newblock \doi{10.1093/nar/gkac963}.
+
+\bibitem[K{\"o}ster and Rahmann(2012)]{Koster2012}
+Johannes K{\"o}ster and Sven Rahmann.
+\newblock {Snakemake} --- a scalable bioinformatics workflow engine.
+\newblock \emph{Bioinformatics}, 28\penalty0 (19):\penalty0 2520--2522, 2012.
+\newblock \doi{10.1093/bioinformatics/bts480}.
+
+\bibitem[Levy et~al.(1996)Levy, Rajaraman, and Ordille]{Levy1996}
+Alon~Y. Levy, Anand Rajaraman, and Joann~J. Ordille.
+\newblock Querying heterogeneous information sources using source descriptions.
+\newblock In \emph{Proceedings of the 22nd International Conference on Very
+  Large Data Bases (VLDB)}, pages 251--262, 1996.
+
+\bibitem[Libkin(2016)]{Libkin2016}
+Leonid Libkin.
+\newblock {SQL}'s three-valued logic and certain answers.
+\newblock \emph{ACM Transactions on Database Systems}, 41\penalty0
+  (1):\penalty0 1:1--1:28, 2016.
+\newblock \doi{10.1145/2877206}.
+
+\bibitem[Papakonstantinou et~al.(1995)Papakonstantinou, Gupta, Garcia-Molina,
+  and Ullman]{Papakonstantinou1995}
+Yannis Papakonstantinou, Ashish Gupta, Hector Garcia-Molina, and Jeffrey~D.
+  Ullman.
+\newblock A query translation scheme for rapid implementation of wrappers.
+\newblock In \emph{Deductive and Object-Oriented Databases (DOOD)}, volume 1013
+  of \emph{Lecture Notes in Computer Science}, pages 161--186. Springer, 1995.
+\newblock \doi{10.1007/3-540-60608-4_39}.
+
+\bibitem[Prud'hommeaux and Buil-Aranda(2013)]{Prudhommeaux2013Federated}
+Eric Prud'hommeaux and Carlos Buil-Aranda.
+\newblock {SPARQL} 1.1 federated query.
+\newblock W3c recommendation, World Wide Web Consortium, March 2013.
+\newblock URL \url{https://www.w3.org/TR/sparql11-federated-query/}.
+
+\bibitem[Rakhmawati et~al.(2013)Rakhmawati, Umbrich, Karnstedt, Hasnain, and
+  Hausenblas]{Rakhmawati2013}
+Nur~Aini Rakhmawati, J{\"u}rgen Umbrich, Marcel Karnstedt, Ali Hasnain, and
+  Michael Hausenblas.
+\newblock Querying over federated {SPARQL} endpoints: A state of the art
+  survey.
+\newblock \emph{CoRR}, abs/1306.1723, 2013.
+
+\bibitem[{RDFLib Team}(2026)]{RDFLib}
+{RDFLib Team}.
+\newblock {RDFLib}: A {Python} library for working with {RDF}.
+\newblock Software, 2026.
+\newblock URL \url{https://github.com/RDFLib/rdflib}.
+\newblock Version 7.6.0.
+
+\bibitem[Saleem et~al.(2016)Saleem, Khan, Hasnain, Ermilov, and
+  Ngonga~Ngomo]{Saleem2016}
+Muhammad Saleem, Yasar Khan, Ali Hasnain, Ivan Ermilov, and Axel-Cyrille
+  Ngonga~Ngomo.
+\newblock A fine-grained evaluation of {SPARQL} endpoint federation systems.
+\newblock \emph{Semantic Web}, 7\penalty0 (5):\penalty0 493--518, 2016.
+\newblock \doi{10.3233/SW-150186}.
+
+\bibitem[Schwarte et~al.(2011)Schwarte, Haase, Hose, Schenkel, and
+  Schmidt]{Schwarte2011}
+Andreas Schwarte, Peter Haase, Katja Hose, Ralf Schenkel, and Michael Schmidt.
+\newblock {FedX}: Optimization techniques for federated query processing on
+  linked data.
+\newblock In \emph{The Semantic Web -- ISWC 2011}, volume 7031 of \emph{Lecture
+  Notes in Computer Science}, pages 601--616. Springer, 2011.
+\newblock \doi{10.1007/978-3-642-25073-6_38}.
+
+\bibitem[Tanon(2026)]{Pyoxigraph}
+Thomas~Pellissier Tanon.
+\newblock {Oxigraph}: A graph database implementing the {SPARQL} standard.
+\newblock Software, 2026.
+\newblock URL \url{https://github.com/oxigraph/oxigraph}.
+\newblock Python bindings \texttt{pyoxigraph}, version 0.5.9.
+
+\bibitem[van Iersel et~al.(2010)van Iersel, Pico, Kelder, Gao, Ho, Hanspers,
+  Conklin, and Evelo]{VanIersel2010}
+Martijn~P. van Iersel, Alexander~R. Pico, Thomas Kelder, Jianjiong Gao, Isaac
+  Ho, Kristina Hanspers, Bruce~R. Conklin, and Chris~T. Evelo.
+\newblock The {BridgeDb} framework: Standardized access to gene, protein and
+  metabolite identifier mapping services.
+\newblock \emph{BMC Bioinformatics}, 11:\penalty0 5, 2010.
+\newblock \doi{10.1186/1471-2105-11-5}.
+
+\bibitem[Wiederhold(1992)]{Wiederhold1992}
+Gio Wiederhold.
+\newblock Mediators in the architecture of future information systems.
+\newblock \emph{Computer}, 25\penalty0 (3):\penalty0 38--49, 1992.
+\newblock \doi{10.1109/2.121508}.
+
+\bibitem[Wimalaratne et~al.(2018)Wimalaratne, Juty, Kunze, Janee, McMurry,
+  Beard, Jimenez, Clark, Moxon, Le~Novere, Hermjakob, Mungall, and
+  Dumontier]{Wimalaratne2018}
+Sarala~M. Wimalaratne, Nick Juty, John Kunze, Greg Janee, Julie~A. McMurry,
+  Niall Beard, Rafael Jimenez, Tim Clark, Sierra Moxon, Nicolas Le~Novere,
+  Henning Hermjakob, Christopher Mungall, and Michel Dumontier.
+\newblock Uniform resolution of compact identifiers for biomedical data.
+\newblock \emph{Scientific Data}, 5:\penalty0 180029, 2018.
+\newblock \doi{10.1038/sdata.2018.29}.
+
+\bibitem[Wolstencroft et~al.(2013)Wolstencroft, Haines, Fellows, Williams,
+  Withers, Owen, Soiland-Reyes, Dunlop, Nenadic, Fisher, Bhagat, Belhajjame,
+  Bacall, Hardisty, Nieva de~la Hidalga, Balcazar~Vargas, Sufi, and
+  Goble]{Wolstencroft2013}
+Katherine Wolstencroft, Robert Haines, Donal Fellows, Alan Williams, David
+  Withers, Stuart Owen, Stian Soiland-Reyes, Ian Dunlop, Aleksandra Nenadic,
+  Paul Fisher, Jiten Bhagat, Khalid Belhajjame, Finn Bacall, Alex Hardisty,
+  Abraham Nieva de~la Hidalga, Maria~P. Balcazar~Vargas, Shoaib Sufi, and
+  Carole Goble.
+\newblock The {Taverna} workflow suite: Designing and executing workflows of
+  web services on the desktop, web or in the cloud.
+\newblock \emph{Nucleic Acids Research}, 41\penalty0 (W1):\penalty0 W557--W561,
+  2013.
+\newblock \doi{10.1093/nar/gkt328}.
+
+\bibitem[Yerneni et~al.(1999)Yerneni, Li, Garcia-Molina, and
+  Ullman]{Yerneni1999}
+Ramana Yerneni, Chen Li, Hector Garcia-Molina, and Jeffrey Ullman.
+\newblock Computing capabilities of mediators.
+\newblock In \emph{Proceedings of the 1999 ACM SIGMOD International Conference
+  on Management of Data}, pages 443--454, 1999.
+\newblock \doi{10.1145/304182.304221}.
+
+\end{thebibliography}

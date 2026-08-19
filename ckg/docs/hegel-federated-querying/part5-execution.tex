@@ -1,0 +1,374 @@
+%==============================================================================
+\part{Execution}
+%==============================================================================
+
+\section{Budget allocation across heterogeneous sources}
+\label{sec:allocation}
+
+\subsection{Why allocation is forced}
+
+The sources of \cref{obs:kind} differ in cost by orders of magnitude and in
+kind of limit. A locally loaded artefact is effectively free and bounded by
+memory; a SPARQL endpoint is bounded by a per-request timeout and an
+unadvertised fair-use policy; a flat-file REST interface is bounded by an
+explicit request rate. A plan that ignores this either underuses the cheap
+sources or exceeds the expensive ones, and \cref{lst:script} does both. Since
+the total request budget is finite and the sources' yields are different
+functions of the effort spent on them, allocation is an optimisation problem
+and not a scheduling convention.
+
+\begin{definition}[Yield]
+\label{def:yield}
+The \emph{yield} of step $i$ under effort $e_i \geq 0$ is
+$\gamma_i(e_i)$, where $\gamma_i : \Rset_{\geq 0} \to \Rset_{\geq 0}$ is
+non-decreasing, continuously differentiable, strictly concave, and satisfies
+$\gamma_i(0) = 0$. Effort is measured in requests.
+\end{definition}
+
+Strict concavity is the substantive assumption and it is the empirically
+plausible one: the first requests to a source retrieve the common cases and
+later requests retrieve progressively rarer ones. It fails for a step whose
+result is all-or-nothing --- a single lookup that either succeeds or does not
+--- and \cref{rem:concavity-fails} records the consequence.
+
+\begin{definition}[Allocation problem]
+\label{def:alloc}
+Given a plan with $m$ steps, total budget $\Bud$, and per-step minimum costs
+$c_i > 0$, the allocation problem is
+\[
+\max_{e \in \Rset^m_{\geq 0}} \sum_{i=1}^{m} \gamma_i(e_i)
+\quad\text{subject to}\quad
+\sum_{i=1}^{m} e_i \leq \Bud .
+\]
+\end{definition}
+
+\subsection{A single shadow price}
+
+\begin{theorem}[Water-filling allocation]
+\label{thm:allocation}
+The allocation problem of \cref{def:alloc} has a unique optimum $e^\ast$, and
+there is a scalar $p^\ast \geq 0$ --- the shadow price of a request --- such
+that for every $i$,
+\[
+e_i^\ast > 0 \implies \gamma_i'(e_i^\ast) = p^\ast,
+\qquad
+e_i^\ast = 0 \implies \gamma_i'(0) \leq p^\ast ,
+\]
+and $\sum_i e_i^\ast = \Bud$ whenever some $\gamma_i'(0) > 0$. Consequently
+$e_i^\ast = (\gamma_i')^{-1}(p^\ast)$ on the support, and $p^\ast$ is the unique
+root of $\sum_i \max\bigl(0, (\gamma_i')^{-1}(p)\bigr) = \Bud$.
+\end{theorem}
+
+\begin{proof}
+The objective is a sum of strictly concave functions, hence strictly concave;
+the feasible set is a compact convex simplex-like region. A strictly concave
+function on a compact convex set attains a unique maximum, giving existence and
+uniqueness.
+
+Form the Lagrangian
+$L(e,p,\lambda) = \sum_i \gamma_i(e_i) - p(\sum_i e_i - \Bud) + \sum_i \lambda_i e_i$
+with $p \geq 0$ the multiplier of the budget constraint and $\lambda_i \geq 0$
+those of the non-negativity constraints. Slater's condition holds --- the point
+$e_i = \Bud/(2m)$ is strictly feasible --- so the KKT conditions are necessary
+and sufficient. Stationarity gives
+$\gamma_i'(e_i^\ast) - p^\ast + \lambda_i^\ast = 0$ for each $i$. Complementary
+slackness gives $\lambda_i^\ast e_i^\ast = 0$. If $e_i^\ast > 0$ then
+$\lambda_i^\ast = 0$ and $\gamma_i'(e_i^\ast) = p^\ast$. If $e_i^\ast = 0$ then
+$\lambda_i^\ast \geq 0$ and $\gamma_i'(0) = p^\ast - \lambda_i^\ast \leq p^\ast$.
+
+If some $\gamma_i'(0) > 0$ then the budget constraint is active at the optimum:
+were $\sum_i e_i^\ast < \Bud$, adding $\delta > 0$ to that $e_i$ would remain
+feasible and, by continuity of $\gamma_i'$ and $\gamma_i'(0)>0$, would strictly
+increase the objective, contradicting optimality. Hence $\sum_i e_i^\ast = \Bud$.
+
+Strict concavity makes each $\gamma_i'$ strictly decreasing and therefore
+invertible on its range, so $e_i^\ast = (\gamma_i')^{-1}(p^\ast)$ where
+positive, and $\sum_i \max(0,(\gamma_i')^{-1}(p))$ is continuous and strictly
+decreasing in $p$ on the region where it is positive, hence has a unique root
+at $\Bud$.
+\end{proof}
+
+\begin{corollary}[Nothing is dropped by a rule]
+\label{cor:no-dropping-rule}
+A step receives zero effort at the optimum if and only if
+$\gamma_i'(0) \leq p^\ast$, that is, if and only if its marginal yield at the
+first request is below the price. No step is excluded by a selection heuristic,
+a priority ordering, or a source blacklist.
+\end{corollary}
+
+\begin{proof}
+Immediate from the two implications of \cref{thm:allocation}, which are
+exhaustive and mutually exclusive given strict concavity.
+\end{proof}
+
+\Cref{cor:no-dropping-rule} matters because the alternative --- a hand-written
+priority list saying which sources to try first --- is what \cref{lst:script}
+does implicitly through its statement order, and it is unfalsifiable: one
+cannot ask of a priority list whether it is right. One can ask of $p^\ast$
+whether the yields that determined it were estimated correctly, which is a
+question with an answer.
+
+\begin{proposition}[Sufficient total budget is not sufficient]
+\label{prop:necessary-not-sufficient}
+Let $c_i$ be the minimum cost at which step $i$ can return a non-empty payload.
+Then $\Bud \geq \sum_i c_i$ is necessary for a plan to complete with all steps
+$\vans$, and is not sufficient.
+\end{proposition}
+
+\begin{proof}
+Necessity: each step must be issued at cost at least $c_i$ to return a
+non-empty payload, and the costs are additive over steps and drawn from one
+budget, so any completing execution spends at least $\sum_i c_i$.
+
+Insufficiency: take $m=2$ with $c_1 = c_2 = 1$ and $\Bud = 2$. Let step $2$
+consume the output of step $1$, and let $\cost_{\Src_2}$ be increasing in input
+cardinality with $\cost_{\Src_2}(k) = k$. If step $1$ at cost $1$ returns a
+payload of cardinality $3$, then step $2$ requires cost $3$, but only $1$
+remains. The plan halts with step $2$ reporting $\vref$ by rule (R3) of
+\cref{def:verdicts}, despite $\Bud \geq c_1 + c_2$. The obstruction is that
+$c_2$ is a minimum over inputs and the realised input is not the minimising
+one, and no static quantity bounds the realised input without executing step
+$1$.
+\end{proof}
+
+\begin{remark}[The consequence for planning]
+\label{rem:replanning}
+\Cref{prop:necessary-not-sufficient} shows that a purely static allocation can
+be infeasible at run time through no error of the allocator. Two responses are
+available. The first is to re-solve \cref{thm:allocation} after each step with
+the remaining budget and the realised cardinalities, which is correct and costs
+one convex solve per step. The second is to allocate statically from upper
+bounds on cardinality, which is cheap and wastes budget in proportion to how
+loose the bounds are. The prototype takes the first, and \cref{sec:limits}
+records that we have not established a regret bound for it against the
+clairvoyant allocation --- the natural comparison, which we do not make.
+\end{remark}
+
+\begin{remark}[Where concavity fails]
+\label{rem:concavity-fails}
+A \textsf{lookup} step against a REST interface has an all-or-nothing yield:
+one request retrieves the record and further requests retrieve nothing. Its
+yield is a step function, neither strictly concave nor differentiable, and
+\cref{thm:allocation} does not apply to it. The prototype handles such steps by
+removing them from the optimisation, charging their fixed cost to the budget
+first, and solving \cref{def:alloc} over the remainder --- which is correct
+because their effort is not a decision variable, and which means the shadow
+price governs only the steps that have a real allocation choice.
+\end{remark}
+
+\section{Structural interpolation}
+\label{sec:interp}
+
+\subsection{An instance of the defect}
+
+The following is a documented observation and we restate it in full because the
+argument of this section depends on the details rather than on the headline.
+
+\begin{observation}[Two spellings, two answers]
+\label{obs:2-397}
+On 10 August 2026, two requests were issued to a public SPARQL endpoint of a
+reaction knowledge base, with a JSON results media type. The two requests were
+byte-identical except for one line. The first, using an abbreviated object
+list, returned a count of $2$. The second, using two separate triple patterns,
+returned a count of $397$. The ratio is $198.5$.
+\end{observation}
+
+\begin{lstlisting}[caption={Form A. Returns 2. The abbreviation is on line 6.},label=lst:comma,language=,keywordstyle=]
+PREFIX rh:    <http://rdf.rhea-db.org/>
+PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX chebi: <http://purl.obolibrary.org/obo/CHEBI_>
+SELECT (COUNT(DISTINCT ?r) AS ?n) WHERE {
+  ?r rdfs:subClassOf rh:Reaction ; rh:status rh:Approved .
+  ?r rh:side/rh:contains/rh:compound/rh:chebi ?a , ?o .
+  VALUES ?aa { chebi:35238 chebi:37022 }
+  VALUES ?ox { chebi:35179 chebi:36147 chebi:133294 }
+  ?a rdfs:subClassOf* ?aa .
+  ?o rdfs:subClassOf* ?ox .
+}
+\end{lstlisting}
+
+\begin{lstlisting}[caption={Form B. Returns 397. Differs from \cref{lst:comma} only in that line 6 is written as two patterns.},label=lst:longhand,language=,keywordstyle=]
+  ?r rh:side/rh:contains/rh:compound/rh:chebi ?a .
+  ?r rh:side/rh:contains/rh:compound/rh:chebi ?o .
+\end{lstlisting}
+
+The two forms are semantically equivalent under the specification. An object
+list is syntax: the grammar admits a comma-separated object list in a
+predicate-object list, and the abbreviation is expanded during translation to
+the abstract query --- before evaluation, and without a special case for
+property paths \citep{Harris2013}. A conforming implementation must therefore
+return the same count for both. The difference is not a specification
+ambiguity.
+
+\begin{remark}[The control is clean and the confound is named]
+\label{rem:control}
+Both forms were evaluated locally against two independent engines
+\citep{RDFLib,Pyoxigraph} over a hand-checkable dataset, and both engines
+returned the hand-computed answer for both spellings, so the equivalence is not
+merely our reading of the grammar. Separately, the endpoint's loaded ontology
+carried $204{,}585$ classes against $237{,}672$ in the corresponding published
+download --- a difference of $33{,}087$, or $13.9\%$ --- so any comparison of
+counts \emph{across} the two artefacts is confounded by snapshot skew. That
+confound does not touch \cref{obs:2-397}, in which both counts come from the
+same endpoint in the same session.
+\end{remark}
+
+\begin{remark}[We do not diagnose the service]
+\label{rem:no-probing}
+The cause lies in the endpoint's translation of the abbreviated form and we do
+not attempt to determine it further. Establishing it would require probing a
+third party's public service with requests designed to elicit internal
+behaviour, which is not ours to do. Nothing in this section should be read as a
+recommendation to do so, and the design consequence below does not depend on
+knowing the cause.
+\end{remark}
+
+\subsection{The design consequence}
+
+\Cref{obs:2-397} is an instance of a family. In each member, a plan author
+writes a request that is correct under the target language's specification, a
+deployment interprets one spelling differently from another, and the difference
+is invisible because it is a difference between two strings the author regards
+as the same string. Textual interpolation puts the author in exactly this
+position, because the string that is sent is assembled at run time and never
+inspected.
+
+\begin{construction}[Longhand-only lowering]
+\label{cons:longhand}
+The lowering $\Low_\Src$ emits, for each abstract request, a canonical concrete
+form fixed by the adapter, in which (i) every predicate-object list is expanded
+to separate patterns, (ii) every bound result set enters through the target
+language's own value-binding construct rather than by concatenation into the
+pattern text, and (iii) no construct is emitted whose expansion interacts with
+another construct in the sense of \cref{rem:independence-fails}.
+\end{construction}
+
+\begin{theorem}[Structural interpolation eliminates the defect family]
+\label{thm:interpolation}
+Let $\mathcal{D}$ be the family of defects in which two concrete requests with
+the same denotation under the target specification are assigned different
+denotations by a deployment, and whose difference lies in the spelling of a
+construct that \cref{cons:longhand} canonicalises. Then no execution of a plan
+under \cref{cons:longhand} exhibits a member of $\mathcal{D}$.
+\end{theorem}
+
+\begin{proof}
+Fix a plan and an execution. Every concrete request issued is produced by
+$\Low_\Src$, since by \cref{prin:leaves} no other source of concrete requests
+exists in the language. By \cref{cons:longhand}, $\Low_\Src$ emits a single
+canonical spelling for each abstract request: the expanded, longhand form with
+bindings supplied structurally. Membership in $\mathcal{D}$ requires two
+requests differing in a canonicalised spelling. But for any two abstract
+requests with the same denotation, the emitted concrete forms are determined by
+the canonical procedure and therefore agree wherever the canonicalisation
+applies; and no non-canonical spelling is ever emitted, so no pair of emitted
+requests differs in one. Hence no member of $\mathcal{D}$ is exhibited.
+\end{proof}
+
+\begin{remark}[Precisely what is and is not eliminated]
+\label{rem:interp-scope}
+\Cref{thm:interpolation} is a construction-by-exclusion result and its strength
+is exactly the coverage of \cref{cons:longhand}. It eliminates the family
+$\mathcal{D}$ --- differences attributable to a spelling the lowering
+canonicalises. It does not eliminate: deployments that misinterpret the
+canonical form itself; capability over-declaration
+(\cref{rem:honesty-assumption}), which is a different defect with the same
+symptom; or divergence between a service and a specification in constructs the
+canonicalisation does not touch. The honest statement is that the language
+removes the author's ability to make one class of mistake, by removing the
+author's access to the string, and that this is a smaller claim than
+correctness.
+\end{remark}
+
+\begin{proposition}[The elimination is not available to textual interpolation]
+\label{prop:textual-cannot}
+Let $I$ be an interface in which the caller supplies the concrete request as a
+string. Then for any canonicalisation procedure $C$, there is a caller of $I$
+whose issued request is not in the image of $C$.
+\end{proposition}
+
+\begin{proof}
+The caller supplies an arbitrary string and $I$ transmits it. Since $C$'s image
+is a proper subset of the concrete language --- proper because $C$
+canonicalises, so at least two distinct strings map to one, and the
+non-canonical one is outside the image --- a caller supplying that
+non-canonical string issues a request outside the image. No property of $I$
+prevents this, because $I$'s contract is to transmit what it is given.
+\end{proof}
+
+\Cref{prop:textual-cannot} is why \cref{prin:leaves} is a principle of the
+language rather than a recommended practice: a recommendation is exactly the
+thing \cref{prop:textual-cannot} says is unenforceable.
+
+\section{Re-execution}
+\label{sec:idempotence}
+
+A plan is often run more than once --- to refresh a result, to recover from a
+budget exhaustion, to check a suspicious answer. Whether re-execution is safe
+is not obvious, because a plan mixes sources with different volatility and a
+retention check compares against a threshold.
+
+\begin{definition}[Stability]
+\label{def:stable}
+A source $\Src$ is \emph{stable over an interval} if the dataset it holds is
+unchanged throughout. A translation map is stable if its relation is unchanged.
+\end{definition}
+
+\begin{theorem}[Characterisation of safe re-execution]
+\label{thm:idempotent}
+Let $\Plan$ be well-capability with total budget $\Bud$, executed twice over an
+interval throughout which every source and every translation map it uses is
+stable. Then the two executions assign the same verdict and the same payload to
+every step if and only if both executions allocate every step an effort at
+least its realised cost. If some step is allocated less in one execution than
+its realised cost, the two executions may differ, and the difference is
+confined to that step and its successors in $G(\Plan)$.
+\end{theorem}
+
+\begin{proof}
+($\Leftarrow$) Suppose both executions allocate every step at least its
+realised cost. We induct along the sequence order. For $\Step_1$,
+$\beta_1 = ()$, so (R1) does not fire; $\Req(\rho_1) \subseteq \Capset(\Src_1)$ by
+well-capability, so (R2) does not fire; the allocation covers the realised
+cost, so neither (R3) nor (R4) fires; the request is issued, and by stability
+the dataset is the same in both executions, so by faithfulness
+(\cref{thm:lowering}) the extracted result equals
+$\llbracket \rho_1 \rrbracket_D$ in both. Hence the verdict and payload agree.
+For the inductive step, assume all predecessors of $\Step_i$ agree across the
+two executions. Then the antecedent of (R1) has the same truth value in both,
+and if it is false the same argument as the base case applies, using stability
+of any translation map involved and the fact that a retention check compares a
+fixed $r_\mu(S)$ against a fixed $\epsilon$, so it too agrees.
+
+($\Rightarrow$) Suppose some step is allocated less than its realised cost in
+some execution. Then in that execution rule (R3) or (R4) fires at that step,
+yielding $\vref$ or $\vtime$; if the other execution allocates at least the
+realised cost, that step yields $\vans$ or $\vempty$ there. The verdicts
+differ, contradicting agreement. Hence agreement forces sufficient allocation
+everywhere.
+
+Confinement: by \cref{def:verdicts}, a step's verdict depends only on its own
+source, capabilities, budget and the verdicts and payloads of its predecessors.
+If all predecessors of $\Step_j$ agree and $\Step_j$ is not the differing step,
+the same argument as above gives agreement at $\Step_j$. So the difference
+propagates only along edges of $G(\Plan)$ out of the differing step.
+\end{proof}
+
+\begin{corollary}[Budget exhaustion is recoverable, data change is not]
+\label{cor:rerun}
+Re-running a plan that halted with $\vref$ or $\vtime$, under a larger budget
+and over a stable interval, reproduces every verdict the first execution
+assigned before the halt and may extend the plan further. Re-running across a
+change in any source's dataset carries no such guarantee, and the language
+records source snapshot identifiers in provenance so that the two cases are
+distinguishable after the fact.
+\end{corollary}
+
+\begin{proof}
+The first claim is \cref{thm:idempotent}($\Leftarrow$) applied to the prefix of
+steps allocated sufficiently in both executions, which by hypothesis includes
+every step completed before the halt. The second follows because stability is a
+hypothesis of \cref{thm:idempotent} and the theorem's conclusion is not
+asserted without it; the provenance recording is a design decision, not a
+consequence.
+\end{proof}

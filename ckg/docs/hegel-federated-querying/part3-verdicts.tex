@@ -1,0 +1,306 @@
+%==============================================================================
+\part{Verdicts}
+%==============================================================================
+
+\section{The verdict algebra}
+\label{sec:verdicts}
+
+\subsection{Three independent predicates}
+
+Before naming the verdicts, we isolate what a verdict is about. Fix a step
+$\Step = (x, \Src, \rho, \beta, b)$ executed against a source holding dataset
+$D$, with the values of $\beta$ already computed. Three predicates apply, and
+the burden of this subsection is that they are logically independent.
+
+\begin{definition}[The three predicates]
+\label{def:three}
+\leavevmode
+\begin{itemize}[leftmargin=2.4em]
+\item $\mathrm{Exp}(\Step)$ holds iff the abstract request $\rho$ is
+expressible against $\Src$: formally, $\Req(\rho) \subseteq \Capset(\Src)$.
+\item $\mathrm{Der}(\Step)$ holds iff
+$\llbracket \rho \rrbracket_D \neq \emptyset$ on the dataset the source in fact
+holds, with the supplied bindings $\beta$.
+\item $\mathrm{Ans}_b(\Step)$ holds iff the concrete request completes within
+the step's budget $b$.
+\end{itemize}
+\end{definition}
+
+\begin{proposition}[Independence]
+\label{prop:independence}
+The three predicates of \cref{def:three} are logically independent: all eight
+truth assignments are realisable by some (step, source, dataset, budget).
+\end{proposition}
+
+\begin{proof}
+We exhibit the constructions; each varies one predicate holding the others
+fixed, and the eight cases follow by composing them.
+
+To vary $\mathrm{Exp}$ alone: take a request using \textsf{regex} and swap the
+source between one declaring \textsf{regex} and one not. Neither the dataset
+nor the budget changes, so $\mathrm{Der}$ and $\mathrm{Ans}_b$ are untouched on
+the branch where the request is issued at all; on the branch where it is not,
+$\mathrm{Der}$ is still a property of $D$ and $\rho$, both fixed, and
+$\mathrm{Ans}_b$ is vacuously assigned by convention.
+
+To vary $\mathrm{Der}$ alone: fix the source and request and vary the dataset
+between one containing a witness for $\phi$ and one not. Capability
+declarations do not depend on $D$, so $\mathrm{Exp}$ is unchanged; a request
+that completes on one finite dataset completes on the other for a budget
+exceeding both costs, so $\mathrm{Ans}_b$ can be held.
+
+To vary $\mathrm{Ans}_b$ alone: fix source, request and dataset, and vary $b$
+across the cost of the request. Neither $\Capset(\Src)$ nor
+$\llbracket\rho\rrbracket_D$ depends on $b$, so the other two are unchanged.
+
+Since each predicate is separately variable with the other two held fixed, and
+each is two-valued, all eight assignments are realisable.
+\end{proof}
+
+\Cref{prop:independence} is the reason a single boolean cannot carry the
+outcome of a step: it must report a point in an eight-element space, and one
+bit indexes two. The verdict set below is the coarsening of that space which
+distinguishes the cases calling for different repairs.
+
+\begin{remark}[Only one predicate carries a clock]
+\label{rem:clock}
+$\mathrm{Exp}$ is a property of the request and the declaration;
+$\mathrm{Der}$ is a property of the request and the dataset; only
+$\mathrm{Ans}_b$ mentions the budget. A system reporting a single outcome
+cannot say which of the three it means, and a practitioner who reruns a failing
+step with more time is implicitly betting that the failure was in the third.
+The bet is unfounded two-thirds of the time, and \cref{lst:script} provides no
+way to check it.
+\end{remark}
+
+\subsection{Six verdicts}
+
+\begin{definition}[Verdict set]
+\label{def:verdicts}
+$V = \{\vans, \vempty, \vsurf, \vtime, \vref, \vstarve\}$, assigned to a step
+by the following rules, applied in order:
+\begin{enumerate}[label=(R\arabic*),leftmargin=3em]
+\item If some $y \in \beta$ has a verdict other than $\vans$, or has verdict
+$\vans$ with a payload whose retention fell below the step's declared
+expectation, then $\vstarve$; the diagnosis names the offending predecessor.
+\item Else if $\Req(\rho) \not\subseteq \Capset(\Src)$ then $\vsurf$; the
+diagnosis names $\Req(\rho)\setminus\Capset(\Src)$.
+\item Else if the plan's remaining budget is below $\cost_\Src$ evaluated at
+the input cardinality, then $\vref$; the diagnosis names the shortfall.
+\item Else issue the request. If it does not complete within $b$ then $\vtime$;
+the diagnosis names $b$ and the elapsed cost.
+\item Else if the extracted result set is empty then $\vempty$.
+\item Else $\vans$, with the result set as payload.
+\end{enumerate}
+\end{definition}
+
+The ordering of (R1)--(R6) is not arbitrary and is not merely an implementation
+convenience: it is what makes the verdicts \emph{attributive}. Each rule fires
+only when every earlier cause has been excluded, so a step reporting $\vempty$
+has established that its inputs were adequate, its capabilities sufficient, its
+budget available and its request completed --- and therefore that the emptiness
+is a fact about the data rather than about the machinery. No rule below (R6)
+can say that.
+
+\begin{definition}[Blocker]
+\label{def:blocker}
+The \emph{blocker} of a non-$\vans$ verdict is
+\[
+\mathrm{blk}(\vsurf) = \bmdl,\quad
+\mathrm{blk}(\vtime) = \beng,\quad
+\mathrm{blk}(\vref) = \bbud,\quad
+\mathrm{blk}(\vstarve) = \bcorp,
+\]
+and $\vempty$ has no blocker.
+\end{definition}
+
+\begin{remark}[$\vempty$ has no blocker on purpose]
+Assigning a blocker to $\vempty$ would assert that something obstructed the
+step, and (R6) fires exactly when nothing did. A verdict of $\vempty$ is a
+successful measurement of an empty set. Conflating it with an obstruction is
+defect (D2) of \cref{sec:intro} in its purest form, and the discipline that
+prevents it is that the blocker map is partial.
+\end{remark}
+
+\subsection{Distinguishability, and the one-bit interface}
+
+\begin{theorem}[Six-way distinguishability]
+\label{thm:six}
+For each pair $v \neq v'$ in $V$ there exist a plan, two source
+configurations agreeing on everything the plan can observe except as noted, and
+a step whose verdict is $v$ in the first and $v'$ in the second, such that the
+executor of \cref{def:verdicts} reports the difference. Consequently the six
+verdicts are pairwise distinguishable by a plan executor.
+\end{theorem}
+
+\begin{proof}
+It suffices to realise each verdict by a configuration differing from a common
+baseline in exactly one respect, since then any two verdicts are separated by
+the pair of configurations realising them.
+
+Take as baseline a step whose predecessors all returned $\vans$ at full
+retention, whose source declares every capability the request uses, whose
+budget exceeds the request cost, and whose dataset contains a witness. By
+(R1)--(R6) the baseline verdict is $\vans$.
+
+$\vempty$: remove the witness from $D$, changing nothing else. (R1)--(R4) still
+pass; (R5) fires.
+
+$\vtime$: restore the witness and set $b$ below the request cost. (R1)--(R3)
+pass, (R4) fires.
+
+$\vref$: restore $b$ and set the plan's remaining budget below
+$\cost_\Src$. (R1)--(R2) pass, (R3) fires.
+
+$\vsurf$: restore the budget and remove one capability of $\Req(\rho)$ from
+$\Capset(\Src)$. (R1) passes, (R2) fires.
+
+$\vstarve$: restore the capability and set a predecessor's verdict to any
+non-$\vans$ value, or its retention below the declared expectation. (R1) fires.
+
+Each configuration differs from the baseline in exactly one respect and yields
+a distinct verdict, and the executor computes the verdict by the stated rules,
+so it reports each. The six are therefore pairwise distinguishable.
+\end{proof}
+
+\begin{corollary}[A row-returning interface conflates at least four verdicts]
+\label{cor:onebit}
+Let $I$ be an interface whose response to a request is a result set, with
+failure signalled by returning the empty set. Then $I$ cannot distinguish
+$\vempty$, $\vtime$, $\vsurf$ and $\vstarve$ in any of the four configurations
+constructed in the proof of \cref{thm:six}. No discipline imposed on callers of
+$I$ repairs this.
+\end{corollary}
+
+\begin{proof}
+In each of the four configurations the value $I$ returns is the empty result
+set: in the $\vempty$ configuration because the denotation is empty; in the
+$\vtime$ configuration because the request did not complete and $I$ has no
+other channel; in the $\vsurf$ configuration because the request was not issued
+or was issued and degraded; in the $\vstarve$ configuration because the inputs
+were empty and a request over empty inputs has empty denotation. The four
+responses are equal as values. A caller's behaviour is a function of the values
+it receives, so no caller distinguishes them, and no discipline on callers
+changes the values. Hence the conflation is a property of $I$, not of its use.
+\end{proof}
+
+\Cref{cor:onebit} is the formal content of defect (D2), and it is worth being
+explicit about its scope. It does not say that existing systems are badly
+engineered. It says that the interface contract they expose --- rows, with
+emptiness overloaded as failure --- has insufficient capacity, and that a
+system built on it cannot recover the distinction downstream however carefully
+it is written. The repair is not better error handling; it is a wider return
+type.
+
+\subsection{Starvation is the characteristic federated failure}
+
+The verdict $\vstarve$ deserves separate treatment, because it is the one with
+no single-database analogue, and because it is not a corner case.
+
+\begin{proposition}[Starvation is unreachable in the closed setting and reachable in the federated one]
+\label{prop:starve-reachable}
+Consider the restriction of \cref{def:verdicts} to plans of a single step
+against a fixed corpus --- the closed setting. Then:
+\begin{enumerate}[label=(\alph*),leftmargin=2.4em]
+\item no execution assigns $\vstarve$, and consequently the blocker $\bcorp$
+is emitted by no rule;
+\item in the federated setting with $m \geq 2$ steps, $\vstarve$ is assigned on
+a set of configurations of positive measure in the following sense: for every
+step $\Step_i$ with $\beta_i \neq ()$ and every predecessor $\Step_j$ feeding
+it, there is a dataset perturbation at $\Src_j$ alone that causes $\Step_i$ to
+report $\vstarve$ while $\Step_i$'s own source, capabilities and budget are
+untouched.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+(a) In a single-step plan, $\beta = ()$, so the antecedent of (R1) is vacuously
+false and (R1) never fires. Since (R1) is the unique rule assigning $\vstarve$,
+the verdict is unreachable; and since $\bcorp$ is by \cref{def:blocker} the
+image of $\vstarve$ alone, no blocker $\bcorp$ is emitted. The corpus is fixed
+and given, so its inadequacy manifests as $\vempty$ under (R5) --- an empty
+answer, correctly reported as such, with no obstruction named.
+
+(b) Let $\Step_j \to \Step_i$ be an edge of $G(\Plan)$ with $y \in \beta_i$
+bound by $\Step_j$. Perturb the dataset at $\Src_j$ by deleting the witnesses
+for $\rho_j$. Then $\Step_j$ reports $\vempty$ by (R5); its capability set,
+budget and lowering are unchanged, so no other verdict applies to it. At
+$\Step_i$, the antecedent of (R1) now holds, since $y$ has a verdict other than
+$\vans$; (R1) fires and $\Step_i$ reports $\vstarve$ naming $\Step_j$. Nothing
+at $\Src_i$ was altered.
+\end{proof}
+
+\begin{remark}[Why this is the characteristic case]
+\label{rem:starve-characteristic}
+In the closed setting the corpus is an input: if it lacks the assertions a
+question needs, that is a fact about the world one reports and does not
+diagnose. In federation the corpus of step $i$ is not an input but an
+\emph{artefact of steps $1..i-1$}, and its inadequacy is therefore a
+diagnosable event with a locatable cause. \Cref{prop:starve-reachable} says
+that federation makes a previously unreachable diagnosis reachable, and
+\cref{prop:starve-common} below says it is the modal outcome once translation
+enters. Read together with \cref{cor:onebit}: the failure mode that federation
+newly creates is exactly one of the four that the conventional interface cannot
+see.
+\end{remark}
+
+\begin{proposition}[Starvation dominates once translation enters]
+\label{prop:starve-common}
+Let $\Plan$ contain a translation step whose retention is $r < 1$
+(\cref{def:retention}), feeding a step whose per-input hit probability is $p$
+independently across inputs. Then for input cardinality $N$ the probability
+that the downstream step returns a non-empty payload is
+$1 - (1-p)^{rN}$, whereas absent the translation it is $1-(1-p)^{N}$. For $p$
+small and $rN$ small the ratio of failure probabilities approaches
+$e^{-prN}/e^{-pN} = e^{p N (1-r)}$, so the excess failure attributable to
+translation grows exponentially in the lost fraction $1-r$ times the input
+size.
+\end{proposition}
+
+\begin{proof}
+The translation delivers $rN$ inputs by \cref{def:retention}. Under
+independence the downstream step misses on all of them with probability
+$(1-p)^{rN}$, giving the stated success probability; the untranslated case is
+$r=1$. Taking the ratio of the two failure probabilities and using
+$(1-p)^{k} = e^{k\ln(1-p)} \approx e^{-pk}$ for small $p$ yields
+$e^{-prN + pN} = e^{pN(1-r)}$.
+\end{proof}
+
+The independence hypothesis in \cref{prop:starve-common} is false in practice
+--- identifiers that fail to translate are correlated with identifiers that are
+poorly annotated downstream, so the true excess is larger than the bound and
+not smaller. We state the independent case because it is the one we can prove,
+and record the direction of the bias rather than claiming the bound is tight.
+
+\subsection{Verdict propagation}
+
+\begin{definition}[Propagation]
+\label{def:propagation}
+A plan's verdict is $\vans$ if every emitted step is $\vans$; otherwise it is
+the verdict of the earliest non-$\vans$ step in the sequence order, together
+with the transitive closure of blame along $G(\Plan)$.
+\end{definition}
+
+\begin{proposition}[Blame is well defined and terminates at a non-starved step]
+\label{prop:blame}
+For any plan and execution, following the diagnosis of a $\vstarve$ verdict
+from step to named predecessor terminates, and terminates at a step whose
+verdict is not $\vstarve$.
+\end{proposition}
+
+\begin{proof}
+By \cref{def:plan}, every variable in $\beta_i$ is bound by some $\Step_j$ with
+$j < i$, so the named predecessor is strictly earlier in the sequence order.
+The chain of blame is therefore strictly decreasing in a well-founded order on
+a finite set and must terminate. It terminates at a step which is not
+$\vstarve$, because a $\vstarve$ step always names a predecessor by (R1) and so
+is never terminal; and the first step of the plan has $\beta_1 = ()$, so (R1)
+cannot fire on it.
+\end{proof}
+
+\Cref{prop:blame} is what makes a $\vstarve$ report actionable rather than
+circular: the analyst follows the chain and arrives at a step whose failure is
+attributed to a capability, a budget, a timeout, or a genuinely empty dataset
+--- one of the four things one can actually do something about. This is defect
+(D3) resolved, and it is resolved by the structure of the verdict algebra
+rather than by a convention that callers are asked to observe.

@@ -1,0 +1,56 @@
+\contentsline {part}{I\hspace {1em}The Setting}{4}{part.1}%
+\contentsline {section}{\numberline {1}Introduction}{4}{section.1}%
+\contentsline {subsection}{\numberline {1.1}The script that everybody writes}{4}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Why the obvious repair fails}{5}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}What we build instead}{5}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Contributions and non-contributions}{6}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Conventions}{6}{subsection.1.5}%
+\contentsline {section}{\numberline {2}Related work and where this sits}{6}{section.2}%
+\contentsline {part}{II\hspace {1em}The Language}{7}{part.2}%
+\contentsline {section}{\numberline {3}The source model}{7}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Sources differ in kind, not dialect}{7}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Results, and why the result model is the common one}{8}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Lowering, faithfulness, and honesty}{9}{subsection.3.3}%
+\contentsline {section}{\numberline {4}The intermediate representation}{11}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Steps}{11}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}The static capability check}{12}{subsection.4.2}%
+\contentsline {part}{III\hspace {1em}Verdicts}{13}{part.3}%
+\contentsline {section}{\numberline {5}The verdict algebra}{13}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Three independent predicates}{13}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Six verdicts}{14}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Distinguishability, and the one-bit interface}{14}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Starvation is the characteristic federated failure}{15}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Verdict propagation}{16}{subsection.5.5}%
+\contentsline {part}{IV\hspace {1em}Translation}{16}{part.4}%
+\contentsline {section}{\numberline {6}The arithmetic of partial identifier translation}{17}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Maps are partial, non-injective, and non-confluent}{17}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Composition}{18}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Order does not recover loss}{19}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Routes may disagree without either being wrong}{20}{subsection.6.4}%
+\contentsline {subsection}{\numberline {6.5}The retention check}{21}{subsection.6.5}%
+\contentsline {part}{V\hspace {1em}Execution}{21}{part.5}%
+\contentsline {section}{\numberline {7}Budget allocation across heterogeneous sources}{21}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Why allocation is forced}{21}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}A single shadow price}{22}{subsection.7.2}%
+\contentsline {section}{\numberline {8}Structural interpolation}{23}{section.8}%
+\contentsline {subsection}{\numberline {8.1}An instance of the defect}{23}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}The design consequence}{24}{subsection.8.2}%
+\contentsline {section}{\numberline {9}Re-execution}{25}{section.9}%
+\contentsline {part}{VI\hspace {1em}Realisation}{26}{part.6}%
+\contentsline {section}{\numberline {10}A prototype}{26}{section.10}%
+\contentsline {subsection}{\numberline {10.1}What the prototype is, and what it is not}{26}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}Pipeline}{26}{subsection.10.2}%
+\contentsline {subsection}{\numberline {10.3}Adapters}{27}{subsection.10.3}%
+\contentsline {subsection}{\numberline {10.4}The output document}{27}{subsection.10.4}%
+\contentsline {section}{\numberline {11}Validation design}{28}{section.11}%
+\contentsline {section}{\numberline {12}Limitations}{29}{section.12}%
+\contentsline {paragraph}{Honesty is assumed, never verified.}{29}{section*.2}%
+\contentsline {paragraph}{Yields are posited, not estimated.}{29}{section*.3}%
+\contentsline {paragraph}{No regret bound for replanning.}{29}{section*.4}%
+\contentsline {paragraph}{Retention laws are unmeasured.}{29}{section*.5}%
+\contentsline {paragraph}{Namespace disjointness is a modelling decision.}{29}{section*.6}%
+\contentsline {paragraph}{Wall-clock time is not modelled.}{29}{section*.7}%
+\contentsline {paragraph}{The static check is not a completeness result.}{30}{section*.8}%
+\contentsline {paragraph}{Structural interpolation is a smaller claim than correctness.}{30}{section*.9}%
+\contentsline {paragraph}{Nothing has been run against a live service.}{30}{section*.10}%
+\contentsline {section}{\numberline {13}Conclusion}{30}{section.13}%

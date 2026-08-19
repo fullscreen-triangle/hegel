@@ -1,0 +1,224 @@
+%==============================================================================
+\part{The Setting}
+%==============================================================================
+
+\section{Introduction}
+\label{sec:intro}
+
+\subsection{The script that everybody writes}
+
+Consider a question of the kind that arises daily in metabolic research: which
+enzymes catalyse reactions consuming any member of a given chemical class, and
+of those, which occur in pathways that also contain a second class. No single
+public resource answers it. The reaction membership lives in one database, the
+enzyme--reaction association in a second, the pathway membership in a third,
+and the chemical class hierarchy in a fourth.
+
+The universal solution is a script. In outline:
+
+\begin{lstlisting}[caption={The script everybody writes. Not a strawman.},label=lst:script]
+compounds = sparql(ENDPOINT_A, TEMPLATE_A % class_iri)
+ids       = [row["c"] for row in compounds]
+enzymes   = []
+for chunk in batches(ids, 50):
+    q = TEMPLATE_B % " ".join("<%s>" % i for i in chunk)
+    enzymes += sparql(ENDPOINT_A, q)
+kegg_ids  = [xref(e) for e in enzymes]
+pathways  = [rest_get(ENDPOINT_C, "/link/pathway/%s" % k) for k in kegg_ids]
+\end{lstlisting}
+
+Every practitioner recognises \cref{lst:script}, and every practitioner
+dislikes it. The dislike is usually expressed aesthetically. It is not an
+aesthetic problem. \Cref{lst:script} exhibits, in eight lines, five distinct
+and independently serious defects.
+
+\begin{enumerate}[label=(D\arabic*),leftmargin=3em]
+\item \textbf{The interpolation is textual.} Line~5 constructs a query by
+string concatenation. Whether the resulting string means what the author
+intended depends on the target language's parse of a string the author never
+sees in full. \Cref{sec:interp} exhibits a documented case in which two
+spellings of one intent, differing in a single line, returned $2$ and $397$
+against the same service on the same day.
+\item \textbf{Failure is one bit wide.} If \texttt{compounds} comes back empty,
+the script cannot distinguish: the class has no members; the endpoint timed out
+and returned an empty result rather than an error; the query used a construct
+the endpoint does not support and the endpoint degraded silently; the class
+identifier was misspelled. Each demands a different repair, and the script sees
+one empty list.
+\item \textbf{The failure of step $n$ is attributed to step $n$.} If
+\texttt{pathways} is empty, the proximate cause is very often that
+\texttt{kegg\_ids} was short, because \texttt{xref} is a partial function and
+silently dropped two-fifths of its input. The script reports a pathway problem
+and the analyst debugs the wrong stage.
+\item \textbf{The budget is unstated and unallocated.} There is a rate limit on
+\texttt{ENDPOINT\_C}, a timeout on \texttt{ENDPOINT\_A}, and no representation
+of either anywhere in the program. The script discovers them by failing.
+\item \textbf{The control flow is invisible to the data layer.} The loop over
+\texttt{batches} exists because a query language has no way to say ``and
+then''. The batching constant $50$ is a magic number encoding an unstated
+belief about request-size limits at a service the script does not name.
+\end{enumerate}
+
+These are not five instances of sloppiness. They are five consequences of one
+structural decision --- that control flow lives in a host language and data
+access lives in a query language, and neither can see the other.
+
+\subsection{Why the obvious repair fails}
+
+The obvious repair is to make the query language expressive enough to hold the
+whole computation: one large query with unions, optional patterns, subselects
+and federated service clauses. This is what the SPARQL~1.1 federation extension
+was designed for \citep{Prudhommeaux2013Federated,Harris2013}, and it fails for
+two reasons that are not implementation defects.
+
+First, it is frequently not available. Of the four sources in the motivating
+question, only two speak SPARQL at all. A pathway resource exposing a flat-file
+REST interface \citep{Kanehisa2000,Kanehisa2023} cannot be reached by a service
+clause, because there is no SPARQL protocol endpoint to address. The federation
+extension federates SPARQL endpoints, and the biological data landscape is not
+made of SPARQL endpoints.
+
+Second, where it is available, it concentrates the defects rather than removing
+them. A single query containing every stage of the computation is a single
+query whose failure is still one bit wide (D2), whose intermediate results are
+still invisible (D3), and which is now large enough that the interpolation
+defect (D1) becomes very hard to see --- as \cref{sec:interp} demonstrates on a
+query of eight lines.
+
+A third repair, the workflow system \citep{Wolstencroft2013,Koster2012,Berthold2009},
+supplies exactly the control flow (D5) that the query language lacks. It leaves
+(D1)--(D4) untouched, because a workflow node that issues a query issues a
+string that its author assembled, and the workflow engine does not know what
+the string means.
+
+\subsection{What we build instead}
+
+We separate the two things the script conflates. A \emph{plan} is a sequence of
+\emph{steps}; a step names a source, an abstract pattern to send it, and a
+binding to receive the result; the plan language supplies the control flow and
+the source adapters supply the concrete requests. The user writes the plan.
+Nobody writes a query.
+
+\begin{principle}[Queries are leaves]
+\label{prin:leaves}
+No construct of the plan language denotes a graph pattern, a triple, a
+relational clause, or a URL. Every such object is produced by \emph{lowering},
+from an abstract step together with a source declaration, and is not
+addressable by the plan author.
+\end{principle}
+
+\Cref{prin:leaves} is what makes the language portable across backends that
+share no query model. Its cost is stated immediately: a plan cannot express a
+request that its source adapters cannot generate, and \cref{sec:limits} records
+what that excludes.
+
+\begin{principle}[A step returns a verdict, not rows]
+\label{prin:verdict}
+The value of a step is a pair (verdict, payload). The payload is a result set
+only when the verdict is $\vans$. Every other verdict carries a diagnosis and
+no result set.
+\end{principle}
+
+\Cref{prin:verdict} is what makes the language diagnostic. Its content is
+\cref{sec:verdicts}, and the reason it is not a mere convention is
+\cref{cor:onebit}: an interface that returns rows, and signals failure by
+returning zero of them, cannot represent the distinction at all, whatever
+discipline is imposed on its callers.
+
+\begin{principle}[Refusal is a first-class outcome]
+\label{prin:refusal}
+A plan whose declared requirements exceed what its sources can supply, or whose
+budget falls below the minimum the plan needs, terminates without issuing any
+request and reports what was missing.
+\end{principle}
+
+A system with no refusals declines nothing, and therefore claims everything it
+is asked. \Cref{prin:refusal} is the operational form of that observation, and
+\cref{thm:static} is the result that makes it enforceable statically rather
+than by convention.
+
+\subsection{Contributions and non-contributions}
+
+We claim: a source model under which heterogeneous backends compose
+(\cref{sec:model}); a capability calculus deciding compilability before
+execution (\cref{thm:static}); a six-valued verdict algebra with a proof that
+the conventional interface conflates its members (\cref{thm:six},
+\cref{cor:onebit}); exact laws for retention under partial identifier
+translation (\cref{thm:retention}) with a proof that reordering does not
+recover loss (\cref{thm:reorder}) and that two translation routes may disagree
+without either being wrong (\cref{thm:route-extent}); a budget allocation with
+a single shadow price (\cref{thm:allocation}) and a proof that sufficient total
+budget is not sufficient (\cref{prop:necessary-not-sufficient}); a proof that
+structural interpolation eliminates a defect family that textual interpolation
+admits (\cref{thm:interpolation}); and a characterisation of safe re-execution
+(\cref{thm:idempotent}).
+
+We do not claim: that plans written in this language return biologically
+correct answers; that the capability declarations of \cref{sec:model} are
+verified rather than asserted; that the retention laws of
+\cref{sec:translation} have been measured against real cross-reference tables;
+or that the prototype of \cref{sec:proto} has been exercised against any live
+service. \Cref{sec:limits} enumerates these and others, and
+\cref{rem:honesty-assumption} states the single assumption on which the largest
+part of the development rests.
+
+\subsection{Conventions}
+
+$\Univ$ denotes a countable universe of identifiers. A \emph{namespace} is a
+subset of $\Univ$; namespaces are pairwise disjoint, which is a modelling
+decision and not a fact about the world (\cref{rem:disjoint}). Result sets are
+finite. We write $f : X \rightharpoonup Y$ for a partial function and
+$\operatorname{dom} f$ for its domain of definition. All complexity statements
+count \emph{requests} unless stated otherwise, since request count is what a
+public service rate-limits and what a plan can control; wall-clock time is not
+modelled, and \cref{sec:limits} records the consequence.
+
+\section{Related work and where this sits}
+\label{sec:related}
+
+Federated query processing over distributed data has a substantial literature
+concerned principally with \emph{source selection} and \emph{join ordering}:
+given a query and a set of endpoints, decide which endpoints can contribute and
+in what order to contact them \citep{Schwarte2011,Gorlitz2011,Acosta2011,Saleem2016,Rakhmawati2013}.
+That work assumes a single query language across sources and optimises within
+it. Our setting is complementary: the sources do not share a language, the
+decomposition is written by the user rather than inferred, and the object of
+study is what a step reports when it fails rather than how fast it succeeds.
+The two concerns are orthogonal, and a planner of the kind those papers
+describe could in principle choose among the routes that \cref{sec:translation}
+shows to be inequivalent --- but it would need a cost model over partial maps
+that the literature does not supply.
+
+Mediator and wrapper architectures \citep{Wiederhold1992,GarciaMolina1997,Haas1997}
+established the pattern of a per-source adapter presenting a common interface,
+and capability-based query planning \citep{Levy1996,Papakonstantinou1995,Florescu1999,Yerneni1999}
+formalised sources that can answer only some queries, binding-pattern
+restrictions being the classical instance. Our capability sets
+(\cref{def:capability}) are in that lineage, and \cref{thm:static} is a
+static-check analogue of their planning-time feasibility tests. The difference
+lies in what happens on failure: those systems treat an uncoverable query as a
+planning failure, and we treat it as a typed verdict that the plan can catch
+and route around, which is the difference between a compiler error and an
+exception.
+
+Scientific workflow systems \citep{Wolstencroft2013,Berthold2009,Koster2012,DiTommaso2017}
+provide the control flow we require, and are widely used for exactly the
+motivating question. They are host languages with library calls, so the requests
+they issue are strings assembled by the workflow author, and defects
+(D1)--(D4) survive unchanged. A workflow system sequences steps; it does not
+know what a step means, and so cannot report why one came back empty.
+
+Identifier translation across biological namespaces has its own literature and
+its own well-documented pathologies \citep{Chen2005,VanIersel2010,Wimalaratne2018,Juty2012,Ison2016}.
+The standard framing is pairwise coverage: what fraction of namespace $A$ maps
+into namespace $B$. \Cref{sec:translation} takes the \emph{composition} of
+several such maps as the object, and derives what survives a chain --- a
+quantity a plan actually depends on and which is not determined by the pairwise
+coverages alone (\cref{prop:pairwise-insufficient}).
+
+Finally, the observation that an empty result and a failure are different, and
+that conflating them corrupts downstream reasoning, is old in database theory:
+it is the null-value problem \citep{Codd1979,Imielinski1984,Libkin2016} in a new
+setting. \Cref{sec:verdicts} is a six-valued refinement specific to federation,
+and \cref{prop:starve-reachable} identifies a value with no analogue in the
+single-database case.

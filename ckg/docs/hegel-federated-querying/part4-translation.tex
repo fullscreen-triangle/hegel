@@ -1,0 +1,380 @@
+%==============================================================================
+\part{Translation}
+%==============================================================================
+
+\section{The arithmetic of partial identifier translation}
+\label{sec:translation}
+
+Every federated plan that crosses a database boundary crosses a namespace
+boundary, and the crossing is performed by a cross-reference map. These maps
+are the least examined component of federated retrieval and the one where the
+losses actually accumulate. This section treats them as first-class objects of
+the language and derives what a plan can and cannot know about a chain of them.
+
+\subsection{Maps are partial, non-injective, and non-confluent}
+
+\begin{definition}[Translation map]
+\label{def:map}
+A \emph{translation map} from namespace $n$ to namespace $n'$ is a relation
+$\mu \subseteq n \times n'$. We write $\mu(S) = \{ v : u \in S,\ (u,v) \in \mu\}$
+for the image of a set, $\operatorname{dom}\mu = \{u : \exists v,\ (u,v) \in \mu\}$,
+and call $\mu$ \emph{total} if $\operatorname{dom}\mu = n$, \emph{functional}
+if each $u$ has at most one image, and \emph{injective} if each $v$ has at most
+one preimage.
+\end{definition}
+
+Real cross-reference maps are none of the three. A chemical entity may have no
+counterpart in a pathway database (partiality); a single ontology class may
+correspond to several database compounds differing only in protonation state
+(non-functionality); and several distinct ontology classes may map to one
+database compound that does not resolve the distinction (non-injectivity).
+
+\begin{definition}[Retention]
+\label{def:retention}
+The \emph{retention} of $\mu$ on a set $S$ is
+\[
+r_\mu(S) \;=\; \frac{|S \cap \operatorname{dom}\mu|}{|S|}
+\qquad (S \neq \emptyset),
+\]
+the fraction of $S$ that survives translation, and $r_\mu(\emptyset) = 1$ by
+convention. The \emph{amplification} is
+$a_\mu(S) = |\mu(S)| / |S \cap \operatorname{dom}\mu|$ when the denominator is
+nonzero.
+\end{definition}
+
+Retention and amplification are independent: a map may retain everything and
+amplify (each input has several images), retain little and not amplify, or
+both. Reporting only the output cardinality $|\mu(S)|$ conflates them, which is
+why \cref{def:retention} separates them and why the prototype records both.
+
+\begin{proposition}[Cardinality alone is uninformative]
+\label{prop:cardinality-uninformative}
+For any $N \geq 1$ and any output size $M \geq 1$ there exist maps $\mu_1,\mu_2$
+and a set $S$ with $|S| = N$ such that
+$|\mu_1(S)| = |\mu_2(S)| = M$ while $r_{\mu_1}(S) = 1$ and
+$r_{\mu_2}(S) = 1/N$.
+\end{proposition}
+
+\begin{proof}
+Let $S = \{u_1,\dots,u_N\}$. For $\mu_1$, distribute $M$ images across all $N$
+inputs so that every input has at least one when $M \geq N$, and when $M < N$
+let the inputs share images so that all $N$ lie in the domain and the image has
+$M$ elements; then $r_{\mu_1}(S)=1$. For $\mu_2$, let
+$\operatorname{dom}\mu_2 \cap S = \{u_1\}$ and let $\mu_2(u_1)$ have $M$
+elements; then $|\mu_2(S)| = M$ and $r_{\mu_2}(S) = 1/N$. The output
+cardinalities agree and the retentions differ by a factor of $N$.
+\end{proof}
+
+\Cref{prop:cardinality-uninformative} is the reason a plan cannot detect a
+translation failure by looking at how much came out. In \cref{lst:script} the
+translation is line~7 and its output size is the only thing the script observes
+about it; by the proposition, that observation carries no information about
+whether the translation lost anything. This is defect (D3), and it is not
+fixable by checking that the output is non-empty.
+
+\subsection{Composition}
+
+\begin{theorem}[Retention of a chain]
+\label{thm:retention}
+Let $\mu_1 : n_0 \to n_1, \dots, \mu_k : n_{k-1} \to n_k$ and let $S_0$ be
+finite and non-empty, with $S_i = \mu_i(S_{i-1})$. Then
+\begin{enumerate}[label=(\alph*),leftmargin=2.4em]
+\item the end-to-end retention factorises multiplicatively along the realised
+sets,
+\[
+\frac{|S_k|}{|S_0|}
+\;=\;
+\prod_{i=1}^{k} r_{\mu_i}(S_{i-1})\, a_{\mu_i}(S_{i-1}),
+\]
+with the convention that the product is $0$ if any $S_{i-1}$ is empty;
+\item if each $\mu_i$ is injective on the realised sets, the \emph{surviving
+fraction} --- the fraction of $S_0$ having at least one image in $S_k$ ---
+satisfies
+\[
+\rho_{1..k}(S_0) \;\leq\; \min_{1 \leq i \leq k} r_{\mu_i}(S_{i-1}),
+\]
+and the bound is attained when each $\mu_i$ is in addition functional. Without
+injectivity the inequality fails, and $\rho_{1..k}(S_0) \leq r_{\mu_1}(S_0)$ is
+all that survives (\cref{rem:injectivity-needed});
+\item under the same injectivity hypothesis,
+$\rho_{1..k}(S_0) \geq 1 - \sum_{i=1}^{k}\bigl(1 - r_{\mu_i}(S_{i-1})\bigr)$,
+and the bound is attained when the loss sets are pairwise disjoint under the
+realised correspondence. Injectivity is again load-bearing: without it a single
+lost element of $S_{i-1}$ can extinguish several survivors of $S_0$ at once, and
+the bound fails (\cref{rem:injectivity-needed}).
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+(a) By \cref{def:retention}, $|S_i| = |\mu_i(S_{i-1})| =
+a_{\mu_i}(S_{i-1}) \cdot |S_{i-1} \cap \operatorname{dom}\mu_i| =
+a_{\mu_i}(S_{i-1}) r_{\mu_i}(S_{i-1}) |S_{i-1}|$ whenever $S_{i-1}$ is
+non-empty. Telescoping over $i = 1..k$ and dividing by $|S_0|$ gives the
+product. If some $S_{i-1}$ is empty then $S_k$ is empty and both sides are
+zero.
+
+(b) An element of $S_0$ survives to $S_k$ only if it lies in
+$\operatorname{dom}\mu_1$, and its image lies in $\operatorname{dom}\mu_2$, and
+so on. Let $A \subseteq S_0$ be the surviving set and fix a stage $i$. Each
+$u \in A$ has at least one trajectory reaching a surviving element of
+$S_{i-1}$, so the map sending $u$ to one such element is a function
+$A \to S_{i-1} \cap \operatorname{dom}\mu_i$. If every $\mu_j$ is injective on
+the realised sets this function is itself injective, whence
+$|A| \leq r_{\mu_i}(S_{i-1})|S_{i-1}| \leq r_{\mu_i}(S_{i-1})|S_0|$ and the
+minimum bound follows. Adding functionality gives each element exactly one
+trajectory, and taking all losses to occur at the single stage achieving the
+minimum attains the bound. The case $i=1$ needs no hypothesis, since survival
+requires membership of $\operatorname{dom}\mu_1$ and distinct elements of $S_0$
+are distinct there; this is the residual bound
+$\rho_{1..k}(S_0) \leq r_{\mu_1}(S_0)$.
+
+(c) The set of elements of $S_0$ that fail to survive is contained in the union
+over $i$ of the sets $D_i \subseteq S_0$ whose trajectory dies at stage $i$.
+A trajectory dies at stage $i$ by reaching an element of $S_{i-1}$ outside
+$\operatorname{dom}\mu_i$, and there are $(1-r_{\mu_i}(S_{i-1}))|S_{i-1}|$ such
+elements. Under injectivity on the realised sets, distinct members of $D_i$
+reach distinct elements of $S_{i-1}$ --- the same injection constructed in (b)
+--- so $|D_i| \leq (1-r_{\mu_i}(S_{i-1}))|S_{i-1}| \leq
+(1-r_{\mu_i}(S_{i-1}))|S_0|$, the last step because injectivity also forces
+$|S_{i-1}| \leq |S_0|$. A union bound over the $k$ stages gives the stated
+lower bound, with equality when the $D_i$ are pairwise disjoint. Without
+injectivity $|D_i|$ is not controlled by $|S_{i-1}|$ at all, since one dead
+element of $S_{i-1}$ may be the sole continuation of arbitrarily many members
+of $S_0$.
+\end{proof}
+
+\begin{remark}[Injectivity is a hypothesis of (b) and (c), not a nicety]
+\label{rem:injectivity-needed}
+The hypothesis in \cref{thm:retention}(b) and (c) cannot be dropped. Take
+$S_0 = \{u_1,\dots,u_9\}$ with $\mu_1$ retaining seven of them, sending $u_9$
+to $\{t_9\}$ and $u_{10}$ to $\{t_9, t_{10}\}$ --- non-injective, but with
+amplification $a_{\mu_1}(S_0) = 1$, so the collision is invisible in the
+factorisation of (a). Let $\mu_2$ retain three of the seven, among them $t_9$.
+Then $r_{\mu_1} = 7/9$, $r_{\mu_2} = 3/7$, and four elements of $S_0$ survive,
+giving $\rho = 4/9 > 3/7 = \min_i r_{\mu_i}$. Two survivors in $S_0$ are riding
+one survivor in $S_1$, so the surviving set upstream is larger than the
+surviving set downstream and the minimum is not an upper bound for it.
+
+The failure is non-injectivity specifically, not amplification: $a_{\mu_1} = 1$
+throughout the example. A cross-reference table that maps two source entries
+onto one target entry --- routine wherever one resource merges what another
+distinguishes --- is exactly this configuration, so the hypothesis is a real
+restriction on which chains the two bounds may be applied to, and a plan
+reporting coverage should measure $\rho$ rather than bound it.
+
+The lower bound (c) fails for the same reason, by a different route. Its union
+bound counts elements of $S_0$ whose trajectory dies at stage $i$ by counting
+the elements of $S_{i-1}$ that lie outside $\operatorname{dom}\mu_i$; when
+several survivors of $S_0$ have been merged onto one element of $S_{i-1}$, a
+single such loss extinguishes all of them, and the count understates the
+damage. A two-stage instance: $|S_0| = 8$ with realised sizes
+$|S_1| = 6$, $|S_2| = 5$ and stage retentions $3/4$ and $5/6$, so (c) predicts
+$\rho \geq 1 - 1/4 - 1/6 = 7/12$, while the measured surviving fraction is
+$1/2$. The one element lost at stage two carried two survivors, costing $2/8$
+where the bound had budgeted $1/6$. Note that the na\"ive repair ---
+requiring $|S_{i-1}| \leq |S_0|$ --- does not help, since it already holds here.
+
+Sampling two-stage chains over eight elements with each element retained
+independently with probability $0.8$ and given up to three images, and keeping
+only the non-injective draws, (b) fails for $33.9\%$ of chains and (c) for
+$2.0\%$ ($n = 5000$). Under injective draws neither fails, as the theorem now
+requires.
+\end{remark}
+
+\begin{remark}[The two bounds are far apart, and the gap is the point]
+\label{rem:bounds-gap}
+For $k=3$ and $r_{\mu_i} = 0.8$ throughout, on an injective chain, (b) gives
+$\rho \leq 0.8$ and (c) gives $\rho \geq 0.4$. The true value depends on
+whether the three maps lose \emph{the same} entities or \emph{different} ones,
+and no amount of pairwise coverage data determines which. A plan that needs to
+know its own coverage must therefore measure the chain, not compute it from
+published per-map figures --- which is what \cref{def:retention-check} makes it
+do, and what \cref{prop:pairwise-insufficient} says it cannot avoid.
+\end{remark}
+
+\begin{proposition}[Pairwise coverage does not determine chain coverage]
+\label{prop:pairwise-insufficient}
+There exist two families $(\mu_1,\mu_2)$ and $(\mu_1',\mu_2')$ with
+$r_{\mu_i} = r_{\mu_i'}$ for $i=1,2$ on a common $S_0$, whose end-to-end
+surviving fractions differ.
+\end{proposition}
+
+\begin{proof}
+Let $S_0 = \{a,b,c,d\}$, and let both first maps be the identity on
+$\{a,b,c\}$ and undefined on $d$, so $r_{\mu_1} = r_{\mu_1'} = 3/4$. Let
+$\mu_2$ be the identity on $\{a,b\}$ and undefined on $c$, and let $\mu_2'$ be
+the identity on $\{b,c\}$ and undefined on $a$; both have retention $2/3$ on
+$S_1 = \{a,b,c\}$. The chain through $\mu_2$ retains $\{a,b\}$, a surviving
+fraction of $2/4$; the chain through $\mu_2'$ retains $\{b,c\}$, also $2/4$. To
+separate them, extend $\mu_2'$ to be defined on $a$ as well and undefined on
+both $b$ and $c$: then $r_{\mu_2'} = 1/3 \neq 2/3$, so instead take
+$S_0 = \{a,b,c,d,e,f\}$, let $\mu_1 = \mu_1'$ be the identity on
+$\{a,b,c,d\}$ (retention $4/6$), let $\mu_2$ be the identity on $\{a,b\}$ and
+$\mu_2'$ the identity on $\{c,d\}$, each of retention $2/4$. Both chains
+survive $2$ of $6$. Now instead let $\mu_1'$ be the identity on
+$\{c,d,e,f\}$ --- still retention $4/6$ --- with $\mu_2'$ the identity on
+$\{c,d\}$ of retention $2/4$; the primed chain still survives $\{c,d\}$. Finally
+take $\mu_2''$ to be the identity on $\{e,f\}$, retention $2/4$ on
+$S_1' = \{c,d,e,f\}$: the chain $\mu_1'$ then $\mu_2''$ survives $\{e,f\}$,
+whereas the chain $\mu_1$ then $\mu_2''$ has $S_1 = \{a,b,c,d\}$ meeting
+$\operatorname{dom}\mu_2'' = \{e,f\}$ in the empty set, surviving fraction $0$.
+The two chains have identical pairwise retentions $(4/6, 2/4)$ and end-to-end
+surviving fractions $2/6$ and $0$.
+\end{proof}
+
+\subsection{Order does not recover loss}
+
+A natural hope is that a plan losing too much to translation can be repaired by
+reordering: translate later, filter earlier, cross the boundary at a different
+point. The hope is false in a precise sense.
+
+\begin{theorem}[Reordering does not recover translation loss]
+\label{thm:reorder}
+Let $\Plan$ contain a translation step $\mu$ and a source step $\sigma$ whose
+denotation is a selection $\pi$, and let $\Plan'$ be the plan obtained by
+exchanging their order where both orders are well formed. Then
+\[
+\mu(\pi(S)) \subseteq \mu(S) \cap \pi'(\mu(S))
+\quad\text{and}\quad
+\pi'(\mu(S)) \subseteq \mu(S),
+\]
+where $\pi'$ is the image selection. In particular neither order retains an
+element of $S$ that lies outside $\operatorname{dom}\mu$, so the two orders
+have the same upper bound $r_\mu(S)$ on surviving fraction, and reordering
+cannot increase it.
+\end{theorem}
+
+\begin{proof}
+Both containments are immediate from monotonicity of images and selections.
+For the substantive claim, let $u \in S \setminus \operatorname{dom}\mu$. In
+the order ``select then translate'', $u$ either fails $\pi$ and is dropped, or
+passes $\pi$ and then has no image under $\mu$; either way it contributes
+nothing to the output. In the order ``translate then select'', $u$ has no image
+under $\mu$ and so contributes nothing before $\pi'$ is applied. Hence in both
+orders the output is contained in $\mu(S \cap \operatorname{dom}\mu)$, whose
+preimage in $S$ has size at most $r_\mu(S)|S|$. Since this bound is independent
+of the order, no exchange increases it.
+\end{proof}
+
+\begin{remark}[What reordering does change]
+\label{rem:reorder-cost}
+\Cref{thm:reorder} says reordering cannot recover \emph{coverage}. It says
+nothing about \emph{cost}, which it changes substantially: translating after a
+restrictive selection sends fewer identifiers across the boundary and so costs
+fewer requests, whereas translating first may allow a batched request where the
+other order does not. The planner is therefore free to reorder for cost, and
+\cref{thm:allocation} governs that freedom --- but a plan that reorders hoping
+to retain more is mistaken, and the language does not offer the operation as a
+coverage remedy.
+\end{remark}
+
+\subsection{Routes may disagree without either being wrong}
+
+\begin{definition}[Route]
+\label{def:route}
+A \emph{route} from namespace $n$ to namespace $n'$ is a path in the directed
+graph whose vertices are namespaces and whose edges are available translation
+maps. Two routes are \emph{parallel} if they share their endpoints.
+\end{definition}
+
+\begin{theorem}[Route divergence measures resolved extent]
+\label{thm:route-extent}
+Let $R = \mu_k \circ \cdots \circ \mu_1$ and $R' = \mu'_l \circ \cdots \circ \mu'_1$
+be parallel routes from $n$ to $n'$, each composed of maps that are
+\emph{sound} --- every pair they assert is a true correspondence --- and let
+$S \subseteq n$. Then:
+\begin{enumerate}[label=(\alph*),leftmargin=2.4em]
+\item $R(S)$ and $R'(S)$ cannot contradict: every element of each is a true
+correspondent of some element of $S$, so neither set contains an element the
+other must exclude;
+\item the symmetric difference $R(S) \bigtriangleup R'(S)$ consists exactly of
+correspondences resolved by one route and unresolved by the other, so
+$|R(S) \bigtriangleup R'(S)|$ is a lower bound on the number of correspondences
+that at least one route fails to resolve;
+\item if every map on both routes is total on the realised sets then
+$R(S) = R'(S)$, so divergence implies partiality somewhere;
+\item consequently $R(S) \cup R'(S)$ is sound and has surviving fraction at
+least $\max(\rho_R(S), \rho_{R'}(S))$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+(a) By soundness of each constituent map and transitivity of true
+correspondence, every $v \in R(S)$ stands in true correspondence to some
+$u \in S$, and likewise for $R'$. A set of true correspondents cannot
+contradict another such set: contradiction would require one route to assert a
+pair the other denies, and neither route denies anything --- both are
+existential.
+
+(b) Let $v \in R(S) \setminus R'(S)$. By (a), $v$ is a true correspondent of
+some $u \in S$, and $R'$ does not produce it, so $R'$ fails to resolve the
+correspondence $(u,v)$. Symmetrically for the other difference. Each element of
+the symmetric difference therefore witnesses at least one unresolved
+correspondence on one route, and distinct elements witness distinct
+correspondences, giving the bound.
+
+(c) If every map is total on the realised sets, each route computes the full
+composite correspondence relation restricted to $S$, and the composite relation
+is determined by the underlying true correspondence, which is route-independent.
+So the two images coincide.
+
+(d) The union of two sound sets is sound, and contains each, so its surviving
+fraction is at least each of theirs.
+\end{proof}
+
+\begin{remark}[The union is not free]
+Part (d) suggests always taking the union of parallel routes. The cost is that
+the union costs the sum of the routes' requests, and by
+\cref{thm:allocation} that budget comes from somewhere. The language exposes
+\texttt{union} over routes precisely so that the trade is written down rather
+than assumed, and \cref{ex:route-union} shows the syntax.
+\end{remark}
+
+\begin{example}[Two routes, written down]
+\label{ex:route-union}
+\begin{lstlisting}[caption={Parallel routes made explicit. The plan asserts nothing about which is better; it measures the divergence and reports it.},label=lst:routes]
+let direct   = map compounds via chebi_to_kegg
+let indirect = map compounds via chebi_to_inchikey
+               then via inchikey_to_kegg
+
+let both     = union direct indirect
+assert soundness(direct) and soundness(indirect)
+emit divergence(direct, indirect) as resolved_extent
+\end{lstlisting}
+By \cref{thm:route-extent}(b) the emitted \texttt{resolved\_extent} is a lower
+bound on the correspondences at least one route misses. It is not an error
+count and must not be reported as one: both routes may be individually correct
+and the divergence is then a statement about coverage, not about accuracy.
+\end{example}
+
+\subsection{The retention check}
+
+\begin{definition}[Retention check]
+\label{def:retention-check}
+A translation step annotated \texttt{expect partial} $\epsilon$ computes
+$r_\mu(S)$ on its actual input and, if $r_\mu(S) < \epsilon$, returns
+$\vstarve$ to its successors with a diagnosis naming $\mu$, $\epsilon$ and the
+observed $r_\mu(S)$. Otherwise it returns $\vans$ with the image and records
+both $r_\mu(S)$ and $a_\mu(S)$ as provenance attributes.
+\end{definition}
+
+\begin{proposition}[The check converts a silent decimation into a located verdict]
+\label{prop:check-locates}
+Let $\Plan$ contain a translation step $\Step_t$ with retention below its
+declared $\epsilon$, feeding a step $\Step_d$ that would otherwise report
+$\vempty$. Under \cref{def:retention-check}, $\Step_d$ reports $\vstarve$ and
+the blame chain of \cref{prop:blame} terminates at $\Step_t$.
+\end{proposition}
+
+\begin{proof}
+By \cref{def:retention-check}, $\Step_t$ returns a non-$\vans$ verdict. By (R1)
+of \cref{def:verdicts}, $\Step_d$ reports $\vstarve$ naming $\Step_t$. By
+\cref{prop:blame} the chain terminates at a non-$\vstarve$ step; since
+$\Step_t$'s verdict was assigned by \cref{def:retention-check} rather than by
+(R1), and $\Step_t$ names no predecessor, the chain terminates there.
+\end{proof}
+
+This is the resolution of defect (D3) in its commonest concrete form. Without
+the check, the analyst sees an empty pathway result and investigates the
+pathway database. With it, the executor reports that the translation two steps
+earlier retained $0.31$ against a declared $0.6$, and names the map.

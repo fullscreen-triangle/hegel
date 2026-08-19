@@ -1,0 +1,407 @@
+%=============================================================================
+% references.bib
+%
+% Bibliography for "A Plan Language for Federated Biological Retrieval".
+%
+% External literature only. No self-citation: every entry below is work by
+% other authors, and the machinery this paper reuses from adjacent work of
+% our own is restated from first principles in the text rather than cited.
+%
+% Organised in five groups:
+%   (1) Specifications and protocols
+%   (2) Federated query processing over distributed RDF
+%   (3) Mediators, wrappers, and capability-limited sources
+%   (4) Scientific workflow systems
+%   (5) Biological resources, identifier translation, and null semantics
+%   (6) Software
+%=============================================================================
+
+
+%-----------------------------------------------------------------------------
+% (1) Specifications and protocols
+%-----------------------------------------------------------------------------
+
+@techreport{Harris2013,
+  author      = {Harris, Steve and Seaborne, Andy},
+  title       = {{SPARQL} 1.1 Query Language},
+  institution = {World Wide Web Consortium},
+  type        = {W3C Recommendation},
+  year        = {2013},
+  month       = mar,
+  note        = {See in particular \S4.2.2 (predicate--object and object lists)
+                 and the grammar rules for \texttt{ObjectList},
+                 \texttt{Object}, and \texttt{GraphNode}},
+  url         = {https://www.w3.org/TR/sparql11-query/}
+}
+
+@techreport{Prudhommeaux2013Federated,
+  author      = {Prud'hommeaux, Eric and Buil-Aranda, Carlos},
+  title       = {{SPARQL} 1.1 Federated Query},
+  institution = {World Wide Web Consortium},
+  type        = {W3C Recommendation},
+  year        = {2013},
+  month       = mar,
+  url         = {https://www.w3.org/TR/sparql11-federated-query/}
+}
+
+
+%-----------------------------------------------------------------------------
+% (2) Federated query processing over distributed RDF
+%-----------------------------------------------------------------------------
+
+@inproceedings{Schwarte2011,
+  author    = {Schwarte, Andreas and Haase, Peter and Hose, Katja and
+               Schenkel, Ralf and Schmidt, Michael},
+  title     = {{FedX}: Optimization Techniques for Federated Query Processing
+               on Linked Data},
+  booktitle = {The Semantic Web -- ISWC 2011},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {7031},
+  pages     = {601--616},
+  publisher = {Springer},
+  year      = {2011},
+  doi       = {10.1007/978-3-642-25073-6_38}
+}
+
+@inproceedings{Gorlitz2011,
+  author    = {G{\"o}rlitz, Olaf and Staab, Steffen},
+  title     = {{SPLENDID}: {SPARQL} Endpoint Federation Exploiting {VOID}
+               Descriptions},
+  booktitle = {Proceedings of the 2nd International Workshop on Consuming
+               Linked Data (COLD 2011)},
+  series    = {CEUR Workshop Proceedings},
+  volume    = {782},
+  year      = {2011}
+}
+
+@inproceedings{Acosta2011,
+  author    = {Acosta, Maribel and Vidal, Maria-Esther and Lampo, Tomas and
+               Castillo, Julio and Ruckhaus, Edna},
+  title     = {{ANAPSID}: An Adaptive Query Processing Engine for {SPARQL}
+               Endpoints},
+  booktitle = {The Semantic Web -- ISWC 2011},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {7031},
+  pages     = {18--34},
+  publisher = {Springer},
+  year      = {2011},
+  doi       = {10.1007/978-3-642-25073-6_2}
+}
+
+@article{Saleem2016,
+  author  = {Saleem, Muhammad and Khan, Yasar and Hasnain, Ali and
+             Ermilov, Ivan and Ngonga Ngomo, Axel-Cyrille},
+  title   = {A Fine-Grained Evaluation of {SPARQL} Endpoint Federation
+             Systems},
+  journal = {Semantic Web},
+  volume  = {7},
+  number  = {5},
+  pages   = {493--518},
+  year    = {2016},
+  doi     = {10.3233/SW-150186}
+}
+
+@article{Rakhmawati2013,
+  author  = {Rakhmawati, Nur Aini and Umbrich, J{\"u}rgen and
+             Karnstedt, Marcel and Hasnain, Ali and Hausenblas, Michael},
+  title   = {Querying over Federated {SPARQL} Endpoints: A State of the Art
+             Survey},
+  journal = {CoRR},
+  volume  = {abs/1306.1723},
+  year    = {2013}
+}
+
+
+%-----------------------------------------------------------------------------
+% (3) Mediators, wrappers, and capability-limited sources
+%-----------------------------------------------------------------------------
+
+@article{Wiederhold1992,
+  author  = {Wiederhold, Gio},
+  title   = {Mediators in the Architecture of Future Information Systems},
+  journal = {Computer},
+  volume  = {25},
+  number  = {3},
+  pages   = {38--49},
+  year    = {1992},
+  doi     = {10.1109/2.121508}
+}
+
+@article{GarciaMolina1997,
+  author  = {Garcia-Molina, Hector and Papakonstantinou, Yannis and
+             Quass, Dallan and Rajaraman, Anand and Sagiv, Yehoshua and
+             Ullman, Jeffrey and Vassalos, Vasilis and Widom, Jennifer},
+  title   = {The {TSIMMIS} Approach to Mediation: Data Models and Languages},
+  journal = {Journal of Intelligent Information Systems},
+  volume  = {8},
+  number  = {2},
+  pages   = {117--132},
+  year    = {1997},
+  doi     = {10.1023/A:1008683107812}
+}
+
+@inproceedings{Haas1997,
+  author    = {Haas, Laura M. and Kossmann, Donald and Wimmers, Edward L. and
+               Yang, Jun},
+  title     = {Optimizing Queries across Diverse Data Sources},
+  booktitle = {Proceedings of the 23rd International Conference on Very Large
+               Data Bases (VLDB)},
+  pages     = {276--285},
+  year      = {1997}
+}
+
+@inproceedings{Levy1996,
+  author    = {Levy, Alon Y. and Rajaraman, Anand and Ordille, Joann J.},
+  title     = {Querying Heterogeneous Information Sources Using Source
+               Descriptions},
+  booktitle = {Proceedings of the 22nd International Conference on Very Large
+               Data Bases (VLDB)},
+  pages     = {251--262},
+  year      = {1996}
+}
+
+@inproceedings{Papakonstantinou1995,
+  author    = {Papakonstantinou, Yannis and Gupta, Ashish and
+               Garcia-Molina, Hector and Ullman, Jeffrey D.},
+  title     = {A Query Translation Scheme for Rapid Implementation of
+               Wrappers},
+  booktitle = {Deductive and Object-Oriented Databases (DOOD)},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {1013},
+  pages     = {161--186},
+  publisher = {Springer},
+  year      = {1995},
+  doi       = {10.1007/3-540-60608-4_39}
+}
+
+@inproceedings{Florescu1999,
+  author    = {Florescu, Daniela and Levy, Alon and Manolescu, Ioana and
+               Suciu, Dan},
+  title     = {Query Optimization in the Presence of Limited Access Patterns},
+  booktitle = {Proceedings of the 1999 ACM SIGMOD International Conference on
+               Management of Data},
+  pages     = {311--322},
+  year      = {1999},
+  doi       = {10.1145/304182.304210}
+}
+
+@inproceedings{Yerneni1999,
+  author    = {Yerneni, Ramana and Li, Chen and Garcia-Molina, Hector and
+               Ullman, Jeffrey},
+  title     = {Computing Capabilities of Mediators},
+  booktitle = {Proceedings of the 1999 ACM SIGMOD International Conference on
+               Management of Data},
+  pages     = {443--454},
+  year      = {1999},
+  doi       = {10.1145/304182.304221}
+}
+
+
+%-----------------------------------------------------------------------------
+% (4) Scientific workflow systems
+%-----------------------------------------------------------------------------
+
+@article{Wolstencroft2013,
+  author  = {Wolstencroft, Katherine and Haines, Robert and Fellows, Donal and
+             Williams, Alan and Withers, David and Owen, Stuart and
+             Soiland-Reyes, Stian and Dunlop, Ian and Nenadic, Aleksandra and
+             Fisher, Paul and Bhagat, Jiten and Belhajjame, Khalid and
+             Bacall, Finn and Hardisty, Alex and Nieva de la Hidalga, Abraham
+             and Balcazar Vargas, Maria P. and Sufi, Shoaib and Goble, Carole},
+  title   = {The {Taverna} Workflow Suite: Designing and Executing Workflows of
+             Web Services on the Desktop, Web or in the Cloud},
+  journal = {Nucleic Acids Research},
+  volume  = {41},
+  number  = {W1},
+  pages   = {W557--W561},
+  year    = {2013},
+  doi     = {10.1093/nar/gkt328}
+}
+
+@article{Koster2012,
+  author  = {K{\"o}ster, Johannes and Rahmann, Sven},
+  title   = {{Snakemake} --- A Scalable Bioinformatics Workflow Engine},
+  journal = {Bioinformatics},
+  volume  = {28},
+  number  = {19},
+  pages   = {2520--2522},
+  year    = {2012},
+  doi     = {10.1093/bioinformatics/bts480}
+}
+
+@incollection{Berthold2009,
+  author    = {Berthold, Michael R. and Cebron, Nicolas and Dill, Fabian and
+               Gabriel, Thomas R. and K{\"o}tter, Tobias and Meinl, Thorsten and
+               Ohl, Peter and Thiel, Kilian and Wiswedel, Bernd},
+  title     = {{KNIME} --- The {Konstanz} Information Miner},
+  booktitle = {Data Analysis, Machine Learning and Applications},
+  series    = {Studies in Classification, Data Analysis, and Knowledge
+               Organization},
+  pages     = {319--326},
+  publisher = {Springer},
+  year      = {2009},
+  doi       = {10.1007/978-3-540-78246-9_38}
+}
+
+@article{DiTommaso2017,
+  author  = {Di Tommaso, Paolo and Chatzou, Maria and Floden, Evan W. and
+             Barja, Pablo Prieto and Palumbo, Emilio and Notredame, Cedric},
+  title   = {{Nextflow} Enables Reproducible Computational Workflows},
+  journal = {Nature Biotechnology},
+  volume  = {35},
+  number  = {4},
+  pages   = {316--319},
+  year    = {2017},
+  doi     = {10.1038/nbt.3820}
+}
+
+
+%-----------------------------------------------------------------------------
+% (5) Biological resources, identifier translation, and null semantics
+%-----------------------------------------------------------------------------
+
+@article{Kanehisa2000,
+  author  = {Kanehisa, Minoru and Goto, Susumu},
+  title   = {{KEGG}: {Kyoto} Encyclopedia of Genes and Genomes},
+  journal = {Nucleic Acids Research},
+  volume  = {28},
+  number  = {1},
+  pages   = {27--30},
+  year    = {2000},
+  doi     = {10.1093/nar/28.1.27}
+}
+
+@article{Kanehisa2023,
+  author  = {Kanehisa, Minoru and Furumichi, Miho and Sato, Yoko and
+             Kawashima, Masayuki and Ishiguro-Watanabe, Mari},
+  title   = {{KEGG} for Taxonomy-Based Analysis of Pathways and Genomes},
+  journal = {Nucleic Acids Research},
+  volume  = {51},
+  number  = {D1},
+  pages   = {D587--D592},
+  year    = {2023},
+  doi     = {10.1093/nar/gkac963}
+}
+
+@article{Chen2005,
+  author  = {Chen, Yi-An and Mani, Sethuraman and Nikolskaya, Anastasia N. and
+             Wu, Cathy H.},
+  title   = {Bioinformatics Resource Discovery and Identifier Mapping:
+             Problems and Approaches},
+  journal = {Briefings in Bioinformatics},
+  volume  = {6},
+  number  = {3},
+  pages   = {239--250},
+  year    = {2005},
+  doi     = {10.1093/bib/6.3.239}
+}
+
+@article{VanIersel2010,
+  author  = {van Iersel, Martijn P. and Pico, Alexander R. and Kelder, Thomas
+             and Gao, Jianjiong and Ho, Isaac and Hanspers, Kristina and
+             Conklin, Bruce R. and Evelo, Chris T.},
+  title   = {The {BridgeDb} Framework: Standardized Access to Gene, Protein and
+             Metabolite Identifier Mapping Services},
+  journal = {BMC Bioinformatics},
+  volume  = {11},
+  pages   = {5},
+  year    = {2010},
+  doi     = {10.1186/1471-2105-11-5}
+}
+
+@article{Wimalaratne2018,
+  author  = {Wimalaratne, Sarala M. and Juty, Nick and Kunze, John and
+             Janee, Greg and McMurry, Julie A. and Beard, Niall and
+             Jimenez, Rafael and Clark, Tim and Moxon, Sierra and
+             Le Novere, Nicolas and Hermjakob, Henning and Mungall, Christopher
+             and Dumontier, Michel},
+  title   = {Uniform Resolution of Compact Identifiers for Biomedical Data},
+  journal = {Scientific Data},
+  volume  = {5},
+  pages   = {180029},
+  year    = {2018},
+  doi     = {10.1038/sdata.2018.29}
+}
+
+@article{Juty2012,
+  author  = {Juty, Nick and Le Novere, Nicolas and Laibe, Camille},
+  title   = {{Identifiers.org} and {MIRIAM Registry}: Community Resources to
+             Provide Persistent Identification},
+  journal = {Nucleic Acids Research},
+  volume  = {40},
+  number  = {D1},
+  pages   = {D580--D586},
+  year    = {2012},
+  doi     = {10.1093/nar/gkr1097}
+}
+
+@article{Ison2016,
+  author  = {Ison, Jon and Rapacki, Kristoffer and Menager, Herve and
+             Kalas, Matus and Rydza, Emil and Chmura, Piotr and Anthon, Christian
+             and Beard, Niall and Berka, Karel and Bolser, Dan and others},
+  title   = {Tools and Data Services Registry: A Community Effort to Document
+             Bioinformatics Resources},
+  journal = {Nucleic Acids Research},
+  volume  = {44},
+  number  = {D1},
+  pages   = {D38--D47},
+  year    = {2016},
+  doi     = {10.1093/nar/gkv1116}
+}
+
+@article{Codd1979,
+  author  = {Codd, Edgar F.},
+  title   = {Extending the Database Relational Model to Capture More Meaning},
+  journal = {ACM Transactions on Database Systems},
+  volume  = {4},
+  number  = {4},
+  pages   = {397--434},
+  year    = {1979},
+  doi     = {10.1145/320107.320109}
+}
+
+@article{Imielinski1984,
+  author  = {Imielinski, Tomasz and Lipski, Witold},
+  title   = {Incomplete Information in Relational Databases},
+  journal = {Journal of the ACM},
+  volume  = {31},
+  number  = {4},
+  pages   = {761--791},
+  year    = {1984},
+  doi     = {10.1145/1634.1886}
+}
+
+@article{Libkin2016,
+  author  = {Libkin, Leonid},
+  title   = {{SQL}'s Three-Valued Logic and Certain Answers},
+  journal = {ACM Transactions on Database Systems},
+  volume  = {41},
+  number  = {1},
+  pages   = {1:1--1:28},
+  year    = {2016},
+  doi     = {10.1145/2877206}
+}
+
+
+%-----------------------------------------------------------------------------
+% (6) Software
+%-----------------------------------------------------------------------------
+
+@misc{RDFLib,
+  author       = {{RDFLib Team}},
+  title        = {{RDFLib}: A {Python} Library for Working with {RDF}},
+  howpublished = {Software},
+  note         = {Version 7.6.0},
+  year         = {2026},
+  url          = {https://github.com/RDFLib/rdflib}
+}
+
+@misc{Pyoxigraph,
+  author       = {Tanon, Thomas Pellissier},
+  title        = {{Oxigraph}: A Graph Database Implementing the {SPARQL}
+                  Standard},
+  howpublished = {Software},
+  note         = {Python bindings \texttt{pyoxigraph}, version 0.5.9},
+  year         = {2026},
+  url          = {https://github.com/oxigraph/oxigraph}
+}

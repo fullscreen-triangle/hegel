@@ -1,0 +1,20 @@
+# m = 3. The map retains 7/9 end to end but the declared expectation is 0.9,
+# so def:retention-check returns starved; the successor then starves by (R1)
+# and prop:blame terminates at the map step in two hops.
+plan starved_chain {
+  budget 200 requests
+
+  let acids = from chebi
+      ask descendants_of("CHEBI:1")
+      within 10
+
+  let kegg  = map acids via chebi2kegg
+      expect partial 0.9
+
+  let rxns  = from rhea
+      ask reactions_consuming(?c)
+      with ?c in kegg
+      within 60
+
+  emit rxns
+}

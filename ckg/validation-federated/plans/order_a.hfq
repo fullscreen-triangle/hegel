@@ -1,0 +1,25 @@
+# Filter before expansion. KEGG:C10 consumes nothing, so dropping it costs no
+# coverage; removing it before the expansion saves the request the expansion
+# would spend on it. The filter names the identifier rather than a label,
+# because chebi2kegg is non-injective -- CHEBI:9 and CHEBI:10 both reach
+# KEGG:C9 -- and the surviving row's attributes are whichever preimage was
+# merged last. Only the identifier is reliable after such a map.
+plan order_a {
+  budget 400 requests
+
+  let acids = from chebi
+      ask descendants_of("CHEBI:1")
+      within 10
+
+  let kegg  = map acids via chebi2kegg
+      expect partial 0.1
+
+  let narrow = filter kegg where _id != "KEGG:C10"
+
+  let rxns  = from rhea
+      ask reactions_consuming(?c)
+      with ?c in narrow
+      within 60
+
+  emit rxns
+}

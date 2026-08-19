@@ -1,0 +1,11 @@
+# m = 1. There is no predecessor, so (R1) cannot fire: prop:starve-reachable(a)
+# says starved is unreachable here whatever the fixture does.
+plan single_step {
+  budget 20 requests
+
+  let acids = from chebi
+      ask descendants_of("CHEBI:1")
+      within 8
+
+  emit acids
+}

@@ -1,0 +1,19 @@
+# Identical to starved_chain except the declared expectation. That single
+# difference is what thm:six requires: configurations differing in one respect.
+plan healthy_chain {
+  budget 200 requests
+
+  let acids = from chebi
+      ask descendants_of("CHEBI:1")
+      within 10
+
+  let kegg  = map acids via chebi2kegg
+      expect partial 0.6
+
+  let rxns  = from rhea
+      ask reactions_consuming(?c)
+      with ?c in kegg
+      within 60
+
+  emit rxns
+}

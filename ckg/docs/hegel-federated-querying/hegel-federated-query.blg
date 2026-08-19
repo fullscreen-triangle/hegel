@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99e
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: hegel-federated-query.aux
+Reallocating 'name_of_file' (item size: 1) to 9 items.
+The style file: plainnat.bst
+Reallocating 'name_of_file' (item size: 1) to 11 items.
+Database file #1: references.bib
+You've used 30 entries,
+            2773 wiz_defined-function locations,
+            827 strings with 12132 characters,
+and the built_in function-call counts, 18466 in all, are:
+= -- 1649
+> -- 1348
+< -- 23
++ -- 453
+- -- 423
+* -- 1654
+:= -- 2857
+add.period$ -- 123
+call.type$ -- 30
+change.case$ -- 232
+chr.to.int$ -- 30
+cite$ -- 60
+duplicate$ -- 700
+empty$ -- 1261
+format.name$ -- 465
+if$ -- 3838
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 26
+newline$ -- 187
+num.names$ -- 120
+pop$ -- 423
+preamble$ -- 1
+purify$ -- 200
+quote$ -- 0
+skip$ -- 604
+stack$ -- 0
+substring$ -- 694
+swap$ -- 116
+text.length$ -- 12
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 330
+warning$ -- 0
+while$ -- 144
+width$ -- 0
+write$ -- 461

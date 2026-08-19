@@ -1,0 +1,17 @@
+# The lookup source declares {lookup, link} and NOT pattern. Asking it for a
+# conjunctive pattern is ill-capability, so thm:static refuses before contact:
+# (V1) checks requests_issued is still zero after the refusal.
+plan ill_capability {
+  budget 100 requests
+
+  let seed = from chebi
+      ask descendants_of("CHEBI:1")
+      within 4
+
+  let bad  = from enzdb
+      ask reactions_consuming(?c)
+      with ?c in seed
+      within 10
+
+  emit bad
+}

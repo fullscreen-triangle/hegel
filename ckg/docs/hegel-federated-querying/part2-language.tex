@@ -1,0 +1,505 @@
+%==============================================================================
+\part{The Language}
+%==============================================================================
+
+\section{The source model}
+\label{sec:model}
+
+\subsection{Sources differ in kind, not dialect}
+
+The design turns on a fact about the data landscape that is easy to state and
+consequential to accept.
+
+\begin{observation}[Heterogeneity of kind]
+\label{obs:kind}
+Among the public resources a biological question routinely crosses, one finds
+at least the following four kinds:
+\begin{enumerate}[label=(\roman*),leftmargin=2.6em]
+\item a SPARQL protocol endpoint accepting arbitrary graph patterns;
+\item a resource exposing both a SPARQL endpoint and an independent REST
+interface, with different coverage and different identifier conventions on the
+two;
+\item a REST interface returning flat delimited text, with a fixed finite set
+of operations and no query language whatsoever;
+\item an artefact --- an ontology file, a mapping table --- distributed for
+local loading, whose query capability is whatever the loader provides.
+\end{enumerate}
+\end{observation}
+
+Kind (iii) is the one that forecloses the obvious designs. A resource whose
+entire query surface is a fixed family of request shapes such as
+\texttt{/link/\{target\}/\{source\}} and \texttt{/get/\{id\}} does not admit a
+compilation target for arbitrary patterns. It admits exactly the operations it
+names. Any language that compiles to ``a query'' must therefore either exclude
+such resources or define ``query'' so broadly that the word does no work. We
+take the second horn and rename: what a source accepts is a \emph{request}, and
+what shapes the request is a \emph{capability set}.
+
+\begin{definition}[Capability vocabulary]
+\label{def:capability}
+Fix a finite vocabulary $\Feat$ of \emph{capabilities}. A capability names a
+construct that a request may use. Throughout,
+\[
+\Feat = \{\textsf{pattern}, \textsf{path}, \textsf{bind}, \textsf{agg},
+\textsf{filter}, \textsf{neg}, \textsf{order}, \textsf{lookup},
+\textsf{link}, \textsf{batch}, \textsf{regex}\},
+\]
+where \textsf{pattern} is a conjunctive pattern over the source's vocabulary,
+\textsf{path} a regular path expression, \textsf{bind} the inline supply of a
+value set as input, \textsf{agg} an aggregate, \textsf{filter} a scalar
+predicate evaluated at the source, \textsf{neg} negation, \textsf{order} a
+sort, \textsf{lookup} retrieval of a record by primary identifier,
+\textsf{link} retrieval of identifiers in a second namespace related to a given
+identifier, \textsf{batch} the acceptance of more than one input identifier per
+request, and \textsf{regex} a string match.
+\end{definition}
+
+The vocabulary is not canonical and nothing below depends on its particular
+members; what the development requires is only that $\Feat$ be finite and that
+capabilities occupy syntactically independent positions in each concrete
+request language (\cref{asm:independence}).
+
+\begin{definition}[Source]
+\label{def:source}
+A \emph{source} is a quadruple
+$\Src = (\eta_\Src, \Capset(\Src), \Ext_\Src, \cost_\Src)$
+where $\eta_\Src$ is an opaque endpoint handle, $\Capset(\Src) \subseteq \Feat$ is
+the \emph{declared capability set}, $\Ext_\Src$ is the \emph{extraction
+function} mapping a raw response to a result set, and
+$\cost_\Src : \Nset \to \Rset_{>0}$ gives the cost of a request as a function
+of its input cardinality.
+\end{definition}
+
+\begin{example}[Four sources]
+\label{ex:sources}
+A reaction knowledge base with a SPARQL endpoint declares
+\[
+\{\textsf{pattern},\textsf{path},\textsf{bind},\textsf{agg},\textsf{filter},
+\textsf{neg},\textsf{order},\textsf{regex},\textsf{batch}\}.
+\]
+A flat-file pathway REST interface declares $\{\textsf{lookup},\textsf{link}\}$
+and nothing else --- in particular not \textsf{filter}, so a plan wishing to
+filter a pathway result must retrieve and filter locally, at a cost the plan
+can see. A locally loaded ontology declares
+$\{\textsf{pattern},\textsf{path},\textsf{filter}\}$ but not \textsf{batch},
+since the loader admits one query at a time. A protein resource exposing both a
+SPARQL endpoint and a REST interface is modelled as \emph{two} sources with
+different capability sets, for the reason given in \cref{rem:not-union}.
+\end{example}
+
+\begin{remark}[A dual-interface resource is two sources]
+\label{rem:not-union}
+Modelling a resource with both SPARQL and REST access as a single source whose
+capability set is the union of the two is unsound. The union asserts that some
+request may use \textsf{path} and \textsf{link} together, and no request can:
+the two capabilities belong to different interfaces, with different coverage
+and often different identifier conventions. Capability sets are per-interface,
+and a plan crossing the two interfaces of one resource crosses two sources and
+pays two costs.
+\end{remark}
+
+\subsection{Results, and why the result model is the common one}
+
+\begin{definition}[Result set]
+\label{def:result}
+A \emph{result set} over namespace $n$ is a finite set
+\[
+\Res \subseteq n \times (\mathcal{A} \rightharpoonup \mathcal{V})
+\]
+of pairs (identifier, partial attribute map), in which no identifier occurs
+twice. We write $\idm(\Res) \subseteq n$ for the projection onto identifiers,
+and $|\Res| = |\idm(\Res)|$.
+\end{definition}
+
+Making the identifier primary and the attributes secondary is the whole of the
+portability argument, so it is worth establishing that the choice is available.
+
+\begin{proposition}[The result model is common where the query model is not]
+\label{prop:common-result}
+Each of the four source kinds of \cref{obs:kind} admits an extraction function
+into \cref{def:result} that is defined on every syntactically valid response.
+\end{proposition}
+
+\begin{proof}
+For kind (i), and for the SPARQL interface of kind (ii), a response is a
+solution sequence: a list of maps from projected variables to values. Designate
+one projected variable as the identifier column and the remainder as
+attributes; collapse duplicate identifiers by merging their attribute maps.
+The construction is defined on every well-formed solution sequence with at
+least one projected variable.
+
+For the REST interfaces of kinds (ii) and (iii), a response is one of two
+shapes. Under \textsf{lookup} it is a record keyed by the requested identifier,
+yielding the singleton whose identifier is that key and whose attribute map is
+the record's fields. Under \textsf{link} it is a delimited list of pairs,
+yielding one element per line whose identifier is the second column and whose
+attribute map records the first column as provenance. Both are defined on every
+syntactically valid response.
+
+For kind (iv), the loader's own result form is that of kind (i), and the
+construction of the first paragraph applies. In each case the construction
+consumes the entire response, so no information is discarded silently, though
+information may be relocated into attributes.
+\end{proof}
+
+\begin{remark}[What \cref{prop:common-result} does not say]
+\label{rem:extraction-lossy}
+It does not say the extraction is lossless in the sense that matters. A
+solution sequence with three projected variables and no functional dependency
+on any one of them --- a genuine ternary relation --- is forced into
+identifier-plus-attributes by choosing a key, and the choice loses the
+multiplicity of the other two columns. A plan that needs an $n$-ary relation
+not functionally determined by a key cannot express it in this model.
+\Cref{sec:limits} records this as a real restriction rather than a formality,
+and \cref{rem:nary-workaround} gives the standard, unsatisfying workaround.
+\end{remark}
+
+\begin{remark}[The workaround, and what it costs]
+\label{rem:nary-workaround}
+The standard response to the restriction of \cref{rem:extraction-lossy} is
+reification: introduce a synthetic identifier for each tuple of the $n$-ary
+relation and carry the original columns as attributes of it. The result is a
+result set in the sense of \cref{def:result}, so the model accepts it, and
+nothing is lost in the sense of information content.
+
+What is lost is everything downstream. A synthetic identifier lies in no
+namespace of any source, so it is outside the domain of every translation map
+of \cref{def:map}; a reified step therefore cannot be the input of a
+translation step, and the retention arithmetic of \cref{thm:retention} has
+nothing to say about it. Nor can it be joined against a source on identity,
+since no source will have minted the same synthetic key. In effect reification
+buys expressiveness at the price of federation: the reified set is a terminal
+value the plan may emit but may not carry across a boundary. We call the
+workaround standard because it is what one does, and unsatisfying because a
+language for federated retrieval that answers ``express it as something you
+cannot federate'' has not answered.
+\end{remark}
+
+\begin{remark}[Disjoint namespaces are a modelling decision]
+\label{rem:disjoint}
+We assume namespaces are pairwise disjoint. In practice they are not: the same
+lexical string may be a valid accession in two databases, and one database may
+mint identifiers in another's namespace as aliases. The assumption is
+discharged in the prototype by prefixing every identifier with its namespace
+tag at extraction time, which makes disjointness true by construction at the
+cost of making equality between an identifier and its own alias fail. That
+failure is visible as a retention loss in \cref{sec:translation} rather than as
+a silent join miss, which we regard as the better trade, but it is a trade.
+\end{remark}
+
+\subsection{Lowering, faithfulness, and honesty}
+
+\begin{definition}[Abstract request]
+\label{def:areq}
+An \emph{abstract request} is a triple $\rho = (\phi, \Req(\rho), \beta)$ where
+$\phi$ is a pattern over a declared vocabulary, $\Req(\rho) \subseteq \Feat$ is
+the set of capabilities that $\phi$ uses, and $\beta$ is a possibly empty tuple
+of result sets to be supplied as input. We write $\llbracket \rho \rrbracket_D$
+for the \emph{denotation} of $\rho$ over a dataset $D$: the result set that
+$\rho$ specifies, defined independently of any source.
+\end{definition}
+
+\begin{definition}[Lowering]
+\label{def:lowering}
+A \emph{lowering} for source $\Src$ is a partial function
+$\Low_\Src : \rho \rightharpoonup \mathcal{W}_\Src$ into the source's concrete
+request language. $\Low_\Src$ is \emph{faithful for} $f \in \Feat$ if for every
+abstract request $\rho$ with $\Req(\rho) \subseteq \{f\} \cup \Capset(\Src)$ and
+every dataset $D$ the source holds,
+\[
+\Ext_\Src\bigl(\eta_\Src(\Low_\Src(\rho))\bigr) \;=\; \llbracket \rho \rrbracket_D .
+\]
+\end{definition}
+
+\begin{definition}[Honest declaration]
+\label{def:honest}
+$\Capset(\Src)$ is \emph{honest} if, for every $f \in \Feat$,
+\[
+f \in \Capset(\Src) \iff \Low_\Src \text{ is faithful for } f .
+\]
+\end{definition}
+
+\begin{assumption}[Syntactic independence]
+\label{asm:independence}
+For each source $\Src$ there is an injection from $\Feat$ into a set of
+pairwise disjoint syntactic positions of $\mathcal{W}_\Src$, such that the
+concrete request realising a set of capabilities is the one filling exactly the
+corresponding positions, and its denotation is the conjunction of the
+denotations of the parts.
+\end{assumption}
+
+\Cref{asm:independence} holds for the concrete languages we target --- a
+pattern, a path inside a pattern, a binding block, an aggregate wrapper, a
+filter clause and a sort modifier are separate positions in SPARQL, and a REST
+interface with a fixed operation family satisfies it degenerately because each
+capability corresponds to a distinct operation. It fails for languages in which
+two constructs interact semantically, and \cref{rem:independence-fails} records
+one such interaction that is not hypothetical.
+
+\begin{theorem}[Lowering is total and faithful exactly on contained requests]
+\label{thm:lowering}
+Let $\Src$ be a source whose declaration is honest and which satisfies
+\cref{asm:independence}. Then for every abstract request $\rho$,
+\[
+\Low_\Src(\rho) \text{ is defined and faithful}
+\quad\Longleftrightarrow\quad
+\Req(\rho) \subseteq \Capset(\Src).
+\]
+\end{theorem}
+
+\begin{proof}
+($\Leftarrow$) Suppose $\Req(\rho) \subseteq \Capset(\Src)$. By
+\cref{def:honest}, $\Low_\Src$ is faithful for each $f \in \Req(\rho)$
+individually. By \cref{asm:independence} the capabilities in $\Req(\rho)$
+occupy pairwise disjoint syntactic positions, so the concrete request filling
+all of those positions is well formed and lies in $\mathcal{W}_\Src$; hence
+$\Low_\Src(\rho)$ is defined. Again by \cref{asm:independence} its denotation
+is the conjunction of the denotations of its parts, and by faithfulness for
+each $f$ separately each part denotes what $\rho$'s corresponding component
+specifies. The conjunction therefore equals $\llbracket \rho \rrbracket_D$, so
+$\Low_\Src(\rho)$ is faithful.
+
+($\Rightarrow$) Suppose $f \in \Req(\rho) \setminus \Capset(\Src)$ for some $f$.
+By honesty, $\Low_\Src$ is not faithful for $f$: there exist an abstract
+request $\rho'$ using $f$ and a dataset $D$ on which either $\Low_\Src(\rho')$
+is undefined or the extracted response differs from
+$\llbracket \rho' \rrbracket_D$. In the first case $\Low_\Src$ is undefined on
+some request using $f$, and by \cref{asm:independence} the position that $f$
+occupies is unfillable for $\Src$, hence $\Low_\Src(\rho)$ is undefined as
+well. In the second case the position is fillable but its part denotes
+something other than what $\rho$ specifies, and since by
+\cref{asm:independence} the whole denotation is the conjunction over parts,
+$\Low_\Src(\rho)$ is defined but unfaithful. Either way the left-hand side
+fails.
+\end{proof}
+
+\begin{remark}[Honesty is an assumption, and the interesting one]
+\label{rem:honesty-assumption}
+\Cref{thm:lowering} is exactly as strong as \cref{def:honest}, and honesty is
+asserted by the adapter author, not verified against the service. There are two
+ways to violate it and they are not symmetric. \emph{Under}-declaration --- a
+capability the source in fact supports faithfully, omitted from $\Capset(\Src)$ ---
+is safe: it costs expressiveness, causes some plans to be refused that could
+have been answered, and never produces a wrong answer. \emph{Over}-declaration
+is unsound and invisible: the adapter claims \textsf{path}, the service accepts
+path expressions but evaluates them under a different semantics or truncates
+them, the lowering is defined, a response comes back, and it is not the
+denotation. This is not hypothetical --- \cref{sec:interp} exhibits a case in
+which a public service accepted a construct and returned a count differing from
+the specified denotation by a factor of $198.5$. We therefore treat the
+capability set as a claim to be minimised rather than a feature list to be
+maximised, and record in \cref{sec:limits} that no mechanical check enforces
+this, and that we know of no way to build one short of differential testing
+against a reference implementation.
+\end{remark}
+
+\begin{proposition}[Under-declaration can be forced by the service, not the language]
+\label{prop:under}
+There exist a source $\Src$, a capability $f$, and a concrete language
+$\mathcal{W}_\Src$ such that $\mathcal{W}_\Src$ supports $f$ in full
+generality, $\Low_\Src$ emits well-formed requests using $f$, every such
+request receives a well-formed response, and honesty nonetheless requires
+$f \notin \Capset(\Src)$.
+\end{proposition}
+
+\begin{proof}
+Take $f = \textsf{agg}$ and let $\Src$ be a SPARQL endpoint operating under a
+server-side cap $M$ on the number of solutions it will materialise. Aggregation
+is expressible in SPARQL in full generality, so $\mathcal{W}_\Src$ supports
+$f$. Let $\Low_\Src$ emit a counting aggregate over a pattern $\phi$ whose
+unaggregated solution sequence has cardinality $N > M$ on the dataset $D$ the
+source holds. The endpoint materialises $M$ solutions, computes the aggregate
+over those, and returns a well-formed response carrying the number $M$. But
+$\llbracket \rho \rrbracket_D = N \neq M$. So $\Low_\Src$ is defined on $\rho$
+and unfaithful for $f$, and by \cref{def:honest} honesty forces
+$f \notin \Capset(\Src)$ even though the target language supports $f$ and the
+request succeeded.
+\end{proof}
+
+\Cref{prop:under} is the reason \cref{def:honest} is phrased in terms of the
+lowering and the service jointly rather than in terms of the target language's
+grammar. Faithfulness is not a property of a language; it is a property of a
+construct, a lowering, and a deployment. A capability table derived from a
+specification is therefore not a capability declaration, and treating it as one
+is precisely the over-declaration error of \cref{rem:honesty-assumption}.
+
+\begin{remark}[Where \cref{asm:independence} fails]
+\label{rem:independence-fails}
+The assumption fails when two constructs interact. In SPARQL, a path expression
+inside a pattern and an inline value block are formally independent positions,
+but the \emph{expansion} of an abbreviated object list happens during
+translation to the abstract algebra, before evaluation, and interacts with
+path expressions in a way that surprises authors --- as \cref{sec:interp}
+documents. Where independence fails, \cref{thm:lowering} does not apply and the
+lowering must be verified for the interacting pair jointly. The prototype
+handles this by never emitting the abbreviated form (\cref{cons:longhand}),
+which restores independence by removing one of the interacting constructs from
+the emitted language altogether.
+\end{remark}
+
+\section{The intermediate representation}
+\label{sec:ir}
+
+\subsection{Steps}
+
+\begin{definition}[Step]
+\label{def:step}
+A \emph{step} is a tuple
+$\Step = (x, \Src, \rho, \beta, b)$
+where $x$ is the variable the step binds, $\Src$ is a source, $\rho$ is an
+abstract request, $\beta = (y_1,\dots,y_k)$ is a tuple of variables whose
+values are supplied to $\rho$ as input, and $b \in \Rset_{>0} \cup \{\infty\}$
+is the step's budget annotation.
+\end{definition}
+
+The shape $\Step = \text{source} \times \text{request} \times \text{binding}$
+is the whole of the intermediate representation, and it is the reason a source
+adapter is small: of the five components, only $\Low_\Src$ and $\Ext_\Src$ are
+source-specific, and both are functions of the abstract request alone.
+
+\begin{definition}[Plan]
+\label{def:plan}
+A \emph{plan} $\Plan$ is a finite sequence $\Step_1,\dots,\Step_m$ of steps
+together with a total budget $\Bud$, such that the variable bound by $\Step_i$
+is distinct from that bound by $\Step_j$ for $i \neq j$, and every variable in
+$\beta_i$ is bound by some $\Step_j$ with $j < i$. The \emph{dependency graph}
+$G(\Plan)$ has the steps as vertices and an edge $\Step_j \to \Step_i$ whenever
+$y \in \beta_i$ is bound by $\Step_j$.
+\end{definition}
+
+By construction $G(\Plan)$ is a directed acyclic graph and the sequence order
+is one of its topological orders. Nothing below depends on which one.
+
+\begin{example}[The motivating question as a plan]
+\label{ex:plan}
+\begin{lstlisting}[caption={The question of \cref{sec:intro} as a plan. Compare \cref{lst:script}: no query text, no batching constant, explicit budget, explicit failure handling.},label=lst:plan]
+plan enzymes_in_shared_pathways {
+  budget 400 requests
+
+  let acids = from CHEBI
+      ask descendants_of("CHEBI:35238")
+      within 20
+
+  let rxns  = from RHEA
+      ask reactions_consuming(?c)
+      with ?c in acids
+      within 120
+      else fail unresolved
+
+  let ecs   = from RHEA
+      ask enzyme_of(?r)
+      with ?r in rxns
+      within 60
+
+  let kids  = map ecs via ec_to_kegg
+      expect partial 0.6
+
+  let paths = from KEGG
+      ask link("pathway", ?k)
+      with ?k in kids
+      within 200
+      when starved emit partial
+
+  emit paths with provenance
+}
+\end{lstlisting}
+The \texttt{expect partial 0.6} annotation on the translation step is not
+decoration: it is the assertion checked by \cref{def:retention-check}, and a
+plan whose translation retains less than the asserted fraction stops rather
+than proceeding on a silently decimated input --- which is defect (D3) of
+\cref{sec:intro}, caught at the step that causes it rather than at the step that
+suffers it.
+\end{example}
+
+\subsection{The static capability check}
+
+\begin{definition}[Well-capability]
+\label{def:wellcap}
+A step $\Step = (x,\Src,\rho,\beta,b)$ is \emph{well-capability} if
+$\Req(\rho) \subseteq \Capset(\Src)$, and additionally
+$\textsf{batch} \in \Capset(\Src)$ whenever $\beta \neq ()$ and the step is
+annotated for batched execution. A plan is well-capability if every step is.
+\end{definition}
+
+\begin{theorem}[Static decidability of compilability]
+\label{thm:static}
+Let $\Plan$ be a plan over sources with honest declarations satisfying
+\cref{asm:independence}. Then:
+\begin{enumerate}[label=(\alph*),leftmargin=2.4em]
+\item whether $\Plan$ is well-capability is decidable in time
+$O\bigl(m \cdot |\Feat|\bigr)$, where $m$ is the number of steps, without
+issuing any request;
+\item if $\Plan$ is well-capability then every $\Low_{\Src_i}(\rho_i)$ is
+defined and faithful;
+\item if $\Plan$ is not well-capability then there is a step $\Step_i$ and a
+capability $f \in \Req(\rho_i) \setminus \Capset(\Src_i)$ such that no execution
+of $\Plan$ can produce a faithful result for $\Step_i$, and the pair
+$(\Step_i, f)$ is computable within the same bound.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+(a) $\Req(\rho_i)$ is determined syntactically from $\rho_i$ by structural
+recursion over the abstract request, and $\Capset(\Src_i)$ is a declared finite
+set; the containment test is a subset test over a fixed finite vocabulary,
+costing $O(|\Feat|)$ per step with bitset representation. There are $m$ steps
+and no step's test depends on any other step's result, so the total is
+$O(m|\Feat|)$. Nothing in the test consults $\eta_{\Src_i}$, so no request is
+issued.
+
+(b) Immediate from \cref{thm:lowering} applied stepwise, the hypotheses of
+which hold by assumption.
+
+(c) If $\Plan$ is not well-capability then some step fails the containment
+test; take the least such $i$ in the sequence order and any witness
+$f \in \Req(\rho_i)\setminus\Capset(\Src_i)$, both produced by the same scan. By
+\cref{thm:lowering}, $\Low_{\Src_i}(\rho_i)$ is either undefined or unfaithful.
+In the first case no request is ever issued for $\Step_i$ and it has no result.
+In the second, a result is produced but differs from
+$\llbracket \rho_i \rrbracket_D$ on some dataset, so it is not faithful. Since
+the executor's behaviour at $\Step_i$ depends on the source only through
+$\Low_{\Src_i}$ and $\Ext_{\Src_i}$, no scheduling choice, retry, or budget
+allocation changes this.
+\end{proof}
+
+\begin{corollary}[Refusal before contact]
+\label{cor:refuse-before-contact}
+A plan that is not well-capability can be refused, with the offending
+(step, capability) pair named, before any network request is issued.
+\end{corollary}
+
+\begin{proof}
+Immediate from \cref{thm:static}(a) and (c): the test is decidable without
+issuing a request, and on failure it computes the witness.
+\end{proof}
+
+\Cref{cor:refuse-before-contact} is \cref{prin:refusal} made operational, and
+it is the concrete payoff of separating $\Capset$ from $\Ext$ in
+\cref{def:source}. It is worth being precise about what it buys. It does not
+guarantee that a well-capability plan succeeds --- \cref{sec:verdicts} lists
+four ways it can fail with every capability present, and
+\cref{prop:necessary-not-sufficient} adds a fifth. It guarantees only that one
+particular family of failures, the family in which a plan asks a source for
+something it cannot do, is converted from a runtime symptom into a
+compile-time diagnosis naming its own cause.
+
+\begin{proposition}[The check is not conservative in the useless direction]
+\label{prop:check-tight}
+There is no plan that is refused by \cref{def:wellcap} and that could
+nonetheless be executed faithfully against sources with honest declarations.
+\end{proposition}
+
+\begin{proof}
+Suppose $\Plan$ is refused. Then some step has
+$f \in \Req(\rho_i)\setminus\Capset(\Src_i)$, and by \cref{thm:static}(c) no
+execution produces a faithful result for that step. So the refusal excludes no
+faithfully executable plan.
+\end{proof}
+
+\Cref{prop:check-tight} is the converse guarantee to
+\cref{cor:refuse-before-contact} and is what distinguishes a capability check
+from a conservative approximation: the check refuses exactly the plans that
+cannot work, given honest declarations. Under \emph{dishonest} declarations it
+inherits the dishonesty in both directions, which is
+\cref{rem:honesty-assumption} again and is the reason that remark, rather than
+this proposition, is the honest summary of what has been established.

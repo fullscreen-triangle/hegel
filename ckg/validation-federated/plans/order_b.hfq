@@ -1,0 +1,24 @@
+# Expand before filtering. Identical coverage to order_a -- the discarded
+# elements contribute nothing downstream -- at a higher request count, because
+# the expansion is charged on the unfiltered input. (V10): the plan language
+# makes the ordering a decision the author states, not one a query planner
+# takes silently.
+plan order_b {
+  budget 400 requests
+
+  let acids = from chebi
+      ask descendants_of("CHEBI:1")
+      within 10
+
+  let kegg  = map acids via chebi2kegg
+      expect partial 0.1
+
+  let rxns  = from rhea
+      ask reactions_consuming(?c)
+      with ?c in kegg
+      within 60
+
+  let narrow = filter rxns where _from != "KEGG:C10"
+
+  emit narrow
+}

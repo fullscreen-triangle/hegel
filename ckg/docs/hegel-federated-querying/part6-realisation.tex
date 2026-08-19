@@ -1,0 +1,297 @@
+%==============================================================================
+\part{Realisation}
+%==============================================================================
+
+\section{A prototype}
+\label{sec:proto}
+
+\subsection{What the prototype is, and what it is not}
+
+The prototype is a compiler and executor for \HFQ{} written in Python. It parses
+plan text into the intermediate representation of \cref{def:plan}, performs the
+static check of \cref{thm:static}, solves the allocation of
+\cref{thm:allocation}, executes the plan against source adapters, assigns
+verdicts by \cref{def:verdicts}, and writes the result --- verdicts, payloads,
+retention figures, allocation, and provenance --- as a JSON document.
+
+It is not a benchmark. Every adapter in the prototype resolves against a local
+fixture or a local engine. No request leaves the machine. This is a deliberate
+constraint and not a temporary limitation of the implementation: the properties
+under test are properties of the compiler and the verdict assignment, and a
+live service can neither confirm nor refute them while introducing a dependency
+on a third party's availability, policy, and current snapshot. What a live
+service would test --- whether real cross-reference tables have the retention
+figures one hopes --- is a question this paper does not answer and does not
+claim to (\cref{sec:limits}).
+
+\subsection{Pipeline}
+
+\begin{enumerate}[label=(\arabic*),leftmargin=2.4em]
+\item \textbf{Parse.} Plan text to a list of steps
+$(x_i, \Src_i, \rho_i, \beta_i, b_i)$, together with the plan budget. The
+grammar is small: a plan is a budget declaration followed by \texttt{let}
+bindings and a terminal \texttt{emit}.
+\item \textbf{Resolve.} Each source name is resolved against a registry of
+adapters, each of which declares $\Capset(\Src)$ as an explicit set of feature
+symbols. The declaration is data, written by the adapter author, and is the
+locus of the honesty assumption (\cref{rem:honesty-assumption}).
+\item \textbf{Check.} Compute $\Req(\rho_i)$ for each step by structural
+recursion over the abstract request, and test
+$\Req(\rho_i) \subseteq \Capset(\Src_i)$. On failure the executor halts before
+issuing any request and emits a refusal document naming the missing features
+and the step --- \cref{cor:refuse-before-contact} made operational.
+\item \textbf{Allocate.} Solve \cref{def:alloc} by bisection on the shadow price
+$p$, using $\gamma_i(e) = w_i \log(1 + e)$ as the default yield, whose
+derivative $w_i/(1+e)$ inverts in closed form to
+$e = w_i/p - 1$. Steps with step-function yields are charged first
+(\cref{rem:concavity-fails}).
+\item \textbf{Execute.} In sequence order, apply (R1)--(R6). A step reaching
+(R4) calls its adapter's lowering, which emits the canonical concrete request of
+\cref{cons:longhand}; the adapter evaluates it against its fixture and returns a
+result set.
+\item \textbf{Emit.} Serialise to JSON.
+\end{enumerate}
+
+\subsection{Adapters}
+
+Four adapter kinds are implemented, chosen to exercise the four source kinds of
+\cref{obs:kind} rather than to be complete.
+
+\begin{itemize}[leftmargin=2.4em]
+\item A \emph{graph-pattern adapter} over a local RDF store
+\citep{RDFLib,Pyoxigraph}, declaring
+$\{\textsf{pattern}, \textsf{path}, \textsf{bind}, \textsf{filter}, \textsf{agg}\}$.
+Its lowering emits longhand triple patterns and supplies bound sets through the
+value-binding construct, never by concatenation.
+\item A \emph{lookup adapter} over a local key--value fixture, declaring
+$\{\textsf{lookup}, \textsf{link}\}$ and \emph{not} \textsf{pattern}. It is the
+prototype's stand-in for a flat-file REST interface, and its restricted
+declaration is what makes \cref{thm:static} fire on plans that ask it for a
+join.
+\item An \emph{ontology adapter} over a local class hierarchy, declaring
+$\{\textsf{path}, \textsf{lookup}\}$ --- transitive closure over subsumption but
+no filtering and no aggregation.
+\item A \emph{map adapter} implementing translation steps
+(\cref{def:map}), which is the only adapter that reports retention and
+amplification.
+\end{itemize}
+
+\begin{remark}[The declarations are the experiment]
+\label{rem:decl-experiment}
+Because the static check is decided entirely by the declarations, and the
+declarations are chosen by us, the prototype cannot demonstrate that the check
+is \emph{right} about any real service. What it demonstrates is that the check
+is \emph{decidable and cheap}, that refusal precedes contact, and that the
+verdict assigned to a rejected plan names the missing feature rather than
+reporting an empty result. Those are the claims of \cref{thm:static} and
+\cref{cor:refuse-before-contact}, and they are properties of the compiler.
+\end{remark}
+
+\subsection{The output document}
+
+The JSON document produced by an execution has one entry per step, and the
+schema is fixed by the theory rather than by convenience:
+
+\begin{lstlisting}[caption={Shape of a step entry in the emitted JSON. The \texttt{blocker} field is absent exactly when the verdict is \vempty{} or \vans{}, per \cref{def:blocker}.},label=lst:json,language=,keywordstyle=]
+{
+  "step": "kids",
+  "source": "CHEBI->KEGG",
+  "verdict": "starved",
+  "blocker": "corpus",
+  "diagnosis": {
+    "named_predecessor": "ecs",
+    "reason": "retention 0.31 below declared expectation 0.6"
+  },
+  "retention": 0.31,
+  "amplification": 1.14,
+  "budget": {"allocated": 60, "spent": 60, "shadow_price": 0.0142},
+  "payload": null,
+  "provenance": {"snapshot": "fixture-v3", "lowered_form": "canonical"}
+}
+\end{lstlisting}
+
+Three features of \cref{lst:json} are consequences of results above rather than
+design taste. The \texttt{blocker} field is partial, because
+\cref{def:blocker} is partial and $\vempty$ has no blocker. The
+\texttt{payload} is \texttt{null} for every non-$\vans$ verdict, because
+\cref{prin:verdict} says a payload accompanies only $\vans$ --- and an
+implementation that returned a partial payload alongside a failure verdict
+would reintroduce exactly the ambiguity \cref{cor:onebit} identifies.
+\texttt{retention} and \texttt{amplification} are recorded separately, because
+by \cref{prop:cardinality-uninformative} their product --- which is all the
+output cardinality reveals --- determines neither.
+
+\section{Validation design}
+\label{sec:validation}
+
+We enumerate the checks the prototype performs, in the interest of making it
+clear which claims of this paper are exercised and which are not. Each is
+executed against local fixtures.
+
+\begin{enumerate}[label=(V\arabic*),leftmargin=3em]
+\item \textbf{Static check decides without contact.} For a family of plans,
+half well-capability and half not, verify that the ill-capability plans halt
+with a refusal document, that the refusal names the correct missing features,
+and that the adapter request counter is zero.
+(\cref{thm:static}, \cref{cor:refuse-before-contact}.)
+\item \textbf{Check cost is linear.} Measure the check's operation count
+against $m|\Feat|$ over plans of growing length. (\cref{thm:static}(a).)
+\item \textbf{Six verdicts are realised.} Construct the six configurations of
+the proof of \cref{thm:six} --- each differing from a common baseline in one
+respect --- and verify that the executor assigns six distinct verdicts.
+(\cref{thm:six}.)
+\item \textbf{The one-bit interface conflates four.} Run the same six
+configurations through a deliberately impoverished adapter that returns only a
+result set, and verify that four of the six are indistinguishable in its
+output. (\cref{cor:onebit}.)
+\item \textbf{Starvation is unreachable when $m=1$.} Over all single-step
+configurations in the fixture family, verify that $\vstarve$ is never assigned
+and $\bcorp$ never emitted; then verify that the predecessor perturbation of
+\cref{prop:starve-reachable}(b) produces it in a two-step plan.
+\item \textbf{Blame terminates.} For every starved execution, follow the
+diagnosis chain and verify it terminates at a non-$\vstarve$ step within $m$
+hops. (\cref{prop:blame}.)
+\item \textbf{Retention factorises.} Over random partial maps, verify the
+multiplicative identity of \cref{thm:retention}(a) exactly, and verify that the
+measured surviving fraction lies within the bounds of (b) and (c). Record how
+often each bound is attained and how wide the gap is
+(\cref{rem:bounds-gap}).
+\item \textbf{Cardinality is uninformative.} Realise the two maps of
+\cref{prop:cardinality-uninformative} and verify equal output cardinality with
+retentions differing by the predicted factor.
+\item \textbf{Pairwise coverage does not determine chain coverage.} Realise the
+two families of \cref{prop:pairwise-insufficient} and verify identical pairwise
+retentions with differing end-to-end surviving fractions.
+\item \textbf{Reordering does not recover coverage.} For plans admitting both
+orders, verify equal surviving fractions and unequal request counts.
+(\cref{thm:reorder}, \cref{rem:reorder-cost}.)
+\item \textbf{Routes diverge without contradiction.} Construct parallel sound
+routes with partial maps, verify that neither contains an element contradicting
+the other, that the symmetric difference is non-empty, and that making every
+map total collapses the divergence to zero.
+(\cref{thm:route-extent}.)
+\item \textbf{Allocation satisfies KKT.} Solve \cref{def:alloc} numerically and
+verify that the marginal yields of all supported steps agree to tolerance, that
+unsupported steps satisfy $\gamma_i'(0) \leq p^\ast$, and that the budget binds.
+(\cref{thm:allocation}.)
+\item \textbf{Sufficient budget is not sufficient.} Realise the two-step
+counterexample of \cref{prop:necessary-not-sufficient} and verify a $\vref$
+verdict despite $\Bud \geq \sum c_i$.
+\item \textbf{Lowering is canonical.} For every abstract request in the fixture
+family, verify that the emitted concrete form contains no predicate-object list
+and no interpolated identifier outside a value-binding construct, and that two
+abstract requests with the same denotation lower to the same string.
+(\cref{cons:longhand}, \cref{thm:interpolation}.)
+\item \textbf{Re-execution is stable.} Execute each plan twice over an unchanged
+fixture with sufficient budget and verify identical verdicts and payloads; then
+re-execute with a budget below one step's realised cost and verify that the
+difference is confined to that step and its successors.
+(\cref{thm:idempotent}.)
+\end{enumerate}
+
+We record what these do \emph{not} establish, since the enumeration invites the
+opposite reading. (V1)--(V15) test the compiler and the executor against the
+theory. They do not test the theory against the world. No check above would
+detect a dishonest capability declaration, an inaccurate cross-reference table,
+or a deployment that misinterprets the canonical form --- and the first and
+third of those are precisely the failure modes \cref{rem:honesty-assumption}
+and \cref{rem:interp-scope} identify as beyond the reach of the construction.
+
+\section{Limitations}
+\label{sec:limits}
+
+\paragraph{Honesty is assumed, never verified.} The whole of \cref{thm:static}
+and the greater part of \cref{sec:verdicts} rest on the assumption that a
+source's declared capability set is honest (\cref{def:honest}). Under-declaration
+costs expressiveness and is safe; over-declaration is unsound and, worse,
+invisible --- an over-declared source accepts a request it will silently degrade,
+and the degraded answer arrives as $\vans$ with a payload. We do not know how to
+verify a declaration without probing the service, and probing a third party's
+public service to characterise its internals is not something we undertake.
+This is the single largest gap in the development and we do not minimise it.
+
+\paragraph{Yields are posited, not estimated.} \Cref{thm:allocation} assumes
+strictly concave differentiable yield functions and the prototype supplies
+$w_i\log(1+e)$ by default. We have not estimated a yield function for any real
+source, and the weights $w_i$ are configuration. An allocation optimal for the
+wrong yields is not optimal. Furthermore \cref{rem:concavity-fails} excludes
+all-or-nothing steps from the optimisation entirely, so the shadow price
+governs a subset of the plan.
+
+\paragraph{No regret bound for replanning.} \Cref{rem:replanning} adopts
+re-solving after each step, and we have not bounded its total yield against the
+clairvoyant allocation that knew the realised cardinalities in advance. This is
+the natural theoretical question raised by
+\cref{prop:necessary-not-sufficient} and we do not answer it.
+
+\paragraph{Retention laws are unmeasured.} \Cref{thm:retention} is arithmetic
+and holds of any partial maps. Whether real cross-reference tables have
+retentions making \cref{prop:starve-common} bite, and whether the losses of
+successive maps are correlated or independent, is an empirical question we
+raise and do not settle. We note only that the independence hypothesis is
+false in the direction that makes the bound conservative.
+
+\paragraph{Namespace disjointness is a modelling decision.} \Cref{rem:disjoint}
+records that we take namespaces to be pairwise disjoint. Real identifier spaces
+overlap and are re-used, and a shared identifier appearing in two namespaces
+would be conflated by the model. We do not know how badly.
+
+\paragraph{Wall-clock time is not modelled.} All costs count requests
+(\cref{sec:intro}, conventions). A plan whose requests are few and slow and one
+whose requests are many and fast are indistinguishable to the allocator. The
+verdict $\vtime$ mentions a clock but the budget does not, and reconciling the
+two would require a second resource dimension the model does not carry.
+
+\paragraph{The static check is not a completeness result.} \Cref{thm:static}
+says a well-capability plan compiles. It does not say an ill-capability plan is
+unanswerable: a source might answer a request outside its declared capabilities
+through a route the adapter does not expose. Refusal is conservative, and
+conservatism is the safe direction, but it is not optimality.
+
+\paragraph{Structural interpolation is a smaller claim than correctness.}
+\Cref{rem:interp-scope} states this in place and we repeat it here because the
+result is the one most liable to be over-read. \Cref{thm:interpolation}
+eliminates a family of defects by removing the author's access to the request
+string. It does not make the request correct, and a deployment that misreads the
+canonical form is untouched by it.
+
+\paragraph{Nothing has been run against a live service.} By construction. The
+consequence is that every quantitative figure in the prototype's output is a
+figure about a fixture, and no claim in this paper is supported by measurement
+of a public biological database.
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+The script of \cref{lst:script} is not bad code. It is the best code available
+under a division of labour in which control flow lives in a host language and
+data access lives in a query language, with no channel between them. Its five
+defects are consequences of that division and not of its author.
+
+We have described a language that moves the division. Control flow and data
+access live together in a plan; the plan author never writes a request; requests
+are generated by adapters from abstract steps and source declarations. The
+consequences follow from that single relocation. Because requests are generated,
+their spelling is canonical and a family of interpolation defects cannot occur
+(\cref{thm:interpolation}). Because sources declare capabilities, compilability
+is decidable before contact and refusal precedes any request
+(\cref{thm:static}). Because a step returns a verdict rather than rows, the four
+outcomes a row-returning interface conflates become distinguishable
+(\cref{cor:onebit}) --- including one, starvation, that has no single-database
+analogue and becomes reachable only in federation
+(\cref{prop:starve-reachable}). Because translation is a first-class step, its
+retention is measured rather than assumed, and the chain laws say what a plan
+can and cannot infer about its own coverage
+(\cref{thm:retention}, \cref{prop:pairwise-insufficient}) --- including that
+reordering will not help (\cref{thm:reorder}) and that two sound routes may
+disagree without either being wrong (\cref{thm:route-extent}). Because the
+budget is declared, allocation is an optimisation with a single shadow price
+rather than a priority list (\cref{thm:allocation}), though a sufficient total
+is still not sufficient (\cref{prop:necessary-not-sufficient}).
+
+What the development does not have is a way to check the one thing it most
+depends on. A capability declaration is an assertion by an adapter author, and
+an over-declaration is unsound and silent. Every static guarantee in this paper
+is conditional on that assertion. Whether the condition can be discharged
+without probing the services in question --- which is not ours to do --- is the
+question we would most like answered and the one we leave open.
