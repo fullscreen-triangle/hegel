@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Logo from "./Logo";
 import { useRouter } from "next/router";
 import {
@@ -11,6 +11,45 @@ import {
 } from "./Icons";
 import { motion } from "framer-motion";
 import { useThemeSwitch } from "./Hooks/useThemeSwitch";
+
+// One definition of the navigation, shared by the desktop bar and the mobile
+// menu. The two used to carry independent copies of the same link list, which
+// is how the HFQ page came to exist without appearing in either: there was no
+// single place that adding a route would obviously touch.
+//
+// `items` present as a dropdown on desktop and as an indented block on mobile.
+const NAV = [
+  { href: "/", title: "Home" },
+  {
+    title: "Framework",
+    items: [
+      { href: "/fuzzy-circuits", title: "Fuzzy Circuits",
+        blurb: "the circuit model" },
+      { href: "/observation-equations", title: "Observation Equations",
+        blurb: "what an observation is allowed to say" },
+      { href: "/purpose-models", title: "Purpose Models",
+        blurb: "purpose-partitioned compilation" },
+      { href: "/multimodal-reactions", title: "Multimodal Reactions",
+        blurb: "reaction localisation across modalities" },
+    ],
+  },
+  {
+    title: "Tools",
+    items: [
+      { href: "/hfq-notebook", title: "HFQ Notebook",
+        blurb: "write a federated query plan and run it" },
+      { href: "/sbs-tool", title: "SBS Tool",
+        blurb: "systems biology shaders" },
+      { href: "/sbs-playground", title: "SBS Playground",
+        blurb: "edit and run shader programs" },
+      { href: "/sbs-sandbox", title: "SBS Sandbox",
+        blurb: "an unconstrained scratch surface" },
+      { href: "/api-access", title: "API",
+        blurb: "programmatic access" },
+    ],
+  },
+  { href: "/subscriptions", title: "Plans" },
+];
 
 const CustomLink = ({ href, title, className = "" }) => {
   const router = useRouter();
@@ -57,6 +96,116 @@ const CustomMobileLink = ({ href, title, className = "", toggle }) => {
 
 
 
+// A grouped menu for the desktop bar.
+//
+// The header underlines whenever any child route is active, so entering a
+// submenu does not cost the reader their sense of where they are -- the flat
+// bar got that from `router.asPath === href`, and a group has no href of its
+// own to compare against.
+const NavDropdown = ({ title, items, className = "" }) => {
+  const router = useRouter();
+  const [open, setOpen] = useState(false);
+  const wrap = useRef(null);
+
+  const active = items.some((i) => router.asPath === i.href);
+
+  // Close on outside click and on Escape. A menu that only closes by clicking
+  // its own trigger again traps the reader who opened it by mistake.
+  useEffect(() => {
+    if (!open) return undefined;
+    const onDown = (e) => {
+      if (wrap.current && !wrap.current.contains(e.target)) setOpen(false);
+    };
+    const onKey = (e) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    document.addEventListener("mousedown", onDown);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("mousedown", onDown);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [open]);
+
+  // Route changes close it too, otherwise the panel outlives the navigation
+  // that was made from it.
+  useEffect(() => {
+    const close = () => setOpen(false);
+    router.events.on("routeChangeComplete", close);
+    return () => router.events.off("routeChangeComplete", close);
+  }, [router.events]);
+
+  return (
+    <div ref={wrap} className={`${className} relative`}
+         onMouseEnter={() => setOpen(true)}
+         onMouseLeave={() => setOpen(false)}>
+      <button
+        type="button"
+        aria-haspopup="true"
+        aria-expanded={open}
+        onClick={() => setOpen((v) => !v)}
+        className="rounded relative group lg:text-light lg:dark:text-dark
+                   inline-flex items-center gap-1"
+      >
+        {title}
+        <span className={`text-[0.6em] leading-none transition-transform duration-200
+                          ${open ? "rotate-180" : ""}`}
+              aria-hidden="true">
+          &#9660;
+        </span>
+        <span
+          className={`
+              inline-block h-[1px] bg-dark absolute left-0 -bottom-0.5
+              group-hover:w-full transition-[width] ease duration-300 dark:bg-light
+              ${active ? "w-full" : "w-0"} lg:bg-light lg:dark:bg-dark
+              `}
+        >
+          &nbsp;
+        </span>
+      </button>
+
+      {/* The panel is always rendered and hidden with CSS rather than mounted
+          on open. Unmounting it kept the nine sub-routes out of the prerendered
+          HTML entirely, so a crawler -- or a reader without JS -- saw a site
+          with four pages. `invisible` also takes them out of the tab order,
+          which keeps the closed menu from swallowing keyboard focus. */}
+      <div
+        className={`absolute left-1/2 -translate-x-1/2 top-full pt-3 z-50 w-64
+                    transition-opacity duration-150
+                    ${open ? "opacity-100 visible"
+                           : "opacity-0 invisible pointer-events-none"}`}
+      >
+        <ul className="rounded-lg border border-dark/15 dark:border-light/20
+                       bg-light dark:bg-dark shadow-lg overflow-hidden py-1">
+          {items.map((i) => {
+            const here = router.asPath === i.href;
+            return (
+              <li key={i.href}>
+                <Link
+                  href={i.href}
+                  onClick={() => setOpen(false)}
+                  className={`block px-3 py-2 text-dark dark:text-light
+                              hover:bg-dark/[0.06] dark:hover:bg-light/[0.10]
+                              transition-colors ${here ? "bg-primary/10" : ""}`}
+                >
+                  <span className={`block text-sm ${here ? "font-bold" : "font-medium"}`}>
+                    {i.title}
+                  </span>
+                  {i.blurb && (
+                    <span className="block text-xs opacity-60 mt-0.5 font-normal">
+                      {i.blurb}
+                    </span>
+                  )}
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </div>
+  );
+};
+
 const Navbar = () => {
   const [mode, setMode] = useThemeSwitch();
     const [isOpen, setIsOpen] = useState(false);
@@ -88,16 +237,17 @@ const Navbar = () => {
       <div className="w-full flex justify-between items-center lg:hidden"
       >
       <nav className="flex items-center justify-center">
-        <CustomLink className="mr-4" href="/" title="Home" />
-        <CustomLink className="mx-4" href="/fuzzy-circuits" title="Circuits" />
-        <CustomLink className="mx-4" href="/observation-equations" title="Observe" />
-        <CustomLink className="mx-4" href="/purpose-models" title="Purpose" />
-        <CustomLink className="mx-4" href="/multimodal-reactions" title="Multimodal" />
-        <CustomLink className="mx-4" href="/api-access" title="API" />
-        <CustomLink className="mx-4" href="/sbs-tool" title="SBS" />
-        <CustomLink className="mx-4" href="/sbs-playground" title="Playground" />
-        <CustomLink className="mx-4" href="/sbs-sandbox" title="Sandbox" />
-        <CustomLink className="ml-4" href="/subscriptions" title="Plans" />
+        {NAV.map((entry, i) => {
+          const spacing = i === 0 ? "mr-4"
+            : i === NAV.length - 1 ? "ml-4" : "mx-4";
+          return entry.items ? (
+            <NavDropdown key={entry.title} className={spacing}
+                         title={entry.title} items={entry.items} />
+          ) : (
+            <CustomLink key={entry.href} className={spacing}
+                        href={entry.href} title={entry.title} />
+          );
+        })}
       </nav>
       <nav
         className="flex items-center justify-center flex-wrap lg:mt-2
@@ -160,16 +310,28 @@ const Navbar = () => {
       animate={{scale:1,opacity:1}}
       >
       <nav className="flex items-center justify-center flex-col">
-        <CustomMobileLink toggle={handleClick} className="lg:m-0 lg:my-2" href="/" title="Home" />
-        <CustomMobileLink toggle={handleClick} className="lg:m-0 lg:my-2" href="/fuzzy-circuits" title="Fuzzy Circuits" />
-        <CustomMobileLink toggle={handleClick} className="lg:m-0 lg:my-2" href="/observation-equations" title="Observations" />
-        <CustomMobileLink toggle={handleClick} className="lg:m-0 lg:my-2" href="/purpose-models" title="Purpose" />
-        <CustomMobileLink toggle={handleClick} className="lg:m-0 lg:my-2" href="/multimodal-reactions" title="Multimodal" />
-        <CustomMobileLink toggle={handleClick} className="lg:m-0 lg:my-2" href="/api-access" title="API" />
-        <CustomMobileLink toggle={handleClick} className="lg:m-0 lg:my-2" href="/sbs-tool" title="SBS Tool" />
-        <CustomMobileLink toggle={handleClick} className="lg:m-0 lg:my-2" href="/sbs-playground" title="Playground" />
-        <CustomMobileLink toggle={handleClick} className="lg:m-0 lg:my-2" href="/sbs-sandbox" title="Sandbox" />
-        <CustomMobileLink toggle={handleClick} className="lg:m-0 lg:my-2" href="/subscriptions" title="Subscribe" />
+        {/* Groups are shown expanded rather than as tap-to-open menus. The
+            panel is a deliberate full-screen interruption, so there is room to
+            show every route, and hiding them behind a second tap would add a
+            step without buying any space back. */}
+        {NAV.map((entry) => entry.items ? (
+          <div key={entry.title}
+               className="flex flex-col items-center my-2 lg:my-1.5">
+            <span className="text-light/50 dark:text-dark/50 text-xs uppercase
+                             tracking-widest mb-1">
+              {entry.title}
+            </span>
+            {entry.items.map((i) => (
+              <CustomMobileLink key={i.href} toggle={handleClick}
+                                className="lg:m-0 lg:my-1"
+                                href={i.href} title={i.title} />
+            ))}
+          </div>
+        ) : (
+          <CustomMobileLink key={entry.href} toggle={handleClick}
+                            className="lg:m-0 lg:my-2"
+                            href={entry.href} title={entry.title} />
+        ))}
       </nav>
       <nav
         className="flex items-center justify-center  mt-2
