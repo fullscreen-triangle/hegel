@@ -15,6 +15,10 @@ per def:step and def:plan. The grammar is deliberately small.
       let x = map y via MAP [then via MAP ...]
               expect partial FLOAT
 
+      let x = ladder over y
+              power P [, power P ...]
+              [expect power E]
+
       let x = union y z
       let x = intersect y z
       let x = join y z on ATTR
@@ -68,7 +72,7 @@ class Step:
     """A step of def:step, plus the surface annotations the grammar carries."""
 
     var: str                       # x, the variable bound
-    kind: str                      # from | map | union | intersect | join | filter
+    kind: str                      # from | map | union | intersect | join | filter | ladder
     source: Optional[str] = None   # Src, for kind == "from"
     request: Optional[AbstractRequest] = None  # rho
     beta: Tuple[str, ...] = ()     # plan variables supplied as input
@@ -80,6 +84,8 @@ class Step:
     operands: Tuple[str, ...] = ()          # for set operations
     join_on: Optional[str] = None
     where: Optional[Tuple[str, str, Any]] = None
+    rungs: Tuple[float, ...] = ()           # declared rung powers, for "ladder"
+    expect_power: Optional[float] = None    # declared composite-power target
     line: int = 0
 
 
@@ -194,6 +200,8 @@ def _parse_let(body: str, line: int) -> Step:
         return _parse_from(var, rhs, line)
     if rhs.startswith("map "):
         return _parse_map(var, rhs, line)
+    if rhs.startswith("ladder "):
+        return _parse_ladder(var, rhs, line)
     for op in ("union", "intersect"):
         if rhs.startswith(op + " "):
             operands = tuple(rhs[len(op):].split())
@@ -287,6 +295,51 @@ def _parse_map(var: str, rhs: str, line: int) -> Step:
         var=var, kind="map", maps=tuple(maps), operands=(operand,),
         beta=(operand,), expect_partial=float(em.group(1)) if em else None,
         budget=float(wm.group(1)) if wm else float("inf"), line=line,
+    )
+
+
+def _parse_ladder(var: str, rhs: str, line: int) -> Step:
+    """Parse: ladder over Y [power P, ...] [expect power E]
+
+    A ladder step is local: it consumes no requests, reaches no source, and
+    demands no capability. It composes declared rung powers multiplicatively,
+    1 - prod(1 - p_i), and may declare a target the composite must attain.
+
+    The clause arrives space-joined by _clauses, so the patterns below are
+    written against a single flattened line, as _parse_from and _parse_map are.
+    """
+    m = re.match(r"ladder\s+over\s+(\w+)\s*(.*)$", rhs)
+    if not m:
+        raise ParseError(
+            "malformed ladder (expected: ladder over Y power P, ...)", line)
+    operand, rest = m.group(1), m.group(2)
+
+    # The expectation clause is removed BEFORE the rungs are read.
+    # Without this, the "power" inside "expect power E" matches the rung
+    # pattern and the declared target is silently appended as an extra
+    # rung: the plan would then compose a ladder it did not write and
+    # report a composite nobody declared.
+    em = re.search(r"\bexpect\s+power\s+(\d+(?:\.\d+)?)", rest)
+    rung_text = rest[:em.start()] + rest[em.end():] if em else rest
+
+    powers = [float(x) for x in
+              re.findall(r"\bpower\s+(\d+(?:\.\d+)?)", rung_text)]
+    if not powers:
+        raise ParseError("ladder declares no rungs", line)
+    for p in powers:
+        if not (0.0 <= p <= 1.0):
+            # A power outside [0,1] is not a weak rung, it is a malformed one.
+            # Clamping would let a plan declare an impossible step and still
+            # run, which is the class of silent failure the verdicts exist to
+            # prevent.
+            raise ParseError(
+                "rung power {} outside [0,1]".format(p), line)
+
+    return Step(
+        var=var, kind="ladder", operands=(operand,), beta=(operand,),
+        rungs=tuple(powers),
+        expect_power=float(em.group(1)) if em else None,
+        line=line,
     )
 
 

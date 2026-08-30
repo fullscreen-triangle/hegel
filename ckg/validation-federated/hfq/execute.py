@@ -39,6 +39,7 @@ class StepResult:
     source: str
     verdict: Verdict
     diagnosis: Optional[Dict[str, Any]] = None
+    composite_power: Optional[float] = None
     retention: Optional[float] = None
     amplification: Optional[float] = None
     expected: Optional[float] = None
@@ -62,6 +63,7 @@ class StepResult:
         if blk is not None:
             out["blocker"] = blk.value
         out["diagnosis"] = self.diagnosis
+        out["composite_power"] = self.composite_power
         out["retention"] = self.retention
         out["amplification"] = self.amplification
         out["budget"] = {
@@ -303,6 +305,8 @@ class Executor:
 
         if step.kind == "map":
             return self._run_map(step, values, base)
+        if step.kind == "ladder":
+            return self._run_ladder(step, values, base)
         if step.kind in ("union", "intersect", "join", "filter"):
             return self._run_setop(step, values, base)
         return self._run_from(step, values, base, allocated, remaining)
@@ -415,6 +419,64 @@ class Executor:
             return base
         base.verdict = Verdict.ANSWER
         base.payload = out
+        return base
+
+    def _run_ladder(self, step: Step, values: Dict[str, ResultSet],
+                    base: StepResult) -> StepResult:
+        """Compose declared rung powers multiplicatively: 1 - prod(1 - p_i).
+
+        A ladder is local. It reaches no source, consumes no requests, and
+        demands no capability, so it is charged nothing -- the same regime
+        _run_setop already occupies. The allocator still reserves a nominal
+        unit for it via yield_specs, which is conservative and matches the
+        existing treatment of set operations.
+
+        (R1) has already been applied by the caller, so a ladder whose input
+        starved never reaches here. This handler is responsible only for (R5)
+        and (R6), plus the declared-expectation check.
+        """
+        base.spent = 0.0
+        src = values[step.operands[0]]
+
+        residual = 1.0
+        for p in step.rungs:
+            residual *= (1.0 - p)
+        composite = 1.0 - residual
+        base.composite_power = composite
+
+        # def:refuse-climb -- a declared target the declared rungs cannot
+        # reach is refused, and the refusal is tight: by the multiplicative
+        # law the composite IS what executing the ladder would attain, so no
+        # ladder that could have succeeded is rejected here.
+        if step.expect_power is not None and composite < step.expect_power:
+            base.verdict = Verdict.STARVED
+            # The shortfall is in the ladder, not in the predecessor: the
+            # input arrived intact and the declared rungs are too weak.
+            # Naming the predecessor would blame a step that answered
+            # correctly, so the chain of prop:blame terminates AT this step.
+            base.diagnosis = {
+                "named_predecessor": None,
+                "declared_rungs": list(step.rungs),
+                "input_from": step.operands[0],
+                "reason": "composite power {:.4f} below declared "
+                          "expectation {}".format(composite,
+                                                  step.expect_power),
+                "expectation": step.expect_power,
+                "observed": composite,
+                "shortfall": step.expect_power - composite,
+            }
+            return base
+
+        if not src.rows:
+            base.verdict = Verdict.EMPTY
+            base.diagnosis = {
+                "reason": "ladder input is empty over this dataset",
+                "composite_power": composite,
+            }
+            return base
+
+        base.verdict = Verdict.ANSWER
+        base.payload = src
         return base
 
     def _run_setop(self, step: Step, values: Dict[str, ResultSet],
