@@ -1,0 +1,63 @@
+# Doerr Q4. "What are the expected products of a biocatalytic kinetic
+# resolution reaction with enzyme PFE at pH 9 in HEPES buffer?"
+#
+# "Expected" is the word that decides this plan. Q3 asked for a scope and got
+# the extension; Q4 asks for a PREDICTION, and the difference is that Q4's
+# conditions are not in the store at all. PFE has been run once, at pH 7.0 in
+# phosphate. HEPES appears nowhere. pH 9 appears nowhere.
+#
+# There are three things a system can do here and only one of them is honest.
+#
+#   (1) Return the products of the pH 7 phosphate run. This is what a query
+#       that drops the unsatisfiable conjuncts returns, and it is the worst
+#       outcome, because it is a correct answer to a question nobody asked
+#       presented as an answer to one somebody did.
+#   (2) Return empty. Better, and still ambiguous: "no run matched" and "this
+#       enzyme does nothing under these conditions" are different claims and
+#       a bare empty set is both.
+#   (3) Say that the conditions were never run, name which conjunct failed,
+#       and separately report what IS known about the enzyme so the reader
+#       can see the distance between the two.
+#
+# This plan does (3). The condition filters run AFTER the enzyme's runs are
+# retrieved rather than being folded into the retrieval, which is deliberate:
+# it means the trace shows a non-empty set arriving at the pH filter and an
+# empty set leaving it, so the emitted record can name pH as the conjunct
+# that failed. Folding the conditions into the graph pattern -- the natural
+# SPARQL formulation -- destroys exactly this information, because one WHERE
+# block either matches or does not and cannot report which triple pattern was
+# responsible.
+#
+# Note also that a reasoner makes this case WORSE, not better. Given an
+# axiom that PFE is a lipase and lipases catalyse transesterification, a
+# reasoner will happily derive products at pH 9 that no one has observed,
+# and will present them with the same epistemic standing as a measurement.
+plan mark_q4 {
+  budget 200 requests
+
+  # The reactions PFE catalyses. Inverse of `catalysed_by`.
+  let pfe_reactions = from RXN
+      ask catalysed_reactions("ENZ:PFE")
+      within 20
+
+  # The runs of those reactions, with their recorded conditions.
+  let pfe_runs = from PROV
+      ask evaluations_of(?r)
+      with ?r in pfe_reactions
+      within 20
+
+  let conditions = from PROV
+      ask settings_of(?a)
+      with ?a in pfe_runs
+      within 20
+
+  # "at pH 9". The first condition, applied alone so that its failure is
+  # attributable. This is where the plan stops.
+  let at_ph9 = filter conditions where pH == "9.0"
+
+  # "in HEPES buffer". Never reached, and the trace says so: starved, not
+  # empty. Two different reasons for returning nothing, kept apart.
+  let in_hepes = filter at_ph9 where buffer == "BUF:HEPES-50mM"
+
+  emit in_hepes with provenance
+}

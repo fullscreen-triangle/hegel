@@ -195,9 +195,21 @@ class TranslationMap:
         return len(self.image(s)) / kept
 
     def apply(self, res: ResultSet) -> ResultSet:
-        """Carry attributes forward, recording the preimage as provenance."""
+        """Carry attributes forward, recording the preimage as provenance.
+
+        The iteration is SORTED. identifiers() returns a frozenset, and
+        ResultSet.of merges on collision with the last write winning, so when
+        mu is non-injective -- CHEBI:9 and CHEBI:10 both reach KEGG:C9 -- the
+        surviving row's `_preimage` is whichever preimage came last. Under an
+        unordered iteration that is genuinely unstable across runs: with
+        PYTHONHASHSEED varied over 0..7 this attribute alternates between the
+        two preimages. Verdicts and cardinalities are unaffected either way,
+        since the merge collapses to the same identifier set, but the recorded
+        provenance is not reproducible. Sorting fixes the choice without
+        changing any other quantity.
+        """
         pairs = []
-        for u in res.identifiers():
+        for u in sorted(res.identifiers()):
             for v in self.pairs.get(u, ()):
                 attrs = dict(res.rows[u])
                 attrs["_via"] = self.name

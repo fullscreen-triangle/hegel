@@ -24,7 +24,7 @@ from dataclasses import dataclass, field
 from typing import Any, Dict, List, Optional
 
 from .adapters import (MapAdapter, Refusal, Registry, Timeout,
-                       required_features)
+                       required_features, resolve_features)
 from .allocate import Allocation, YieldSpec, solve
 from .check import check, refusal_document
 from .model import ResultSet, Verdict, blocker_of
@@ -320,7 +320,7 @@ class Executor:
 
         # (R2) capability containment. thm:static already decided this without
         # contact, so reaching it here means the checker and adapter disagree.
-        req = required_features(step.request)
+        req = resolve_features(adapter, step.request)
         if not adapter.supports(req):
             base.verdict = Verdict.SURFACE
             base.diagnosis = {
@@ -548,6 +548,144 @@ class Executor:
 
     # -- emit --------------------------------------------------------------
 
+    def _ancestry(self, plan: Plan, target: str) -> List[str]:
+        """The steps that contributed to `target`, in plan order.
+
+        def:plan binds every input variable by a strictly earlier step, so the
+        reverse reachability closure is finite and acyclic; this is the same
+        argument prop:blame uses to bound the blame chain, applied to the whole
+        dependency graph rather than to the starvation edge alone.
+        """
+        by_var = {s.var: s for s in plan.steps}
+        want: set = set()
+        frontier = [target]
+        while frontier:
+            v = frontier.pop()
+            s = by_var.get(v)
+            if s is None or v in want:
+                continue
+            want.add(v)
+            frontier.extend(s.beta)
+            frontier.extend(s.operands)
+        return [s.var for s in plan.steps if s.var in want]
+
+    def _attrition(self, plan: Plan, ex: Execution, target: str) -> Dict[str, Any]:
+        """What the emitted set does NOT account for.
+
+        The motivating case is a partial translation. A map step drops an
+        identifier; every later step then reports honest full coverage of the
+        smaller set it was handed, and the emitted payload is a correct answer
+        to a question narrower than the one asked. Nothing local to the final
+        step records the difference -- the record lives upstream, in that map's
+        retention, and a reader who sees only the payload cannot recover it.
+
+        That gap is cor:onebit reappearing INSIDE an honest pipeline. The
+        one-bit objection is usually made against a SPARQL result set, which
+        cannot distinguish "none satisfy" from "some were never examined". A
+        federated executor earns that distinction by recording retention per
+        step -- but only if the emit boundary carries it. Otherwise the
+        information exists in the trace and not in the answer, which is a
+        weaker claim than the framework makes.
+
+        So: walk the ancestry, collect every step whose retention is below 1,
+        and name it. `examined` is what the answer actually ranged over;
+        `unexamined_lower_bound` is a LOWER BOUND on what it did not, in the
+        same sense as thm:route-extent(b) -- a step may drop an identifier a
+        later step would have dropped anyway, and no count here separates the
+        two.
+        """
+        losses: List[Dict[str, Any]] = []
+        for var in self._ancestry(plan, target):
+            r = ex.by_var(var)
+            if r is None or r.retention is None or r.retention >= 1.0:
+                continue
+            before = r.stages[0]["input_size"] if r.stages else None
+            after = len(r.payload) if r.payload is not None else None
+            losses.append({
+                "step": var,
+                "source": r.source,
+                "retention": r.retention,
+                "expected": r.expected,
+                "input_size": before,
+                "output_size": after,
+                "dropped": ((before - after)
+                            if before is not None and after is not None
+                            else None),
+            })
+        final = ex.by_var(target)
+        examined = len(final.payload) if final is not None and final.payload else 0
+        total_dropped = sum((l["dropped"] or 0) for l in losses)
+        return {
+            "examined": examined,
+            "unexamined_lower_bound": total_dropped,
+            "complete": not losses,
+            "losses": losses,
+            "interpretation": (
+                "exhaustive over the identifiers that reached the final step, "
+                "and no identifier was dropped on the way"
+                if not losses else
+                "exhaustive over the identifiers that reached the final step; "
+                + str(total_dropped) + " identifier(s) were dropped upstream "
+                "and never examined. Absence from the payload does not "
+                "distinguish 'tested and rejected' from 'never tested'."
+            ),
+        }
+
+    #: Why an emitted extension is not an answer. Keyed by the gap the PLAN
+    #: names, because the executor cannot tell these apart by inspection: all
+    #: three look identical from inside -- a step that answered, holding rows
+    #: nobody asked for. Only the plan author knows which sentence is true,
+    #: and requiring them to say it is the point. A default would be the
+    #: executor guessing, and a guess recorded in a provenance document is
+    #: worse than no document.
+    GAPS = {
+        "induction": (
+            "The question asks for {asked}, a claim about cases the corpus "
+            "does not contain. The emitted rows are the cases it does "
+            "contain. No traversal, and no reasoner sound with respect to "
+            "these axioms, closes that gap: the step from observed instances "
+            "to a generalisation over them is chemistry, not inference, and "
+            "asserting it in an ontology would launder an assumption into a "
+            "derived fact."
+        ),
+        "vocabulary": (
+            "The question asks for {asked}. The corpus has no counterpart for "
+            "that term -- not a missing value, an absent relation. The rows "
+            "emitted satisfy every constraint that COULD be expressed and the "
+            "unexpressible one was dropped, which is why they are reported as "
+            "an extension rather than an answer. Adding the term as an "
+            "asserted triple would make the constraint applicable and the "
+            "answer unfounded, since the assertion would come from whoever "
+            "wrote the mapping rather than from whoever ran the experiment."
+        ),
+        "conditions": (
+            "The question asks for {asked} under conditions the corpus never "
+            "records. The emitted rows are what was run, not what was asked "
+            "about, and the distance between them is not a retrieval failure "
+            "that a better query closes -- it is an experiment nobody "
+            "performed."
+        ),
+    }
+
+    def _admissibility(self, e) -> Dict[str, Any]:
+        """The statement that outranks the verdict.
+
+        Recorded beside the verdict rather than folded into it. The verdict
+        stays honest about the execution -- every step did answer -- and
+        `answers_question: false` says the execution answered something else.
+        Collapsing the two into a fabricated `refused` would hide that the
+        retrieval succeeded, and a reader could not tell a corpus that lacks
+        the rows from one that has them and cannot generalise over them.
+        """
+        gap = e.gap or "induction"
+        return {
+            "asked_for": e.intension,
+            "returned": "recorded extension",
+            "answers_question": False,
+            "gap": gap,
+            "reason": self.GAPS[gap].format(asked=e.intension),
+        }
+
     def _emit(self, plan: Plan, ex: Execution,
               values: Dict[str, ResultSet]) -> Dict[str, Any]:
         out: Dict[str, Any] = {}
@@ -576,10 +714,28 @@ class Executor:
                 r = ex.by_var(e.target)
                 payload = values.get(e.target)
                 answered = r is not None and r.verdict is Verdict.ANSWER
-                out[e.target] = {
+                rec: Dict[str, Any] = {
                     "verdict": r.verdict.value if r else None,
                     "payload": (payload.to_json()
                                 if answered and payload else None),
                     "provenance": e.provenance,
                 }
+                # `with provenance` is the request for the record, so the
+                # coverage statement belongs here rather than beside every
+                # payload: a plan that does not ask for provenance gets the
+                # answer it asked for, and one that does cannot read the
+                # answer without also reading what it ranges over.
+                if e.provenance:
+                    rec["coverage"] = self._attrition(plan, ex, e.target)
+                # An admissibility statement outranks the verdict, so it is
+                # recorded beside it rather than folded into it. The verdict
+                # stays honest about the execution -- every step did answer --
+                # and `answers_question: false` says the execution answered
+                # something else. Collapsing the two into a fabricated
+                # `refused` would hide that the retrieval succeeded, and a
+                # reader could not tell a corpus that lacks the rows from one
+                # that has them and cannot generalise over them.
+                if e.intension is not None:
+                    rec["admissibility"] = self._admissibility(e)
+                out[e.target] = rec
         return out

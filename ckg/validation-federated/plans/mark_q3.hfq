@@ -1,0 +1,52 @@
+# Doerr Q3. "What is the substrate scope and product range of the
+# Baeyer-Villiger Monooxygenase BVMO-Y?"
+#
+# This plan returns two substrates and two products and then says, in the
+# emitted record, that this is NOT the answer to the question asked. The
+# distinction is the entire point of running it.
+#
+# "Scope" and "range" are modal words. A substrate scope is a claim about
+# what an enzyme WOULD accept, including compounds nobody has put in front of
+# it; the store holds what somebody DID put in front of it and wrote down.
+# Those differ by an inductive step, and no traversal of these triples takes
+# it. A reasoner does not help: a reasoner is sound with respect to its
+# axioms, and there is no axiom of the form "an enzyme that accepts
+# cyclohexanone accepts 2-methylcyclohexanone" -- if there were, it would be
+# a chemical generalisation asserted by whoever wrote the ontology, and the
+# reasoner would be laundering their guess into a derived fact.
+#
+# So the honest output is the extension plus its cardinality plus a statement
+# that the cardinality is a lower bound on nothing, because the question was
+# not about cardinality at all. What SPARQL returns for this question is two
+# rows. What it cannot return is the sentence "these two rows are not a
+# scope", and a reader who receives two rows in answer to a question about
+# scope has been given a wrong answer in the form of a right one.
+#
+# COUNTERFACTUAL NOTE. There is no counterfactual for this plan of the kind
+# that validated Q2 and Q5. Perturbing a constraint here changes which
+# reactions are found; it cannot change whether found-reactions constitute a
+# scope. That the plan's own machinery cannot reach the defect is the finding.
+plan mark_q3 {
+  budget 200 requests
+
+  # The reactions this enzyme is recorded as catalysing. Inverse traversal of
+  # `catalysed_by`: reaction --> enzyme is the stored direction.
+  let reactions = from RXN
+      ask catalysed_reactions("ENZ:BVMO-Y")
+      within 20
+
+  # What went in. Forward from the reaction along `consumes`.
+  let substrates = from RXN
+      ask participants_of(?r)
+      with ?r in reactions
+      within 20
+
+  # What came out.
+  let products = from RXN
+      ask reactions_producing(?r)
+      with ?r in reactions
+      within 20
+
+  emit substrates with provenance
+       as extension of "substrate scope" because induction
+}

@@ -1,0 +1,49 @@
+# Doerr generic query G3. "...the same, with a Bruker Spectrometer set to X."
+#
+# This plan is REFUSED, and no request is issued. That is the result, not a
+# failure to produce one.
+#
+# The clause "with a Bruker Spectrometer" does not name a device. It names a
+# class and asks the instrument service to enumerate its members -- which
+# devices, of all the devices you hold, are Bruker spectrometers. INST is a
+# keyed record service. It answers "tell me about DEV:UV1900i". It has no
+# operation that ranges over its own extent, so it declares `lookup`, `link`,
+# `bind`, `batch` and not `pattern`.
+#
+# thm:static computes Req for the kind test as {pattern, neg}, finds neither
+# in INST's declaration, and halts. cor:refuse-before-contact says this
+# happens with requests_issued still 0, and the emitted document names the
+# step, the source, and the two missing features.
+#
+# Compare what the alternative stack does. The ontology has a class
+# BrukerSpectrometer; the reasoner classifies DEV:Bruker-Avance-400 under it;
+# the SPARQL query asks for ?d a :BrukerSpectrometer and returns it. That
+# works -- against a triple store that has already materialised every
+# instrument record. The moment the instrument catalogue is a real service
+# behind a real API, which is what it is at every institute I know of, the
+# federated query either silently omits the instrument leg or the endpoint
+# times out, and in neither case does the answer say so. The refusal here is
+# not the framework being less capable. It is the framework declining to
+# report a number it cannot stand behind, before spending a request to
+# not-earn it.
+plan dcat_g3 {
+  budget 100 requests
+
+  let rxns = from RXN
+      ask consumers_of("CHEBI:catechol")
+      within 20
+
+  let datasets = from PROV
+      ask evaluations_of(?r)
+      with ?r in rxns
+      within 20
+
+  # The kind test, at the source that cannot perform it. `typed_as` requires
+  # {pattern, neg}; INST declares {lookup, link, bind, batch}. Both are
+  # missing and the check names both.
+  let brukers = from INST
+      ask typed_as("KIND:bruker-spectrometer")
+      within 20
+
+  emit brukers with provenance
+}

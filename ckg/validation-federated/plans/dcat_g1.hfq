@@ -1,0 +1,35 @@
+# Doerr generic query G1. "Give me all datasets D about a substance with
+# compound C."
+#
+# The easy one, and worth stating plainly so the hard ones are not mistaken
+# for the framework straining. A dataset in Chem-DCAT-AP is what PROV calls
+# an activity: the record of somebody doing something and writing it down.
+# "About a substance with compound C" is then two hops -- which reactions
+# involve the compound, which activities evaluated those reactions -- and
+# both hops run backwards along a stored edge.
+#
+# That backwardness is the whole content of the plan. RXN stores
+# reaction --consumes--> compound; the question supplies the compound. The
+# forward extraction would apply its literal filter to the SUBJECT position,
+# match nothing, and return the empty set -- an answer indistinguishable at
+# the emit boundary from "no dataset is about this compound". So the inverse
+# is a separate predicate with `path` in its requirement, and a deployment
+# whose index runs one way is refused by name instead of answering wrongly.
+plan dcat_g1 {
+  budget 100 requests
+
+  # Which reactions consume catechol. `consumers_of` walks `consumes`
+  # backwards: compound -> reactions.
+  let rxns = from RXN
+      ask consumers_of("CHEBI:catechol")
+      within 20
+
+  # Which activities evaluated those reactions. `evaluations_of` walks
+  # `evaluated` backwards: reaction -> activities.
+  let datasets = from PROV
+      ask evaluations_of(?r)
+      with ?r in rxns
+      within 20
+
+  emit datasets with provenance
+}

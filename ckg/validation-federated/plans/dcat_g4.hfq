@@ -1,0 +1,45 @@
+# Doerr generic query G4. "Give me all datasets D about chemical reaction R
+# that had product P."
+#
+# The named-reaction case, and the one place where a plan and a SPARQL query
+# genuinely coincide in shape. R is named, P is named; the question is
+# whether the store holds the edge, and whether an activity evaluated R.
+#
+# What the plan adds is that the product clause is CHECKED rather than
+# assumed. `identified_as` intersects the named product against the set the
+# previous step actually produced, so a plan naming a product this reaction
+# does not yield returns empty rather than returning the reaction's datasets
+# anyway. In a single WHERE block the product triple and the activity triple
+# are conjuncts of one pattern: if the product is wrong the whole block fails
+# and the result is empty -- the same empty as "no activity evaluated it",
+# and the same empty as "R is not in the store". Three questions, one bit.
+plan dcat_g4 {
+  budget 100 requests
+
+  # What RXN:MT-catechol produces. Forward walk, reaction -> compounds.
+  let products = from RXN
+      ask reactions_producing("RXN:MT-catechol")
+      within 20
+
+  # "that had product P". Membership, gated by the set above: naming guaiacol
+  # is not evidence the reaction yields it.
+  let has_p = from RXN
+      ask identified_as("CHEBI:guaiacol", ?p)
+      with ?p in products
+      within 20
+
+  # Back to the reaction, then to the activities that evaluated it. This step
+  # depends on has_p, so a falsified product clause starves it rather than
+  # letting the datasets through on the reaction name alone.
+  let rxns = from RXN
+      ask producers_of(?p)
+      with ?p in has_p
+      within 20
+
+  let datasets = from PROV
+      ask evaluations_of(?r)
+      with ?r in rxns
+      within 20
+
+  emit datasets with provenance
+}

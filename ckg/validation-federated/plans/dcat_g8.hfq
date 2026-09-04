@@ -1,0 +1,51 @@
+# Doerr generic query G8. "Give me all datasets D measured with a UV-vis
+# spectrometer and containing a substance with compound C" -- and its variant,
+# "...that had substance S as catalyst and were measured with a Bruker
+# Spectrometer."
+#
+# This plan is REFUSED, and no request is issued -- including the requests for
+# the half of the query that would have succeeded.
+#
+# That is the point of running it after G7. G7's compound-and-catalyst legs
+# answer; this query is those legs conjoined with a device-CLASS test, and the
+# class test is G3's: "a UV-vis spectrometer" names a kind and asks the
+# instrument service to enumerate its members. INST is keyed. It declares
+# lookup, link, bind, batch and not pattern, and thm:static computes {pattern,
+# neg} for the kind test, finds neither, and halts.
+#
+# Ill-capability is a property of the PLAN, not of a step, so the satisfiable
+# steps do not run either. That is not conservatism; it is the only reading
+# under which the emitted document means anything. If the answerable legs ran
+# and their rows were emitted, the caller would hold two datasets that satisfy
+# the compound constraint and an unenforced device constraint, and no field in
+# the payload would distinguish them from two datasets that satisfy both. The
+# partial result is more dangerous than none, because it looks like an answer.
+#
+# Note what is NOT the reason. There is a UV-vis spectrometer in the catalogue
+# -- DEV:UV1900i, a Shimadzu -- and PROV records ACT:BT3 as measured with it.
+# The data to answer this question exists. The refusal is a capability fact:
+# no source in this federation can be asked "which of your instruments are of
+# kind K", so the constraint cannot be evaluated, and cor:refuse-before-contact
+# says so at requests_issued 0. An ontology stack answers this against a
+# materialised triple store and fails silently the moment the catalogue is a
+# real keyed service -- which, at every institute I know of, it is.
+plan dcat_g8 {
+  budget 100 requests
+
+  # The answerable half: compound -> reactions -> activities. Never executed.
+  let rxns = from RXN
+      ask consumers_of("CHEBI:catechol")
+      within 20
+
+  let datasets = from PROV
+      ask evaluations_of(?r)
+      with ?r in rxns
+      within 20
+
+  # The device-class test. INST cannot range over its own extent.
+  let uvvis = from INST
+      ask typed_as("KIND:uv-vis-spectrophotometer")
+      within 20
+
+  emit datasets with provenance
+}

@@ -1,0 +1,49 @@
+# Doerr generic query G6. "Give me all datasets D about chemical reaction R
+# that had a solvent with compound C."
+#
+# G5's shape, and it does not work, for a reason that is not a gap in this
+# fixture but a fact about how reactions get recorded.
+#
+# RXN holds `consumes`. A solvent is not consumed. Neither is a buffer, and
+# PROV holds the buffer as a SETTING of the activity -- BUF:TrisHCl-50mM on
+# ACT:BT1 -- not as a participant of the reaction. So the question's "solvent"
+# spans two stores with two different relations, and in neither is it the
+# thing the question calls it.
+#
+# There are two wrong moves available and both are tempting.
+#
+#   (1) Answer from `consumes`. This returns SAM and catechol, which are
+#       reagents. It is the query dropping a distinction the question was
+#       specifically drawing, and the rows come back looking correct.
+#   (2) Declare in the ontology that buffer is a subproperty of solvent. Then
+#       the reasoner derives BUF:TrisHCl-50mM as a solvent and the query
+#       succeeds. But a 50 mM Tris buffer is a solution, and its solvent is
+#       water; the derived triple is false, and it is false in a way that is
+#       now indistinguishable from a recorded observation.
+#
+# This plan does neither. It retrieves the buffers -- which is real, recorded,
+# and useful -- and states that they are buffers, not solvents, and that the
+# question's term has no counterpart here. The gap is `vocabulary`: not a
+# missing value in an existing relation, but an absent relation.
+plan dcat_g6 {
+  budget 100 requests
+
+  let rxns = from RXN
+      ask consumers_of("CHEBI:catechol")
+      within 20
+
+  let datasets = from PROV
+      ask evaluations_of(?r)
+      with ?r in rxns
+      within 20
+
+  # What WAS recorded about the medium. Buffer and pH are settings of the
+  # activity; the solvent is not recorded at all.
+  let media = from PROV
+      ask settings_of(?a)
+      with ?a in datasets
+      within 20
+
+  emit media with provenance
+       as extension of "datasets whose solvent has compound C" because vocabulary
+}

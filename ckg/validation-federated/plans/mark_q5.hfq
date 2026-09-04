@@ -1,0 +1,46 @@
+# Doerr Q5. "With which device was the UV spectrum monitored during
+# biocatalytic transformation BT3 on March 23rd by Yuliia Dikova, and which
+# wavelength was monitored?"
+#
+# This is the question the framework should find EASY, and saying so matters
+# as much as reporting the hard ones. It names an activity, and everything
+# asked for -- device, wavelength, operator, date -- is provenance of that
+# activity. One source, one hop, no translation, no negation.
+#
+# What the plan adds over a lookup is that the three qualifiers are CHECKED
+# rather than trusted. "on March 23rd by Yuliia Dikova" is not decoration in
+# a laboratory record: BT4 also ran on 2026-03-23, and it was run by Doerr on
+# a Bruker. If the plan reached BT3 by name alone and reported its device, it
+# would answer correctly and would also have answered correctly had the date
+# been wrong -- and a reader could not tell the two cases apart. So the date
+# and operator enter as filters over the activity's own attributes, and the
+# emitted row is one that survived them.
+plan mark_q5 {
+  budget 100 requests
+
+  # The activities that used any device at all, with their attributes.
+  let measured = from PROV
+      ask measured_on()
+      within 20
+
+  # "during biocatalytic transformation BT3". Membership by name, gated by
+  # the set above: an identifier the plan names but PROV does not hold as a
+  # measured activity is not returned. Naming BT3 is not evidence BT3 was
+  # monitored.
+  let bt3 = from PROV
+      ask identified_as("ACT:BT3", ?a)
+      with ?a in measured
+      within 10
+
+  # "on March 23rd". A filter on the attribute the previous step carried.
+  let on_date = filter bt3 where date == "2026-03-23"
+
+  # "by Yuliia Dikova". Separate step, not a conjunct: `filter` rejects
+  # boolean connectives at parse time, and the refusal is deliberate. Two
+  # conditions that fail for different reasons should be separable in the
+  # trace, and an `AND` inside one filter collapses them into a single
+  # yes/no that cannot say which half failed.
+  let by_ydikova = filter on_date where operator == "PERSON:YDikova"
+
+  emit by_ydikova with provenance
+}

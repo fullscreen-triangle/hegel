@@ -24,7 +24,8 @@ per def:step and def:plan. The grammar is deliberately small.
       let x = join y z on ATTR
       let x = filter y where ATTR OP VALUE
 
-      emit x [with provenance]
+      emit x [with provenance] [as extension of "TEXT" [because GAP]]
+                              GAP in {induction, vocabulary, conditions}
       emit divergence(y, z) as NAME
     }
 
@@ -95,6 +96,29 @@ class Emit:
     provenance: bool = False
     divergence: Optional[Tuple[str, str]] = None
     alias: Optional[str] = None
+    #: What the emitted set IS, when that differs from what the question asked
+    #: for. `emit x as extension of "substrate scope"` says: these rows are the
+    #: recorded extension, the question asked for an intension, and the gap
+    #: between them is not something any traversal of this corpus closes.
+    #:
+    #: This is a fourth answer shape alongside the verdict algebra, and it sits
+    #: at a different level. R1-R6 classify what happened to the REQUEST --
+    #: refused, starved, timed out, empty. A plan can be `answer` at every step
+    #: and still be answering a different question than the one asked, because
+    #: the mismatch is between the question's logical form and the corpus's,
+    #: not between a step and a source. Nothing in the six verdicts can say so,
+    #: and a consumer reading `verdict: answer` off the JSON has been told
+    #: something true about the execution and misleading about the answer.
+    intension: Optional[str] = None
+    #: WHICH gap separates the emitted extension from the question, named by
+    #: the plan rather than assumed by the executor. Two plans can both be
+    #: honest extensions of an unanswerable question for entirely different
+    #: reasons -- one because the corpus holds instances and the question
+    #: wants a generalisation over them, another because the question's
+    #: vocabulary has no counterpart in the corpus at all -- and a single
+    #: canned sentence covering both would be the executor committing exactly
+    #: the conflation this framework exists to name.
+    gap: Optional[str] = None
     line: int = 0
 
 
@@ -351,8 +375,13 @@ def _parse_emit(body: str, line: int) -> Emit:
     m = re.match(r"emit\s+(\w+)(.*)$", body)
     if not m:
         raise ParseError("malformed emit", line)
+    tail = m.group(2)
+    im = re.search(r"\bas\s+extension\s+of\s+\"([^\"]*)\"", tail)
+    gm = re.search(r"\bbecause\s+(induction|vocabulary|conditions)\b", tail)
     return Emit(target=m.group(1),
-                provenance=bool(re.search(r"\bwith\s+provenance\b", m.group(2))),
+                provenance=bool(re.search(r"\bwith\s+provenance\b", tail)),
+                intension=im.group(1) if im else None,
+                gap=gm.group(1) if gm else None,
                 line=line)
 
 

@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-import PRESETS from './presets';
+import { runPlan } from '@/lib/hfq';
+import { PLANS, SECTIONS, byId } from '@/lib/hfq/plans';
 import { verdictOf, VERDICTS, WORLDS, fmt } from './theme';
 import {
   Panel, PlanDAG, CapabilityMatrix, AllocationView, RetentionView,
@@ -301,10 +302,8 @@ function Output({ result }) {
 
 /* ---------------------------------------------------------------- */
 
-export default function Notebook() {
-  const [cells, setCells] = useState(() => [
-    newCell(PRESETS.find((p) => p.id === 'healthy_chain')?.source || ''),
-  ]);
+export default function Notebook({ initial = 'healthy_chain' }) {
+  const [cells, setCells] = useState(() => [newCell(byId(initial)?.source || '')]);
   const [counter, setCounter] = useState(0);
   const [showPresets, setShowPresets] = useState(false);
 
@@ -312,20 +311,25 @@ export default function Notebook() {
     setCells((cs) => cs.map((c) => (c.id === id ? { ...c, source } : c)));
   }, []);
 
+  // The interpreter runs HERE, in this tab. `runPlan` is the whole pipeline --
+  // parse, resolve, check, allocate, execute -- and it reaches no server,
+  // which is what makes "no request leaves the machine" a property of the page
+  // rather than a claim about its configuration.
+  //
+  // It stays async because the engine boundary is where the Rust CLI attaches:
+  // a paired session sends the plan to a local binary over its token and awaits
+  // the same document shape. Nothing else in the component would change.
   const run = useCallback(async (id) => {
     setCells((cs) => cs.map((c) => (c.id === id ? { ...c, running: true } : c)));
     const cell = cells.find((c) => c.id === id);
     const t0 = performance.now();
     let result;
     try {
-      const res = await fetch('/api/hfq/run', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ source: (cell && cell.source) || '' }),
-      });
-      result = await res.json();
+      result = runPlan((cell && cell.source) || '');
     } catch (e) {
-      result = { ok: false, stage: 'request', error: String(e) };
+      // runPlan documents that it never throws; if it does, that is a defect in
+      // the interpreter and the cell says so rather than rendering blank.
+      result = { ok: false, stage: 'internal', error: String(e && e.message ? e.message : e) };
     }
     const elapsed = Math.round(performance.now() - t0);
     setCounter((n) => {
@@ -362,20 +366,6 @@ export default function Notebook() {
 
   return (
     <div className="w-full">
-      <header className="mb-4">
-        <h1 className="font-mono text-lg font-bold">hegel federated query</h1>
-        <p className="text-sm opacity-70 mt-1 max-w-3xl">
-          A plan names sources abstractly and declares a budget. The interpreter
-          parses it, checks whether each source can express what the step asks,
-          allocates the budget across the steps, and executes. Each step returns
-          one of six verdicts, and a payload accompanies exactly one of them.
-        </p>
-        <p className="text-xs opacity-55 mt-2 max-w-3xl font-mono">
-          Every source resolves against a local fixture. No request leaves the
-          machine, by construction rather than by configuration.
-        </p>
-      </header>
-
       <div className="flex items-center gap-2 mb-4 flex-wrap">
         <button onClick={runAll}
           className="font-mono text-[12px] px-3 py-1 rounded bg-primary text-light
@@ -386,7 +376,7 @@ export default function Notebook() {
           className="font-mono text-[12px] px-3 py-1 rounded border
                      border-dark/25 dark:border-light/25
                      hover:bg-dark/[0.05] dark:hover:bg-light/[0.08] transition-colors">
-          plans from the validation suite ({PRESETS.length})
+          plans from the validation suite ({PLANS.length})
         </button>
         <button onClick={() => setCells((cs) => [...cs, newCell()])}
           className="font-mono text-[12px] px-3 py-1 rounded border
@@ -397,19 +387,34 @@ export default function Notebook() {
         <span className="font-mono text-[11px] opacity-40">ctrl+enter runs a cell</span>
       </div>
 
+      {/* Grouped by what each plan demonstrates rather than presented as a flat
+          list: a reader looking for the refusals should not have to know which
+          of twenty-four names carries one. */}
       {showPresets && (
-        <div className="mb-4 grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
-          {PRESETS.map((p) => (
-            <button key={p.id} onClick={() => appendPreset(p)}
-              className="text-left p-2 rounded border border-dark/15 dark:border-light/15
-                         hover:border-primary hover:bg-primary/[0.04] transition-colors">
-              <div className="font-mono text-[12px] font-semibold">{p.id}</div>
-              <div className="font-mono text-[10px] opacity-50 mt-1 line-clamp-2">
-                {p.source.split('\n').find((l) => l.trim().startsWith('#'))?.replace(/^#\s*/, '')
-                  || `${p.source.split('\n').length} lines`}
+        <div className="mb-4 space-y-3">
+          {Object.entries(SECTIONS).map(([key, meta]) => {
+            const inSection = PLANS.filter((p) => p.section === key);
+            if (!inSection.length) return null;
+            return (
+              <div key={key}>
+                <h3 className="font-mono text-[11px] font-semibold opacity-70 mb-1.5">
+                  {meta.title} <span className="opacity-50">({inSection.length})</span>
+                </h3>
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
+                  {inSection.map((p) => (
+                    <button key={p.id} onClick={() => appendPreset(p)}
+                      className="text-left p-2 rounded border border-dark/15 dark:border-light/15
+                                 hover:border-primary hover:bg-primary/[0.04] transition-colors">
+                      <div className="font-mono text-[12px] font-semibold">{p.id}</div>
+                      <div className="font-mono text-[10px] opacity-50 mt-1 line-clamp-2">
+                        {p.blurb || `${p.source.split('\n').length} lines`}
+                      </div>
+                    </button>
+                  ))}
+                </div>
               </div>
-            </button>
-          ))}
+            );
+          })}
         </div>
       )}
 
@@ -421,18 +426,6 @@ export default function Notebook() {
         ))}
       </div>
 
-      <footer className="mt-8 pt-4 border-t border-dark/10 dark:border-light/10">
-        <h2 className="font-mono text-xs font-semibold mb-2">the six verdicts</h2>
-        <dl className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-1.5 text-[11px]">
-          {Object.entries(VERDICTS).map(([k, v]) => (
-            <div key={k} className="flex gap-2">
-              <dt className="font-mono font-semibold w-16 shrink-0"
-                  style={{ color: v.color }}>{v.label}</dt>
-              <dd className="opacity-65">{v.note}</dd>
-            </div>
-          ))}
-        </dl>
-      </footer>
     </div>
   );
 }

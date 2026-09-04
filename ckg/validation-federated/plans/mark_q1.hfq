@@ -1,0 +1,49 @@
+# Doerr Q1. "Which biocatalyst, originating from a bacterium and not a
+# eukaryote, catalyses the transamination of benzylethylamine, and does not
+# have a cysteine in its protein sequence?"
+#
+# One sentence, five steps, three sources, two namespaces. That is the
+# claim: this is not a query with a hard WHERE clause, it is a plan, and
+# writing it as a plan is what makes each of its failure modes separable.
+#
+# The residue clause cannot be a further conjunct of the graph pattern. SEQ
+# holds the sequences and does not declare `pattern`, so it can only scan
+# keys handed to it -- which forces `enzymes` to be computed first and makes
+# the dependency explicit rather than implicit in a join order the endpoint
+# chooses.
+plan mark_q1 {
+  budget 200 requests
+
+  # (b) the transamination. RXN reaches the enzymes by pattern.
+  let enzymes = from RXN
+      ask enzyme_of("RXN:TA-benzylethylamine")
+      within 10
+
+  # (a) bacterium, not eukaryote. `typed_as` takes the kind to require and
+  # the kind to exclude, so Req carries `neg`: this is a negative kind test,
+  # and a source that can match a type but not exclude one must say so
+  # rather than silently returning the positive half.
+  let bacterial = from RXN
+      ask typed_as("KIND:bacterial-enzyme", "KIND:eukaryotic-enzyme")
+      with ?e in enzymes
+      within 10
+
+  let candidates = intersect enzymes bacterial
+
+  # Cross into the sequence namespace. The map is partial by construction:
+  # one of the five transaminases has no sequence entry, so retention is
+  # 4/5 and the declared expectation says so. If the corpus degrades past
+  # that, the step is starved rather than quietly returning less.
+  let keyed = map candidates via enz_to_seq
+      expect partial 0.75
+
+  # (c) no cysteine. The scan runs at SEQ over the keys it was handed.
+  # `excluding` requires `neg`; the bound set requires `bind`; `pattern` is
+  # NOT required, because this source reaches its literals by key.
+  let no_cys = from SEQ
+      ask excluding("C", ?k)
+      with ?k in keyed
+      within 20
+
+  emit no_cys with provenance
+}

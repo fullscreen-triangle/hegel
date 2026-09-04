@@ -14,7 +14,7 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import Any, Dict, List, Optional
 
-from .adapters import Refusal, Registry, required_features
+from .adapters import Refusal, Registry, resolve_features
 from .model import FEAT
 from .parser import Plan, Step
 
@@ -71,9 +71,16 @@ def check(plan: Plan, registry: Registry) -> CheckReport:
     for step in plan.steps:
         if step.kind != "from":
             continue  # map and set steps carry no source capability demand
-        req = required_features(step.request)
-        report.requirements[step.var] = sorted(req)
         adapter = registry.get(step.source)
+        # Req is asked of the adapter when the adapter has an opinion. A
+        # source that reaches a literal by key and one that reaches it by
+        # pattern do not demand the same features of the same request, and
+        # a table keyed on the predicate alone cannot express that. The
+        # default remains the paper's `required_features`; overriding is a
+        # declaration by the adapter author and is as unverified as the
+        # capability set itself (rem:honesty-assumption).
+        req = resolve_features(adapter, step.request)
+        report.requirements[step.var] = sorted(req)
         # One membership test per required feature: this is the count thm:static
         # bounds, and it is what (V2) measures.
         missing = []

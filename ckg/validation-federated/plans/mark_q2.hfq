@@ -1,0 +1,86 @@
+# Doerr Q2. "Which buffer composition and pH was used in the biocatalytic
+# methyl transfer using methyl-transferase mt-X of Bacillus subtilis?"
+#
+# The question reads like a lookup and is not one. "Which buffer was used"
+# presupposes a single answer; the store holds two runs of the same reaction
+# with two different buffers, which is the ordinary condition of a laboratory
+# record and not a defect in the data. A query language that returns a set and
+# calls it the answer has silently reinterpreted the question. A plan can say
+# what it did: name the activities, report their settings, and let the reader
+# see that there are two.
+#
+# The organism and enzyme clauses are constraints, and a constraint is only a
+# constraint if the answer depends on it. An earlier draft of this plan named
+# RXN:MT-catechol as a literal and computed the organism clause beside it; the
+# clause was then decoration, because deleting it would not have changed a
+# single emitted row. That is a defect the plan language makes findable and
+# SPARQL does not: in a single WHERE block, a redundant triple pattern and a
+# load-bearing one are the same syntax, and only the plan's dependency graph
+# distinguishes a constraint that gates from one that merely accompanies.
+#
+# So the chain here is forced. `runs` binds to `mt_reactions`, `mt_reactions`
+# binds to `bs_enzymes`, and `bs_enzymes` is where "of Bacillus subtilis"
+# enters. Remove the organism step and the plan does not parse.
+plan mark_q2 {
+  budget 200 requests
+
+  # "of Bacillus subtilis". An inverse traversal of `from_organism`: the
+  # organism sits in the object position of the stored edge, so this is a
+  # `path` and not a `pattern`. RXN declares `path`; a source that indexed
+  # only forwards would be refused here by name, before any request.
+  let bs_enzymes = from RXN
+      ask enzymes_from("TAX:Bsubtilis")
+      within 10
+
+  # "methyl-transferase mt-X". The organism clause admits two enzymes --
+  # B. subtilis contributes both MT-X and TA-Bs to this store -- so something
+  # must narrow to the methyl transferase, and here is where the framework
+  # reports a limit instead of inventing one.
+  #
+  # RXN types its enzymes by PROVENANCE (bacterial/eukaryotic), not by EC
+  # class. There is no `KIND:methyltransferase` to test against. Mark's phrase
+  # "methyl-transferase mt-X" therefore does two different kinds of work in
+  # one noun phrase: "mt-X" is an identifier this store holds, and
+  # "methyl-transferase" is a classification it does not. A reasoner over an
+  # EC-aware ontology would discharge both halves; this corpus can discharge
+  # only the first. That is a fact about the corpus and not about the
+  # question, and the plan says so here rather than in a footnote.
+  #
+  # The narrowing therefore goes through the identifier. `identified_as`
+  # returns the named enzyme only if the bound set already holds it, so the
+  # organism clause is load-bearing: were MT-X not a B. subtilis enzyme, this
+  # step would return the empty set rather than the name it was given. Delete
+  # `bs_enzymes` and the plan does not parse. An earlier draft of this plan
+  # lacked that property and could not be seen to lack it -- in a single
+  # SPARQL WHERE block a redundant pattern and a gating one are the same
+  # syntax, and only a dependency graph tells them apart.
+  let mt_x = from RXN
+      ask identified_as("ENZ:MT-X", ?e)
+      with ?e in bs_enzymes
+      within 10
+
+  # The reaction that enzyme catalyses, reached from the enzyme rather than
+  # named. `catalysed_by` points reaction --> enzyme, so recovering the
+  # reaction from the enzyme is again the inverse.
+  let mt_reactions = from RXN
+      ask catalysed_reactions(?c)
+      with ?c in mt_x
+      within 10
+
+  # The runs of that reaction.
+  let runs = from PROV
+      ask evaluations_of(?r)
+      with ?r in mt_reactions
+      within 20
+
+  # Their recorded parameters. Every setting is OPTIONAL in the lowered form:
+  # an activity that recorded no buffer is returned WITH no buffer, not
+  # dropped. "This run recorded no pH" and "there is no such run" are
+  # different answers and collapsing them is the one-bit failure again.
+  let settings = from PROV
+      ask settings_of(?a)
+      with ?a in runs
+      within 20
+
+  emit settings with provenance
+}

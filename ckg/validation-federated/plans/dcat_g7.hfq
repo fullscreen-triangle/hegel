@@ -1,0 +1,61 @@
+# Doerr generic query G7. "Give me all datasets D about chemical reaction R
+# that had a catalyst with compound C."
+#
+# The one in this trio that the corpus really does hold, and it is worth
+# putting beside G6 for that reason: the difference between them is not that
+# one question is harder, it is that one relation was recorded and the other
+# was not. Nothing about the question's form tells you which.
+#
+# `catalysed_by` links reaction -> enzyme. The question supplies the catalyst
+# and wants the reaction, so this is the inverse again -- `catalysed_reactions`
+# -- and then `evaluations_of` for the third backwards hop to the activity.
+# Three inverse traversals in four steps. Under a triple store all three are
+# free, because the store indexes both ways; the plan declares `path` on each
+# because a service need not, and one that does not is refused rather than
+# answering nothing.
+#
+# The catalyst clause is checked, not assumed: `identified_as` intersects the
+# named enzyme against what actually catalyses the reaction reached. Falsify
+# it and the intersection empties and everything downstream starves, which is
+# the counterfactual run beside this one.
+plan dcat_g7 {
+  budget 100 requests
+
+  # Which reactions this enzyme catalyses. `catalysed_reactions` walks
+  # `catalysed_by` backwards: enzyme -> reactions.
+  let cat_rxns = from RXN
+      ask catalysed_reactions("ENZ:MT-X")
+      within 20
+
+  # And is the enzyme we named actually among the catalysts of what we
+  # reached? The clause has to bite, or G7 is G1 with extra words.
+  let catalysts = from RXN
+      ask enzyme_of(?r)
+      with ?r in cat_rxns
+      within 20
+
+  let named = from RXN
+      ask identified_as("ENZ:MT-X", ?c)
+      with ?c in catalysts
+      within 20
+
+  # The reactions that survive the check, reached FROM the confirmed catalyst.
+  # Binding `cat_rxns` here instead would make the check decorative: the
+  # counterfactual run beside this one falsifies the catalyst, `named` goes
+  # empty, and a plan that then binds `cat_rxns` still emits two datasets --
+  # a correct answer to "datasets about this reaction" dressed as an answer to
+  # "datasets about this reaction with THIS catalyst". Every constraint must
+  # sit on the path from the question to the payload, or it is not a
+  # constraint, it is a comment.
+  let confirmed = from RXN
+      ask catalysed_reactions(?c)
+      with ?c in named
+      within 20
+
+  let datasets = from PROV
+      ask evaluations_of(?r)
+      with ?r in confirmed
+      within 20
+
+  emit datasets with provenance
+}

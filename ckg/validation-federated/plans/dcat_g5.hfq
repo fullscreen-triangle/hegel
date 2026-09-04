@@ -1,0 +1,38 @@
+# Doerr generic query G5. "Give me all datasets D about chemical reaction R
+# that had a starting material with compound C."
+#
+# The mirror of G4 along the other edge: `consumes` rather than `produces`.
+# Structurally identical, which is worth saying, because it is evidence that
+# the inverse family is a family and not four special cases. One predicate
+# name per direction per edge, each declaring `path`, each with its own
+# lowering that describes the walk it performs.
+#
+# The chemistry is not symmetric even though the graph is. A starting
+# material is something you chose; a product is something you got. The store
+# records both as an edge and cannot tell them apart, which is fine here --
+# G5 asks about the edge -- and is exactly what makes Q3 unanswerable, where
+# the question is about what you WOULD get.
+plan dcat_g5 {
+  budget 100 requests
+
+  let inputs = from RXN
+      ask reactions_consuming("RXN:MT-catechol")
+      within 20
+
+  let has_c = from RXN
+      ask identified_as("CHEBI:catechol", ?c)
+      with ?c in inputs
+      within 20
+
+  let rxns = from RXN
+      ask consumers_of(?c)
+      with ?c in has_c
+      within 20
+
+  let datasets = from PROV
+      ask evaluations_of(?r)
+      with ?r in rxns
+      within 20
+
+  emit datasets with provenance
+}

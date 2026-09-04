@@ -63,6 +63,22 @@ PREDICATE_FEATURES: Dict[str, FrozenSet[str]] = {
 }
 
 
+def resolve_features(adapter, request) -> FrozenSet[str]:
+    """Req for this request AT this source.
+
+    The check and the executor must compute Req identically -- if they differ,
+    a plan can pass the static check and then be refused at R2, which inverts
+    cor:refuse-before-contact and is strictly worse than either component
+    being wrong on its own. So both call this, and only this.
+
+    An adapter may override by defining `required_features`. That override is
+    a declaration by the adapter author with the same standing as the
+    capability set: nothing here verifies it (rem:honesty-assumption).
+    """
+    own = getattr(adapter, "required_features", None)
+    return own(request) if own is not None else required_features(request)
+
+
 def required_features(request) -> FrozenSet[str]:
     """Req(rho), by structural recursion over the abstract request.
 
@@ -122,7 +138,7 @@ class Adapter:
         raise NotImplementedError
 
     def evaluate(self, request, inputs: Dict[str, ResultSet], effort: float) -> ResultSet:
-        req = required_features(request)
+        req = resolve_features(self, request)
         if not self.supports(req):
             raise Refusal(
                 f"{self.name} lacks {sorted(self.missing(req))} for "
@@ -252,9 +268,15 @@ class LookupAdapter(Adapter):
                          + ([f"  relation = {rel}"] if rel else []))
 
     def extract(self, concrete: str, request, inputs: Dict[str, ResultSet]) -> ResultSet:
+        # Sorted, for the same reason TranslationMap.apply sorts: identifiers()
+        # is a frozenset, and when two keys reach one value -- KEGG:E1 and
+        # KEGG:E2 both link to MAP:00010 -- ResultSet.of merges on collision
+        # with the last write winning, so the recorded `_from` depends on
+        # iteration order. Under PYTHONHASHSEED 0..5 it alternates between the
+        # two. The extent is identical either way; only the provenance moves.
         keys: List[Ident] = []
         for _var, plan_var in request.bindings:
-            keys.extend(inputs[plan_var].identifiers())
+            keys.extend(sorted(inputs[plan_var].identifiers()))
 
         pairs: List[Tuple[Ident, Dict[str, Any]]] = []
         if request.predicate == "link":
