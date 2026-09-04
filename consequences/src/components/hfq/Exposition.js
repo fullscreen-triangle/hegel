@@ -107,7 +107,7 @@ export function TheScript() {
         </figcaption>
       </figure>
 
-      <dl className="grid sm:grid-cols-2 gap-x-5 gap-y-2 mt-4">
+      <dl className="grid grid-cols-2 sm:grid-cols-1 gap-x-5 gap-y-2 mt-4">
         {DEFECTS.map(([tag, title, body]) => (
           <div key={tag}
                onMouseEnter={() => setHi(tag)} onMouseLeave={() => setHi(null)}
@@ -135,7 +135,7 @@ export function TheScript() {
 
 export function WhyRepairsFail() {
   return (
-    <div className="grid md:grid-cols-2 gap-4">
+    <div className="grid grid-cols-2 md:grid-cols-1 gap-4">
       <div className="p-3 rounded border border-dark/12 dark:border-light/12">
         <h3 className="font-mono text-[12px] font-semibold mb-1.5">
           Make the query language bigger
@@ -246,7 +246,7 @@ export function WhySix() {
         check it.
       </p>
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-2 mt-4">
+      <div className="grid grid-cols-3 lg:grid-cols-2 sm:grid-cols-1 gap-x-4 gap-y-2 mt-4">
         {Object.entries(VERDICTS).map(([k, v]) => (
           <div key={k} className="flex gap-2 text-[11px]">
             <dt className="font-mono font-semibold w-16 shrink-0" style={{ color: v.color }}>
@@ -294,7 +294,7 @@ const FORM_B = `  ?r rh:side/rh:contains/rh:compound/rh:chebi ?a .
 export function TwoSpellings() {
   return (
     <>
-      <div className="grid md:grid-cols-2 gap-3">
+      <div className="grid grid-cols-2 md:grid-cols-1 gap-3">
         <div>
           <div className="font-mono text-[12px] mb-1">
             Form A returns <span className="font-bold" style={{ color: '#b91c1c' }}>2</span>

@@ -244,7 +244,7 @@ function Output({ result }) {
             <Panel title="plan" sub="steps laid out by dependency depth; colour is the verdict each returned">
               <PlanDAG dag={result.dag} verdicts={verdicts} />
             </Panel>
-            <div className="grid md:grid-cols-2 gap-3">
+            <div className="grid grid-cols-2 md:grid-cols-1 gap-3">
               <Panel title="verdicts" sub="spend per step, in execution order">
                 <VerdictTimeline steps={result.steps}
                                  requestsIssued={result.requests_issued}
@@ -400,7 +400,7 @@ export default function Notebook({ initial = 'healthy_chain' }) {
                 <h3 className="font-mono text-[11px] font-semibold opacity-70 mb-1.5">
                   {meta.title} <span className="opacity-50">({inSection.length})</span>
                 </h3>
-                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
+                <div className="grid grid-cols-3 lg:grid-cols-2 sm:grid-cols-1 gap-2">
                   {inSection.map((p) => (
                     <button key={p.id} onClick={() => appendPreset(p)}
                       className="text-left p-2 rounded border border-dark/15 dark:border-light/15

@@ -437,10 +437,16 @@ export function Controls({ children, note }) {
  * scale to whatever column they land in -- their `width` is a viewBox
  * coordinate system, not a rendered size -- so this is a real reflow rather
  * than four fixed-width drawings pushed side by side.
+ *
+ * Note the direction. This project's tailwind.config.js overrides `screens`
+ * with max-width queries, so `lg:` reads "at most 1023px" rather than the
+ * stock "at least 1024px". The widest layout is therefore the unprefixed
+ * base and each prefix narrows it -- writing this the mobile-first way round
+ * silently yields one column on a desktop, which is the bug this replaces.
  */
 export function Quad({ children }) {
   return (
-    <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-x-5 gap-y-4">
+    <div className="grid grid-cols-4 lg:grid-cols-2 sm:grid-cols-1 gap-x-5 gap-y-4">
       {children}
     </div>
   );
