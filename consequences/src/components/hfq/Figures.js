@@ -299,7 +299,7 @@ export function CapabilityFigure({ caption }) {
         <Sub letter="c" title="what each request would need">
           <Heatmap
             cols={mx.sources} rows={[...mx.predicates].reverse()}
-            size={22}
+            size={22} labelWidth={118}
             xLabel="source" yLabel="predicate"
             cell={(s, p) => {
               const c = mx.cells.find((x) => x.source === s && x.predicate === p);

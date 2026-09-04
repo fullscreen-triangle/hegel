@@ -46,7 +46,9 @@ const fmtTick = (v) => (Number.isInteger(v) ? String(v)
  * Frame: axes, gridlines, labels. Every chart below sits in one.
  * ---------------------------------------------------------------- */
 
-const PAD = { l: 46, r: 12, t: 10, b: 34 };
+// Gutters are tight because a panel is now a quarter of the page rather than
+// half of it, and the widest tick label these charts draw is four characters.
+const PAD = { l: 34, r: 10, t: 10, b: 32 };
 
 export function Frame({
   width = 340, height = 210, xDomain, yDomain, xLabel, yLabel,
@@ -68,9 +70,13 @@ export function Frame({
     ? [1, 10, 100, 1000].filter((v) => v >= y0 && v <= y1)
     : ticks(y0, y1, 4));
 
+  // `width`/`height` are the viewBox coordinate system -- the aspect ratio and
+  // the space the labels are laid out in -- not the rendered size. The svg
+  // scales to whatever column Quad gives it, which is what lets four panels sit
+  // in a row on a wide page and stack on a narrow one without redrawing.
   return (
     <svg viewBox={`0 0 ${width} ${height}`} width="100%"
-         style={{ maxWidth: width, display: 'block' }}
+         style={{ display: 'block' }}
          fontFamily="ui-monospace, monospace">
       {ys.map((t) => (
         <g key={`y${t}`}>
@@ -95,9 +101,9 @@ export function Frame({
               fill="currentColor" opacity="0.6">{xLabel}</text>
       )}
       {yLabel && (
-        <text x={10} y={pad.t + ih / 2} fontSize="9" textAnchor="middle"
+        <text x={9} y={pad.t + ih / 2} fontSize="9" textAnchor="middle"
               fill="currentColor" opacity="0.6"
-              transform={`rotate(-90 10 ${pad.t + ih / 2})`}>{yLabel}</text>
+              transform={`rotate(-90 9 ${pad.t + ih / 2})`}>{yLabel}</text>
       )}
       {children({ sx, sy, iw, ih, pad })}
     </svg>
@@ -169,16 +175,25 @@ export function LineChart({
  * @param {string[]} p.cols  - column labels, left to right
  * @param {string[]} p.rows  - row labels, BOTTOM to top (matplotlib origin)
  * @param {function} p.cell  - (col, row, ci, ri) => {fill, title, text} | null
+ * @param {number} [p.labelWidth] - left gutter. The default suits short row
+ *   labels; a grid whose rows are named rather than numbered needs more, and
+ *   says so at the call site rather than having every grid pay for it.
  */
 export function Heatmap({
   cols, rows, cell, xLabel, yLabel, size = 20, gap = 1.5,
-  colStride = 1, rowStride = 1, onHover,
+  colStride = 1, rowStride = 1, onHover, labelWidth,
 }) {
-  const L = 46;
-  const B = 30;
+  // Same reasoning as PAD above: most grids here label rows with a number -- a
+  // budget, an expectation, a position. The one that labels them with predicate
+  // names passes `labelWidth` instead of making every grid carry the gutter.
+  const L = labelWidth ?? 38;
+  const B = 28;
   const w = L + cols.length * (size + gap) + 8;
   const h = 10 + rows.length * (size + gap) + B;
   return (
+    // The one chart that keeps a cap. Its cells are squares by construction, and
+    // stretching the viewBox past its natural width would only make them
+    // rectangles -- the grid says what it says at its own size.
     <svg viewBox={`0 0 ${w} ${h}`} width="100%" style={{ maxWidth: w, display: 'block' }}
          fontFamily="ui-monospace, monospace">
       {rows.map((r, ri) => cols.map((c, ci) => {
@@ -250,7 +265,7 @@ export function BarChart({
   groups, series, yLabel, width = 340, height = 200, stacked = false,
   showValues = true, valueFmt = (v) => String(v), yMax,
 }) {
-  const pad = { l: 40, r: 10, t: 12, b: 40 };
+  const pad = { l: 32, r: 8, t: 12, b: 38 };
   const iw = width - pad.l - pad.r;
   const ih = height - pad.t - pad.b;
   const top = yMax ?? (stacked
@@ -264,7 +279,7 @@ export function BarChart({
   return (
     <div>
       <svg viewBox={`0 0 ${width} ${height}`} width="100%"
-           style={{ maxWidth: width, display: 'block' }}
+           style={{ display: 'block' }}
            fontFamily="ui-monospace, monospace">
         {ticks(0, hi, 4).map((t) => (
           <g key={t}>
@@ -414,18 +429,32 @@ export function Controls({ children, note }) {
   );
 }
 
-/** A 2×2 grid of sub-panels, lettered as the manuscript figures are. */
+/**
+ * The four sub-panels of a figure, lettered as the manuscript figures are.
+ *
+ * One row where the page is wide enough to give each panel a readable column,
+ * falling back through two columns to one as it narrows. The charts themselves
+ * scale to whatever column they land in -- their `width` is a viewBox
+ * coordinate system, not a rendered size -- so this is a real reflow rather
+ * than four fixed-width drawings pushed side by side.
+ */
 export function Quad({ children }) {
-  return <div className="grid lg:grid-cols-2 gap-x-5 gap-y-4">{children}</div>;
+  return (
+    <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-x-5 gap-y-4">
+      {children}
+    </div>
+  );
 }
 
 export function Sub({ letter, title, children }) {
   return (
     <div className="min-w-0">
-      <h4 className="text-[11px] font-mono mb-1.5">
+      <h4 className="text-[11px] font-mono mb-1.5 leading-snug min-h-[2.2em]">
         <span className="opacity-40">({letter})</span>{' '}
         <span className="opacity-75">{title}</span>
       </h4>
+      {/* Only the heatmap has a fixed natural width now, so this is the escape
+          hatch for that one case; everything else scales and never reaches it. */}
       <div className="overflow-x-auto">{children}</div>
     </div>
   );
