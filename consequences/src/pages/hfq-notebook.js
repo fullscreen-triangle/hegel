@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic';
 import Layout from '@/components/Layout';
 import TransitionEffect from '@/components/TransitionEffect';
 import {
-  Section, Panel, TheScript, WhyRepairsFail, Principles, WhySix, TwoSpellings,
+  Section, TheScript, WhyRepairsFail, Principles, WhySix, TwoSpellings,
   Pipeline,
 } from '@/components/hfq/Exposition';
 import { SemMan4Cat } from '@/components/hfq/SemMan4Cat';
@@ -17,6 +17,24 @@ const Notebook = dynamic(() => import('@/components/hfq/Notebook'), {
     <p className="font-mono text-sm opacity-50 py-8">loading the interpreter…</p>
   ),
 });
+
+// The figures are not pictures. Each one runs the interpreter -- the verdict
+// sweep alone executes a hundred plans -- and recomputes when the reader moves
+// a control. That is client work by nature, and paying for it in the static
+// prerender would only produce a first frame the reader immediately replaces.
+const figure = (name) => dynamic(
+  () => import('@/components/hfq/Figures').then((m) => m[name]),
+  {
+    ssr: false,
+    loading: () => (
+      <p className="font-mono text-[11px] opacity-40 py-10">computing…</p>
+    ),
+  },
+);
+const VerdictFigure = figure('VerdictFigure');
+const CapabilityFigure = figure('CapabilityFigure');
+const RetentionFigure = figure('RetentionFigure');
+const BlameFigure = figure('BlameFigure');
 
 export default function HFQNotebook() {
   return (
@@ -92,8 +110,7 @@ export default function HFQNotebook() {
             lede="Not a design taste. Fix a step executed against a source holding some
                   dataset, with its inputs already computed. Three predicates apply.">
             <WhySix />
-            <Panel src="/hfq/panel_2_verdicts.png"
-                   title="Figure — the verdict layer: six outcomes, one observable bit">
+            <VerdictFigure caption={<>
               A 10×10 sweep executes the same plan across ten budgets and ten
               declared-honesty levels, giving 100 executed plans. Of those, 21
               answer, 49 refuse and 30 starve. Panel D is the collapse of
@@ -101,7 +118,7 @@ export default function HFQNotebook() {
               and the five non-answer kinds are distinct verdicts with distinct
               blockers and identical payload size 0 — so a caller reading only
               success or failure cannot separate them.
-            </Panel>
+            </>} />
           </Section>
 
           <Section n="5" title="Two spellings, two answers"
@@ -115,8 +132,7 @@ export default function HFQNotebook() {
             lede="The static check is decided entirely by what each source declares, so a
                   plan asking for a capability its source lacks is refused by name before
                   any request is issued — and the request counter proves it.">
-            <Panel src="/hfq/panel_1_capability.png"
-                   title="Figure — the static layer: checking is cheap, and refusal precedes contact">
+            <CapabilityFigure caption={<>
               The measured operation count is exactly 2m−1 against a declared
               bound of 11m, one per feature. Panel B pins the ill-capability
               series at exactly 0 requests for all twelve plan lengths. Panel D
@@ -125,24 +141,22 @@ export default function HFQNotebook() {
               checker, that decides which plans can be written at all. An
               over-declaration would be invisible here, which is the asymmetry
               the prototype cannot test away.
-            </Panel>
+            </>} />
           </Section>
 
           <Section n="7" title="Translation is where the losses are"
             lede="Cross-namespace maps are partial, non-injective and non-confluent.
                   Retention and amplification are recorded separately, because their
                   product — all the output cardinality reveals — determines neither.">
-            <Panel src="/hfq/panel_4_retention.png"
-                   title="Figure — retention and amplification are independent">
+            <RetentionFigure caption={<>
               At output size 12 the retention ranges over 0.083–0.5 while the
               amplification ranges over 1–6: equal output size is compatible
               with a sixfold difference in how much of the input survived. Panel
               C is the measured counterexample — two maps over the same
               8-element input both emit 8 identifiers, one with retention 1.00
               and one with 0.25.
-            </Panel>
-            <Panel src="/hfq/panel_3_blame.png"
-                   title="Figure — blame terminates, and only ever runs downstream">
+            </>} />
+            <BlameFigure caption={<>
               Plans of length 2–9 executed with a starving first step. The
               measured maximum chain is exactly m−2 and the mean (m−2)/2, both
               strictly under the bound at every length: positions strictly
@@ -150,7 +164,7 @@ export default function HFQNotebook() {
               not a budget. Panel D&rsquo;s filled cells lie on or below the
               diagonal only — nothing upstream of a perturbation is ever
               touched, a null that could have failed.
-            </Panel>
+            </>} />
           </Section>
 
           {/* ---------------- III. the interpreter ---------------- */}

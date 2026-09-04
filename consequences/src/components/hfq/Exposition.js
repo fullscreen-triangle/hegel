@@ -38,24 +38,6 @@ const Code = ({ children, caption }) => (
   </figure>
 );
 
-/** A figure panel from the validation suite, with its measured caption. */
-export const Panel = ({ src, title, children }) => {
-  const [open, setOpen] = useState(false);
-  return (
-    <figure className="my-4 border border-dark/10 dark:border-light/10 rounded overflow-hidden">
-      <img src={src} alt={title} className="w-full block bg-white" loading="lazy" />
-      <figcaption className="p-2.5 text-[11px] leading-relaxed
-                             bg-dark/[0.03] dark:bg-light/[0.05]">
-        <button onClick={() => setOpen((v) => !v)}
-                className="font-mono font-semibold text-left hover:underline">
-          {title} <span className="opacity-40">{open ? '−' : '+'}</span>
-        </button>
-        {open && <div className="mt-1.5 opacity-70">{children}</div>}
-      </figcaption>
-    </figure>
-  );
-};
-
 /* ---------------------------------------------------------------- */
 
 const DEFECTS = [
